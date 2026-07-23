@@ -10,7 +10,7 @@ This is an unofficial SDK for the User Back Office Web Service Documentation pub
 
 Learn more about Voxgig SDKs at [voxgig.com/sdk](https://voxgig.com/sdk/).
 
-> TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
+> TypeScript, Python, PHP, Golang, Ruby, Lua, C, Clojure, C++, C#, Dart, Elixir, Haskell, Java, JavaScript, Kotlin, OCaml, Perl, Rust, Scala, Swift, Zig SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
 
 ## Entities, not endpoints
 
@@ -89,6 +89,171 @@ local client = sdk.test()
 local result, err = client:OutputGetLogo():load()
 ```
 
+### C
+
+```c
+#include "core/api.h"
+
+BluefinTecsUserBackofficeSDK* client = test_sdk(NULL, NULL);
+PNError* err = NULL;
+Entity* output_get_logo = bluefin_tecs_user_backoffice_output_get_logo(client, NULL);
+voxgig_value* output_get_logo_rec = output_get_logo->vt->load(output_get_logo, NULL, NULL, &err);
+printf("%s\n", voxgig_to_json(output_get_logo_rec));
+```
+
+### Clojure
+
+```clojure
+(require '[sdk.api :as api]
+         '[sdk.entity.output_get_logo :as e-output_get_logo]
+         '[voxgig.struct :as vs])
+
+(def client (api/test-sdk nil nil))
+(def output_get_logo (e-output_get_logo/load (api/output_get_logo client nil) nil nil))
+(println output_get_logo)
+```
+
+### C++
+
+```cpp
+auto client = BluefinTecsUserBackofficeSDK::testSDK();
+Value output_get_logo = client->output_get_logo()->load(Value::undef(), Value::undef());
+std::cout << Struct::jsonify(output_get_logo) << std::endl;
+```
+
+### C#
+
+```csharp
+var client = BluefinTecsUserBackofficeSDK.TestSDK(null, null);
+var outputGetLogo = client.OutputGetLogo().Load(null);
+Console.WriteLine(outputGetLogo);
+```
+
+### Dart
+
+```dart
+import 'package:bluefin_tecs_user_backoffice_sdk/BluefinTecsUserBackofficeSDK.dart';
+
+Future<void> main() async {
+  final client = BluefinTecsUserBackofficeSDK.test();
+  final outputgetlogo = await client.OutputGetLogo().load();
+  print(outputgetlogo);
+}
+```
+
+### Elixir
+
+```elixir
+alias BluefinTecsUserBackoffice.Helpers, as: H
+
+sdk = BluefinTecsUserBackoffice.test()
+output_get_logo = BluefinTecsUserBackoffice.output_get_logo(sdk)
+record = BluefinTecsUserBackoffice.Entity.OutputGetLogo.load(output_get_logo, H.deep(%{}))
+IO.inspect(record)
+```
+
+### Haskell
+
+```haskell
+import qualified SdkClient as Sdk
+import VoxgigStruct (Value (..), emptyMap)
+import SdkHelpers (jo)
+
+main :: IO ()
+main = do
+  sdk <- Sdk.testSdk0
+  ent <- Sdk.output_get_logo sdk VNoval
+  arg <- emptyMap
+  ctrl <- emptyMap
+  output_get_logo <- Sdk.eLoad ent arg ctrl
+  print output_get_logo
+```
+
+### Java
+
+```java
+BluefinTecsUserBackofficeSDK client = BluefinTecsUserBackofficeSDK.testSDK(null, null);
+Object outputGetLogo = client.outputGetLogo(null).load(null, null);
+System.out.println(outputGetLogo);
+```
+
+### JavaScript
+
+```js
+const client = BluefinTecsUserBackofficeSDK.test()
+const outputgetlogo = await client.OutputGetLogo().load()
+// outputgetlogo is a bare entity populated with mock data
+console.log(outputgetlogo)
+```
+
+### Kotlin
+
+```kotlin
+val client = BluefinTecsUserBackofficeSDK.testSDK(null, null)
+val outputGetLogo = client.outputGetLogo(null).load(null, null)
+println(outputGetLogo)
+```
+
+### OCaml
+
+```ocaml
+let () =
+  let client = Sdk_client.test () in
+  let result = (Sdk_client.output_get_logo client Noval).e_load (empty_map ()) Noval in
+  print_endline (stringify result)
+```
+
+### Perl
+
+```perl
+use lib 'perl/lib';
+use BluefinTecsUserBackofficeSDK;
+
+my $client = BluefinTecsUserBackofficeSDK->test(undef, undef);
+my $outputgetlogo = $client->OutputGetLogo->load();
+print "$outputgetlogo->{id}\n";
+```
+
+### Rust
+
+```rust
+use bluefin_tecs_user_backoffice_sdk::{jo, test_sdk, Value};
+
+let client = test_sdk(Value::Noval, Value::Noval);
+let output_get_logo = client.output_get_logo(Value::Noval).load(Value::Noval, Value::Noval).unwrap();
+println!("{:?}", output_get_logo);
+```
+
+### Scala
+
+```scala
+val client = BluefinTecsUserBackofficeSDK.testSDK(null, null)
+val outputGetLogo = client.outputGetLogo(null).load(null, null)
+println(outputGetLogo)
+```
+
+### Swift
+
+```swift
+let client = BluefinTecsUserBackofficeSDK.testSDK(nil, nil)
+let outputGetLogo = try client.OutputGetLogo().load(nil, nil)
+print(outputGetLogo)
+```
+
+### Zig
+
+```zig
+const std = @import("std");
+const sdk = @import("sdk");
+const h = sdk.h;
+
+const client = sdk.test_sdk(h.vnull(), h.vnull());
+switch (client.output_get_logo(h.vnull()).load(h.vnull(), h.vnull())) {
+    .ok => |output_get_logo| std.debug.print("{s}\n", .{h.stringify(output_get_logo)}),
+    .err => |e| std.debug.print("load failed: {s}\n", .{e.msg}),
+}
+```
+
 ## Packages
 
 | Language | Package | Install |
@@ -99,6 +264,22 @@ local result, err = client:OutputGetLogo():load()
 | Golang | `github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/go` | `go get github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/go@latest` |
 | Ruby | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
 | Lua | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
+| C | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
+| Clojure | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
+| C++ | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
+| C# | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
+| Dart | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
+| Elixir | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
+| Haskell | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
+| Java | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
+| JavaScript | `@voxgig-sdk/bluefin-tecs-user-backoffice-js` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
+| Kotlin | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
+| OCaml | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
+| Perl | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
+| Rust | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
+| Scala | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
+| Swift | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
+| Zig | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
 | Go CLI | `github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/go-cli` | `go install github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/go-cli/cmd/bluefin-tecs-user-backoffice@latest` |
 | Go MCP server | `github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/go-mcp` | `go get github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/go-mcp@latest` |
 
@@ -121,7 +302,7 @@ See the [TypeScript README](ts/README.md) for the full guide.
 
 | Surface | Path |
 | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua, C, Clojure, C++, C#, Dart, Elixir, Haskell, Java, JavaScript, Kotlin, OCaml, Perl, Rust, Scala, Swift, Zig) | `ts/` `py/` `php/` `go/` `rb/` `lua/` `c/` `clojure/` `cpp/` `csharp/` `dart/` `elixir/` `haskell/` `java/` `js/` `kotlin/` `ocaml/` `perl/` `rust/` `scala/` `swift/` `zig/` |
 | **CLI** | `go-cli/` |
 | **MCP server** | `go-mcp/` |
 
@@ -241,6 +422,196 @@ local client = sdk.new({
 
 ```
 
+### C
+
+```c
+#include "core/api.h"
+
+BluefinTecsUserBackofficeSDK* client = bluefin_tecs_user_backoffice_sdk_new(cmap(1,
+    "apikey", v_str(getenv("BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"))));
+PNError* err = NULL;
+
+```
+
+### Clojure
+
+```clojure
+(require '[sdk.api :as api]
+         '[sdk.entity.output_activate_digital_module :as e-output_activate_digital_module]
+         '[voxgig.struct :as vs])
+
+(def client (api/make-sdk (vs/jm "apikey" (System/getenv "BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"))))
+
+```
+
+### C++
+
+```cpp
+#include <cstdlib>
+#include "core/sdk.hpp"
+
+using namespace sdk;
+
+const char* apikey = std::getenv("BLUEFIN_TECS_USER_BACKOFFICE_APIKEY");
+auto client = std::make_shared<BluefinTecsUserBackofficeSDK>(vmap({
+    {"apikey", Value(apikey ? apikey : "")},
+}));
+
+```
+
+### C#
+
+```csharp
+using BluefinTecsUserBackofficeSdk;
+
+var client = new BluefinTecsUserBackofficeSDK(new Dictionary<string, object?>
+{
+    ["apikey"] = Environment.GetEnvironmentVariable("BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"),
+});
+
+```
+
+### Dart
+
+```dart
+import 'dart:io';
+import 'package:bluefin_tecs_user_backoffice_sdk/BluefinTecsUserBackofficeSDK.dart';
+
+Future<void> main() async {
+  final client = BluefinTecsUserBackofficeSDK({
+    'apikey': Platform.environment['BLUEFIN_TECS_USER_BACKOFFICE_APIKEY'],
+  });
+
+}
+```
+
+### Elixir
+
+```elixir
+alias BluefinTecsUserBackoffice.Helpers, as: H
+
+sdk = BluefinTecsUserBackoffice.new(H.deep(%{"apikey" => System.get_env("BLUEFIN_TECS_USER_BACKOFFICE_APIKEY")}))
+
+output_activate_digital_module = BluefinTecsUserBackoffice.output_activate_digital_module(sdk)
+```
+
+### Haskell
+
+```haskell
+import System.Environment (lookupEnv)
+import qualified SdkClient as Sdk
+import VoxgigStruct (Value (..), emptyMap)
+import SdkHelpers (jo)
+
+main :: IO ()
+main = do
+  mkey <- lookupEnv "BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"
+  opts <- jo [("apikey", maybe VNoval VStr mkey)]
+  sdk <- Sdk.newSdk opts
+```
+
+### Java
+
+```java
+import voxgig.bluefintecsuserbackofficesdk.core.BluefinTecsUserBackofficeSDK;
+
+Map<String, Object> options = new java.util.LinkedHashMap<>();
+options.put("apikey", System.getenv("BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"));
+BluefinTecsUserBackofficeSDK client = new BluefinTecsUserBackofficeSDK(options);
+
+```
+
+### JavaScript
+
+```js
+const { BluefinTecsUserBackofficeSDK } = require('@voxgig-sdk/bluefin-tecs-user-backoffice-js')
+
+const client = new BluefinTecsUserBackofficeSDK({
+  apikey: process.env.BLUEFIN_TECS_USER_BACKOFFICE_APIKEY,
+})
+
+```
+
+### Kotlin
+
+```kotlin
+import voxgig.bluefintecsuserbackofficesdk.core.BluefinTecsUserBackofficeSDK
+
+val client = BluefinTecsUserBackofficeSDK(mutableMapOf<String, Any?>(
+    "apikey" to System.getenv("BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"),
+))
+
+```
+
+### OCaml
+
+```ocaml
+open Voxgig_struct
+open Sdk_helpers
+
+let () =
+  let client = Sdk_client.make (jo [("apikey", Str (Sys.getenv "BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"))]) in
+```
+
+### Perl
+
+```perl
+use lib 'perl/lib';
+use BluefinTecsUserBackofficeSDK;
+
+my $client = BluefinTecsUserBackofficeSDK->new({
+    'apikey' => $ENV{'BLUEFIN_TECS_USER_BACKOFFICE_APIKEY'},
+});
+
+```
+
+### Rust
+
+```rust
+use bluefin_tecs_user_backoffice_sdk::{jo, BluefinTecsUserBackofficeSDK, Value};
+
+let client = BluefinTecsUserBackofficeSDK::new(jo(vec![
+    ("apikey", Value::str(std::env::var("BLUEFIN_TECS_USER_BACKOFFICE_APIKEY").unwrap_or_default())),
+]));
+
+```
+
+### Scala
+
+```scala
+import voxgig.bluefintecsuserbackofficesdk.core.BluefinTecsUserBackofficeSDK
+
+val options = new java.util.LinkedHashMap[String, Object]()
+options.put("apikey", System.getenv("BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"))
+val client = new BluefinTecsUserBackofficeSDK(options)
+
+```
+
+### Swift
+
+```swift
+import BluefinTecsUserBackofficeSdk
+
+let options = VMap()
+options.entries["apikey"] = .string(
+    ProcessInfo.processInfo.environment["BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"] ?? "")
+let client = BluefinTecsUserBackofficeSDK(options)
+
+```
+
+### Zig
+
+```zig
+const std = @import("std");
+const sdk = @import("sdk");
+const h = sdk.h;
+
+const client = sdk.BluefinTecsUserBackofficeSDK.new(h.jo(&.{
+    .{ "apikey", h.vstr(std.posix.getenv("BLUEFIN_TECS_USER_BACKOFFICE_APIKEY") orelse "") },
+}));
+
+```
+
 ## Direct and prepare
 
 For endpoints the entity model doesn't cover, use the low-level methods:
@@ -319,6 +690,160 @@ local result, err = client:direct({
 })
 ```
 
+**C:**
+```c
+PNError* err = NULL;
+voxgig_value* result = sdk_direct(client, cmap(3,
+    "path", v_str("/api/resource/{id}"),
+    "method", v_str("GET"),
+    "params", cmap(1, "id", v_str("example"))), &err);
+```
+
+**Clojure:**
+```clojure
+(def result
+  (api/direct client
+    (vs/jm "path" "/api/resource/{id}"
+           "method" "GET"
+           "params" (vs/jm "id" "example"))))
+```
+
+**C++:**
+```cpp
+Value result = client->direct(vmap({
+    {"path", Value("/api/resource/{id}")},
+    {"method", Value("GET")},
+    {"params", vmap({{"id", Value("example")}})},
+}));
+```
+
+**C#:**
+```csharp
+var result = client.Direct(new Dictionary<string, object?>
+{
+    ["path"] = "/api/resource/{id}",
+    ["method"] = "GET",
+    ["params"] = new Dictionary<string, object?> { ["id"] = "example" },
+});
+```
+
+**Dart:**
+```dart
+final result = await client.direct({
+  'path': '/api/resource/{id}',
+  'method': 'GET',
+  'params': {'id': 'example'},
+});
+```
+
+**Elixir:**
+```elixir
+result = BluefinTecsUserBackoffice.direct(sdk, BluefinTecsUserBackoffice.Helpers.deep(%{
+  "path" => "/api/resource/{id}",
+  "method" => "GET",
+  "params" => %{"id" => "example"}
+}))
+```
+
+**Haskell:**
+```haskell
+import qualified SdkClient as Sdk
+import qualified SdkFeatures as F
+import VoxgigStruct (Value (..))
+import SdkHelpers (jo)
+
+main :: IO ()
+main = do
+  sdk <- Sdk.newSdk0
+  params <- jo [("id", VStr "example")]
+  args <- jo [("path", VStr "/api/resource/{id}"), ("method", VStr "GET"), ("params", params)]
+  result <- F.direct sdk args
+  print result
+```
+
+**Java:**
+```java
+Map<String, Object> result = client.direct(Map.of(
+    "path", "/api/resource/{id}",
+    "method", "GET",
+    "params", Map.of("id", "example")));
+```
+
+**JavaScript:**
+```js
+const result = await client.direct({
+  path: '/api/resource/{id}',
+  method: 'GET',
+  params: { id: 'example' },
+})
+if (result instanceof Error) {
+  throw result
+}
+console.log(result.data)
+```
+
+**Kotlin:**
+```kotlin
+val result = client.direct(mutableMapOf<String, Any?>(
+    "path" to "/api/resource/{id}",
+    "method" to "GET",
+    "params" to mapOf("id" to "example")))
+```
+
+**OCaml:**
+```ocaml
+let result = Sdk_client.direct client (jo [
+    ("path", Str "/api/resource/{id}");
+    ("method", Str "GET");
+    ("params", jo [("id", Str "example")]);
+]) in
+ignore result
+```
+
+**Perl:**
+```perl
+my $result = $client->direct({
+    'path' => '/api/resource/{id}',
+    'method' => 'GET',
+    'params' => { 'id' => 'example' },
+});
+```
+
+**Rust:**
+```rust
+let result = client.direct(jo(vec![
+    ("path", Value::str("/api/resource/{id}")),
+    ("method", Value::str("GET")),
+    ("params", jo(vec![("id", Value::str("example"))])),
+]));
+```
+
+**Scala:**
+```scala
+val result = client.direct(java.util.Map.of(
+    "path", "/api/resource/{id}",
+    "method", "GET",
+    "params", java.util.Map.of("id", "example")))
+```
+
+**Swift:**
+```swift
+let result = client.direct(VMap([
+    ("path", .string("/api/resource/{id}")),
+    ("method", .string("GET")),
+    ("params", .map([("id", .string("example"))])),
+]))
+```
+
+**Zig:**
+```zig
+const result = client.direct(h.jo(&.{
+    .{ "path", h.vstr("/api/resource/{id}") },
+    .{ "method", h.vstr("GET") },
+    .{ "params", h.jo(&.{.{ "id", h.vstr("example") }}) },
+}));
+```
+
 ## Advanced
 
 > Everyday use only needs the sections above. This explains the internals
@@ -352,6 +877,22 @@ Pass custom features via the `extend` option at construction time.
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
+- [C](c/README.md)
+- [Clojure](clojure/README.md)
+- [C++](cpp/README.md)
+- [C#](csharp/README.md)
+- [Dart](dart/README.md)
+- [Elixir](elixir/README.md)
+- [Haskell](haskell/README.md)
+- [Java](java/README.md)
+- [JavaScript](js/README.md)
+- [Kotlin](kotlin/README.md)
+- [OCaml](ocaml/README.md)
+- [Perl](perl/README.md)
+- [Rust](rust/README.md)
+- [Scala](scala/README.md)
+- [Swift](swift/README.md)
+- [Zig](zig/README.md)
 
 ## Upstream API
 

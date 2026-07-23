@@ -1,0 +1,116 @@
+// Generated basic-flow test for the output_deactivate_user entity (model-driven,
+// unit mode; mirrors the rust/go TestEntity generator).
+
+#include "runner_support.hpp"
+
+using namespace sdk;
+using namespace sdk::rs;
+
+struct OutputDeactivateUserSetup {
+  std::shared_ptr<BluefinTecsUserBackofficeSDK> client;
+  Value data;
+  Value idmap;
+  Value env;
+  bool live = false;
+  bool synthetic_only = false;
+  long long now = 0;
+};
+
+static OutputDeactivateUserSetup output_deactivate_user_basic_setup(const Value& extra) {
+  load_env_local();
+
+  std::string entity_data_file = "../.sdk/test/entity/output_deactivate_user/OutputDeactivateUserTestData.json";
+  Value entity_data = vs::parse_json(read_file(entity_data_file));
+
+  Value options = vmap({{"entity", getp(entity_data, "existing")}});
+  auto client = BluefinTecsUserBackofficeSDK::testSDK(options, extra);
+
+  // idmap via transform (upper-cased id name synthetics), matching the donors.
+  Value idmap = Struct::transform(
+      vlist({Value("output_deactivate_user01"), Value("output_deactivate_user02"), Value("output_deactivate_user03")}),
+      vmap({{"`$PACK`", vlist({
+        Value(""),
+        vmap({
+          {"`$KEY`", Value("`$COPY`")},
+          {"`$VAL`", vlist({Value("`$FORMAT`"), Value("upper"), Value("`$COPY`")})}
+        })
+      })}}));
+  if (!idmap.is_map()) idmap = vmap();
+
+  Value env = env_override(vmap({
+    {"BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_DEACTIVATE_USER_ENTID", idmap},
+    {"BLUEFINTECSUSERBACKOFFICE_TEST_LIVE", Value("FALSE")},
+    {"BLUEFINTECSUSERBACKOFFICE_TEST_EXPLAIN", Value("FALSE")}
+  }));
+
+  Value idmap_resolved = Helpers::toMapAny(getp(env, "BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_DEACTIVATE_USER_ENTID"));
+  if (!idmap_resolved.is_map()) idmap_resolved = idmap;
+
+  bool live = getp(env, "BLUEFINTECSUSERBACKOFFICE_TEST_LIVE") == Value("TRUE");
+
+  OutputDeactivateUserSetup s;
+  s.client = client;
+  s.data = entity_data;
+  s.idmap = idmap_resolved;
+  s.env = env;
+  s.live = live;
+  s.synthetic_only = false;
+  s.now = now_ms();
+  return s;
+}
+
+static void output_deactivate_user_entity_instance() {
+  auto testsdk = BluefinTecsUserBackofficeSDK::testSDK();
+  auto ent = testsdk->output_deactivate_user();
+  ASSERT_EQ(ent->getName(), std::string("output_deactivate_user"), "entity name");
+}
+
+static void output_deactivate_user_entity_stream() {
+  // stream() runs the list op through the full pipeline and returns the
+  // result items. Seed two entities via test mode; with the streaming feature
+  // active it yields the feature's incremental items, else it falls back to
+  // the materialised items — either way every item is yielded.
+  Value seed = vmap({{"entity", vmap({{"output_deactivate_user", vmap({
+      {"strm01", vmap({{"id", Value("strm01")}})},
+      {"strm02", vmap({{"id", Value("strm02")}})}})}})}});
+  Value sdkopts = vmap({{"feature",
+      vmap({{"streaming", vmap({{"active", Value(true)}})}})}});
+
+  auto strsdk = BluefinTecsUserBackofficeSDK::testSDK(seed, sdkopts);
+  auto se = strsdk->output_deactivate_user();
+  std::vector<Value> items = se->stream("list", Value::undef(), Value::undef());
+  ASSERT_EQ((int)items.size(), 2, "stream yields both seeded items");
+
+  auto plainsdk = BluefinTecsUserBackofficeSDK::testSDK(seed, Value::undef());
+  auto pe = plainsdk->output_deactivate_user();
+  std::vector<Value> pitems = pe->stream("list", Value::undef(), Value::undef());
+  ASSERT_EQ((int)pitems.size(), 2, "fallback stream yields both items");
+}
+
+static void output_deactivate_user_entity_basic() {
+  auto setup = output_deactivate_user_basic_setup(Value::undef());
+  std::string mode = setup.live ? "live" : "unit";
+  for (const std::string& op : std::vector<std::string>{"create"}) {
+    auto sk = is_control_skipped("entityOp", std::string("output_deactivate_user.") + op, mode);
+    if (sk.first) { std::cerr << "skip: " << (sk.second.empty()? "sdk-test-control.json" : sk.second) << "\n"; return; }
+  }
+  auto client = setup.client;
+  // CREATE
+  auto output_deactivate_user_ref01_ent = client->output_deactivate_user();
+  Value output_deactivate_user_ref01_data = Helpers::toMapAny(getp(Struct::getpath(setup.data, {"new", "output_deactivate_user"}), "output_deactivate_user_ref01"));
+  if (!output_deactivate_user_ref01_data.is_map()) output_deactivate_user_ref01_data = vmap();
+  {
+    Value output_deactivate_user_ref01_data_result = output_deactivate_user_ref01_ent->create(Struct::clone(output_deactivate_user_ref01_data), Value::undef());
+    output_deactivate_user_ref01_data = Helpers::toMapAny(output_deactivate_user_ref01_data_result);
+    if (!output_deactivate_user_ref01_data.is_map()) output_deactivate_user_ref01_data = vmap();
+    ASSERT_TRUE(output_deactivate_user_ref01_data.is_map(), "expected create result to be a map");
+  }
+
+}
+
+int main() {
+  T_RUN(output_deactivate_user_entity_instance);
+  T_RUN(output_deactivate_user_entity_stream);
+  T_RUN(output_deactivate_user_entity_basic);
+  return sdktest::summary("output_deactivate_user_entity_test");
+}
