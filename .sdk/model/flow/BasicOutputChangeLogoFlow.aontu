@@ -1,0 +1,18 @@
+# BasicOutputChangeLogoFlow
+
+main: kit: flow: BasicOutputChangeLogoFlow:
+{
+  entity: "output_change_logo",
+  kind: "basic",
+  name: "BasicOutputChangeLogoFlow",
+  step: [
+    {
+      input: {
+        ref: "output_change_logo_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicOutputChangeLogoFlow"
+}

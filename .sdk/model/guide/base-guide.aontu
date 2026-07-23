@@ -1,0 +1,158 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 25
+  metrics: count: path: 25
+  metrics: count: method: 25
+
+  entity: output_activate_digital_module: {
+    path: "/activateDigitalModule": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_activate_portal_module: {
+    path: "/activateMerchantPortalModule": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_activate_store_module: {
+    path: "/activateAppStoreModule": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_activate_user: {
+    path: "/activateUser": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_assign_role: {
+    path: "/assignRoles": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_change_logo: {
+    path: "/changeLogo": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_create_mandator: {
+    path: "/createMandator": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_create_service_user: {
+    path: "/createServiceUser": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_deactivate_user: {
+    path: "/deactivateUser": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_get_kyc_document: {
+    path: "/getKycDocument": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_get_logo: {
+    path: "/getLogo": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: output_list_of_available_role: {
+    path: "/listOfAvailableRoles": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_list_of_mandator: {
+    path: "/listOfMandators": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_list_of_module: {
+    path: "/listOfModules": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_list_of_role_group: {
+    path: "/listOfRoleGroups": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_list_of_transactions_history: {
+    path: "/listOfTransactionsHistory": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_list_of_user: {
+    path: "/listOfUsers": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_provide_credential: {
+    path: "/provideCredentials": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_register_user: {
+    path: "/registerUser": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_remove_role: {
+    path: "/removeRoles": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_resend_link: {
+    path: "/resendLink": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_reset_password: {
+    path: "/resetPassword": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_update_consumer: {
+    path: "/updateConsumer": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: output_update_profile: {
+    path: "/updateProfile": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: version: {
+    path: "/version": {
+      op: load: method: *GET
+    }
+  }
+
+}

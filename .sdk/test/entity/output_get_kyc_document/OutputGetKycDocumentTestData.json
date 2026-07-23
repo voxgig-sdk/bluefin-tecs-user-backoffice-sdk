@@ -1,0 +1,37 @@
+{
+  "existing": {
+    "output_get_kyc_document": {
+      "OUTPUT_GET_KYC_DOCUMENT00": {
+        "case_id": "CASE01",
+        "encoded_data_base64": "s29",
+        "response_code": "s2a",
+        "response_message": "s2b",
+        "id": "OUTPUT_GET_KYC_DOCUMENT00"
+      },
+      "OUTPUT_GET_KYC_DOCUMENT01": {
+        "case_id": "CASE01",
+        "encoded_data_base64": "s51",
+        "response_code": "s52",
+        "response_message": "s53",
+        "id": "OUTPUT_GET_KYC_DOCUMENT01"
+      },
+      "OUTPUT_GET_KYC_DOCUMENT02": {
+        "case_id": "CASE01",
+        "encoded_data_base64": "s79",
+        "response_code": "s7a",
+        "response_message": "s7b",
+        "id": "OUTPUT_GET_KYC_DOCUMENT02"
+      }
+    }
+  },
+  "new": {
+    "output_get_kyc_document": {
+      "output_get_kyc_document_ref01": {
+        "case_id": "CASE01",
+        "encoded_data_base64": "sa1",
+        "response_code": "sa2",
+        "response_message": "sa3"
+      }
+    }
+  }
+}

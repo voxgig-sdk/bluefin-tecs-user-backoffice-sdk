@@ -1,0 +1,63 @@
+# Entity: output_list_of_available_role
+
+main: kit: entity: output_list_of_available_role: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "available_role"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "output_list_of_available_role"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "POST"
+          orig: "/listOfAvailableRoles"
+          parts: [
+            "listOfAvailableRoles"
+          ]
+          select: {
+            exist: [
+              "authorization"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

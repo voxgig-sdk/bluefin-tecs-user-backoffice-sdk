@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "output_list_of_available_role": {
+      "OUTPUT_LIST_OF_AVAILABLE_ROLE00": {
+        "available_role": [],
+        "response_code": "s1f",
+        "response_message": "s20",
+        "id": "OUTPUT_LIST_OF_AVAILABLE_ROLE00"
+      },
+      "OUTPUT_LIST_OF_AVAILABLE_ROLE01": {
+        "available_role": [],
+        "response_code": "s3d",
+        "response_message": "s3e",
+        "id": "OUTPUT_LIST_OF_AVAILABLE_ROLE01"
+      },
+      "OUTPUT_LIST_OF_AVAILABLE_ROLE02": {
+        "available_role": [],
+        "response_code": "s5b",
+        "response_message": "s5c",
+        "id": "OUTPUT_LIST_OF_AVAILABLE_ROLE02"
+      }
+    }
+  },
+  "new": {
+    "output_list_of_available_role": {
+      "output_list_of_available_role_ref01": {
+        "available_role": [],
+        "response_code": "s79",
+        "response_message": "s7a"
+      }
+    }
+  }
+}

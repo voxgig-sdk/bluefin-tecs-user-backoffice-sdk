@@ -1,0 +1,18 @@
+# BasicOutputDeactivateUserFlow
+
+main: kit: flow: BasicOutputDeactivateUserFlow:
+{
+  entity: "output_deactivate_user",
+  kind: "basic",
+  name: "BasicOutputDeactivateUserFlow",
+  step: [
+    {
+      input: {
+        ref: "output_deactivate_user_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicOutputDeactivateUserFlow"
+}

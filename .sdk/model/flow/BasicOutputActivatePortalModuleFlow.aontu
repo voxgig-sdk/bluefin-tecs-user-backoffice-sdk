@@ -1,0 +1,18 @@
+# BasicOutputActivatePortalModuleFlow
+
+main: kit: flow: BasicOutputActivatePortalModuleFlow:
+{
+  entity: "output_activate_portal_module",
+  kind: "basic",
+  name: "BasicOutputActivatePortalModuleFlow",
+  step: [
+    {
+      input: {
+        ref: "output_activate_portal_module_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicOutputActivatePortalModuleFlow"
+}

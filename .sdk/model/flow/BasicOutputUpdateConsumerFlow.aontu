@@ -1,0 +1,18 @@
+# BasicOutputUpdateConsumerFlow
+
+main: kit: flow: BasicOutputUpdateConsumerFlow:
+{
+  entity: "output_update_consumer",
+  kind: "basic",
+  name: "BasicOutputUpdateConsumerFlow",
+  step: [
+    {
+      input: {
+        ref: "output_update_consumer_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicOutputUpdateConsumerFlow"
+}

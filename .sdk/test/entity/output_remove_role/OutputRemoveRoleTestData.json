@@ -1,0 +1,37 @@
+{
+  "existing": {
+    "output_remove_role": {
+      "OUTPUT_REMOVE_ROLE00": {
+        "consumer_uuid": "s28",
+        "response_code": "s29",
+        "response_message": "s2a",
+        "role": [],
+        "id": "OUTPUT_REMOVE_ROLE00"
+      },
+      "OUTPUT_REMOVE_ROLE01": {
+        "consumer_uuid": "s50",
+        "response_code": "s51",
+        "response_message": "s52",
+        "role": [],
+        "id": "OUTPUT_REMOVE_ROLE01"
+      },
+      "OUTPUT_REMOVE_ROLE02": {
+        "consumer_uuid": "s78",
+        "response_code": "s79",
+        "response_message": "s7a",
+        "role": [],
+        "id": "OUTPUT_REMOVE_ROLE02"
+      }
+    }
+  },
+  "new": {
+    "output_remove_role": {
+      "output_remove_role_ref01": {
+        "consumer_uuid": "sa0",
+        "response_code": "sa1",
+        "response_message": "sa2",
+        "role": []
+      }
+    }
+  }
+}

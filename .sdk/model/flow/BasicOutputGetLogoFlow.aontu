@@ -1,0 +1,28 @@
+# BasicOutputGetLogoFlow
+
+main: kit: flow: BasicOutputGetLogoFlow:
+{
+  entity: "output_get_logo",
+  kind: "basic",
+  name: "BasicOutputGetLogoFlow",
+  step: [
+    {
+      input: {
+        ref: "output_get_logo_ref01",
+        srcdatavar: "output_get_logo_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-output_get_logo_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicOutputGetLogoFlow"
+}

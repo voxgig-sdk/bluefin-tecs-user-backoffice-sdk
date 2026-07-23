@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "output_create_service_user": {
+      "OUTPUT_CREATE_SERVICE_USER00": {
+        "mandator_name": "s1e",
+        "response_code": "s1f",
+        "response_message": "s20",
+        "id": "OUTPUT_CREATE_SERVICE_USER00"
+      },
+      "OUTPUT_CREATE_SERVICE_USER01": {
+        "mandator_name": "s3c",
+        "response_code": "s3d",
+        "response_message": "s3e",
+        "id": "OUTPUT_CREATE_SERVICE_USER01"
+      },
+      "OUTPUT_CREATE_SERVICE_USER02": {
+        "mandator_name": "s5a",
+        "response_code": "s5b",
+        "response_message": "s5c",
+        "id": "OUTPUT_CREATE_SERVICE_USER02"
+      }
+    }
+  },
+  "new": {
+    "output_create_service_user": {
+      "output_create_service_user_ref01": {
+        "mandator_name": "s78",
+        "response_code": "s79",
+        "response_message": "s7a"
+      }
+    }
+  }
+}

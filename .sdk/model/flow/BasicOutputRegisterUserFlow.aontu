@@ -1,0 +1,18 @@
+# BasicOutputRegisterUserFlow
+
+main: kit: flow: BasicOutputRegisterUserFlow:
+{
+  entity: "output_register_user",
+  kind: "basic",
+  name: "BasicOutputRegisterUserFlow",
+  step: [
+    {
+      input: {
+        ref: "output_register_user_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicOutputRegisterUserFlow"
+}

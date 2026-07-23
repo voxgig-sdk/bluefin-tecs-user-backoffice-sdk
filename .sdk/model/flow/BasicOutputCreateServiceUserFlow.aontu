@@ -1,0 +1,18 @@
+# BasicOutputCreateServiceUserFlow
+
+main: kit: flow: BasicOutputCreateServiceUserFlow:
+{
+  entity: "output_create_service_user",
+  kind: "basic",
+  name: "BasicOutputCreateServiceUserFlow",
+  step: [
+    {
+      input: {
+        ref: "output_create_service_user_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicOutputCreateServiceUserFlow"
+}

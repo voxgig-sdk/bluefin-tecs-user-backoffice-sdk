@@ -1,0 +1,18 @@
+# BasicOutputRemoveRoleFlow
+
+main: kit: flow: BasicOutputRemoveRoleFlow:
+{
+  entity: "output_remove_role",
+  kind: "basic",
+  name: "BasicOutputRemoveRoleFlow",
+  step: [
+    {
+      input: {
+        ref: "output_remove_role_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicOutputRemoveRoleFlow"
+}

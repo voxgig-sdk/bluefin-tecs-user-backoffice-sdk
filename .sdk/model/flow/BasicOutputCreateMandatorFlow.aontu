@@ -1,0 +1,18 @@
+# BasicOutputCreateMandatorFlow
+
+main: kit: flow: BasicOutputCreateMandatorFlow:
+{
+  entity: "output_create_mandator",
+  kind: "basic",
+  name: "BasicOutputCreateMandatorFlow",
+  step: [
+    {
+      input: {
+        ref: "output_create_mandator_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicOutputCreateMandatorFlow"
+}

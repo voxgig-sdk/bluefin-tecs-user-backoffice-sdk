@@ -1,0 +1,37 @@
+{
+  "existing": {
+    "output_list_of_module": {
+      "OUTPUT_LIST_OF_MODULE00": {
+        "list": [],
+        "pagination": {},
+        "response_code": "s2a",
+        "response_message": "s2b",
+        "id": "OUTPUT_LIST_OF_MODULE00"
+      },
+      "OUTPUT_LIST_OF_MODULE01": {
+        "list": [],
+        "pagination": {},
+        "response_code": "s52",
+        "response_message": "s53",
+        "id": "OUTPUT_LIST_OF_MODULE01"
+      },
+      "OUTPUT_LIST_OF_MODULE02": {
+        "list": [],
+        "pagination": {},
+        "response_code": "s7a",
+        "response_message": "s7b",
+        "id": "OUTPUT_LIST_OF_MODULE02"
+      }
+    }
+  },
+  "new": {
+    "output_list_of_module": {
+      "output_list_of_module_ref01": {
+        "list": [],
+        "pagination": {},
+        "response_code": "sa2",
+        "response_message": "sa3"
+      }
+    }
+  }
+}

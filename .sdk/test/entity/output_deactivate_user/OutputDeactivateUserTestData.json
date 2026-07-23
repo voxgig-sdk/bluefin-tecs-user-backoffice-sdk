@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "output_deactivate_user": {
+      "OUTPUT_DEACTIVATE_USER00": {
+        "consumer_uuid": "s1e",
+        "response_code": "s1f",
+        "response_message": "s20",
+        "id": "OUTPUT_DEACTIVATE_USER00"
+      },
+      "OUTPUT_DEACTIVATE_USER01": {
+        "consumer_uuid": "s3c",
+        "response_code": "s3d",
+        "response_message": "s3e",
+        "id": "OUTPUT_DEACTIVATE_USER01"
+      },
+      "OUTPUT_DEACTIVATE_USER02": {
+        "consumer_uuid": "s5a",
+        "response_code": "s5b",
+        "response_message": "s5c",
+        "id": "OUTPUT_DEACTIVATE_USER02"
+      }
+    }
+  },
+  "new": {
+    "output_deactivate_user": {
+      "output_deactivate_user_ref01": {
+        "consumer_uuid": "s78",
+        "response_code": "s79",
+        "response_message": "s7a"
+      }
+    }
+  }
+}

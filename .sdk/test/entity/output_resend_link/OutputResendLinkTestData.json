@@ -1,0 +1,45 @@
+{
+  "existing": {
+    "output_resend_link": {
+      "OUTPUT_RESEND_LINK00": {
+        "business_registration_number": "s3c",
+        "consumer_uuid": "s3d",
+        "email_confirmation_code": "s3e",
+        "phone_number": "s3f",
+        "response_code": "s40",
+        "response_message": "s41",
+        "id": "OUTPUT_RESEND_LINK00"
+      },
+      "OUTPUT_RESEND_LINK01": {
+        "business_registration_number": "s78",
+        "consumer_uuid": "s79",
+        "email_confirmation_code": "s7a",
+        "phone_number": "s7b",
+        "response_code": "s7c",
+        "response_message": "s7d",
+        "id": "OUTPUT_RESEND_LINK01"
+      },
+      "OUTPUT_RESEND_LINK02": {
+        "business_registration_number": "sb4",
+        "consumer_uuid": "sb5",
+        "email_confirmation_code": "sb6",
+        "phone_number": "sb7",
+        "response_code": "sb8",
+        "response_message": "sb9",
+        "id": "OUTPUT_RESEND_LINK02"
+      }
+    }
+  },
+  "new": {
+    "output_resend_link": {
+      "output_resend_link_ref01": {
+        "business_registration_number": "sf0",
+        "consumer_uuid": "sf1",
+        "email_confirmation_code": "sf2",
+        "phone_number": "sf3",
+        "response_code": "sf4",
+        "response_message": "sf5"
+      }
+    }
+  }
+}

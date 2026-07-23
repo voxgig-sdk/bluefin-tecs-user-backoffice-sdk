@@ -1,0 +1,18 @@
+# BasicOutputListOfAvailableRoleFlow
+
+main: kit: flow: BasicOutputListOfAvailableRoleFlow:
+{
+  entity: "output_list_of_available_role",
+  kind: "basic",
+  name: "BasicOutputListOfAvailableRoleFlow",
+  step: [
+    {
+      input: {
+        ref: "output_list_of_available_role_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicOutputListOfAvailableRoleFlow"
+}

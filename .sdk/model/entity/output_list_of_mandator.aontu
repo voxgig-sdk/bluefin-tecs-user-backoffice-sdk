@@ -1,0 +1,78 @@
+# Entity: output_list_of_mandator
+
+main: kit: entity: output_list_of_mandator: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "filter"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "list"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "pagination"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "sorting"
+      req: false
+      type: "`$OBJECT`"
+    }
+  ]
+
+  name: "output_list_of_mandator"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "POST"
+          orig: "/listOfMandators"
+          parts: [
+            "listOfMandators"
+          ]
+          select: {
+            exist: [
+              "authorization"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

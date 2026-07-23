@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "version": {
+      "VERSION00": {
+        "app_name": "s1e",
+        "build_date": "s1f",
+        "version": "s20",
+        "id": "VERSION00"
+      },
+      "VERSION01": {
+        "app_name": "s3c",
+        "build_date": "s3d",
+        "version": "s3e",
+        "id": "VERSION01"
+      },
+      "VERSION02": {
+        "app_name": "s5a",
+        "build_date": "s5b",
+        "version": "s5c",
+        "id": "VERSION02"
+      }
+    }
+  },
+  "new": {
+    "version": {
+      "version_ref01": {
+        "app_name": "s78",
+        "build_date": "s79",
+        "version": "s7a"
+      }
+    }
+  }
+}

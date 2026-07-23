@@ -1,0 +1,47 @@
+# Entity: version
+
+main: kit: entity: version: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "app_name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "build_date"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "version"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "version"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          method: "GET"
+          orig: "/version"
+          parts: [
+            "version"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

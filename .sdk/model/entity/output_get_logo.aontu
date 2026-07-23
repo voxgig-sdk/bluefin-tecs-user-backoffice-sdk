@@ -1,0 +1,68 @@
+# Entity: output_get_logo
+
+main: kit: entity: output_get_logo: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "content_as_base64"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "mime_type"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "output_get_logo"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/getLogo"
+          parts: [
+            "getLogo"
+          ]
+          select: {
+            exist: [
+              "authorization"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

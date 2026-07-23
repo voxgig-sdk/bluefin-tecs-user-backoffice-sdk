@@ -1,0 +1,68 @@
+# Entity: output_activate_portal_module
+
+main: kit: entity: output_activate_portal_module: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "client_secret"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "notification_email"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "output_activate_portal_module"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "POST"
+          orig: "/activateMerchantPortalModule"
+          parts: [
+            "activateMerchantPortalModule"
+          ]
+          select: {
+            exist: [
+              "authorization"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

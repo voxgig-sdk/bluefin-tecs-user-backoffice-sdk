@@ -1,0 +1,37 @@
+{
+  "existing": {
+    "output_activate_portal_module": {
+      "OUTPUT_ACTIVATE_PORTAL_MODULE00": {
+        "client_secret": "s28",
+        "notification_email": "s29",
+        "response_code": "s2a",
+        "response_message": "s2b",
+        "id": "OUTPUT_ACTIVATE_PORTAL_MODULE00"
+      },
+      "OUTPUT_ACTIVATE_PORTAL_MODULE01": {
+        "client_secret": "s50",
+        "notification_email": "s51",
+        "response_code": "s52",
+        "response_message": "s53",
+        "id": "OUTPUT_ACTIVATE_PORTAL_MODULE01"
+      },
+      "OUTPUT_ACTIVATE_PORTAL_MODULE02": {
+        "client_secret": "s78",
+        "notification_email": "s79",
+        "response_code": "s7a",
+        "response_message": "s7b",
+        "id": "OUTPUT_ACTIVATE_PORTAL_MODULE02"
+      }
+    }
+  },
+  "new": {
+    "output_activate_portal_module": {
+      "output_activate_portal_module_ref01": {
+        "client_secret": "sa0",
+        "notification_email": "sa1",
+        "response_code": "sa2",
+        "response_message": "sa3"
+      }
+    }
+  }
+}

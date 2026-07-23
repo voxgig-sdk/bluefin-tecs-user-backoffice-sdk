@@ -1,0 +1,163 @@
+# Entity: output_update_consumer
+
+main: kit: entity: output_update_consumer: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "city"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "consumer_uuid"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "consumerlanguage"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "country"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "date_of_birth"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "datetime_created"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "driver_licence_number"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "email"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "first_name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "identification_number"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "kyc_passed"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "last_name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "nationality"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "passport_number"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "phone_number"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "place_of_birth"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "state"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "street1"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "street2"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "transactionhistory_id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "zip"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "output_update_consumer"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "POST"
+          orig: "/updateConsumer"
+          parts: [
+            "updateConsumer"
+          ]
+          select: {
+            exist: [
+              "authorization"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

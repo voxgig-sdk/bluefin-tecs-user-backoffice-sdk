@@ -1,0 +1,78 @@
+# Entity: output_list_of_user
+
+main: kit: entity: output_list_of_user: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "filter"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "list"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "pagination"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "sorting"
+      req: false
+      type: "`$OBJECT`"
+    }
+  ]
+
+  name: "output_list_of_user"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "POST"
+          orig: "/listOfUsers"
+          parts: [
+            "listOfUsers"
+          ]
+          select: {
+            exist: [
+              "authorization"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

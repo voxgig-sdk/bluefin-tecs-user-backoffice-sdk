@@ -1,0 +1,18 @@
+# BasicOutputListOfMandatorFlow
+
+main: kit: flow: BasicOutputListOfMandatorFlow:
+{
+  entity: "output_list_of_mandator",
+  kind: "basic",
+  name: "BasicOutputListOfMandatorFlow",
+  step: [
+    {
+      input: {
+        ref: "output_list_of_mandator_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicOutputListOfMandatorFlow"
+}

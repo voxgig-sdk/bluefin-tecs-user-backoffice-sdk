@@ -1,0 +1,18 @@
+# BasicOutputActivateStoreModuleFlow
+
+main: kit: flow: BasicOutputActivateStoreModuleFlow:
+{
+  entity: "output_activate_store_module",
+  kind: "basic",
+  name: "BasicOutputActivateStoreModuleFlow",
+  step: [
+    {
+      input: {
+        ref: "output_activate_store_module_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicOutputActivateStoreModuleFlow"
+}

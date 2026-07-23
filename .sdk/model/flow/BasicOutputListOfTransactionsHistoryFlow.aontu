@@ -1,0 +1,18 @@
+# BasicOutputListOfTransactionsHistoryFlow
+
+main: kit: flow: BasicOutputListOfTransactionsHistoryFlow:
+{
+  entity: "output_list_of_transactions_history",
+  kind: "basic",
+  name: "BasicOutputListOfTransactionsHistoryFlow",
+  step: [
+    {
+      input: {
+        ref: "output_list_of_transactions_history_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicOutputListOfTransactionsHistoryFlow"
+}

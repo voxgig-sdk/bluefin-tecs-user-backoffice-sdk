@@ -1,0 +1,45 @@
+{
+  "existing": {
+    "output_list_of_transactions_history": {
+      "OUTPUT_LIST_OF_TRANSACTIONS_HISTORY00": {
+        "filter": {},
+        "list": [],
+        "pagination": {},
+        "response_code": "s3f",
+        "response_message": "s40",
+        "sorting": {},
+        "id": "OUTPUT_LIST_OF_TRANSACTIONS_HISTORY00"
+      },
+      "OUTPUT_LIST_OF_TRANSACTIONS_HISTORY01": {
+        "filter": {},
+        "list": [],
+        "pagination": {},
+        "response_code": "s7b",
+        "response_message": "s7c",
+        "sorting": {},
+        "id": "OUTPUT_LIST_OF_TRANSACTIONS_HISTORY01"
+      },
+      "OUTPUT_LIST_OF_TRANSACTIONS_HISTORY02": {
+        "filter": {},
+        "list": [],
+        "pagination": {},
+        "response_code": "sb7",
+        "response_message": "sb8",
+        "sorting": {},
+        "id": "OUTPUT_LIST_OF_TRANSACTIONS_HISTORY02"
+      }
+    }
+  },
+  "new": {
+    "output_list_of_transactions_history": {
+      "output_list_of_transactions_history_ref01": {
+        "filter": {},
+        "list": [],
+        "pagination": {},
+        "response_code": "sf3",
+        "response_message": "sf4",
+        "sorting": {}
+      }
+    }
+  }
+}

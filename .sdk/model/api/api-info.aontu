@@ -1,0 +1,38 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        email: "contact@tecs.at"
+        name: "Contact"
+        url: "https://www.tecs.at/contact/"
+      }
+      description: "Web service for user registration and management."
+      license: {
+        name: "Telecommunication & E-Commerce Solutions GmbH © All rights reserved"
+        url: "https://www.tecs.at/user-back-office-ws/license-url/"
+      }
+      security: {
+        in: "header"
+        name: "Authorization"
+        prefix: "Bearer"
+        scheme: "bearer-auth-header"
+        type: "http"
+      }
+      servers: [
+        {
+          description: "Generated server url"
+          url: "https://test.tecs.at/usermanagement-backofficews"
+        }
+      ]
+      summary: "Web service for user registration and management."
+      termsOfService: "https://www.tecs.at/user-back-office-ws/terms-of-service-url/"
+      title: "User Back Office Web Service Documentation"
+      version: "0.56.3"
+      website: "https://test.tecs.at"
+    }
+  }
+}
+

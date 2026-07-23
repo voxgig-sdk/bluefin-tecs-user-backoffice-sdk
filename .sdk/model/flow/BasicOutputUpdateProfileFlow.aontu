@@ -1,0 +1,18 @@
+# BasicOutputUpdateProfileFlow
+
+main: kit: flow: BasicOutputUpdateProfileFlow:
+{
+  entity: "output_update_profile",
+  kind: "basic",
+  name: "BasicOutputUpdateProfileFlow",
+  step: [
+    {
+      input: {
+        ref: "output_update_profile_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicOutputUpdateProfileFlow"
+}
