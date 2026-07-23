@@ -28,7 +28,7 @@ static BluefinTecsUserBackofficeSDK* output_get_logo_direct_setup(voxgig_value* 
   voxgig_value* opts = cmap(2,
     "base", v_str("http://localhost:8080"),
     "system", cmap(1, "fetch", vfn(output_get_logo_mock, mockres)));
-  return bluefin_tecs_user_backoffice_sdk_new(opts);
+  return bluefintecsuserbackoffice_sdk_new(opts);
 }
 
 int main(void) {
@@ -56,5 +56,5 @@ int main(void) {
     CHECK_INT_EQ(CALLS, 1, "load: one call");
   }
 
-  TEST_SUMMARY("bluefin_tecs_user_backoffice_output_get_logo_direct");
+  TEST_SUMMARY("bluefintecsuserbackoffice_output_get_logo_direct");
 }

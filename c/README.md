@@ -4,7 +4,7 @@
 
 The C SDK for the BluefinTecsUserBackoffice API — an entity-oriented client following idiomatic C conventions (explicit structs, function-pointer vtables, and a trailing `PNError**` out-param for errors).
 
-The SDK exposes the API as capitalised, semantic **Entities** — for example `bluefin_tecs_user_backoffice_output_activate_digital_module(client, NULL)` — each
+The SDK exposes the API as capitalised, semantic **Entities** — for example `bluefintecsuserbackoffice_output_activate_digital_module(client, NULL)` — each
 carrying a small, uniform set of operations (`load`, `create`) instead of raw URL
 paths and query strings. You work with named resources and verbs, which
 keeps the cognitive load low.
@@ -43,7 +43,7 @@ loading a specific record.
 ```c
 #include "core/api.h"
 
-BluefinTecsUserBackofficeSDK* client = bluefin_tecs_user_backoffice_sdk_new(cmap(1,
+BluefinTecsUserBackofficeSDK* client = bluefintecsuserbackoffice_sdk_new(cmap(1,
     "apikey", v_str(getenv("BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"))));
 PNError* err = NULL;
 ```
@@ -51,7 +51,7 @@ PNError* err = NULL;
 ### 4. Create, update, and remove
 
 ```c
-Entity* output_activate_digital_module = bluefin_tecs_user_backoffice_output_activate_digital_module(client, NULL);
+Entity* output_activate_digital_module = bluefintecsuserbackoffice_output_activate_digital_module(client, NULL);
 // Create — returns the bare created record
 voxgig_value* created = output_activate_digital_module->vt->create(output_activate_digital_module, cmap(2, "response_code", v_num(1), "response_message", v_str("example_response_message")), NULL, &err);
 
@@ -136,7 +136,7 @@ BluefinTecsUserBackofficeSDK* client = test_sdk(NULL, NULL);
 PNError* err = NULL;
 
 // Entity ops return the bare record and set *err on failure.
-Entity* output_get_logo = bluefin_tecs_user_backoffice_output_get_logo(client, NULL);
+Entity* output_get_logo = bluefintecsuserbackoffice_output_get_logo(client, NULL);
 voxgig_value* output_get_logo_rec = output_get_logo->vt->load(output_get_logo, NULL, NULL, &err);
 // output_get_logo_rec contains the mock response record
 ```
@@ -156,7 +156,7 @@ static voxgig_value* mock_fetch(void* ud, voxgig_value* args) {
         "json", json_thunk(cmap(1, "id", v_str("mock01"))));
 }
 
-BluefinTecsUserBackofficeSDK* client = bluefin_tecs_user_backoffice_sdk_new(cmap(2,
+BluefinTecsUserBackofficeSDK* client = bluefintecsuserbackoffice_sdk_new(cmap(2,
     "base", v_str("http://localhost:8080"),
     "system", cmap(1, "fetch", vfn(mock_fetch, NULL))));
 ```
@@ -166,7 +166,7 @@ BluefinTecsUserBackofficeSDK* client = bluefin_tecs_user_backoffice_sdk_new(cmap
 Override the base URL to reach a local or staging server:
 
 ```c
-BluefinTecsUserBackofficeSDK* client = bluefin_tecs_user_backoffice_sdk_new(cmap(1,
+BluefinTecsUserBackofficeSDK* client = bluefintecsuserbackoffice_sdk_new(cmap(1,
     "base", v_str("http://localhost:8080")));
 ```
 
@@ -193,7 +193,7 @@ cd c && make test
 ```c
 #include "core/api.h"
 
-BluefinTecsUserBackofficeSDK* client = bluefin_tecs_user_backoffice_sdk_new(options);
+BluefinTecsUserBackofficeSDK* client = bluefintecsuserbackoffice_sdk_new(options);
 ```
 
 Creates a new SDK client. `options` is a `voxgig_value*` map (`NULL` for
@@ -223,31 +223,31 @@ Creates a test-mode client with mock transport. Both arguments may be
 | --- | --- | --- |
 | `sdk_prepare` | `(BluefinTecsUserBackofficeSDK*, fetchargs, PNError**) -> voxgig_value*` | Build an HTTP request definition without sending. |
 | `sdk_direct` | `(BluefinTecsUserBackofficeSDK*, fetchargs, PNError**) -> voxgig_value*` | Build and send an HTTP request. Returns a result map (branch on `ok`). |
-| `bluefin_tecs_user_backoffice_output_activate_digital_module` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputActivateDigitalModule entity instance. |
-| `bluefin_tecs_user_backoffice_output_activate_portal_module` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputActivatePortalModule entity instance. |
-| `bluefin_tecs_user_backoffice_output_activate_store_module` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputActivateStoreModule entity instance. |
-| `bluefin_tecs_user_backoffice_output_activate_user` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputActivateUser entity instance. |
-| `bluefin_tecs_user_backoffice_output_assign_role` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputAssignRole entity instance. |
-| `bluefin_tecs_user_backoffice_output_change_logo` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputChangeLogo entity instance. |
-| `bluefin_tecs_user_backoffice_output_create_mandator` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputCreateMandator entity instance. |
-| `bluefin_tecs_user_backoffice_output_create_service_user` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputCreateServiceUser entity instance. |
-| `bluefin_tecs_user_backoffice_output_deactivate_user` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputDeactivateUser entity instance. |
-| `bluefin_tecs_user_backoffice_output_get_kyc_document` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputGetKycDocument entity instance. |
-| `bluefin_tecs_user_backoffice_output_get_logo` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputGetLogo entity instance. |
-| `bluefin_tecs_user_backoffice_output_list_of_available_role` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputListOfAvailableRole entity instance. |
-| `bluefin_tecs_user_backoffice_output_list_of_mandator` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputListOfMandator entity instance. |
-| `bluefin_tecs_user_backoffice_output_list_of_module` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputListOfModule entity instance. |
-| `bluefin_tecs_user_backoffice_output_list_of_role_group` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputListOfRoleGroup entity instance. |
-| `bluefin_tecs_user_backoffice_output_list_of_transactions_history` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputListOfTransactionsHistory entity instance. |
-| `bluefin_tecs_user_backoffice_output_list_of_user` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputListOfUser entity instance. |
-| `bluefin_tecs_user_backoffice_output_provide_credential` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputProvideCredential entity instance. |
-| `bluefin_tecs_user_backoffice_output_register_user` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputRegisterUser entity instance. |
-| `bluefin_tecs_user_backoffice_output_remove_role` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputRemoveRole entity instance. |
-| `bluefin_tecs_user_backoffice_output_resend_link` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputResendLink entity instance. |
-| `bluefin_tecs_user_backoffice_output_reset_password` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputResetPassword entity instance. |
-| `bluefin_tecs_user_backoffice_output_update_consumer` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputUpdateConsumer entity instance. |
-| `bluefin_tecs_user_backoffice_output_update_profile` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputUpdateProfile entity instance. |
-| `bluefin_tecs_user_backoffice_version` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create a Version entity instance. |
+| `bluefintecsuserbackoffice_output_activate_digital_module` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputActivateDigitalModule entity instance. |
+| `bluefintecsuserbackoffice_output_activate_portal_module` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputActivatePortalModule entity instance. |
+| `bluefintecsuserbackoffice_output_activate_store_module` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputActivateStoreModule entity instance. |
+| `bluefintecsuserbackoffice_output_activate_user` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputActivateUser entity instance. |
+| `bluefintecsuserbackoffice_output_assign_role` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputAssignRole entity instance. |
+| `bluefintecsuserbackoffice_output_change_logo` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputChangeLogo entity instance. |
+| `bluefintecsuserbackoffice_output_create_mandator` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputCreateMandator entity instance. |
+| `bluefintecsuserbackoffice_output_create_service_user` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputCreateServiceUser entity instance. |
+| `bluefintecsuserbackoffice_output_deactivate_user` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputDeactivateUser entity instance. |
+| `bluefintecsuserbackoffice_output_get_kyc_document` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputGetKycDocument entity instance. |
+| `bluefintecsuserbackoffice_output_get_logo` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputGetLogo entity instance. |
+| `bluefintecsuserbackoffice_output_list_of_available_role` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputListOfAvailableRole entity instance. |
+| `bluefintecsuserbackoffice_output_list_of_mandator` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputListOfMandator entity instance. |
+| `bluefintecsuserbackoffice_output_list_of_module` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputListOfModule entity instance. |
+| `bluefintecsuserbackoffice_output_list_of_role_group` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputListOfRoleGroup entity instance. |
+| `bluefintecsuserbackoffice_output_list_of_transactions_history` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputListOfTransactionsHistory entity instance. |
+| `bluefintecsuserbackoffice_output_list_of_user` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputListOfUser entity instance. |
+| `bluefintecsuserbackoffice_output_provide_credential` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputProvideCredential entity instance. |
+| `bluefintecsuserbackoffice_output_register_user` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputRegisterUser entity instance. |
+| `bluefintecsuserbackoffice_output_remove_role` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputRemoveRole entity instance. |
+| `bluefintecsuserbackoffice_output_resend_link` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputResendLink entity instance. |
+| `bluefintecsuserbackoffice_output_reset_password` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputResetPassword entity instance. |
+| `bluefintecsuserbackoffice_output_update_consumer` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputUpdateConsumer entity instance. |
+| `bluefintecsuserbackoffice_output_update_profile` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create an OutputUpdateProfile entity instance. |
+| `bluefintecsuserbackoffice_version` | `(BluefinTecsUserBackofficeSDK*, entopts) -> Entity*` | Create a Version entity instance. |
 
 ### Entity interface (vtable)
 
@@ -673,7 +673,7 @@ API path: `/version`
 
 ### OutputActivateDigitalModule
 
-Create an instance: `Entity* output_activate_digital_module = bluefin_tecs_user_backoffice_output_activate_digital_module(client, NULL);`
+Create an instance: `Entity* output_activate_digital_module = bluefintecsuserbackoffice_output_activate_digital_module(client, NULL);`
 
 #### Operations
 
@@ -691,14 +691,14 @@ Create an instance: `Entity* output_activate_digital_module = bluefin_tecs_user_
 #### Example: Create
 
 ```c
-Entity* output_activate_digital_module = bluefin_tecs_user_backoffice_output_activate_digital_module(client, NULL);
+Entity* output_activate_digital_module = bluefintecsuserbackoffice_output_activate_digital_module(client, NULL);
 voxgig_value* output_activate_digital_module_rec = output_activate_digital_module->vt->create(output_activate_digital_module, NULL, NULL, &err);
 ```
 
 
 ### OutputActivatePortalModule
 
-Create an instance: `Entity* output_activate_portal_module = bluefin_tecs_user_backoffice_output_activate_portal_module(client, NULL);`
+Create an instance: `Entity* output_activate_portal_module = bluefintecsuserbackoffice_output_activate_portal_module(client, NULL);`
 
 #### Operations
 
@@ -718,7 +718,7 @@ Create an instance: `Entity* output_activate_portal_module = bluefin_tecs_user_b
 #### Example: Create
 
 ```c
-Entity* output_activate_portal_module = bluefin_tecs_user_backoffice_output_activate_portal_module(client, NULL);
+Entity* output_activate_portal_module = bluefintecsuserbackoffice_output_activate_portal_module(client, NULL);
 voxgig_value* output_activate_portal_module_rec = output_activate_portal_module->vt->create(output_activate_portal_module, cmap(2,
     "client_secret", v_str("example_client_secret"),  // char*
     "notification_email", v_str("example_notification_email"))  // char*
@@ -728,7 +728,7 @@ voxgig_value* output_activate_portal_module_rec = output_activate_portal_module-
 
 ### OutputActivateStoreModule
 
-Create an instance: `Entity* output_activate_store_module = bluefin_tecs_user_backoffice_output_activate_store_module(client, NULL);`
+Create an instance: `Entity* output_activate_store_module = bluefintecsuserbackoffice_output_activate_store_module(client, NULL);`
 
 #### Operations
 
@@ -746,14 +746,14 @@ Create an instance: `Entity* output_activate_store_module = bluefin_tecs_user_ba
 #### Example: Create
 
 ```c
-Entity* output_activate_store_module = bluefin_tecs_user_backoffice_output_activate_store_module(client, NULL);
+Entity* output_activate_store_module = bluefintecsuserbackoffice_output_activate_store_module(client, NULL);
 voxgig_value* output_activate_store_module_rec = output_activate_store_module->vt->create(output_activate_store_module, NULL, NULL, &err);
 ```
 
 
 ### OutputActivateUser
 
-Create an instance: `Entity* output_activate_user = bluefin_tecs_user_backoffice_output_activate_user(client, NULL);`
+Create an instance: `Entity* output_activate_user = bluefintecsuserbackoffice_output_activate_user(client, NULL);`
 
 #### Operations
 
@@ -772,14 +772,14 @@ Create an instance: `Entity* output_activate_user = bluefin_tecs_user_backoffice
 #### Example: Create
 
 ```c
-Entity* output_activate_user = bluefin_tecs_user_backoffice_output_activate_user(client, NULL);
+Entity* output_activate_user = bluefintecsuserbackoffice_output_activate_user(client, NULL);
 voxgig_value* output_activate_user_rec = output_activate_user->vt->create(output_activate_user, NULL, NULL, &err);
 ```
 
 
 ### OutputAssignRole
 
-Create an instance: `Entity* output_assign_role = bluefin_tecs_user_backoffice_output_assign_role(client, NULL);`
+Create an instance: `Entity* output_assign_role = bluefintecsuserbackoffice_output_assign_role(client, NULL);`
 
 #### Operations
 
@@ -799,7 +799,7 @@ Create an instance: `Entity* output_assign_role = bluefin_tecs_user_backoffice_o
 #### Example: Create
 
 ```c
-Entity* output_assign_role = bluefin_tecs_user_backoffice_output_assign_role(client, NULL);
+Entity* output_assign_role = bluefintecsuserbackoffice_output_assign_role(client, NULL);
 voxgig_value* output_assign_role_rec = output_assign_role->vt->create(output_assign_role, cmap(2,
     "consumer_uuid", v_str("example_consumer_uuid"),  // char*
     "role", v_list())  // voxgig_value* (list)
@@ -809,7 +809,7 @@ voxgig_value* output_assign_role_rec = output_assign_role->vt->create(output_ass
 
 ### OutputChangeLogo
 
-Create an instance: `Entity* output_change_logo = bluefin_tecs_user_backoffice_output_change_logo(client, NULL);`
+Create an instance: `Entity* output_change_logo = bluefintecsuserbackoffice_output_change_logo(client, NULL);`
 
 #### Operations
 
@@ -829,7 +829,7 @@ Create an instance: `Entity* output_change_logo = bluefin_tecs_user_backoffice_o
 #### Example: Create
 
 ```c
-Entity* output_change_logo = bluefin_tecs_user_backoffice_output_change_logo(client, NULL);
+Entity* output_change_logo = bluefintecsuserbackoffice_output_change_logo(client, NULL);
 voxgig_value* output_change_logo_rec = output_change_logo->vt->create(output_change_logo, cmap(2,
     "content_as_base64", v_str("example_content_as_base64"),  // char*
     "mime_type", v_str("example_mime_type"))  // char*
@@ -839,7 +839,7 @@ voxgig_value* output_change_logo_rec = output_change_logo->vt->create(output_cha
 
 ### OutputCreateMandator
 
-Create an instance: `Entity* output_create_mandator = bluefin_tecs_user_backoffice_output_create_mandator(client, NULL);`
+Create an instance: `Entity* output_create_mandator = bluefintecsuserbackoffice_output_create_mandator(client, NULL);`
 
 #### Operations
 
@@ -876,7 +876,7 @@ Create an instance: `Entity* output_create_mandator = bluefin_tecs_user_backoffi
 #### Example: Create
 
 ```c
-Entity* output_create_mandator = bluefin_tecs_user_backoffice_output_create_mandator(client, NULL);
+Entity* output_create_mandator = bluefintecsuserbackoffice_output_create_mandator(client, NULL);
 voxgig_value* output_create_mandator_rec = output_create_mandator->vt->create(output_create_mandator, cmap(5,
     "description", v_str("example_description"),  // char*
     "email", v_str("example_email"),  // char*
@@ -889,7 +889,7 @@ voxgig_value* output_create_mandator_rec = output_create_mandator->vt->create(ou
 
 ### OutputCreateServiceUser
 
-Create an instance: `Entity* output_create_service_user = bluefin_tecs_user_backoffice_output_create_service_user(client, NULL);`
+Create an instance: `Entity* output_create_service_user = bluefintecsuserbackoffice_output_create_service_user(client, NULL);`
 
 #### Operations
 
@@ -908,7 +908,7 @@ Create an instance: `Entity* output_create_service_user = bluefin_tecs_user_back
 #### Example: Create
 
 ```c
-Entity* output_create_service_user = bluefin_tecs_user_backoffice_output_create_service_user(client, NULL);
+Entity* output_create_service_user = bluefintecsuserbackoffice_output_create_service_user(client, NULL);
 voxgig_value* output_create_service_user_rec = output_create_service_user->vt->create(output_create_service_user, cmap(1,
     "mandator_name", v_str("example_mandator_name"))  // char*
 , NULL, &err);
@@ -917,7 +917,7 @@ voxgig_value* output_create_service_user_rec = output_create_service_user->vt->c
 
 ### OutputDeactivateUser
 
-Create an instance: `Entity* output_deactivate_user = bluefin_tecs_user_backoffice_output_deactivate_user(client, NULL);`
+Create an instance: `Entity* output_deactivate_user = bluefintecsuserbackoffice_output_deactivate_user(client, NULL);`
 
 #### Operations
 
@@ -936,14 +936,14 @@ Create an instance: `Entity* output_deactivate_user = bluefin_tecs_user_backoffi
 #### Example: Create
 
 ```c
-Entity* output_deactivate_user = bluefin_tecs_user_backoffice_output_deactivate_user(client, NULL);
+Entity* output_deactivate_user = bluefintecsuserbackoffice_output_deactivate_user(client, NULL);
 voxgig_value* output_deactivate_user_rec = output_deactivate_user->vt->create(output_deactivate_user, NULL, NULL, &err);
 ```
 
 
 ### OutputGetKycDocument
 
-Create an instance: `Entity* output_get_kyc_document = bluefin_tecs_user_backoffice_output_get_kyc_document(client, NULL);`
+Create an instance: `Entity* output_get_kyc_document = bluefintecsuserbackoffice_output_get_kyc_document(client, NULL);`
 
 #### Operations
 
@@ -963,14 +963,14 @@ Create an instance: `Entity* output_get_kyc_document = bluefin_tecs_user_backoff
 #### Example: Create
 
 ```c
-Entity* output_get_kyc_document = bluefin_tecs_user_backoffice_output_get_kyc_document(client, NULL);
+Entity* output_get_kyc_document = bluefintecsuserbackoffice_output_get_kyc_document(client, NULL);
 voxgig_value* output_get_kyc_document_rec = output_get_kyc_document->vt->create(output_get_kyc_document, NULL, NULL, &err);
 ```
 
 
 ### OutputGetLogo
 
-Create an instance: `Entity* output_get_logo = bluefin_tecs_user_backoffice_output_get_logo(client, NULL);`
+Create an instance: `Entity* output_get_logo = bluefintecsuserbackoffice_output_get_logo(client, NULL);`
 
 #### Operations
 
@@ -990,14 +990,14 @@ Create an instance: `Entity* output_get_logo = bluefin_tecs_user_backoffice_outp
 #### Example: Load
 
 ```c
-Entity* output_get_logo = bluefin_tecs_user_backoffice_output_get_logo(client, NULL);
+Entity* output_get_logo = bluefintecsuserbackoffice_output_get_logo(client, NULL);
 voxgig_value* output_get_logo_rec = output_get_logo->vt->load(output_get_logo, NULL, NULL, &err);
 ```
 
 
 ### OutputListOfAvailableRole
 
-Create an instance: `Entity* output_list_of_available_role = bluefin_tecs_user_backoffice_output_list_of_available_role(client, NULL);`
+Create an instance: `Entity* output_list_of_available_role = bluefintecsuserbackoffice_output_list_of_available_role(client, NULL);`
 
 #### Operations
 
@@ -1016,14 +1016,14 @@ Create an instance: `Entity* output_list_of_available_role = bluefin_tecs_user_b
 #### Example: Create
 
 ```c
-Entity* output_list_of_available_role = bluefin_tecs_user_backoffice_output_list_of_available_role(client, NULL);
+Entity* output_list_of_available_role = bluefintecsuserbackoffice_output_list_of_available_role(client, NULL);
 voxgig_value* output_list_of_available_role_rec = output_list_of_available_role->vt->create(output_list_of_available_role, NULL, NULL, &err);
 ```
 
 
 ### OutputListOfMandator
 
-Create an instance: `Entity* output_list_of_mandator = bluefin_tecs_user_backoffice_output_list_of_mandator(client, NULL);`
+Create an instance: `Entity* output_list_of_mandator = bluefintecsuserbackoffice_output_list_of_mandator(client, NULL);`
 
 #### Operations
 
@@ -1045,14 +1045,14 @@ Create an instance: `Entity* output_list_of_mandator = bluefin_tecs_user_backoff
 #### Example: Create
 
 ```c
-Entity* output_list_of_mandator = bluefin_tecs_user_backoffice_output_list_of_mandator(client, NULL);
+Entity* output_list_of_mandator = bluefintecsuserbackoffice_output_list_of_mandator(client, NULL);
 voxgig_value* output_list_of_mandator_rec = output_list_of_mandator->vt->create(output_list_of_mandator, NULL, NULL, &err);
 ```
 
 
 ### OutputListOfModule
 
-Create an instance: `Entity* output_list_of_module = bluefin_tecs_user_backoffice_output_list_of_module(client, NULL);`
+Create an instance: `Entity* output_list_of_module = bluefintecsuserbackoffice_output_list_of_module(client, NULL);`
 
 #### Operations
 
@@ -1072,14 +1072,14 @@ Create an instance: `Entity* output_list_of_module = bluefin_tecs_user_backoffic
 #### Example: Create
 
 ```c
-Entity* output_list_of_module = bluefin_tecs_user_backoffice_output_list_of_module(client, NULL);
+Entity* output_list_of_module = bluefintecsuserbackoffice_output_list_of_module(client, NULL);
 voxgig_value* output_list_of_module_rec = output_list_of_module->vt->create(output_list_of_module, NULL, NULL, &err);
 ```
 
 
 ### OutputListOfRoleGroup
 
-Create an instance: `Entity* output_list_of_role_group = bluefin_tecs_user_backoffice_output_list_of_role_group(client, NULL);`
+Create an instance: `Entity* output_list_of_role_group = bluefintecsuserbackoffice_output_list_of_role_group(client, NULL);`
 
 #### Operations
 
@@ -1101,14 +1101,14 @@ Create an instance: `Entity* output_list_of_role_group = bluefin_tecs_user_backo
 #### Example: Create
 
 ```c
-Entity* output_list_of_role_group = bluefin_tecs_user_backoffice_output_list_of_role_group(client, NULL);
+Entity* output_list_of_role_group = bluefintecsuserbackoffice_output_list_of_role_group(client, NULL);
 voxgig_value* output_list_of_role_group_rec = output_list_of_role_group->vt->create(output_list_of_role_group, NULL, NULL, &err);
 ```
 
 
 ### OutputListOfTransactionsHistory
 
-Create an instance: `Entity* output_list_of_transactions_history = bluefin_tecs_user_backoffice_output_list_of_transactions_history(client, NULL);`
+Create an instance: `Entity* output_list_of_transactions_history = bluefintecsuserbackoffice_output_list_of_transactions_history(client, NULL);`
 
 #### Operations
 
@@ -1130,14 +1130,14 @@ Create an instance: `Entity* output_list_of_transactions_history = bluefin_tecs_
 #### Example: Create
 
 ```c
-Entity* output_list_of_transactions_history = bluefin_tecs_user_backoffice_output_list_of_transactions_history(client, NULL);
+Entity* output_list_of_transactions_history = bluefintecsuserbackoffice_output_list_of_transactions_history(client, NULL);
 voxgig_value* output_list_of_transactions_history_rec = output_list_of_transactions_history->vt->create(output_list_of_transactions_history, NULL, NULL, &err);
 ```
 
 
 ### OutputListOfUser
 
-Create an instance: `Entity* output_list_of_user = bluefin_tecs_user_backoffice_output_list_of_user(client, NULL);`
+Create an instance: `Entity* output_list_of_user = bluefintecsuserbackoffice_output_list_of_user(client, NULL);`
 
 #### Operations
 
@@ -1159,14 +1159,14 @@ Create an instance: `Entity* output_list_of_user = bluefin_tecs_user_backoffice_
 #### Example: Create
 
 ```c
-Entity* output_list_of_user = bluefin_tecs_user_backoffice_output_list_of_user(client, NULL);
+Entity* output_list_of_user = bluefintecsuserbackoffice_output_list_of_user(client, NULL);
 voxgig_value* output_list_of_user_rec = output_list_of_user->vt->create(output_list_of_user, NULL, NULL, &err);
 ```
 
 
 ### OutputProvideCredential
 
-Create an instance: `Entity* output_provide_credential = bluefin_tecs_user_backoffice_output_provide_credential(client, NULL);`
+Create an instance: `Entity* output_provide_credential = bluefintecsuserbackoffice_output_provide_credential(client, NULL);`
 
 #### Operations
 
@@ -1187,7 +1187,7 @@ Create an instance: `Entity* output_provide_credential = bluefin_tecs_user_backo
 #### Example: Create
 
 ```c
-Entity* output_provide_credential = bluefin_tecs_user_backoffice_output_provide_credential(client, NULL);
+Entity* output_provide_credential = bluefintecsuserbackoffice_output_provide_credential(client, NULL);
 voxgig_value* output_provide_credential_rec = output_provide_credential->vt->create(output_provide_credential, cmap(1,
     "mandator_name", v_str("example_mandator_name"))  // char*
 , NULL, &err);
@@ -1196,7 +1196,7 @@ voxgig_value* output_provide_credential_rec = output_provide_credential->vt->cre
 
 ### OutputRegisterUser
 
-Create an instance: `Entity* output_register_user = bluefin_tecs_user_backoffice_output_register_user(client, NULL);`
+Create an instance: `Entity* output_register_user = bluefintecsuserbackoffice_output_register_user(client, NULL);`
 
 #### Operations
 
@@ -1233,7 +1233,7 @@ Create an instance: `Entity* output_register_user = bluefin_tecs_user_backoffice
 #### Example: Create
 
 ```c
-Entity* output_register_user = bluefin_tecs_user_backoffice_output_register_user(client, NULL);
+Entity* output_register_user = bluefintecsuserbackoffice_output_register_user(client, NULL);
 voxgig_value* output_register_user_rec = output_register_user->vt->create(output_register_user, cmap(1,
     "email", v_str("example_email"))  // char*
 , NULL, &err);
@@ -1242,7 +1242,7 @@ voxgig_value* output_register_user_rec = output_register_user->vt->create(output
 
 ### OutputRemoveRole
 
-Create an instance: `Entity* output_remove_role = bluefin_tecs_user_backoffice_output_remove_role(client, NULL);`
+Create an instance: `Entity* output_remove_role = bluefintecsuserbackoffice_output_remove_role(client, NULL);`
 
 #### Operations
 
@@ -1262,14 +1262,14 @@ Create an instance: `Entity* output_remove_role = bluefin_tecs_user_backoffice_o
 #### Example: Create
 
 ```c
-Entity* output_remove_role = bluefin_tecs_user_backoffice_output_remove_role(client, NULL);
+Entity* output_remove_role = bluefintecsuserbackoffice_output_remove_role(client, NULL);
 voxgig_value* output_remove_role_rec = output_remove_role->vt->create(output_remove_role, NULL, NULL, &err);
 ```
 
 
 ### OutputResendLink
 
-Create an instance: `Entity* output_resend_link = bluefin_tecs_user_backoffice_output_resend_link(client, NULL);`
+Create an instance: `Entity* output_resend_link = bluefintecsuserbackoffice_output_resend_link(client, NULL);`
 
 #### Operations
 
@@ -1291,7 +1291,7 @@ Create an instance: `Entity* output_resend_link = bluefin_tecs_user_backoffice_o
 #### Example: Create
 
 ```c
-Entity* output_resend_link = bluefin_tecs_user_backoffice_output_resend_link(client, NULL);
+Entity* output_resend_link = bluefintecsuserbackoffice_output_resend_link(client, NULL);
 voxgig_value* output_resend_link_rec = output_resend_link->vt->create(output_resend_link, cmap(1,
     "consumer_uuid", v_str("example_consumer_uuid"))  // char*
 , NULL, &err);
@@ -1300,7 +1300,7 @@ voxgig_value* output_resend_link_rec = output_resend_link->vt->create(output_res
 
 ### OutputResetPassword
 
-Create an instance: `Entity* output_reset_password = bluefin_tecs_user_backoffice_output_reset_password(client, NULL);`
+Create an instance: `Entity* output_reset_password = bluefintecsuserbackoffice_output_reset_password(client, NULL);`
 
 #### Operations
 
@@ -1320,14 +1320,14 @@ Create an instance: `Entity* output_reset_password = bluefin_tecs_user_backoffic
 #### Example: Create
 
 ```c
-Entity* output_reset_password = bluefin_tecs_user_backoffice_output_reset_password(client, NULL);
+Entity* output_reset_password = bluefintecsuserbackoffice_output_reset_password(client, NULL);
 voxgig_value* output_reset_password_rec = output_reset_password->vt->create(output_reset_password, NULL, NULL, &err);
 ```
 
 
 ### OutputUpdateConsumer
 
-Create an instance: `Entity* output_update_consumer = bluefin_tecs_user_backoffice_output_update_consumer(client, NULL);`
+Create an instance: `Entity* output_update_consumer = bluefintecsuserbackoffice_output_update_consumer(client, NULL);`
 
 #### Operations
 
@@ -1366,7 +1366,7 @@ Create an instance: `Entity* output_update_consumer = bluefin_tecs_user_backoffi
 #### Example: Create
 
 ```c
-Entity* output_update_consumer = bluefin_tecs_user_backoffice_output_update_consumer(client, NULL);
+Entity* output_update_consumer = bluefintecsuserbackoffice_output_update_consumer(client, NULL);
 voxgig_value* output_update_consumer_rec = output_update_consumer->vt->create(output_update_consumer, cmap(1,
     "consumer_uuid", v_str("example_consumer_uuid"))  // char*
 , NULL, &err);
@@ -1375,7 +1375,7 @@ voxgig_value* output_update_consumer_rec = output_update_consumer->vt->create(ou
 
 ### OutputUpdateProfile
 
-Create an instance: `Entity* output_update_profile = bluefin_tecs_user_backoffice_output_update_profile(client, NULL);`
+Create an instance: `Entity* output_update_profile = bluefintecsuserbackoffice_output_update_profile(client, NULL);`
 
 #### Operations
 
@@ -1398,14 +1398,14 @@ Create an instance: `Entity* output_update_profile = bluefin_tecs_user_backoffic
 #### Example: Create
 
 ```c
-Entity* output_update_profile = bluefin_tecs_user_backoffice_output_update_profile(client, NULL);
+Entity* output_update_profile = bluefintecsuserbackoffice_output_update_profile(client, NULL);
 voxgig_value* output_update_profile_rec = output_update_profile->vt->create(output_update_profile, NULL, NULL, &err);
 ```
 
 
 ### Version
 
-Create an instance: `Entity* version = bluefin_tecs_user_backoffice_version(client, NULL);`
+Create an instance: `Entity* version = bluefintecsuserbackoffice_version(client, NULL);`
 
 #### Operations
 
@@ -1424,7 +1424,7 @@ Create an instance: `Entity* version = bluefin_tecs_user_backoffice_version(clie
 #### Example: Load
 
 ```c
-Entity* version = bluefin_tecs_user_backoffice_version(client, NULL);
+Entity* version = bluefintecsuserbackoffice_version(client, NULL);
 voxgig_value* version_rec = version->vt->load(version, NULL, NULL, &err);
 ```
 

@@ -96,7 +96,7 @@ local result, err = client:OutputGetLogo():load()
 
 BluefinTecsUserBackofficeSDK* client = test_sdk(NULL, NULL);
 PNError* err = NULL;
-Entity* output_get_logo = bluefin_tecs_user_backoffice_output_get_logo(client, NULL);
+Entity* output_get_logo = bluefintecsuserbackoffice_output_get_logo(client, NULL);
 voxgig_value* output_get_logo_rec = output_get_logo->vt->load(output_get_logo, NULL, NULL, &err);
 printf("%s\n", voxgig_to_json(output_get_logo_rec));
 ```
@@ -427,7 +427,7 @@ local client = sdk.new({
 ```c
 #include "core/api.h"
 
-BluefinTecsUserBackofficeSDK* client = bluefin_tecs_user_backoffice_sdk_new(cmap(1,
+BluefinTecsUserBackofficeSDK* client = bluefintecsuserbackoffice_sdk_new(cmap(1,
     "apikey", v_str(getenv("BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"))));
 PNError* err = NULL;
 

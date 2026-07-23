@@ -204,127 +204,127 @@ voxgig_value* sdk_direct(BluefinTecsUserBackofficeSDK* sdk, voxgig_value* fetcha
 
 
 // OutputActivateDigitalModule entity bound to this client.
-Entity* bluefin_tecs_user_backoffice_output_activate_digital_module(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsuserbackoffice_output_activate_digital_module(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
   return output_activate_digital_module_entity_new(client, entopts);
 }
 
 // OutputActivatePortalModule entity bound to this client.
-Entity* bluefin_tecs_user_backoffice_output_activate_portal_module(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsuserbackoffice_output_activate_portal_module(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
   return output_activate_portal_module_entity_new(client, entopts);
 }
 
 // OutputActivateStoreModule entity bound to this client.
-Entity* bluefin_tecs_user_backoffice_output_activate_store_module(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsuserbackoffice_output_activate_store_module(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
   return output_activate_store_module_entity_new(client, entopts);
 }
 
 // OutputActivateUser entity bound to this client.
-Entity* bluefin_tecs_user_backoffice_output_activate_user(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsuserbackoffice_output_activate_user(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
   return output_activate_user_entity_new(client, entopts);
 }
 
 // OutputAssignRole entity bound to this client.
-Entity* bluefin_tecs_user_backoffice_output_assign_role(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsuserbackoffice_output_assign_role(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
   return output_assign_role_entity_new(client, entopts);
 }
 
 // OutputChangeLogo entity bound to this client.
-Entity* bluefin_tecs_user_backoffice_output_change_logo(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsuserbackoffice_output_change_logo(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
   return output_change_logo_entity_new(client, entopts);
 }
 
 // OutputCreateMandator entity bound to this client.
-Entity* bluefin_tecs_user_backoffice_output_create_mandator(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsuserbackoffice_output_create_mandator(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
   return output_create_mandator_entity_new(client, entopts);
 }
 
 // OutputCreateServiceUser entity bound to this client.
-Entity* bluefin_tecs_user_backoffice_output_create_service_user(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsuserbackoffice_output_create_service_user(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
   return output_create_service_user_entity_new(client, entopts);
 }
 
 // OutputDeactivateUser entity bound to this client.
-Entity* bluefin_tecs_user_backoffice_output_deactivate_user(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsuserbackoffice_output_deactivate_user(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
   return output_deactivate_user_entity_new(client, entopts);
 }
 
 // OutputGetKycDocument entity bound to this client.
-Entity* bluefin_tecs_user_backoffice_output_get_kyc_document(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsuserbackoffice_output_get_kyc_document(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
   return output_get_kyc_document_entity_new(client, entopts);
 }
 
 // OutputGetLogo entity bound to this client.
-Entity* bluefin_tecs_user_backoffice_output_get_logo(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsuserbackoffice_output_get_logo(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
   return output_get_logo_entity_new(client, entopts);
 }
 
 // OutputListOfAvailableRole entity bound to this client.
-Entity* bluefin_tecs_user_backoffice_output_list_of_available_role(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsuserbackoffice_output_list_of_available_role(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
   return output_list_of_available_role_entity_new(client, entopts);
 }
 
 // OutputListOfMandator entity bound to this client.
-Entity* bluefin_tecs_user_backoffice_output_list_of_mandator(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsuserbackoffice_output_list_of_mandator(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
   return output_list_of_mandator_entity_new(client, entopts);
 }
 
 // OutputListOfModule entity bound to this client.
-Entity* bluefin_tecs_user_backoffice_output_list_of_module(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsuserbackoffice_output_list_of_module(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
   return output_list_of_module_entity_new(client, entopts);
 }
 
 // OutputListOfRoleGroup entity bound to this client.
-Entity* bluefin_tecs_user_backoffice_output_list_of_role_group(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsuserbackoffice_output_list_of_role_group(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
   return output_list_of_role_group_entity_new(client, entopts);
 }
 
 // OutputListOfTransactionsHistory entity bound to this client.
-Entity* bluefin_tecs_user_backoffice_output_list_of_transactions_history(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsuserbackoffice_output_list_of_transactions_history(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
   return output_list_of_transactions_history_entity_new(client, entopts);
 }
 
 // OutputListOfUser entity bound to this client.
-Entity* bluefin_tecs_user_backoffice_output_list_of_user(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsuserbackoffice_output_list_of_user(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
   return output_list_of_user_entity_new(client, entopts);
 }
 
 // OutputProvideCredential entity bound to this client.
-Entity* bluefin_tecs_user_backoffice_output_provide_credential(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsuserbackoffice_output_provide_credential(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
   return output_provide_credential_entity_new(client, entopts);
 }
 
 // OutputRegisterUser entity bound to this client.
-Entity* bluefin_tecs_user_backoffice_output_register_user(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsuserbackoffice_output_register_user(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
   return output_register_user_entity_new(client, entopts);
 }
 
 // OutputRemoveRole entity bound to this client.
-Entity* bluefin_tecs_user_backoffice_output_remove_role(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsuserbackoffice_output_remove_role(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
   return output_remove_role_entity_new(client, entopts);
 }
 
 // OutputResendLink entity bound to this client.
-Entity* bluefin_tecs_user_backoffice_output_resend_link(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsuserbackoffice_output_resend_link(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
   return output_resend_link_entity_new(client, entopts);
 }
 
 // OutputResetPassword entity bound to this client.
-Entity* bluefin_tecs_user_backoffice_output_reset_password(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsuserbackoffice_output_reset_password(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
   return output_reset_password_entity_new(client, entopts);
 }
 
 // OutputUpdateConsumer entity bound to this client.
-Entity* bluefin_tecs_user_backoffice_output_update_consumer(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsuserbackoffice_output_update_consumer(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
   return output_update_consumer_entity_new(client, entopts);
 }
 
 // OutputUpdateProfile entity bound to this client.
-Entity* bluefin_tecs_user_backoffice_output_update_profile(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsuserbackoffice_output_update_profile(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
   return output_update_profile_entity_new(client, entopts);
 }
 
 // Version entity bound to this client.
-Entity* bluefin_tecs_user_backoffice_version(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsuserbackoffice_version(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts) {
   return version_entity_new(client, entopts);
 }
 

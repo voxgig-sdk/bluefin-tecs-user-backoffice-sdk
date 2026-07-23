@@ -10,7 +10,7 @@ Complete API reference for the BluefinTecsUserBackoffice C SDK.
 ```c
 #include "core/api.h"
 
-BluefinTecsUserBackofficeSDK* client = bluefin_tecs_user_backoffice_sdk_new(options);
+BluefinTecsUserBackofficeSDK* client = bluefintecsuserbackoffice_sdk_new(options);
 ```
 
 Create a new SDK client instance. `options` is a `voxgig_value*` map
@@ -43,127 +43,127 @@ BluefinTecsUserBackofficeSDK* client = test_sdk(NULL, NULL);
 
 ### Entity Accessors
 
-#### `Entity* bluefin_tecs_user_backoffice_output_activate_digital_module(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsuserbackoffice_output_activate_digital_module(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputActivateDigitalModule` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_user_backoffice_output_activate_portal_module(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsuserbackoffice_output_activate_portal_module(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputActivatePortalModule` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_user_backoffice_output_activate_store_module(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsuserbackoffice_output_activate_store_module(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputActivateStoreModule` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_user_backoffice_output_activate_user(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsuserbackoffice_output_activate_user(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputActivateUser` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_user_backoffice_output_assign_role(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsuserbackoffice_output_assign_role(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputAssignRole` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_user_backoffice_output_change_logo(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsuserbackoffice_output_change_logo(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputChangeLogo` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_user_backoffice_output_create_mandator(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsuserbackoffice_output_create_mandator(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputCreateMandator` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_user_backoffice_output_create_service_user(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsuserbackoffice_output_create_service_user(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputCreateServiceUser` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_user_backoffice_output_deactivate_user(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsuserbackoffice_output_deactivate_user(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputDeactivateUser` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_user_backoffice_output_get_kyc_document(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsuserbackoffice_output_get_kyc_document(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputGetKycDocument` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_user_backoffice_output_get_logo(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsuserbackoffice_output_get_logo(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputGetLogo` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_user_backoffice_output_list_of_available_role(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsuserbackoffice_output_list_of_available_role(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputListOfAvailableRole` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_user_backoffice_output_list_of_mandator(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsuserbackoffice_output_list_of_mandator(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputListOfMandator` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_user_backoffice_output_list_of_module(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsuserbackoffice_output_list_of_module(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputListOfModule` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_user_backoffice_output_list_of_role_group(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsuserbackoffice_output_list_of_role_group(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputListOfRoleGroup` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_user_backoffice_output_list_of_transactions_history(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsuserbackoffice_output_list_of_transactions_history(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputListOfTransactionsHistory` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_user_backoffice_output_list_of_user(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsuserbackoffice_output_list_of_user(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputListOfUser` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_user_backoffice_output_provide_credential(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsuserbackoffice_output_provide_credential(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputProvideCredential` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_user_backoffice_output_register_user(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsuserbackoffice_output_register_user(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputRegisterUser` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_user_backoffice_output_remove_role(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsuserbackoffice_output_remove_role(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputRemoveRole` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_user_backoffice_output_resend_link(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsuserbackoffice_output_resend_link(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputResendLink` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_user_backoffice_output_reset_password(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsuserbackoffice_output_reset_password(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputResetPassword` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_user_backoffice_output_update_consumer(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsuserbackoffice_output_update_consumer(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputUpdateConsumer` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_user_backoffice_output_update_profile(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsuserbackoffice_output_update_profile(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
 
 Create a new `OutputUpdateProfile` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_user_backoffice_version(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsuserbackoffice_version(BluefinTecsUserBackofficeSDK* client, voxgig_value* entopts)`
 
 Create a new `Version` entity instance. Pass `NULL` for no initial
 options.
@@ -197,7 +197,7 @@ Prepare a fetch definition without sending. Returns the fetchdef and sets
 ## OutputActivateDigitalModule
 
 ```c
-Entity* output_activate_digital_module = bluefin_tecs_user_backoffice_output_activate_digital_module(client, NULL);
+Entity* output_activate_digital_module = bluefintecsuserbackoffice_output_activate_digital_module(client, NULL);
 ```
 
 ### Fields
@@ -214,7 +214,7 @@ Entity* output_activate_digital_module = bluefin_tecs_user_backoffice_output_act
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_activate_digital_module = bluefin_tecs_user_backoffice_output_activate_digital_module(client, NULL);
+Entity* output_activate_digital_module = bluefintecsuserbackoffice_output_activate_digital_module(client, NULL);
 voxgig_value* result = output_activate_digital_module->vt->create(output_activate_digital_module, NULL, NULL, &err);
 ```
 
@@ -242,7 +242,7 @@ Return the entity name.
 ## OutputActivatePortalModule
 
 ```c
-Entity* output_activate_portal_module = bluefin_tecs_user_backoffice_output_activate_portal_module(client, NULL);
+Entity* output_activate_portal_module = bluefintecsuserbackoffice_output_activate_portal_module(client, NULL);
 ```
 
 ### Fields
@@ -261,7 +261,7 @@ Entity* output_activate_portal_module = bluefin_tecs_user_backoffice_output_acti
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_activate_portal_module = bluefin_tecs_user_backoffice_output_activate_portal_module(client, NULL);
+Entity* output_activate_portal_module = bluefintecsuserbackoffice_output_activate_portal_module(client, NULL);
 voxgig_value* result = output_activate_portal_module->vt->create(output_activate_portal_module, cmap(2,
     "client_secret", v_str("example_client_secret"),  // char*
     "notification_email", v_str("example_notification_email"))  // char*
@@ -292,7 +292,7 @@ Return the entity name.
 ## OutputActivateStoreModule
 
 ```c
-Entity* output_activate_store_module = bluefin_tecs_user_backoffice_output_activate_store_module(client, NULL);
+Entity* output_activate_store_module = bluefintecsuserbackoffice_output_activate_store_module(client, NULL);
 ```
 
 ### Fields
@@ -309,7 +309,7 @@ Entity* output_activate_store_module = bluefin_tecs_user_backoffice_output_activ
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_activate_store_module = bluefin_tecs_user_backoffice_output_activate_store_module(client, NULL);
+Entity* output_activate_store_module = bluefintecsuserbackoffice_output_activate_store_module(client, NULL);
 voxgig_value* result = output_activate_store_module->vt->create(output_activate_store_module, NULL, NULL, &err);
 ```
 
@@ -337,7 +337,7 @@ Return the entity name.
 ## OutputActivateUser
 
 ```c
-Entity* output_activate_user = bluefin_tecs_user_backoffice_output_activate_user(client, NULL);
+Entity* output_activate_user = bluefintecsuserbackoffice_output_activate_user(client, NULL);
 ```
 
 ### Fields
@@ -355,7 +355,7 @@ Entity* output_activate_user = bluefin_tecs_user_backoffice_output_activate_user
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_activate_user = bluefin_tecs_user_backoffice_output_activate_user(client, NULL);
+Entity* output_activate_user = bluefintecsuserbackoffice_output_activate_user(client, NULL);
 voxgig_value* result = output_activate_user->vt->create(output_activate_user, NULL, NULL, &err);
 ```
 
@@ -383,7 +383,7 @@ Return the entity name.
 ## OutputAssignRole
 
 ```c
-Entity* output_assign_role = bluefin_tecs_user_backoffice_output_assign_role(client, NULL);
+Entity* output_assign_role = bluefintecsuserbackoffice_output_assign_role(client, NULL);
 ```
 
 ### Fields
@@ -402,7 +402,7 @@ Entity* output_assign_role = bluefin_tecs_user_backoffice_output_assign_role(cli
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_assign_role = bluefin_tecs_user_backoffice_output_assign_role(client, NULL);
+Entity* output_assign_role = bluefintecsuserbackoffice_output_assign_role(client, NULL);
 voxgig_value* result = output_assign_role->vt->create(output_assign_role, cmap(2,
     "consumer_uuid", v_str("example_consumer_uuid"),  // char*
     "role", v_list())  // voxgig_value* (list)
@@ -433,7 +433,7 @@ Return the entity name.
 ## OutputChangeLogo
 
 ```c
-Entity* output_change_logo = bluefin_tecs_user_backoffice_output_change_logo(client, NULL);
+Entity* output_change_logo = bluefintecsuserbackoffice_output_change_logo(client, NULL);
 ```
 
 ### Fields
@@ -452,7 +452,7 @@ Entity* output_change_logo = bluefin_tecs_user_backoffice_output_change_logo(cli
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_change_logo = bluefin_tecs_user_backoffice_output_change_logo(client, NULL);
+Entity* output_change_logo = bluefintecsuserbackoffice_output_change_logo(client, NULL);
 voxgig_value* result = output_change_logo->vt->create(output_change_logo, cmap(2,
     "content_as_base64", v_str("example_content_as_base64"),  // char*
     "mime_type", v_str("example_mime_type"))  // char*
@@ -483,7 +483,7 @@ Return the entity name.
 ## OutputCreateMandator
 
 ```c
-Entity* output_create_mandator = bluefin_tecs_user_backoffice_output_create_mandator(client, NULL);
+Entity* output_create_mandator = bluefintecsuserbackoffice_output_create_mandator(client, NULL);
 ```
 
 ### Fields
@@ -519,7 +519,7 @@ Entity* output_create_mandator = bluefin_tecs_user_backoffice_output_create_mand
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_create_mandator = bluefin_tecs_user_backoffice_output_create_mandator(client, NULL);
+Entity* output_create_mandator = bluefintecsuserbackoffice_output_create_mandator(client, NULL);
 voxgig_value* result = output_create_mandator->vt->create(output_create_mandator, cmap(5,
     "description", v_str("example_description"),  // char*
     "email", v_str("example_email"),  // char*
@@ -553,7 +553,7 @@ Return the entity name.
 ## OutputCreateServiceUser
 
 ```c
-Entity* output_create_service_user = bluefin_tecs_user_backoffice_output_create_service_user(client, NULL);
+Entity* output_create_service_user = bluefintecsuserbackoffice_output_create_service_user(client, NULL);
 ```
 
 ### Fields
@@ -571,7 +571,7 @@ Entity* output_create_service_user = bluefin_tecs_user_backoffice_output_create_
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_create_service_user = bluefin_tecs_user_backoffice_output_create_service_user(client, NULL);
+Entity* output_create_service_user = bluefintecsuserbackoffice_output_create_service_user(client, NULL);
 voxgig_value* result = output_create_service_user->vt->create(output_create_service_user, cmap(1,
     "mandator_name", v_str("example_mandator_name"))  // char*
 , NULL, &err);
@@ -601,7 +601,7 @@ Return the entity name.
 ## OutputDeactivateUser
 
 ```c
-Entity* output_deactivate_user = bluefin_tecs_user_backoffice_output_deactivate_user(client, NULL);
+Entity* output_deactivate_user = bluefintecsuserbackoffice_output_deactivate_user(client, NULL);
 ```
 
 ### Fields
@@ -619,7 +619,7 @@ Entity* output_deactivate_user = bluefin_tecs_user_backoffice_output_deactivate_
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_deactivate_user = bluefin_tecs_user_backoffice_output_deactivate_user(client, NULL);
+Entity* output_deactivate_user = bluefintecsuserbackoffice_output_deactivate_user(client, NULL);
 voxgig_value* result = output_deactivate_user->vt->create(output_deactivate_user, NULL, NULL, &err);
 ```
 
@@ -647,7 +647,7 @@ Return the entity name.
 ## OutputGetKycDocument
 
 ```c
-Entity* output_get_kyc_document = bluefin_tecs_user_backoffice_output_get_kyc_document(client, NULL);
+Entity* output_get_kyc_document = bluefintecsuserbackoffice_output_get_kyc_document(client, NULL);
 ```
 
 ### Fields
@@ -666,7 +666,7 @@ Entity* output_get_kyc_document = bluefin_tecs_user_backoffice_output_get_kyc_do
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_get_kyc_document = bluefin_tecs_user_backoffice_output_get_kyc_document(client, NULL);
+Entity* output_get_kyc_document = bluefintecsuserbackoffice_output_get_kyc_document(client, NULL);
 voxgig_value* result = output_get_kyc_document->vt->create(output_get_kyc_document, NULL, NULL, &err);
 ```
 
@@ -694,7 +694,7 @@ Return the entity name.
 ## OutputGetLogo
 
 ```c
-Entity* output_get_logo = bluefin_tecs_user_backoffice_output_get_logo(client, NULL);
+Entity* output_get_logo = bluefintecsuserbackoffice_output_get_logo(client, NULL);
 ```
 
 ### Fields
@@ -713,7 +713,7 @@ Entity* output_get_logo = bluefin_tecs_user_backoffice_output_get_logo(client, N
 Load a single entity matching the given criteria. Returns the entity data and sets `*err` on failure.
 
 ```c
-Entity* output_get_logo = bluefin_tecs_user_backoffice_output_get_logo(client, NULL);
+Entity* output_get_logo = bluefintecsuserbackoffice_output_get_logo(client, NULL);
 voxgig_value* result = output_get_logo->vt->load(output_get_logo, NULL, NULL, &err);
 ```
 
@@ -741,7 +741,7 @@ Return the entity name.
 ## OutputListOfAvailableRole
 
 ```c
-Entity* output_list_of_available_role = bluefin_tecs_user_backoffice_output_list_of_available_role(client, NULL);
+Entity* output_list_of_available_role = bluefintecsuserbackoffice_output_list_of_available_role(client, NULL);
 ```
 
 ### Fields
@@ -759,7 +759,7 @@ Entity* output_list_of_available_role = bluefin_tecs_user_backoffice_output_list
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_list_of_available_role = bluefin_tecs_user_backoffice_output_list_of_available_role(client, NULL);
+Entity* output_list_of_available_role = bluefintecsuserbackoffice_output_list_of_available_role(client, NULL);
 voxgig_value* result = output_list_of_available_role->vt->create(output_list_of_available_role, NULL, NULL, &err);
 ```
 
@@ -787,7 +787,7 @@ Return the entity name.
 ## OutputListOfMandator
 
 ```c
-Entity* output_list_of_mandator = bluefin_tecs_user_backoffice_output_list_of_mandator(client, NULL);
+Entity* output_list_of_mandator = bluefintecsuserbackoffice_output_list_of_mandator(client, NULL);
 ```
 
 ### Fields
@@ -808,7 +808,7 @@ Entity* output_list_of_mandator = bluefin_tecs_user_backoffice_output_list_of_ma
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_list_of_mandator = bluefin_tecs_user_backoffice_output_list_of_mandator(client, NULL);
+Entity* output_list_of_mandator = bluefintecsuserbackoffice_output_list_of_mandator(client, NULL);
 voxgig_value* result = output_list_of_mandator->vt->create(output_list_of_mandator, NULL, NULL, &err);
 ```
 
@@ -836,7 +836,7 @@ Return the entity name.
 ## OutputListOfModule
 
 ```c
-Entity* output_list_of_module = bluefin_tecs_user_backoffice_output_list_of_module(client, NULL);
+Entity* output_list_of_module = bluefintecsuserbackoffice_output_list_of_module(client, NULL);
 ```
 
 ### Fields
@@ -855,7 +855,7 @@ Entity* output_list_of_module = bluefin_tecs_user_backoffice_output_list_of_modu
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_list_of_module = bluefin_tecs_user_backoffice_output_list_of_module(client, NULL);
+Entity* output_list_of_module = bluefintecsuserbackoffice_output_list_of_module(client, NULL);
 voxgig_value* result = output_list_of_module->vt->create(output_list_of_module, NULL, NULL, &err);
 ```
 
@@ -883,7 +883,7 @@ Return the entity name.
 ## OutputListOfRoleGroup
 
 ```c
-Entity* output_list_of_role_group = bluefin_tecs_user_backoffice_output_list_of_role_group(client, NULL);
+Entity* output_list_of_role_group = bluefintecsuserbackoffice_output_list_of_role_group(client, NULL);
 ```
 
 ### Fields
@@ -904,7 +904,7 @@ Entity* output_list_of_role_group = bluefin_tecs_user_backoffice_output_list_of_
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_list_of_role_group = bluefin_tecs_user_backoffice_output_list_of_role_group(client, NULL);
+Entity* output_list_of_role_group = bluefintecsuserbackoffice_output_list_of_role_group(client, NULL);
 voxgig_value* result = output_list_of_role_group->vt->create(output_list_of_role_group, NULL, NULL, &err);
 ```
 
@@ -932,7 +932,7 @@ Return the entity name.
 ## OutputListOfTransactionsHistory
 
 ```c
-Entity* output_list_of_transactions_history = bluefin_tecs_user_backoffice_output_list_of_transactions_history(client, NULL);
+Entity* output_list_of_transactions_history = bluefintecsuserbackoffice_output_list_of_transactions_history(client, NULL);
 ```
 
 ### Fields
@@ -953,7 +953,7 @@ Entity* output_list_of_transactions_history = bluefin_tecs_user_backoffice_outpu
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_list_of_transactions_history = bluefin_tecs_user_backoffice_output_list_of_transactions_history(client, NULL);
+Entity* output_list_of_transactions_history = bluefintecsuserbackoffice_output_list_of_transactions_history(client, NULL);
 voxgig_value* result = output_list_of_transactions_history->vt->create(output_list_of_transactions_history, NULL, NULL, &err);
 ```
 
@@ -981,7 +981,7 @@ Return the entity name.
 ## OutputListOfUser
 
 ```c
-Entity* output_list_of_user = bluefin_tecs_user_backoffice_output_list_of_user(client, NULL);
+Entity* output_list_of_user = bluefintecsuserbackoffice_output_list_of_user(client, NULL);
 ```
 
 ### Fields
@@ -1002,7 +1002,7 @@ Entity* output_list_of_user = bluefin_tecs_user_backoffice_output_list_of_user(c
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_list_of_user = bluefin_tecs_user_backoffice_output_list_of_user(client, NULL);
+Entity* output_list_of_user = bluefintecsuserbackoffice_output_list_of_user(client, NULL);
 voxgig_value* result = output_list_of_user->vt->create(output_list_of_user, NULL, NULL, &err);
 ```
 
@@ -1030,7 +1030,7 @@ Return the entity name.
 ## OutputProvideCredential
 
 ```c
-Entity* output_provide_credential = bluefin_tecs_user_backoffice_output_provide_credential(client, NULL);
+Entity* output_provide_credential = bluefintecsuserbackoffice_output_provide_credential(client, NULL);
 ```
 
 ### Fields
@@ -1050,7 +1050,7 @@ Entity* output_provide_credential = bluefin_tecs_user_backoffice_output_provide_
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_provide_credential = bluefin_tecs_user_backoffice_output_provide_credential(client, NULL);
+Entity* output_provide_credential = bluefintecsuserbackoffice_output_provide_credential(client, NULL);
 voxgig_value* result = output_provide_credential->vt->create(output_provide_credential, cmap(1,
     "mandator_name", v_str("example_mandator_name"))  // char*
 , NULL, &err);
@@ -1080,7 +1080,7 @@ Return the entity name.
 ## OutputRegisterUser
 
 ```c
-Entity* output_register_user = bluefin_tecs_user_backoffice_output_register_user(client, NULL);
+Entity* output_register_user = bluefintecsuserbackoffice_output_register_user(client, NULL);
 ```
 
 ### Fields
@@ -1116,7 +1116,7 @@ Entity* output_register_user = bluefin_tecs_user_backoffice_output_register_user
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_register_user = bluefin_tecs_user_backoffice_output_register_user(client, NULL);
+Entity* output_register_user = bluefintecsuserbackoffice_output_register_user(client, NULL);
 voxgig_value* result = output_register_user->vt->create(output_register_user, cmap(1,
     "email", v_str("example_email"))  // char*
 , NULL, &err);
@@ -1146,7 +1146,7 @@ Return the entity name.
 ## OutputRemoveRole
 
 ```c
-Entity* output_remove_role = bluefin_tecs_user_backoffice_output_remove_role(client, NULL);
+Entity* output_remove_role = bluefintecsuserbackoffice_output_remove_role(client, NULL);
 ```
 
 ### Fields
@@ -1165,7 +1165,7 @@ Entity* output_remove_role = bluefin_tecs_user_backoffice_output_remove_role(cli
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_remove_role = bluefin_tecs_user_backoffice_output_remove_role(client, NULL);
+Entity* output_remove_role = bluefintecsuserbackoffice_output_remove_role(client, NULL);
 voxgig_value* result = output_remove_role->vt->create(output_remove_role, NULL, NULL, &err);
 ```
 
@@ -1193,7 +1193,7 @@ Return the entity name.
 ## OutputResendLink
 
 ```c
-Entity* output_resend_link = bluefin_tecs_user_backoffice_output_resend_link(client, NULL);
+Entity* output_resend_link = bluefintecsuserbackoffice_output_resend_link(client, NULL);
 ```
 
 ### Fields
@@ -1214,7 +1214,7 @@ Entity* output_resend_link = bluefin_tecs_user_backoffice_output_resend_link(cli
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_resend_link = bluefin_tecs_user_backoffice_output_resend_link(client, NULL);
+Entity* output_resend_link = bluefintecsuserbackoffice_output_resend_link(client, NULL);
 voxgig_value* result = output_resend_link->vt->create(output_resend_link, cmap(1,
     "consumer_uuid", v_str("example_consumer_uuid"))  // char*
 , NULL, &err);
@@ -1244,7 +1244,7 @@ Return the entity name.
 ## OutputResetPassword
 
 ```c
-Entity* output_reset_password = bluefin_tecs_user_backoffice_output_reset_password(client, NULL);
+Entity* output_reset_password = bluefintecsuserbackoffice_output_reset_password(client, NULL);
 ```
 
 ### Fields
@@ -1263,7 +1263,7 @@ Entity* output_reset_password = bluefin_tecs_user_backoffice_output_reset_passwo
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_reset_password = bluefin_tecs_user_backoffice_output_reset_password(client, NULL);
+Entity* output_reset_password = bluefintecsuserbackoffice_output_reset_password(client, NULL);
 voxgig_value* result = output_reset_password->vt->create(output_reset_password, NULL, NULL, &err);
 ```
 
@@ -1291,7 +1291,7 @@ Return the entity name.
 ## OutputUpdateConsumer
 
 ```c
-Entity* output_update_consumer = bluefin_tecs_user_backoffice_output_update_consumer(client, NULL);
+Entity* output_update_consumer = bluefintecsuserbackoffice_output_update_consumer(client, NULL);
 ```
 
 ### Fields
@@ -1329,7 +1329,7 @@ Entity* output_update_consumer = bluefin_tecs_user_backoffice_output_update_cons
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_update_consumer = bluefin_tecs_user_backoffice_output_update_consumer(client, NULL);
+Entity* output_update_consumer = bluefintecsuserbackoffice_output_update_consumer(client, NULL);
 voxgig_value* result = output_update_consumer->vt->create(output_update_consumer, cmap(1,
     "consumer_uuid", v_str("example_consumer_uuid"))  // char*
 , NULL, &err);
@@ -1359,7 +1359,7 @@ Return the entity name.
 ## OutputUpdateProfile
 
 ```c
-Entity* output_update_profile = bluefin_tecs_user_backoffice_output_update_profile(client, NULL);
+Entity* output_update_profile = bluefintecsuserbackoffice_output_update_profile(client, NULL);
 ```
 
 ### Fields
@@ -1381,7 +1381,7 @@ Entity* output_update_profile = bluefin_tecs_user_backoffice_output_update_profi
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* output_update_profile = bluefin_tecs_user_backoffice_output_update_profile(client, NULL);
+Entity* output_update_profile = bluefintecsuserbackoffice_output_update_profile(client, NULL);
 voxgig_value* result = output_update_profile->vt->create(output_update_profile, NULL, NULL, &err);
 ```
 
@@ -1409,7 +1409,7 @@ Return the entity name.
 ## Version
 
 ```c
-Entity* version = bluefin_tecs_user_backoffice_version(client, NULL);
+Entity* version = bluefintecsuserbackoffice_version(client, NULL);
 ```
 
 ### Fields
@@ -1427,7 +1427,7 @@ Entity* version = bluefin_tecs_user_backoffice_version(client, NULL);
 Load a single entity matching the given criteria. Returns the entity data and sets `*err` on failure.
 
 ```c
-Entity* version = bluefin_tecs_user_backoffice_version(client, NULL);
+Entity* version = bluefintecsuserbackoffice_version(client, NULL);
 voxgig_value* result = version->vt->load(version, NULL, NULL, &err);
 ```
 
@@ -1462,7 +1462,7 @@ Return the entity name.
 Features are activated via the `feature` option:
 
 ```c
-BluefinTecsUserBackofficeSDK* client = bluefin_tecs_user_backoffice_sdk_new(cmap(1,
+BluefinTecsUserBackofficeSDK* client = bluefintecsuserbackoffice_sdk_new(cmap(1,
     "feature", cmap(1,
         "test", cmap(1, "active", v_bool(true)))
 ));
