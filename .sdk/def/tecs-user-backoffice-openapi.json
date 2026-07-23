@@ -1,0 +1,2722 @@
+{
+ "openapi": "3.0.1",
+ "info": {
+  "title": "User Back Office Web Service Documentation",
+  "description": "Web service for user registration and management.",
+  "termsOfService": "https://www.tecs.at/user-back-office-ws/terms-of-service-url/",
+  "contact": {
+   "name": "Contact",
+   "url": "https://www.tecs.at/contact/",
+   "email": "contact@tecs.at"
+  },
+  "license": {
+   "name": "Telecommunication & E-Commerce Solutions GmbH \u00a9 All rights reserved",
+   "url": "https://www.tecs.at/user-back-office-ws/license-url/"
+  },
+  "version": "0.56.3"
+ },
+ "servers": [
+  {
+   "url": "https://test.tecs.at/usermanagement-backofficews",
+   "description": "Generated server url"
+  }
+ ],
+ "paths": {
+  "/updateProfile": {
+   "post": {
+    "tags": [
+     "user-back-office-pam-user-controller"
+    ],
+    "summary": "Update personal profile",
+    "description": "Not any required role for operation",
+    "operationId": "updateProfile",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "required": false,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputUpdateProfile"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputUpdateProfile"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-auth-header": []
+     },
+     {
+      "basic-auth-header": []
+     }
+    ]
+   }
+  },
+  "/updateConsumer": {
+   "post": {
+    "tags": [
+     "user-back-office-pam-user-controller"
+    ],
+    "summary": "Updates consumer information",
+    "description": "Required role for operation: BO_USERMANAGEMENT_SUPERUSER, BO_USERMANAGEMENT_UPDATE_USER",
+    "operationId": "updateConsumer",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "required": false,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputUpdateConsumer"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputUpdateConsumer"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-auth-header": []
+     },
+     {
+      "basic-auth-header": []
+     }
+    ]
+   }
+  },
+  "/resetPassword": {
+   "post": {
+    "tags": [
+     "user-back-office-pam-controller"
+    ],
+    "summary": "Initiates flow of resetting password",
+    "description": "\nAPI resets password of selected user by sending corresponded email<br/><br/>\n\nRequired role for operation:\n<ul><li>BO_USERMANAGEMENT_RESETPASSWORD</li></ul>\n\nSupports authentication:\n<ul><li>Basic &lt;credentials&gt;, where credentials is the Base64 encoding of ID and password joined by a single colon :, CAS login service will be called for the given ID and password for validating credentials.</li>\n<li>Bearer &lt;token&gt; - which is a Bearer token authentication</li></ul>\n                        ",
+    "operationId": "resetPassword",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputResetPassword"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputResetPassword"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-auth-header": []
+     },
+     {
+      "basic-auth-header": []
+     }
+    ]
+   }
+  },
+  "/resendLink": {
+   "post": {
+    "tags": [
+     "user-back-office-pam-link-controller"
+    ],
+    "summary": "Resends consumer registration link",
+    "description": "\nAPI resends consumer registration link by email for selected user. Selected user should have status = preregistered<br/><br/>\n\nRequired role for operation:\n<ul><li>BO_USERMANAGEMENT_REGISTER_USER (conditional)</li></ul>\n\nSupports authentication:\n<ul><li>Basic &lt;credentials&gt;, where credentials is the Base64 encoding of ID and password joined by a single colon :, CAS login service will be called for the given ID and password for validating credentials.</li>\n<li>Bearer &lt;token&gt; - which is a Bearer token authentication</li></ul>\n                        ",
+    "operationId": "resendLink",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "required": false,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputResendLink"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputResendLink"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-auth-header": []
+     },
+     {
+      "basic-auth-header": []
+     }
+    ]
+   }
+  },
+  "/removeRoles": {
+   "post": {
+    "tags": [
+     "user-back-office-pam-role-controller"
+    ],
+    "summary": "Remove role from consumer",
+    "description": "\nConsumer should have owner role to be able to remove respective role from another consumer. To remove roles user should have superior role e.g. In order to remove BO_USERMANAGEMENT_REGISTER_USER role user should have BO_USERMANAGEMENT_SUPERUSER role.<br/><br/>\n\nSupports authentication:\n<ul><li>Basic &lt;credentials&gt;, where credentials is the Base64 encoding of ID and password joined by a single colon :, CAS login service will be called for the given ID and password for validating credentials.</li>\n<li>Bearer &lt;token&gt; - which is a Bearer token authentication</li></ul>\n                        ",
+    "operationId": "removeRoles",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputRemoveRoles"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputRemoveRoles"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-auth-header": []
+     },
+     {
+      "basic-auth-header": []
+     }
+    ]
+   }
+  },
+  "/registerUser": {
+   "post": {
+    "tags": [
+     "user-back-office-pam-user-controller"
+    ],
+    "summary": "Register New User",
+    "description": "Registers a new user within your organization on the TECS Platform.\n\n**Flow Overview:**\n- Calls Useraccountws.Preregister consumer API.\n- Generates an email confirmation code and link.\n- Sends a confirmation email to the user.\n\n**Input Parameters:**\n- **firstName** (optional): User's first name.\n- **lastName** (optional): User's last name.\n- **email** (mandatory, unique): User's email address.\n- **dateOfBirth** (optional): User's date of birth (format: dd.MM.yyyy).\n- **street1** (optional): Primary address line.\n- **street2** (optional): Secondary address line.\n- **city** (optional): User's city.\n- **country** (optional): User's country.\n- **zip** (optional): User's postal code.\n- **salutation** (optional): User's salutation (e.g., Mr., Ms.).\n- **phone** (optional): User's phone number.\n- **identificationNumber** (optional): User's identification number.\n- **passportNumber** (optional): User's passport number.\n- **driverLicenceNumber** (optional): User's driver's license number.\n- **state** (optional): User's state or region.\n- **login** (optional, unique): User login identifier.\n\n**Required Role:**\n- BO_USERMANAGEMENT_REGISTER_USER\n\n**Authentication:**\nSupports both Basic (Base64 encoded credentials: ID:password) and Bearer token authentication.\n",
+    "operationId": "registerUser",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "required": true,
+      "schema": {
+       "type": "string"
+      },
+      "description": "Authorization header using either: - Bearer token (e.g., \"Bearer <token>\") - Basic authentication (e.g., \"Basic <Base64 encoded credentials>\")\n"
+     }
+    ],
+    "requestBody": {
+     "required": true,
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputRegisterUser"
+       }
+      }
+     }
+    },
+    "responses": {
+     "200": {
+      "description": "User registered successfully.",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputRegisterUser"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-auth-header": []
+     },
+     {
+      "basic-auth-header": []
+     }
+    ]
+   }
+  },
+  "/provideCredentials": {
+   "post": {
+    "tags": [
+     "user-back-office-pam-mandator-controller"
+    ],
+    "summary": "Provides service user credentials to other services (non-public API)",
+    "description": "\nReturns service user credentials for mandator of calling user<br/><br/>\n\nRequired role for operation:\n<ul><li>BO_USERMANAGEMENT_MANDATOR_MANAGER</li></ul>\n\nSupports authentication:\n<ul><li>Basic &lt;credentials&gt;, where credentials is the Base64 encoding of ID and password joined by a single colon :, CAS login service will be called for the given ID and password for validating credentials.</li>\n<li>Bearer &lt;token&gt; - which is a Bearer token authentication</li></ul>\n                        ",
+    "operationId": "provideCredentials",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputProvideCredentials"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputProvideCredentials"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-auth-header": []
+     },
+     {
+      "basic-auth-header": []
+     }
+    ]
+   }
+  },
+  "/listOfUsers": {
+   "post": {
+    "tags": [
+     "user-back-office-pam-user-controller"
+    ],
+    "summary": "Displays list of users",
+    "description": "\nAPI provides list of users according to filter parameters<br/><br/>\n\nFilter parameters:\n<ul>\n<li>consumeruuid</li>\n<li>firstname</li>\n<li>lastname</li>\n<li>email</li>\n<li>consumerstatusid (array)</li>\n<li>Kycstatus (array)</li>\n<li>userrole.name (array)</li>\n<li>Registered_date (dateFrom-dateTo)</li>\n<li>Locked_untill (dateFrom-dateTo)</li>\n<li>corporeuuid</li></ul>\n\nRequired role for operation:\n<ul><li>BO_USERMANAGEMENT_OPERATOR</li></ul>\n\nSupports authentication:\n<ul><li>Basic &lt;credentials&gt;, where credentials is the Base64 encoding of ID and password joined by a single colon :, CAS login service will be called for the given ID and password for validating credentials.</li>\n<li>Bearer &lt;token&gt; - which is a Bearer token authentication</li></ul>\n                        ",
+    "operationId": "listOfUsers",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputListOfUsers"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputListOfUsers"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-auth-header": []
+     },
+     {
+      "basic-auth-header": []
+     }
+    ]
+   }
+  },
+  "/listOfTransactionsHistory": {
+   "post": {
+    "tags": [
+     "user-back-office-pam-controller"
+    ],
+    "summary": "Displays list of actions performed by consumer",
+    "description": "\nDisplays list of actions performed by consumer within User Management Web Service<br/><br/>\n\nFilter parameters:\n<ul>\n<li>Consumeruuid</li>\n<li>Transactionhistoryeventid (type of action)</li>\n<li>Transactionhistorystatus</li>\n<li>txid_requestor</li>\n<li>datetime_created (dateFrom-dateTo)</li>\n<li>datetime_requestor (dateFrom-dateTo)</li></ul>\n\nRequired role for operation:\n<ul><li>BO_USERMANAGEMENT_OPERATOR</li></ul>\n\nSupports authentication:\n<ul><li>Basic &lt;credentials&gt;, where credentials is the Base64 encoding of ID and password joined by a single colon :, CAS login service will be called for the given ID and password for validating credentials.</li>\n<li>Bearer &lt;token&gt; - which is a Bearer token authentication</li></ul>\n                        ",
+    "operationId": "listOfTransactionsHistory",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputListOfTransactionsHistory"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputListOfTransactionsHistory"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-auth-header": []
+     },
+     {
+      "basic-auth-header": []
+     }
+    ]
+   }
+  },
+  "/listOfRoleGroups": {
+   "post": {
+    "tags": [
+     "user-back-office-pam-role-controller"
+    ],
+    "summary": "Displays list of role groups",
+    "description": "\nReturns list of role groups.<br/><br/>\n\nRequired role for operation:\n<ul><li>BO_USERMANAGEMENT_OPERATOR</li></ul>\n\nSupports authentication:\n<ul><li>Basic &lt;credentials&gt;, where credentials is the Base64 encoding of ID and password joined by a single colon :, CAS login service will be called for the given ID and password for validating credentials.</li>\n<li>Bearer &lt;token&gt; - which is a Bearer token authentication</li></ul>\n                        ",
+    "operationId": "listOfRoleGroups",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputListOfRoleGroups"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputListOfRoleGroups"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-auth-header": []
+     },
+     {
+      "basic-auth-header": []
+     }
+    ]
+   }
+  },
+  "/listOfModules": {
+   "post": {
+    "tags": [
+     "user-back-office-pam-module-controller"
+    ],
+    "summary": "Displays list of available modules",
+    "description": "Required role for operation: BO_USERMANAGEMENT_MANDATOR_MANAGER",
+    "operationId": "listOfModules",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputListOfModules"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputListOfModules"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-auth-header": []
+     },
+     {
+      "basic-auth-header": []
+     }
+    ]
+   }
+  },
+  "/listOfMandators": {
+   "post": {
+    "tags": [
+     "user-back-office-pam-mandator-controller"
+    ],
+    "summary": "Displays list of available mandators",
+    "description": "Required role for operation: BO_USERMANAGEMENT_CREATE_MANDATOR. Supported sorting fields: id, name.",
+    "operationId": "listOfMandators",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputListOfMandators"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputListOfMandators"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-auth-header": []
+     },
+     {
+      "basic-auth-header": []
+     }
+    ]
+   }
+  },
+  "/listOfAvailableRoles": {
+   "post": {
+    "tags": [
+     "user-back-office-pam-controller"
+    ],
+    "summary": "Displays list of available roles",
+    "description": "\nReturns list of roles available for assigning by calling user. To assign roles user should have superior role e.g. In order to assign BO_USERMANAGEMENT_REGISTER_USER role user shold have BO_USERMANAGEMENT_SUPERUSER role<br/><br/>\n\nRequired role for operation:\n<ul><li>BO_USERMANAGEMENT_OPERATOR</li></ul>\n\nSupports authentication:\n<ul><li>Basic &lt;credentials&gt;, where credentials is the Base64 encoding of ID and password joined by a single colon :, CAS login service will be called for the given ID and password for validating credentials.</li>\n<li>Bearer &lt;token&gt; - which is a Bearer token authentication</li></ul>\n                        ",
+    "operationId": "listOfAvailableRoles",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputListOfAvailableRoles"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputListOfAvailableRoles"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-auth-header": []
+     },
+     {
+      "basic-auth-header": []
+     }
+    ]
+   }
+  },
+  "/getKycDocument": {
+   "post": {
+    "tags": [
+     "user-back-office-pam-controller"
+    ],
+    "summary": "Returns kycdocument",
+    "description": "\nReturns kycdocument for caseid from input parameters<br/><br/>\n\nRequired role for operation:\n<ul><li>BO_USERMANAGEMENT_KYCDOCUMENT</li></ul>\n\nSupports authentication:\n<ul><li>Basic &lt;credentials&gt;, where credentials is the Base64 encoding of ID and password joined by a single colon :, CAS login service will be called for the given ID and password for validating credentials.</li>\n<li>Bearer &lt;token&gt; - which is a Bearer token authentication</li></ul>\n                        ",
+    "operationId": "getKycDocument",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputGetKycDocument"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputGetKycDocument"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-auth-header": []
+     },
+     {
+      "basic-auth-header": []
+     }
+    ]
+   }
+  },
+  "/deactivateUser": {
+   "post": {
+    "tags": [
+     "user-back-office-pam-controller"
+    ],
+    "summary": "Changes consumer status to \"locked\"",
+    "description": "\nChanges consumer status to \"locked\" and sends notification (if needed)<br/><br/>\n\nRequired role for operation:\n<ul><li>BO_USERMANAGEMENT_SUPERUSER</li></ul>\n\nSupports authentication:\n<ul><li>Basic &lt;credentials&gt;, where credentials is the Base64 encoding of ID and password joined by a single colon :, CAS login service will be called for the given ID and password for validating credentials.</li>\n<li>Bearer &lt;token&gt; - which is a Bearer token authentication</li></ul>\n                        ",
+    "operationId": "deactivateUser",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputDeactivateUser"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputDeactivateUser"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-auth-header": []
+     },
+     {
+      "basic-auth-header": []
+     }
+    ]
+   }
+  },
+  "/createServiceUser": {
+   "post": {
+    "tags": [
+     "user-back-office-pam-mandator-controller"
+    ],
+    "summary": "Creates service user for new mandator (NOT IN USE)",
+    "description": "\nCreates service user and configurational records for new mandator<br/><br/>\n\nRequired role for operation:\n<ul><li>BO_USERMANAGEMENT_CREATE_MANDATOR</li></ul>\n\nSupports authentication:\n<ul><li>Basic &lt;credentials&gt;, where credentials is the Base64 encoding of ID and password joined by a single colon :, CAS login service will be called for the given ID and password for validating credentials.</li>\n<li>Bearer &lt;token&gt; - which is a Bearer token authentication</li></ul>\n                        ",
+    "operationId": "createServiceUser",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputCreateServiceUser"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputCreateServiceUser"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-auth-header": []
+     },
+     {
+      "basic-auth-header": []
+     }
+    ]
+   }
+  },
+  "/createMandator": {
+   "post": {
+    "tags": [
+     "user-back-office-pam-mandator-controller"
+    ],
+    "summary": "Creates configuration records for new mandator",
+    "description": "\nCreates configuration records for new mandator in user management and messaging web services. Registers account for mandator management user.<br/><br/>\n\nRequired role for operation:\n<ul><li>BO_USERMANAGEMENT_CREATE_MANDATOR</li></ul>\n\nSupports authentication:\n<ul><li>Basic &lt;credentials&gt;, where credentials is the Base64 encoding of ID and password joined by a single colon :, CAS login service will be called for the given ID and password for validating credentials.</li>\n<li>Bearer &lt;token&gt; - which is a Bearer token authentication</li></ul>\n                        ",
+    "operationId": "createMandator",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputCreateMandator"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputCreateMandator"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-auth-header": []
+     },
+     {
+      "basic-auth-header": []
+     }
+    ]
+   }
+  },
+  "/changeLogo": {
+   "post": {
+    "tags": [
+     "user-back-office-pam-mandator-controller"
+    ],
+    "summary": "Changes mandator logo",
+    "description": "Required role for operation: BO_USERMANAGEMENT_MANDATOR_MANAGER",
+    "operationId": "changeLogo",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputChangeLogo"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputChangeLogo"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-auth-header": []
+     },
+     {
+      "basic-auth-header": []
+     }
+    ]
+   }
+  },
+  "/assignRoles": {
+   "post": {
+    "tags": [
+     "user-back-office-pam-role-controller"
+    ],
+    "summary": "Assign Role to Consumer",
+    "description": "Assigns one or more roles to an existing user (consumer) within your organization on the TECS Platform.\n\n**Pre-requisites:**\n- The consumer initiating the role assignment must have an owner role or a superior role.\n- For example, to assign the `BO_USERMANAGEMENT_REGISTER_USER` role, the caller must possess the `BO_USERMANAGEMENT_SUPERUSER` role.\n\n**Authentication:**\nSupports both Basic authentication (using Base64 encoded credentials) and Bearer token authentication.\n",
+    "operationId": "assignRoles",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "required": true,
+      "schema": {
+       "type": "string"
+      },
+      "description": "Authorization header. Use either: - Bearer token (e.g., \"Bearer <token>\") - Basic authentication (e.g., \"Basic <Base64 encoded credentials>\")\n"
+     }
+    ],
+    "requestBody": {
+     "required": true,
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputAssignRoles"
+       },
+       "examples": {
+        "default": {
+         "summary": "Example input",
+         "value": {
+          "consumerUUID": "user-12345",
+          "roles": [
+           {
+            "corporateUUID": "4dbbab90-74f5-4d8d-92e1-d02e6a4a0dee",
+            "userRoleName": "MP_CORPORATE"
+           }
+          ]
+         }
+        }
+       }
+      }
+     }
+    },
+    "responses": {
+     "200": {
+      "description": "Role assignment successful.",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputAssignRoles"
+        },
+        "examples": {
+         "default": {
+          "summary": "Successful response",
+          "value": {
+           "responseCode": 0,
+           "responseMessage": "OK"
+          }
+         }
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-auth-header": []
+     },
+     {
+      "basic-auth-header": []
+     }
+    ]
+   }
+  },
+  "/activateUser": {
+   "post": {
+    "tags": [
+     "user-back-office-pam-controller"
+    ],
+    "summary": "Changes consumer status to \"active\"",
+    "description": "\nChanges consumer status to \"active\" and sends notification (if needed).<br/><br/>\n\nRequired role for operation:\n<ul><li>BO_USERMANAGEMENT_SUPERUSER</li></ul>\n\nSupports authentication:\n<ul><li>Basic &lt;credentials&gt;, where credentials is the Base64 encoding of ID and password joined by a single colon :, CAS login service will be called for the given ID and password for validating credentials.</li>\n<li>Bearer &lt;token&gt; - which is a Bearer token authentication</li></ul>\n                        ",
+    "operationId": "activateUser",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputActivateUser"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputActivateUser"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-auth-header": []
+     },
+     {
+      "basic-auth-header": []
+     }
+    ]
+   }
+  },
+  "/activateMerchantPortalModule": {
+   "post": {
+    "tags": [
+     "user-back-office-pam-module-controller"
+    ],
+    "summary": "Initiates the flow for merchant portal module activation",
+    "description": "\nCreates mandator configuration records in Merchant Portal and Messaging web services<br/><br/>\n\nRequired role for operation:\n<ul><li>BO_USERMANAGEMENT_MANDATOR_MANAGER</li></ul>\n\nSupports authentication:\n<ul><li>Basic &lt;credentials&gt;, where credentials is the Base64 encoding of ID and password joined by a single colon :, CAS login service will be called for the given ID and password for validating credentials.</li>\n<li>Bearer &lt;token&gt; - which is a Bearer token authentication</li></ul>\n                        ",
+    "operationId": "activatePortalModule",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputActivatePortalModule"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputActivatePortalModule"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-auth-header": []
+     },
+     {
+      "basic-auth-header": []
+     }
+    ]
+   }
+  },
+  "/activateDigitalModule": {
+   "post": {
+    "tags": [
+     "user-back-office-pam-module-controller"
+    ],
+    "summary": "Initiates the flow for digital services module activation",
+    "description": "\nCreates mandator configuration records in Merchant Portal and Digital services<br/><br/>\n\nRequired role for operation:\n<ul><li>BO_USERMANAGEMENT_MANDATOR_MANAGER</li></ul>\n\nSupports authentication:\n<ul><li>Basic &lt;credentials&gt;, where credentials is the Base64 encoding of ID and password joined by a single colon :, CAS login service will be called for the given ID and password for validating credentials.</li>\n<li>Bearer &lt;token&gt; - which is a Bearer token authentication</li></ul>\n                        ",
+    "operationId": "activateDigitalModule",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputActivateDigitalModule"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputActivateDigitalModule"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-auth-header": []
+     },
+     {
+      "basic-auth-header": []
+     }
+    ]
+   }
+  },
+  "/activateAppStoreModule": {
+   "post": {
+    "tags": [
+     "user-back-office-pam-module-controller"
+    ],
+    "summary": "Initiates the flow for app store module activation",
+    "description": "\nCreates mandator configuration records in Merchant Portal and AppStore services<br/><br/>\n\nRequired role for operation:\n<ul><li>BO_USERMANAGEMENT_MANDATOR_MANAGER</li></ul>\n\nSupports authentication:\n<ul><li>Basic &lt;credentials&gt;, where credentials is the Base64 encoding of ID and password joined by a single colon :, CAS login service will be called for the given ID and password for validating credentials.</li>\n<li>Bearer &lt;token&gt; - which is a Bearer token authentication</li></ul>\n                        ",
+    "operationId": "activateStoreModule",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/InputActivateStoreModule"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputActivateStoreModule"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-auth-header": []
+     },
+     {
+      "basic-auth-header": []
+     }
+    ]
+   }
+  },
+  "/version": {
+   "get": {
+    "tags": [
+     "user-back-office-common-controller"
+    ],
+    "summary": "Returns app metadata",
+    "description": "Returns application name, version and build date",
+    "operationId": "version",
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/Version"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/getLogo": {
+   "get": {
+    "tags": [
+     "user-back-office-pam-mandator-controller"
+    ],
+    "summary": "Displays mandator logo",
+    "description": "Required role for operation: ANY role",
+    "operationId": "getLogo",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OutputGetLogo"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-auth-header": []
+     },
+     {
+      "basic-auth-header": []
+     }
+    ]
+   }
+  }
+ },
+ "components": {
+  "schemas": {
+   "InputUpdateProfile": {
+    "type": "object",
+    "properties": {
+     "firstName": {
+      "type": "string"
+     },
+     "lastName": {
+      "type": "string"
+     },
+     "email": {
+      "type": "string"
+     },
+     "phoneNumber": {
+      "type": "string"
+     },
+     "consumerLanguage": {
+      "type": "string"
+     }
+    }
+   },
+   "OutputUpdateProfile": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     }
+    }
+   },
+   "InputUpdateConsumer": {
+    "required": [
+     "consumerUuid"
+    ],
+    "type": "object",
+    "properties": {
+     "consumerUuid": {
+      "type": "string"
+     },
+     "kycPassed": {
+      "type": "boolean"
+     },
+     "transactionhistory_id": {
+      "type": "string"
+     },
+     "datetime_created": {
+      "type": "string"
+     },
+     "phoneNumber": {
+      "type": "string"
+     },
+     "nationality": {
+      "type": "string"
+     },
+     "placeOfBirth": {
+      "type": "string"
+     },
+     "firstName": {
+      "type": "string"
+     },
+     "lastName": {
+      "type": "string"
+     },
+     "email": {
+      "type": "string"
+     },
+     "dateOfBirth": {
+      "type": "string"
+     },
+     "identificationNumber": {
+      "type": "string"
+     },
+     "passportNumber": {
+      "type": "string"
+     },
+     "driverLicenceNumber": {
+      "type": "string"
+     },
+     "street1": {
+      "type": "string"
+     },
+     "street2": {
+      "type": "string"
+     },
+     "city": {
+      "type": "string"
+     },
+     "state": {
+      "type": "string"
+     },
+     "country": {
+      "type": "string"
+     },
+     "zip": {
+      "type": "string"
+     },
+     "consumerlanguage": {
+      "type": "string"
+     }
+    }
+   },
+   "OutputUpdateConsumer": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     }
+    }
+   },
+   "InputResetPassword": {
+    "type": "object",
+    "properties": {
+     "consumerUuid": {
+      "type": "string"
+     },
+     "phoneNumber": {
+      "type": "string"
+     }
+    }
+   },
+   "OutputResetPassword": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     }
+    }
+   },
+   "InputResendLink": {
+    "required": [
+     "consumerUUID"
+    ],
+    "type": "object",
+    "properties": {
+     "consumerUUID": {
+      "type": "string"
+     },
+     "phoneNumber": {
+      "type": "string"
+     },
+     "emailConfirmationCode": {
+      "type": "string"
+     },
+     "businessRegistrationNumber": {
+      "type": "string"
+     }
+    }
+   },
+   "OutputResendLink": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     }
+    }
+   },
+   "InputRemoveRoles": {
+    "type": "object",
+    "properties": {
+     "consumerUUID": {
+      "type": "string"
+     },
+     "roles": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/Role"
+      }
+     }
+    }
+   },
+   "Role": {
+    "type": "object",
+    "properties": {
+     "userRoleName": {
+      "type": "string"
+     },
+     "corporateUUID": {
+      "type": "string"
+     }
+    }
+   },
+   "OutputRemoveRoles": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     }
+    }
+   },
+   "InputRegisterUser": {
+    "type": "object",
+    "required": [
+     "email"
+    ],
+    "properties": {
+     "firstName": {
+      "type": "string",
+      "description": "User's first name.",
+      "example": "UserName"
+     },
+     "lastName": {
+      "type": "string",
+      "description": "User's last name.",
+      "example": "UserSurname"
+     },
+     "email": {
+      "type": "string",
+      "format": "email",
+      "description": "User's email address (must be unique).",
+      "example": "user@mail.com"
+     },
+     "dateOfBirth": {
+      "type": "string",
+      "description": "User's date of birth (expected format: dd.MM.yyyy).",
+      "example": "01.01.2000"
+     },
+     "street1": {
+      "type": "string",
+      "description": "Primary address line.",
+      "example": "Potsdamer"
+     },
+     "street2": {
+      "type": "string",
+      "description": "Secondary address line.",
+      "example": "13"
+     },
+     "city": {
+      "type": "string",
+      "description": "City where the user resides.",
+      "example": "Berlin"
+     },
+     "country": {
+      "type": "string",
+      "description": "User's country.",
+      "example": "Germany"
+     },
+     "zip": {
+      "type": "string",
+      "description": "Postal code.",
+      "example": "10783"
+     },
+     "salutation": {
+      "type": "string",
+      "description": "User's salutation (e.g., Mr., Ms.).",
+      "example": "Mr."
+     },
+     "phone": {
+      "type": "string",
+      "description": "User's phone number.",
+      "example": "+4991199009926"
+     },
+     "identificationNumber": {
+      "type": "string",
+      "description": "User's identification number.",
+      "example": "19574328625"
+     },
+     "passportNumber": {
+      "type": "string",
+      "description": "User's passport number.",
+      "example": "VH488314"
+     },
+     "driverLicenceNumber": {
+      "type": "string",
+      "description": "User's driver's license number.",
+      "example": "DC357158"
+     },
+     "state": {
+      "type": "string",
+      "description": "User's state or region.",
+      "example": "Berlin"
+     },
+     "login": {
+      "type": "string",
+      "description": "User login identifier (should be unique).",
+      "example": "userlogin"
+     },
+     "module": {
+      "type": "string",
+      "description": "Module identifier (if applicable).",
+      "example": "pam"
+     },
+     "consumerLanguage": {
+      "type": "string",
+      "description": "Preferred language for the user (e.g., 'en').",
+      "example": "en"
+     }
+    }
+   },
+   "OutputRegisterUser": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Response code (0 indicates success; non-zero indicates an error).",
+      "example": 0
+     },
+     "responseMessage": {
+      "type": "string",
+      "description": "Human-readable response message.",
+      "example": "OK"
+     },
+     "consumerId": {
+      "type": "string",
+      "description": "User login or unique user identifier.",
+      "example": "userlogin"
+     }
+    }
+   },
+   "InputProvideCredentials": {
+    "required": [
+     "mandatorName"
+    ],
+    "type": "object",
+    "properties": {
+     "mandatorName": {
+      "type": "string"
+     }
+    }
+   },
+   "OutputProvideCredentials": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "username": {
+      "type": "string"
+     },
+     "password": {
+      "type": "string"
+     }
+    }
+   },
+   "InputListOfUsers": {
+    "type": "object",
+    "properties": {
+     "pagination": {
+      "$ref": "#/components/schemas/Pagination"
+     },
+     "sorting": {
+      "$ref": "#/components/schemas/Sorting"
+     },
+     "filter": {
+      "$ref": "#/components/schemas/UsersFilter"
+     }
+    }
+   },
+   "Pagination": {
+    "type": "object",
+    "properties": {
+     "page": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "size": {
+      "type": "integer",
+      "format": "int32"
+     }
+    }
+   },
+   "Sorting": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": "string"
+     },
+     "type": {
+      "type": "string"
+     }
+    }
+   },
+   "UsersFilter": {
+    "type": "object",
+    "properties": {
+     "consumerUUID": {
+      "type": "string"
+     },
+     "firstName": {
+      "type": "string"
+     },
+     "lastName": {
+      "type": "string"
+     },
+     "email": {
+      "type": "string"
+     },
+     "statusID": {
+      "type": "array",
+      "items": {
+       "type": "integer",
+       "format": "int32"
+      }
+     },
+     "kycLevel": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "kycStatusID": {
+      "type": "array",
+      "items": {
+       "type": "integer",
+       "format": "int32"
+      }
+     },
+     "userRoleName": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "registeredDateFrom": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "registeredDateTo": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "lockedUntillFrom": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "lockedUntillTo": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "identificationStatus": {
+      "type": "string"
+     },
+     "corporateUUID": {
+      "type": "string"
+     }
+    }
+   },
+   "AddressOutput": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": "string"
+     },
+     "street1": {
+      "type": "string"
+     },
+     "street2": {
+      "type": "string"
+     },
+     "zipCode": {
+      "type": "string"
+     },
+     "country": {
+      "type": "string"
+     },
+     "description": {
+      "type": "string"
+     },
+     "city": {
+      "type": "string"
+     },
+     "state": {
+      "type": "string"
+     }
+    }
+   },
+   "CaseOutput": {
+    "type": "object",
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "validUntil": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "failure": {
+      "$ref": "#/components/schemas/KycFailureOutput"
+     },
+     "providers": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/KycProviderOutput"
+      }
+     }
+    }
+   },
+   "CorporateOutput": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": "string"
+     },
+     "uuid": {
+      "type": "string"
+     }
+    }
+   },
+   "GenderOutput": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": "string"
+     }
+    }
+   },
+   "IDCardOutput": {
+    "type": "object",
+    "properties": {
+     "number": {
+      "type": "string"
+     },
+     "type": {
+      "$ref": "#/components/schemas/IDCardTypeOutput"
+     }
+    }
+   },
+   "IDCardTypeOutput": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": "string"
+     }
+    }
+   },
+   "KycFailureOutput": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": "string"
+     }
+    }
+   },
+   "KycOutput": {
+    "type": "object",
+    "properties": {
+     "level": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "status": {
+      "$ref": "#/components/schemas/KycStatusOutput"
+     },
+     "cases": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/CaseOutput"
+      }
+     }
+    }
+   },
+   "KycProviderOutput": {
+    "type": "object",
+    "properties": {
+     "method": {
+      "type": "string"
+     },
+     "status": {
+      "type": "string"
+     },
+     "datetimeCreated": {
+      "type": "string",
+      "format": "date-time"
+     }
+    }
+   },
+   "KycStatusOutput": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": "string"
+     }
+    }
+   },
+   "OutputListOfUsers": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "pagination": {
+      "$ref": "#/components/schemas/OutputPagination"
+     },
+     "list": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/UserOutput"
+      }
+     }
+    }
+   },
+   "OutputPagination": {
+    "type": "object",
+    "properties": {
+     "page": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "size": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "totalPages": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "totalElements": {
+      "type": "integer",
+      "format": "int64"
+     }
+    }
+   },
+   "PhoneOutput": {
+    "type": "object",
+    "properties": {
+     "number": {
+      "type": "string"
+     },
+     "description": {
+      "type": "string"
+     }
+    }
+   },
+   "StatusOutput": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": "string"
+     }
+    }
+   },
+   "UserOutput": {
+    "type": "object",
+    "properties": {
+     "consumerUUID": {
+      "type": "string"
+     },
+     "firstName": {
+      "type": "string"
+     },
+     "lastName": {
+      "type": "string"
+     },
+     "email": {
+      "type": "string"
+     },
+     "phones": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/PhoneOutput"
+      }
+     },
+     "dateOfBirth": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "addresses": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/AddressOutput"
+      }
+     },
+     "placeOfBirth": {
+      "type": "string"
+     },
+     "nationality": {
+      "type": "string"
+     },
+     "status": {
+      "$ref": "#/components/schemas/StatusOutput"
+     },
+     "registered": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "lockedUntill": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "userRoles": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/UserRoleOutput"
+      }
+     },
+     "kyc": {
+      "$ref": "#/components/schemas/KycOutput"
+     },
+     "idCards": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/IDCardOutput"
+      }
+     },
+     "gender": {
+      "$ref": "#/components/schemas/GenderOutput"
+     }
+    }
+   },
+   "UserRoleOutput": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": "string"
+     },
+     "corporate": {
+      "$ref": "#/components/schemas/CorporateOutput"
+     }
+    }
+   },
+   "InputListOfTransactionsHistory": {
+    "type": "object",
+    "properties": {
+     "pagination": {
+      "$ref": "#/components/schemas/Pagination"
+     },
+     "sorting": {
+      "$ref": "#/components/schemas/Sorting"
+     },
+     "filter": {
+      "$ref": "#/components/schemas/TransactionHistoryFilter"
+     }
+    }
+   },
+   "TransactionHistoryFilter": {
+    "type": "object",
+    "properties": {
+     "consumerUUID": {
+      "type": "string"
+     },
+     "requestorTransactionID": {
+      "type": "integer",
+      "format": "int64"
+     },
+     "eventID": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "statusID": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "createdFrom": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "createdTo": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "requestorDateFrom": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "requestorDateTo": {
+      "type": "string",
+      "format": "date-time"
+     }
+    }
+   },
+   "Event": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": "string"
+     }
+    }
+   },
+   "OutputListOfTransactionsHistory": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "pagination": {
+      "$ref": "#/components/schemas/OutputPagination"
+     },
+     "list": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/TransactionHistory"
+      }
+     }
+    }
+   },
+   "Requestor": {
+    "type": "object",
+    "properties": {
+     "transactionID": {
+      "type": "integer",
+      "format": "int64"
+     },
+     "datetime": {
+      "type": "string",
+      "format": "date-time"
+     }
+    }
+   },
+   "TransactionHistory": {
+    "type": "object",
+    "properties": {
+     "consumerUUID": {
+      "type": "string"
+     },
+     "event": {
+      "$ref": "#/components/schemas/Event"
+     },
+     "status": {
+      "$ref": "#/components/schemas/StatusOutput"
+     },
+     "requestor": {
+      "$ref": "#/components/schemas/Requestor"
+     },
+     "description": {
+      "type": "string"
+     },
+     "created": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "responseDatetime": {
+      "type": "string",
+      "format": "date-time"
+     }
+    }
+   },
+   "InputListOfRoleGroups": {
+    "type": "object",
+    "properties": {
+     "pagination": {
+      "$ref": "#/components/schemas/Pagination"
+     },
+     "sorting": {
+      "$ref": "#/components/schemas/Sorting"
+     },
+     "filter": {
+      "$ref": "#/components/schemas/ListOfRoleGroupsFilter"
+     }
+    }
+   },
+   "ListOfRoleGroupsFilter": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": "string"
+     },
+     "global": {
+      "type": "boolean"
+     },
+     "status": {
+      "type": "string"
+     }
+    }
+   },
+   "OutputListOfRoleGroups": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "pagination": {
+      "$ref": "#/components/schemas/OutputPagination"
+     },
+     "groupRoles": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/UserGroupList"
+      }
+     }
+    }
+   },
+   "UserGroupList": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": "string"
+     },
+     "status": {
+      "type": "string"
+     },
+     "description": {
+      "type": "string"
+     },
+     "global": {
+      "type": "boolean"
+     },
+     "userRoles": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/UserRoleList"
+      }
+     }
+    }
+   },
+   "UserRoleList": {
+    "type": "object",
+    "properties": {
+     "userRoleName": {
+      "type": "string"
+     },
+     "userRoleDescription": {
+      "type": "string"
+     }
+    }
+   },
+   "InputListOfModules": {
+    "type": "object"
+   },
+   "Module": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": "string"
+     },
+     "status": {
+      "type": "string"
+     }
+    }
+   },
+   "OutputListOfModules": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "pagination": {
+      "$ref": "#/components/schemas/OutputPagination"
+     },
+     "list": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/Module"
+      }
+     }
+    }
+   },
+   "InputListOfMandators": {
+    "type": "object",
+    "properties": {
+     "pagination": {
+      "$ref": "#/components/schemas/Pagination"
+     },
+     "sorting": {
+      "$ref": "#/components/schemas/Sorting"
+     },
+     "filter": {
+      "$ref": "#/components/schemas/MandatorFilter"
+     }
+    }
+   },
+   "MandatorFilter": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": "string"
+     }
+    }
+   },
+   "Mandator": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": "string"
+     },
+     "description": {
+      "type": "string"
+     }
+    }
+   },
+   "OutputListOfMandators": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "pagination": {
+      "$ref": "#/components/schemas/OutputPagination"
+     },
+     "list": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/Mandator"
+      }
+     }
+    }
+   },
+   "InputListOfAvailableRoles": {
+    "type": "object"
+   },
+   "CorporateUserRole": {
+    "type": "object",
+    "properties": {
+     "userRoleName": {
+      "type": "string"
+     },
+     "corporateUUID": {
+      "type": "string"
+     },
+     "corporateName": {
+      "type": "string"
+     }
+    }
+   },
+   "OutputListOfAvailableRoles": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "availableRoles": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/CorporateUserRole"
+      }
+     }
+    }
+   },
+   "InputGetKycDocument": {
+    "type": "object",
+    "properties": {
+     "caseID": {
+      "type": "string"
+     }
+    }
+   },
+   "OutputGetKycDocument": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "encodedDataBase64": {
+      "type": "string"
+     }
+    }
+   },
+   "InputDeactivateUser": {
+    "type": "object",
+    "properties": {
+     "consumerUUID": {
+      "type": "string"
+     }
+    }
+   },
+   "OutputDeactivateUser": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     }
+    }
+   },
+   "InputCreateServiceUser": {
+    "required": [
+     "mandatorName"
+    ],
+    "type": "object",
+    "properties": {
+     "mandatorName": {
+      "type": "string"
+     }
+    }
+   },
+   "OutputCreateServiceUser": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     }
+    }
+   },
+   "InputCreateMandator": {
+    "required": [
+     "description",
+     "email",
+     "login",
+     "name",
+     "phone"
+    ],
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": "string"
+     },
+     "description": {
+      "type": "string"
+     },
+     "email": {
+      "type": "string"
+     },
+     "login": {
+      "type": "string"
+     },
+     "phone": {
+      "type": "string"
+     },
+     "firstName": {
+      "type": "string"
+     },
+     "lastName": {
+      "type": "string"
+     },
+     "dateOfBirth": {
+      "type": "string"
+     },
+     "street1": {
+      "type": "string"
+     },
+     "city": {
+      "type": "string"
+     },
+     "country": {
+      "type": "string"
+     },
+     "zipCode": {
+      "type": "string"
+     },
+     "salutation": {
+      "type": "string"
+     },
+     "identificationNumber": {
+      "type": "string"
+     },
+     "passportNumber": {
+      "type": "string"
+     },
+     "driversLicenseNumber": {
+      "type": "string"
+     },
+     "street2": {
+      "type": "string"
+     },
+     "state": {
+      "type": "string"
+     }
+    }
+   },
+   "OutputCreateMandator": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "mandator": {
+      "$ref": "#/components/schemas/Mandator"
+     }
+    }
+   },
+   "InputChangeLogo": {
+    "required": [
+     "contentAsBase64",
+     "mimeType"
+    ],
+    "type": "object",
+    "properties": {
+     "mimeType": {
+      "type": "string",
+      "description": "The MIME type of the image",
+      "example": "image/png"
+     },
+     "contentAsBase64": {
+      "type": "string",
+      "description": "The content of the image as base64 encoded string",
+      "example": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABaElEQVR42mNk"
+     }
+    }
+   },
+   "OutputChangeLogo": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     }
+    }
+   },
+   "InputAssignRoles": {
+    "type": "object",
+    "required": [
+     "consumerUUID",
+     "roles"
+    ],
+    "properties": {
+     "consumerUUID": {
+      "type": "string",
+      "description": "Unique identifier of the consumer (user) to whom the role(s) will be assigned.",
+      "example": "user-12345"
+     },
+     "roles": {
+      "type": "array",
+      "description": "List of roles to assign to the consumer.",
+      "items": {
+       "$ref": "#/components/schemas/UserRole"
+      }
+     }
+    }
+   },
+   "OutputAssignRoles": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Response code: 0 indicates success; any non-zero value indicates an error.",
+      "example": 0
+     },
+     "responseMessage": {
+      "type": "string",
+      "description": "A human-readable message providing additional details about the outcome.",
+      "example": "OK"
+     }
+    }
+   },
+   "UserRole": {
+    "type": "object",
+    "required": [
+     "corporateUUID",
+     "userRoleName"
+    ],
+    "properties": {
+     "corporateUUID": {
+      "type": "string",
+      "description": "Unique identifier of the corporate entity associated with the role.",
+      "example": "4dbbab90-74f5-4d8d-92e1-d02e6a4a0dee"
+     },
+     "userRoleName": {
+      "type": "string",
+      "description": "The name of the role to assign.",
+      "enum": [
+       "TE_MERCHANT_TERMINAL_MANAGEMENT",
+       "BO_TE_TRANSACTION_HISTORY",
+       "BO_TRANSACTIONMANAGEMENT_CANCEL",
+       "BO_TRANSACTIONMANAGEMENT_REFUND",
+       "BO_TRANSACTIONMANAGEMENT_EMV",
+       "BO_TRANSACTIONMANAGEMENT_ECR",
+       "SERVICE_BLACKLISTCHECK",
+       "MP_CORPORATE",
+       "BO_USERMANAGEMENT_MANDATOR_MANAGER",
+       "BO_TRANSACTIONMANAGEMENT_COMPLETION",
+       "BO_TRANSACTIONMANAGEMENT_PAYMENT",
+       "MCOM_WEBAPP_TX_HISTORY",
+       "BO_USERMANAGEMENT_UPDATE_CORPORATE",
+       "BO_MP_CREATE_NEW_PRODUCT",
+       "SYSTEM_GET_TERMINAL_ID",
+       "BO_DAILY_REPORTS_VIEW",
+       "DAILY_REPORTS_VIEW",
+       "BO_DAILY_REPORTS_CUSTOM",
+       "DAILY_REPORTS_CUSTOM",
+       "TW_GET_ECOM_PARAMETERS",
+       "TE_KEEP_ALIVE_LIST",
+       "BO_TRANSACTIONMANAGEMENT_ECOM",
+       "BO_MP_UPDATE_XML_TEMPLATE",
+       "BO_MP_GET_XML_TEMPLATE",
+       "BO_MANDATOR_CLEARING_EXPORT",
+       "SYSTEM_REGISTER_MERCHANT_TERMINAL",
+       "BO_MP_MOVE_TID"
+      ],
+      "example": "MP_CORPORATE"
+     }
+    }
+   },
+   "InputActivateUser": {
+    "type": "object",
+    "properties": {
+     "consumerUUID": {
+      "type": "string"
+     }
+    }
+   },
+   "OutputActivateUser": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     }
+    }
+   },
+   "InputActivatePortalModule": {
+    "required": [
+     "clientSecret",
+     "notificationEmail"
+    ],
+    "type": "object",
+    "properties": {
+     "clientSecret": {
+      "type": "string"
+     },
+     "notificationEmail": {
+      "type": "string"
+     }
+    }
+   },
+   "OutputActivatePortalModule": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     }
+    }
+   },
+   "InputActivateDigitalModule": {
+    "type": "object"
+   },
+   "OutputActivateDigitalModule": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     }
+    }
+   },
+   "InputActivateStoreModule": {
+    "type": "object"
+   },
+   "OutputActivateStoreModule": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     }
+    }
+   },
+   "Version": {
+    "type": "object",
+    "properties": {
+     "appName": {
+      "type": "string"
+     },
+     "version": {
+      "type": "string"
+     },
+     "buildDate": {
+      "type": "string"
+     }
+    }
+   },
+   "OutputGetLogo": {
+    "required": [
+     "contentAsBase64",
+     "mimeType"
+    ],
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "mimeType": {
+      "type": "string",
+      "description": "The MIME type of the image",
+      "example": "image/png"
+     },
+     "contentAsBase64": {
+      "type": "string",
+      "description": "The content of the image as base64 encoded string",
+      "example": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABaElEQVR42mNk"
+     }
+    }
+   }
+  },
+  "securitySchemes": {
+   "bearer-auth-header": {
+    "type": "http",
+    "scheme": "bearer"
+   },
+   "basic-auth-header": {
+    "type": "http",
+    "scheme": "basic"
+   }
+  }
+ },
+ "x-readme": {
+  "explorer-enabled": true,
+  "proxy-enabled": true
+ }
+}
