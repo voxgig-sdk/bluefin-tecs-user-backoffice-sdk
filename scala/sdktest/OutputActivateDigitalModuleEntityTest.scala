@@ -35,7 +35,7 @@ object OutputActivateDigitalModuleEntityTest {
       var outputActivateDigitalModuleRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.output_activate_digital_module"), "output_activate_digital_module_ref01"))
       val outputActivateDigitalModuleRef01DataResult = outputActivateDigitalModuleRef01Ent.create(outputActivateDigitalModuleRef01Data, null)
-      outputActivateDigitalModuleRef01Data = Helpers.toMapAny(outputActivateDigitalModuleRef01DataResult)
+      outputActivateDigitalModuleRef01Data = Helpers.toMapAny(outputActivateDigitalModuleRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("output_activate_digital_module.create.map", outputActivateDigitalModuleRef01Data != null, "expected create result to be a map")
     }
   }

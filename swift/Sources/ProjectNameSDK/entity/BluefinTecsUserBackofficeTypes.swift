@@ -69,7 +69,7 @@ public struct OutputAssignRole {
   public var consumerUuid: String
   public var responseCode: Int?
   public var responseMessage: String?
-  public var role: [Value]
+  public var roles: [Value]
 }
 
 /// OutputAssignRoleCreateData is the typed request payload for OutputAssignRole.create.
@@ -77,7 +77,7 @@ public struct OutputAssignRoleCreateData {
   public var consumerUuid: String
   public var responseCode: Int?
   public var responseMessage: String?
-  public var role: [Value]
+  public var roles: [Value]
 }
 
 /// OutputChangeLogo is the typed data model for the output_change_logo entity.
@@ -101,19 +101,16 @@ public struct OutputCreateMandator {
   public var city: String?
   public var country: String?
   public var dateOfBirth: String?
-  public var description: String
+  public var description: String?
   public var driversLicenseNumber: String?
   public var email: String
   public var firstName: String?
   public var identificationNumber: String?
   public var lastName: String?
   public var login: String
-  public var mandator: VMap?
-  public var name: String
+  public var name: String?
   public var passportNumber: String?
   public var phone: String
-  public var responseCode: Int?
-  public var responseMessage: String?
   public var salutation: String?
   public var state: String?
   public var street1: String?
@@ -126,19 +123,16 @@ public struct OutputCreateMandatorCreateData {
   public var city: String?
   public var country: String?
   public var dateOfBirth: String?
-  public var description: String
+  public var description: String?
   public var driversLicenseNumber: String?
   public var email: String
   public var firstName: String?
   public var identificationNumber: String?
   public var lastName: String?
   public var login: String
-  public var mandator: VMap?
-  public var name: String
+  public var name: String?
   public var passportNumber: String?
   public var phone: String
-  public var responseCode: Int?
-  public var responseMessage: String?
   public var salutation: String?
   public var state: String?
   public var street1: String?
@@ -208,14 +202,14 @@ public struct OutputGetLogoLoadMatch {
 
 /// OutputListOfAvailableRole is the typed data model for the output_list_of_available_role entity.
 public struct OutputListOfAvailableRole {
-  public var availableRole: [Value]?
+  public var availableRoles: [Value]?
   public var responseCode: Int?
   public var responseMessage: String?
 }
 
 /// OutputListOfAvailableRoleCreateData is the typed request payload for OutputListOfAvailableRole.create.
 public struct OutputListOfAvailableRoleCreateData {
-  public var availableRole: [Value]?
+  public var availableRoles: [Value]?
   public var responseCode: Int?
   public var responseMessage: String?
 }
@@ -259,7 +253,7 @@ public struct OutputListOfModuleCreateData {
 /// OutputListOfRoleGroup is the typed data model for the output_list_of_role_group entity.
 public struct OutputListOfRoleGroup {
   public var filter: VMap?
-  public var groupRole: [Value]?
+  public var groupRoles: [Value]?
   public var pagination: VMap?
   public var responseCode: Int?
   public var responseMessage: String?
@@ -269,7 +263,7 @@ public struct OutputListOfRoleGroup {
 /// OutputListOfRoleGroupCreateData is the typed request payload for OutputListOfRoleGroup.create.
 public struct OutputListOfRoleGroupCreateData {
   public var filter: VMap?
-  public var groupRole: [Value]?
+  public var groupRoles: [Value]?
   public var pagination: VMap?
   public var responseCode: Int?
   public var responseMessage: String?
@@ -389,7 +383,7 @@ public struct OutputRemoveRole {
   public var consumerUuid: String?
   public var responseCode: Int?
   public var responseMessage: String?
-  public var role: [Value]?
+  public var roles: [Value]?
 }
 
 /// OutputRemoveRoleCreateData is the typed request payload for OutputRemoveRole.create.
@@ -397,7 +391,7 @@ public struct OutputRemoveRoleCreateData {
   public var consumerUuid: String?
   public var responseCode: Int?
   public var responseMessage: String?
-  public var role: [Value]?
+  public var roles: [Value]?
 }
 
 /// OutputResendLink is the typed data model for the output_resend_link entity.

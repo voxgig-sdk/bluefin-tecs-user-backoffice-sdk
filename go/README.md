@@ -54,7 +54,7 @@ func main() {
     })
 
     // Create a outputActivateDigitalModule.
-    created, err := client.OutputActivateDigitalModule(nil).Create(map[string]any{"response_code": 1, "response_message": "example_response_message"}, nil)
+    created, err := client.OutputActivateDigitalModule(nil).Create(map[string]any{"responseCode": 1, "responseMessage": "example_responseMessage"}, nil)
     if err != nil {
         panic(err)
     }
@@ -288,8 +288,8 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"response_code"` |  |
-| `"response_message"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
 
 Operations: Create.
 
@@ -299,10 +299,10 @@ API path: `/activateDigitalModule`
 
 | Field | Description |
 | --- | --- |
-| `"client_secret"` |  |
-| `"notification_email"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
+| `"clientSecret"` |  |
+| `"notificationEmail"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
 
 Operations: Create.
 
@@ -312,8 +312,8 @@ API path: `/activateMerchantPortalModule`
 
 | Field | Description |
 | --- | --- |
-| `"response_code"` |  |
-| `"response_message"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
 
 Operations: Create.
 
@@ -323,9 +323,9 @@ API path: `/activateAppStoreModule`
 
 | Field | Description |
 | --- | --- |
-| `"consumer_uuid"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
+| `"consumerUUID"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
 
 Operations: Create.
 
@@ -335,10 +335,10 @@ API path: `/activateUser`
 
 | Field | Description |
 | --- | --- |
-| `"consumer_uuid"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
-| `"role"` |  |
+| `"consumerUUID"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
+| `"roles"` |  |
 
 Operations: Create.
 
@@ -348,10 +348,10 @@ API path: `/assignRoles`
 
 | Field | Description |
 | --- | --- |
-| `"content_as_base64"` |  |
-| `"mime_type"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
+| `"contentAsBase64"` |  |
+| `"mimeType"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
 
 Operations: Create.
 
@@ -363,25 +363,22 @@ API path: `/changeLogo`
 | --- | --- |
 | `"city"` |  |
 | `"country"` |  |
-| `"date_of_birth"` |  |
+| `"dateOfBirth"` |  |
 | `"description"` |  |
-| `"drivers_license_number"` |  |
+| `"driversLicenseNumber"` |  |
 | `"email"` |  |
-| `"first_name"` |  |
-| `"identification_number"` |  |
-| `"last_name"` |  |
+| `"firstName"` |  |
+| `"identificationNumber"` |  |
+| `"lastName"` |  |
 | `"login"` |  |
-| `"mandator"` |  |
 | `"name"` |  |
-| `"passport_number"` |  |
+| `"passportNumber"` |  |
 | `"phone"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
 | `"salutation"` |  |
 | `"state"` |  |
 | `"street1"` |  |
 | `"street2"` |  |
-| `"zip_code"` |  |
+| `"zipCode"` |  |
 
 Operations: Create.
 
@@ -391,9 +388,9 @@ API path: `/createMandator`
 
 | Field | Description |
 | --- | --- |
-| `"mandator_name"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
+| `"mandatorName"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
 
 Operations: Create.
 
@@ -403,9 +400,9 @@ API path: `/createServiceUser`
 
 | Field | Description |
 | --- | --- |
-| `"consumer_uuid"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
+| `"consumerUUID"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
 
 Operations: Create.
 
@@ -415,10 +412,10 @@ API path: `/deactivateUser`
 
 | Field | Description |
 | --- | --- |
-| `"case_id"` |  |
-| `"encoded_data_base64"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
+| `"caseID"` |  |
+| `"encodedDataBase64"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
 
 Operations: Create.
 
@@ -428,10 +425,10 @@ API path: `/getKycDocument`
 
 | Field | Description |
 | --- | --- |
-| `"content_as_base64"` |  |
-| `"mime_type"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
+| `"contentAsBase64"` |  |
+| `"mimeType"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
 
 Operations: Load.
 
@@ -441,9 +438,9 @@ API path: `/getLogo`
 
 | Field | Description |
 | --- | --- |
-| `"available_role"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
+| `"availableRoles"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
 
 Operations: Create.
 
@@ -456,8 +453,8 @@ API path: `/listOfAvailableRoles`
 | `"filter"` |  |
 | `"list"` |  |
 | `"pagination"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
 | `"sorting"` |  |
 
 Operations: Create.
@@ -470,8 +467,8 @@ API path: `/listOfMandators`
 | --- | --- |
 | `"list"` |  |
 | `"pagination"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
 
 Operations: Create.
 
@@ -482,10 +479,10 @@ API path: `/listOfModules`
 | Field | Description |
 | --- | --- |
 | `"filter"` |  |
-| `"group_role"` |  |
+| `"groupRoles"` |  |
 | `"pagination"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
 | `"sorting"` |  |
 
 Operations: Create.
@@ -499,8 +496,8 @@ API path: `/listOfRoleGroups`
 | `"filter"` |  |
 | `"list"` |  |
 | `"pagination"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
 | `"sorting"` |  |
 
 Operations: Create.
@@ -514,8 +511,8 @@ API path: `/listOfTransactionsHistory`
 | `"filter"` |  |
 | `"list"` |  |
 | `"pagination"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
 | `"sorting"` |  |
 
 Operations: Create.
@@ -526,10 +523,10 @@ API path: `/listOfUsers`
 
 | Field | Description |
 | --- | --- |
-| `"mandator_name"` |  |
+| `"mandatorName"` |  |
 | `"password"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
 | `"username"` |  |
 
 Operations: Create.
@@ -541,21 +538,21 @@ API path: `/provideCredentials`
 | Field | Description |
 | --- | --- |
 | `"city"` |  |
-| `"consumer_id"` |  |
-| `"consumer_language"` |  |
+| `"consumerId"` |  |
+| `"consumerLanguage"` |  |
 | `"country"` |  |
-| `"date_of_birth"` |  |
-| `"driver_licence_number"` |  |
+| `"dateOfBirth"` |  |
+| `"driverLicenceNumber"` |  |
 | `"email"` |  |
-| `"first_name"` |  |
-| `"identification_number"` |  |
-| `"last_name"` |  |
+| `"firstName"` |  |
+| `"identificationNumber"` |  |
+| `"lastName"` |  |
 | `"login"` |  |
 | `"module"` |  |
-| `"passport_number"` |  |
+| `"passportNumber"` |  |
 | `"phone"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
 | `"salutation"` |  |
 | `"state"` |  |
 | `"street1"` |  |
@@ -570,10 +567,10 @@ API path: `/registerUser`
 
 | Field | Description |
 | --- | --- |
-| `"consumer_uuid"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
-| `"role"` |  |
+| `"consumerUUID"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
+| `"roles"` |  |
 
 Operations: Create.
 
@@ -583,12 +580,12 @@ API path: `/removeRoles`
 
 | Field | Description |
 | --- | --- |
-| `"business_registration_number"` |  |
-| `"consumer_uuid"` |  |
-| `"email_confirmation_code"` |  |
-| `"phone_number"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
+| `"businessRegistrationNumber"` |  |
+| `"consumerUUID"` |  |
+| `"emailConfirmationCode"` |  |
+| `"phoneNumber"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
 
 Operations: Create.
 
@@ -598,10 +595,10 @@ API path: `/resendLink`
 
 | Field | Description |
 | --- | --- |
-| `"consumer_uuid"` |  |
-| `"phone_number"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
+| `"consumerUuid"` |  |
+| `"phoneNumber"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
 
 Operations: Create.
 
@@ -612,23 +609,23 @@ API path: `/resetPassword`
 | Field | Description |
 | --- | --- |
 | `"city"` |  |
-| `"consumer_uuid"` |  |
+| `"consumerUuid"` |  |
 | `"consumerlanguage"` |  |
 | `"country"` |  |
-| `"date_of_birth"` |  |
+| `"dateOfBirth"` |  |
 | `"datetime_created"` |  |
-| `"driver_licence_number"` |  |
+| `"driverLicenceNumber"` |  |
 | `"email"` |  |
-| `"first_name"` |  |
-| `"identification_number"` |  |
-| `"kyc_passed"` |  |
-| `"last_name"` |  |
+| `"firstName"` |  |
+| `"identificationNumber"` |  |
+| `"kycPassed"` |  |
+| `"lastName"` |  |
 | `"nationality"` |  |
-| `"passport_number"` |  |
-| `"phone_number"` |  |
-| `"place_of_birth"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
+| `"passportNumber"` |  |
+| `"phoneNumber"` |  |
+| `"placeOfBirth"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
 | `"state"` |  |
 | `"street1"` |  |
 | `"street2"` |  |
@@ -643,13 +640,13 @@ API path: `/updateConsumer`
 
 | Field | Description |
 | --- | --- |
-| `"consumer_language"` |  |
+| `"consumerLanguage"` |  |
 | `"email"` |  |
-| `"first_name"` |  |
-| `"last_name"` |  |
-| `"phone_number"` |  |
-| `"response_code"` |  |
-| `"response_message"` |  |
+| `"firstName"` |  |
+| `"lastName"` |  |
+| `"phoneNumber"` |  |
+| `"responseCode"` |  |
+| `"responseMessage"` |  |
 
 Operations: Create.
 
@@ -659,8 +656,8 @@ API path: `/updateProfile`
 
 | Field | Description |
 | --- | --- |
-| `"app_name"` |  |
-| `"build_date"` |  |
+| `"appName"` |  |
+| `"buildDate"` |  |
 | `"version"` |  |
 
 Operations: Load.
@@ -686,8 +683,8 @@ Create an instance: `outputActivateDigitalModule := client.OutputActivateDigital
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -715,17 +712,17 @@ Create an instance: `outputActivatePortalModule := client.OutputActivatePortalMo
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `string` |  |
-| `notification_email` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `clientSecret` | `string` |  |
+| `notificationEmail` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```go
 result, err := client.OutputActivatePortalModule(nil).Create(map[string]any{
-    "client_secret": "example_client_secret",
-    "notification_email": "example_notification_email",
+    "clientSecret": "example_clientSecret",
+    "notificationEmail": "example_notificationEmail",
 }, nil)
 if err != nil {
     panic(err)
@@ -748,8 +745,8 @@ Create an instance: `outputActivateStoreModule := client.OutputActivateStoreModu
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -777,9 +774,9 @@ Create an instance: `outputActivateUser := client.OutputActivateUser(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `consumerUUID` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -807,17 +804,17 @@ Create an instance: `outputAssignRole := client.OutputAssignRole(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `role` | `[]any` |  |
+| `consumerUUID` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `roles` | `[]any` |  |
 
 #### Example: Create
 
 ```go
 result, err := client.OutputAssignRole(nil).Create(map[string]any{
-    "consumer_uuid": "example_consumer_uuid",
-    "role": []any{},
+    "consumerUUID": "example_consumerUUID",
+    "roles": []any{},
 }, nil)
 if err != nil {
     panic(err)
@@ -840,17 +837,17 @@ Create an instance: `outputChangeLogo := client.OutputChangeLogo(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `content_as_base64` | `string` |  |
-| `mime_type` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `contentAsBase64` | `string` |  |
+| `mimeType` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```go
 result, err := client.OutputChangeLogo(nil).Create(map[string]any{
-    "content_as_base64": "example_content_as_base64",
-    "mime_type": "example_mime_type",
+    "contentAsBase64": "example_contentAsBase64",
+    "mimeType": "example_mimeType",
 }, nil)
 if err != nil {
     panic(err)
@@ -875,34 +872,29 @@ Create an instance: `outputCreateMandator := client.OutputCreateMandator(nil)`
 | --- | --- | --- |
 | `city` | `string` |  |
 | `country` | `string` |  |
-| `date_of_birth` | `string` |  |
+| `dateOfBirth` | `string` |  |
 | `description` | `string` |  |
-| `drivers_license_number` | `string` |  |
+| `driversLicenseNumber` | `string` |  |
 | `email` | `string` |  |
-| `first_name` | `string` |  |
-| `identification_number` | `string` |  |
-| `last_name` | `string` |  |
+| `firstName` | `string` |  |
+| `identificationNumber` | `string` |  |
+| `lastName` | `string` |  |
 | `login` | `string` |  |
-| `mandator` | `map[string]any` |  |
 | `name` | `string` |  |
-| `passport_number` | `string` |  |
+| `passportNumber` | `string` |  |
 | `phone` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
 | `salutation` | `string` |  |
 | `state` | `string` |  |
 | `street1` | `string` |  |
 | `street2` | `string` |  |
-| `zip_code` | `string` |  |
+| `zipCode` | `string` |  |
 
 #### Example: Create
 
 ```go
 result, err := client.OutputCreateMandator(nil).Create(map[string]any{
-    "description": "example_description",
     "email": "example_email",
     "login": "example_login",
-    "name": "example_name",
     "phone": "example_phone",
 }, nil)
 if err != nil {
@@ -926,15 +918,15 @@ Create an instance: `outputCreateServiceUser := client.OutputCreateServiceUser(n
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `mandatorName` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```go
 result, err := client.OutputCreateServiceUser(nil).Create(map[string]any{
-    "mandator_name": "example_mandator_name",
+    "mandatorName": "example_mandatorName",
 }, nil)
 if err != nil {
     panic(err)
@@ -957,9 +949,9 @@ Create an instance: `outputDeactivateUser := client.OutputDeactivateUser(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `consumerUUID` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -987,10 +979,10 @@ Create an instance: `outputGetKycDocument := client.OutputGetKycDocument(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `case_id` | `string` |  |
-| `encoded_data_base64` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `caseID` | `string` |  |
+| `encodedDataBase64` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -1018,10 +1010,10 @@ Create an instance: `outputGetLogo := client.OutputGetLogo(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `content_as_base64` | `string` |  |
-| `mime_type` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `contentAsBase64` | `string` |  |
+| `mimeType` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Load
 
@@ -1048,9 +1040,9 @@ Create an instance: `outputListOfAvailableRole := client.OutputListOfAvailableRo
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `available_role` | `[]any` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `availableRoles` | `[]any` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -1081,8 +1073,8 @@ Create an instance: `outputListOfMandator := client.OutputListOfMandator(nil)`
 | `filter` | `map[string]any` |  |
 | `list` | `[]any` |  |
 | `pagination` | `map[string]any` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 | `sorting` | `map[string]any` |  |
 
 #### Example: Create
@@ -1113,8 +1105,8 @@ Create an instance: `outputListOfModule := client.OutputListOfModule(nil)`
 | --- | --- | --- |
 | `list` | `[]any` |  |
 | `pagination` | `map[string]any` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -1143,10 +1135,10 @@ Create an instance: `outputListOfRoleGroup := client.OutputListOfRoleGroup(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `filter` | `map[string]any` |  |
-| `group_role` | `[]any` |  |
+| `groupRoles` | `[]any` |  |
 | `pagination` | `map[string]any` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 | `sorting` | `map[string]any` |  |
 
 #### Example: Create
@@ -1178,8 +1170,8 @@ Create an instance: `outputListOfTransactionsHistory := client.OutputListOfTrans
 | `filter` | `map[string]any` |  |
 | `list` | `[]any` |  |
 | `pagination` | `map[string]any` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 | `sorting` | `map[string]any` |  |
 
 #### Example: Create
@@ -1211,8 +1203,8 @@ Create an instance: `outputListOfUser := client.OutputListOfUser(nil)`
 | `filter` | `map[string]any` |  |
 | `list` | `[]any` |  |
 | `pagination` | `map[string]any` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 | `sorting` | `map[string]any` |  |
 
 #### Example: Create
@@ -1241,17 +1233,17 @@ Create an instance: `outputProvideCredential := client.OutputProvideCredential(n
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `string` |  |
+| `mandatorName` | `string` |  |
 | `password` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 | `username` | `string` |  |
 
 #### Example: Create
 
 ```go
 result, err := client.OutputProvideCredential(nil).Create(map[string]any{
-    "mandator_name": "example_mandator_name",
+    "mandatorName": "example_mandatorName",
 }, nil)
 if err != nil {
     panic(err)
@@ -1275,21 +1267,21 @@ Create an instance: `outputRegisterUser := client.OutputRegisterUser(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `string` |  |
-| `consumer_id` | `string` |  |
-| `consumer_language` | `string` |  |
+| `consumerId` | `string` |  |
+| `consumerLanguage` | `string` |  |
 | `country` | `string` |  |
-| `date_of_birth` | `string` |  |
-| `driver_licence_number` | `string` |  |
+| `dateOfBirth` | `string` |  |
+| `driverLicenceNumber` | `string` |  |
 | `email` | `string` |  |
-| `first_name` | `string` |  |
-| `identification_number` | `string` |  |
-| `last_name` | `string` |  |
+| `firstName` | `string` |  |
+| `identificationNumber` | `string` |  |
+| `lastName` | `string` |  |
 | `login` | `string` |  |
 | `module` | `string` |  |
-| `passport_number` | `string` |  |
+| `passportNumber` | `string` |  |
 | `phone` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 | `salutation` | `string` |  |
 | `state` | `string` |  |
 | `street1` | `string` |  |
@@ -1323,10 +1315,10 @@ Create an instance: `outputRemoveRole := client.OutputRemoveRole(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `role` | `[]any` |  |
+| `consumerUUID` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `roles` | `[]any` |  |
 
 #### Example: Create
 
@@ -1354,18 +1346,18 @@ Create an instance: `outputResendLink := client.OutputResendLink(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `business_registration_number` | `string` |  |
-| `consumer_uuid` | `string` |  |
-| `email_confirmation_code` | `string` |  |
-| `phone_number` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `businessRegistrationNumber` | `string` |  |
+| `consumerUUID` | `string` |  |
+| `emailConfirmationCode` | `string` |  |
+| `phoneNumber` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```go
 result, err := client.OutputResendLink(nil).Create(map[string]any{
-    "consumer_uuid": "example_consumer_uuid",
+    "consumerUUID": "example_consumerUUID",
 }, nil)
 if err != nil {
     panic(err)
@@ -1388,10 +1380,10 @@ Create an instance: `outputResetPassword := client.OutputResetPassword(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `phone_number` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `consumerUuid` | `string` |  |
+| `phoneNumber` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -1420,23 +1412,23 @@ Create an instance: `outputUpdateConsumer := client.OutputUpdateConsumer(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `string` |  |
-| `consumer_uuid` | `string` |  |
+| `consumerUuid` | `string` |  |
 | `consumerlanguage` | `string` |  |
 | `country` | `string` |  |
-| `date_of_birth` | `string` |  |
+| `dateOfBirth` | `string` |  |
 | `datetime_created` | `string` |  |
-| `driver_licence_number` | `string` |  |
+| `driverLicenceNumber` | `string` |  |
 | `email` | `string` |  |
-| `first_name` | `string` |  |
-| `identification_number` | `string` |  |
-| `kyc_passed` | `bool` |  |
-| `last_name` | `string` |  |
+| `firstName` | `string` |  |
+| `identificationNumber` | `string` |  |
+| `kycPassed` | `bool` |  |
+| `lastName` | `string` |  |
 | `nationality` | `string` |  |
-| `passport_number` | `string` |  |
-| `phone_number` | `string` |  |
-| `place_of_birth` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `passportNumber` | `string` |  |
+| `phoneNumber` | `string` |  |
+| `placeOfBirth` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 | `state` | `string` |  |
 | `street1` | `string` |  |
 | `street2` | `string` |  |
@@ -1447,7 +1439,7 @@ Create an instance: `outputUpdateConsumer := client.OutputUpdateConsumer(nil)`
 
 ```go
 result, err := client.OutputUpdateConsumer(nil).Create(map[string]any{
-    "consumer_uuid": "example_consumer_uuid",
+    "consumerUuid": "example_consumerUuid",
 }, nil)
 if err != nil {
     panic(err)
@@ -1470,13 +1462,13 @@ Create an instance: `outputUpdateProfile := client.OutputUpdateProfile(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_language` | `string` |  |
+| `consumerLanguage` | `string` |  |
 | `email` | `string` |  |
-| `first_name` | `string` |  |
-| `last_name` | `string` |  |
-| `phone_number` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `firstName` | `string` |  |
+| `lastName` | `string` |  |
+| `phoneNumber` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -1504,8 +1496,8 @@ Create an instance: `version := client.Version(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_name` | `string` |  |
-| `build_date` | `string` |  |
+| `appName` | `string` |  |
+| `buildDate` | `string` |  |
 | `version` | `string` |  |
 
 #### Example: Load

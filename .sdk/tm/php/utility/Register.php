@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ BluefinTecsUserBackofficeUtility::setRegistrar(function (BluefinTecsUserBackoffi
     $u->prepare_params = [BluefinTecsUserBackofficePrepareParams::class, 'call'];
     $u->prepare_path = [BluefinTecsUserBackofficePreparePath::class, 'call'];
     $u->prepare_query = [BluefinTecsUserBackofficePrepareQuery::class, 'call'];
+    $u->graphql_body = [BluefinTecsUserBackofficeGraphql::class, 'body'];
+    $u->graphql_errors = [BluefinTecsUserBackofficeGraphql::class, 'errors'];
     $u->result_basic = [BluefinTecsUserBackofficeResultBasic::class, 'call'];
     $u->result_body = [BluefinTecsUserBackofficeResultBody::class, 'call'];
     $u->result_headers = [BluefinTecsUserBackofficeResultHeaders::class, 'call'];

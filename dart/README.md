@@ -55,8 +55,8 @@ final client = BluefinTecsUserBackofficeSDK({
 ### 4. Create, update, and remove
 
 ```dart
-// Create — returns the bare created record (a Map)
-final created = await client.OutputActivateDigitalModule().create({'response_code': 1, 'response_message': 'example_response_message'});
+// Create — returns the ENTITY (call data() for the record)
+final created = await client.OutputActivateDigitalModule().create({'responseCode': 1, 'responseMessage': 'example_responseMessage'});
 
 ```
 
@@ -137,7 +137,8 @@ Create a mock client for unit testing — no server required:
 ```dart
 final client = BluefinTecsUserBackofficeSDK.test();
 
-// Entity ops return the bare record and throw on error.
+// Entity ops return the ENTITY and throws on error;
+// call data() for the record.
 final outputgetlogo = await client.OutputGetLogo().load();
 // outputgetlogo contains the mock response record
 print(outputgetlogo);
@@ -261,7 +262,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `Map` for single-entity
+Entity operations return the ENTITY (call data() for the record) (a `Map` for single-entity
 ops, a `List` of entity instances for `list`) and throw on error. Wrap calls
 in `try`/`catch` to handle failures.
 
@@ -283,8 +284,8 @@ On error, `ok` is `false` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -294,10 +295,10 @@ API path: `/activateDigitalModule`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `notification_email` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clientSecret` |  |
+| `notificationEmail` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -307,8 +308,8 @@ API path: `/activateMerchantPortalModule`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -318,9 +319,9 @@ API path: `/activateAppStoreModule`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -330,10 +331,10 @@ API path: `/activateUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `role` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `roles` |  |
 
 Operations: Create.
 
@@ -343,10 +344,10 @@ API path: `/assignRoles`
 
 | Field | Description |
 | --- | --- |
-| `content_as_base64` |  |
-| `mime_type` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `contentAsBase64` |  |
+| `mimeType` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -358,25 +359,22 @@ API path: `/changeLogo`
 | --- | --- |
 | `city` |  |
 | `country` |  |
-| `date_of_birth` |  |
+| `dateOfBirth` |  |
 | `description` |  |
-| `drivers_license_number` |  |
+| `driversLicenseNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `lastName` |  |
 | `login` |  |
-| `mandator` |  |
 | `name` |  |
-| `passport_number` |  |
+| `passportNumber` |  |
 | `phone` |  |
-| `response_code` |  |
-| `response_message` |  |
 | `salutation` |  |
 | `state` |  |
 | `street1` |  |
 | `street2` |  |
-| `zip_code` |  |
+| `zipCode` |  |
 
 Operations: Create.
 
@@ -386,9 +384,9 @@ API path: `/createMandator`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `mandatorName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -398,9 +396,9 @@ API path: `/createServiceUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -410,10 +408,10 @@ API path: `/deactivateUser`
 
 | Field | Description |
 | --- | --- |
-| `case_id` |  |
-| `encoded_data_base64` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `caseID` |  |
+| `encodedDataBase64` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -423,10 +421,10 @@ API path: `/getKycDocument`
 
 | Field | Description |
 | --- | --- |
-| `content_as_base64` |  |
-| `mime_type` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `contentAsBase64` |  |
+| `mimeType` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Load.
 
@@ -436,9 +434,9 @@ API path: `/getLogo`
 
 | Field | Description |
 | --- | --- |
-| `available_role` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `availableRoles` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -451,8 +449,8 @@ API path: `/listOfAvailableRoles`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -465,8 +463,8 @@ API path: `/listOfMandators`
 | --- | --- |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -477,10 +475,10 @@ API path: `/listOfModules`
 | Field | Description |
 | --- | --- |
 | `filter` |  |
-| `group_role` |  |
+| `groupRoles` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -494,8 +492,8 @@ API path: `/listOfRoleGroups`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -509,8 +507,8 @@ API path: `/listOfTransactionsHistory`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -521,10 +519,10 @@ API path: `/listOfUsers`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
+| `mandatorName` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `username` |  |
 
 Operations: Create.
@@ -536,21 +534,21 @@ API path: `/provideCredentials`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `consumer_id` |  |
-| `consumer_language` |  |
+| `consumerId` |  |
+| `consumerLanguage` |  |
 | `country` |  |
-| `date_of_birth` |  |
-| `driver_licence_number` |  |
+| `dateOfBirth` |  |
+| `driverLicenceNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `lastName` |  |
 | `login` |  |
 | `module` |  |
-| `passport_number` |  |
+| `passportNumber` |  |
 | `phone` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `salutation` |  |
 | `state` |  |
 | `street1` |  |
@@ -565,10 +563,10 @@ API path: `/registerUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `role` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `roles` |  |
 
 Operations: Create.
 
@@ -578,12 +576,12 @@ API path: `/removeRoles`
 
 | Field | Description |
 | --- | --- |
-| `business_registration_number` |  |
-| `consumer_uuid` |  |
-| `email_confirmation_code` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `businessRegistrationNumber` |  |
+| `consumerUUID` |  |
+| `emailConfirmationCode` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -593,10 +591,10 @@ API path: `/resendLink`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUuid` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -607,23 +605,23 @@ API path: `/resetPassword`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `consumer_uuid` |  |
+| `consumerUuid` |  |
 | `consumerlanguage` |  |
 | `country` |  |
-| `date_of_birth` |  |
+| `dateOfBirth` |  |
 | `datetime_created` |  |
-| `driver_licence_number` |  |
+| `driverLicenceNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `kyc_passed` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `kycPassed` |  |
+| `lastName` |  |
 | `nationality` |  |
-| `passport_number` |  |
-| `phone_number` |  |
-| `place_of_birth` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `passportNumber` |  |
+| `phoneNumber` |  |
+| `placeOfBirth` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `state` |  |
 | `street1` |  |
 | `street2` |  |
@@ -638,13 +636,13 @@ API path: `/updateConsumer`
 
 | Field | Description |
 | --- | --- |
-| `consumer_language` |  |
+| `consumerLanguage` |  |
 | `email` |  |
-| `first_name` |  |
-| `last_name` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `firstName` |  |
+| `lastName` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -654,8 +652,8 @@ API path: `/updateProfile`
 
 | Field | Description |
 | --- | --- |
-| `app_name` |  |
-| `build_date` |  |
+| `appName` |  |
+| `buildDate` |  |
 | `version` |  |
 
 Operations: Load.
@@ -681,8 +679,8 @@ Create an instance: `final output_activate_digital_module = client.OutputActivat
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -706,17 +704,17 @@ Create an instance: `final output_activate_portal_module = client.OutputActivate
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `String` |  |
-| `notification_email` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
+| `clientSecret` | `String` |  |
+| `notificationEmail` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```dart
 final output_activate_portal_module = await client.OutputActivatePortalModule().create({
-  'client_secret': 'example_client_secret',  // String
-  'notification_email': 'example_notification_email',  // String
+  'clientSecret': 'example_clientSecret',  // String
+  'notificationEmail': 'example_notificationEmail',  // String
 });
 ```
 
@@ -735,8 +733,8 @@ Create an instance: `final output_activate_store_module = client.OutputActivateS
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -760,9 +758,9 @@ Create an instance: `final output_activate_user = client.OutputActivateUser();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
+| `consumerUUID` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -786,17 +784,17 @@ Create an instance: `final output_assign_role = client.OutputAssignRole();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `role` | `List<dynamic>` |  |
+| `consumerUUID` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `roles` | `List<dynamic>` |  |
 
 #### Example: Create
 
 ```dart
 final output_assign_role = await client.OutputAssignRole().create({
-  'consumer_uuid': 'example_consumer_uuid',  // String
-  'role': <dynamic>[],  // List<dynamic>
+  'consumerUUID': 'example_consumerUUID',  // String
+  'roles': <dynamic>[],  // List<dynamic>
 });
 ```
 
@@ -815,17 +813,17 @@ Create an instance: `final output_change_logo = client.OutputChangeLogo();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `content_as_base64` | `String` |  |
-| `mime_type` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
+| `contentAsBase64` | `String` |  |
+| `mimeType` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```dart
 final output_change_logo = await client.OutputChangeLogo().create({
-  'content_as_base64': 'example_content_as_base64',  // String
-  'mime_type': 'example_mime_type',  // String
+  'contentAsBase64': 'example_contentAsBase64',  // String
+  'mimeType': 'example_mimeType',  // String
 });
 ```
 
@@ -846,34 +844,29 @@ Create an instance: `final output_create_mandator = client.OutputCreateMandator(
 | --- | --- | --- |
 | `city` | `String` |  |
 | `country` | `String` |  |
-| `date_of_birth` | `String` |  |
+| `dateOfBirth` | `String` |  |
 | `description` | `String` |  |
-| `drivers_license_number` | `String` |  |
+| `driversLicenseNumber` | `String` |  |
 | `email` | `String` |  |
-| `first_name` | `String` |  |
-| `identification_number` | `String` |  |
-| `last_name` | `String` |  |
+| `firstName` | `String` |  |
+| `identificationNumber` | `String` |  |
+| `lastName` | `String` |  |
 | `login` | `String` |  |
-| `mandator` | `Map<String, dynamic>` |  |
 | `name` | `String` |  |
-| `passport_number` | `String` |  |
+| `passportNumber` | `String` |  |
 | `phone` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
 | `salutation` | `String` |  |
 | `state` | `String` |  |
 | `street1` | `String` |  |
 | `street2` | `String` |  |
-| `zip_code` | `String` |  |
+| `zipCode` | `String` |  |
 
 #### Example: Create
 
 ```dart
 final output_create_mandator = await client.OutputCreateMandator().create({
-  'description': 'example_description',  // String
   'email': 'example_email',  // String
   'login': 'example_login',  // String
-  'name': 'example_name',  // String
   'phone': 'example_phone',  // String
 });
 ```
@@ -893,15 +886,15 @@ Create an instance: `final output_create_service_user = client.OutputCreateServi
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
+| `mandatorName` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```dart
 final output_create_service_user = await client.OutputCreateServiceUser().create({
-  'mandator_name': 'example_mandator_name',  // String
+  'mandatorName': 'example_mandatorName',  // String
 });
 ```
 
@@ -920,9 +913,9 @@ Create an instance: `final output_deactivate_user = client.OutputDeactivateUser(
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
+| `consumerUUID` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -946,10 +939,10 @@ Create an instance: `final output_get_kyc_document = client.OutputGetKycDocument
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `case_id` | `String` |  |
-| `encoded_data_base64` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
+| `caseID` | `String` |  |
+| `encodedDataBase64` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -973,10 +966,10 @@ Create an instance: `final output_get_logo = client.OutputGetLogo();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `content_as_base64` | `String` |  |
-| `mime_type` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
+| `contentAsBase64` | `String` |  |
+| `mimeType` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Load
 
@@ -999,9 +992,9 @@ Create an instance: `final output_list_of_available_role = client.OutputListOfAv
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `available_role` | `List<dynamic>` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
+| `availableRoles` | `List<dynamic>` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -1028,8 +1021,8 @@ Create an instance: `final output_list_of_mandator = client.OutputListOfMandator
 | `filter` | `Map<String, dynamic>` |  |
 | `list` | `List<dynamic>` |  |
 | `pagination` | `Map<String, dynamic>` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
 | `sorting` | `Map<String, dynamic>` |  |
 
 #### Example: Create
@@ -1056,8 +1049,8 @@ Create an instance: `final output_list_of_module = client.OutputListOfModule();`
 | --- | --- | --- |
 | `list` | `List<dynamic>` |  |
 | `pagination` | `Map<String, dynamic>` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -1082,10 +1075,10 @@ Create an instance: `final output_list_of_role_group = client.OutputListOfRoleGr
 | Field | Type | Description |
 | --- | --- | --- |
 | `filter` | `Map<String, dynamic>` |  |
-| `group_role` | `List<dynamic>` |  |
+| `groupRoles` | `List<dynamic>` |  |
 | `pagination` | `Map<String, dynamic>` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
 | `sorting` | `Map<String, dynamic>` |  |
 
 #### Example: Create
@@ -1113,8 +1106,8 @@ Create an instance: `final output_list_of_transactions_history = client.OutputLi
 | `filter` | `Map<String, dynamic>` |  |
 | `list` | `List<dynamic>` |  |
 | `pagination` | `Map<String, dynamic>` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
 | `sorting` | `Map<String, dynamic>` |  |
 
 #### Example: Create
@@ -1142,8 +1135,8 @@ Create an instance: `final output_list_of_user = client.OutputListOfUser();`
 | `filter` | `Map<String, dynamic>` |  |
 | `list` | `List<dynamic>` |  |
 | `pagination` | `Map<String, dynamic>` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
 | `sorting` | `Map<String, dynamic>` |  |
 
 #### Example: Create
@@ -1168,17 +1161,17 @@ Create an instance: `final output_provide_credential = client.OutputProvideCrede
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `String` |  |
+| `mandatorName` | `String` |  |
 | `password` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
 | `username` | `String` |  |
 
 #### Example: Create
 
 ```dart
 final output_provide_credential = await client.OutputProvideCredential().create({
-  'mandator_name': 'example_mandator_name',  // String
+  'mandatorName': 'example_mandatorName',  // String
 });
 ```
 
@@ -1198,21 +1191,21 @@ Create an instance: `final output_register_user = client.OutputRegisterUser();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `String` |  |
-| `consumer_id` | `String` |  |
-| `consumer_language` | `String` |  |
+| `consumerId` | `String` |  |
+| `consumerLanguage` | `String` |  |
 | `country` | `String` |  |
-| `date_of_birth` | `String` |  |
-| `driver_licence_number` | `String` |  |
+| `dateOfBirth` | `String` |  |
+| `driverLicenceNumber` | `String` |  |
 | `email` | `String` |  |
-| `first_name` | `String` |  |
-| `identification_number` | `String` |  |
-| `last_name` | `String` |  |
+| `firstName` | `String` |  |
+| `identificationNumber` | `String` |  |
+| `lastName` | `String` |  |
 | `login` | `String` |  |
 | `module` | `String` |  |
-| `passport_number` | `String` |  |
+| `passportNumber` | `String` |  |
 | `phone` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
 | `salutation` | `String` |  |
 | `state` | `String` |  |
 | `street1` | `String` |  |
@@ -1242,10 +1235,10 @@ Create an instance: `final output_remove_role = client.OutputRemoveRole();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `role` | `List<dynamic>` |  |
+| `consumerUUID` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `roles` | `List<dynamic>` |  |
 
 #### Example: Create
 
@@ -1269,18 +1262,18 @@ Create an instance: `final output_resend_link = client.OutputResendLink();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `business_registration_number` | `String` |  |
-| `consumer_uuid` | `String` |  |
-| `email_confirmation_code` | `String` |  |
-| `phone_number` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
+| `businessRegistrationNumber` | `String` |  |
+| `consumerUUID` | `String` |  |
+| `emailConfirmationCode` | `String` |  |
+| `phoneNumber` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```dart
 final output_resend_link = await client.OutputResendLink().create({
-  'consumer_uuid': 'example_consumer_uuid',  // String
+  'consumerUUID': 'example_consumerUUID',  // String
 });
 ```
 
@@ -1299,10 +1292,10 @@ Create an instance: `final output_reset_password = client.OutputResetPassword();
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String` |  |
-| `phone_number` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
+| `consumerUuid` | `String` |  |
+| `phoneNumber` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -1327,23 +1320,23 @@ Create an instance: `final output_update_consumer = client.OutputUpdateConsumer(
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `String` |  |
-| `consumer_uuid` | `String` |  |
+| `consumerUuid` | `String` |  |
 | `consumerlanguage` | `String` |  |
 | `country` | `String` |  |
-| `date_of_birth` | `String` |  |
+| `dateOfBirth` | `String` |  |
 | `datetime_created` | `String` |  |
-| `driver_licence_number` | `String` |  |
+| `driverLicenceNumber` | `String` |  |
 | `email` | `String` |  |
-| `first_name` | `String` |  |
-| `identification_number` | `String` |  |
-| `kyc_passed` | `bool` |  |
-| `last_name` | `String` |  |
+| `firstName` | `String` |  |
+| `identificationNumber` | `String` |  |
+| `kycPassed` | `bool` |  |
+| `lastName` | `String` |  |
 | `nationality` | `String` |  |
-| `passport_number` | `String` |  |
-| `phone_number` | `String` |  |
-| `place_of_birth` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
+| `passportNumber` | `String` |  |
+| `phoneNumber` | `String` |  |
+| `placeOfBirth` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
 | `state` | `String` |  |
 | `street1` | `String` |  |
 | `street2` | `String` |  |
@@ -1354,7 +1347,7 @@ Create an instance: `final output_update_consumer = client.OutputUpdateConsumer(
 
 ```dart
 final output_update_consumer = await client.OutputUpdateConsumer().create({
-  'consumer_uuid': 'example_consumer_uuid',  // String
+  'consumerUuid': 'example_consumerUuid',  // String
 });
 ```
 
@@ -1373,13 +1366,13 @@ Create an instance: `final output_update_profile = client.OutputUpdateProfile();
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_language` | `String` |  |
+| `consumerLanguage` | `String` |  |
 | `email` | `String` |  |
-| `first_name` | `String` |  |
-| `last_name` | `String` |  |
-| `phone_number` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
+| `firstName` | `String` |  |
+| `lastName` | `String` |  |
+| `phoneNumber` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -1403,8 +1396,8 @@ Create an instance: `final version = client.Version();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_name` | `String` |  |
-| `build_date` | `String` |  |
+| `appName` | `String` |  |
+| `buildDate` | `String` |  |
 | `version` | `String` |  |
 
 #### Example: Load

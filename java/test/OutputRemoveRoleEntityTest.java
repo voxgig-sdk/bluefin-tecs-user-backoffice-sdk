@@ -47,7 +47,7 @@ public class OutputRemoveRoleEntityTest {
     // The basic flow consumes synthetic IDs from the fixture. In live mode
     // without an *_ENTID env override, those IDs hit the live API and 4xx.
     Assumptions.assumeFalse(setup.syntheticOnly,
-        "live entity test uses synthetic IDs from fixture — set BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_REMOVE_ROLE_ENTID JSON to run live");
+        "live entity test uses synthetic IDs from fixture — set BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_REMOVE_ROLE_ENTID JSON to run live");
     BluefinTecsUserBackofficeSDK client = setup.client;
 
     // CREATE
@@ -56,7 +56,7 @@ public class OutputRemoveRoleEntityTest {
         Struct.getpath(setup.data, "new.output_remove_role"), "output_remove_role_ref01"));
 
     Object outputRemoveRoleRef01DataResult = outputRemoveRoleRef01Ent.create(outputRemoveRoleRef01Data, null);
-    outputRemoveRoleRef01Data = Helpers.toMapAny(outputRemoveRoleRef01DataResult);
+    outputRemoveRoleRef01Data = Helpers.toMapAny(outputRemoveRoleRef01DataResult instanceof SdkEntity ? ((SdkEntity) outputRemoveRoleRef01DataResult).data() : outputRemoveRoleRef01DataResult);
     assertNotNull(outputRemoveRoleRef01Data, "expected create result to be a map");
 
   }
@@ -94,26 +94,26 @@ public class OutputRemoveRoleEntityTest {
     // mode is on without a real override, the basic test runs against
     // synthetic IDs from the fixture and 4xx's. Surface this so the test
     // can skip.
-    String entidEnvRaw = RunnerSupport.getenv("BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_REMOVE_ROLE_ENTID");
+    String entidEnvRaw = RunnerSupport.getenv("BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_REMOVE_ROLE_ENTID");
     boolean idmapOverridden = entidEnvRaw != null
         && entidEnvRaw.trim().startsWith("{");
 
     Map<String, Object> envm = new LinkedHashMap<>();
-    envm.put("BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_REMOVE_ROLE_ENTID", idmap);
-    envm.put("BLUEFINTECSUSERBACKOFFICE_TEST_LIVE", "FALSE");
-    envm.put("BLUEFINTECSUSERBACKOFFICE_TEST_EXPLAIN", "FALSE");
-    envm.put("BLUEFINTECSUSERBACKOFFICE_APIKEY", "NONE");
+    envm.put("BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_REMOVE_ROLE_ENTID", idmap);
+    envm.put("BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE", "FALSE");
+    envm.put("BLUEFIN_TECS_USER_BACKOFFICE_TEST_EXPLAIN", "FALSE");
+    envm.put("BLUEFIN_TECS_USER_BACKOFFICE_APIKEY", "NONE");
     Map<String, Object> env = RunnerSupport.envOverride(envm);
 
-    Map<String, Object> idmapResolved = Helpers.toMapAny(env.get("BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_REMOVE_ROLE_ENTID"));
+    Map<String, Object> idmapResolved = Helpers.toMapAny(env.get("BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_REMOVE_ROLE_ENTID"));
     if (idmapResolved == null) {
       idmapResolved = Helpers.toMapAny(idmap);
     }
 
-    boolean live = "TRUE".equals(env.get("BLUEFINTECSUSERBACKOFFICE_TEST_LIVE"));
+    boolean live = "TRUE".equals(env.get("BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE"));
     if (live) {
       Map<String, Object> liveOpts = new LinkedHashMap<>();
-      liveOpts.put("apikey", env.get("BLUEFINTECSUSERBACKOFFICE_APIKEY"));
+      liveOpts.put("apikey", env.get("BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"));
       Object mergedOpts = Struct.merge(Struct.jt(liveOpts, extra));
       client = new BluefinTecsUserBackofficeSDK(Helpers.toMapAny(mergedOpts));
     }
@@ -123,7 +123,7 @@ public class OutputRemoveRoleEntityTest {
     setup.data = entityData;
     setup.idmap = idmapResolved;
     setup.env = env;
-    setup.explain = "TRUE".equals(env.get("BLUEFINTECSUSERBACKOFFICE_TEST_EXPLAIN"));
+    setup.explain = "TRUE".equals(env.get("BLUEFIN_TECS_USER_BACKOFFICE_TEST_EXPLAIN"));
     setup.live = live;
     setup.syntheticOnly = live && !idmapOverridden;
     setup.now = System.currentTimeMillis();

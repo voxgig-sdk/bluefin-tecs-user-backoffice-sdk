@@ -16,17 +16,23 @@ main: kit: entity: output_create_mandator: {
       type: "`$STRING`"
     }
     {
-      name: "date_of_birth"
+      name: "dateOfBirth"
       req: false
       type: "`$STRING`"
     }
     {
       name: "description"
-      req: true
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      req: false
       type: "`$STRING`"
     }
     {
-      name: "drivers_license_number"
+      name: "driversLicenseNumber"
       req: false
       type: "`$STRING`"
     }
@@ -36,17 +42,17 @@ main: kit: entity: output_create_mandator: {
       type: "`$STRING`"
     }
     {
-      name: "first_name"
+      name: "firstName"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "identification_number"
+      name: "identificationNumber"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "last_name"
+      name: "lastName"
       req: false
       type: "`$STRING`"
     }
@@ -56,33 +62,24 @@ main: kit: entity: output_create_mandator: {
       type: "`$STRING`"
     }
     {
-      name: "mandator"
-      req: false
-      type: "`$OBJECT`"
-    }
-    {
       name: "name"
-      req: true
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      req: false
       type: "`$STRING`"
     }
     {
-      name: "passport_number"
+      name: "passportNumber"
       req: false
       type: "`$STRING`"
     }
     {
       name: "phone"
       req: true
-      type: "`$STRING`"
-    }
-    {
-      name: "response_code"
-      req: false
-      type: "`$INTEGER`"
-    }
-    {
-      name: "response_message"
-      req: false
       type: "`$STRING`"
     }
     {
@@ -106,7 +103,7 @@ main: kit: entity: output_create_mandator: {
       type: "`$STRING`"
     }
     {
-      name: "zip_code"
+      name: "zipCode"
       req: false
       type: "`$STRING`"
     }

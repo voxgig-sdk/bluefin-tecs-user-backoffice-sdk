@@ -6,13 +6,13 @@
 
 using Voxgig.Struct;
 
-using static BluefinTecsUserBackofficeSdk.Feature.FeatureOptions;
+using static ProjectNameSdk.Feature.FeatureOptions;
 
-namespace BluefinTecsUserBackofficeSdk.Feature;
+namespace ProjectNameSdk.Feature;
 
 public class TestFeature : BaseFeature
 {
-    private BluefinTecsUserBackofficeSDK? _client;
+    private ProjectNameSDK? _client;
     private Dictionary<string, object?>? _options;
     private int _netcalls;
 

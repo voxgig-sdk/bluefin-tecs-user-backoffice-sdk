@@ -19,8 +19,8 @@ defmodule BluefinTecsUserBackoffice.Types do
   OutputActivateDigitalModule entity data model.
 
   Members:
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type output_activate_digital_module :: %{optional(String.t()) => any()}
 
@@ -28,8 +28,8 @@ defmodule BluefinTecsUserBackoffice.Types do
   Request payload for OutputActivateDigitalModule create.
 
   Members:
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type output_activate_digital_module_create_data :: %{optional(String.t()) => any()}
 
@@ -37,10 +37,10 @@ defmodule BluefinTecsUserBackoffice.Types do
   OutputActivatePortalModule entity data model.
 
   Members:
-    * `"client_secret"` — String.t() (required)
-    * `"notification_email"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"clientSecret"` — String.t() (required)
+    * `"notificationEmail"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type output_activate_portal_module :: %{optional(String.t()) => any()}
 
@@ -48,10 +48,10 @@ defmodule BluefinTecsUserBackoffice.Types do
   Request payload for OutputActivatePortalModule create.
 
   Members:
-    * `"client_secret"` — String.t() (required)
-    * `"notification_email"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"clientSecret"` — String.t() (required)
+    * `"notificationEmail"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type output_activate_portal_module_create_data :: %{optional(String.t()) => any()}
 
@@ -59,8 +59,8 @@ defmodule BluefinTecsUserBackoffice.Types do
   OutputActivateStoreModule entity data model.
 
   Members:
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type output_activate_store_module :: %{optional(String.t()) => any()}
 
@@ -68,8 +68,8 @@ defmodule BluefinTecsUserBackoffice.Types do
   Request payload for OutputActivateStoreModule create.
 
   Members:
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type output_activate_store_module_create_data :: %{optional(String.t()) => any()}
 
@@ -77,9 +77,9 @@ defmodule BluefinTecsUserBackoffice.Types do
   OutputActivateUser entity data model.
 
   Members:
-    * `"consumer_uuid"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"consumerUUID"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type output_activate_user :: %{optional(String.t()) => any()}
 
@@ -87,9 +87,9 @@ defmodule BluefinTecsUserBackoffice.Types do
   Request payload for OutputActivateUser create.
 
   Members:
-    * `"consumer_uuid"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"consumerUUID"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type output_activate_user_create_data :: %{optional(String.t()) => any()}
 
@@ -97,10 +97,10 @@ defmodule BluefinTecsUserBackoffice.Types do
   OutputAssignRole entity data model.
 
   Members:
-    * `"consumer_uuid"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"role"` — list() (required)
+    * `"consumerUUID"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"roles"` — list() (required)
   """
   @type output_assign_role :: %{optional(String.t()) => any()}
 
@@ -108,10 +108,10 @@ defmodule BluefinTecsUserBackoffice.Types do
   Request payload for OutputAssignRole create.
 
   Members:
-    * `"consumer_uuid"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"role"` — list() (required)
+    * `"consumerUUID"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"roles"` — list() (required)
   """
   @type output_assign_role_create_data :: %{optional(String.t()) => any()}
 
@@ -119,10 +119,10 @@ defmodule BluefinTecsUserBackoffice.Types do
   OutputChangeLogo entity data model.
 
   Members:
-    * `"content_as_base64"` — String.t() (required)
-    * `"mime_type"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"contentAsBase64"` — String.t() (required)
+    * `"mimeType"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type output_change_logo :: %{optional(String.t()) => any()}
 
@@ -130,10 +130,10 @@ defmodule BluefinTecsUserBackoffice.Types do
   Request payload for OutputChangeLogo create.
 
   Members:
-    * `"content_as_base64"` — String.t() (required)
-    * `"mime_type"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"contentAsBase64"` — String.t() (required)
+    * `"mimeType"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type output_change_logo_create_data :: %{optional(String.t()) => any()}
 
@@ -143,25 +143,22 @@ defmodule BluefinTecsUserBackoffice.Types do
   Members:
     * `"city"` — String.t() (optional)
     * `"country"` — String.t() (optional)
-    * `"date_of_birth"` — String.t() (optional)
-    * `"description"` — String.t() (required)
-    * `"drivers_license_number"` — String.t() (optional)
+    * `"dateOfBirth"` — String.t() (optional)
+    * `"description"` — String.t() (optional)
+    * `"driversLicenseNumber"` — String.t() (optional)
     * `"email"` — String.t() (required)
-    * `"first_name"` — String.t() (optional)
-    * `"identification_number"` — String.t() (optional)
-    * `"last_name"` — String.t() (optional)
+    * `"firstName"` — String.t() (optional)
+    * `"identificationNumber"` — String.t() (optional)
+    * `"lastName"` — String.t() (optional)
     * `"login"` — String.t() (required)
-    * `"mandator"` — map() (optional)
-    * `"name"` — String.t() (required)
-    * `"passport_number"` — String.t() (optional)
+    * `"name"` — String.t() (optional)
+    * `"passportNumber"` — String.t() (optional)
     * `"phone"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
     * `"salutation"` — String.t() (optional)
     * `"state"` — String.t() (optional)
     * `"street1"` — String.t() (optional)
     * `"street2"` — String.t() (optional)
-    * `"zip_code"` — String.t() (optional)
+    * `"zipCode"` — String.t() (optional)
   """
   @type output_create_mandator :: %{optional(String.t()) => any()}
 
@@ -171,25 +168,22 @@ defmodule BluefinTecsUserBackoffice.Types do
   Members:
     * `"city"` — String.t() (optional)
     * `"country"` — String.t() (optional)
-    * `"date_of_birth"` — String.t() (optional)
-    * `"description"` — String.t() (required)
-    * `"drivers_license_number"` — String.t() (optional)
+    * `"dateOfBirth"` — String.t() (optional)
+    * `"description"` — String.t() (optional)
+    * `"driversLicenseNumber"` — String.t() (optional)
     * `"email"` — String.t() (required)
-    * `"first_name"` — String.t() (optional)
-    * `"identification_number"` — String.t() (optional)
-    * `"last_name"` — String.t() (optional)
+    * `"firstName"` — String.t() (optional)
+    * `"identificationNumber"` — String.t() (optional)
+    * `"lastName"` — String.t() (optional)
     * `"login"` — String.t() (required)
-    * `"mandator"` — map() (optional)
-    * `"name"` — String.t() (required)
-    * `"passport_number"` — String.t() (optional)
+    * `"name"` — String.t() (optional)
+    * `"passportNumber"` — String.t() (optional)
     * `"phone"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
     * `"salutation"` — String.t() (optional)
     * `"state"` — String.t() (optional)
     * `"street1"` — String.t() (optional)
     * `"street2"` — String.t() (optional)
-    * `"zip_code"` — String.t() (optional)
+    * `"zipCode"` — String.t() (optional)
   """
   @type output_create_mandator_create_data :: %{optional(String.t()) => any()}
 
@@ -197,9 +191,9 @@ defmodule BluefinTecsUserBackoffice.Types do
   OutputCreateServiceUser entity data model.
 
   Members:
-    * `"mandator_name"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"mandatorName"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type output_create_service_user :: %{optional(String.t()) => any()}
 
@@ -207,9 +201,9 @@ defmodule BluefinTecsUserBackoffice.Types do
   Request payload for OutputCreateServiceUser create.
 
   Members:
-    * `"mandator_name"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"mandatorName"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type output_create_service_user_create_data :: %{optional(String.t()) => any()}
 
@@ -217,9 +211,9 @@ defmodule BluefinTecsUserBackoffice.Types do
   OutputDeactivateUser entity data model.
 
   Members:
-    * `"consumer_uuid"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"consumerUUID"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type output_deactivate_user :: %{optional(String.t()) => any()}
 
@@ -227,9 +221,9 @@ defmodule BluefinTecsUserBackoffice.Types do
   Request payload for OutputDeactivateUser create.
 
   Members:
-    * `"consumer_uuid"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"consumerUUID"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type output_deactivate_user_create_data :: %{optional(String.t()) => any()}
 
@@ -237,10 +231,10 @@ defmodule BluefinTecsUserBackoffice.Types do
   OutputGetKycDocument entity data model.
 
   Members:
-    * `"case_id"` — String.t() (optional)
-    * `"encoded_data_base64"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"caseID"` — String.t() (optional)
+    * `"encodedDataBase64"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type output_get_kyc_document :: %{optional(String.t()) => any()}
 
@@ -248,10 +242,10 @@ defmodule BluefinTecsUserBackoffice.Types do
   Request payload for OutputGetKycDocument create.
 
   Members:
-    * `"case_id"` — String.t() (optional)
-    * `"encoded_data_base64"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"caseID"` — String.t() (optional)
+    * `"encodedDataBase64"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type output_get_kyc_document_create_data :: %{optional(String.t()) => any()}
 
@@ -259,10 +253,10 @@ defmodule BluefinTecsUserBackoffice.Types do
   OutputGetLogo entity data model.
 
   Members:
-    * `"content_as_base64"` — String.t() (required)
-    * `"mime_type"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"contentAsBase64"` — String.t() (required)
+    * `"mimeType"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type output_get_logo :: %{optional(String.t()) => any()}
 
@@ -270,10 +264,10 @@ defmodule BluefinTecsUserBackoffice.Types do
   Request payload for OutputGetLogo load.
 
   Members:
-    * `"content_as_base64"` — String.t() (optional)
-    * `"mime_type"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"contentAsBase64"` — String.t() (optional)
+    * `"mimeType"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type output_get_logo_load_match :: %{optional(String.t()) => any()}
 
@@ -281,9 +275,9 @@ defmodule BluefinTecsUserBackoffice.Types do
   OutputListOfAvailableRole entity data model.
 
   Members:
-    * `"available_role"` — list() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"availableRoles"` — list() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type output_list_of_available_role :: %{optional(String.t()) => any()}
 
@@ -291,9 +285,9 @@ defmodule BluefinTecsUserBackoffice.Types do
   Request payload for OutputListOfAvailableRole create.
 
   Members:
-    * `"available_role"` — list() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"availableRoles"` — list() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type output_list_of_available_role_create_data :: %{optional(String.t()) => any()}
 
@@ -304,8 +298,8 @@ defmodule BluefinTecsUserBackoffice.Types do
     * `"filter"` — map() (optional)
     * `"list"` — list() (optional)
     * `"pagination"` — map() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
     * `"sorting"` — map() (optional)
   """
   @type output_list_of_mandator :: %{optional(String.t()) => any()}
@@ -317,8 +311,8 @@ defmodule BluefinTecsUserBackoffice.Types do
     * `"filter"` — map() (optional)
     * `"list"` — list() (optional)
     * `"pagination"` — map() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
     * `"sorting"` — map() (optional)
   """
   @type output_list_of_mandator_create_data :: %{optional(String.t()) => any()}
@@ -329,8 +323,8 @@ defmodule BluefinTecsUserBackoffice.Types do
   Members:
     * `"list"` — list() (optional)
     * `"pagination"` — map() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type output_list_of_module :: %{optional(String.t()) => any()}
 
@@ -340,8 +334,8 @@ defmodule BluefinTecsUserBackoffice.Types do
   Members:
     * `"list"` — list() (optional)
     * `"pagination"` — map() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type output_list_of_module_create_data :: %{optional(String.t()) => any()}
 
@@ -350,10 +344,10 @@ defmodule BluefinTecsUserBackoffice.Types do
 
   Members:
     * `"filter"` — map() (optional)
-    * `"group_role"` — list() (optional)
+    * `"groupRoles"` — list() (optional)
     * `"pagination"` — map() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
     * `"sorting"` — map() (optional)
   """
   @type output_list_of_role_group :: %{optional(String.t()) => any()}
@@ -363,10 +357,10 @@ defmodule BluefinTecsUserBackoffice.Types do
 
   Members:
     * `"filter"` — map() (optional)
-    * `"group_role"` — list() (optional)
+    * `"groupRoles"` — list() (optional)
     * `"pagination"` — map() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
     * `"sorting"` — map() (optional)
   """
   @type output_list_of_role_group_create_data :: %{optional(String.t()) => any()}
@@ -378,8 +372,8 @@ defmodule BluefinTecsUserBackoffice.Types do
     * `"filter"` — map() (optional)
     * `"list"` — list() (optional)
     * `"pagination"` — map() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
     * `"sorting"` — map() (optional)
   """
   @type output_list_of_transactions_history :: %{optional(String.t()) => any()}
@@ -391,8 +385,8 @@ defmodule BluefinTecsUserBackoffice.Types do
     * `"filter"` — map() (optional)
     * `"list"` — list() (optional)
     * `"pagination"` — map() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
     * `"sorting"` — map() (optional)
   """
   @type output_list_of_transactions_history_create_data :: %{optional(String.t()) => any()}
@@ -404,8 +398,8 @@ defmodule BluefinTecsUserBackoffice.Types do
     * `"filter"` — map() (optional)
     * `"list"` — list() (optional)
     * `"pagination"` — map() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
     * `"sorting"` — map() (optional)
   """
   @type output_list_of_user :: %{optional(String.t()) => any()}
@@ -417,8 +411,8 @@ defmodule BluefinTecsUserBackoffice.Types do
     * `"filter"` — map() (optional)
     * `"list"` — list() (optional)
     * `"pagination"` — map() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
     * `"sorting"` — map() (optional)
   """
   @type output_list_of_user_create_data :: %{optional(String.t()) => any()}
@@ -427,10 +421,10 @@ defmodule BluefinTecsUserBackoffice.Types do
   OutputProvideCredential entity data model.
 
   Members:
-    * `"mandator_name"` — String.t() (required)
+    * `"mandatorName"` — String.t() (required)
     * `"password"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
     * `"username"` — String.t() (optional)
   """
   @type output_provide_credential :: %{optional(String.t()) => any()}
@@ -439,10 +433,10 @@ defmodule BluefinTecsUserBackoffice.Types do
   Request payload for OutputProvideCredential create.
 
   Members:
-    * `"mandator_name"` — String.t() (required)
+    * `"mandatorName"` — String.t() (required)
     * `"password"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
     * `"username"` — String.t() (optional)
   """
   @type output_provide_credential_create_data :: %{optional(String.t()) => any()}
@@ -452,21 +446,21 @@ defmodule BluefinTecsUserBackoffice.Types do
 
   Members:
     * `"city"` — String.t() (optional)
-    * `"consumer_id"` — String.t() (optional)
-    * `"consumer_language"` — String.t() (optional)
+    * `"consumerId"` — String.t() (optional)
+    * `"consumerLanguage"` — String.t() (optional)
     * `"country"` — String.t() (optional)
-    * `"date_of_birth"` — String.t() (optional)
-    * `"driver_licence_number"` — String.t() (optional)
+    * `"dateOfBirth"` — String.t() (optional)
+    * `"driverLicenceNumber"` — String.t() (optional)
     * `"email"` — String.t() (required)
-    * `"first_name"` — String.t() (optional)
-    * `"identification_number"` — String.t() (optional)
-    * `"last_name"` — String.t() (optional)
+    * `"firstName"` — String.t() (optional)
+    * `"identificationNumber"` — String.t() (optional)
+    * `"lastName"` — String.t() (optional)
     * `"login"` — String.t() (optional)
     * `"module"` — String.t() (optional)
-    * `"passport_number"` — String.t() (optional)
+    * `"passportNumber"` — String.t() (optional)
     * `"phone"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
     * `"salutation"` — String.t() (optional)
     * `"state"` — String.t() (optional)
     * `"street1"` — String.t() (optional)
@@ -480,21 +474,21 @@ defmodule BluefinTecsUserBackoffice.Types do
 
   Members:
     * `"city"` — String.t() (optional)
-    * `"consumer_id"` — String.t() (optional)
-    * `"consumer_language"` — String.t() (optional)
+    * `"consumerId"` — String.t() (optional)
+    * `"consumerLanguage"` — String.t() (optional)
     * `"country"` — String.t() (optional)
-    * `"date_of_birth"` — String.t() (optional)
-    * `"driver_licence_number"` — String.t() (optional)
+    * `"dateOfBirth"` — String.t() (optional)
+    * `"driverLicenceNumber"` — String.t() (optional)
     * `"email"` — String.t() (required)
-    * `"first_name"` — String.t() (optional)
-    * `"identification_number"` — String.t() (optional)
-    * `"last_name"` — String.t() (optional)
+    * `"firstName"` — String.t() (optional)
+    * `"identificationNumber"` — String.t() (optional)
+    * `"lastName"` — String.t() (optional)
     * `"login"` — String.t() (optional)
     * `"module"` — String.t() (optional)
-    * `"passport_number"` — String.t() (optional)
+    * `"passportNumber"` — String.t() (optional)
     * `"phone"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
     * `"salutation"` — String.t() (optional)
     * `"state"` — String.t() (optional)
     * `"street1"` — String.t() (optional)
@@ -507,10 +501,10 @@ defmodule BluefinTecsUserBackoffice.Types do
   OutputRemoveRole entity data model.
 
   Members:
-    * `"consumer_uuid"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"role"` — list() (optional)
+    * `"consumerUUID"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"roles"` — list() (optional)
   """
   @type output_remove_role :: %{optional(String.t()) => any()}
 
@@ -518,10 +512,10 @@ defmodule BluefinTecsUserBackoffice.Types do
   Request payload for OutputRemoveRole create.
 
   Members:
-    * `"consumer_uuid"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"role"` — list() (optional)
+    * `"consumerUUID"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"roles"` — list() (optional)
   """
   @type output_remove_role_create_data :: %{optional(String.t()) => any()}
 
@@ -529,12 +523,12 @@ defmodule BluefinTecsUserBackoffice.Types do
   OutputResendLink entity data model.
 
   Members:
-    * `"business_registration_number"` — String.t() (optional)
-    * `"consumer_uuid"` — String.t() (required)
-    * `"email_confirmation_code"` — String.t() (optional)
-    * `"phone_number"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"businessRegistrationNumber"` — String.t() (optional)
+    * `"consumerUUID"` — String.t() (required)
+    * `"emailConfirmationCode"` — String.t() (optional)
+    * `"phoneNumber"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type output_resend_link :: %{optional(String.t()) => any()}
 
@@ -542,12 +536,12 @@ defmodule BluefinTecsUserBackoffice.Types do
   Request payload for OutputResendLink create.
 
   Members:
-    * `"business_registration_number"` — String.t() (optional)
-    * `"consumer_uuid"` — String.t() (required)
-    * `"email_confirmation_code"` — String.t() (optional)
-    * `"phone_number"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"businessRegistrationNumber"` — String.t() (optional)
+    * `"consumerUUID"` — String.t() (required)
+    * `"emailConfirmationCode"` — String.t() (optional)
+    * `"phoneNumber"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type output_resend_link_create_data :: %{optional(String.t()) => any()}
 
@@ -555,10 +549,10 @@ defmodule BluefinTecsUserBackoffice.Types do
   OutputResetPassword entity data model.
 
   Members:
-    * `"consumer_uuid"` — String.t() (optional)
-    * `"phone_number"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"consumerUuid"` — String.t() (optional)
+    * `"phoneNumber"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type output_reset_password :: %{optional(String.t()) => any()}
 
@@ -566,10 +560,10 @@ defmodule BluefinTecsUserBackoffice.Types do
   Request payload for OutputResetPassword create.
 
   Members:
-    * `"consumer_uuid"` — String.t() (optional)
-    * `"phone_number"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"consumerUuid"` — String.t() (optional)
+    * `"phoneNumber"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type output_reset_password_create_data :: %{optional(String.t()) => any()}
 
@@ -578,23 +572,23 @@ defmodule BluefinTecsUserBackoffice.Types do
 
   Members:
     * `"city"` — String.t() (optional)
-    * `"consumer_uuid"` — String.t() (required)
+    * `"consumerUuid"` — String.t() (required)
     * `"consumerlanguage"` — String.t() (optional)
     * `"country"` — String.t() (optional)
-    * `"date_of_birth"` — String.t() (optional)
+    * `"dateOfBirth"` — String.t() (optional)
     * `"datetime_created"` — String.t() (optional)
-    * `"driver_licence_number"` — String.t() (optional)
+    * `"driverLicenceNumber"` — String.t() (optional)
     * `"email"` — String.t() (optional)
-    * `"first_name"` — String.t() (optional)
-    * `"identification_number"` — String.t() (optional)
-    * `"kyc_passed"` — boolean() (optional)
-    * `"last_name"` — String.t() (optional)
+    * `"firstName"` — String.t() (optional)
+    * `"identificationNumber"` — String.t() (optional)
+    * `"kycPassed"` — boolean() (optional)
+    * `"lastName"` — String.t() (optional)
     * `"nationality"` — String.t() (optional)
-    * `"passport_number"` — String.t() (optional)
-    * `"phone_number"` — String.t() (optional)
-    * `"place_of_birth"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"passportNumber"` — String.t() (optional)
+    * `"phoneNumber"` — String.t() (optional)
+    * `"placeOfBirth"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
     * `"state"` — String.t() (optional)
     * `"street1"` — String.t() (optional)
     * `"street2"` — String.t() (optional)
@@ -608,23 +602,23 @@ defmodule BluefinTecsUserBackoffice.Types do
 
   Members:
     * `"city"` — String.t() (optional)
-    * `"consumer_uuid"` — String.t() (required)
+    * `"consumerUuid"` — String.t() (required)
     * `"consumerlanguage"` — String.t() (optional)
     * `"country"` — String.t() (optional)
-    * `"date_of_birth"` — String.t() (optional)
+    * `"dateOfBirth"` — String.t() (optional)
     * `"datetime_created"` — String.t() (optional)
-    * `"driver_licence_number"` — String.t() (optional)
+    * `"driverLicenceNumber"` — String.t() (optional)
     * `"email"` — String.t() (optional)
-    * `"first_name"` — String.t() (optional)
-    * `"identification_number"` — String.t() (optional)
-    * `"kyc_passed"` — boolean() (optional)
-    * `"last_name"` — String.t() (optional)
+    * `"firstName"` — String.t() (optional)
+    * `"identificationNumber"` — String.t() (optional)
+    * `"kycPassed"` — boolean() (optional)
+    * `"lastName"` — String.t() (optional)
     * `"nationality"` — String.t() (optional)
-    * `"passport_number"` — String.t() (optional)
-    * `"phone_number"` — String.t() (optional)
-    * `"place_of_birth"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"passportNumber"` — String.t() (optional)
+    * `"phoneNumber"` — String.t() (optional)
+    * `"placeOfBirth"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
     * `"state"` — String.t() (optional)
     * `"street1"` — String.t() (optional)
     * `"street2"` — String.t() (optional)
@@ -637,13 +631,13 @@ defmodule BluefinTecsUserBackoffice.Types do
   OutputUpdateProfile entity data model.
 
   Members:
-    * `"consumer_language"` — String.t() (optional)
+    * `"consumerLanguage"` — String.t() (optional)
     * `"email"` — String.t() (optional)
-    * `"first_name"` — String.t() (optional)
-    * `"last_name"` — String.t() (optional)
-    * `"phone_number"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"firstName"` — String.t() (optional)
+    * `"lastName"` — String.t() (optional)
+    * `"phoneNumber"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type output_update_profile :: %{optional(String.t()) => any()}
 
@@ -651,13 +645,13 @@ defmodule BluefinTecsUserBackoffice.Types do
   Request payload for OutputUpdateProfile create.
 
   Members:
-    * `"consumer_language"` — String.t() (optional)
+    * `"consumerLanguage"` — String.t() (optional)
     * `"email"` — String.t() (optional)
-    * `"first_name"` — String.t() (optional)
-    * `"last_name"` — String.t() (optional)
-    * `"phone_number"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"firstName"` — String.t() (optional)
+    * `"lastName"` — String.t() (optional)
+    * `"phoneNumber"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type output_update_profile_create_data :: %{optional(String.t()) => any()}
 
@@ -665,8 +659,8 @@ defmodule BluefinTecsUserBackoffice.Types do
   Version entity data model.
 
   Members:
-    * `"app_name"` — String.t() (optional)
-    * `"build_date"` — String.t() (optional)
+    * `"appName"` — String.t() (optional)
+    * `"buildDate"` — String.t() (optional)
     * `"version"` — String.t() (optional)
   """
   @type version :: %{optional(String.t()) => any()}
@@ -675,8 +669,8 @@ defmodule BluefinTecsUserBackoffice.Types do
   Request payload for Version load.
 
   Members:
-    * `"app_name"` — String.t() (optional)
-    * `"build_date"` — String.t() (optional)
+    * `"appName"` — String.t() (optional)
+    * `"buildDate"` — String.t() (optional)
     * `"version"` — String.t() (optional)
   """
   @type version_load_match :: %{optional(String.t()) => any()}

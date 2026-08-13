@@ -187,8 +187,8 @@ local output_activate_digital_module = client:OutputActivateDigitalModule(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -241,10 +241,10 @@ local output_activate_portal_module = client:OutputActivatePortalModule(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `string` | Yes |  |
-| `notification_email` | `string` | Yes |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `clientSecret` | `string` | Yes |  |
+| `notificationEmail` | `string` | Yes |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -254,8 +254,8 @@ Create a new entity with the given data.
 
 ```lua
 local result, err = client:OutputActivatePortalModule():create({
-  client_secret = --[[ string ]],
-  notification_email = --[[ string ]],
+  clientSecret = --[[ string ]],
+  notificationEmail = --[[ string ]],
 })
 ```
 
@@ -299,8 +299,8 @@ local output_activate_store_module = client:OutputActivateStoreModule(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -353,9 +353,9 @@ local output_activate_user = client:OutputActivateUser(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `consumerUUID` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -408,10 +408,10 @@ local output_assign_role = client:OutputAssignRole(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | Yes |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `role` | `table` | Yes |  |
+| `consumerUUID` | `string` | Yes |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `roles` | `table` | Yes |  |
 
 ### Operations
 
@@ -421,8 +421,8 @@ Create a new entity with the given data.
 
 ```lua
 local result, err = client:OutputAssignRole():create({
-  consumer_uuid = --[[ string ]],
-  role = --[[ table ]],
+  consumerUUID = --[[ string ]],
+  roles = --[[ table ]],
 })
 ```
 
@@ -466,10 +466,10 @@ local output_change_logo = client:OutputChangeLogo(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `string` | Yes |  |
-| `mime_type` | `string` | Yes |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `contentAsBase64` | `string` | Yes |  |
+| `mimeType` | `string` | Yes |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -479,8 +479,8 @@ Create a new entity with the given data.
 
 ```lua
 local result, err = client:OutputChangeLogo():create({
-  content_as_base64 = --[[ string ]],
-  mime_type = --[[ string ]],
+  contentAsBase64 = --[[ string ]],
+  mimeType = --[[ string ]],
 })
 ```
 
@@ -526,25 +526,45 @@ local output_create_mandator = client:OutputCreateMandator(nil)
 | --- | --- | --- | --- |
 | `city` | `string` | No |  |
 | `country` | `string` | No |  |
-| `date_of_birth` | `string` | No |  |
-| `description` | `string` | Yes |  |
-| `drivers_license_number` | `string` | No |  |
+| `dateOfBirth` | `string` | No |  |
+| `description` | `string` | No |  |
+| `driversLicenseNumber` | `string` | No |  |
 | `email` | `string` | Yes |  |
-| `first_name` | `string` | No |  |
-| `identification_number` | `string` | No |  |
-| `last_name` | `string` | No |  |
+| `firstName` | `string` | No |  |
+| `identificationNumber` | `string` | No |  |
+| `lastName` | `string` | No |  |
 | `login` | `string` | Yes |  |
-| `mandator` | `table` | No |  |
-| `name` | `string` | Yes |  |
-| `passport_number` | `string` | No |  |
+| `name` | `string` | No |  |
+| `passportNumber` | `string` | No |  |
 | `phone` | `string` | Yes |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
 | `salutation` | `string` | No |  |
 | `state` | `string` | No |  |
 | `street1` | `string` | No |  |
 | `street2` | `string` | No |  |
-| `zip_code` | `string` | No |  |
+| `zipCode` | `string` | No |  |
+
+### Field Usage by Operation
+
+| Field | create |
+| --- | --- |
+| `city` | - |
+| `country` | - |
+| `dateOfBirth` | - |
+| `description` | Yes |
+| `driversLicenseNumber` | - |
+| `email` | - |
+| `firstName` | - |
+| `identificationNumber` | - |
+| `lastName` | - |
+| `login` | - |
+| `name` | Yes |
+| `passportNumber` | - |
+| `phone` | - |
+| `salutation` | - |
+| `state` | - |
+| `street1` | - |
+| `street2` | - |
+| `zipCode` | - |
 
 ### Operations
 
@@ -554,10 +574,8 @@ Create a new entity with the given data.
 
 ```lua
 local result, err = client:OutputCreateMandator():create({
-  description = --[[ string ]],
   email = --[[ string ]],
   login = --[[ string ]],
-  name = --[[ string ]],
   phone = --[[ string ]],
 })
 ```
@@ -602,9 +620,9 @@ local output_create_service_user = client:OutputCreateServiceUser(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `string` | Yes |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `mandatorName` | `string` | Yes |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -614,7 +632,7 @@ Create a new entity with the given data.
 
 ```lua
 local result, err = client:OutputCreateServiceUser():create({
-  mandator_name = --[[ string ]],
+  mandatorName = --[[ string ]],
 })
 ```
 
@@ -658,9 +676,9 @@ local output_deactivate_user = client:OutputDeactivateUser(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `consumerUUID` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -713,10 +731,10 @@ local output_get_kyc_document = client:OutputGetKycDocument(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `case_id` | `string` | No |  |
-| `encoded_data_base64` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `caseID` | `string` | No |  |
+| `encodedDataBase64` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -769,10 +787,10 @@ local output_get_logo = client:OutputGetLogo(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `string` | Yes |  |
-| `mime_type` | `string` | Yes |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `contentAsBase64` | `string` | Yes |  |
+| `mimeType` | `string` | Yes |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -824,9 +842,9 @@ local output_list_of_available_role = client:OutputListOfAvailableRole(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `available_role` | `table` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `availableRoles` | `table` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -882,8 +900,8 @@ local output_list_of_mandator = client:OutputListOfMandator(nil)
 | `filter` | `table` | No |  |
 | `list` | `table` | No |  |
 | `pagination` | `table` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 | `sorting` | `table` | No |  |
 
 ### Operations
@@ -939,8 +957,8 @@ local output_list_of_module = client:OutputListOfModule(nil)
 | --- | --- | --- | --- |
 | `list` | `table` | No |  |
 | `pagination` | `table` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -994,10 +1012,10 @@ local output_list_of_role_group = client:OutputListOfRoleGroup(nil)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `filter` | `table` | No |  |
-| `group_role` | `table` | No |  |
+| `groupRoles` | `table` | No |  |
 | `pagination` | `table` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 | `sorting` | `table` | No |  |
 
 ### Operations
@@ -1054,8 +1072,8 @@ local output_list_of_transactions_history = client:OutputListOfTransactionsHisto
 | `filter` | `table` | No |  |
 | `list` | `table` | No |  |
 | `pagination` | `table` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 | `sorting` | `table` | No |  |
 
 ### Operations
@@ -1112,8 +1130,8 @@ local output_list_of_user = client:OutputListOfUser(nil)
 | `filter` | `table` | No |  |
 | `list` | `table` | No |  |
 | `pagination` | `table` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 | `sorting` | `table` | No |  |
 
 ### Operations
@@ -1167,10 +1185,10 @@ local output_provide_credential = client:OutputProvideCredential(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `string` | Yes |  |
+| `mandatorName` | `string` | Yes |  |
 | `password` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 | `username` | `string` | No |  |
 
 ### Operations
@@ -1181,7 +1199,7 @@ Create a new entity with the given data.
 
 ```lua
 local result, err = client:OutputProvideCredential():create({
-  mandator_name = --[[ string ]],
+  mandatorName = --[[ string ]],
 })
 ```
 
@@ -1226,21 +1244,21 @@ local output_register_user = client:OutputRegisterUser(nil)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `string` | No |  |
-| `consumer_id` | `string` | No |  |
-| `consumer_language` | `string` | No |  |
+| `consumerId` | `string` | No |  |
+| `consumerLanguage` | `string` | No |  |
 | `country` | `string` | No |  |
-| `date_of_birth` | `string` | No |  |
-| `driver_licence_number` | `string` | No |  |
+| `dateOfBirth` | `string` | No |  |
+| `driverLicenceNumber` | `string` | No |  |
 | `email` | `string` | Yes |  |
-| `first_name` | `string` | No |  |
-| `identification_number` | `string` | No |  |
-| `last_name` | `string` | No |  |
+| `firstName` | `string` | No |  |
+| `identificationNumber` | `string` | No |  |
+| `lastName` | `string` | No |  |
 | `login` | `string` | No |  |
 | `module` | `string` | No |  |
-| `passport_number` | `string` | No |  |
+| `passportNumber` | `string` | No |  |
 | `phone` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 | `salutation` | `string` | No |  |
 | `state` | `string` | No |  |
 | `street1` | `string` | No |  |
@@ -1299,10 +1317,10 @@ local output_remove_role = client:OutputRemoveRole(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `role` | `table` | No |  |
+| `consumerUUID` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `roles` | `table` | No |  |
 
 ### Operations
 
@@ -1355,12 +1373,12 @@ local output_resend_link = client:OutputResendLink(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `business_registration_number` | `string` | No |  |
-| `consumer_uuid` | `string` | Yes |  |
-| `email_confirmation_code` | `string` | No |  |
-| `phone_number` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `businessRegistrationNumber` | `string` | No |  |
+| `consumerUUID` | `string` | Yes |  |
+| `emailConfirmationCode` | `string` | No |  |
+| `phoneNumber` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1370,7 +1388,7 @@ Create a new entity with the given data.
 
 ```lua
 local result, err = client:OutputResendLink():create({
-  consumer_uuid = --[[ string ]],
+  consumerUUID = --[[ string ]],
 })
 ```
 
@@ -1414,10 +1432,10 @@ local output_reset_password = client:OutputResetPassword(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `phone_number` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `consumerUuid` | `string` | No |  |
+| `phoneNumber` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1471,23 +1489,23 @@ local output_update_consumer = client:OutputUpdateConsumer(nil)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `string` | No |  |
-| `consumer_uuid` | `string` | Yes |  |
+| `consumerUuid` | `string` | Yes |  |
 | `consumerlanguage` | `string` | No |  |
 | `country` | `string` | No |  |
-| `date_of_birth` | `string` | No |  |
+| `dateOfBirth` | `string` | No |  |
 | `datetime_created` | `string` | No |  |
-| `driver_licence_number` | `string` | No |  |
+| `driverLicenceNumber` | `string` | No |  |
 | `email` | `string` | No |  |
-| `first_name` | `string` | No |  |
-| `identification_number` | `string` | No |  |
-| `kyc_passed` | `boolean` | No |  |
-| `last_name` | `string` | No |  |
+| `firstName` | `string` | No |  |
+| `identificationNumber` | `string` | No |  |
+| `kycPassed` | `boolean` | No |  |
+| `lastName` | `string` | No |  |
 | `nationality` | `string` | No |  |
-| `passport_number` | `string` | No |  |
-| `phone_number` | `string` | No |  |
-| `place_of_birth` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `passportNumber` | `string` | No |  |
+| `phoneNumber` | `string` | No |  |
+| `placeOfBirth` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 | `state` | `string` | No |  |
 | `street1` | `string` | No |  |
 | `street2` | `string` | No |  |
@@ -1502,7 +1520,7 @@ Create a new entity with the given data.
 
 ```lua
 local result, err = client:OutputUpdateConsumer():create({
-  consumer_uuid = --[[ string ]],
+  consumerUuid = --[[ string ]],
 })
 ```
 
@@ -1546,13 +1564,13 @@ local output_update_profile = client:OutputUpdateProfile(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_language` | `string` | No |  |
+| `consumerLanguage` | `string` | No |  |
 | `email` | `string` | No |  |
-| `first_name` | `string` | No |  |
-| `last_name` | `string` | No |  |
-| `phone_number` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `firstName` | `string` | No |  |
+| `lastName` | `string` | No |  |
+| `phoneNumber` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1605,8 +1623,8 @@ local version = client:Version(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `string` | No |  |
-| `build_date` | `string` | No |  |
+| `appName` | `string` | No |  |
+| `buildDate` | `string` | No |  |
 | `version` | `string` | No |  |
 
 ### Operations

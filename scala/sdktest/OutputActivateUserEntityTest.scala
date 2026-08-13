@@ -35,7 +35,7 @@ object OutputActivateUserEntityTest {
       var outputActivateUserRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.output_activate_user"), "output_activate_user_ref01"))
       val outputActivateUserRef01DataResult = outputActivateUserRef01Ent.create(outputActivateUserRef01Data, null)
-      outputActivateUserRef01Data = Helpers.toMapAny(outputActivateUserRef01DataResult)
+      outputActivateUserRef01Data = Helpers.toMapAny(outputActivateUserRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("output_activate_user.create.map", outputActivateUserRef01Data != null, "expected create result to be a map")
     }
   }

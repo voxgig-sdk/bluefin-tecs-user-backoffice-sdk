@@ -83,24 +83,24 @@ class VersionDirectTest {
       val calls = mutableListOf<MutableMap<String, Any?>>()
 
       val envm = linkedMapOf<String, Any?>()
-      envm["BLUEFINTECSUSERBACKOFFICE_TEST_VERSION_ENTID"] = linkedMapOf<String, Any?>()
-      envm["BLUEFINTECSUSERBACKOFFICE_TEST_LIVE"] = "FALSE"
-      envm["BLUEFINTECSUSERBACKOFFICE_APIKEY"] = "NONE"
+      envm["BLUEFIN_TECS_USER_BACKOFFICE_TEST_VERSION_ENTID"] = linkedMapOf<String, Any?>()
+      envm["BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE"] = "FALSE"
+      envm["BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"] = "NONE"
       val env = RunnerSupport.envOverride(envm)
 
-      val live = "TRUE" == env["BLUEFINTECSUSERBACKOFFICE_TEST_LIVE"]
+      val live = "TRUE" == env["BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE"]
 
       val setup = DirectSetup()
       setup.calls = calls
 
       if (live) {
         val mergedOpts = linkedMapOf<String, Any?>()
-        mergedOpts["apikey"] = env["BLUEFINTECSUSERBACKOFFICE_APIKEY"]
+        mergedOpts["apikey"] = env["BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"]
         setup.client = BluefinTecsUserBackofficeSDK(mergedOpts)
         setup.live = true
 
         var idmap: MutableMap<String, Any?> = linkedMapOf()
-        val entidRaw = env["BLUEFINTECSUSERBACKOFFICE_TEST_VERSION_ENTID"]
+        val entidRaw = env["BLUEFIN_TECS_USER_BACKOFFICE_TEST_VERSION_ENTID"]
         if (entidRaw is String && entidRaw.startsWith("{")) {
           val parsed = Helpers.toMapAny(Json.parseOrNull(entidRaw))
           if (parsed != null) {

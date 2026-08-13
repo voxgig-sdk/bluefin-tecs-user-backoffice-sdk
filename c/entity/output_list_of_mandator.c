@@ -14,6 +14,8 @@ typedef struct output_list_of_mandator_entity {
   voxgig_value* data;     // Map
   voxgig_value* mtch;     // Map
   Context* entctx;
+  // Set once a successful `remove` resolves on this instance.
+  bool deleted;
 } output_list_of_mandator_entity;
 
 typedef void (*output_list_of_mandator_postdone_fn)(output_list_of_mandator_entity* self, Context* ctx);
@@ -24,11 +26,14 @@ static const char* output_list_of_mandator_get_name(Entity* e);
 static Entity* output_list_of_mandator_make(Entity* e);
 static voxgig_value* output_list_of_mandator_data(Entity* e, voxgig_value* args);
 static voxgig_value* output_list_of_mandator_matchv(Entity* e, voxgig_value* args);
-static voxgig_value* output_list_of_mandator_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_list_of_mandator_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_list_of_mandator_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_list_of_mandator_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_list_of_mandator_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+// Ops resolve to the ENTITY (`list` to a NULL-terminated array of them).
+static Entity* output_list_of_mandator_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity** output_list_of_mandator_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity* output_list_of_mandator_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* output_list_of_mandator_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* output_list_of_mandator_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static void output_list_of_mandator_mark_deleted(Entity* e);
+static bool output_list_of_mandator_deleted(Entity* e);
 
 static Context* output_list_of_mandator_ent_ctx(output_list_of_mandator_entity* self) {
   return self->entctx;
@@ -236,13 +241,13 @@ static voxgig_value* output_list_of_mandator_matchv(Entity* e, voxgig_value* arg
   return voxgig_clone(self->mtch);
 }
 
-static voxgig_value* output_list_of_mandator_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* output_list_of_mandator_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("load", "output_list_of_mandator");
   return NULL;
 }
 
-static voxgig_value* output_list_of_mandator_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity** output_list_of_mandator_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("list", "output_list_of_mandator");
   return NULL;
@@ -260,7 +265,7 @@ static void output_list_of_mandator_create_postdone(output_list_of_mandator_enti
   }
 }
 
-static voxgig_value* output_list_of_mandator_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
+static Entity* output_list_of_mandator_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
   output_list_of_mandator_entity* self = (output_list_of_mandator_entity*)e;
   CtxSpec cs;
   memset(&cs, 0, sizeof(cs));
@@ -270,20 +275,38 @@ static voxgig_value* output_list_of_mandator_create(Entity* e, voxgig_value* req
   cs.data = self->data;
   cs.reqdata = reqdata;
   Context* ctx = make_context_util(cs, output_list_of_mandator_ent_ctx(self));
-  return output_list_of_mandator_run_op(self, ctx, output_list_of_mandator_create_postdone, err);
+  output_list_of_mandator_run_op(self, ctx, output_list_of_mandator_create_postdone, err);
+  if (*err) return NULL;
+
+  // The operation resolves to THIS entity: run_op has just absorbed the
+  // result into it, and the caller reaches the record through vt->data.
+  // See AGENTS.md "Entity operations return ENTITIES".
+
+  return e;
 }
 
 
-static voxgig_value* output_list_of_mandator_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* output_list_of_mandator_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("update", "output_list_of_mandator");
   return NULL;
 }
 
-static voxgig_value* output_list_of_mandator_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* output_list_of_mandator_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("remove", "output_list_of_mandator");
   return NULL;
+}
+
+// `remove` resolves to the entity, marked. The instance KEEPS the data it
+// held - a caller can still read what was deleted - but it is no longer a
+// live record.
+static void output_list_of_mandator_mark_deleted(Entity* e) {
+  ((output_list_of_mandator_entity*)e)->deleted = true;
+}
+
+static bool output_list_of_mandator_deleted(Entity* e) {
+  return ((output_list_of_mandator_entity*)e)->deleted;
 }
 
 static const EntityVT output_list_of_mandator_VT = {
@@ -291,6 +314,8 @@ static const EntityVT output_list_of_mandator_VT = {
   output_list_of_mandator_make,
   output_list_of_mandator_data,
   output_list_of_mandator_matchv,
+  output_list_of_mandator_mark_deleted,
+  output_list_of_mandator_deleted,
   output_list_of_mandator_load,
   output_list_of_mandator_list,
   output_list_of_mandator_create,

@@ -62,7 +62,7 @@ auto client = std::make_shared<BluefinTecsUserBackofficeSDK>(vmap({
 
 ```cpp
 // Create — returns the bare created record.
-Value created = client->output_activate_digital_module()->create(vmap({{"response_code", Value(1)}, {"response_message", Value("example_response_message")}}), Value::undef());
+Value created = client->output_activate_digital_module()->create(vmap({{"responseCode", Value(1)}, {"responseMessage", Value("example_responseMessage")}}), Value::undef());
 
 ```
 
@@ -276,8 +276,8 @@ On error, `ok` is `false` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -287,10 +287,10 @@ API path: `/activateDigitalModule`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `notification_email` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clientSecret` |  |
+| `notificationEmail` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -300,8 +300,8 @@ API path: `/activateMerchantPortalModule`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -311,9 +311,9 @@ API path: `/activateAppStoreModule`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -323,10 +323,10 @@ API path: `/activateUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `role` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `roles` |  |
 
 Operations: Create.
 
@@ -336,10 +336,10 @@ API path: `/assignRoles`
 
 | Field | Description |
 | --- | --- |
-| `content_as_base64` |  |
-| `mime_type` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `contentAsBase64` |  |
+| `mimeType` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -351,25 +351,22 @@ API path: `/changeLogo`
 | --- | --- |
 | `city` |  |
 | `country` |  |
-| `date_of_birth` |  |
+| `dateOfBirth` |  |
 | `description` |  |
-| `drivers_license_number` |  |
+| `driversLicenseNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `lastName` |  |
 | `login` |  |
-| `mandator` |  |
 | `name` |  |
-| `passport_number` |  |
+| `passportNumber` |  |
 | `phone` |  |
-| `response_code` |  |
-| `response_message` |  |
 | `salutation` |  |
 | `state` |  |
 | `street1` |  |
 | `street2` |  |
-| `zip_code` |  |
+| `zipCode` |  |
 
 Operations: Create.
 
@@ -379,9 +376,9 @@ API path: `/createMandator`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `mandatorName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -391,9 +388,9 @@ API path: `/createServiceUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -403,10 +400,10 @@ API path: `/deactivateUser`
 
 | Field | Description |
 | --- | --- |
-| `case_id` |  |
-| `encoded_data_base64` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `caseID` |  |
+| `encodedDataBase64` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -416,10 +413,10 @@ API path: `/getKycDocument`
 
 | Field | Description |
 | --- | --- |
-| `content_as_base64` |  |
-| `mime_type` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `contentAsBase64` |  |
+| `mimeType` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Load.
 
@@ -429,9 +426,9 @@ API path: `/getLogo`
 
 | Field | Description |
 | --- | --- |
-| `available_role` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `availableRoles` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -444,8 +441,8 @@ API path: `/listOfAvailableRoles`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -458,8 +455,8 @@ API path: `/listOfMandators`
 | --- | --- |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -470,10 +467,10 @@ API path: `/listOfModules`
 | Field | Description |
 | --- | --- |
 | `filter` |  |
-| `group_role` |  |
+| `groupRoles` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -487,8 +484,8 @@ API path: `/listOfRoleGroups`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -502,8 +499,8 @@ API path: `/listOfTransactionsHistory`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -514,10 +511,10 @@ API path: `/listOfUsers`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
+| `mandatorName` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `username` |  |
 
 Operations: Create.
@@ -529,21 +526,21 @@ API path: `/provideCredentials`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `consumer_id` |  |
-| `consumer_language` |  |
+| `consumerId` |  |
+| `consumerLanguage` |  |
 | `country` |  |
-| `date_of_birth` |  |
-| `driver_licence_number` |  |
+| `dateOfBirth` |  |
+| `driverLicenceNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `lastName` |  |
 | `login` |  |
 | `module` |  |
-| `passport_number` |  |
+| `passportNumber` |  |
 | `phone` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `salutation` |  |
 | `state` |  |
 | `street1` |  |
@@ -558,10 +555,10 @@ API path: `/registerUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `role` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `roles` |  |
 
 Operations: Create.
 
@@ -571,12 +568,12 @@ API path: `/removeRoles`
 
 | Field | Description |
 | --- | --- |
-| `business_registration_number` |  |
-| `consumer_uuid` |  |
-| `email_confirmation_code` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `businessRegistrationNumber` |  |
+| `consumerUUID` |  |
+| `emailConfirmationCode` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -586,10 +583,10 @@ API path: `/resendLink`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUuid` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -600,23 +597,23 @@ API path: `/resetPassword`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `consumer_uuid` |  |
+| `consumerUuid` |  |
 | `consumerlanguage` |  |
 | `country` |  |
-| `date_of_birth` |  |
+| `dateOfBirth` |  |
 | `datetime_created` |  |
-| `driver_licence_number` |  |
+| `driverLicenceNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `kyc_passed` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `kycPassed` |  |
+| `lastName` |  |
 | `nationality` |  |
-| `passport_number` |  |
-| `phone_number` |  |
-| `place_of_birth` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `passportNumber` |  |
+| `phoneNumber` |  |
+| `placeOfBirth` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `state` |  |
 | `street1` |  |
 | `street2` |  |
@@ -631,13 +628,13 @@ API path: `/updateConsumer`
 
 | Field | Description |
 | --- | --- |
-| `consumer_language` |  |
+| `consumerLanguage` |  |
 | `email` |  |
-| `first_name` |  |
-| `last_name` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `firstName` |  |
+| `lastName` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -647,8 +644,8 @@ API path: `/updateProfile`
 
 | Field | Description |
 | --- | --- |
-| `app_name` |  |
-| `build_date` |  |
+| `appName` |  |
+| `buildDate` |  |
 | `version` |  |
 
 Operations: Load.
@@ -674,8 +671,8 @@ Create an instance: `auto output_activate_digital_module = client->output_activa
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 
 #### Example: Create
 
@@ -699,17 +696,17 @@ Create an instance: `auto output_activate_portal_module = client->output_activat
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `std::string` |  |
-| `notification_email` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `clientSecret` | `std::string` |  |
+| `notificationEmail` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value output_activate_portal_module = client->output_activate_portal_module()->create(vmap({
-    {"client_secret", Value("example_client_secret")},  // std::string
-    {"notification_email", Value("example_notification_email")},  // std::string
+    {"clientSecret", Value("example_clientSecret")},  // std::string
+    {"notificationEmail", Value("example_notificationEmail")},  // std::string
 }), Value::undef());
 ```
 
@@ -728,8 +725,8 @@ Create an instance: `auto output_activate_store_module = client->output_activate
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 
 #### Example: Create
 
@@ -753,9 +750,9 @@ Create an instance: `auto output_activate_user = client->output_activate_user();
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `consumerUUID` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 
 #### Example: Create
 
@@ -779,17 +776,17 @@ Create an instance: `auto output_assign_role = client->output_assign_role();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `role` | `std::vector<Value>` |  |
+| `consumerUUID` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `roles` | `std::vector<Value>` |  |
 
 #### Example: Create
 
 ```cpp
 Value output_assign_role = client->output_assign_role()->create(vmap({
-    {"consumer_uuid", Value("example_consumer_uuid")},  // std::string
-    {"role", vlist()},  // std::vector<Value>
+    {"consumerUUID", Value("example_consumerUUID")},  // std::string
+    {"roles", vlist()},  // std::vector<Value>
 }), Value::undef());
 ```
 
@@ -808,17 +805,17 @@ Create an instance: `auto output_change_logo = client->output_change_logo();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `content_as_base64` | `std::string` |  |
-| `mime_type` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `contentAsBase64` | `std::string` |  |
+| `mimeType` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value output_change_logo = client->output_change_logo()->create(vmap({
-    {"content_as_base64", Value("example_content_as_base64")},  // std::string
-    {"mime_type", Value("example_mime_type")},  // std::string
+    {"contentAsBase64", Value("example_contentAsBase64")},  // std::string
+    {"mimeType", Value("example_mimeType")},  // std::string
 }), Value::undef());
 ```
 
@@ -839,34 +836,29 @@ Create an instance: `auto output_create_mandator = client->output_create_mandato
 | --- | --- | --- |
 | `city` | `std::string` |  |
 | `country` | `std::string` |  |
-| `date_of_birth` | `std::string` |  |
+| `dateOfBirth` | `std::string` |  |
 | `description` | `std::string` |  |
-| `drivers_license_number` | `std::string` |  |
+| `driversLicenseNumber` | `std::string` |  |
 | `email` | `std::string` |  |
-| `first_name` | `std::string` |  |
-| `identification_number` | `std::string` |  |
-| `last_name` | `std::string` |  |
+| `firstName` | `std::string` |  |
+| `identificationNumber` | `std::string` |  |
+| `lastName` | `std::string` |  |
 | `login` | `std::string` |  |
-| `mandator` | `std::map<std::string, Value>` |  |
 | `name` | `std::string` |  |
-| `passport_number` | `std::string` |  |
+| `passportNumber` | `std::string` |  |
 | `phone` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
 | `salutation` | `std::string` |  |
 | `state` | `std::string` |  |
 | `street1` | `std::string` |  |
 | `street2` | `std::string` |  |
-| `zip_code` | `std::string` |  |
+| `zipCode` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value output_create_mandator = client->output_create_mandator()->create(vmap({
-    {"description", Value("example_description")},  // std::string
     {"email", Value("example_email")},  // std::string
     {"login", Value("example_login")},  // std::string
-    {"name", Value("example_name")},  // std::string
     {"phone", Value("example_phone")},  // std::string
 }), Value::undef());
 ```
@@ -886,15 +878,15 @@ Create an instance: `auto output_create_service_user = client->output_create_ser
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `mandatorName` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value output_create_service_user = client->output_create_service_user()->create(vmap({
-    {"mandator_name", Value("example_mandator_name")},  // std::string
+    {"mandatorName", Value("example_mandatorName")},  // std::string
 }), Value::undef());
 ```
 
@@ -913,9 +905,9 @@ Create an instance: `auto output_deactivate_user = client->output_deactivate_use
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `consumerUUID` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 
 #### Example: Create
 
@@ -939,10 +931,10 @@ Create an instance: `auto output_get_kyc_document = client->output_get_kyc_docum
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `case_id` | `std::string` |  |
-| `encoded_data_base64` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `caseID` | `std::string` |  |
+| `encodedDataBase64` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 
 #### Example: Create
 
@@ -966,10 +958,10 @@ Create an instance: `auto output_get_logo = client->output_get_logo();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `content_as_base64` | `std::string` |  |
-| `mime_type` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `contentAsBase64` | `std::string` |  |
+| `mimeType` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 
 #### Example: Load
 
@@ -992,9 +984,9 @@ Create an instance: `auto output_list_of_available_role = client->output_list_of
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `available_role` | `std::vector<Value>` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `availableRoles` | `std::vector<Value>` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 
 #### Example: Create
 
@@ -1021,8 +1013,8 @@ Create an instance: `auto output_list_of_mandator = client->output_list_of_manda
 | `filter` | `std::map<std::string, Value>` |  |
 | `list` | `std::vector<Value>` |  |
 | `pagination` | `std::map<std::string, Value>` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 | `sorting` | `std::map<std::string, Value>` |  |
 
 #### Example: Create
@@ -1049,8 +1041,8 @@ Create an instance: `auto output_list_of_module = client->output_list_of_module(
 | --- | --- | --- |
 | `list` | `std::vector<Value>` |  |
 | `pagination` | `std::map<std::string, Value>` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 
 #### Example: Create
 
@@ -1075,10 +1067,10 @@ Create an instance: `auto output_list_of_role_group = client->output_list_of_rol
 | Field | Type | Description |
 | --- | --- | --- |
 | `filter` | `std::map<std::string, Value>` |  |
-| `group_role` | `std::vector<Value>` |  |
+| `groupRoles` | `std::vector<Value>` |  |
 | `pagination` | `std::map<std::string, Value>` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 | `sorting` | `std::map<std::string, Value>` |  |
 
 #### Example: Create
@@ -1106,8 +1098,8 @@ Create an instance: `auto output_list_of_transactions_history = client->output_l
 | `filter` | `std::map<std::string, Value>` |  |
 | `list` | `std::vector<Value>` |  |
 | `pagination` | `std::map<std::string, Value>` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 | `sorting` | `std::map<std::string, Value>` |  |
 
 #### Example: Create
@@ -1135,8 +1127,8 @@ Create an instance: `auto output_list_of_user = client->output_list_of_user();`
 | `filter` | `std::map<std::string, Value>` |  |
 | `list` | `std::vector<Value>` |  |
 | `pagination` | `std::map<std::string, Value>` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 | `sorting` | `std::map<std::string, Value>` |  |
 
 #### Example: Create
@@ -1161,17 +1153,17 @@ Create an instance: `auto output_provide_credential = client->output_provide_cre
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `std::string` |  |
+| `mandatorName` | `std::string` |  |
 | `password` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 | `username` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value output_provide_credential = client->output_provide_credential()->create(vmap({
-    {"mandator_name", Value("example_mandator_name")},  // std::string
+    {"mandatorName", Value("example_mandatorName")},  // std::string
 }), Value::undef());
 ```
 
@@ -1191,21 +1183,21 @@ Create an instance: `auto output_register_user = client->output_register_user();
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `std::string` |  |
-| `consumer_id` | `std::string` |  |
-| `consumer_language` | `std::string` |  |
+| `consumerId` | `std::string` |  |
+| `consumerLanguage` | `std::string` |  |
 | `country` | `std::string` |  |
-| `date_of_birth` | `std::string` |  |
-| `driver_licence_number` | `std::string` |  |
+| `dateOfBirth` | `std::string` |  |
+| `driverLicenceNumber` | `std::string` |  |
 | `email` | `std::string` |  |
-| `first_name` | `std::string` |  |
-| `identification_number` | `std::string` |  |
-| `last_name` | `std::string` |  |
+| `firstName` | `std::string` |  |
+| `identificationNumber` | `std::string` |  |
+| `lastName` | `std::string` |  |
 | `login` | `std::string` |  |
 | `module` | `std::string` |  |
-| `passport_number` | `std::string` |  |
+| `passportNumber` | `std::string` |  |
 | `phone` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 | `salutation` | `std::string` |  |
 | `state` | `std::string` |  |
 | `street1` | `std::string` |  |
@@ -1235,10 +1227,10 @@ Create an instance: `auto output_remove_role = client->output_remove_role();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `role` | `std::vector<Value>` |  |
+| `consumerUUID` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `roles` | `std::vector<Value>` |  |
 
 #### Example: Create
 
@@ -1262,18 +1254,18 @@ Create an instance: `auto output_resend_link = client->output_resend_link();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `business_registration_number` | `std::string` |  |
-| `consumer_uuid` | `std::string` |  |
-| `email_confirmation_code` | `std::string` |  |
-| `phone_number` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `businessRegistrationNumber` | `std::string` |  |
+| `consumerUUID` | `std::string` |  |
+| `emailConfirmationCode` | `std::string` |  |
+| `phoneNumber` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value output_resend_link = client->output_resend_link()->create(vmap({
-    {"consumer_uuid", Value("example_consumer_uuid")},  // std::string
+    {"consumerUUID", Value("example_consumerUUID")},  // std::string
 }), Value::undef());
 ```
 
@@ -1292,10 +1284,10 @@ Create an instance: `auto output_reset_password = client->output_reset_password(
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `std::string` |  |
-| `phone_number` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `consumerUuid` | `std::string` |  |
+| `phoneNumber` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 
 #### Example: Create
 
@@ -1320,23 +1312,23 @@ Create an instance: `auto output_update_consumer = client->output_update_consume
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `std::string` |  |
-| `consumer_uuid` | `std::string` |  |
+| `consumerUuid` | `std::string` |  |
 | `consumerlanguage` | `std::string` |  |
 | `country` | `std::string` |  |
-| `date_of_birth` | `std::string` |  |
+| `dateOfBirth` | `std::string` |  |
 | `datetime_created` | `std::string` |  |
-| `driver_licence_number` | `std::string` |  |
+| `driverLicenceNumber` | `std::string` |  |
 | `email` | `std::string` |  |
-| `first_name` | `std::string` |  |
-| `identification_number` | `std::string` |  |
-| `kyc_passed` | `bool` |  |
-| `last_name` | `std::string` |  |
+| `firstName` | `std::string` |  |
+| `identificationNumber` | `std::string` |  |
+| `kycPassed` | `bool` |  |
+| `lastName` | `std::string` |  |
 | `nationality` | `std::string` |  |
-| `passport_number` | `std::string` |  |
-| `phone_number` | `std::string` |  |
-| `place_of_birth` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `passportNumber` | `std::string` |  |
+| `phoneNumber` | `std::string` |  |
+| `placeOfBirth` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 | `state` | `std::string` |  |
 | `street1` | `std::string` |  |
 | `street2` | `std::string` |  |
@@ -1347,7 +1339,7 @@ Create an instance: `auto output_update_consumer = client->output_update_consume
 
 ```cpp
 Value output_update_consumer = client->output_update_consumer()->create(vmap({
-    {"consumer_uuid", Value("example_consumer_uuid")},  // std::string
+    {"consumerUuid", Value("example_consumerUuid")},  // std::string
 }), Value::undef());
 ```
 
@@ -1366,13 +1358,13 @@ Create an instance: `auto output_update_profile = client->output_update_profile(
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_language` | `std::string` |  |
+| `consumerLanguage` | `std::string` |  |
 | `email` | `std::string` |  |
-| `first_name` | `std::string` |  |
-| `last_name` | `std::string` |  |
-| `phone_number` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `firstName` | `std::string` |  |
+| `lastName` | `std::string` |  |
+| `phoneNumber` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 
 #### Example: Create
 
@@ -1396,8 +1388,8 @@ Create an instance: `auto version = client->version();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_name` | `std::string` |  |
-| `build_date` | `std::string` |  |
+| `appName` | `std::string` |  |
+| `buildDate` | `std::string` |  |
 | `version` | `std::string` |  |
 
 #### Example: Load

@@ -34,7 +34,8 @@ defmodule BluefinTecsUserBackoffice.VersionEntityTest do
     if id != nil do
       sdk = mk_sdk()
       ent = BluefinTecsUserBackoffice.version(sdk)
-      rec = BluefinTecsUserBackoffice.Entity.Version.load(ent, S.jm(["id", id]))
+      loaded = BluefinTecsUserBackoffice.Entity.Version.load(ent, S.jm(["id", id]))
+      rec = BluefinTecsUserBackoffice.EntityBase.data_get(loaded)
       assert S.ismap(rec)
       assert S.getprop(rec, "id") == id
     end

@@ -31,7 +31,8 @@ defmodule BluefinTecsUserBackoffice.OutputListOfAvailableRoleEntityTest do
   test "should create then read back" do
     sdk = BluefinTecsUserBackoffice.test(S.jm(["entity", S.jm(["output_list_of_available_role", S.jm([])])]))
     ent = BluefinTecsUserBackoffice.output_list_of_available_role(sdk)
-    made = BluefinTecsUserBackoffice.Entity.OutputListOfAvailableRole.create(ent, S.jm(["name", "test-create"]))
+    created = BluefinTecsUserBackoffice.Entity.OutputListOfAvailableRole.create(ent, S.jm(["name", "test-create"]))
+    made = BluefinTecsUserBackoffice.EntityBase.data_get(created)
     assert S.ismap(made)
     assert S.getprop(made, "id") != nil
   end

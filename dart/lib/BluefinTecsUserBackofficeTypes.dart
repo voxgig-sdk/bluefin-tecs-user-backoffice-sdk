@@ -10,27 +10,27 @@
 
 class OutputActivateDigitalModule {
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   OutputActivateDigitalModule({
-    this.response_code,
-    this.response_message,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputActivateDigitalModule.fromMap(Map<String, dynamic> m) => OutputActivateDigitalModule(
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -38,27 +38,27 @@ class OutputActivateDigitalModule {
 
 class OutputActivateDigitalModuleCreateData {
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   OutputActivateDigitalModuleCreateData({
-    this.response_code,
-    this.response_message,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputActivateDigitalModuleCreateData.fromMap(Map<String, dynamic> m) => OutputActivateDigitalModuleCreateData(
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -66,41 +66,41 @@ class OutputActivateDigitalModuleCreateData {
 
 class OutputActivatePortalModule {
   /// STRING (required at the API)
-  String? client_secret;
+  String? clientSecret;
   /// STRING (required at the API)
-  String? notification_email;
+  String? notificationEmail;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   OutputActivatePortalModule({
-    this.client_secret,
-    this.notification_email,
-    this.response_code,
-    this.response_message,
+    this.clientSecret,
+    this.notificationEmail,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputActivatePortalModule.fromMap(Map<String, dynamic> m) => OutputActivatePortalModule(
-        client_secret: m['client_secret'] is String ? m['client_secret'] : null,
-        notification_email: m['notification_email'] is String ? m['notification_email'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        clientSecret: m['clientSecret'] is String ? m['clientSecret'] : null,
+        notificationEmail: m['notificationEmail'] is String ? m['notificationEmail'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != client_secret) {
-      m['client_secret'] = client_secret;
+    if (null != clientSecret) {
+      m['clientSecret'] = clientSecret;
     }
-    if (null != notification_email) {
-      m['notification_email'] = notification_email;
+    if (null != notificationEmail) {
+      m['notificationEmail'] = notificationEmail;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -108,41 +108,41 @@ class OutputActivatePortalModule {
 
 class OutputActivatePortalModuleCreateData {
   /// STRING (required at the API)
-  String? client_secret;
+  String? clientSecret;
   /// STRING (required at the API)
-  String? notification_email;
+  String? notificationEmail;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   OutputActivatePortalModuleCreateData({
-    this.client_secret,
-    this.notification_email,
-    this.response_code,
-    this.response_message,
+    this.clientSecret,
+    this.notificationEmail,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputActivatePortalModuleCreateData.fromMap(Map<String, dynamic> m) => OutputActivatePortalModuleCreateData(
-        client_secret: m['client_secret'] is String ? m['client_secret'] : null,
-        notification_email: m['notification_email'] is String ? m['notification_email'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        clientSecret: m['clientSecret'] is String ? m['clientSecret'] : null,
+        notificationEmail: m['notificationEmail'] is String ? m['notificationEmail'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != client_secret) {
-      m['client_secret'] = client_secret;
+    if (null != clientSecret) {
+      m['clientSecret'] = clientSecret;
     }
-    if (null != notification_email) {
-      m['notification_email'] = notification_email;
+    if (null != notificationEmail) {
+      m['notificationEmail'] = notificationEmail;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -150,27 +150,27 @@ class OutputActivatePortalModuleCreateData {
 
 class OutputActivateStoreModule {
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   OutputActivateStoreModule({
-    this.response_code,
-    this.response_message,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputActivateStoreModule.fromMap(Map<String, dynamic> m) => OutputActivateStoreModule(
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -178,27 +178,27 @@ class OutputActivateStoreModule {
 
 class OutputActivateStoreModuleCreateData {
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   OutputActivateStoreModuleCreateData({
-    this.response_code,
-    this.response_message,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputActivateStoreModuleCreateData.fromMap(Map<String, dynamic> m) => OutputActivateStoreModuleCreateData(
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -206,34 +206,34 @@ class OutputActivateStoreModuleCreateData {
 
 class OutputActivateUser {
   /// STRING
-  String? consumer_uuid;
+  String? consumerUUID;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   OutputActivateUser({
-    this.consumer_uuid,
-    this.response_code,
-    this.response_message,
+    this.consumerUUID,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputActivateUser.fromMap(Map<String, dynamic> m) => OutputActivateUser(
-        consumer_uuid: m['consumer_uuid'] is String ? m['consumer_uuid'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        consumerUUID: m['consumerUUID'] is String ? m['consumerUUID'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != consumer_uuid) {
-      m['consumer_uuid'] = consumer_uuid;
+    if (null != consumerUUID) {
+      m['consumerUUID'] = consumerUUID;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -241,34 +241,34 @@ class OutputActivateUser {
 
 class OutputActivateUserCreateData {
   /// STRING
-  String? consumer_uuid;
+  String? consumerUUID;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   OutputActivateUserCreateData({
-    this.consumer_uuid,
-    this.response_code,
-    this.response_message,
+    this.consumerUUID,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputActivateUserCreateData.fromMap(Map<String, dynamic> m) => OutputActivateUserCreateData(
-        consumer_uuid: m['consumer_uuid'] is String ? m['consumer_uuid'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        consumerUUID: m['consumerUUID'] is String ? m['consumerUUID'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != consumer_uuid) {
-      m['consumer_uuid'] = consumer_uuid;
+    if (null != consumerUUID) {
+      m['consumerUUID'] = consumerUUID;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -276,41 +276,41 @@ class OutputActivateUserCreateData {
 
 class OutputAssignRole {
   /// STRING (required at the API)
-  String? consumer_uuid;
+  String? consumerUUID;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// ARRAY (required at the API)
-  List<dynamic>? role;
+  List<dynamic>? roles;
 
   OutputAssignRole({
-    this.consumer_uuid,
-    this.response_code,
-    this.response_message,
-    this.role,
+    this.consumerUUID,
+    this.responseCode,
+    this.responseMessage,
+    this.roles,
   });
 
   factory OutputAssignRole.fromMap(Map<String, dynamic> m) => OutputAssignRole(
-        consumer_uuid: m['consumer_uuid'] is String ? m['consumer_uuid'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        role: m['role'] is List<dynamic> ? m['role'] : null,
+        consumerUUID: m['consumerUUID'] is String ? m['consumerUUID'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        roles: m['roles'] is List<dynamic> ? m['roles'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != consumer_uuid) {
-      m['consumer_uuid'] = consumer_uuid;
+    if (null != consumerUUID) {
+      m['consumerUUID'] = consumerUUID;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != role) {
-      m['role'] = role;
+    if (null != roles) {
+      m['roles'] = roles;
     }
     return m;
   }
@@ -318,41 +318,41 @@ class OutputAssignRole {
 
 class OutputAssignRoleCreateData {
   /// STRING (required at the API)
-  String? consumer_uuid;
+  String? consumerUUID;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// ARRAY (required at the API)
-  List<dynamic>? role;
+  List<dynamic>? roles;
 
   OutputAssignRoleCreateData({
-    this.consumer_uuid,
-    this.response_code,
-    this.response_message,
-    this.role,
+    this.consumerUUID,
+    this.responseCode,
+    this.responseMessage,
+    this.roles,
   });
 
   factory OutputAssignRoleCreateData.fromMap(Map<String, dynamic> m) => OutputAssignRoleCreateData(
-        consumer_uuid: m['consumer_uuid'] is String ? m['consumer_uuid'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        role: m['role'] is List<dynamic> ? m['role'] : null,
+        consumerUUID: m['consumerUUID'] is String ? m['consumerUUID'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        roles: m['roles'] is List<dynamic> ? m['roles'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != consumer_uuid) {
-      m['consumer_uuid'] = consumer_uuid;
+    if (null != consumerUUID) {
+      m['consumerUUID'] = consumerUUID;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != role) {
-      m['role'] = role;
+    if (null != roles) {
+      m['roles'] = roles;
     }
     return m;
   }
@@ -360,41 +360,41 @@ class OutputAssignRoleCreateData {
 
 class OutputChangeLogo {
   /// STRING (required at the API)
-  String? content_as_base64;
+  String? contentAsBase64;
   /// STRING (required at the API)
-  String? mime_type;
+  String? mimeType;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   OutputChangeLogo({
-    this.content_as_base64,
-    this.mime_type,
-    this.response_code,
-    this.response_message,
+    this.contentAsBase64,
+    this.mimeType,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputChangeLogo.fromMap(Map<String, dynamic> m) => OutputChangeLogo(
-        content_as_base64: m['content_as_base64'] is String ? m['content_as_base64'] : null,
-        mime_type: m['mime_type'] is String ? m['mime_type'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        contentAsBase64: m['contentAsBase64'] is String ? m['contentAsBase64'] : null,
+        mimeType: m['mimeType'] is String ? m['mimeType'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != content_as_base64) {
-      m['content_as_base64'] = content_as_base64;
+    if (null != contentAsBase64) {
+      m['contentAsBase64'] = contentAsBase64;
     }
-    if (null != mime_type) {
-      m['mime_type'] = mime_type;
+    if (null != mimeType) {
+      m['mimeType'] = mimeType;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -402,41 +402,41 @@ class OutputChangeLogo {
 
 class OutputChangeLogoCreateData {
   /// STRING (required at the API)
-  String? content_as_base64;
+  String? contentAsBase64;
   /// STRING (required at the API)
-  String? mime_type;
+  String? mimeType;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   OutputChangeLogoCreateData({
-    this.content_as_base64,
-    this.mime_type,
-    this.response_code,
-    this.response_message,
+    this.contentAsBase64,
+    this.mimeType,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputChangeLogoCreateData.fromMap(Map<String, dynamic> m) => OutputChangeLogoCreateData(
-        content_as_base64: m['content_as_base64'] is String ? m['content_as_base64'] : null,
-        mime_type: m['mime_type'] is String ? m['mime_type'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        contentAsBase64: m['contentAsBase64'] is String ? m['contentAsBase64'] : null,
+        mimeType: m['mimeType'] is String ? m['mimeType'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != content_as_base64) {
-      m['content_as_base64'] = content_as_base64;
+    if (null != contentAsBase64) {
+      m['contentAsBase64'] = contentAsBase64;
     }
-    if (null != mime_type) {
-      m['mime_type'] = mime_type;
+    if (null != mimeType) {
+      m['mimeType'] = mimeType;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -448,33 +448,27 @@ class OutputCreateMandator {
   /// STRING
   String? country;
   /// STRING
-  String? date_of_birth;
-  /// STRING (required at the API)
+  String? dateOfBirth;
+  /// STRING
   String? description;
   /// STRING
-  String? drivers_license_number;
+  String? driversLicenseNumber;
   /// STRING (required at the API)
   String? email;
   /// STRING
-  String? first_name;
+  String? firstName;
   /// STRING
-  String? identification_number;
+  String? identificationNumber;
   /// STRING
-  String? last_name;
+  String? lastName;
   /// STRING (required at the API)
   String? login;
-  /// OBJECT
-  Map<String, dynamic>? mandator;
-  /// STRING (required at the API)
+  /// STRING
   String? name;
   /// STRING
-  String? passport_number;
+  String? passportNumber;
   /// STRING (required at the API)
   String? phone;
-  /// INTEGER
-  int? response_code;
-  /// STRING
-  String? response_message;
   /// STRING
   String? salutation;
   /// STRING
@@ -484,54 +478,48 @@ class OutputCreateMandator {
   /// STRING
   String? street2;
   /// STRING
-  String? zip_code;
+  String? zipCode;
 
   OutputCreateMandator({
     this.city,
     this.country,
-    this.date_of_birth,
+    this.dateOfBirth,
     this.description,
-    this.drivers_license_number,
+    this.driversLicenseNumber,
     this.email,
-    this.first_name,
-    this.identification_number,
-    this.last_name,
+    this.firstName,
+    this.identificationNumber,
+    this.lastName,
     this.login,
-    this.mandator,
     this.name,
-    this.passport_number,
+    this.passportNumber,
     this.phone,
-    this.response_code,
-    this.response_message,
     this.salutation,
     this.state,
     this.street1,
     this.street2,
-    this.zip_code,
+    this.zipCode,
   });
 
   factory OutputCreateMandator.fromMap(Map<String, dynamic> m) => OutputCreateMandator(
         city: m['city'] is String ? m['city'] : null,
         country: m['country'] is String ? m['country'] : null,
-        date_of_birth: m['date_of_birth'] is String ? m['date_of_birth'] : null,
+        dateOfBirth: m['dateOfBirth'] is String ? m['dateOfBirth'] : null,
         description: m['description'] is String ? m['description'] : null,
-        drivers_license_number: m['drivers_license_number'] is String ? m['drivers_license_number'] : null,
+        driversLicenseNumber: m['driversLicenseNumber'] is String ? m['driversLicenseNumber'] : null,
         email: m['email'] is String ? m['email'] : null,
-        first_name: m['first_name'] is String ? m['first_name'] : null,
-        identification_number: m['identification_number'] is String ? m['identification_number'] : null,
-        last_name: m['last_name'] is String ? m['last_name'] : null,
+        firstName: m['firstName'] is String ? m['firstName'] : null,
+        identificationNumber: m['identificationNumber'] is String ? m['identificationNumber'] : null,
+        lastName: m['lastName'] is String ? m['lastName'] : null,
         login: m['login'] is String ? m['login'] : null,
-        mandator: m['mandator'] is Map<String, dynamic> ? m['mandator'] : null,
         name: m['name'] is String ? m['name'] : null,
-        passport_number: m['passport_number'] is String ? m['passport_number'] : null,
+        passportNumber: m['passportNumber'] is String ? m['passportNumber'] : null,
         phone: m['phone'] is String ? m['phone'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
         salutation: m['salutation'] is String ? m['salutation'] : null,
         state: m['state'] is String ? m['state'] : null,
         street1: m['street1'] is String ? m['street1'] : null,
         street2: m['street2'] is String ? m['street2'] : null,
-        zip_code: m['zip_code'] is String ? m['zip_code'] : null,
+        zipCode: m['zipCode'] is String ? m['zipCode'] : null,
       );
 
   Map<String, dynamic> toMap() {
@@ -542,47 +530,38 @@ class OutputCreateMandator {
     if (null != country) {
       m['country'] = country;
     }
-    if (null != date_of_birth) {
-      m['date_of_birth'] = date_of_birth;
+    if (null != dateOfBirth) {
+      m['dateOfBirth'] = dateOfBirth;
     }
     if (null != description) {
       m['description'] = description;
     }
-    if (null != drivers_license_number) {
-      m['drivers_license_number'] = drivers_license_number;
+    if (null != driversLicenseNumber) {
+      m['driversLicenseNumber'] = driversLicenseNumber;
     }
     if (null != email) {
       m['email'] = email;
     }
-    if (null != first_name) {
-      m['first_name'] = first_name;
+    if (null != firstName) {
+      m['firstName'] = firstName;
     }
-    if (null != identification_number) {
-      m['identification_number'] = identification_number;
+    if (null != identificationNumber) {
+      m['identificationNumber'] = identificationNumber;
     }
-    if (null != last_name) {
-      m['last_name'] = last_name;
+    if (null != lastName) {
+      m['lastName'] = lastName;
     }
     if (null != login) {
       m['login'] = login;
     }
-    if (null != mandator) {
-      m['mandator'] = mandator;
-    }
     if (null != name) {
       m['name'] = name;
     }
-    if (null != passport_number) {
-      m['passport_number'] = passport_number;
+    if (null != passportNumber) {
+      m['passportNumber'] = passportNumber;
     }
     if (null != phone) {
       m['phone'] = phone;
-    }
-    if (null != response_code) {
-      m['response_code'] = response_code;
-    }
-    if (null != response_message) {
-      m['response_message'] = response_message;
     }
     if (null != salutation) {
       m['salutation'] = salutation;
@@ -596,8 +575,8 @@ class OutputCreateMandator {
     if (null != street2) {
       m['street2'] = street2;
     }
-    if (null != zip_code) {
-      m['zip_code'] = zip_code;
+    if (null != zipCode) {
+      m['zipCode'] = zipCode;
     }
     return m;
   }
@@ -609,33 +588,27 @@ class OutputCreateMandatorCreateData {
   /// STRING
   String? country;
   /// STRING
-  String? date_of_birth;
-  /// STRING (required at the API)
+  String? dateOfBirth;
+  /// STRING
   String? description;
   /// STRING
-  String? drivers_license_number;
+  String? driversLicenseNumber;
   /// STRING (required at the API)
   String? email;
   /// STRING
-  String? first_name;
+  String? firstName;
   /// STRING
-  String? identification_number;
+  String? identificationNumber;
   /// STRING
-  String? last_name;
+  String? lastName;
   /// STRING (required at the API)
   String? login;
-  /// OBJECT
-  Map<String, dynamic>? mandator;
-  /// STRING (required at the API)
+  /// STRING
   String? name;
   /// STRING
-  String? passport_number;
+  String? passportNumber;
   /// STRING (required at the API)
   String? phone;
-  /// INTEGER
-  int? response_code;
-  /// STRING
-  String? response_message;
   /// STRING
   String? salutation;
   /// STRING
@@ -645,54 +618,48 @@ class OutputCreateMandatorCreateData {
   /// STRING
   String? street2;
   /// STRING
-  String? zip_code;
+  String? zipCode;
 
   OutputCreateMandatorCreateData({
     this.city,
     this.country,
-    this.date_of_birth,
+    this.dateOfBirth,
     this.description,
-    this.drivers_license_number,
+    this.driversLicenseNumber,
     this.email,
-    this.first_name,
-    this.identification_number,
-    this.last_name,
+    this.firstName,
+    this.identificationNumber,
+    this.lastName,
     this.login,
-    this.mandator,
     this.name,
-    this.passport_number,
+    this.passportNumber,
     this.phone,
-    this.response_code,
-    this.response_message,
     this.salutation,
     this.state,
     this.street1,
     this.street2,
-    this.zip_code,
+    this.zipCode,
   });
 
   factory OutputCreateMandatorCreateData.fromMap(Map<String, dynamic> m) => OutputCreateMandatorCreateData(
         city: m['city'] is String ? m['city'] : null,
         country: m['country'] is String ? m['country'] : null,
-        date_of_birth: m['date_of_birth'] is String ? m['date_of_birth'] : null,
+        dateOfBirth: m['dateOfBirth'] is String ? m['dateOfBirth'] : null,
         description: m['description'] is String ? m['description'] : null,
-        drivers_license_number: m['drivers_license_number'] is String ? m['drivers_license_number'] : null,
+        driversLicenseNumber: m['driversLicenseNumber'] is String ? m['driversLicenseNumber'] : null,
         email: m['email'] is String ? m['email'] : null,
-        first_name: m['first_name'] is String ? m['first_name'] : null,
-        identification_number: m['identification_number'] is String ? m['identification_number'] : null,
-        last_name: m['last_name'] is String ? m['last_name'] : null,
+        firstName: m['firstName'] is String ? m['firstName'] : null,
+        identificationNumber: m['identificationNumber'] is String ? m['identificationNumber'] : null,
+        lastName: m['lastName'] is String ? m['lastName'] : null,
         login: m['login'] is String ? m['login'] : null,
-        mandator: m['mandator'] is Map<String, dynamic> ? m['mandator'] : null,
         name: m['name'] is String ? m['name'] : null,
-        passport_number: m['passport_number'] is String ? m['passport_number'] : null,
+        passportNumber: m['passportNumber'] is String ? m['passportNumber'] : null,
         phone: m['phone'] is String ? m['phone'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
         salutation: m['salutation'] is String ? m['salutation'] : null,
         state: m['state'] is String ? m['state'] : null,
         street1: m['street1'] is String ? m['street1'] : null,
         street2: m['street2'] is String ? m['street2'] : null,
-        zip_code: m['zip_code'] is String ? m['zip_code'] : null,
+        zipCode: m['zipCode'] is String ? m['zipCode'] : null,
       );
 
   Map<String, dynamic> toMap() {
@@ -703,47 +670,38 @@ class OutputCreateMandatorCreateData {
     if (null != country) {
       m['country'] = country;
     }
-    if (null != date_of_birth) {
-      m['date_of_birth'] = date_of_birth;
+    if (null != dateOfBirth) {
+      m['dateOfBirth'] = dateOfBirth;
     }
     if (null != description) {
       m['description'] = description;
     }
-    if (null != drivers_license_number) {
-      m['drivers_license_number'] = drivers_license_number;
+    if (null != driversLicenseNumber) {
+      m['driversLicenseNumber'] = driversLicenseNumber;
     }
     if (null != email) {
       m['email'] = email;
     }
-    if (null != first_name) {
-      m['first_name'] = first_name;
+    if (null != firstName) {
+      m['firstName'] = firstName;
     }
-    if (null != identification_number) {
-      m['identification_number'] = identification_number;
+    if (null != identificationNumber) {
+      m['identificationNumber'] = identificationNumber;
     }
-    if (null != last_name) {
-      m['last_name'] = last_name;
+    if (null != lastName) {
+      m['lastName'] = lastName;
     }
     if (null != login) {
       m['login'] = login;
     }
-    if (null != mandator) {
-      m['mandator'] = mandator;
-    }
     if (null != name) {
       m['name'] = name;
     }
-    if (null != passport_number) {
-      m['passport_number'] = passport_number;
+    if (null != passportNumber) {
+      m['passportNumber'] = passportNumber;
     }
     if (null != phone) {
       m['phone'] = phone;
-    }
-    if (null != response_code) {
-      m['response_code'] = response_code;
-    }
-    if (null != response_message) {
-      m['response_message'] = response_message;
     }
     if (null != salutation) {
       m['salutation'] = salutation;
@@ -757,8 +715,8 @@ class OutputCreateMandatorCreateData {
     if (null != street2) {
       m['street2'] = street2;
     }
-    if (null != zip_code) {
-      m['zip_code'] = zip_code;
+    if (null != zipCode) {
+      m['zipCode'] = zipCode;
     }
     return m;
   }
@@ -766,34 +724,34 @@ class OutputCreateMandatorCreateData {
 
 class OutputCreateServiceUser {
   /// STRING (required at the API)
-  String? mandator_name;
+  String? mandatorName;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   OutputCreateServiceUser({
-    this.mandator_name,
-    this.response_code,
-    this.response_message,
+    this.mandatorName,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputCreateServiceUser.fromMap(Map<String, dynamic> m) => OutputCreateServiceUser(
-        mandator_name: m['mandator_name'] is String ? m['mandator_name'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        mandatorName: m['mandatorName'] is String ? m['mandatorName'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != mandator_name) {
-      m['mandator_name'] = mandator_name;
+    if (null != mandatorName) {
+      m['mandatorName'] = mandatorName;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -801,34 +759,34 @@ class OutputCreateServiceUser {
 
 class OutputCreateServiceUserCreateData {
   /// STRING (required at the API)
-  String? mandator_name;
+  String? mandatorName;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   OutputCreateServiceUserCreateData({
-    this.mandator_name,
-    this.response_code,
-    this.response_message,
+    this.mandatorName,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputCreateServiceUserCreateData.fromMap(Map<String, dynamic> m) => OutputCreateServiceUserCreateData(
-        mandator_name: m['mandator_name'] is String ? m['mandator_name'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        mandatorName: m['mandatorName'] is String ? m['mandatorName'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != mandator_name) {
-      m['mandator_name'] = mandator_name;
+    if (null != mandatorName) {
+      m['mandatorName'] = mandatorName;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -836,34 +794,34 @@ class OutputCreateServiceUserCreateData {
 
 class OutputDeactivateUser {
   /// STRING
-  String? consumer_uuid;
+  String? consumerUUID;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   OutputDeactivateUser({
-    this.consumer_uuid,
-    this.response_code,
-    this.response_message,
+    this.consumerUUID,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputDeactivateUser.fromMap(Map<String, dynamic> m) => OutputDeactivateUser(
-        consumer_uuid: m['consumer_uuid'] is String ? m['consumer_uuid'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        consumerUUID: m['consumerUUID'] is String ? m['consumerUUID'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != consumer_uuid) {
-      m['consumer_uuid'] = consumer_uuid;
+    if (null != consumerUUID) {
+      m['consumerUUID'] = consumerUUID;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -871,34 +829,34 @@ class OutputDeactivateUser {
 
 class OutputDeactivateUserCreateData {
   /// STRING
-  String? consumer_uuid;
+  String? consumerUUID;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   OutputDeactivateUserCreateData({
-    this.consumer_uuid,
-    this.response_code,
-    this.response_message,
+    this.consumerUUID,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputDeactivateUserCreateData.fromMap(Map<String, dynamic> m) => OutputDeactivateUserCreateData(
-        consumer_uuid: m['consumer_uuid'] is String ? m['consumer_uuid'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        consumerUUID: m['consumerUUID'] is String ? m['consumerUUID'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != consumer_uuid) {
-      m['consumer_uuid'] = consumer_uuid;
+    if (null != consumerUUID) {
+      m['consumerUUID'] = consumerUUID;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -906,41 +864,41 @@ class OutputDeactivateUserCreateData {
 
 class OutputGetKycDocument {
   /// STRING
-  String? case_id;
+  String? caseID;
   /// STRING
-  String? encoded_data_base64;
+  String? encodedDataBase64;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   OutputGetKycDocument({
-    this.case_id,
-    this.encoded_data_base64,
-    this.response_code,
-    this.response_message,
+    this.caseID,
+    this.encodedDataBase64,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputGetKycDocument.fromMap(Map<String, dynamic> m) => OutputGetKycDocument(
-        case_id: m['case_id'] is String ? m['case_id'] : null,
-        encoded_data_base64: m['encoded_data_base64'] is String ? m['encoded_data_base64'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        caseID: m['caseID'] is String ? m['caseID'] : null,
+        encodedDataBase64: m['encodedDataBase64'] is String ? m['encodedDataBase64'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != case_id) {
-      m['case_id'] = case_id;
+    if (null != caseID) {
+      m['caseID'] = caseID;
     }
-    if (null != encoded_data_base64) {
-      m['encoded_data_base64'] = encoded_data_base64;
+    if (null != encodedDataBase64) {
+      m['encodedDataBase64'] = encodedDataBase64;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -948,41 +906,41 @@ class OutputGetKycDocument {
 
 class OutputGetKycDocumentCreateData {
   /// STRING
-  String? case_id;
+  String? caseID;
   /// STRING
-  String? encoded_data_base64;
+  String? encodedDataBase64;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   OutputGetKycDocumentCreateData({
-    this.case_id,
-    this.encoded_data_base64,
-    this.response_code,
-    this.response_message,
+    this.caseID,
+    this.encodedDataBase64,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputGetKycDocumentCreateData.fromMap(Map<String, dynamic> m) => OutputGetKycDocumentCreateData(
-        case_id: m['case_id'] is String ? m['case_id'] : null,
-        encoded_data_base64: m['encoded_data_base64'] is String ? m['encoded_data_base64'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        caseID: m['caseID'] is String ? m['caseID'] : null,
+        encodedDataBase64: m['encodedDataBase64'] is String ? m['encodedDataBase64'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != case_id) {
-      m['case_id'] = case_id;
+    if (null != caseID) {
+      m['caseID'] = caseID;
     }
-    if (null != encoded_data_base64) {
-      m['encoded_data_base64'] = encoded_data_base64;
+    if (null != encodedDataBase64) {
+      m['encodedDataBase64'] = encodedDataBase64;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -990,41 +948,41 @@ class OutputGetKycDocumentCreateData {
 
 class OutputGetLogo {
   /// STRING (required at the API)
-  String? content_as_base64;
+  String? contentAsBase64;
   /// STRING (required at the API)
-  String? mime_type;
+  String? mimeType;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   OutputGetLogo({
-    this.content_as_base64,
-    this.mime_type,
-    this.response_code,
-    this.response_message,
+    this.contentAsBase64,
+    this.mimeType,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputGetLogo.fromMap(Map<String, dynamic> m) => OutputGetLogo(
-        content_as_base64: m['content_as_base64'] is String ? m['content_as_base64'] : null,
-        mime_type: m['mime_type'] is String ? m['mime_type'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        contentAsBase64: m['contentAsBase64'] is String ? m['contentAsBase64'] : null,
+        mimeType: m['mimeType'] is String ? m['mimeType'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != content_as_base64) {
-      m['content_as_base64'] = content_as_base64;
+    if (null != contentAsBase64) {
+      m['contentAsBase64'] = contentAsBase64;
     }
-    if (null != mime_type) {
-      m['mime_type'] = mime_type;
+    if (null != mimeType) {
+      m['mimeType'] = mimeType;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -1032,41 +990,41 @@ class OutputGetLogo {
 
 class OutputGetLogoLoadMatch {
   /// STRING
-  String? content_as_base64;
+  String? contentAsBase64;
   /// STRING
-  String? mime_type;
+  String? mimeType;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   OutputGetLogoLoadMatch({
-    this.content_as_base64,
-    this.mime_type,
-    this.response_code,
-    this.response_message,
+    this.contentAsBase64,
+    this.mimeType,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputGetLogoLoadMatch.fromMap(Map<String, dynamic> m) => OutputGetLogoLoadMatch(
-        content_as_base64: m['content_as_base64'] is String ? m['content_as_base64'] : null,
-        mime_type: m['mime_type'] is String ? m['mime_type'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        contentAsBase64: m['contentAsBase64'] is String ? m['contentAsBase64'] : null,
+        mimeType: m['mimeType'] is String ? m['mimeType'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != content_as_base64) {
-      m['content_as_base64'] = content_as_base64;
+    if (null != contentAsBase64) {
+      m['contentAsBase64'] = contentAsBase64;
     }
-    if (null != mime_type) {
-      m['mime_type'] = mime_type;
+    if (null != mimeType) {
+      m['mimeType'] = mimeType;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -1074,34 +1032,34 @@ class OutputGetLogoLoadMatch {
 
 class OutputListOfAvailableRole {
   /// ARRAY
-  List<dynamic>? available_role;
+  List<dynamic>? availableRoles;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   OutputListOfAvailableRole({
-    this.available_role,
-    this.response_code,
-    this.response_message,
+    this.availableRoles,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputListOfAvailableRole.fromMap(Map<String, dynamic> m) => OutputListOfAvailableRole(
-        available_role: m['available_role'] is List<dynamic> ? m['available_role'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        availableRoles: m['availableRoles'] is List<dynamic> ? m['availableRoles'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != available_role) {
-      m['available_role'] = available_role;
+    if (null != availableRoles) {
+      m['availableRoles'] = availableRoles;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -1109,34 +1067,34 @@ class OutputListOfAvailableRole {
 
 class OutputListOfAvailableRoleCreateData {
   /// ARRAY
-  List<dynamic>? available_role;
+  List<dynamic>? availableRoles;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   OutputListOfAvailableRoleCreateData({
-    this.available_role,
-    this.response_code,
-    this.response_message,
+    this.availableRoles,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputListOfAvailableRoleCreateData.fromMap(Map<String, dynamic> m) => OutputListOfAvailableRoleCreateData(
-        available_role: m['available_role'] is List<dynamic> ? m['available_role'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        availableRoles: m['availableRoles'] is List<dynamic> ? m['availableRoles'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != available_role) {
-      m['available_role'] = available_role;
+    if (null != availableRoles) {
+      m['availableRoles'] = availableRoles;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -1150,9 +1108,9 @@ class OutputListOfMandator {
   /// OBJECT
   Map<String, dynamic>? pagination;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// OBJECT
   Map<String, dynamic>? sorting;
 
@@ -1160,8 +1118,8 @@ class OutputListOfMandator {
     this.filter,
     this.list,
     this.pagination,
-    this.response_code,
-    this.response_message,
+    this.responseCode,
+    this.responseMessage,
     this.sorting,
   });
 
@@ -1169,8 +1127,8 @@ class OutputListOfMandator {
         filter: m['filter'] is Map<String, dynamic> ? m['filter'] : null,
         list: m['list'] is List<dynamic> ? m['list'] : null,
         pagination: m['pagination'] is Map<String, dynamic> ? m['pagination'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
         sorting: m['sorting'] is Map<String, dynamic> ? m['sorting'] : null,
       );
 
@@ -1185,11 +1143,11 @@ class OutputListOfMandator {
     if (null != pagination) {
       m['pagination'] = pagination;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     if (null != sorting) {
       m['sorting'] = sorting;
@@ -1206,9 +1164,9 @@ class OutputListOfMandatorCreateData {
   /// OBJECT
   Map<String, dynamic>? pagination;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// OBJECT
   Map<String, dynamic>? sorting;
 
@@ -1216,8 +1174,8 @@ class OutputListOfMandatorCreateData {
     this.filter,
     this.list,
     this.pagination,
-    this.response_code,
-    this.response_message,
+    this.responseCode,
+    this.responseMessage,
     this.sorting,
   });
 
@@ -1225,8 +1183,8 @@ class OutputListOfMandatorCreateData {
         filter: m['filter'] is Map<String, dynamic> ? m['filter'] : null,
         list: m['list'] is List<dynamic> ? m['list'] : null,
         pagination: m['pagination'] is Map<String, dynamic> ? m['pagination'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
         sorting: m['sorting'] is Map<String, dynamic> ? m['sorting'] : null,
       );
 
@@ -1241,11 +1199,11 @@ class OutputListOfMandatorCreateData {
     if (null != pagination) {
       m['pagination'] = pagination;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     if (null != sorting) {
       m['sorting'] = sorting;
@@ -1260,22 +1218,22 @@ class OutputListOfModule {
   /// OBJECT
   Map<String, dynamic>? pagination;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   OutputListOfModule({
     this.list,
     this.pagination,
-    this.response_code,
-    this.response_message,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputListOfModule.fromMap(Map<String, dynamic> m) => OutputListOfModule(
         list: m['list'] is List<dynamic> ? m['list'] : null,
         pagination: m['pagination'] is Map<String, dynamic> ? m['pagination'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
@@ -1286,11 +1244,11 @@ class OutputListOfModule {
     if (null != pagination) {
       m['pagination'] = pagination;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -1302,22 +1260,22 @@ class OutputListOfModuleCreateData {
   /// OBJECT
   Map<String, dynamic>? pagination;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   OutputListOfModuleCreateData({
     this.list,
     this.pagination,
-    this.response_code,
-    this.response_message,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputListOfModuleCreateData.fromMap(Map<String, dynamic> m) => OutputListOfModuleCreateData(
         list: m['list'] is List<dynamic> ? m['list'] : null,
         pagination: m['pagination'] is Map<String, dynamic> ? m['pagination'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
@@ -1328,11 +1286,11 @@ class OutputListOfModuleCreateData {
     if (null != pagination) {
       m['pagination'] = pagination;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -1342,31 +1300,31 @@ class OutputListOfRoleGroup {
   /// OBJECT
   Map<String, dynamic>? filter;
   /// ARRAY
-  List<dynamic>? group_role;
+  List<dynamic>? groupRoles;
   /// OBJECT
   Map<String, dynamic>? pagination;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// OBJECT
   Map<String, dynamic>? sorting;
 
   OutputListOfRoleGroup({
     this.filter,
-    this.group_role,
+    this.groupRoles,
     this.pagination,
-    this.response_code,
-    this.response_message,
+    this.responseCode,
+    this.responseMessage,
     this.sorting,
   });
 
   factory OutputListOfRoleGroup.fromMap(Map<String, dynamic> m) => OutputListOfRoleGroup(
         filter: m['filter'] is Map<String, dynamic> ? m['filter'] : null,
-        group_role: m['group_role'] is List<dynamic> ? m['group_role'] : null,
+        groupRoles: m['groupRoles'] is List<dynamic> ? m['groupRoles'] : null,
         pagination: m['pagination'] is Map<String, dynamic> ? m['pagination'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
         sorting: m['sorting'] is Map<String, dynamic> ? m['sorting'] : null,
       );
 
@@ -1375,17 +1333,17 @@ class OutputListOfRoleGroup {
     if (null != filter) {
       m['filter'] = filter;
     }
-    if (null != group_role) {
-      m['group_role'] = group_role;
+    if (null != groupRoles) {
+      m['groupRoles'] = groupRoles;
     }
     if (null != pagination) {
       m['pagination'] = pagination;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     if (null != sorting) {
       m['sorting'] = sorting;
@@ -1398,31 +1356,31 @@ class OutputListOfRoleGroupCreateData {
   /// OBJECT
   Map<String, dynamic>? filter;
   /// ARRAY
-  List<dynamic>? group_role;
+  List<dynamic>? groupRoles;
   /// OBJECT
   Map<String, dynamic>? pagination;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// OBJECT
   Map<String, dynamic>? sorting;
 
   OutputListOfRoleGroupCreateData({
     this.filter,
-    this.group_role,
+    this.groupRoles,
     this.pagination,
-    this.response_code,
-    this.response_message,
+    this.responseCode,
+    this.responseMessage,
     this.sorting,
   });
 
   factory OutputListOfRoleGroupCreateData.fromMap(Map<String, dynamic> m) => OutputListOfRoleGroupCreateData(
         filter: m['filter'] is Map<String, dynamic> ? m['filter'] : null,
-        group_role: m['group_role'] is List<dynamic> ? m['group_role'] : null,
+        groupRoles: m['groupRoles'] is List<dynamic> ? m['groupRoles'] : null,
         pagination: m['pagination'] is Map<String, dynamic> ? m['pagination'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
         sorting: m['sorting'] is Map<String, dynamic> ? m['sorting'] : null,
       );
 
@@ -1431,17 +1389,17 @@ class OutputListOfRoleGroupCreateData {
     if (null != filter) {
       m['filter'] = filter;
     }
-    if (null != group_role) {
-      m['group_role'] = group_role;
+    if (null != groupRoles) {
+      m['groupRoles'] = groupRoles;
     }
     if (null != pagination) {
       m['pagination'] = pagination;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     if (null != sorting) {
       m['sorting'] = sorting;
@@ -1458,9 +1416,9 @@ class OutputListOfTransactionsHistory {
   /// OBJECT
   Map<String, dynamic>? pagination;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// OBJECT
   Map<String, dynamic>? sorting;
 
@@ -1468,8 +1426,8 @@ class OutputListOfTransactionsHistory {
     this.filter,
     this.list,
     this.pagination,
-    this.response_code,
-    this.response_message,
+    this.responseCode,
+    this.responseMessage,
     this.sorting,
   });
 
@@ -1477,8 +1435,8 @@ class OutputListOfTransactionsHistory {
         filter: m['filter'] is Map<String, dynamic> ? m['filter'] : null,
         list: m['list'] is List<dynamic> ? m['list'] : null,
         pagination: m['pagination'] is Map<String, dynamic> ? m['pagination'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
         sorting: m['sorting'] is Map<String, dynamic> ? m['sorting'] : null,
       );
 
@@ -1493,11 +1451,11 @@ class OutputListOfTransactionsHistory {
     if (null != pagination) {
       m['pagination'] = pagination;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     if (null != sorting) {
       m['sorting'] = sorting;
@@ -1514,9 +1472,9 @@ class OutputListOfTransactionsHistoryCreateData {
   /// OBJECT
   Map<String, dynamic>? pagination;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// OBJECT
   Map<String, dynamic>? sorting;
 
@@ -1524,8 +1482,8 @@ class OutputListOfTransactionsHistoryCreateData {
     this.filter,
     this.list,
     this.pagination,
-    this.response_code,
-    this.response_message,
+    this.responseCode,
+    this.responseMessage,
     this.sorting,
   });
 
@@ -1533,8 +1491,8 @@ class OutputListOfTransactionsHistoryCreateData {
         filter: m['filter'] is Map<String, dynamic> ? m['filter'] : null,
         list: m['list'] is List<dynamic> ? m['list'] : null,
         pagination: m['pagination'] is Map<String, dynamic> ? m['pagination'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
         sorting: m['sorting'] is Map<String, dynamic> ? m['sorting'] : null,
       );
 
@@ -1549,11 +1507,11 @@ class OutputListOfTransactionsHistoryCreateData {
     if (null != pagination) {
       m['pagination'] = pagination;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     if (null != sorting) {
       m['sorting'] = sorting;
@@ -1570,9 +1528,9 @@ class OutputListOfUser {
   /// OBJECT
   Map<String, dynamic>? pagination;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// OBJECT
   Map<String, dynamic>? sorting;
 
@@ -1580,8 +1538,8 @@ class OutputListOfUser {
     this.filter,
     this.list,
     this.pagination,
-    this.response_code,
-    this.response_message,
+    this.responseCode,
+    this.responseMessage,
     this.sorting,
   });
 
@@ -1589,8 +1547,8 @@ class OutputListOfUser {
         filter: m['filter'] is Map<String, dynamic> ? m['filter'] : null,
         list: m['list'] is List<dynamic> ? m['list'] : null,
         pagination: m['pagination'] is Map<String, dynamic> ? m['pagination'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
         sorting: m['sorting'] is Map<String, dynamic> ? m['sorting'] : null,
       );
 
@@ -1605,11 +1563,11 @@ class OutputListOfUser {
     if (null != pagination) {
       m['pagination'] = pagination;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     if (null != sorting) {
       m['sorting'] = sorting;
@@ -1626,9 +1584,9 @@ class OutputListOfUserCreateData {
   /// OBJECT
   Map<String, dynamic>? pagination;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// OBJECT
   Map<String, dynamic>? sorting;
 
@@ -1636,8 +1594,8 @@ class OutputListOfUserCreateData {
     this.filter,
     this.list,
     this.pagination,
-    this.response_code,
-    this.response_message,
+    this.responseCode,
+    this.responseMessage,
     this.sorting,
   });
 
@@ -1645,8 +1603,8 @@ class OutputListOfUserCreateData {
         filter: m['filter'] is Map<String, dynamic> ? m['filter'] : null,
         list: m['list'] is List<dynamic> ? m['list'] : null,
         pagination: m['pagination'] is Map<String, dynamic> ? m['pagination'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
         sorting: m['sorting'] is Map<String, dynamic> ? m['sorting'] : null,
       );
 
@@ -1661,11 +1619,11 @@ class OutputListOfUserCreateData {
     if (null != pagination) {
       m['pagination'] = pagination;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     if (null != sorting) {
       m['sorting'] = sorting;
@@ -1676,45 +1634,45 @@ class OutputListOfUserCreateData {
 
 class OutputProvideCredential {
   /// STRING (required at the API)
-  String? mandator_name;
+  String? mandatorName;
   /// STRING
   String? password;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
   String? username;
 
   OutputProvideCredential({
-    this.mandator_name,
+    this.mandatorName,
     this.password,
-    this.response_code,
-    this.response_message,
+    this.responseCode,
+    this.responseMessage,
     this.username,
   });
 
   factory OutputProvideCredential.fromMap(Map<String, dynamic> m) => OutputProvideCredential(
-        mandator_name: m['mandator_name'] is String ? m['mandator_name'] : null,
+        mandatorName: m['mandatorName'] is String ? m['mandatorName'] : null,
         password: m['password'] is String ? m['password'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
         username: m['username'] is String ? m['username'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != mandator_name) {
-      m['mandator_name'] = mandator_name;
+    if (null != mandatorName) {
+      m['mandatorName'] = mandatorName;
     }
     if (null != password) {
       m['password'] = password;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     if (null != username) {
       m['username'] = username;
@@ -1725,45 +1683,45 @@ class OutputProvideCredential {
 
 class OutputProvideCredentialCreateData {
   /// STRING (required at the API)
-  String? mandator_name;
+  String? mandatorName;
   /// STRING
   String? password;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
   String? username;
 
   OutputProvideCredentialCreateData({
-    this.mandator_name,
+    this.mandatorName,
     this.password,
-    this.response_code,
-    this.response_message,
+    this.responseCode,
+    this.responseMessage,
     this.username,
   });
 
   factory OutputProvideCredentialCreateData.fromMap(Map<String, dynamic> m) => OutputProvideCredentialCreateData(
-        mandator_name: m['mandator_name'] is String ? m['mandator_name'] : null,
+        mandatorName: m['mandatorName'] is String ? m['mandatorName'] : null,
         password: m['password'] is String ? m['password'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
         username: m['username'] is String ? m['username'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != mandator_name) {
-      m['mandator_name'] = mandator_name;
+    if (null != mandatorName) {
+      m['mandatorName'] = mandatorName;
     }
     if (null != password) {
       m['password'] = password;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     if (null != username) {
       m['username'] = username;
@@ -1776,35 +1734,35 @@ class OutputRegisterUser {
   /// STRING
   String? city;
   /// STRING
-  String? consumer_id;
+  String? consumerId;
   /// STRING
-  String? consumer_language;
+  String? consumerLanguage;
   /// STRING
   String? country;
   /// STRING
-  String? date_of_birth;
+  String? dateOfBirth;
   /// STRING
-  String? driver_licence_number;
+  String? driverLicenceNumber;
   /// STRING (required at the API)
   String? email;
   /// STRING
-  String? first_name;
+  String? firstName;
   /// STRING
-  String? identification_number;
+  String? identificationNumber;
   /// STRING
-  String? last_name;
+  String? lastName;
   /// STRING
   String? login;
   /// STRING
   String? module;
   /// STRING
-  String? passport_number;
+  String? passportNumber;
   /// STRING
   String? phone;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
   String? salutation;
   /// STRING
@@ -1818,21 +1776,21 @@ class OutputRegisterUser {
 
   OutputRegisterUser({
     this.city,
-    this.consumer_id,
-    this.consumer_language,
+    this.consumerId,
+    this.consumerLanguage,
     this.country,
-    this.date_of_birth,
-    this.driver_licence_number,
+    this.dateOfBirth,
+    this.driverLicenceNumber,
     this.email,
-    this.first_name,
-    this.identification_number,
-    this.last_name,
+    this.firstName,
+    this.identificationNumber,
+    this.lastName,
     this.login,
     this.module,
-    this.passport_number,
+    this.passportNumber,
     this.phone,
-    this.response_code,
-    this.response_message,
+    this.responseCode,
+    this.responseMessage,
     this.salutation,
     this.state,
     this.street1,
@@ -1842,21 +1800,21 @@ class OutputRegisterUser {
 
   factory OutputRegisterUser.fromMap(Map<String, dynamic> m) => OutputRegisterUser(
         city: m['city'] is String ? m['city'] : null,
-        consumer_id: m['consumer_id'] is String ? m['consumer_id'] : null,
-        consumer_language: m['consumer_language'] is String ? m['consumer_language'] : null,
+        consumerId: m['consumerId'] is String ? m['consumerId'] : null,
+        consumerLanguage: m['consumerLanguage'] is String ? m['consumerLanguage'] : null,
         country: m['country'] is String ? m['country'] : null,
-        date_of_birth: m['date_of_birth'] is String ? m['date_of_birth'] : null,
-        driver_licence_number: m['driver_licence_number'] is String ? m['driver_licence_number'] : null,
+        dateOfBirth: m['dateOfBirth'] is String ? m['dateOfBirth'] : null,
+        driverLicenceNumber: m['driverLicenceNumber'] is String ? m['driverLicenceNumber'] : null,
         email: m['email'] is String ? m['email'] : null,
-        first_name: m['first_name'] is String ? m['first_name'] : null,
-        identification_number: m['identification_number'] is String ? m['identification_number'] : null,
-        last_name: m['last_name'] is String ? m['last_name'] : null,
+        firstName: m['firstName'] is String ? m['firstName'] : null,
+        identificationNumber: m['identificationNumber'] is String ? m['identificationNumber'] : null,
+        lastName: m['lastName'] is String ? m['lastName'] : null,
         login: m['login'] is String ? m['login'] : null,
         module: m['module'] is String ? m['module'] : null,
-        passport_number: m['passport_number'] is String ? m['passport_number'] : null,
+        passportNumber: m['passportNumber'] is String ? m['passportNumber'] : null,
         phone: m['phone'] is String ? m['phone'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
         salutation: m['salutation'] is String ? m['salutation'] : null,
         state: m['state'] is String ? m['state'] : null,
         street1: m['street1'] is String ? m['street1'] : null,
@@ -1869,32 +1827,32 @@ class OutputRegisterUser {
     if (null != city) {
       m['city'] = city;
     }
-    if (null != consumer_id) {
-      m['consumer_id'] = consumer_id;
+    if (null != consumerId) {
+      m['consumerId'] = consumerId;
     }
-    if (null != consumer_language) {
-      m['consumer_language'] = consumer_language;
+    if (null != consumerLanguage) {
+      m['consumerLanguage'] = consumerLanguage;
     }
     if (null != country) {
       m['country'] = country;
     }
-    if (null != date_of_birth) {
-      m['date_of_birth'] = date_of_birth;
+    if (null != dateOfBirth) {
+      m['dateOfBirth'] = dateOfBirth;
     }
-    if (null != driver_licence_number) {
-      m['driver_licence_number'] = driver_licence_number;
+    if (null != driverLicenceNumber) {
+      m['driverLicenceNumber'] = driverLicenceNumber;
     }
     if (null != email) {
       m['email'] = email;
     }
-    if (null != first_name) {
-      m['first_name'] = first_name;
+    if (null != firstName) {
+      m['firstName'] = firstName;
     }
-    if (null != identification_number) {
-      m['identification_number'] = identification_number;
+    if (null != identificationNumber) {
+      m['identificationNumber'] = identificationNumber;
     }
-    if (null != last_name) {
-      m['last_name'] = last_name;
+    if (null != lastName) {
+      m['lastName'] = lastName;
     }
     if (null != login) {
       m['login'] = login;
@@ -1902,17 +1860,17 @@ class OutputRegisterUser {
     if (null != module) {
       m['module'] = module;
     }
-    if (null != passport_number) {
-      m['passport_number'] = passport_number;
+    if (null != passportNumber) {
+      m['passportNumber'] = passportNumber;
     }
     if (null != phone) {
       m['phone'] = phone;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     if (null != salutation) {
       m['salutation'] = salutation;
@@ -1937,35 +1895,35 @@ class OutputRegisterUserCreateData {
   /// STRING
   String? city;
   /// STRING
-  String? consumer_id;
+  String? consumerId;
   /// STRING
-  String? consumer_language;
+  String? consumerLanguage;
   /// STRING
   String? country;
   /// STRING
-  String? date_of_birth;
+  String? dateOfBirth;
   /// STRING
-  String? driver_licence_number;
+  String? driverLicenceNumber;
   /// STRING (required at the API)
   String? email;
   /// STRING
-  String? first_name;
+  String? firstName;
   /// STRING
-  String? identification_number;
+  String? identificationNumber;
   /// STRING
-  String? last_name;
+  String? lastName;
   /// STRING
   String? login;
   /// STRING
   String? module;
   /// STRING
-  String? passport_number;
+  String? passportNumber;
   /// STRING
   String? phone;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
   String? salutation;
   /// STRING
@@ -1979,21 +1937,21 @@ class OutputRegisterUserCreateData {
 
   OutputRegisterUserCreateData({
     this.city,
-    this.consumer_id,
-    this.consumer_language,
+    this.consumerId,
+    this.consumerLanguage,
     this.country,
-    this.date_of_birth,
-    this.driver_licence_number,
+    this.dateOfBirth,
+    this.driverLicenceNumber,
     this.email,
-    this.first_name,
-    this.identification_number,
-    this.last_name,
+    this.firstName,
+    this.identificationNumber,
+    this.lastName,
     this.login,
     this.module,
-    this.passport_number,
+    this.passportNumber,
     this.phone,
-    this.response_code,
-    this.response_message,
+    this.responseCode,
+    this.responseMessage,
     this.salutation,
     this.state,
     this.street1,
@@ -2003,21 +1961,21 @@ class OutputRegisterUserCreateData {
 
   factory OutputRegisterUserCreateData.fromMap(Map<String, dynamic> m) => OutputRegisterUserCreateData(
         city: m['city'] is String ? m['city'] : null,
-        consumer_id: m['consumer_id'] is String ? m['consumer_id'] : null,
-        consumer_language: m['consumer_language'] is String ? m['consumer_language'] : null,
+        consumerId: m['consumerId'] is String ? m['consumerId'] : null,
+        consumerLanguage: m['consumerLanguage'] is String ? m['consumerLanguage'] : null,
         country: m['country'] is String ? m['country'] : null,
-        date_of_birth: m['date_of_birth'] is String ? m['date_of_birth'] : null,
-        driver_licence_number: m['driver_licence_number'] is String ? m['driver_licence_number'] : null,
+        dateOfBirth: m['dateOfBirth'] is String ? m['dateOfBirth'] : null,
+        driverLicenceNumber: m['driverLicenceNumber'] is String ? m['driverLicenceNumber'] : null,
         email: m['email'] is String ? m['email'] : null,
-        first_name: m['first_name'] is String ? m['first_name'] : null,
-        identification_number: m['identification_number'] is String ? m['identification_number'] : null,
-        last_name: m['last_name'] is String ? m['last_name'] : null,
+        firstName: m['firstName'] is String ? m['firstName'] : null,
+        identificationNumber: m['identificationNumber'] is String ? m['identificationNumber'] : null,
+        lastName: m['lastName'] is String ? m['lastName'] : null,
         login: m['login'] is String ? m['login'] : null,
         module: m['module'] is String ? m['module'] : null,
-        passport_number: m['passport_number'] is String ? m['passport_number'] : null,
+        passportNumber: m['passportNumber'] is String ? m['passportNumber'] : null,
         phone: m['phone'] is String ? m['phone'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
         salutation: m['salutation'] is String ? m['salutation'] : null,
         state: m['state'] is String ? m['state'] : null,
         street1: m['street1'] is String ? m['street1'] : null,
@@ -2030,32 +1988,32 @@ class OutputRegisterUserCreateData {
     if (null != city) {
       m['city'] = city;
     }
-    if (null != consumer_id) {
-      m['consumer_id'] = consumer_id;
+    if (null != consumerId) {
+      m['consumerId'] = consumerId;
     }
-    if (null != consumer_language) {
-      m['consumer_language'] = consumer_language;
+    if (null != consumerLanguage) {
+      m['consumerLanguage'] = consumerLanguage;
     }
     if (null != country) {
       m['country'] = country;
     }
-    if (null != date_of_birth) {
-      m['date_of_birth'] = date_of_birth;
+    if (null != dateOfBirth) {
+      m['dateOfBirth'] = dateOfBirth;
     }
-    if (null != driver_licence_number) {
-      m['driver_licence_number'] = driver_licence_number;
+    if (null != driverLicenceNumber) {
+      m['driverLicenceNumber'] = driverLicenceNumber;
     }
     if (null != email) {
       m['email'] = email;
     }
-    if (null != first_name) {
-      m['first_name'] = first_name;
+    if (null != firstName) {
+      m['firstName'] = firstName;
     }
-    if (null != identification_number) {
-      m['identification_number'] = identification_number;
+    if (null != identificationNumber) {
+      m['identificationNumber'] = identificationNumber;
     }
-    if (null != last_name) {
-      m['last_name'] = last_name;
+    if (null != lastName) {
+      m['lastName'] = lastName;
     }
     if (null != login) {
       m['login'] = login;
@@ -2063,17 +2021,17 @@ class OutputRegisterUserCreateData {
     if (null != module) {
       m['module'] = module;
     }
-    if (null != passport_number) {
-      m['passport_number'] = passport_number;
+    if (null != passportNumber) {
+      m['passportNumber'] = passportNumber;
     }
     if (null != phone) {
       m['phone'] = phone;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     if (null != salutation) {
       m['salutation'] = salutation;
@@ -2096,41 +2054,41 @@ class OutputRegisterUserCreateData {
 
 class OutputRemoveRole {
   /// STRING
-  String? consumer_uuid;
+  String? consumerUUID;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// ARRAY
-  List<dynamic>? role;
+  List<dynamic>? roles;
 
   OutputRemoveRole({
-    this.consumer_uuid,
-    this.response_code,
-    this.response_message,
-    this.role,
+    this.consumerUUID,
+    this.responseCode,
+    this.responseMessage,
+    this.roles,
   });
 
   factory OutputRemoveRole.fromMap(Map<String, dynamic> m) => OutputRemoveRole(
-        consumer_uuid: m['consumer_uuid'] is String ? m['consumer_uuid'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        role: m['role'] is List<dynamic> ? m['role'] : null,
+        consumerUUID: m['consumerUUID'] is String ? m['consumerUUID'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        roles: m['roles'] is List<dynamic> ? m['roles'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != consumer_uuid) {
-      m['consumer_uuid'] = consumer_uuid;
+    if (null != consumerUUID) {
+      m['consumerUUID'] = consumerUUID;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != role) {
-      m['role'] = role;
+    if (null != roles) {
+      m['roles'] = roles;
     }
     return m;
   }
@@ -2138,41 +2096,41 @@ class OutputRemoveRole {
 
 class OutputRemoveRoleCreateData {
   /// STRING
-  String? consumer_uuid;
+  String? consumerUUID;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// ARRAY
-  List<dynamic>? role;
+  List<dynamic>? roles;
 
   OutputRemoveRoleCreateData({
-    this.consumer_uuid,
-    this.response_code,
-    this.response_message,
-    this.role,
+    this.consumerUUID,
+    this.responseCode,
+    this.responseMessage,
+    this.roles,
   });
 
   factory OutputRemoveRoleCreateData.fromMap(Map<String, dynamic> m) => OutputRemoveRoleCreateData(
-        consumer_uuid: m['consumer_uuid'] is String ? m['consumer_uuid'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        role: m['role'] is List<dynamic> ? m['role'] : null,
+        consumerUUID: m['consumerUUID'] is String ? m['consumerUUID'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        roles: m['roles'] is List<dynamic> ? m['roles'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != consumer_uuid) {
-      m['consumer_uuid'] = consumer_uuid;
+    if (null != consumerUUID) {
+      m['consumerUUID'] = consumerUUID;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != role) {
-      m['role'] = role;
+    if (null != roles) {
+      m['roles'] = roles;
     }
     return m;
   }
@@ -2180,55 +2138,55 @@ class OutputRemoveRoleCreateData {
 
 class OutputResendLink {
   /// STRING
-  String? business_registration_number;
+  String? businessRegistrationNumber;
   /// STRING (required at the API)
-  String? consumer_uuid;
+  String? consumerUUID;
   /// STRING
-  String? email_confirmation_code;
+  String? emailConfirmationCode;
   /// STRING
-  String? phone_number;
+  String? phoneNumber;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   OutputResendLink({
-    this.business_registration_number,
-    this.consumer_uuid,
-    this.email_confirmation_code,
-    this.phone_number,
-    this.response_code,
-    this.response_message,
+    this.businessRegistrationNumber,
+    this.consumerUUID,
+    this.emailConfirmationCode,
+    this.phoneNumber,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputResendLink.fromMap(Map<String, dynamic> m) => OutputResendLink(
-        business_registration_number: m['business_registration_number'] is String ? m['business_registration_number'] : null,
-        consumer_uuid: m['consumer_uuid'] is String ? m['consumer_uuid'] : null,
-        email_confirmation_code: m['email_confirmation_code'] is String ? m['email_confirmation_code'] : null,
-        phone_number: m['phone_number'] is String ? m['phone_number'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        businessRegistrationNumber: m['businessRegistrationNumber'] is String ? m['businessRegistrationNumber'] : null,
+        consumerUUID: m['consumerUUID'] is String ? m['consumerUUID'] : null,
+        emailConfirmationCode: m['emailConfirmationCode'] is String ? m['emailConfirmationCode'] : null,
+        phoneNumber: m['phoneNumber'] is String ? m['phoneNumber'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != business_registration_number) {
-      m['business_registration_number'] = business_registration_number;
+    if (null != businessRegistrationNumber) {
+      m['businessRegistrationNumber'] = businessRegistrationNumber;
     }
-    if (null != consumer_uuid) {
-      m['consumer_uuid'] = consumer_uuid;
+    if (null != consumerUUID) {
+      m['consumerUUID'] = consumerUUID;
     }
-    if (null != email_confirmation_code) {
-      m['email_confirmation_code'] = email_confirmation_code;
+    if (null != emailConfirmationCode) {
+      m['emailConfirmationCode'] = emailConfirmationCode;
     }
-    if (null != phone_number) {
-      m['phone_number'] = phone_number;
+    if (null != phoneNumber) {
+      m['phoneNumber'] = phoneNumber;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -2236,55 +2194,55 @@ class OutputResendLink {
 
 class OutputResendLinkCreateData {
   /// STRING
-  String? business_registration_number;
+  String? businessRegistrationNumber;
   /// STRING (required at the API)
-  String? consumer_uuid;
+  String? consumerUUID;
   /// STRING
-  String? email_confirmation_code;
+  String? emailConfirmationCode;
   /// STRING
-  String? phone_number;
+  String? phoneNumber;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   OutputResendLinkCreateData({
-    this.business_registration_number,
-    this.consumer_uuid,
-    this.email_confirmation_code,
-    this.phone_number,
-    this.response_code,
-    this.response_message,
+    this.businessRegistrationNumber,
+    this.consumerUUID,
+    this.emailConfirmationCode,
+    this.phoneNumber,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputResendLinkCreateData.fromMap(Map<String, dynamic> m) => OutputResendLinkCreateData(
-        business_registration_number: m['business_registration_number'] is String ? m['business_registration_number'] : null,
-        consumer_uuid: m['consumer_uuid'] is String ? m['consumer_uuid'] : null,
-        email_confirmation_code: m['email_confirmation_code'] is String ? m['email_confirmation_code'] : null,
-        phone_number: m['phone_number'] is String ? m['phone_number'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        businessRegistrationNumber: m['businessRegistrationNumber'] is String ? m['businessRegistrationNumber'] : null,
+        consumerUUID: m['consumerUUID'] is String ? m['consumerUUID'] : null,
+        emailConfirmationCode: m['emailConfirmationCode'] is String ? m['emailConfirmationCode'] : null,
+        phoneNumber: m['phoneNumber'] is String ? m['phoneNumber'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != business_registration_number) {
-      m['business_registration_number'] = business_registration_number;
+    if (null != businessRegistrationNumber) {
+      m['businessRegistrationNumber'] = businessRegistrationNumber;
     }
-    if (null != consumer_uuid) {
-      m['consumer_uuid'] = consumer_uuid;
+    if (null != consumerUUID) {
+      m['consumerUUID'] = consumerUUID;
     }
-    if (null != email_confirmation_code) {
-      m['email_confirmation_code'] = email_confirmation_code;
+    if (null != emailConfirmationCode) {
+      m['emailConfirmationCode'] = emailConfirmationCode;
     }
-    if (null != phone_number) {
-      m['phone_number'] = phone_number;
+    if (null != phoneNumber) {
+      m['phoneNumber'] = phoneNumber;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -2292,41 +2250,41 @@ class OutputResendLinkCreateData {
 
 class OutputResetPassword {
   /// STRING
-  String? consumer_uuid;
+  String? consumerUuid;
   /// STRING
-  String? phone_number;
+  String? phoneNumber;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   OutputResetPassword({
-    this.consumer_uuid,
-    this.phone_number,
-    this.response_code,
-    this.response_message,
+    this.consumerUuid,
+    this.phoneNumber,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputResetPassword.fromMap(Map<String, dynamic> m) => OutputResetPassword(
-        consumer_uuid: m['consumer_uuid'] is String ? m['consumer_uuid'] : null,
-        phone_number: m['phone_number'] is String ? m['phone_number'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        consumerUuid: m['consumerUuid'] is String ? m['consumerUuid'] : null,
+        phoneNumber: m['phoneNumber'] is String ? m['phoneNumber'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != consumer_uuid) {
-      m['consumer_uuid'] = consumer_uuid;
+    if (null != consumerUuid) {
+      m['consumerUuid'] = consumerUuid;
     }
-    if (null != phone_number) {
-      m['phone_number'] = phone_number;
+    if (null != phoneNumber) {
+      m['phoneNumber'] = phoneNumber;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -2334,41 +2292,41 @@ class OutputResetPassword {
 
 class OutputResetPasswordCreateData {
   /// STRING
-  String? consumer_uuid;
+  String? consumerUuid;
   /// STRING
-  String? phone_number;
+  String? phoneNumber;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   OutputResetPasswordCreateData({
-    this.consumer_uuid,
-    this.phone_number,
-    this.response_code,
-    this.response_message,
+    this.consumerUuid,
+    this.phoneNumber,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputResetPasswordCreateData.fromMap(Map<String, dynamic> m) => OutputResetPasswordCreateData(
-        consumer_uuid: m['consumer_uuid'] is String ? m['consumer_uuid'] : null,
-        phone_number: m['phone_number'] is String ? m['phone_number'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        consumerUuid: m['consumerUuid'] is String ? m['consumerUuid'] : null,
+        phoneNumber: m['phoneNumber'] is String ? m['phoneNumber'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != consumer_uuid) {
-      m['consumer_uuid'] = consumer_uuid;
+    if (null != consumerUuid) {
+      m['consumerUuid'] = consumerUuid;
     }
-    if (null != phone_number) {
-      m['phone_number'] = phone_number;
+    if (null != phoneNumber) {
+      m['phoneNumber'] = phoneNumber;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -2378,39 +2336,39 @@ class OutputUpdateConsumer {
   /// STRING
   String? city;
   /// STRING (required at the API)
-  String? consumer_uuid;
+  String? consumerUuid;
   /// STRING
   String? consumerlanguage;
   /// STRING
   String? country;
   /// STRING
-  String? date_of_birth;
+  String? dateOfBirth;
   /// STRING
   String? datetime_created;
   /// STRING
-  String? driver_licence_number;
+  String? driverLicenceNumber;
   /// STRING
   String? email;
   /// STRING
-  String? first_name;
+  String? firstName;
   /// STRING
-  String? identification_number;
+  String? identificationNumber;
   /// BOOLEAN
-  bool? kyc_passed;
+  bool? kycPassed;
   /// STRING
-  String? last_name;
+  String? lastName;
   /// STRING
   String? nationality;
   /// STRING
-  String? passport_number;
+  String? passportNumber;
   /// STRING
-  String? phone_number;
+  String? phoneNumber;
   /// STRING
-  String? place_of_birth;
+  String? placeOfBirth;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
   String? state;
   /// STRING
@@ -2424,23 +2382,23 @@ class OutputUpdateConsumer {
 
   OutputUpdateConsumer({
     this.city,
-    this.consumer_uuid,
+    this.consumerUuid,
     this.consumerlanguage,
     this.country,
-    this.date_of_birth,
+    this.dateOfBirth,
     this.datetime_created,
-    this.driver_licence_number,
+    this.driverLicenceNumber,
     this.email,
-    this.first_name,
-    this.identification_number,
-    this.kyc_passed,
-    this.last_name,
+    this.firstName,
+    this.identificationNumber,
+    this.kycPassed,
+    this.lastName,
     this.nationality,
-    this.passport_number,
-    this.phone_number,
-    this.place_of_birth,
-    this.response_code,
-    this.response_message,
+    this.passportNumber,
+    this.phoneNumber,
+    this.placeOfBirth,
+    this.responseCode,
+    this.responseMessage,
     this.state,
     this.street1,
     this.street2,
@@ -2450,23 +2408,23 @@ class OutputUpdateConsumer {
 
   factory OutputUpdateConsumer.fromMap(Map<String, dynamic> m) => OutputUpdateConsumer(
         city: m['city'] is String ? m['city'] : null,
-        consumer_uuid: m['consumer_uuid'] is String ? m['consumer_uuid'] : null,
+        consumerUuid: m['consumerUuid'] is String ? m['consumerUuid'] : null,
         consumerlanguage: m['consumerlanguage'] is String ? m['consumerlanguage'] : null,
         country: m['country'] is String ? m['country'] : null,
-        date_of_birth: m['date_of_birth'] is String ? m['date_of_birth'] : null,
+        dateOfBirth: m['dateOfBirth'] is String ? m['dateOfBirth'] : null,
         datetime_created: m['datetime_created'] is String ? m['datetime_created'] : null,
-        driver_licence_number: m['driver_licence_number'] is String ? m['driver_licence_number'] : null,
+        driverLicenceNumber: m['driverLicenceNumber'] is String ? m['driverLicenceNumber'] : null,
         email: m['email'] is String ? m['email'] : null,
-        first_name: m['first_name'] is String ? m['first_name'] : null,
-        identification_number: m['identification_number'] is String ? m['identification_number'] : null,
-        kyc_passed: m['kyc_passed'] is bool ? m['kyc_passed'] : null,
-        last_name: m['last_name'] is String ? m['last_name'] : null,
+        firstName: m['firstName'] is String ? m['firstName'] : null,
+        identificationNumber: m['identificationNumber'] is String ? m['identificationNumber'] : null,
+        kycPassed: m['kycPassed'] is bool ? m['kycPassed'] : null,
+        lastName: m['lastName'] is String ? m['lastName'] : null,
         nationality: m['nationality'] is String ? m['nationality'] : null,
-        passport_number: m['passport_number'] is String ? m['passport_number'] : null,
-        phone_number: m['phone_number'] is String ? m['phone_number'] : null,
-        place_of_birth: m['place_of_birth'] is String ? m['place_of_birth'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        passportNumber: m['passportNumber'] is String ? m['passportNumber'] : null,
+        phoneNumber: m['phoneNumber'] is String ? m['phoneNumber'] : null,
+        placeOfBirth: m['placeOfBirth'] is String ? m['placeOfBirth'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
         state: m['state'] is String ? m['state'] : null,
         street1: m['street1'] is String ? m['street1'] : null,
         street2: m['street2'] is String ? m['street2'] : null,
@@ -2479,8 +2437,8 @@ class OutputUpdateConsumer {
     if (null != city) {
       m['city'] = city;
     }
-    if (null != consumer_uuid) {
-      m['consumer_uuid'] = consumer_uuid;
+    if (null != consumerUuid) {
+      m['consumerUuid'] = consumerUuid;
     }
     if (null != consumerlanguage) {
       m['consumerlanguage'] = consumerlanguage;
@@ -2488,47 +2446,47 @@ class OutputUpdateConsumer {
     if (null != country) {
       m['country'] = country;
     }
-    if (null != date_of_birth) {
-      m['date_of_birth'] = date_of_birth;
+    if (null != dateOfBirth) {
+      m['dateOfBirth'] = dateOfBirth;
     }
     if (null != datetime_created) {
       m['datetime_created'] = datetime_created;
     }
-    if (null != driver_licence_number) {
-      m['driver_licence_number'] = driver_licence_number;
+    if (null != driverLicenceNumber) {
+      m['driverLicenceNumber'] = driverLicenceNumber;
     }
     if (null != email) {
       m['email'] = email;
     }
-    if (null != first_name) {
-      m['first_name'] = first_name;
+    if (null != firstName) {
+      m['firstName'] = firstName;
     }
-    if (null != identification_number) {
-      m['identification_number'] = identification_number;
+    if (null != identificationNumber) {
+      m['identificationNumber'] = identificationNumber;
     }
-    if (null != kyc_passed) {
-      m['kyc_passed'] = kyc_passed;
+    if (null != kycPassed) {
+      m['kycPassed'] = kycPassed;
     }
-    if (null != last_name) {
-      m['last_name'] = last_name;
+    if (null != lastName) {
+      m['lastName'] = lastName;
     }
     if (null != nationality) {
       m['nationality'] = nationality;
     }
-    if (null != passport_number) {
-      m['passport_number'] = passport_number;
+    if (null != passportNumber) {
+      m['passportNumber'] = passportNumber;
     }
-    if (null != phone_number) {
-      m['phone_number'] = phone_number;
+    if (null != phoneNumber) {
+      m['phoneNumber'] = phoneNumber;
     }
-    if (null != place_of_birth) {
-      m['place_of_birth'] = place_of_birth;
+    if (null != placeOfBirth) {
+      m['placeOfBirth'] = placeOfBirth;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     if (null != state) {
       m['state'] = state;
@@ -2553,39 +2511,39 @@ class OutputUpdateConsumerCreateData {
   /// STRING
   String? city;
   /// STRING (required at the API)
-  String? consumer_uuid;
+  String? consumerUuid;
   /// STRING
   String? consumerlanguage;
   /// STRING
   String? country;
   /// STRING
-  String? date_of_birth;
+  String? dateOfBirth;
   /// STRING
   String? datetime_created;
   /// STRING
-  String? driver_licence_number;
+  String? driverLicenceNumber;
   /// STRING
   String? email;
   /// STRING
-  String? first_name;
+  String? firstName;
   /// STRING
-  String? identification_number;
+  String? identificationNumber;
   /// BOOLEAN
-  bool? kyc_passed;
+  bool? kycPassed;
   /// STRING
-  String? last_name;
+  String? lastName;
   /// STRING
   String? nationality;
   /// STRING
-  String? passport_number;
+  String? passportNumber;
   /// STRING
-  String? phone_number;
+  String? phoneNumber;
   /// STRING
-  String? place_of_birth;
+  String? placeOfBirth;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
   String? state;
   /// STRING
@@ -2599,23 +2557,23 @@ class OutputUpdateConsumerCreateData {
 
   OutputUpdateConsumerCreateData({
     this.city,
-    this.consumer_uuid,
+    this.consumerUuid,
     this.consumerlanguage,
     this.country,
-    this.date_of_birth,
+    this.dateOfBirth,
     this.datetime_created,
-    this.driver_licence_number,
+    this.driverLicenceNumber,
     this.email,
-    this.first_name,
-    this.identification_number,
-    this.kyc_passed,
-    this.last_name,
+    this.firstName,
+    this.identificationNumber,
+    this.kycPassed,
+    this.lastName,
     this.nationality,
-    this.passport_number,
-    this.phone_number,
-    this.place_of_birth,
-    this.response_code,
-    this.response_message,
+    this.passportNumber,
+    this.phoneNumber,
+    this.placeOfBirth,
+    this.responseCode,
+    this.responseMessage,
     this.state,
     this.street1,
     this.street2,
@@ -2625,23 +2583,23 @@ class OutputUpdateConsumerCreateData {
 
   factory OutputUpdateConsumerCreateData.fromMap(Map<String, dynamic> m) => OutputUpdateConsumerCreateData(
         city: m['city'] is String ? m['city'] : null,
-        consumer_uuid: m['consumer_uuid'] is String ? m['consumer_uuid'] : null,
+        consumerUuid: m['consumerUuid'] is String ? m['consumerUuid'] : null,
         consumerlanguage: m['consumerlanguage'] is String ? m['consumerlanguage'] : null,
         country: m['country'] is String ? m['country'] : null,
-        date_of_birth: m['date_of_birth'] is String ? m['date_of_birth'] : null,
+        dateOfBirth: m['dateOfBirth'] is String ? m['dateOfBirth'] : null,
         datetime_created: m['datetime_created'] is String ? m['datetime_created'] : null,
-        driver_licence_number: m['driver_licence_number'] is String ? m['driver_licence_number'] : null,
+        driverLicenceNumber: m['driverLicenceNumber'] is String ? m['driverLicenceNumber'] : null,
         email: m['email'] is String ? m['email'] : null,
-        first_name: m['first_name'] is String ? m['first_name'] : null,
-        identification_number: m['identification_number'] is String ? m['identification_number'] : null,
-        kyc_passed: m['kyc_passed'] is bool ? m['kyc_passed'] : null,
-        last_name: m['last_name'] is String ? m['last_name'] : null,
+        firstName: m['firstName'] is String ? m['firstName'] : null,
+        identificationNumber: m['identificationNumber'] is String ? m['identificationNumber'] : null,
+        kycPassed: m['kycPassed'] is bool ? m['kycPassed'] : null,
+        lastName: m['lastName'] is String ? m['lastName'] : null,
         nationality: m['nationality'] is String ? m['nationality'] : null,
-        passport_number: m['passport_number'] is String ? m['passport_number'] : null,
-        phone_number: m['phone_number'] is String ? m['phone_number'] : null,
-        place_of_birth: m['place_of_birth'] is String ? m['place_of_birth'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        passportNumber: m['passportNumber'] is String ? m['passportNumber'] : null,
+        phoneNumber: m['phoneNumber'] is String ? m['phoneNumber'] : null,
+        placeOfBirth: m['placeOfBirth'] is String ? m['placeOfBirth'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
         state: m['state'] is String ? m['state'] : null,
         street1: m['street1'] is String ? m['street1'] : null,
         street2: m['street2'] is String ? m['street2'] : null,
@@ -2654,8 +2612,8 @@ class OutputUpdateConsumerCreateData {
     if (null != city) {
       m['city'] = city;
     }
-    if (null != consumer_uuid) {
-      m['consumer_uuid'] = consumer_uuid;
+    if (null != consumerUuid) {
+      m['consumerUuid'] = consumerUuid;
     }
     if (null != consumerlanguage) {
       m['consumerlanguage'] = consumerlanguage;
@@ -2663,47 +2621,47 @@ class OutputUpdateConsumerCreateData {
     if (null != country) {
       m['country'] = country;
     }
-    if (null != date_of_birth) {
-      m['date_of_birth'] = date_of_birth;
+    if (null != dateOfBirth) {
+      m['dateOfBirth'] = dateOfBirth;
     }
     if (null != datetime_created) {
       m['datetime_created'] = datetime_created;
     }
-    if (null != driver_licence_number) {
-      m['driver_licence_number'] = driver_licence_number;
+    if (null != driverLicenceNumber) {
+      m['driverLicenceNumber'] = driverLicenceNumber;
     }
     if (null != email) {
       m['email'] = email;
     }
-    if (null != first_name) {
-      m['first_name'] = first_name;
+    if (null != firstName) {
+      m['firstName'] = firstName;
     }
-    if (null != identification_number) {
-      m['identification_number'] = identification_number;
+    if (null != identificationNumber) {
+      m['identificationNumber'] = identificationNumber;
     }
-    if (null != kyc_passed) {
-      m['kyc_passed'] = kyc_passed;
+    if (null != kycPassed) {
+      m['kycPassed'] = kycPassed;
     }
-    if (null != last_name) {
-      m['last_name'] = last_name;
+    if (null != lastName) {
+      m['lastName'] = lastName;
     }
     if (null != nationality) {
       m['nationality'] = nationality;
     }
-    if (null != passport_number) {
-      m['passport_number'] = passport_number;
+    if (null != passportNumber) {
+      m['passportNumber'] = passportNumber;
     }
-    if (null != phone_number) {
-      m['phone_number'] = phone_number;
+    if (null != phoneNumber) {
+      m['phoneNumber'] = phoneNumber;
     }
-    if (null != place_of_birth) {
-      m['place_of_birth'] = place_of_birth;
+    if (null != placeOfBirth) {
+      m['placeOfBirth'] = placeOfBirth;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     if (null != state) {
       m['state'] = state;
@@ -2726,62 +2684,62 @@ class OutputUpdateConsumerCreateData {
 
 class OutputUpdateProfile {
   /// STRING
-  String? consumer_language;
+  String? consumerLanguage;
   /// STRING
   String? email;
   /// STRING
-  String? first_name;
+  String? firstName;
   /// STRING
-  String? last_name;
+  String? lastName;
   /// STRING
-  String? phone_number;
+  String? phoneNumber;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   OutputUpdateProfile({
-    this.consumer_language,
+    this.consumerLanguage,
     this.email,
-    this.first_name,
-    this.last_name,
-    this.phone_number,
-    this.response_code,
-    this.response_message,
+    this.firstName,
+    this.lastName,
+    this.phoneNumber,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputUpdateProfile.fromMap(Map<String, dynamic> m) => OutputUpdateProfile(
-        consumer_language: m['consumer_language'] is String ? m['consumer_language'] : null,
+        consumerLanguage: m['consumerLanguage'] is String ? m['consumerLanguage'] : null,
         email: m['email'] is String ? m['email'] : null,
-        first_name: m['first_name'] is String ? m['first_name'] : null,
-        last_name: m['last_name'] is String ? m['last_name'] : null,
-        phone_number: m['phone_number'] is String ? m['phone_number'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        firstName: m['firstName'] is String ? m['firstName'] : null,
+        lastName: m['lastName'] is String ? m['lastName'] : null,
+        phoneNumber: m['phoneNumber'] is String ? m['phoneNumber'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != consumer_language) {
-      m['consumer_language'] = consumer_language;
+    if (null != consumerLanguage) {
+      m['consumerLanguage'] = consumerLanguage;
     }
     if (null != email) {
       m['email'] = email;
     }
-    if (null != first_name) {
-      m['first_name'] = first_name;
+    if (null != firstName) {
+      m['firstName'] = firstName;
     }
-    if (null != last_name) {
-      m['last_name'] = last_name;
+    if (null != lastName) {
+      m['lastName'] = lastName;
     }
-    if (null != phone_number) {
-      m['phone_number'] = phone_number;
+    if (null != phoneNumber) {
+      m['phoneNumber'] = phoneNumber;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -2789,62 +2747,62 @@ class OutputUpdateProfile {
 
 class OutputUpdateProfileCreateData {
   /// STRING
-  String? consumer_language;
+  String? consumerLanguage;
   /// STRING
   String? email;
   /// STRING
-  String? first_name;
+  String? firstName;
   /// STRING
-  String? last_name;
+  String? lastName;
   /// STRING
-  String? phone_number;
+  String? phoneNumber;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   OutputUpdateProfileCreateData({
-    this.consumer_language,
+    this.consumerLanguage,
     this.email,
-    this.first_name,
-    this.last_name,
-    this.phone_number,
-    this.response_code,
-    this.response_message,
+    this.firstName,
+    this.lastName,
+    this.phoneNumber,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory OutputUpdateProfileCreateData.fromMap(Map<String, dynamic> m) => OutputUpdateProfileCreateData(
-        consumer_language: m['consumer_language'] is String ? m['consumer_language'] : null,
+        consumerLanguage: m['consumerLanguage'] is String ? m['consumerLanguage'] : null,
         email: m['email'] is String ? m['email'] : null,
-        first_name: m['first_name'] is String ? m['first_name'] : null,
-        last_name: m['last_name'] is String ? m['last_name'] : null,
-        phone_number: m['phone_number'] is String ? m['phone_number'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        firstName: m['firstName'] is String ? m['firstName'] : null,
+        lastName: m['lastName'] is String ? m['lastName'] : null,
+        phoneNumber: m['phoneNumber'] is String ? m['phoneNumber'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != consumer_language) {
-      m['consumer_language'] = consumer_language;
+    if (null != consumerLanguage) {
+      m['consumerLanguage'] = consumerLanguage;
     }
     if (null != email) {
       m['email'] = email;
     }
-    if (null != first_name) {
-      m['first_name'] = first_name;
+    if (null != firstName) {
+      m['firstName'] = firstName;
     }
-    if (null != last_name) {
-      m['last_name'] = last_name;
+    if (null != lastName) {
+      m['lastName'] = lastName;
     }
-    if (null != phone_number) {
-      m['phone_number'] = phone_number;
+    if (null != phoneNumber) {
+      m['phoneNumber'] = phoneNumber;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -2852,31 +2810,31 @@ class OutputUpdateProfileCreateData {
 
 class Version {
   /// STRING
-  String? app_name;
+  String? appName;
   /// STRING
-  String? build_date;
+  String? buildDate;
   /// STRING
   String? version;
 
   Version({
-    this.app_name,
-    this.build_date,
+    this.appName,
+    this.buildDate,
     this.version,
   });
 
   factory Version.fromMap(Map<String, dynamic> m) => Version(
-        app_name: m['app_name'] is String ? m['app_name'] : null,
-        build_date: m['build_date'] is String ? m['build_date'] : null,
+        appName: m['appName'] is String ? m['appName'] : null,
+        buildDate: m['buildDate'] is String ? m['buildDate'] : null,
         version: m['version'] is String ? m['version'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != app_name) {
-      m['app_name'] = app_name;
+    if (null != appName) {
+      m['appName'] = appName;
     }
-    if (null != build_date) {
-      m['build_date'] = build_date;
+    if (null != buildDate) {
+      m['buildDate'] = buildDate;
     }
     if (null != version) {
       m['version'] = version;
@@ -2887,31 +2845,31 @@ class Version {
 
 class VersionLoadMatch {
   /// STRING
-  String? app_name;
+  String? appName;
   /// STRING
-  String? build_date;
+  String? buildDate;
   /// STRING
   String? version;
 
   VersionLoadMatch({
-    this.app_name,
-    this.build_date,
+    this.appName,
+    this.buildDate,
     this.version,
   });
 
   factory VersionLoadMatch.fromMap(Map<String, dynamic> m) => VersionLoadMatch(
-        app_name: m['app_name'] is String ? m['app_name'] : null,
-        build_date: m['build_date'] is String ? m['build_date'] : null,
+        appName: m['appName'] is String ? m['appName'] : null,
+        buildDate: m['buildDate'] is String ? m['buildDate'] : null,
         version: m['version'] is String ? m['version'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != app_name) {
-      m['app_name'] = app_name;
+    if (null != appName) {
+      m['appName'] = appName;
     }
-    if (null != build_date) {
-      m['build_date'] = build_date;
+    if (null != buildDate) {
+      m['buildDate'] = buildDate;
     }
     if (null != version) {
       m['version'] = version;

@@ -35,7 +35,7 @@ object OutputCreateMandatorEntityTest {
       var outputCreateMandatorRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.output_create_mandator"), "output_create_mandator_ref01"))
       val outputCreateMandatorRef01DataResult = outputCreateMandatorRef01Ent.create(outputCreateMandatorRef01Data, null)
-      outputCreateMandatorRef01Data = Helpers.toMapAny(outputCreateMandatorRef01DataResult)
+      outputCreateMandatorRef01Data = Helpers.toMapAny(outputCreateMandatorRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("output_create_mandator.create.map", outputCreateMandatorRef01Data != null, "expected create result to be a map")
     }
   }

@@ -14,99 +14,99 @@ use crate::utility::voxgigstruct::Value;
 /// OutputActivateDigitalModule is the typed data model for the output_activate_digital_module entity.
 #[derive(Debug, Clone)]
 pub struct OutputActivateDigitalModule {
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
 }
 
 /// OutputActivateDigitalModuleCreateData is the typed request payload for OutputActivateDigitalModule.create.
 #[derive(Debug, Clone)]
 pub struct OutputActivateDigitalModuleCreateData {
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
 }
 
 /// OutputActivatePortalModule is the typed data model for the output_activate_portal_module entity.
 #[derive(Debug, Clone)]
 pub struct OutputActivatePortalModule {
-    pub client_secret: String,
-    pub notification_email: String,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub clientsecret: String,
+    pub notificationemail: String,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
 }
 
 /// OutputActivatePortalModuleCreateData is the typed request payload for OutputActivatePortalModule.create.
 #[derive(Debug, Clone)]
 pub struct OutputActivatePortalModuleCreateData {
-    pub client_secret: String,
-    pub notification_email: String,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub clientsecret: String,
+    pub notificationemail: String,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
 }
 
 /// OutputActivateStoreModule is the typed data model for the output_activate_store_module entity.
 #[derive(Debug, Clone)]
 pub struct OutputActivateStoreModule {
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
 }
 
 /// OutputActivateStoreModuleCreateData is the typed request payload for OutputActivateStoreModule.create.
 #[derive(Debug, Clone)]
 pub struct OutputActivateStoreModuleCreateData {
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
 }
 
 /// OutputActivateUser is the typed data model for the output_activate_user entity.
 #[derive(Debug, Clone)]
 pub struct OutputActivateUser {
-    pub consumer_uuid: Option<String>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub consumeruuid: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
 }
 
 /// OutputActivateUserCreateData is the typed request payload for OutputActivateUser.create.
 #[derive(Debug, Clone)]
 pub struct OutputActivateUserCreateData {
-    pub consumer_uuid: Option<String>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub consumeruuid: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
 }
 
 /// OutputAssignRole is the typed data model for the output_assign_role entity.
 #[derive(Debug, Clone)]
 pub struct OutputAssignRole {
-    pub consumer_uuid: String,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
-    pub role: Vec<Value>,
+    pub consumeruuid: String,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
+    pub roles: Vec<Value>,
 }
 
 /// OutputAssignRoleCreateData is the typed request payload for OutputAssignRole.create.
 #[derive(Debug, Clone)]
 pub struct OutputAssignRoleCreateData {
-    pub consumer_uuid: String,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
-    pub role: Vec<Value>,
+    pub consumeruuid: String,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
+    pub roles: Vec<Value>,
 }
 
 /// OutputChangeLogo is the typed data model for the output_change_logo entity.
 #[derive(Debug, Clone)]
 pub struct OutputChangeLogo {
-    pub content_as_base64: String,
-    pub mime_type: String,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub contentasbase64: String,
+    pub mimetype: String,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
 }
 
 /// OutputChangeLogoCreateData is the typed request payload for OutputChangeLogo.create.
 #[derive(Debug, Clone)]
 pub struct OutputChangeLogoCreateData {
-    pub content_as_base64: String,
-    pub mime_type: String,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub contentasbase64: String,
+    pub mimetype: String,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
 }
 
 /// OutputCreateMandator is the typed data model for the output_create_mandator entity.
@@ -114,25 +114,22 @@ pub struct OutputChangeLogoCreateData {
 pub struct OutputCreateMandator {
     pub city: Option<String>,
     pub country: Option<String>,
-    pub date_of_birth: Option<String>,
-    pub description: String,
-    pub drivers_license_number: Option<String>,
+    pub dateofbirth: Option<String>,
+    pub description: Option<String>,
+    pub driverslicensenumber: Option<String>,
     pub email: String,
-    pub first_name: Option<String>,
-    pub identification_number: Option<String>,
-    pub last_name: Option<String>,
+    pub firstname: Option<String>,
+    pub identificationnumber: Option<String>,
+    pub lastname: Option<String>,
     pub login: String,
-    pub mandator: Option<std::collections::HashMap<String, Value>>,
-    pub name: String,
-    pub passport_number: Option<String>,
+    pub name: Option<String>,
+    pub passportnumber: Option<String>,
     pub phone: String,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
     pub salutation: Option<String>,
     pub state: Option<String>,
     pub street1: Option<String>,
     pub street2: Option<String>,
-    pub zip_code: Option<String>,
+    pub zipcode: Option<String>,
 }
 
 /// OutputCreateMandatorCreateData is the typed request payload for OutputCreateMandator.create.
@@ -140,109 +137,106 @@ pub struct OutputCreateMandator {
 pub struct OutputCreateMandatorCreateData {
     pub city: Option<String>,
     pub country: Option<String>,
-    pub date_of_birth: Option<String>,
-    pub description: String,
-    pub drivers_license_number: Option<String>,
+    pub dateofbirth: Option<String>,
+    pub description: Option<String>,
+    pub driverslicensenumber: Option<String>,
     pub email: String,
-    pub first_name: Option<String>,
-    pub identification_number: Option<String>,
-    pub last_name: Option<String>,
+    pub firstname: Option<String>,
+    pub identificationnumber: Option<String>,
+    pub lastname: Option<String>,
     pub login: String,
-    pub mandator: Option<std::collections::HashMap<String, Value>>,
-    pub name: String,
-    pub passport_number: Option<String>,
+    pub name: Option<String>,
+    pub passportnumber: Option<String>,
     pub phone: String,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
     pub salutation: Option<String>,
     pub state: Option<String>,
     pub street1: Option<String>,
     pub street2: Option<String>,
-    pub zip_code: Option<String>,
+    pub zipcode: Option<String>,
 }
 
 /// OutputCreateServiceUser is the typed data model for the output_create_service_user entity.
 #[derive(Debug, Clone)]
 pub struct OutputCreateServiceUser {
-    pub mandator_name: String,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub mandatorname: String,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
 }
 
 /// OutputCreateServiceUserCreateData is the typed request payload for OutputCreateServiceUser.create.
 #[derive(Debug, Clone)]
 pub struct OutputCreateServiceUserCreateData {
-    pub mandator_name: String,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub mandatorname: String,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
 }
 
 /// OutputDeactivateUser is the typed data model for the output_deactivate_user entity.
 #[derive(Debug, Clone)]
 pub struct OutputDeactivateUser {
-    pub consumer_uuid: Option<String>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub consumeruuid: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
 }
 
 /// OutputDeactivateUserCreateData is the typed request payload for OutputDeactivateUser.create.
 #[derive(Debug, Clone)]
 pub struct OutputDeactivateUserCreateData {
-    pub consumer_uuid: Option<String>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub consumeruuid: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
 }
 
 /// OutputGetKycDocument is the typed data model for the output_get_kyc_document entity.
 #[derive(Debug, Clone)]
 pub struct OutputGetKycDocument {
-    pub case_id: Option<String>,
-    pub encoded_data_base64: Option<String>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub caseid: Option<String>,
+    pub encodeddatabase64: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
 }
 
 /// OutputGetKycDocumentCreateData is the typed request payload for OutputGetKycDocument.create.
 #[derive(Debug, Clone)]
 pub struct OutputGetKycDocumentCreateData {
-    pub case_id: Option<String>,
-    pub encoded_data_base64: Option<String>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub caseid: Option<String>,
+    pub encodeddatabase64: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
 }
 
 /// OutputGetLogo is the typed data model for the output_get_logo entity.
 #[derive(Debug, Clone)]
 pub struct OutputGetLogo {
-    pub content_as_base64: String,
-    pub mime_type: String,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub contentasbase64: String,
+    pub mimetype: String,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
 }
 
 /// OutputGetLogoLoadMatch is the typed request payload for OutputGetLogo.load.
 #[derive(Debug, Clone)]
 pub struct OutputGetLogoLoadMatch {
-    pub content_as_base64: Option<String>,
-    pub mime_type: Option<String>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub contentasbase64: Option<String>,
+    pub mimetype: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
 }
 
 /// OutputListOfAvailableRole is the typed data model for the output_list_of_available_role entity.
 #[derive(Debug, Clone)]
 pub struct OutputListOfAvailableRole {
-    pub available_role: Option<Vec<Value>>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub availableroles: Option<Vec<Value>>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
 }
 
 /// OutputListOfAvailableRoleCreateData is the typed request payload for OutputListOfAvailableRole.create.
 #[derive(Debug, Clone)]
 pub struct OutputListOfAvailableRoleCreateData {
-    pub available_role: Option<Vec<Value>>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub availableroles: Option<Vec<Value>>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
 }
 
 /// OutputListOfMandator is the typed data model for the output_list_of_mandator entity.
@@ -251,8 +245,8 @@ pub struct OutputListOfMandator {
     pub filter: Option<std::collections::HashMap<String, Value>>,
     pub list: Option<Vec<Value>>,
     pub pagination: Option<std::collections::HashMap<String, Value>>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
     pub sorting: Option<std::collections::HashMap<String, Value>>,
 }
 
@@ -262,8 +256,8 @@ pub struct OutputListOfMandatorCreateData {
     pub filter: Option<std::collections::HashMap<String, Value>>,
     pub list: Option<Vec<Value>>,
     pub pagination: Option<std::collections::HashMap<String, Value>>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
     pub sorting: Option<std::collections::HashMap<String, Value>>,
 }
 
@@ -272,8 +266,8 @@ pub struct OutputListOfMandatorCreateData {
 pub struct OutputListOfModule {
     pub list: Option<Vec<Value>>,
     pub pagination: Option<std::collections::HashMap<String, Value>>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
 }
 
 /// OutputListOfModuleCreateData is the typed request payload for OutputListOfModule.create.
@@ -281,18 +275,18 @@ pub struct OutputListOfModule {
 pub struct OutputListOfModuleCreateData {
     pub list: Option<Vec<Value>>,
     pub pagination: Option<std::collections::HashMap<String, Value>>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
 }
 
 /// OutputListOfRoleGroup is the typed data model for the output_list_of_role_group entity.
 #[derive(Debug, Clone)]
 pub struct OutputListOfRoleGroup {
     pub filter: Option<std::collections::HashMap<String, Value>>,
-    pub group_role: Option<Vec<Value>>,
+    pub grouproles: Option<Vec<Value>>,
     pub pagination: Option<std::collections::HashMap<String, Value>>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
     pub sorting: Option<std::collections::HashMap<String, Value>>,
 }
 
@@ -300,10 +294,10 @@ pub struct OutputListOfRoleGroup {
 #[derive(Debug, Clone)]
 pub struct OutputListOfRoleGroupCreateData {
     pub filter: Option<std::collections::HashMap<String, Value>>,
-    pub group_role: Option<Vec<Value>>,
+    pub grouproles: Option<Vec<Value>>,
     pub pagination: Option<std::collections::HashMap<String, Value>>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
     pub sorting: Option<std::collections::HashMap<String, Value>>,
 }
 
@@ -313,8 +307,8 @@ pub struct OutputListOfTransactionsHistory {
     pub filter: Option<std::collections::HashMap<String, Value>>,
     pub list: Option<Vec<Value>>,
     pub pagination: Option<std::collections::HashMap<String, Value>>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
     pub sorting: Option<std::collections::HashMap<String, Value>>,
 }
 
@@ -324,8 +318,8 @@ pub struct OutputListOfTransactionsHistoryCreateData {
     pub filter: Option<std::collections::HashMap<String, Value>>,
     pub list: Option<Vec<Value>>,
     pub pagination: Option<std::collections::HashMap<String, Value>>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
     pub sorting: Option<std::collections::HashMap<String, Value>>,
 }
 
@@ -335,8 +329,8 @@ pub struct OutputListOfUser {
     pub filter: Option<std::collections::HashMap<String, Value>>,
     pub list: Option<Vec<Value>>,
     pub pagination: Option<std::collections::HashMap<String, Value>>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
     pub sorting: Option<std::collections::HashMap<String, Value>>,
 }
 
@@ -346,28 +340,28 @@ pub struct OutputListOfUserCreateData {
     pub filter: Option<std::collections::HashMap<String, Value>>,
     pub list: Option<Vec<Value>>,
     pub pagination: Option<std::collections::HashMap<String, Value>>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
     pub sorting: Option<std::collections::HashMap<String, Value>>,
 }
 
 /// OutputProvideCredential is the typed data model for the output_provide_credential entity.
 #[derive(Debug, Clone)]
 pub struct OutputProvideCredential {
-    pub mandator_name: String,
+    pub mandatorname: String,
     pub password: Option<String>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
     pub username: Option<String>,
 }
 
 /// OutputProvideCredentialCreateData is the typed request payload for OutputProvideCredential.create.
 #[derive(Debug, Clone)]
 pub struct OutputProvideCredentialCreateData {
-    pub mandator_name: String,
+    pub mandatorname: String,
     pub password: Option<String>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
     pub username: Option<String>,
 }
 
@@ -375,21 +369,21 @@ pub struct OutputProvideCredentialCreateData {
 #[derive(Debug, Clone)]
 pub struct OutputRegisterUser {
     pub city: Option<String>,
-    pub consumer_id: Option<String>,
-    pub consumer_language: Option<String>,
+    pub consumerid: Option<String>,
+    pub consumerlanguage: Option<String>,
     pub country: Option<String>,
-    pub date_of_birth: Option<String>,
-    pub driver_licence_number: Option<String>,
+    pub dateofbirth: Option<String>,
+    pub driverlicencenumber: Option<String>,
     pub email: String,
-    pub first_name: Option<String>,
-    pub identification_number: Option<String>,
-    pub last_name: Option<String>,
+    pub firstname: Option<String>,
+    pub identificationnumber: Option<String>,
+    pub lastname: Option<String>,
     pub login: Option<String>,
     pub module: Option<String>,
-    pub passport_number: Option<String>,
+    pub passportnumber: Option<String>,
     pub phone: Option<String>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
     pub salutation: Option<String>,
     pub state: Option<String>,
     pub street1: Option<String>,
@@ -401,21 +395,21 @@ pub struct OutputRegisterUser {
 #[derive(Debug, Clone)]
 pub struct OutputRegisterUserCreateData {
     pub city: Option<String>,
-    pub consumer_id: Option<String>,
-    pub consumer_language: Option<String>,
+    pub consumerid: Option<String>,
+    pub consumerlanguage: Option<String>,
     pub country: Option<String>,
-    pub date_of_birth: Option<String>,
-    pub driver_licence_number: Option<String>,
+    pub dateofbirth: Option<String>,
+    pub driverlicencenumber: Option<String>,
     pub email: String,
-    pub first_name: Option<String>,
-    pub identification_number: Option<String>,
-    pub last_name: Option<String>,
+    pub firstname: Option<String>,
+    pub identificationnumber: Option<String>,
+    pub lastname: Option<String>,
     pub login: Option<String>,
     pub module: Option<String>,
-    pub passport_number: Option<String>,
+    pub passportnumber: Option<String>,
     pub phone: Option<String>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
     pub salutation: Option<String>,
     pub state: Option<String>,
     pub street1: Option<String>,
@@ -426,82 +420,82 @@ pub struct OutputRegisterUserCreateData {
 /// OutputRemoveRole is the typed data model for the output_remove_role entity.
 #[derive(Debug, Clone)]
 pub struct OutputRemoveRole {
-    pub consumer_uuid: Option<String>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
-    pub role: Option<Vec<Value>>,
+    pub consumeruuid: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
+    pub roles: Option<Vec<Value>>,
 }
 
 /// OutputRemoveRoleCreateData is the typed request payload for OutputRemoveRole.create.
 #[derive(Debug, Clone)]
 pub struct OutputRemoveRoleCreateData {
-    pub consumer_uuid: Option<String>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
-    pub role: Option<Vec<Value>>,
+    pub consumeruuid: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
+    pub roles: Option<Vec<Value>>,
 }
 
 /// OutputResendLink is the typed data model for the output_resend_link entity.
 #[derive(Debug, Clone)]
 pub struct OutputResendLink {
-    pub business_registration_number: Option<String>,
-    pub consumer_uuid: String,
-    pub email_confirmation_code: Option<String>,
-    pub phone_number: Option<String>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub businessregistrationnumber: Option<String>,
+    pub consumeruuid: String,
+    pub emailconfirmationcode: Option<String>,
+    pub phonenumber: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
 }
 
 /// OutputResendLinkCreateData is the typed request payload for OutputResendLink.create.
 #[derive(Debug, Clone)]
 pub struct OutputResendLinkCreateData {
-    pub business_registration_number: Option<String>,
-    pub consumer_uuid: String,
-    pub email_confirmation_code: Option<String>,
-    pub phone_number: Option<String>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub businessregistrationnumber: Option<String>,
+    pub consumeruuid: String,
+    pub emailconfirmationcode: Option<String>,
+    pub phonenumber: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
 }
 
 /// OutputResetPassword is the typed data model for the output_reset_password entity.
 #[derive(Debug, Clone)]
 pub struct OutputResetPassword {
-    pub consumer_uuid: Option<String>,
-    pub phone_number: Option<String>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub consumeruuid: Option<String>,
+    pub phonenumber: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
 }
 
 /// OutputResetPasswordCreateData is the typed request payload for OutputResetPassword.create.
 #[derive(Debug, Clone)]
 pub struct OutputResetPasswordCreateData {
-    pub consumer_uuid: Option<String>,
-    pub phone_number: Option<String>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub consumeruuid: Option<String>,
+    pub phonenumber: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
 }
 
 /// OutputUpdateConsumer is the typed data model for the output_update_consumer entity.
 #[derive(Debug, Clone)]
 pub struct OutputUpdateConsumer {
     pub city: Option<String>,
-    pub consumer_uuid: String,
+    pub consumeruuid: String,
     pub consumerlanguage: Option<String>,
     pub country: Option<String>,
-    pub date_of_birth: Option<String>,
+    pub dateofbirth: Option<String>,
     pub datetime_created: Option<String>,
-    pub driver_licence_number: Option<String>,
+    pub driverlicencenumber: Option<String>,
     pub email: Option<String>,
-    pub first_name: Option<String>,
-    pub identification_number: Option<String>,
-    pub kyc_passed: Option<bool>,
-    pub last_name: Option<String>,
+    pub firstname: Option<String>,
+    pub identificationnumber: Option<String>,
+    pub kycpassed: Option<bool>,
+    pub lastname: Option<String>,
     pub nationality: Option<String>,
-    pub passport_number: Option<String>,
-    pub phone_number: Option<String>,
-    pub place_of_birth: Option<String>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub passportnumber: Option<String>,
+    pub phonenumber: Option<String>,
+    pub placeofbirth: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
     pub state: Option<String>,
     pub street1: Option<String>,
     pub street2: Option<String>,
@@ -513,23 +507,23 @@ pub struct OutputUpdateConsumer {
 #[derive(Debug, Clone)]
 pub struct OutputUpdateConsumerCreateData {
     pub city: Option<String>,
-    pub consumer_uuid: String,
+    pub consumeruuid: String,
     pub consumerlanguage: Option<String>,
     pub country: Option<String>,
-    pub date_of_birth: Option<String>,
+    pub dateofbirth: Option<String>,
     pub datetime_created: Option<String>,
-    pub driver_licence_number: Option<String>,
+    pub driverlicencenumber: Option<String>,
     pub email: Option<String>,
-    pub first_name: Option<String>,
-    pub identification_number: Option<String>,
-    pub kyc_passed: Option<bool>,
-    pub last_name: Option<String>,
+    pub firstname: Option<String>,
+    pub identificationnumber: Option<String>,
+    pub kycpassed: Option<bool>,
+    pub lastname: Option<String>,
     pub nationality: Option<String>,
-    pub passport_number: Option<String>,
-    pub phone_number: Option<String>,
-    pub place_of_birth: Option<String>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub passportnumber: Option<String>,
+    pub phonenumber: Option<String>,
+    pub placeofbirth: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
     pub state: Option<String>,
     pub street1: Option<String>,
     pub street2: Option<String>,
@@ -540,40 +534,40 @@ pub struct OutputUpdateConsumerCreateData {
 /// OutputUpdateProfile is the typed data model for the output_update_profile entity.
 #[derive(Debug, Clone)]
 pub struct OutputUpdateProfile {
-    pub consumer_language: Option<String>,
+    pub consumerlanguage: Option<String>,
     pub email: Option<String>,
-    pub first_name: Option<String>,
-    pub last_name: Option<String>,
-    pub phone_number: Option<String>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub firstname: Option<String>,
+    pub lastname: Option<String>,
+    pub phonenumber: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
 }
 
 /// OutputUpdateProfileCreateData is the typed request payload for OutputUpdateProfile.create.
 #[derive(Debug, Clone)]
 pub struct OutputUpdateProfileCreateData {
-    pub consumer_language: Option<String>,
+    pub consumerlanguage: Option<String>,
     pub email: Option<String>,
-    pub first_name: Option<String>,
-    pub last_name: Option<String>,
-    pub phone_number: Option<String>,
-    pub response_code: Option<i64>,
-    pub response_message: Option<String>,
+    pub firstname: Option<String>,
+    pub lastname: Option<String>,
+    pub phonenumber: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
 }
 
 /// Version is the typed data model for the version entity.
 #[derive(Debug, Clone)]
 pub struct Version {
-    pub app_name: Option<String>,
-    pub build_date: Option<String>,
+    pub appname: Option<String>,
+    pub builddate: Option<String>,
     pub version: Option<String>,
 }
 
 /// VersionLoadMatch is the typed request payload for Version.load.
 #[derive(Debug, Clone)]
 pub struct VersionLoadMatch {
-    pub app_name: Option<String>,
-    pub build_date: Option<String>,
+    pub appname: Option<String>,
+    pub builddate: Option<String>,
     pub version: Option<String>,
 }
 

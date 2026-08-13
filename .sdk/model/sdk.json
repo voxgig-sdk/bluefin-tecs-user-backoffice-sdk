@@ -5,6 +5,10 @@
       "desc": ""
     },
     "kit": {
+      "author": {
+        "name": "",
+        "url": ""
+      },
       "config": {
         "docs_order": [
           "ts",
@@ -18,6 +22,7 @@
           "content-type": "application/json"
         }
       },
+      "contributor": {},
       "entity": {
         "output_activate_digital_module": {
           "active": true,
@@ -27,13 +32,13 @@
           "fields": [
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": false,
               "type": "`$STRING`"
             }
@@ -58,6 +63,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/activateDigitalModule",
                   "parts": [
@@ -88,25 +94,25 @@
           "fields": [
             {
               "active": true,
-              "name": "client_secret",
+              "name": "clientSecret",
               "req": true,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "notification_email",
+              "name": "notificationEmail",
               "req": true,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": false,
               "type": "`$STRING`"
             }
@@ -131,6 +137,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/activateMerchantPortalModule",
                   "parts": [
@@ -161,13 +168,13 @@
           "fields": [
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": false,
               "type": "`$STRING`"
             }
@@ -192,6 +199,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/activateAppStoreModule",
                   "parts": [
@@ -222,19 +230,19 @@
           "fields": [
             {
               "active": true,
-              "name": "consumer_uuid",
+              "name": "consumerUUID",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": false,
               "type": "`$STRING`"
             }
@@ -259,6 +267,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/activateUser",
                   "parts": [
@@ -289,25 +298,25 @@
           "fields": [
             {
               "active": true,
-              "name": "consumer_uuid",
+              "name": "consumerUUID",
               "req": true,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "role",
+              "name": "roles",
               "req": true,
               "type": "`$ARRAY`"
             }
@@ -332,6 +341,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/assignRoles",
                   "parts": [
@@ -362,25 +372,25 @@
           "fields": [
             {
               "active": true,
-              "name": "content_as_base64",
+              "name": "contentAsBase64",
               "req": true,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "mime_type",
+              "name": "mimeType",
               "req": true,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": false,
               "type": "`$STRING`"
             }
@@ -405,6 +415,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/changeLogo",
                   "parts": [
@@ -447,19 +458,25 @@
             },
             {
               "active": true,
-              "name": "date_of_birth",
+              "name": "dateOfBirth",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "description",
-              "req": true,
+              "op": {
+                "create": {
+                  "req": true,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "drivers_license_number",
+              "name": "driversLicenseNumber",
               "req": false,
               "type": "`$STRING`"
             },
@@ -471,19 +488,19 @@
             },
             {
               "active": true,
-              "name": "first_name",
+              "name": "firstName",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "identification_number",
+              "name": "identificationNumber",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "last_name",
+              "name": "lastName",
               "req": false,
               "type": "`$STRING`"
             },
@@ -495,19 +512,19 @@
             },
             {
               "active": true,
-              "name": "mandator",
-              "req": false,
-              "type": "`$OBJECT`"
-            },
-            {
-              "active": true,
               "name": "name",
-              "req": true,
+              "op": {
+                "create": {
+                  "req": true,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "passport_number",
+              "name": "passportNumber",
               "req": false,
               "type": "`$STRING`"
             },
@@ -515,18 +532,6 @@
               "active": true,
               "name": "phone",
               "req": true,
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "response_code",
-              "req": false,
-              "type": "`$INTEGER`"
-            },
-            {
-              "active": true,
-              "name": "response_message",
-              "req": false,
               "type": "`$STRING`"
             },
             {
@@ -555,7 +560,7 @@
             },
             {
               "active": true,
-              "name": "zip_code",
+              "name": "zipCode",
               "req": false,
               "type": "`$STRING`"
             }
@@ -580,6 +585,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/createMandator",
                   "parts": [
@@ -610,19 +616,19 @@
           "fields": [
             {
               "active": true,
-              "name": "mandator_name",
+              "name": "mandatorName",
               "req": true,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": false,
               "type": "`$STRING`"
             }
@@ -647,6 +653,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/createServiceUser",
                   "parts": [
@@ -677,19 +684,19 @@
           "fields": [
             {
               "active": true,
-              "name": "consumer_uuid",
+              "name": "consumerUUID",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": false,
               "type": "`$STRING`"
             }
@@ -714,6 +721,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/deactivateUser",
                   "parts": [
@@ -744,25 +752,25 @@
           "fields": [
             {
               "active": true,
-              "name": "case_id",
+              "name": "caseID",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "encoded_data_base64",
+              "name": "encodedDataBase64",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": false,
               "type": "`$STRING`"
             }
@@ -787,6 +795,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/getKycDocument",
                   "parts": [
@@ -817,25 +826,25 @@
           "fields": [
             {
               "active": true,
-              "name": "content_as_base64",
+              "name": "contentAsBase64",
               "req": true,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "mime_type",
+              "name": "mimeType",
               "req": true,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": false,
               "type": "`$STRING`"
             }
@@ -860,6 +869,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/getLogo",
                   "parts": [
@@ -890,19 +900,19 @@
           "fields": [
             {
               "active": true,
-              "name": "available_role",
+              "name": "availableRoles",
               "req": false,
               "type": "`$ARRAY`"
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": false,
               "type": "`$STRING`"
             }
@@ -927,6 +937,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/listOfAvailableRoles",
                   "parts": [
@@ -975,13 +986,13 @@
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": false,
               "type": "`$STRING`"
             },
@@ -1012,6 +1023,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/listOfMandators",
                   "parts": [
@@ -1054,13 +1066,13 @@
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": false,
               "type": "`$STRING`"
             }
@@ -1085,6 +1097,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/listOfModules",
                   "parts": [
@@ -1121,7 +1134,7 @@
             },
             {
               "active": true,
-              "name": "group_role",
+              "name": "groupRoles",
               "req": false,
               "type": "`$ARRAY`"
             },
@@ -1133,13 +1146,13 @@
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": false,
               "type": "`$STRING`"
             },
@@ -1170,6 +1183,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/listOfRoleGroups",
                   "parts": [
@@ -1218,13 +1232,13 @@
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": false,
               "type": "`$STRING`"
             },
@@ -1255,6 +1269,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/listOfTransactionsHistory",
                   "parts": [
@@ -1303,13 +1318,13 @@
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": false,
               "type": "`$STRING`"
             },
@@ -1340,6 +1355,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/listOfUsers",
                   "parts": [
@@ -1370,7 +1386,7 @@
           "fields": [
             {
               "active": true,
-              "name": "mandator_name",
+              "name": "mandatorName",
               "req": true,
               "type": "`$STRING`"
             },
@@ -1382,13 +1398,13 @@
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": false,
               "type": "`$STRING`"
             },
@@ -1419,6 +1435,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/provideCredentials",
                   "parts": [
@@ -1455,13 +1472,13 @@
             },
             {
               "active": true,
-              "name": "consumer_id",
+              "name": "consumerId",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "consumer_language",
+              "name": "consumerLanguage",
               "req": false,
               "type": "`$STRING`"
             },
@@ -1473,13 +1490,13 @@
             },
             {
               "active": true,
-              "name": "date_of_birth",
+              "name": "dateOfBirth",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "driver_licence_number",
+              "name": "driverLicenceNumber",
               "req": false,
               "type": "`$STRING`"
             },
@@ -1491,19 +1508,19 @@
             },
             {
               "active": true,
-              "name": "first_name",
+              "name": "firstName",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "identification_number",
+              "name": "identificationNumber",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "last_name",
+              "name": "lastName",
               "req": false,
               "type": "`$STRING`"
             },
@@ -1521,7 +1538,7 @@
             },
             {
               "active": true,
-              "name": "passport_number",
+              "name": "passportNumber",
               "req": false,
               "type": "`$STRING`"
             },
@@ -1533,13 +1550,13 @@
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": false,
               "type": "`$STRING`"
             },
@@ -1594,6 +1611,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/registerUser",
                   "parts": [
@@ -1624,25 +1642,25 @@
           "fields": [
             {
               "active": true,
-              "name": "consumer_uuid",
+              "name": "consumerUUID",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "role",
+              "name": "roles",
               "req": false,
               "type": "`$ARRAY`"
             }
@@ -1667,6 +1685,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/removeRoles",
                   "parts": [
@@ -1697,37 +1716,37 @@
           "fields": [
             {
               "active": true,
-              "name": "business_registration_number",
+              "name": "businessRegistrationNumber",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "consumer_uuid",
+              "name": "consumerUUID",
               "req": true,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "email_confirmation_code",
+              "name": "emailConfirmationCode",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "phone_number",
+              "name": "phoneNumber",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": false,
               "type": "`$STRING`"
             }
@@ -1752,6 +1771,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/resendLink",
                   "parts": [
@@ -1782,25 +1802,25 @@
           "fields": [
             {
               "active": true,
-              "name": "consumer_uuid",
+              "name": "consumerUuid",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "phone_number",
+              "name": "phoneNumber",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": false,
               "type": "`$STRING`"
             }
@@ -1825,6 +1845,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/resetPassword",
                   "parts": [
@@ -1861,7 +1882,7 @@
             },
             {
               "active": true,
-              "name": "consumer_uuid",
+              "name": "consumerUuid",
               "req": true,
               "type": "`$STRING`"
             },
@@ -1879,7 +1900,7 @@
             },
             {
               "active": true,
-              "name": "date_of_birth",
+              "name": "dateOfBirth",
               "req": false,
               "type": "`$STRING`"
             },
@@ -1891,7 +1912,7 @@
             },
             {
               "active": true,
-              "name": "driver_licence_number",
+              "name": "driverLicenceNumber",
               "req": false,
               "type": "`$STRING`"
             },
@@ -1903,25 +1924,25 @@
             },
             {
               "active": true,
-              "name": "first_name",
+              "name": "firstName",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "identification_number",
+              "name": "identificationNumber",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "kyc_passed",
+              "name": "kycPassed",
               "req": false,
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
-              "name": "last_name",
+              "name": "lastName",
               "req": false,
               "type": "`$STRING`"
             },
@@ -1933,31 +1954,31 @@
             },
             {
               "active": true,
-              "name": "passport_number",
+              "name": "passportNumber",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "phone_number",
+              "name": "phoneNumber",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "place_of_birth",
+              "name": "placeOfBirth",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": false,
               "type": "`$STRING`"
             },
@@ -2012,6 +2033,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/updateConsumer",
                   "parts": [
@@ -2042,7 +2064,7 @@
           "fields": [
             {
               "active": true,
-              "name": "consumer_language",
+              "name": "consumerLanguage",
               "req": false,
               "type": "`$STRING`"
             },
@@ -2054,31 +2076,31 @@
             },
             {
               "active": true,
-              "name": "first_name",
+              "name": "firstName",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "last_name",
+              "name": "lastName",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "phone_number",
+              "name": "phoneNumber",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "response_code",
+              "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "response_message",
+              "name": "responseMessage",
               "req": false,
               "type": "`$STRING`"
             }
@@ -2103,6 +2125,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "POST",
                   "orig": "/updateProfile",
                   "parts": [
@@ -2133,13 +2156,13 @@
           "fields": [
             {
               "active": true,
-              "name": "app_name",
+              "name": "appName",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "build_date",
+              "name": "buildDate",
               "req": false,
               "type": "`$STRING`"
             },
@@ -2159,6 +2182,7 @@
                 {
                   "active": true,
                   "args": {},
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/version",
                   "parts": [
@@ -2895,18 +2919,42 @@
         "website": "https://test.tecs.at"
       },
       "option": {},
+      "repo": {
+        "host": "github.com",
+        "path": ""
+      },
       "target": {
         "c": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "c",
+          "feature": {
+            "fullset": [
+              "tests/feature_test.c",
+              "tests/sdk_pipeline_test.c"
+            ],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-user-backoffice"
+            "goversion": "",
+            "name": "bluefin-tecs-user-backoffice",
+            "package": "",
+            "path": ""
           },
           "name": "c",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -2928,22 +2976,40 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "C"
         },
         "clojure": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": ";"
           },
           "deps": {},
           "ext": "clj",
+          "feature": {
+            "fullset": [],
+            "trim": false
+          },
           "module": {
-            "name": "bluefin-tecs-user-backoffice"
+            "goversion": "",
+            "name": "bluefin-tecs-user-backoffice",
+            "package": "",
+            "path": ""
           },
           "name": "clojure",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -2965,22 +3031,42 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Clojure"
         },
         "cpp": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "hpp",
+          "feature": {
+            "fullset": [
+              "test/feature_test.cpp"
+            ],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-user-backoffice"
+            "goversion": "",
+            "name": "bluefin-tecs-user-backoffice",
+            "package": "",
+            "path": ""
           },
           "name": "cpp",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3002,23 +3088,43 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "C++"
         },
         "csharp": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "cs",
+          "feature": {
+            "fullset": [
+              "test/FeatureTest.cs"
+            ],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-user-backoffice"
+            "goversion": "",
+            "name": "bluefin-tecs-user-backoffice",
+            "package": "",
+            "path": ""
           },
           "name": "csharp",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3040,22 +3146,40 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "C#"
         },
         "dart": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "dart",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-user-backoffice"
+            "goversion": "",
+            "name": "bluefin-tecs-user-backoffice",
+            "package": "",
+            "path": ""
           },
           "name": "dart",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3077,22 +3201,40 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Dart"
         },
         "elixir": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "#"
           },
           "deps": {},
           "ext": "ex",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-user-backoffice"
+            "goversion": "",
+            "name": "bluefin-tecs-user-backoffice",
+            "package": "",
+            "path": ""
           },
           "name": "elixir",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3114,22 +3256,42 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Elixir"
         },
         "go": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "go",
+          "feature": {
+            "fullset": [
+              "test/feature_test.go"
+            ],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-user-backoffice"
+            "goversion": "",
+            "name": "bluefin-tecs-user-backoffice",
+            "package": "",
+            "path": ""
           },
           "name": "go",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3151,22 +3313,40 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Golang"
         },
         "go-cli": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "go",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-user-backoffice"
+            "goversion": "",
+            "name": "bluefin-tecs-user-backoffice",
+            "package": "",
+            "path": ""
           },
           "name": "go-cli",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "phase": {
             "agentguide": {
               "active": false
@@ -3205,21 +3385,39 @@
                 "recipe": "github"
               },
               "via": "root"
-            }
+            },
+            "version": "0.0.1"
           },
           "title": "Go CLI"
         },
         "go-mcp": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "go",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-user-backoffice"
+            "goversion": "",
+            "name": "bluefin-tecs-user-backoffice",
+            "package": "",
+            "path": ""
           },
           "name": "go-mcp",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "phase": {
             "agentguide": {
               "active": false
@@ -3258,21 +3456,39 @@
                 "recipe": "github"
               },
               "via": "root"
-            }
+            },
+            "version": "0.0.1"
           },
           "title": "Go MCP server"
         },
         "haskell": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "--"
           },
           "deps": {},
           "ext": "hs",
+          "feature": {
+            "fullset": [],
+            "trim": false
+          },
           "module": {
-            "name": "bluefin-tecs-user-backoffice"
+            "goversion": "",
+            "name": "bluefin-tecs-user-backoffice",
+            "package": "",
+            "path": ""
           },
           "name": "haskell",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "phase": {
             "agentguide": {
               "active": true
@@ -3311,22 +3527,42 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Haskell"
         },
         "java": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "java",
+          "feature": {
+            "fullset": [
+              "test/FeatureTest.java"
+            ],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-user-backoffice"
+            "goversion": "",
+            "name": "bluefin-tecs-user-backoffice",
+            "package": "",
+            "path": ""
           },
           "name": "java",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3348,13 +3584,18 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Java"
         },
         "js": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
@@ -3366,10 +3607,23 @@
             }
           },
           "ext": "js",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-user-backoffice"
+            "goversion": "",
+            "name": "bluefin-tecs-user-backoffice",
+            "package": "",
+            "path": ""
           },
           "name": "js",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3391,21 +3645,41 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "title": "JavaScript"
         },
         "kotlin": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "kt",
+          "feature": {
+            "fullset": [
+              "test/FeatureTest.kt"
+            ],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-user-backoffice"
+            "goversion": "",
+            "name": "bluefin-tecs-user-backoffice",
+            "package": "",
+            "path": ""
           },
           "name": "kotlin",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3427,13 +3701,18 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Kotlin"
         },
         "lua": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "--"
           },
@@ -3445,10 +3724,23 @@
             }
           },
           "ext": "lua",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-user-backoffice"
+            "goversion": "",
+            "name": "bluefin-tecs-user-backoffice",
+            "package": "",
+            "path": ""
           },
           "name": "lua",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3470,22 +3762,40 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Lua"
         },
         "ocaml": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "ml",
+          "feature": {
+            "fullset": [],
+            "trim": false
+          },
           "module": {
-            "name": "bluefin-tecs-user-backoffice"
+            "goversion": "",
+            "name": "bluefin-tecs-user-backoffice",
+            "package": "",
+            "path": ""
           },
           "name": "ocaml",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3507,22 +3817,40 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "OCaml"
         },
         "perl": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "#"
           },
           "deps": {},
           "ext": "pl",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-user-backoffice"
+            "goversion": "",
+            "name": "bluefin-tecs-user-backoffice",
+            "package": "",
+            "path": ""
           },
           "name": "perl",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3544,22 +3872,40 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Perl"
         },
         "php": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "php",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-user-backoffice"
+            "goversion": "",
+            "name": "bluefin-tecs-user-backoffice",
+            "package": "",
+            "path": ""
           },
           "name": "php",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3581,13 +3927,18 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "PHP"
         },
         "py": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "#"
           },
@@ -3599,10 +3950,23 @@
             }
           },
           "ext": "py",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-user-backoffice"
+            "goversion": "",
+            "name": "bluefin-tecs-user-backoffice",
+            "package": "",
+            "path": ""
           },
           "name": "py",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3624,13 +3988,18 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Python"
         },
         "rb": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "#"
           },
@@ -3647,10 +4016,23 @@
             }
           },
           "ext": "rb",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-user-backoffice"
+            "goversion": "",
+            "name": "bluefin-tecs-user-backoffice",
+            "package": "",
+            "path": ""
           },
           "name": "rb",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3672,13 +4054,18 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Ruby"
         },
         "rust": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
@@ -3690,10 +4077,25 @@
             }
           },
           "ext": "rs",
+          "feature": {
+            "fullset": [
+              "tests/feature_test.rs"
+            ],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-user-backoffice"
+            "goversion": "",
+            "name": "bluefin-tecs-user-backoffice",
+            "package": "",
+            "path": ""
           },
           "name": "rust",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3715,22 +4117,40 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Rust"
         },
         "scala": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "scala",
+          "feature": {
+            "fullset": [],
+            "trim": false
+          },
           "module": {
-            "name": "bluefin-tecs-user-backoffice"
+            "goversion": "",
+            "name": "bluefin-tecs-user-backoffice",
+            "package": "",
+            "path": ""
           },
           "name": "scala",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3752,23 +4172,43 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Scala"
         },
         "swift": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "swift",
+          "feature": {
+            "fullset": [
+              "Tests/ProjectNameSDKTests/FeatureTest.swift"
+            ],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-user-backoffice"
+            "goversion": "",
+            "name": "bluefin-tecs-user-backoffice",
+            "package": "",
+            "path": ""
           },
           "name": "swift",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3790,13 +4230,18 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Swift"
         },
         "ts": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "//"
@@ -3819,10 +4264,23 @@
             }
           },
           "ext": "ts",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "bluefin-tecs-user-backoffice"
+            "goversion": "",
+            "name": "bluefin-tecs-user-backoffice",
+            "package": "",
+            "path": ""
           },
           "name": "ts",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3844,21 +4302,39 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "title": "TypeScript"
         },
         "zig": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "zig",
+          "feature": {
+            "fullset": [],
+            "trim": false
+          },
           "module": {
-            "name": "bluefin-tecs-user-backoffice"
+            "goversion": "",
+            "name": "bluefin-tecs-user-backoffice",
+            "package": "",
+            "path": ""
           },
           "name": "zig",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -3880,10 +4356,18 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Zig"
+        }
+      },
+      "test": {
+        "live": {
+          "app": false,
+          "base": "",
+          "strict": false
         }
       }
     }

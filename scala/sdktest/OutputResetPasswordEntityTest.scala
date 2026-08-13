@@ -35,7 +35,7 @@ object OutputResetPasswordEntityTest {
       var outputResetPasswordRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.output_reset_password"), "output_reset_password_ref01"))
       val outputResetPasswordRef01DataResult = outputResetPasswordRef01Ent.create(outputResetPasswordRef01Data, null)
-      outputResetPasswordRef01Data = Helpers.toMapAny(outputResetPasswordRef01DataResult)
+      outputResetPasswordRef01Data = Helpers.toMapAny(outputResetPasswordRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("output_reset_password.create.map", outputResetPasswordRef01Data != null, "expected create result to be a map")
     }
   }

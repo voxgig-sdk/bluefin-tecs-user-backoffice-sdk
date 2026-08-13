@@ -184,8 +184,8 @@ output_activate_digital_module = client.OutputActivateDigitalModule()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
 
 ### Operations
 
@@ -237,10 +237,10 @@ output_activate_portal_module = client.OutputActivatePortalModule()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `str` | Yes |  |
-| `notification_email` | `str` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
+| `clientSecret` | `str` | Yes |  |
+| `notificationEmail` | `str` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
 
 ### Operations
 
@@ -250,8 +250,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.OutputActivatePortalModule().create({
-    "client_secret": "example_client_secret",  # str
-    "notification_email": "example_notification_email",  # str
+    "clientSecret": "example_clientSecret",  # str
+    "notificationEmail": "example_notificationEmail",  # str
 })
 ```
 
@@ -294,8 +294,8 @@ output_activate_store_module = client.OutputActivateStoreModule()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
 
 ### Operations
 
@@ -347,9 +347,9 @@ output_activate_user = client.OutputActivateUser()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `str` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
+| `consumerUUID` | `str` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
 
 ### Operations
 
@@ -401,10 +401,10 @@ output_assign_role = client.OutputAssignRole()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `str` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `role` | `list` | Yes |  |
+| `consumerUUID` | `str` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `roles` | `list` | Yes |  |
 
 ### Operations
 
@@ -414,8 +414,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.OutputAssignRole().create({
-    "consumer_uuid": "example_consumer_uuid",  # str
-    "role": [],  # list
+    "consumerUUID": "example_consumerUUID",  # str
+    "roles": [],  # list
 })
 ```
 
@@ -458,10 +458,10 @@ output_change_logo = client.OutputChangeLogo()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `str` | Yes |  |
-| `mime_type` | `str` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
+| `contentAsBase64` | `str` | Yes |  |
+| `mimeType` | `str` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
 
 ### Operations
 
@@ -471,8 +471,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.OutputChangeLogo().create({
-    "content_as_base64": "example_content_as_base64",  # str
-    "mime_type": "example_mime_type",  # str
+    "contentAsBase64": "example_contentAsBase64",  # str
+    "mimeType": "example_mimeType",  # str
 })
 ```
 
@@ -517,25 +517,45 @@ output_create_mandator = client.OutputCreateMandator()
 | --- | --- | --- | --- |
 | `city` | `str` | No |  |
 | `country` | `str` | No |  |
-| `date_of_birth` | `str` | No |  |
-| `description` | `str` | Yes |  |
-| `drivers_license_number` | `str` | No |  |
+| `dateOfBirth` | `str` | No |  |
+| `description` | `str` | No |  |
+| `driversLicenseNumber` | `str` | No |  |
 | `email` | `str` | Yes |  |
-| `first_name` | `str` | No |  |
-| `identification_number` | `str` | No |  |
-| `last_name` | `str` | No |  |
+| `firstName` | `str` | No |  |
+| `identificationNumber` | `str` | No |  |
+| `lastName` | `str` | No |  |
 | `login` | `str` | Yes |  |
-| `mandator` | `dict` | No |  |
-| `name` | `str` | Yes |  |
-| `passport_number` | `str` | No |  |
+| `name` | `str` | No |  |
+| `passportNumber` | `str` | No |  |
 | `phone` | `str` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
 | `salutation` | `str` | No |  |
 | `state` | `str` | No |  |
 | `street1` | `str` | No |  |
 | `street2` | `str` | No |  |
-| `zip_code` | `str` | No |  |
+| `zipCode` | `str` | No |  |
+
+### Field Usage by Operation
+
+| Field | create |
+| --- | --- |
+| `city` | - |
+| `country` | - |
+| `dateOfBirth` | - |
+| `description` | Yes |
+| `driversLicenseNumber` | - |
+| `email` | - |
+| `firstName` | - |
+| `identificationNumber` | - |
+| `lastName` | - |
+| `login` | - |
+| `name` | Yes |
+| `passportNumber` | - |
+| `phone` | - |
+| `salutation` | - |
+| `state` | - |
+| `street1` | - |
+| `street2` | - |
+| `zipCode` | - |
 
 ### Operations
 
@@ -545,10 +565,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.OutputCreateMandator().create({
-    "description": "example_description",  # str
     "email": "example_email",  # str
     "login": "example_login",  # str
-    "name": "example_name",  # str
     "phone": "example_phone",  # str
 })
 ```
@@ -592,9 +610,9 @@ output_create_service_user = client.OutputCreateServiceUser()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `str` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
+| `mandatorName` | `str` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
 
 ### Operations
 
@@ -604,7 +622,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.OutputCreateServiceUser().create({
-    "mandator_name": "example_mandator_name",  # str
+    "mandatorName": "example_mandatorName",  # str
 })
 ```
 
@@ -647,9 +665,9 @@ output_deactivate_user = client.OutputDeactivateUser()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `str` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
+| `consumerUUID` | `str` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
 
 ### Operations
 
@@ -701,10 +719,10 @@ output_get_kyc_document = client.OutputGetKycDocument()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `case_id` | `str` | No |  |
-| `encoded_data_base64` | `str` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
+| `caseID` | `str` | No |  |
+| `encodedDataBase64` | `str` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
 
 ### Operations
 
@@ -756,10 +774,10 @@ output_get_logo = client.OutputGetLogo()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `str` | Yes |  |
-| `mime_type` | `str` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
+| `contentAsBase64` | `str` | Yes |  |
+| `mimeType` | `str` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
 
 ### Operations
 
@@ -810,9 +828,9 @@ output_list_of_available_role = client.OutputListOfAvailableRole()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `available_role` | `list` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
+| `availableRoles` | `list` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
 
 ### Operations
 
@@ -867,8 +885,8 @@ output_list_of_mandator = client.OutputListOfMandator()
 | `filter` | `dict` | No |  |
 | `list` | `list` | No |  |
 | `pagination` | `dict` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
 | `sorting` | `dict` | No |  |
 
 ### Operations
@@ -923,8 +941,8 @@ output_list_of_module = client.OutputListOfModule()
 | --- | --- | --- | --- |
 | `list` | `list` | No |  |
 | `pagination` | `dict` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
 
 ### Operations
 
@@ -977,10 +995,10 @@ output_list_of_role_group = client.OutputListOfRoleGroup()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `filter` | `dict` | No |  |
-| `group_role` | `list` | No |  |
+| `groupRoles` | `list` | No |  |
 | `pagination` | `dict` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
 | `sorting` | `dict` | No |  |
 
 ### Operations
@@ -1036,8 +1054,8 @@ output_list_of_transactions_history = client.OutputListOfTransactionsHistory()
 | `filter` | `dict` | No |  |
 | `list` | `list` | No |  |
 | `pagination` | `dict` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
 | `sorting` | `dict` | No |  |
 
 ### Operations
@@ -1093,8 +1111,8 @@ output_list_of_user = client.OutputListOfUser()
 | `filter` | `dict` | No |  |
 | `list` | `list` | No |  |
 | `pagination` | `dict` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
 | `sorting` | `dict` | No |  |
 
 ### Operations
@@ -1147,10 +1165,10 @@ output_provide_credential = client.OutputProvideCredential()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `str` | Yes |  |
+| `mandatorName` | `str` | Yes |  |
 | `password` | `str` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
 | `username` | `str` | No |  |
 
 ### Operations
@@ -1161,7 +1179,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.OutputProvideCredential().create({
-    "mandator_name": "example_mandator_name",  # str
+    "mandatorName": "example_mandatorName",  # str
 })
 ```
 
@@ -1205,21 +1223,21 @@ output_register_user = client.OutputRegisterUser()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `str` | No |  |
-| `consumer_id` | `str` | No |  |
-| `consumer_language` | `str` | No |  |
+| `consumerId` | `str` | No |  |
+| `consumerLanguage` | `str` | No |  |
 | `country` | `str` | No |  |
-| `date_of_birth` | `str` | No |  |
-| `driver_licence_number` | `str` | No |  |
+| `dateOfBirth` | `str` | No |  |
+| `driverLicenceNumber` | `str` | No |  |
 | `email` | `str` | Yes |  |
-| `first_name` | `str` | No |  |
-| `identification_number` | `str` | No |  |
-| `last_name` | `str` | No |  |
+| `firstName` | `str` | No |  |
+| `identificationNumber` | `str` | No |  |
+| `lastName` | `str` | No |  |
 | `login` | `str` | No |  |
 | `module` | `str` | No |  |
-| `passport_number` | `str` | No |  |
+| `passportNumber` | `str` | No |  |
 | `phone` | `str` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
 | `salutation` | `str` | No |  |
 | `state` | `str` | No |  |
 | `street1` | `str` | No |  |
@@ -1277,10 +1295,10 @@ output_remove_role = client.OutputRemoveRole()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `str` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `role` | `list` | No |  |
+| `consumerUUID` | `str` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `roles` | `list` | No |  |
 
 ### Operations
 
@@ -1332,12 +1350,12 @@ output_resend_link = client.OutputResendLink()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `business_registration_number` | `str` | No |  |
-| `consumer_uuid` | `str` | Yes |  |
-| `email_confirmation_code` | `str` | No |  |
-| `phone_number` | `str` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
+| `businessRegistrationNumber` | `str` | No |  |
+| `consumerUUID` | `str` | Yes |  |
+| `emailConfirmationCode` | `str` | No |  |
+| `phoneNumber` | `str` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
 
 ### Operations
 
@@ -1347,7 +1365,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.OutputResendLink().create({
-    "consumer_uuid": "example_consumer_uuid",  # str
+    "consumerUUID": "example_consumerUUID",  # str
 })
 ```
 
@@ -1390,10 +1408,10 @@ output_reset_password = client.OutputResetPassword()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `str` | No |  |
-| `phone_number` | `str` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
+| `consumerUuid` | `str` | No |  |
+| `phoneNumber` | `str` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
 
 ### Operations
 
@@ -1446,23 +1464,23 @@ output_update_consumer = client.OutputUpdateConsumer()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `str` | No |  |
-| `consumer_uuid` | `str` | Yes |  |
+| `consumerUuid` | `str` | Yes |  |
 | `consumerlanguage` | `str` | No |  |
 | `country` | `str` | No |  |
-| `date_of_birth` | `str` | No |  |
+| `dateOfBirth` | `str` | No |  |
 | `datetime_created` | `str` | No |  |
-| `driver_licence_number` | `str` | No |  |
+| `driverLicenceNumber` | `str` | No |  |
 | `email` | `str` | No |  |
-| `first_name` | `str` | No |  |
-| `identification_number` | `str` | No |  |
-| `kyc_passed` | `bool` | No |  |
-| `last_name` | `str` | No |  |
+| `firstName` | `str` | No |  |
+| `identificationNumber` | `str` | No |  |
+| `kycPassed` | `bool` | No |  |
+| `lastName` | `str` | No |  |
 | `nationality` | `str` | No |  |
-| `passport_number` | `str` | No |  |
-| `phone_number` | `str` | No |  |
-| `place_of_birth` | `str` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
+| `passportNumber` | `str` | No |  |
+| `phoneNumber` | `str` | No |  |
+| `placeOfBirth` | `str` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
 | `state` | `str` | No |  |
 | `street1` | `str` | No |  |
 | `street2` | `str` | No |  |
@@ -1477,7 +1495,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.OutputUpdateConsumer().create({
-    "consumer_uuid": "example_consumer_uuid",  # str
+    "consumerUuid": "example_consumerUuid",  # str
 })
 ```
 
@@ -1520,13 +1538,13 @@ output_update_profile = client.OutputUpdateProfile()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_language` | `str` | No |  |
+| `consumerLanguage` | `str` | No |  |
 | `email` | `str` | No |  |
-| `first_name` | `str` | No |  |
-| `last_name` | `str` | No |  |
-| `phone_number` | `str` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
+| `firstName` | `str` | No |  |
+| `lastName` | `str` | No |  |
+| `phoneNumber` | `str` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
 
 ### Operations
 
@@ -1578,8 +1596,8 @@ version = client.Version()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `str` | No |  |
-| `build_date` | `str` | No |  |
+| `appName` | `str` | No |  |
+| `buildDate` | `str` | No |  |
 | `version` | `str` | No |  |
 
 ### Operations

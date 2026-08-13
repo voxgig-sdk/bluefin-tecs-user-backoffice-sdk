@@ -2,24 +2,24 @@
   "existing": {
     "output_assign_role": {
       "OUTPUT_ASSIGN_ROLE00": {
-        "consumer_uuid": "s28",
-        "response_code": "s29",
-        "response_message": "s2a",
-        "role": [],
+        "consumerUUID": "s28",
+        "responseCode": "s29",
+        "responseMessage": "s2a",
+        "roles": [],
         "id": "OUTPUT_ASSIGN_ROLE00"
       },
       "OUTPUT_ASSIGN_ROLE01": {
-        "consumer_uuid": "s50",
-        "response_code": "s51",
-        "response_message": "s52",
-        "role": [],
+        "consumerUUID": "s50",
+        "responseCode": "s51",
+        "responseMessage": "s52",
+        "roles": [],
         "id": "OUTPUT_ASSIGN_ROLE01"
       },
       "OUTPUT_ASSIGN_ROLE02": {
-        "consumer_uuid": "s78",
-        "response_code": "s79",
-        "response_message": "s7a",
-        "role": [],
+        "consumerUUID": "s78",
+        "responseCode": "s79",
+        "responseMessage": "s7a",
+        "roles": [],
         "id": "OUTPUT_ASSIGN_ROLE02"
       }
     }
@@ -27,10 +27,10 @@
   "new": {
     "output_assign_role": {
       "output_assign_role_ref01": {
-        "consumer_uuid": "sa0",
-        "response_code": "sa1",
-        "response_message": "sa2",
-        "role": []
+        "consumerUUID": "sa0",
+        "responseCode": "sa1",
+        "responseMessage": "sa2",
+        "roles": []
       }
     }
   }

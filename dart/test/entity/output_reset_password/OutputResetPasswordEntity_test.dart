@@ -47,7 +47,7 @@ void tests() {
       final output_reset_password_ref01_ent = client.OutputResetPassword();
       dynamic output_reset_password_ref01_data = setup['data']['new']['output_reset_password']['output_reset_password_ref01'];
 
-      output_reset_password_ref01_data = await output_reset_password_ref01_ent.create(output_reset_password_ref01_data);
+      output_reset_password_ref01_data = (await output_reset_password_ref01_ent.create(output_reset_password_ref01_data)).data();
       ok(null != output_reset_password_ref01_data);
 
 

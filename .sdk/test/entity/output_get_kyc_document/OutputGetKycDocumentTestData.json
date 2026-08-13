@@ -2,24 +2,24 @@
   "existing": {
     "output_get_kyc_document": {
       "OUTPUT_GET_KYC_DOCUMENT00": {
-        "case_id": "CASE01",
-        "encoded_data_base64": "s29",
-        "response_code": "s2a",
-        "response_message": "s2b",
+        "caseID": "s28",
+        "encodedDataBase64": "s29",
+        "responseCode": "s2a",
+        "responseMessage": "s2b",
         "id": "OUTPUT_GET_KYC_DOCUMENT00"
       },
       "OUTPUT_GET_KYC_DOCUMENT01": {
-        "case_id": "CASE01",
-        "encoded_data_base64": "s51",
-        "response_code": "s52",
-        "response_message": "s53",
+        "caseID": "s50",
+        "encodedDataBase64": "s51",
+        "responseCode": "s52",
+        "responseMessage": "s53",
         "id": "OUTPUT_GET_KYC_DOCUMENT01"
       },
       "OUTPUT_GET_KYC_DOCUMENT02": {
-        "case_id": "CASE01",
-        "encoded_data_base64": "s79",
-        "response_code": "s7a",
-        "response_message": "s7b",
+        "caseID": "s78",
+        "encodedDataBase64": "s79",
+        "responseCode": "s7a",
+        "responseMessage": "s7b",
         "id": "OUTPUT_GET_KYC_DOCUMENT02"
       }
     }
@@ -27,10 +27,10 @@
   "new": {
     "output_get_kyc_document": {
       "output_get_kyc_document_ref01": {
-        "case_id": "CASE01",
-        "encoded_data_base64": "sa1",
-        "response_code": "sa2",
-        "response_message": "sa3"
+        "caseID": "sa0",
+        "encodedDataBase64": "sa1",
+        "responseCode": "sa2",
+        "responseMessage": "sa3"
       }
     }
   }

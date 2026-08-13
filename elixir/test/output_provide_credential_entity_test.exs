@@ -31,7 +31,8 @@ defmodule BluefinTecsUserBackoffice.OutputProvideCredentialEntityTest do
   test "should create then read back" do
     sdk = BluefinTecsUserBackoffice.test(S.jm(["entity", S.jm(["output_provide_credential", S.jm([])])]))
     ent = BluefinTecsUserBackoffice.output_provide_credential(sdk)
-    made = BluefinTecsUserBackoffice.Entity.OutputProvideCredential.create(ent, S.jm(["name", "test-create"]))
+    created = BluefinTecsUserBackoffice.Entity.OutputProvideCredential.create(ent, S.jm(["name", "test-create"]))
+    made = BluefinTecsUserBackoffice.EntityBase.data_get(created)
     assert S.ismap(made)
     assert S.getprop(made, "id") != nil
   end

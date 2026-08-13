@@ -53,8 +53,8 @@ let client = BluefinTecsUserBackofficeSDK(options)
 ### 4. Create, update, and remove
 
 ```swift
-// Create — returns the bare created record (a Value)
-let created = try client.OutputActivateDigitalModule().create(VMap([("response_code", .int(1)), ("response_message", .string("example_response_message"))]), nil)
+// Create — returns the ENTITY (call data() for the record)
+let created = try client.OutputActivateDigitalModule().create(VMap([("responseCode", .int(1)), ("responseMessage", .string("example_responseMessage"))]), nil)
 
 ```
 
@@ -135,7 +135,8 @@ Create a mock client for unit testing — no server required:
 ```swift
 let client = BluefinTecsUserBackofficeSDK.testSDK(nil, nil)
 
-// Entity ops return the bare record and throw on error.
+// Entity ops return the ENTITY and throws on error;
+// call data() for the record.
 let outputGetLogo = try client.OutputGetLogo().load(nil, nil)
 // outputGetLogo holds the mock response record
 print(outputGetLogo)
@@ -256,7 +257,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `Value` map for
+Entity operations return the ENTITY (call data() for the record) (a `Value` map for
 single-entity ops, a `Value` list for `list`) and throw on error. Wrap
 calls in `do`/`catch` to handle failures.
 
@@ -278,8 +279,8 @@ On error, `ok` is `false` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -289,10 +290,10 @@ API path: `/activateDigitalModule`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `notification_email` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clientSecret` |  |
+| `notificationEmail` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -302,8 +303,8 @@ API path: `/activateMerchantPortalModule`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -313,9 +314,9 @@ API path: `/activateAppStoreModule`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -325,10 +326,10 @@ API path: `/activateUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `role` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `roles` |  |
 
 Operations: Create.
 
@@ -338,10 +339,10 @@ API path: `/assignRoles`
 
 | Field | Description |
 | --- | --- |
-| `content_as_base64` |  |
-| `mime_type` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `contentAsBase64` |  |
+| `mimeType` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -353,25 +354,22 @@ API path: `/changeLogo`
 | --- | --- |
 | `city` |  |
 | `country` |  |
-| `date_of_birth` |  |
+| `dateOfBirth` |  |
 | `description` |  |
-| `drivers_license_number` |  |
+| `driversLicenseNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `lastName` |  |
 | `login` |  |
-| `mandator` |  |
 | `name` |  |
-| `passport_number` |  |
+| `passportNumber` |  |
 | `phone` |  |
-| `response_code` |  |
-| `response_message` |  |
 | `salutation` |  |
 | `state` |  |
 | `street1` |  |
 | `street2` |  |
-| `zip_code` |  |
+| `zipCode` |  |
 
 Operations: Create.
 
@@ -381,9 +379,9 @@ API path: `/createMandator`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `mandatorName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -393,9 +391,9 @@ API path: `/createServiceUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -405,10 +403,10 @@ API path: `/deactivateUser`
 
 | Field | Description |
 | --- | --- |
-| `case_id` |  |
-| `encoded_data_base64` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `caseID` |  |
+| `encodedDataBase64` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -418,10 +416,10 @@ API path: `/getKycDocument`
 
 | Field | Description |
 | --- | --- |
-| `content_as_base64` |  |
-| `mime_type` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `contentAsBase64` |  |
+| `mimeType` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Load.
 
@@ -431,9 +429,9 @@ API path: `/getLogo`
 
 | Field | Description |
 | --- | --- |
-| `available_role` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `availableRoles` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -446,8 +444,8 @@ API path: `/listOfAvailableRoles`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -460,8 +458,8 @@ API path: `/listOfMandators`
 | --- | --- |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -472,10 +470,10 @@ API path: `/listOfModules`
 | Field | Description |
 | --- | --- |
 | `filter` |  |
-| `group_role` |  |
+| `groupRoles` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -489,8 +487,8 @@ API path: `/listOfRoleGroups`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -504,8 +502,8 @@ API path: `/listOfTransactionsHistory`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -516,10 +514,10 @@ API path: `/listOfUsers`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
+| `mandatorName` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `username` |  |
 
 Operations: Create.
@@ -531,21 +529,21 @@ API path: `/provideCredentials`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `consumer_id` |  |
-| `consumer_language` |  |
+| `consumerId` |  |
+| `consumerLanguage` |  |
 | `country` |  |
-| `date_of_birth` |  |
-| `driver_licence_number` |  |
+| `dateOfBirth` |  |
+| `driverLicenceNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `lastName` |  |
 | `login` |  |
 | `module` |  |
-| `passport_number` |  |
+| `passportNumber` |  |
 | `phone` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `salutation` |  |
 | `state` |  |
 | `street1` |  |
@@ -560,10 +558,10 @@ API path: `/registerUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `role` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `roles` |  |
 
 Operations: Create.
 
@@ -573,12 +571,12 @@ API path: `/removeRoles`
 
 | Field | Description |
 | --- | --- |
-| `business_registration_number` |  |
-| `consumer_uuid` |  |
-| `email_confirmation_code` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `businessRegistrationNumber` |  |
+| `consumerUUID` |  |
+| `emailConfirmationCode` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -588,10 +586,10 @@ API path: `/resendLink`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUuid` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -602,23 +600,23 @@ API path: `/resetPassword`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `consumer_uuid` |  |
+| `consumerUuid` |  |
 | `consumerlanguage` |  |
 | `country` |  |
-| `date_of_birth` |  |
+| `dateOfBirth` |  |
 | `datetime_created` |  |
-| `driver_licence_number` |  |
+| `driverLicenceNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `kyc_passed` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `kycPassed` |  |
+| `lastName` |  |
 | `nationality` |  |
-| `passport_number` |  |
-| `phone_number` |  |
-| `place_of_birth` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `passportNumber` |  |
+| `phoneNumber` |  |
+| `placeOfBirth` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `state` |  |
 | `street1` |  |
 | `street2` |  |
@@ -633,13 +631,13 @@ API path: `/updateConsumer`
 
 | Field | Description |
 | --- | --- |
-| `consumer_language` |  |
+| `consumerLanguage` |  |
 | `email` |  |
-| `first_name` |  |
-| `last_name` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `firstName` |  |
+| `lastName` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -649,8 +647,8 @@ API path: `/updateProfile`
 
 | Field | Description |
 | --- | --- |
-| `app_name` |  |
-| `build_date` |  |
+| `appName` |  |
+| `buildDate` |  |
 | `version` |  |
 
 Operations: Load.
@@ -676,8 +674,8 @@ Create an instance: `let outputActivateDigitalModule = client.OutputActivateDigi
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -701,17 +699,17 @@ Create an instance: `let outputActivatePortalModule = client.OutputActivatePorta
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `String` |  |
-| `notification_email` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `clientSecret` | `String` |  |
+| `notificationEmail` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let outputActivatePortalModule = try client.OutputActivatePortalModule().create(VMap([
-    ("client_secret", .string("example_client_secret")),  // String
-    ("notification_email", .string("example_notification_email"))  // String
+    ("clientSecret", .string("example_clientSecret")),  // String
+    ("notificationEmail", .string("example_notificationEmail"))  // String
 ]), nil)
 ```
 
@@ -730,8 +728,8 @@ Create an instance: `let outputActivateStoreModule = client.OutputActivateStoreM
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -755,9 +753,9 @@ Create an instance: `let outputActivateUser = client.OutputActivateUser()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `consumerUUID` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -781,17 +779,17 @@ Create an instance: `let outputAssignRole = client.OutputAssignRole()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `role` | `[Value]` |  |
+| `consumerUUID` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `roles` | `[Value]` |  |
 
 #### Example: Create
 
 ```swift
 let outputAssignRole = try client.OutputAssignRole().create(VMap([
-    ("consumer_uuid", .string("example_consumer_uuid")),  // String
-    ("role", .list([]))  // [Value]
+    ("consumerUUID", .string("example_consumerUUID")),  // String
+    ("roles", .list([]))  // [Value]
 ]), nil)
 ```
 
@@ -810,17 +808,17 @@ Create an instance: `let outputChangeLogo = client.OutputChangeLogo()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `content_as_base64` | `String` |  |
-| `mime_type` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `contentAsBase64` | `String` |  |
+| `mimeType` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let outputChangeLogo = try client.OutputChangeLogo().create(VMap([
-    ("content_as_base64", .string("example_content_as_base64")),  // String
-    ("mime_type", .string("example_mime_type"))  // String
+    ("contentAsBase64", .string("example_contentAsBase64")),  // String
+    ("mimeType", .string("example_mimeType"))  // String
 ]), nil)
 ```
 
@@ -841,34 +839,29 @@ Create an instance: `let outputCreateMandator = client.OutputCreateMandator()`
 | --- | --- | --- |
 | `city` | `String` |  |
 | `country` | `String` |  |
-| `date_of_birth` | `String` |  |
+| `dateOfBirth` | `String` |  |
 | `description` | `String` |  |
-| `drivers_license_number` | `String` |  |
+| `driversLicenseNumber` | `String` |  |
 | `email` | `String` |  |
-| `first_name` | `String` |  |
-| `identification_number` | `String` |  |
-| `last_name` | `String` |  |
+| `firstName` | `String` |  |
+| `identificationNumber` | `String` |  |
+| `lastName` | `String` |  |
 | `login` | `String` |  |
-| `mandator` | `VMap` |  |
 | `name` | `String` |  |
-| `passport_number` | `String` |  |
+| `passportNumber` | `String` |  |
 | `phone` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
 | `salutation` | `String` |  |
 | `state` | `String` |  |
 | `street1` | `String` |  |
 | `street2` | `String` |  |
-| `zip_code` | `String` |  |
+| `zipCode` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let outputCreateMandator = try client.OutputCreateMandator().create(VMap([
-    ("description", .string("example_description")),  // String
     ("email", .string("example_email")),  // String
     ("login", .string("example_login")),  // String
-    ("name", .string("example_name")),  // String
     ("phone", .string("example_phone"))  // String
 ]), nil)
 ```
@@ -888,15 +881,15 @@ Create an instance: `let outputCreateServiceUser = client.OutputCreateServiceUse
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `mandatorName` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let outputCreateServiceUser = try client.OutputCreateServiceUser().create(VMap([
-    ("mandator_name", .string("example_mandator_name"))  // String
+    ("mandatorName", .string("example_mandatorName"))  // String
 ]), nil)
 ```
 
@@ -915,9 +908,9 @@ Create an instance: `let outputDeactivateUser = client.OutputDeactivateUser()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `consumerUUID` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -941,10 +934,10 @@ Create an instance: `let outputGetKycDocument = client.OutputGetKycDocument()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `case_id` | `String` |  |
-| `encoded_data_base64` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `caseID` | `String` |  |
+| `encodedDataBase64` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -968,10 +961,10 @@ Create an instance: `let outputGetLogo = client.OutputGetLogo()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `content_as_base64` | `String` |  |
-| `mime_type` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `contentAsBase64` | `String` |  |
+| `mimeType` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Load
 
@@ -994,9 +987,9 @@ Create an instance: `let outputListOfAvailableRole = client.OutputListOfAvailabl
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `available_role` | `[Value]` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `availableRoles` | `[Value]` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -1023,8 +1016,8 @@ Create an instance: `let outputListOfMandator = client.OutputListOfMandator()`
 | `filter` | `VMap` |  |
 | `list` | `[Value]` |  |
 | `pagination` | `VMap` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 | `sorting` | `VMap` |  |
 
 #### Example: Create
@@ -1051,8 +1044,8 @@ Create an instance: `let outputListOfModule = client.OutputListOfModule()`
 | --- | --- | --- |
 | `list` | `[Value]` |  |
 | `pagination` | `VMap` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -1077,10 +1070,10 @@ Create an instance: `let outputListOfRoleGroup = client.OutputListOfRoleGroup()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `filter` | `VMap` |  |
-| `group_role` | `[Value]` |  |
+| `groupRoles` | `[Value]` |  |
 | `pagination` | `VMap` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 | `sorting` | `VMap` |  |
 
 #### Example: Create
@@ -1108,8 +1101,8 @@ Create an instance: `let outputListOfTransactionsHistory = client.OutputListOfTr
 | `filter` | `VMap` |  |
 | `list` | `[Value]` |  |
 | `pagination` | `VMap` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 | `sorting` | `VMap` |  |
 
 #### Example: Create
@@ -1137,8 +1130,8 @@ Create an instance: `let outputListOfUser = client.OutputListOfUser()`
 | `filter` | `VMap` |  |
 | `list` | `[Value]` |  |
 | `pagination` | `VMap` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 | `sorting` | `VMap` |  |
 
 #### Example: Create
@@ -1163,17 +1156,17 @@ Create an instance: `let outputProvideCredential = client.OutputProvideCredentia
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `String` |  |
+| `mandatorName` | `String` |  |
 | `password` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 | `username` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let outputProvideCredential = try client.OutputProvideCredential().create(VMap([
-    ("mandator_name", .string("example_mandator_name"))  // String
+    ("mandatorName", .string("example_mandatorName"))  // String
 ]), nil)
 ```
 
@@ -1193,21 +1186,21 @@ Create an instance: `let outputRegisterUser = client.OutputRegisterUser()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `String` |  |
-| `consumer_id` | `String` |  |
-| `consumer_language` | `String` |  |
+| `consumerId` | `String` |  |
+| `consumerLanguage` | `String` |  |
 | `country` | `String` |  |
-| `date_of_birth` | `String` |  |
-| `driver_licence_number` | `String` |  |
+| `dateOfBirth` | `String` |  |
+| `driverLicenceNumber` | `String` |  |
 | `email` | `String` |  |
-| `first_name` | `String` |  |
-| `identification_number` | `String` |  |
-| `last_name` | `String` |  |
+| `firstName` | `String` |  |
+| `identificationNumber` | `String` |  |
+| `lastName` | `String` |  |
 | `login` | `String` |  |
 | `module` | `String` |  |
-| `passport_number` | `String` |  |
+| `passportNumber` | `String` |  |
 | `phone` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 | `salutation` | `String` |  |
 | `state` | `String` |  |
 | `street1` | `String` |  |
@@ -1237,10 +1230,10 @@ Create an instance: `let outputRemoveRole = client.OutputRemoveRole()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `role` | `[Value]` |  |
+| `consumerUUID` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `roles` | `[Value]` |  |
 
 #### Example: Create
 
@@ -1264,18 +1257,18 @@ Create an instance: `let outputResendLink = client.OutputResendLink()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `business_registration_number` | `String` |  |
-| `consumer_uuid` | `String` |  |
-| `email_confirmation_code` | `String` |  |
-| `phone_number` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `businessRegistrationNumber` | `String` |  |
+| `consumerUUID` | `String` |  |
+| `emailConfirmationCode` | `String` |  |
+| `phoneNumber` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let outputResendLink = try client.OutputResendLink().create(VMap([
-    ("consumer_uuid", .string("example_consumer_uuid"))  // String
+    ("consumerUUID", .string("example_consumerUUID"))  // String
 ]), nil)
 ```
 
@@ -1294,10 +1287,10 @@ Create an instance: `let outputResetPassword = client.OutputResetPassword()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String` |  |
-| `phone_number` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `consumerUuid` | `String` |  |
+| `phoneNumber` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -1322,23 +1315,23 @@ Create an instance: `let outputUpdateConsumer = client.OutputUpdateConsumer()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `String` |  |
-| `consumer_uuid` | `String` |  |
+| `consumerUuid` | `String` |  |
 | `consumerlanguage` | `String` |  |
 | `country` | `String` |  |
-| `date_of_birth` | `String` |  |
+| `dateOfBirth` | `String` |  |
 | `datetime_created` | `String` |  |
-| `driver_licence_number` | `String` |  |
+| `driverLicenceNumber` | `String` |  |
 | `email` | `String` |  |
-| `first_name` | `String` |  |
-| `identification_number` | `String` |  |
-| `kyc_passed` | `Bool` |  |
-| `last_name` | `String` |  |
+| `firstName` | `String` |  |
+| `identificationNumber` | `String` |  |
+| `kycPassed` | `Bool` |  |
+| `lastName` | `String` |  |
 | `nationality` | `String` |  |
-| `passport_number` | `String` |  |
-| `phone_number` | `String` |  |
-| `place_of_birth` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `passportNumber` | `String` |  |
+| `phoneNumber` | `String` |  |
+| `placeOfBirth` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 | `state` | `String` |  |
 | `street1` | `String` |  |
 | `street2` | `String` |  |
@@ -1349,7 +1342,7 @@ Create an instance: `let outputUpdateConsumer = client.OutputUpdateConsumer()`
 
 ```swift
 let outputUpdateConsumer = try client.OutputUpdateConsumer().create(VMap([
-    ("consumer_uuid", .string("example_consumer_uuid"))  // String
+    ("consumerUuid", .string("example_consumerUuid"))  // String
 ]), nil)
 ```
 
@@ -1368,13 +1361,13 @@ Create an instance: `let outputUpdateProfile = client.OutputUpdateProfile()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_language` | `String` |  |
+| `consumerLanguage` | `String` |  |
 | `email` | `String` |  |
-| `first_name` | `String` |  |
-| `last_name` | `String` |  |
-| `phone_number` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `firstName` | `String` |  |
+| `lastName` | `String` |  |
+| `phoneNumber` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -1398,8 +1391,8 @@ Create an instance: `let version = client.Version()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_name` | `String` |  |
-| `build_date` | `String` |  |
+| `appName` | `String` |  |
+| `buildDate` | `String` |  |
 | `version` | `String` |  |
 
 #### Example: Load

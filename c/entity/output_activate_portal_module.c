@@ -14,6 +14,8 @@ typedef struct output_activate_portal_module_entity {
   voxgig_value* data;     // Map
   voxgig_value* mtch;     // Map
   Context* entctx;
+  // Set once a successful `remove` resolves on this instance.
+  bool deleted;
 } output_activate_portal_module_entity;
 
 typedef void (*output_activate_portal_module_postdone_fn)(output_activate_portal_module_entity* self, Context* ctx);
@@ -24,11 +26,14 @@ static const char* output_activate_portal_module_get_name(Entity* e);
 static Entity* output_activate_portal_module_make(Entity* e);
 static voxgig_value* output_activate_portal_module_data(Entity* e, voxgig_value* args);
 static voxgig_value* output_activate_portal_module_matchv(Entity* e, voxgig_value* args);
-static voxgig_value* output_activate_portal_module_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_activate_portal_module_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_activate_portal_module_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_activate_portal_module_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_activate_portal_module_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+// Ops resolve to the ENTITY (`list` to a NULL-terminated array of them).
+static Entity* output_activate_portal_module_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity** output_activate_portal_module_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity* output_activate_portal_module_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* output_activate_portal_module_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* output_activate_portal_module_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static void output_activate_portal_module_mark_deleted(Entity* e);
+static bool output_activate_portal_module_deleted(Entity* e);
 
 static Context* output_activate_portal_module_ent_ctx(output_activate_portal_module_entity* self) {
   return self->entctx;
@@ -236,13 +241,13 @@ static voxgig_value* output_activate_portal_module_matchv(Entity* e, voxgig_valu
   return voxgig_clone(self->mtch);
 }
 
-static voxgig_value* output_activate_portal_module_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* output_activate_portal_module_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("load", "output_activate_portal_module");
   return NULL;
 }
 
-static voxgig_value* output_activate_portal_module_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity** output_activate_portal_module_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("list", "output_activate_portal_module");
   return NULL;
@@ -260,7 +265,7 @@ static void output_activate_portal_module_create_postdone(output_activate_portal
   }
 }
 
-static voxgig_value* output_activate_portal_module_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
+static Entity* output_activate_portal_module_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
   output_activate_portal_module_entity* self = (output_activate_portal_module_entity*)e;
   CtxSpec cs;
   memset(&cs, 0, sizeof(cs));
@@ -270,20 +275,38 @@ static voxgig_value* output_activate_portal_module_create(Entity* e, voxgig_valu
   cs.data = self->data;
   cs.reqdata = reqdata;
   Context* ctx = make_context_util(cs, output_activate_portal_module_ent_ctx(self));
-  return output_activate_portal_module_run_op(self, ctx, output_activate_portal_module_create_postdone, err);
+  output_activate_portal_module_run_op(self, ctx, output_activate_portal_module_create_postdone, err);
+  if (*err) return NULL;
+
+  // The operation resolves to THIS entity: run_op has just absorbed the
+  // result into it, and the caller reaches the record through vt->data.
+  // See AGENTS.md "Entity operations return ENTITIES".
+
+  return e;
 }
 
 
-static voxgig_value* output_activate_portal_module_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* output_activate_portal_module_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("update", "output_activate_portal_module");
   return NULL;
 }
 
-static voxgig_value* output_activate_portal_module_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* output_activate_portal_module_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("remove", "output_activate_portal_module");
   return NULL;
+}
+
+// `remove` resolves to the entity, marked. The instance KEEPS the data it
+// held - a caller can still read what was deleted - but it is no longer a
+// live record.
+static void output_activate_portal_module_mark_deleted(Entity* e) {
+  ((output_activate_portal_module_entity*)e)->deleted = true;
+}
+
+static bool output_activate_portal_module_deleted(Entity* e) {
+  return ((output_activate_portal_module_entity*)e)->deleted;
 }
 
 static const EntityVT output_activate_portal_module_VT = {
@@ -291,6 +314,8 @@ static const EntityVT output_activate_portal_module_VT = {
   output_activate_portal_module_make,
   output_activate_portal_module_data,
   output_activate_portal_module_matchv,
+  output_activate_portal_module_mark_deleted,
+  output_activate_portal_module_deleted,
   output_activate_portal_module_load,
   output_activate_portal_module_list,
   output_activate_portal_module_create,

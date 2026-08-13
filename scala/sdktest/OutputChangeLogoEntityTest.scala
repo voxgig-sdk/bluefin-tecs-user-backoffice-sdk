@@ -35,7 +35,7 @@ object OutputChangeLogoEntityTest {
       var outputChangeLogoRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.output_change_logo"), "output_change_logo_ref01"))
       val outputChangeLogoRef01DataResult = outputChangeLogoRef01Ent.create(outputChangeLogoRef01Data, null)
-      outputChangeLogoRef01Data = Helpers.toMapAny(outputChangeLogoRef01DataResult)
+      outputChangeLogoRef01Data = Helpers.toMapAny(outputChangeLogoRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("output_change_logo.create.map", outputChangeLogoRef01Data != null, "expected create result to be a map")
     }
   }

@@ -187,8 +187,8 @@ auto output_activate_digital_module = client->output_activate_digital_module();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
 
 ### Operations
 
@@ -232,10 +232,10 @@ auto output_activate_portal_module = client->output_activate_portal_module();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `std::string` | Yes |  |
-| `notification_email` | `std::string` | Yes |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
+| `clientSecret` | `std::string` | Yes |  |
+| `notificationEmail` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
 
 ### Operations
 
@@ -245,8 +245,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->output_activate_portal_module()->create(vmap({
-    {"client_secret", Value("example_client_secret")},  // std::string
-    {"notification_email", Value("example_notification_email")},  // std::string
+    {"clientSecret", Value("example_clientSecret")},  // std::string
+    {"notificationEmail", Value("example_notificationEmail")},  // std::string
 }), Value::undef());
 ```
 
@@ -281,8 +281,8 @@ auto output_activate_store_module = client->output_activate_store_module();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
 
 ### Operations
 
@@ -326,9 +326,9 @@ auto output_activate_user = client->output_activate_user();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `std::string` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
+| `consumerUUID` | `std::string` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
 
 ### Operations
 
@@ -372,10 +372,10 @@ auto output_assign_role = client->output_assign_role();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `std::string` | Yes |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `role` | `std::vector<Value>` | Yes |  |
+| `consumerUUID` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `roles` | `std::vector<Value>` | Yes |  |
 
 ### Operations
 
@@ -385,8 +385,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->output_assign_role()->create(vmap({
-    {"consumer_uuid", Value("example_consumer_uuid")},  // std::string
-    {"role", vlist()},  // std::vector<Value>
+    {"consumerUUID", Value("example_consumerUUID")},  // std::string
+    {"roles", vlist()},  // std::vector<Value>
 }), Value::undef());
 ```
 
@@ -421,10 +421,10 @@ auto output_change_logo = client->output_change_logo();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `std::string` | Yes |  |
-| `mime_type` | `std::string` | Yes |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
+| `contentAsBase64` | `std::string` | Yes |  |
+| `mimeType` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
 
 ### Operations
 
@@ -434,8 +434,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->output_change_logo()->create(vmap({
-    {"content_as_base64", Value("example_content_as_base64")},  // std::string
-    {"mime_type", Value("example_mime_type")},  // std::string
+    {"contentAsBase64", Value("example_contentAsBase64")},  // std::string
+    {"mimeType", Value("example_mimeType")},  // std::string
 }), Value::undef());
 ```
 
@@ -472,25 +472,45 @@ auto output_create_mandator = client->output_create_mandator();
 | --- | --- | --- | --- |
 | `city` | `std::string` | No |  |
 | `country` | `std::string` | No |  |
-| `date_of_birth` | `std::string` | No |  |
-| `description` | `std::string` | Yes |  |
-| `drivers_license_number` | `std::string` | No |  |
+| `dateOfBirth` | `std::string` | No |  |
+| `description` | `std::string` | No |  |
+| `driversLicenseNumber` | `std::string` | No |  |
 | `email` | `std::string` | Yes |  |
-| `first_name` | `std::string` | No |  |
-| `identification_number` | `std::string` | No |  |
-| `last_name` | `std::string` | No |  |
+| `firstName` | `std::string` | No |  |
+| `identificationNumber` | `std::string` | No |  |
+| `lastName` | `std::string` | No |  |
 | `login` | `std::string` | Yes |  |
-| `mandator` | `std::map<std::string, Value>` | No |  |
-| `name` | `std::string` | Yes |  |
-| `passport_number` | `std::string` | No |  |
+| `name` | `std::string` | No |  |
+| `passportNumber` | `std::string` | No |  |
 | `phone` | `std::string` | Yes |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
 | `salutation` | `std::string` | No |  |
 | `state` | `std::string` | No |  |
 | `street1` | `std::string` | No |  |
 | `street2` | `std::string` | No |  |
-| `zip_code` | `std::string` | No |  |
+| `zipCode` | `std::string` | No |  |
+
+### Field Usage by Operation
+
+| Field | create |
+| --- | --- |
+| `city` | - |
+| `country` | - |
+| `dateOfBirth` | - |
+| `description` | Yes |
+| `driversLicenseNumber` | - |
+| `email` | - |
+| `firstName` | - |
+| `identificationNumber` | - |
+| `lastName` | - |
+| `login` | - |
+| `name` | Yes |
+| `passportNumber` | - |
+| `phone` | - |
+| `salutation` | - |
+| `state` | - |
+| `street1` | - |
+| `street2` | - |
+| `zipCode` | - |
 
 ### Operations
 
@@ -500,10 +520,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->output_create_mandator()->create(vmap({
-    {"description", Value("example_description")},  // std::string
     {"email", Value("example_email")},  // std::string
     {"login", Value("example_login")},  // std::string
-    {"name", Value("example_name")},  // std::string
     {"phone", Value("example_phone")},  // std::string
 }), Value::undef());
 ```
@@ -539,9 +557,9 @@ auto output_create_service_user = client->output_create_service_user();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `std::string` | Yes |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
+| `mandatorName` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
 
 ### Operations
 
@@ -551,7 +569,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->output_create_service_user()->create(vmap({
-    {"mandator_name", Value("example_mandator_name")},  // std::string
+    {"mandatorName", Value("example_mandatorName")},  // std::string
 }), Value::undef());
 ```
 
@@ -586,9 +604,9 @@ auto output_deactivate_user = client->output_deactivate_user();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `std::string` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
+| `consumerUUID` | `std::string` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
 
 ### Operations
 
@@ -632,10 +650,10 @@ auto output_get_kyc_document = client->output_get_kyc_document();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `case_id` | `std::string` | No |  |
-| `encoded_data_base64` | `std::string` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
+| `caseID` | `std::string` | No |  |
+| `encodedDataBase64` | `std::string` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
 
 ### Operations
 
@@ -679,10 +697,10 @@ auto output_get_logo = client->output_get_logo();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `std::string` | Yes |  |
-| `mime_type` | `std::string` | Yes |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
+| `contentAsBase64` | `std::string` | Yes |  |
+| `mimeType` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
 
 ### Operations
 
@@ -725,9 +743,9 @@ auto output_list_of_available_role = client->output_list_of_available_role();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `available_role` | `std::vector<Value>` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
+| `availableRoles` | `std::vector<Value>` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
 
 ### Operations
 
@@ -774,8 +792,8 @@ auto output_list_of_mandator = client->output_list_of_mandator();
 | `filter` | `std::map<std::string, Value>` | No |  |
 | `list` | `std::vector<Value>` | No |  |
 | `pagination` | `std::map<std::string, Value>` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
 | `sorting` | `std::map<std::string, Value>` | No |  |
 
 ### Operations
@@ -822,8 +840,8 @@ auto output_list_of_module = client->output_list_of_module();
 | --- | --- | --- | --- |
 | `list` | `std::vector<Value>` | No |  |
 | `pagination` | `std::map<std::string, Value>` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
 
 ### Operations
 
@@ -868,10 +886,10 @@ auto output_list_of_role_group = client->output_list_of_role_group();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `filter` | `std::map<std::string, Value>` | No |  |
-| `group_role` | `std::vector<Value>` | No |  |
+| `groupRoles` | `std::vector<Value>` | No |  |
 | `pagination` | `std::map<std::string, Value>` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
 | `sorting` | `std::map<std::string, Value>` | No |  |
 
 ### Operations
@@ -919,8 +937,8 @@ auto output_list_of_transactions_history = client->output_list_of_transactions_h
 | `filter` | `std::map<std::string, Value>` | No |  |
 | `list` | `std::vector<Value>` | No |  |
 | `pagination` | `std::map<std::string, Value>` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
 | `sorting` | `std::map<std::string, Value>` | No |  |
 
 ### Operations
@@ -968,8 +986,8 @@ auto output_list_of_user = client->output_list_of_user();
 | `filter` | `std::map<std::string, Value>` | No |  |
 | `list` | `std::vector<Value>` | No |  |
 | `pagination` | `std::map<std::string, Value>` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
 | `sorting` | `std::map<std::string, Value>` | No |  |
 
 ### Operations
@@ -1014,10 +1032,10 @@ auto output_provide_credential = client->output_provide_credential();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `std::string` | Yes |  |
+| `mandatorName` | `std::string` | Yes |  |
 | `password` | `std::string` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
 | `username` | `std::string` | No |  |
 
 ### Operations
@@ -1028,7 +1046,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->output_provide_credential()->create(vmap({
-    {"mandator_name", Value("example_mandator_name")},  // std::string
+    {"mandatorName", Value("example_mandatorName")},  // std::string
 }), Value::undef());
 ```
 
@@ -1064,21 +1082,21 @@ auto output_register_user = client->output_register_user();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `std::string` | No |  |
-| `consumer_id` | `std::string` | No |  |
-| `consumer_language` | `std::string` | No |  |
+| `consumerId` | `std::string` | No |  |
+| `consumerLanguage` | `std::string` | No |  |
 | `country` | `std::string` | No |  |
-| `date_of_birth` | `std::string` | No |  |
-| `driver_licence_number` | `std::string` | No |  |
+| `dateOfBirth` | `std::string` | No |  |
+| `driverLicenceNumber` | `std::string` | No |  |
 | `email` | `std::string` | Yes |  |
-| `first_name` | `std::string` | No |  |
-| `identification_number` | `std::string` | No |  |
-| `last_name` | `std::string` | No |  |
+| `firstName` | `std::string` | No |  |
+| `identificationNumber` | `std::string` | No |  |
+| `lastName` | `std::string` | No |  |
 | `login` | `std::string` | No |  |
 | `module` | `std::string` | No |  |
-| `passport_number` | `std::string` | No |  |
+| `passportNumber` | `std::string` | No |  |
 | `phone` | `std::string` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
 | `salutation` | `std::string` | No |  |
 | `state` | `std::string` | No |  |
 | `street1` | `std::string` | No |  |
@@ -1128,10 +1146,10 @@ auto output_remove_role = client->output_remove_role();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `std::string` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `role` | `std::vector<Value>` | No |  |
+| `consumerUUID` | `std::string` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `roles` | `std::vector<Value>` | No |  |
 
 ### Operations
 
@@ -1175,12 +1193,12 @@ auto output_resend_link = client->output_resend_link();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `business_registration_number` | `std::string` | No |  |
-| `consumer_uuid` | `std::string` | Yes |  |
-| `email_confirmation_code` | `std::string` | No |  |
-| `phone_number` | `std::string` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
+| `businessRegistrationNumber` | `std::string` | No |  |
+| `consumerUUID` | `std::string` | Yes |  |
+| `emailConfirmationCode` | `std::string` | No |  |
+| `phoneNumber` | `std::string` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
 
 ### Operations
 
@@ -1190,7 +1208,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->output_resend_link()->create(vmap({
-    {"consumer_uuid", Value("example_consumer_uuid")},  // std::string
+    {"consumerUUID", Value("example_consumerUUID")},  // std::string
 }), Value::undef());
 ```
 
@@ -1225,10 +1243,10 @@ auto output_reset_password = client->output_reset_password();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `std::string` | No |  |
-| `phone_number` | `std::string` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
+| `consumerUuid` | `std::string` | No |  |
+| `phoneNumber` | `std::string` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
 
 ### Operations
 
@@ -1273,23 +1291,23 @@ auto output_update_consumer = client->output_update_consumer();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `std::string` | No |  |
-| `consumer_uuid` | `std::string` | Yes |  |
+| `consumerUuid` | `std::string` | Yes |  |
 | `consumerlanguage` | `std::string` | No |  |
 | `country` | `std::string` | No |  |
-| `date_of_birth` | `std::string` | No |  |
+| `dateOfBirth` | `std::string` | No |  |
 | `datetime_created` | `std::string` | No |  |
-| `driver_licence_number` | `std::string` | No |  |
+| `driverLicenceNumber` | `std::string` | No |  |
 | `email` | `std::string` | No |  |
-| `first_name` | `std::string` | No |  |
-| `identification_number` | `std::string` | No |  |
-| `kyc_passed` | `bool` | No |  |
-| `last_name` | `std::string` | No |  |
+| `firstName` | `std::string` | No |  |
+| `identificationNumber` | `std::string` | No |  |
+| `kycPassed` | `bool` | No |  |
+| `lastName` | `std::string` | No |  |
 | `nationality` | `std::string` | No |  |
-| `passport_number` | `std::string` | No |  |
-| `phone_number` | `std::string` | No |  |
-| `place_of_birth` | `std::string` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
+| `passportNumber` | `std::string` | No |  |
+| `phoneNumber` | `std::string` | No |  |
+| `placeOfBirth` | `std::string` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
 | `state` | `std::string` | No |  |
 | `street1` | `std::string` | No |  |
 | `street2` | `std::string` | No |  |
@@ -1304,7 +1322,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->output_update_consumer()->create(vmap({
-    {"consumer_uuid", Value("example_consumer_uuid")},  // std::string
+    {"consumerUuid", Value("example_consumerUuid")},  // std::string
 }), Value::undef());
 ```
 
@@ -1339,13 +1357,13 @@ auto output_update_profile = client->output_update_profile();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_language` | `std::string` | No |  |
+| `consumerLanguage` | `std::string` | No |  |
 | `email` | `std::string` | No |  |
-| `first_name` | `std::string` | No |  |
-| `last_name` | `std::string` | No |  |
-| `phone_number` | `std::string` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
+| `firstName` | `std::string` | No |  |
+| `lastName` | `std::string` | No |  |
+| `phoneNumber` | `std::string` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
 
 ### Operations
 
@@ -1389,8 +1407,8 @@ auto version = client->version();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `std::string` | No |  |
-| `build_date` | `std::string` | No |  |
+| `appName` | `std::string` | No |  |
+| `buildDate` | `std::string` | No |  |
 | `version` | `std::string` | No |  |
 
 ### Operations

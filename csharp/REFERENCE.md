@@ -213,8 +213,8 @@ var outputActivateDigitalModule = client.OutputActivateDigitalModule();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -259,10 +259,10 @@ var outputActivatePortalModule = client.OutputActivatePortalModule();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `string` | Yes |  |
-| `notification_email` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `clientSecret` | `string` | Yes |  |
+| `notificationEmail` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -273,8 +273,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.OutputActivatePortalModule().Create(new Dictionary<string, object?>
 {
-    ["client_secret"] = "example_client_secret",  // string
-    ["notification_email"] = "example_notification_email",  // string
+    ["clientSecret"] = "example_clientSecret",  // string
+    ["notificationEmail"] = "example_notificationEmail",  // string
 });
 ```
 
@@ -309,8 +309,8 @@ var outputActivateStoreModule = client.OutputActivateStoreModule();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -355,9 +355,9 @@ var outputActivateUser = client.OutputActivateUser();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `consumerUUID` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -402,10 +402,10 @@ var outputAssignRole = client.OutputAssignRole();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `role` | `List<object?>` | Yes |  |
+| `consumerUUID` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `roles` | `List<object?>` | Yes |  |
 
 ### Operations
 
@@ -416,8 +416,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.OutputAssignRole().Create(new Dictionary<string, object?>
 {
-    ["consumer_uuid"] = "example_consumer_uuid",  // string
-    ["role"] = new List<object?>(),  // List<object?>
+    ["consumerUUID"] = "example_consumerUUID",  // string
+    ["roles"] = new List<object?>(),  // List<object?>
 });
 ```
 
@@ -452,10 +452,10 @@ var outputChangeLogo = client.OutputChangeLogo();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `string` | Yes |  |
-| `mime_type` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `contentAsBase64` | `string` | Yes |  |
+| `mimeType` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -466,8 +466,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.OutputChangeLogo().Create(new Dictionary<string, object?>
 {
-    ["content_as_base64"] = "example_content_as_base64",  // string
-    ["mime_type"] = "example_mime_type",  // string
+    ["contentAsBase64"] = "example_contentAsBase64",  // string
+    ["mimeType"] = "example_mimeType",  // string
 });
 ```
 
@@ -504,25 +504,45 @@ var outputCreateMandator = client.OutputCreateMandator();
 | --- | --- | --- | --- |
 | `city` | `string` | No |  |
 | `country` | `string` | No |  |
-| `date_of_birth` | `string` | No |  |
-| `description` | `string` | Yes |  |
-| `drivers_license_number` | `string` | No |  |
+| `dateOfBirth` | `string` | No |  |
+| `description` | `string` | No |  |
+| `driversLicenseNumber` | `string` | No |  |
 | `email` | `string` | Yes |  |
-| `first_name` | `string` | No |  |
-| `identification_number` | `string` | No |  |
-| `last_name` | `string` | No |  |
+| `firstName` | `string` | No |  |
+| `identificationNumber` | `string` | No |  |
+| `lastName` | `string` | No |  |
 | `login` | `string` | Yes |  |
-| `mandator` | `Dictionary<string, object?>` | No |  |
-| `name` | `string` | Yes |  |
-| `passport_number` | `string` | No |  |
+| `name` | `string` | No |  |
+| `passportNumber` | `string` | No |  |
 | `phone` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
 | `salutation` | `string` | No |  |
 | `state` | `string` | No |  |
 | `street1` | `string` | No |  |
 | `street2` | `string` | No |  |
-| `zip_code` | `string` | No |  |
+| `zipCode` | `string` | No |  |
+
+### Field Usage by Operation
+
+| Field | create |
+| --- | --- |
+| `city` | - |
+| `country` | - |
+| `dateOfBirth` | - |
+| `description` | Yes |
+| `driversLicenseNumber` | - |
+| `email` | - |
+| `firstName` | - |
+| `identificationNumber` | - |
+| `lastName` | - |
+| `login` | - |
+| `name` | Yes |
+| `passportNumber` | - |
+| `phone` | - |
+| `salutation` | - |
+| `state` | - |
+| `street1` | - |
+| `street2` | - |
+| `zipCode` | - |
 
 ### Operations
 
@@ -533,10 +553,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.OutputCreateMandator().Create(new Dictionary<string, object?>
 {
-    ["description"] = "example_description",  // string
     ["email"] = "example_email",  // string
     ["login"] = "example_login",  // string
-    ["name"] = "example_name",  // string
     ["phone"] = "example_phone",  // string
 });
 ```
@@ -572,9 +590,9 @@ var outputCreateServiceUser = client.OutputCreateServiceUser();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `mandatorName` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -585,7 +603,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.OutputCreateServiceUser().Create(new Dictionary<string, object?>
 {
-    ["mandator_name"] = "example_mandator_name",  // string
+    ["mandatorName"] = "example_mandatorName",  // string
 });
 ```
 
@@ -620,9 +638,9 @@ var outputDeactivateUser = client.OutputDeactivateUser();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `consumerUUID` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -667,10 +685,10 @@ var outputGetKycDocument = client.OutputGetKycDocument();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `case_id` | `string` | No |  |
-| `encoded_data_base64` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `caseID` | `string` | No |  |
+| `encodedDataBase64` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -715,10 +733,10 @@ var outputGetLogo = client.OutputGetLogo();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `string` | Yes |  |
-| `mime_type` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `contentAsBase64` | `string` | Yes |  |
+| `mimeType` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -761,9 +779,9 @@ var outputListOfAvailableRole = client.OutputListOfAvailableRole();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `available_role` | `List<object?>` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `availableRoles` | `List<object?>` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -811,8 +829,8 @@ var outputListOfMandator = client.OutputListOfMandator();
 | `filter` | `Dictionary<string, object?>` | No |  |
 | `list` | `List<object?>` | No |  |
 | `pagination` | `Dictionary<string, object?>` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 | `sorting` | `Dictionary<string, object?>` | No |  |
 
 ### Operations
@@ -860,8 +878,8 @@ var outputListOfModule = client.OutputListOfModule();
 | --- | --- | --- | --- |
 | `list` | `List<object?>` | No |  |
 | `pagination` | `Dictionary<string, object?>` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -907,10 +925,10 @@ var outputListOfRoleGroup = client.OutputListOfRoleGroup();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `filter` | `Dictionary<string, object?>` | No |  |
-| `group_role` | `List<object?>` | No |  |
+| `groupRoles` | `List<object?>` | No |  |
 | `pagination` | `Dictionary<string, object?>` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 | `sorting` | `Dictionary<string, object?>` | No |  |
 
 ### Operations
@@ -959,8 +977,8 @@ var outputListOfTransactionsHistory = client.OutputListOfTransactionsHistory();
 | `filter` | `Dictionary<string, object?>` | No |  |
 | `list` | `List<object?>` | No |  |
 | `pagination` | `Dictionary<string, object?>` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 | `sorting` | `Dictionary<string, object?>` | No |  |
 
 ### Operations
@@ -1009,8 +1027,8 @@ var outputListOfUser = client.OutputListOfUser();
 | `filter` | `Dictionary<string, object?>` | No |  |
 | `list` | `List<object?>` | No |  |
 | `pagination` | `Dictionary<string, object?>` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 | `sorting` | `Dictionary<string, object?>` | No |  |
 
 ### Operations
@@ -1056,10 +1074,10 @@ var outputProvideCredential = client.OutputProvideCredential();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `string` | Yes |  |
+| `mandatorName` | `string` | Yes |  |
 | `password` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 | `username` | `string` | No |  |
 
 ### Operations
@@ -1071,7 +1089,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.OutputProvideCredential().Create(new Dictionary<string, object?>
 {
-    ["mandator_name"] = "example_mandator_name",  // string
+    ["mandatorName"] = "example_mandatorName",  // string
 });
 ```
 
@@ -1107,21 +1125,21 @@ var outputRegisterUser = client.OutputRegisterUser();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `string` | No |  |
-| `consumer_id` | `string` | No |  |
-| `consumer_language` | `string` | No |  |
+| `consumerId` | `string` | No |  |
+| `consumerLanguage` | `string` | No |  |
 | `country` | `string` | No |  |
-| `date_of_birth` | `string` | No |  |
-| `driver_licence_number` | `string` | No |  |
+| `dateOfBirth` | `string` | No |  |
+| `driverLicenceNumber` | `string` | No |  |
 | `email` | `string` | Yes |  |
-| `first_name` | `string` | No |  |
-| `identification_number` | `string` | No |  |
-| `last_name` | `string` | No |  |
+| `firstName` | `string` | No |  |
+| `identificationNumber` | `string` | No |  |
+| `lastName` | `string` | No |  |
 | `login` | `string` | No |  |
 | `module` | `string` | No |  |
-| `passport_number` | `string` | No |  |
+| `passportNumber` | `string` | No |  |
 | `phone` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 | `salutation` | `string` | No |  |
 | `state` | `string` | No |  |
 | `street1` | `string` | No |  |
@@ -1172,10 +1190,10 @@ var outputRemoveRole = client.OutputRemoveRole();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `role` | `List<object?>` | No |  |
+| `consumerUUID` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `roles` | `List<object?>` | No |  |
 
 ### Operations
 
@@ -1220,12 +1238,12 @@ var outputResendLink = client.OutputResendLink();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `business_registration_number` | `string` | No |  |
-| `consumer_uuid` | `string` | Yes |  |
-| `email_confirmation_code` | `string` | No |  |
-| `phone_number` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `businessRegistrationNumber` | `string` | No |  |
+| `consumerUUID` | `string` | Yes |  |
+| `emailConfirmationCode` | `string` | No |  |
+| `phoneNumber` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1236,7 +1254,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.OutputResendLink().Create(new Dictionary<string, object?>
 {
-    ["consumer_uuid"] = "example_consumer_uuid",  // string
+    ["consumerUUID"] = "example_consumerUUID",  // string
 });
 ```
 
@@ -1271,10 +1289,10 @@ var outputResetPassword = client.OutputResetPassword();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `phone_number` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `consumerUuid` | `string` | No |  |
+| `phoneNumber` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1320,23 +1338,23 @@ var outputUpdateConsumer = client.OutputUpdateConsumer();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `string` | No |  |
-| `consumer_uuid` | `string` | Yes |  |
+| `consumerUuid` | `string` | Yes |  |
 | `consumerlanguage` | `string` | No |  |
 | `country` | `string` | No |  |
-| `date_of_birth` | `string` | No |  |
+| `dateOfBirth` | `string` | No |  |
 | `datetime_created` | `string` | No |  |
-| `driver_licence_number` | `string` | No |  |
+| `driverLicenceNumber` | `string` | No |  |
 | `email` | `string` | No |  |
-| `first_name` | `string` | No |  |
-| `identification_number` | `string` | No |  |
-| `kyc_passed` | `bool` | No |  |
-| `last_name` | `string` | No |  |
+| `firstName` | `string` | No |  |
+| `identificationNumber` | `string` | No |  |
+| `kycPassed` | `bool` | No |  |
+| `lastName` | `string` | No |  |
 | `nationality` | `string` | No |  |
-| `passport_number` | `string` | No |  |
-| `phone_number` | `string` | No |  |
-| `place_of_birth` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `passportNumber` | `string` | No |  |
+| `phoneNumber` | `string` | No |  |
+| `placeOfBirth` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 | `state` | `string` | No |  |
 | `street1` | `string` | No |  |
 | `street2` | `string` | No |  |
@@ -1352,7 +1370,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.OutputUpdateConsumer().Create(new Dictionary<string, object?>
 {
-    ["consumer_uuid"] = "example_consumer_uuid",  // string
+    ["consumerUuid"] = "example_consumerUuid",  // string
 });
 ```
 
@@ -1387,13 +1405,13 @@ var outputUpdateProfile = client.OutputUpdateProfile();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_language` | `string` | No |  |
+| `consumerLanguage` | `string` | No |  |
 | `email` | `string` | No |  |
-| `first_name` | `string` | No |  |
-| `last_name` | `string` | No |  |
-| `phone_number` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `firstName` | `string` | No |  |
+| `lastName` | `string` | No |  |
+| `phoneNumber` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1438,8 +1456,8 @@ var version = client.Version();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `string` | No |  |
-| `build_date` | `string` | No |  |
+| `appName` | `string` | No |  |
+| `buildDate` | `string` | No |  |
 | `version` | `string` | No |  |
 
 ### Operations

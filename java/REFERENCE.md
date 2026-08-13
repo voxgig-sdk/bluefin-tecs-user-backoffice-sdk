@@ -210,8 +210,8 @@ SdkEntity outputActivateDigitalModule = client.outputActivateDigitalModule(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -255,10 +255,10 @@ SdkEntity outputActivatePortalModule = client.outputActivatePortalModule(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `String` | Yes |  |
-| `notification_email` | `String` | Yes |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
+| `clientSecret` | `String` | Yes |  |
+| `notificationEmail` | `String` | Yes |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -268,8 +268,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.outputActivatePortalModule(null).create(Map.of(
-    "client_secret", "example_client_secret",  // String
-    "notification_email", "example_notification_email"  // String
+    "clientSecret", "example_clientSecret",  // String
+    "notificationEmail", "example_notificationEmail"  // String
 ), null);
 ```
 
@@ -304,8 +304,8 @@ SdkEntity outputActivateStoreModule = client.outputActivateStoreModule(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -349,9 +349,9 @@ SdkEntity outputActivateUser = client.outputActivateUser(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
+| `consumerUUID` | `String` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -395,10 +395,10 @@ SdkEntity outputAssignRole = client.outputAssignRole(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String` | Yes |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `role` | `List<Object>` | Yes |  |
+| `consumerUUID` | `String` | Yes |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `roles` | `List<Object>` | Yes |  |
 
 ### Operations
 
@@ -408,8 +408,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.outputAssignRole(null).create(Map.of(
-    "consumer_uuid", "example_consumer_uuid",  // String
-    "role", List.of()  // List<Object>
+    "consumerUUID", "example_consumerUUID",  // String
+    "roles", List.of()  // List<Object>
 ), null);
 ```
 
@@ -444,10 +444,10 @@ SdkEntity outputChangeLogo = client.outputChangeLogo(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `String` | Yes |  |
-| `mime_type` | `String` | Yes |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
+| `contentAsBase64` | `String` | Yes |  |
+| `mimeType` | `String` | Yes |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -457,8 +457,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.outputChangeLogo(null).create(Map.of(
-    "content_as_base64", "example_content_as_base64",  // String
-    "mime_type", "example_mime_type"  // String
+    "contentAsBase64", "example_contentAsBase64",  // String
+    "mimeType", "example_mimeType"  // String
 ), null);
 ```
 
@@ -495,25 +495,45 @@ SdkEntity outputCreateMandator = client.outputCreateMandator(null);
 | --- | --- | --- | --- |
 | `city` | `String` | No |  |
 | `country` | `String` | No |  |
-| `date_of_birth` | `String` | No |  |
-| `description` | `String` | Yes |  |
-| `drivers_license_number` | `String` | No |  |
+| `dateOfBirth` | `String` | No |  |
+| `description` | `String` | No |  |
+| `driversLicenseNumber` | `String` | No |  |
 | `email` | `String` | Yes |  |
-| `first_name` | `String` | No |  |
-| `identification_number` | `String` | No |  |
-| `last_name` | `String` | No |  |
+| `firstName` | `String` | No |  |
+| `identificationNumber` | `String` | No |  |
+| `lastName` | `String` | No |  |
 | `login` | `String` | Yes |  |
-| `mandator` | `Map<String, Object>` | No |  |
-| `name` | `String` | Yes |  |
-| `passport_number` | `String` | No |  |
+| `name` | `String` | No |  |
+| `passportNumber` | `String` | No |  |
 | `phone` | `String` | Yes |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
 | `salutation` | `String` | No |  |
 | `state` | `String` | No |  |
 | `street1` | `String` | No |  |
 | `street2` | `String` | No |  |
-| `zip_code` | `String` | No |  |
+| `zipCode` | `String` | No |  |
+
+### Field Usage by Operation
+
+| Field | create |
+| --- | --- |
+| `city` | - |
+| `country` | - |
+| `dateOfBirth` | - |
+| `description` | Yes |
+| `driversLicenseNumber` | - |
+| `email` | - |
+| `firstName` | - |
+| `identificationNumber` | - |
+| `lastName` | - |
+| `login` | - |
+| `name` | Yes |
+| `passportNumber` | - |
+| `phone` | - |
+| `salutation` | - |
+| `state` | - |
+| `street1` | - |
+| `street2` | - |
+| `zipCode` | - |
 
 ### Operations
 
@@ -523,10 +543,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.outputCreateMandator(null).create(Map.of(
-    "description", "example_description",  // String
     "email", "example_email",  // String
     "login", "example_login",  // String
-    "name", "example_name",  // String
     "phone", "example_phone"  // String
 ), null);
 ```
@@ -562,9 +580,9 @@ SdkEntity outputCreateServiceUser = client.outputCreateServiceUser(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `String` | Yes |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
+| `mandatorName` | `String` | Yes |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -574,7 +592,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.outputCreateServiceUser(null).create(Map.of(
-    "mandator_name", "example_mandator_name"  // String
+    "mandatorName", "example_mandatorName"  // String
 ), null);
 ```
 
@@ -609,9 +627,9 @@ SdkEntity outputDeactivateUser = client.outputDeactivateUser(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
+| `consumerUUID` | `String` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -655,10 +673,10 @@ SdkEntity outputGetKycDocument = client.outputGetKycDocument(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `case_id` | `String` | No |  |
-| `encoded_data_base64` | `String` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
+| `caseID` | `String` | No |  |
+| `encodedDataBase64` | `String` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -702,10 +720,10 @@ SdkEntity outputGetLogo = client.outputGetLogo(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `String` | Yes |  |
-| `mime_type` | `String` | Yes |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
+| `contentAsBase64` | `String` | Yes |  |
+| `mimeType` | `String` | Yes |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -748,9 +766,9 @@ SdkEntity outputListOfAvailableRole = client.outputListOfAvailableRole(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `available_role` | `List<Object>` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
+| `availableRoles` | `List<Object>` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -797,8 +815,8 @@ SdkEntity outputListOfMandator = client.outputListOfMandator(null);
 | `filter` | `Map<String, Object>` | No |  |
 | `list` | `List<Object>` | No |  |
 | `pagination` | `Map<String, Object>` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
 | `sorting` | `Map<String, Object>` | No |  |
 
 ### Operations
@@ -845,8 +863,8 @@ SdkEntity outputListOfModule = client.outputListOfModule(null);
 | --- | --- | --- | --- |
 | `list` | `List<Object>` | No |  |
 | `pagination` | `Map<String, Object>` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -891,10 +909,10 @@ SdkEntity outputListOfRoleGroup = client.outputListOfRoleGroup(null);
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `filter` | `Map<String, Object>` | No |  |
-| `group_role` | `List<Object>` | No |  |
+| `groupRoles` | `List<Object>` | No |  |
 | `pagination` | `Map<String, Object>` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
 | `sorting` | `Map<String, Object>` | No |  |
 
 ### Operations
@@ -942,8 +960,8 @@ SdkEntity outputListOfTransactionsHistory = client.outputListOfTransactionsHisto
 | `filter` | `Map<String, Object>` | No |  |
 | `list` | `List<Object>` | No |  |
 | `pagination` | `Map<String, Object>` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
 | `sorting` | `Map<String, Object>` | No |  |
 
 ### Operations
@@ -991,8 +1009,8 @@ SdkEntity outputListOfUser = client.outputListOfUser(null);
 | `filter` | `Map<String, Object>` | No |  |
 | `list` | `List<Object>` | No |  |
 | `pagination` | `Map<String, Object>` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
 | `sorting` | `Map<String, Object>` | No |  |
 
 ### Operations
@@ -1037,10 +1055,10 @@ SdkEntity outputProvideCredential = client.outputProvideCredential(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `String` | Yes |  |
+| `mandatorName` | `String` | Yes |  |
 | `password` | `String` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
 | `username` | `String` | No |  |
 
 ### Operations
@@ -1051,7 +1069,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.outputProvideCredential(null).create(Map.of(
-    "mandator_name", "example_mandator_name"  // String
+    "mandatorName", "example_mandatorName"  // String
 ), null);
 ```
 
@@ -1087,21 +1105,21 @@ SdkEntity outputRegisterUser = client.outputRegisterUser(null);
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `String` | No |  |
-| `consumer_id` | `String` | No |  |
-| `consumer_language` | `String` | No |  |
+| `consumerId` | `String` | No |  |
+| `consumerLanguage` | `String` | No |  |
 | `country` | `String` | No |  |
-| `date_of_birth` | `String` | No |  |
-| `driver_licence_number` | `String` | No |  |
+| `dateOfBirth` | `String` | No |  |
+| `driverLicenceNumber` | `String` | No |  |
 | `email` | `String` | Yes |  |
-| `first_name` | `String` | No |  |
-| `identification_number` | `String` | No |  |
-| `last_name` | `String` | No |  |
+| `firstName` | `String` | No |  |
+| `identificationNumber` | `String` | No |  |
+| `lastName` | `String` | No |  |
 | `login` | `String` | No |  |
 | `module` | `String` | No |  |
-| `passport_number` | `String` | No |  |
+| `passportNumber` | `String` | No |  |
 | `phone` | `String` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
 | `salutation` | `String` | No |  |
 | `state` | `String` | No |  |
 | `street1` | `String` | No |  |
@@ -1151,10 +1169,10 @@ SdkEntity outputRemoveRole = client.outputRemoveRole(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `role` | `List<Object>` | No |  |
+| `consumerUUID` | `String` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `roles` | `List<Object>` | No |  |
 
 ### Operations
 
@@ -1198,12 +1216,12 @@ SdkEntity outputResendLink = client.outputResendLink(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `business_registration_number` | `String` | No |  |
-| `consumer_uuid` | `String` | Yes |  |
-| `email_confirmation_code` | `String` | No |  |
-| `phone_number` | `String` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
+| `businessRegistrationNumber` | `String` | No |  |
+| `consumerUUID` | `String` | Yes |  |
+| `emailConfirmationCode` | `String` | No |  |
+| `phoneNumber` | `String` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -1213,7 +1231,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.outputResendLink(null).create(Map.of(
-    "consumer_uuid", "example_consumer_uuid"  // String
+    "consumerUUID", "example_consumerUUID"  // String
 ), null);
 ```
 
@@ -1248,10 +1266,10 @@ SdkEntity outputResetPassword = client.outputResetPassword(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String` | No |  |
-| `phone_number` | `String` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
+| `consumerUuid` | `String` | No |  |
+| `phoneNumber` | `String` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -1296,23 +1314,23 @@ SdkEntity outputUpdateConsumer = client.outputUpdateConsumer(null);
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `String` | No |  |
-| `consumer_uuid` | `String` | Yes |  |
+| `consumerUuid` | `String` | Yes |  |
 | `consumerlanguage` | `String` | No |  |
 | `country` | `String` | No |  |
-| `date_of_birth` | `String` | No |  |
+| `dateOfBirth` | `String` | No |  |
 | `datetime_created` | `String` | No |  |
-| `driver_licence_number` | `String` | No |  |
+| `driverLicenceNumber` | `String` | No |  |
 | `email` | `String` | No |  |
-| `first_name` | `String` | No |  |
-| `identification_number` | `String` | No |  |
-| `kyc_passed` | `Boolean` | No |  |
-| `last_name` | `String` | No |  |
+| `firstName` | `String` | No |  |
+| `identificationNumber` | `String` | No |  |
+| `kycPassed` | `Boolean` | No |  |
+| `lastName` | `String` | No |  |
 | `nationality` | `String` | No |  |
-| `passport_number` | `String` | No |  |
-| `phone_number` | `String` | No |  |
-| `place_of_birth` | `String` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
+| `passportNumber` | `String` | No |  |
+| `phoneNumber` | `String` | No |  |
+| `placeOfBirth` | `String` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
 | `state` | `String` | No |  |
 | `street1` | `String` | No |  |
 | `street2` | `String` | No |  |
@@ -1327,7 +1345,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.outputUpdateConsumer(null).create(Map.of(
-    "consumer_uuid", "example_consumer_uuid"  // String
+    "consumerUuid", "example_consumerUuid"  // String
 ), null);
 ```
 
@@ -1362,13 +1380,13 @@ SdkEntity outputUpdateProfile = client.outputUpdateProfile(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_language` | `String` | No |  |
+| `consumerLanguage` | `String` | No |  |
 | `email` | `String` | No |  |
-| `first_name` | `String` | No |  |
-| `last_name` | `String` | No |  |
-| `phone_number` | `String` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
+| `firstName` | `String` | No |  |
+| `lastName` | `String` | No |  |
+| `phoneNumber` | `String` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -1412,8 +1430,8 @@ SdkEntity version = client.version(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `String` | No |  |
-| `build_date` | `String` | No |  |
+| `appName` | `String` | No |  |
+| `buildDate` | `String` | No |  |
 | `version` | `String` | No |  |
 
 ### Operations

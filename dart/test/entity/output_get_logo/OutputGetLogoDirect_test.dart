@@ -65,19 +65,19 @@ Map<String, dynamic> directSetup([dynamic mockres]) {
   final calls = <Map<String, dynamic>>[];
 
   final env = envOverride({
-    'BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_GET_LOGO_ENTID': <String, dynamic>{},
-    'BLUEFINTECSUSERBACKOFFICE_TEST_LIVE': 'FALSE',
-    'BLUEFINTECSUSERBACKOFFICE_APIKEY': 'NONE',
+    'BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_GET_LOGO_ENTID': <String, dynamic>{},
+    'BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE': 'FALSE',
+    'BLUEFIN_TECS_USER_BACKOFFICE_APIKEY': 'NONE',
   });
 
-  final live = 'TRUE' == env['BLUEFINTECSUSERBACKOFFICE_TEST_LIVE'];
+  final live = 'TRUE' == env['BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE'];
 
   if (live) {
     final client = BluefinTecsUserBackofficeSDK({
-      'apikey': env['BLUEFINTECSUSERBACKOFFICE_APIKEY'],
+      'apikey': env['BLUEFIN_TECS_USER_BACKOFFICE_APIKEY'],
     });
 
-    dynamic idmap = env['BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_GET_LOGO_ENTID'];
+    dynamic idmap = env['BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_GET_LOGO_ENTID'];
     if (idmap is String && idmap.startsWith('{')) {
       idmap = jsonDecode(idmap);
     }

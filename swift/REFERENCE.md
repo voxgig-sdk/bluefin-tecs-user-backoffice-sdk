@@ -209,8 +209,8 @@ let outputActivateDigitalModule = client.OutputActivateDigitalModule()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -254,10 +254,10 @@ let outputActivatePortalModule = client.OutputActivatePortalModule()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `String` | Yes |  |
-| `notification_email` | `String` | Yes |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
+| `clientSecret` | `String` | Yes |  |
+| `notificationEmail` | `String` | Yes |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -267,8 +267,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.OutputActivatePortalModule().create(VMap([
-    ("client_secret", .string("example_client_secret")),  // String
-    ("notification_email", .string("example_notification_email"))  // String
+    ("clientSecret", .string("example_clientSecret")),  // String
+    ("notificationEmail", .string("example_notificationEmail"))  // String
 ]), nil)
 ```
 
@@ -303,8 +303,8 @@ let outputActivateStoreModule = client.OutputActivateStoreModule()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -348,9 +348,9 @@ let outputActivateUser = client.OutputActivateUser()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
+| `consumerUUID` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -394,10 +394,10 @@ let outputAssignRole = client.OutputAssignRole()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String` | Yes |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `role` | `[Value]` | Yes |  |
+| `consumerUUID` | `String` | Yes |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `roles` | `[Value]` | Yes |  |
 
 ### Operations
 
@@ -407,8 +407,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.OutputAssignRole().create(VMap([
-    ("consumer_uuid", .string("example_consumer_uuid")),  // String
-    ("role", .list([]))  // [Value]
+    ("consumerUUID", .string("example_consumerUUID")),  // String
+    ("roles", .list([]))  // [Value]
 ]), nil)
 ```
 
@@ -443,10 +443,10 @@ let outputChangeLogo = client.OutputChangeLogo()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `String` | Yes |  |
-| `mime_type` | `String` | Yes |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
+| `contentAsBase64` | `String` | Yes |  |
+| `mimeType` | `String` | Yes |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -456,8 +456,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.OutputChangeLogo().create(VMap([
-    ("content_as_base64", .string("example_content_as_base64")),  // String
-    ("mime_type", .string("example_mime_type"))  // String
+    ("contentAsBase64", .string("example_contentAsBase64")),  // String
+    ("mimeType", .string("example_mimeType"))  // String
 ]), nil)
 ```
 
@@ -494,25 +494,45 @@ let outputCreateMandator = client.OutputCreateMandator()
 | --- | --- | --- | --- |
 | `city` | `String` | No |  |
 | `country` | `String` | No |  |
-| `date_of_birth` | `String` | No |  |
-| `description` | `String` | Yes |  |
-| `drivers_license_number` | `String` | No |  |
+| `dateOfBirth` | `String` | No |  |
+| `description` | `String` | No |  |
+| `driversLicenseNumber` | `String` | No |  |
 | `email` | `String` | Yes |  |
-| `first_name` | `String` | No |  |
-| `identification_number` | `String` | No |  |
-| `last_name` | `String` | No |  |
+| `firstName` | `String` | No |  |
+| `identificationNumber` | `String` | No |  |
+| `lastName` | `String` | No |  |
 | `login` | `String` | Yes |  |
-| `mandator` | `VMap` | No |  |
-| `name` | `String` | Yes |  |
-| `passport_number` | `String` | No |  |
+| `name` | `String` | No |  |
+| `passportNumber` | `String` | No |  |
 | `phone` | `String` | Yes |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
 | `salutation` | `String` | No |  |
 | `state` | `String` | No |  |
 | `street1` | `String` | No |  |
 | `street2` | `String` | No |  |
-| `zip_code` | `String` | No |  |
+| `zipCode` | `String` | No |  |
+
+### Field Usage by Operation
+
+| Field | create |
+| --- | --- |
+| `city` | - |
+| `country` | - |
+| `dateOfBirth` | - |
+| `description` | Yes |
+| `driversLicenseNumber` | - |
+| `email` | - |
+| `firstName` | - |
+| `identificationNumber` | - |
+| `lastName` | - |
+| `login` | - |
+| `name` | Yes |
+| `passportNumber` | - |
+| `phone` | - |
+| `salutation` | - |
+| `state` | - |
+| `street1` | - |
+| `street2` | - |
+| `zipCode` | - |
 
 ### Operations
 
@@ -522,10 +542,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.OutputCreateMandator().create(VMap([
-    ("description", .string("example_description")),  // String
     ("email", .string("example_email")),  // String
     ("login", .string("example_login")),  // String
-    ("name", .string("example_name")),  // String
     ("phone", .string("example_phone"))  // String
 ]), nil)
 ```
@@ -561,9 +579,9 @@ let outputCreateServiceUser = client.OutputCreateServiceUser()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `String` | Yes |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
+| `mandatorName` | `String` | Yes |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -573,7 +591,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.OutputCreateServiceUser().create(VMap([
-    ("mandator_name", .string("example_mandator_name"))  // String
+    ("mandatorName", .string("example_mandatorName"))  // String
 ]), nil)
 ```
 
@@ -608,9 +626,9 @@ let outputDeactivateUser = client.OutputDeactivateUser()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
+| `consumerUUID` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -654,10 +672,10 @@ let outputGetKycDocument = client.OutputGetKycDocument()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `case_id` | `String` | No |  |
-| `encoded_data_base64` | `String` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
+| `caseID` | `String` | No |  |
+| `encodedDataBase64` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -701,10 +719,10 @@ let outputGetLogo = client.OutputGetLogo()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `String` | Yes |  |
-| `mime_type` | `String` | Yes |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
+| `contentAsBase64` | `String` | Yes |  |
+| `mimeType` | `String` | Yes |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -747,9 +765,9 @@ let outputListOfAvailableRole = client.OutputListOfAvailableRole()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `available_role` | `[Value]` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
+| `availableRoles` | `[Value]` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -796,8 +814,8 @@ let outputListOfMandator = client.OutputListOfMandator()
 | `filter` | `VMap` | No |  |
 | `list` | `[Value]` | No |  |
 | `pagination` | `VMap` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
 | `sorting` | `VMap` | No |  |
 
 ### Operations
@@ -844,8 +862,8 @@ let outputListOfModule = client.OutputListOfModule()
 | --- | --- | --- | --- |
 | `list` | `[Value]` | No |  |
 | `pagination` | `VMap` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -890,10 +908,10 @@ let outputListOfRoleGroup = client.OutputListOfRoleGroup()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `filter` | `VMap` | No |  |
-| `group_role` | `[Value]` | No |  |
+| `groupRoles` | `[Value]` | No |  |
 | `pagination` | `VMap` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
 | `sorting` | `VMap` | No |  |
 
 ### Operations
@@ -941,8 +959,8 @@ let outputListOfTransactionsHistory = client.OutputListOfTransactionsHistory()
 | `filter` | `VMap` | No |  |
 | `list` | `[Value]` | No |  |
 | `pagination` | `VMap` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
 | `sorting` | `VMap` | No |  |
 
 ### Operations
@@ -990,8 +1008,8 @@ let outputListOfUser = client.OutputListOfUser()
 | `filter` | `VMap` | No |  |
 | `list` | `[Value]` | No |  |
 | `pagination` | `VMap` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
 | `sorting` | `VMap` | No |  |
 
 ### Operations
@@ -1036,10 +1054,10 @@ let outputProvideCredential = client.OutputProvideCredential()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `String` | Yes |  |
+| `mandatorName` | `String` | Yes |  |
 | `password` | `String` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
 | `username` | `String` | No |  |
 
 ### Operations
@@ -1050,7 +1068,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.OutputProvideCredential().create(VMap([
-    ("mandator_name", .string("example_mandator_name"))  // String
+    ("mandatorName", .string("example_mandatorName"))  // String
 ]), nil)
 ```
 
@@ -1086,21 +1104,21 @@ let outputRegisterUser = client.OutputRegisterUser()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `String` | No |  |
-| `consumer_id` | `String` | No |  |
-| `consumer_language` | `String` | No |  |
+| `consumerId` | `String` | No |  |
+| `consumerLanguage` | `String` | No |  |
 | `country` | `String` | No |  |
-| `date_of_birth` | `String` | No |  |
-| `driver_licence_number` | `String` | No |  |
+| `dateOfBirth` | `String` | No |  |
+| `driverLicenceNumber` | `String` | No |  |
 | `email` | `String` | Yes |  |
-| `first_name` | `String` | No |  |
-| `identification_number` | `String` | No |  |
-| `last_name` | `String` | No |  |
+| `firstName` | `String` | No |  |
+| `identificationNumber` | `String` | No |  |
+| `lastName` | `String` | No |  |
 | `login` | `String` | No |  |
 | `module` | `String` | No |  |
-| `passport_number` | `String` | No |  |
+| `passportNumber` | `String` | No |  |
 | `phone` | `String` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
 | `salutation` | `String` | No |  |
 | `state` | `String` | No |  |
 | `street1` | `String` | No |  |
@@ -1150,10 +1168,10 @@ let outputRemoveRole = client.OutputRemoveRole()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `role` | `[Value]` | No |  |
+| `consumerUUID` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `roles` | `[Value]` | No |  |
 
 ### Operations
 
@@ -1197,12 +1215,12 @@ let outputResendLink = client.OutputResendLink()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `business_registration_number` | `String` | No |  |
-| `consumer_uuid` | `String` | Yes |  |
-| `email_confirmation_code` | `String` | No |  |
-| `phone_number` | `String` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
+| `businessRegistrationNumber` | `String` | No |  |
+| `consumerUUID` | `String` | Yes |  |
+| `emailConfirmationCode` | `String` | No |  |
+| `phoneNumber` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -1212,7 +1230,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.OutputResendLink().create(VMap([
-    ("consumer_uuid", .string("example_consumer_uuid"))  // String
+    ("consumerUUID", .string("example_consumerUUID"))  // String
 ]), nil)
 ```
 
@@ -1247,10 +1265,10 @@ let outputResetPassword = client.OutputResetPassword()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String` | No |  |
-| `phone_number` | `String` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
+| `consumerUuid` | `String` | No |  |
+| `phoneNumber` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -1295,23 +1313,23 @@ let outputUpdateConsumer = client.OutputUpdateConsumer()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `String` | No |  |
-| `consumer_uuid` | `String` | Yes |  |
+| `consumerUuid` | `String` | Yes |  |
 | `consumerlanguage` | `String` | No |  |
 | `country` | `String` | No |  |
-| `date_of_birth` | `String` | No |  |
+| `dateOfBirth` | `String` | No |  |
 | `datetime_created` | `String` | No |  |
-| `driver_licence_number` | `String` | No |  |
+| `driverLicenceNumber` | `String` | No |  |
 | `email` | `String` | No |  |
-| `first_name` | `String` | No |  |
-| `identification_number` | `String` | No |  |
-| `kyc_passed` | `Bool` | No |  |
-| `last_name` | `String` | No |  |
+| `firstName` | `String` | No |  |
+| `identificationNumber` | `String` | No |  |
+| `kycPassed` | `Bool` | No |  |
+| `lastName` | `String` | No |  |
 | `nationality` | `String` | No |  |
-| `passport_number` | `String` | No |  |
-| `phone_number` | `String` | No |  |
-| `place_of_birth` | `String` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
+| `passportNumber` | `String` | No |  |
+| `phoneNumber` | `String` | No |  |
+| `placeOfBirth` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
 | `state` | `String` | No |  |
 | `street1` | `String` | No |  |
 | `street2` | `String` | No |  |
@@ -1326,7 +1344,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.OutputUpdateConsumer().create(VMap([
-    ("consumer_uuid", .string("example_consumer_uuid"))  // String
+    ("consumerUuid", .string("example_consumerUuid"))  // String
 ]), nil)
 ```
 
@@ -1361,13 +1379,13 @@ let outputUpdateProfile = client.OutputUpdateProfile()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_language` | `String` | No |  |
+| `consumerLanguage` | `String` | No |  |
 | `email` | `String` | No |  |
-| `first_name` | `String` | No |  |
-| `last_name` | `String` | No |  |
-| `phone_number` | `String` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
+| `firstName` | `String` | No |  |
+| `lastName` | `String` | No |  |
+| `phoneNumber` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -1411,8 +1429,8 @@ let version = client.Version()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `String` | No |  |
-| `build_date` | `String` | No |  |
+| `appName` | `String` | No |  |
+| `buildDate` | `String` | No |  |
 | `version` | `String` | No |  |
 
 ### Operations

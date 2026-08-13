@@ -41,8 +41,8 @@ val client = BluefinTecsUserBackofficeSDK(mutableMapOf<String, Any?>(
 ### 4. Create, update, and remove
 
 ```kotlin
-// Create — returns the bare created record (as Any?)
-val created = client.outputActivateDigitalModule(null).create(mutableMapOf<String, Any?>("response_code" to 1L, "response_message" to "example_response_message"), null)
+// Create — returns the ENTITY (call data() for the record)
+val created = client.outputActivateDigitalModule(null).create(mutableMapOf<String, Any?>("responseCode" to 1L, "responseMessage" to "example_responseMessage"), null)
 
 ```
 
@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 ```kotlin
 val client = BluefinTecsUserBackofficeSDK.testSDK(null, null)
 
-// Entity ops return the bare record and raise on error.
+// Entity ops return the ENTITY and raises on error;
+// call data() for the record.
 val outputGetLogo = client.outputGetLogo(null).load(null, null)
 // outputGetLogo holds the mock response record
 println(outputGetLogo)
@@ -240,7 +241,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `Map` for single-entity
+Entity operations return the ENTITY (call data() for the record) (a `Map` for single-entity
 ops, an aggregate `List` for `list`) as `Any?` and raise on error. Wrap
 calls in `try`/`catch` to handle failures.
 
@@ -262,8 +263,8 @@ On error, `ok` is `false` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -273,10 +274,10 @@ API path: `/activateDigitalModule`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `notification_email` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clientSecret` |  |
+| `notificationEmail` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -286,8 +287,8 @@ API path: `/activateMerchantPortalModule`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -297,9 +298,9 @@ API path: `/activateAppStoreModule`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -309,10 +310,10 @@ API path: `/activateUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `role` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `roles` |  |
 
 Operations: create.
 
@@ -322,10 +323,10 @@ API path: `/assignRoles`
 
 | Field | Description |
 | --- | --- |
-| `content_as_base64` |  |
-| `mime_type` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `contentAsBase64` |  |
+| `mimeType` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -337,25 +338,22 @@ API path: `/changeLogo`
 | --- | --- |
 | `city` |  |
 | `country` |  |
-| `date_of_birth` |  |
+| `dateOfBirth` |  |
 | `description` |  |
-| `drivers_license_number` |  |
+| `driversLicenseNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `lastName` |  |
 | `login` |  |
-| `mandator` |  |
 | `name` |  |
-| `passport_number` |  |
+| `passportNumber` |  |
 | `phone` |  |
-| `response_code` |  |
-| `response_message` |  |
 | `salutation` |  |
 | `state` |  |
 | `street1` |  |
 | `street2` |  |
-| `zip_code` |  |
+| `zipCode` |  |
 
 Operations: create.
 
@@ -365,9 +363,9 @@ API path: `/createMandator`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `mandatorName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -377,9 +375,9 @@ API path: `/createServiceUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -389,10 +387,10 @@ API path: `/deactivateUser`
 
 | Field | Description |
 | --- | --- |
-| `case_id` |  |
-| `encoded_data_base64` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `caseID` |  |
+| `encodedDataBase64` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -402,10 +400,10 @@ API path: `/getKycDocument`
 
 | Field | Description |
 | --- | --- |
-| `content_as_base64` |  |
-| `mime_type` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `contentAsBase64` |  |
+| `mimeType` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: load.
 
@@ -415,9 +413,9 @@ API path: `/getLogo`
 
 | Field | Description |
 | --- | --- |
-| `available_role` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `availableRoles` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -430,8 +428,8 @@ API path: `/listOfAvailableRoles`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: create.
@@ -444,8 +442,8 @@ API path: `/listOfMandators`
 | --- | --- |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -456,10 +454,10 @@ API path: `/listOfModules`
 | Field | Description |
 | --- | --- |
 | `filter` |  |
-| `group_role` |  |
+| `groupRoles` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: create.
@@ -473,8 +471,8 @@ API path: `/listOfRoleGroups`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: create.
@@ -488,8 +486,8 @@ API path: `/listOfTransactionsHistory`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: create.
@@ -500,10 +498,10 @@ API path: `/listOfUsers`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
+| `mandatorName` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `username` |  |
 
 Operations: create.
@@ -515,21 +513,21 @@ API path: `/provideCredentials`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `consumer_id` |  |
-| `consumer_language` |  |
+| `consumerId` |  |
+| `consumerLanguage` |  |
 | `country` |  |
-| `date_of_birth` |  |
-| `driver_licence_number` |  |
+| `dateOfBirth` |  |
+| `driverLicenceNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `lastName` |  |
 | `login` |  |
 | `module` |  |
-| `passport_number` |  |
+| `passportNumber` |  |
 | `phone` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `salutation` |  |
 | `state` |  |
 | `street1` |  |
@@ -544,10 +542,10 @@ API path: `/registerUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `role` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `roles` |  |
 
 Operations: create.
 
@@ -557,12 +555,12 @@ API path: `/removeRoles`
 
 | Field | Description |
 | --- | --- |
-| `business_registration_number` |  |
-| `consumer_uuid` |  |
-| `email_confirmation_code` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `businessRegistrationNumber` |  |
+| `consumerUUID` |  |
+| `emailConfirmationCode` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -572,10 +570,10 @@ API path: `/resendLink`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUuid` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -586,23 +584,23 @@ API path: `/resetPassword`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `consumer_uuid` |  |
+| `consumerUuid` |  |
 | `consumerlanguage` |  |
 | `country` |  |
-| `date_of_birth` |  |
+| `dateOfBirth` |  |
 | `datetime_created` |  |
-| `driver_licence_number` |  |
+| `driverLicenceNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `kyc_passed` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `kycPassed` |  |
+| `lastName` |  |
 | `nationality` |  |
-| `passport_number` |  |
-| `phone_number` |  |
-| `place_of_birth` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `passportNumber` |  |
+| `phoneNumber` |  |
+| `placeOfBirth` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `state` |  |
 | `street1` |  |
 | `street2` |  |
@@ -617,13 +615,13 @@ API path: `/updateConsumer`
 
 | Field | Description |
 | --- | --- |
-| `consumer_language` |  |
+| `consumerLanguage` |  |
 | `email` |  |
-| `first_name` |  |
-| `last_name` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `firstName` |  |
+| `lastName` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -633,8 +631,8 @@ API path: `/updateProfile`
 
 | Field | Description |
 | --- | --- |
-| `app_name` |  |
-| `build_date` |  |
+| `appName` |  |
+| `buildDate` |  |
 | `version` |  |
 
 Operations: load.
@@ -660,8 +658,8 @@ Create an instance: `val outputActivateDigitalModule = client.outputActivateDigi
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
 
 #### Example: Create
 
@@ -685,17 +683,17 @@ Create an instance: `val outputActivatePortalModule = client.outputActivatePorta
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `String?` |  |
-| `notification_email` | `String?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
+| `clientSecret` | `String?` |  |
+| `notificationEmail` | `String?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
 
 #### Example: Create
 
 ```kotlin
 val outputActivatePortalModule = client.outputActivatePortalModule(null).create(mutableMapOf<String, Any?>(
-    "client_secret" to "example_client_secret",  // String?
-    "notification_email" to "example_notification_email"  // String?
+    "clientSecret" to "example_clientSecret",  // String?
+    "notificationEmail" to "example_notificationEmail"  // String?
 ), null)
 ```
 
@@ -714,8 +712,8 @@ Create an instance: `val outputActivateStoreModule = client.outputActivateStoreM
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
 
 #### Example: Create
 
@@ -739,9 +737,9 @@ Create an instance: `val outputActivateUser = client.outputActivateUser(null)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
+| `consumerUUID` | `String?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
 
 #### Example: Create
 
@@ -765,17 +763,17 @@ Create an instance: `val outputAssignRole = client.outputAssignRole(null)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
-| `role` | `List<Any?>?` |  |
+| `consumerUUID` | `String?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
+| `roles` | `List<Any?>?` |  |
 
 #### Example: Create
 
 ```kotlin
 val outputAssignRole = client.outputAssignRole(null).create(mutableMapOf<String, Any?>(
-    "consumer_uuid" to "example_consumer_uuid",  // String?
-    "role" to listOf<Any?>()  // List<Any?>?
+    "consumerUUID" to "example_consumerUUID",  // String?
+    "roles" to listOf<Any?>()  // List<Any?>?
 ), null)
 ```
 
@@ -794,17 +792,17 @@ Create an instance: `val outputChangeLogo = client.outputChangeLogo(null)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `content_as_base64` | `String?` |  |
-| `mime_type` | `String?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
+| `contentAsBase64` | `String?` |  |
+| `mimeType` | `String?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
 
 #### Example: Create
 
 ```kotlin
 val outputChangeLogo = client.outputChangeLogo(null).create(mutableMapOf<String, Any?>(
-    "content_as_base64" to "example_content_as_base64",  // String?
-    "mime_type" to "example_mime_type"  // String?
+    "contentAsBase64" to "example_contentAsBase64",  // String?
+    "mimeType" to "example_mimeType"  // String?
 ), null)
 ```
 
@@ -825,34 +823,29 @@ Create an instance: `val outputCreateMandator = client.outputCreateMandator(null
 | --- | --- | --- |
 | `city` | `String?` |  |
 | `country` | `String?` |  |
-| `date_of_birth` | `String?` |  |
+| `dateOfBirth` | `String?` |  |
 | `description` | `String?` |  |
-| `drivers_license_number` | `String?` |  |
+| `driversLicenseNumber` | `String?` |  |
 | `email` | `String?` |  |
-| `first_name` | `String?` |  |
-| `identification_number` | `String?` |  |
-| `last_name` | `String?` |  |
+| `firstName` | `String?` |  |
+| `identificationNumber` | `String?` |  |
+| `lastName` | `String?` |  |
 | `login` | `String?` |  |
-| `mandator` | `Map<String, Any?>?` |  |
 | `name` | `String?` |  |
-| `passport_number` | `String?` |  |
+| `passportNumber` | `String?` |  |
 | `phone` | `String?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
 | `salutation` | `String?` |  |
 | `state` | `String?` |  |
 | `street1` | `String?` |  |
 | `street2` | `String?` |  |
-| `zip_code` | `String?` |  |
+| `zipCode` | `String?` |  |
 
 #### Example: Create
 
 ```kotlin
 val outputCreateMandator = client.outputCreateMandator(null).create(mutableMapOf<String, Any?>(
-    "description" to "example_description",  // String?
     "email" to "example_email",  // String?
     "login" to "example_login",  // String?
-    "name" to "example_name",  // String?
     "phone" to "example_phone"  // String?
 ), null)
 ```
@@ -872,15 +865,15 @@ Create an instance: `val outputCreateServiceUser = client.outputCreateServiceUse
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `String?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
+| `mandatorName` | `String?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
 
 #### Example: Create
 
 ```kotlin
 val outputCreateServiceUser = client.outputCreateServiceUser(null).create(mutableMapOf<String, Any?>(
-    "mandator_name" to "example_mandator_name"  // String?
+    "mandatorName" to "example_mandatorName"  // String?
 ), null)
 ```
 
@@ -899,9 +892,9 @@ Create an instance: `val outputDeactivateUser = client.outputDeactivateUser(null
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
+| `consumerUUID` | `String?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
 
 #### Example: Create
 
@@ -925,10 +918,10 @@ Create an instance: `val outputGetKycDocument = client.outputGetKycDocument(null
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `case_id` | `String?` |  |
-| `encoded_data_base64` | `String?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
+| `caseID` | `String?` |  |
+| `encodedDataBase64` | `String?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
 
 #### Example: Create
 
@@ -952,10 +945,10 @@ Create an instance: `val outputGetLogo = client.outputGetLogo(null)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `content_as_base64` | `String?` |  |
-| `mime_type` | `String?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
+| `contentAsBase64` | `String?` |  |
+| `mimeType` | `String?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
 
 #### Example: Load
 
@@ -978,9 +971,9 @@ Create an instance: `val outputListOfAvailableRole = client.outputListOfAvailabl
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `available_role` | `List<Any?>?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
+| `availableRoles` | `List<Any?>?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
 
 #### Example: Create
 
@@ -1007,8 +1000,8 @@ Create an instance: `val outputListOfMandator = client.outputListOfMandator(null
 | `filter` | `Map<String, Any?>?` |  |
 | `list` | `List<Any?>?` |  |
 | `pagination` | `Map<String, Any?>?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
 | `sorting` | `Map<String, Any?>?` |  |
 
 #### Example: Create
@@ -1035,8 +1028,8 @@ Create an instance: `val outputListOfModule = client.outputListOfModule(null)`
 | --- | --- | --- |
 | `list` | `List<Any?>?` |  |
 | `pagination` | `Map<String, Any?>?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
 
 #### Example: Create
 
@@ -1061,10 +1054,10 @@ Create an instance: `val outputListOfRoleGroup = client.outputListOfRoleGroup(nu
 | Field | Type | Description |
 | --- | --- | --- |
 | `filter` | `Map<String, Any?>?` |  |
-| `group_role` | `List<Any?>?` |  |
+| `groupRoles` | `List<Any?>?` |  |
 | `pagination` | `Map<String, Any?>?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
 | `sorting` | `Map<String, Any?>?` |  |
 
 #### Example: Create
@@ -1092,8 +1085,8 @@ Create an instance: `val outputListOfTransactionsHistory = client.outputListOfTr
 | `filter` | `Map<String, Any?>?` |  |
 | `list` | `List<Any?>?` |  |
 | `pagination` | `Map<String, Any?>?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
 | `sorting` | `Map<String, Any?>?` |  |
 
 #### Example: Create
@@ -1121,8 +1114,8 @@ Create an instance: `val outputListOfUser = client.outputListOfUser(null)`
 | `filter` | `Map<String, Any?>?` |  |
 | `list` | `List<Any?>?` |  |
 | `pagination` | `Map<String, Any?>?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
 | `sorting` | `Map<String, Any?>?` |  |
 
 #### Example: Create
@@ -1147,17 +1140,17 @@ Create an instance: `val outputProvideCredential = client.outputProvideCredentia
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `String?` |  |
+| `mandatorName` | `String?` |  |
 | `password` | `String?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
 | `username` | `String?` |  |
 
 #### Example: Create
 
 ```kotlin
 val outputProvideCredential = client.outputProvideCredential(null).create(mutableMapOf<String, Any?>(
-    "mandator_name" to "example_mandator_name"  // String?
+    "mandatorName" to "example_mandatorName"  // String?
 ), null)
 ```
 
@@ -1177,21 +1170,21 @@ Create an instance: `val outputRegisterUser = client.outputRegisterUser(null)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `String?` |  |
-| `consumer_id` | `String?` |  |
-| `consumer_language` | `String?` |  |
+| `consumerId` | `String?` |  |
+| `consumerLanguage` | `String?` |  |
 | `country` | `String?` |  |
-| `date_of_birth` | `String?` |  |
-| `driver_licence_number` | `String?` |  |
+| `dateOfBirth` | `String?` |  |
+| `driverLicenceNumber` | `String?` |  |
 | `email` | `String?` |  |
-| `first_name` | `String?` |  |
-| `identification_number` | `String?` |  |
-| `last_name` | `String?` |  |
+| `firstName` | `String?` |  |
+| `identificationNumber` | `String?` |  |
+| `lastName` | `String?` |  |
 | `login` | `String?` |  |
 | `module` | `String?` |  |
-| `passport_number` | `String?` |  |
+| `passportNumber` | `String?` |  |
 | `phone` | `String?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
 | `salutation` | `String?` |  |
 | `state` | `String?` |  |
 | `street1` | `String?` |  |
@@ -1221,10 +1214,10 @@ Create an instance: `val outputRemoveRole = client.outputRemoveRole(null)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
-| `role` | `List<Any?>?` |  |
+| `consumerUUID` | `String?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
+| `roles` | `List<Any?>?` |  |
 
 #### Example: Create
 
@@ -1248,18 +1241,18 @@ Create an instance: `val outputResendLink = client.outputResendLink(null)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `business_registration_number` | `String?` |  |
-| `consumer_uuid` | `String?` |  |
-| `email_confirmation_code` | `String?` |  |
-| `phone_number` | `String?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
+| `businessRegistrationNumber` | `String?` |  |
+| `consumerUUID` | `String?` |  |
+| `emailConfirmationCode` | `String?` |  |
+| `phoneNumber` | `String?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
 
 #### Example: Create
 
 ```kotlin
 val outputResendLink = client.outputResendLink(null).create(mutableMapOf<String, Any?>(
-    "consumer_uuid" to "example_consumer_uuid"  // String?
+    "consumerUUID" to "example_consumerUUID"  // String?
 ), null)
 ```
 
@@ -1278,10 +1271,10 @@ Create an instance: `val outputResetPassword = client.outputResetPassword(null)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String?` |  |
-| `phone_number` | `String?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
+| `consumerUuid` | `String?` |  |
+| `phoneNumber` | `String?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
 
 #### Example: Create
 
@@ -1306,23 +1299,23 @@ Create an instance: `val outputUpdateConsumer = client.outputUpdateConsumer(null
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `String?` |  |
-| `consumer_uuid` | `String?` |  |
+| `consumerUuid` | `String?` |  |
 | `consumerlanguage` | `String?` |  |
 | `country` | `String?` |  |
-| `date_of_birth` | `String?` |  |
+| `dateOfBirth` | `String?` |  |
 | `datetime_created` | `String?` |  |
-| `driver_licence_number` | `String?` |  |
+| `driverLicenceNumber` | `String?` |  |
 | `email` | `String?` |  |
-| `first_name` | `String?` |  |
-| `identification_number` | `String?` |  |
-| `kyc_passed` | `Boolean?` |  |
-| `last_name` | `String?` |  |
+| `firstName` | `String?` |  |
+| `identificationNumber` | `String?` |  |
+| `kycPassed` | `Boolean?` |  |
+| `lastName` | `String?` |  |
 | `nationality` | `String?` |  |
-| `passport_number` | `String?` |  |
-| `phone_number` | `String?` |  |
-| `place_of_birth` | `String?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
+| `passportNumber` | `String?` |  |
+| `phoneNumber` | `String?` |  |
+| `placeOfBirth` | `String?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
 | `state` | `String?` |  |
 | `street1` | `String?` |  |
 | `street2` | `String?` |  |
@@ -1333,7 +1326,7 @@ Create an instance: `val outputUpdateConsumer = client.outputUpdateConsumer(null
 
 ```kotlin
 val outputUpdateConsumer = client.outputUpdateConsumer(null).create(mutableMapOf<String, Any?>(
-    "consumer_uuid" to "example_consumer_uuid"  // String?
+    "consumerUuid" to "example_consumerUuid"  // String?
 ), null)
 ```
 
@@ -1352,13 +1345,13 @@ Create an instance: `val outputUpdateProfile = client.outputUpdateProfile(null)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_language` | `String?` |  |
+| `consumerLanguage` | `String?` |  |
 | `email` | `String?` |  |
-| `first_name` | `String?` |  |
-| `last_name` | `String?` |  |
-| `phone_number` | `String?` |  |
-| `response_code` | `Long?` |  |
-| `response_message` | `String?` |  |
+| `firstName` | `String?` |  |
+| `lastName` | `String?` |  |
+| `phoneNumber` | `String?` |  |
+| `responseCode` | `Long?` |  |
+| `responseMessage` | `String?` |  |
 
 #### Example: Create
 
@@ -1382,8 +1375,8 @@ Create an instance: `val version = client.version(null)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_name` | `String?` |  |
-| `build_date` | `String?` |  |
+| `appName` | `String?` |  |
+| `buildDate` | `String?` |  |
 | `version` | `String?` |  |
 
 #### Example: Load

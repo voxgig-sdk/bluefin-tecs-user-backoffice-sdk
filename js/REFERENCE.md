@@ -405,8 +405,8 @@ const output_activate_digital_module = client.OutputActivateDigitalModule()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -457,10 +457,10 @@ const output_activate_portal_module = client.OutputActivatePortalModule()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `string` | Yes |  |
-| `notification_email` | `string` | Yes |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `clientSecret` | `string` | Yes |  |
+| `notificationEmail` | `string` | Yes |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -470,8 +470,8 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.OutputActivatePortalModule().create({
-  client_secret: 'example_client_secret',
-  notification_email: 'example_notification_email',
+  clientSecret: 'example_clientSecret',
+  notificationEmail: 'example_notificationEmail',
 })
 ```
 
@@ -513,8 +513,8 @@ const output_activate_store_module = client.OutputActivateStoreModule()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -565,9 +565,9 @@ const output_activate_user = client.OutputActivateUser()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `consumerUUID` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -618,10 +618,10 @@ const output_assign_role = client.OutputAssignRole()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | Yes |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `role` | `Array` | Yes |  |
+| `consumerUUID` | `string` | Yes |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `roles` | `Array` | Yes |  |
 
 ### Operations
 
@@ -631,8 +631,8 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.OutputAssignRole().create({
-  consumer_uuid: 'example_consumer_uuid',
-  role: [],
+  consumerUUID: 'example_consumerUUID',
+  roles: [],
 })
 ```
 
@@ -674,10 +674,10 @@ const output_change_logo = client.OutputChangeLogo()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `string` | Yes |  |
-| `mime_type` | `string` | Yes |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `contentAsBase64` | `string` | Yes |  |
+| `mimeType` | `string` | Yes |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -687,8 +687,8 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.OutputChangeLogo().create({
-  content_as_base64: 'example_content_as_base64',
-  mime_type: 'example_mime_type',
+  contentAsBase64: 'example_contentAsBase64',
+  mimeType: 'example_mimeType',
 })
 ```
 
@@ -732,25 +732,45 @@ const output_create_mandator = client.OutputCreateMandator()
 | --- | --- | --- | --- |
 | `city` | `string` | No |  |
 | `country` | `string` | No |  |
-| `date_of_birth` | `string` | No |  |
-| `description` | `string` | Yes |  |
-| `drivers_license_number` | `string` | No |  |
+| `dateOfBirth` | `string` | No |  |
+| `description` | `string` | No |  |
+| `driversLicenseNumber` | `string` | No |  |
 | `email` | `string` | Yes |  |
-| `first_name` | `string` | No |  |
-| `identification_number` | `string` | No |  |
-| `last_name` | `string` | No |  |
+| `firstName` | `string` | No |  |
+| `identificationNumber` | `string` | No |  |
+| `lastName` | `string` | No |  |
 | `login` | `string` | Yes |  |
-| `mandator` | `Object` | No |  |
-| `name` | `string` | Yes |  |
-| `passport_number` | `string` | No |  |
+| `name` | `string` | No |  |
+| `passportNumber` | `string` | No |  |
 | `phone` | `string` | Yes |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
 | `salutation` | `string` | No |  |
 | `state` | `string` | No |  |
 | `street1` | `string` | No |  |
 | `street2` | `string` | No |  |
-| `zip_code` | `string` | No |  |
+| `zipCode` | `string` | No |  |
+
+### Field Usage by Operation
+
+| Field | create |
+| --- | --- |
+| `city` | - |
+| `country` | - |
+| `dateOfBirth` | - |
+| `description` | Yes |
+| `driversLicenseNumber` | - |
+| `email` | - |
+| `firstName` | - |
+| `identificationNumber` | - |
+| `lastName` | - |
+| `login` | - |
+| `name` | Yes |
+| `passportNumber` | - |
+| `phone` | - |
+| `salutation` | - |
+| `state` | - |
+| `street1` | - |
+| `street2` | - |
+| `zipCode` | - |
 
 ### Operations
 
@@ -760,10 +780,8 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.OutputCreateMandator().create({
-  description: 'example_description',
   email: 'example_email',
   login: 'example_login',
-  name: 'example_name',
   phone: 'example_phone',
 })
 ```
@@ -806,9 +824,9 @@ const output_create_service_user = client.OutputCreateServiceUser()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `string` | Yes |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `mandatorName` | `string` | Yes |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -818,7 +836,7 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.OutputCreateServiceUser().create({
-  mandator_name: 'example_mandator_name',
+  mandatorName: 'example_mandatorName',
 })
 ```
 
@@ -860,9 +878,9 @@ const output_deactivate_user = client.OutputDeactivateUser()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `consumerUUID` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -913,10 +931,10 @@ const output_get_kyc_document = client.OutputGetKycDocument()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `case_id` | `string` | No |  |
-| `encoded_data_base64` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `caseID` | `string` | No |  |
+| `encodedDataBase64` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -967,10 +985,10 @@ const output_get_logo = client.OutputGetLogo()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `string` | Yes |  |
-| `mime_type` | `string` | Yes |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `contentAsBase64` | `string` | Yes |  |
+| `mimeType` | `string` | Yes |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1020,9 +1038,9 @@ const output_list_of_available_role = client.OutputListOfAvailableRole()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `available_role` | `Array` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `availableRoles` | `Array` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1076,8 +1094,8 @@ const output_list_of_mandator = client.OutputListOfMandator()
 | `filter` | `Object` | No |  |
 | `list` | `Array` | No |  |
 | `pagination` | `Object` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 | `sorting` | `Object` | No |  |
 
 ### Operations
@@ -1131,8 +1149,8 @@ const output_list_of_module = client.OutputListOfModule()
 | --- | --- | --- | --- |
 | `list` | `Array` | No |  |
 | `pagination` | `Object` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1184,10 +1202,10 @@ const output_list_of_role_group = client.OutputListOfRoleGroup()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `filter` | `Object` | No |  |
-| `group_role` | `Array` | No |  |
+| `groupRoles` | `Array` | No |  |
 | `pagination` | `Object` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 | `sorting` | `Object` | No |  |
 
 ### Operations
@@ -1242,8 +1260,8 @@ const output_list_of_transactions_history = client.OutputListOfTransactionsHisto
 | `filter` | `Object` | No |  |
 | `list` | `Array` | No |  |
 | `pagination` | `Object` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 | `sorting` | `Object` | No |  |
 
 ### Operations
@@ -1298,8 +1316,8 @@ const output_list_of_user = client.OutputListOfUser()
 | `filter` | `Object` | No |  |
 | `list` | `Array` | No |  |
 | `pagination` | `Object` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 | `sorting` | `Object` | No |  |
 
 ### Operations
@@ -1351,10 +1369,10 @@ const output_provide_credential = client.OutputProvideCredential()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `string` | Yes |  |
+| `mandatorName` | `string` | Yes |  |
 | `password` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 | `username` | `string` | No |  |
 
 ### Operations
@@ -1365,7 +1383,7 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.OutputProvideCredential().create({
-  mandator_name: 'example_mandator_name',
+  mandatorName: 'example_mandatorName',
 })
 ```
 
@@ -1408,21 +1426,21 @@ const output_register_user = client.OutputRegisterUser()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `string` | No |  |
-| `consumer_id` | `string` | No |  |
-| `consumer_language` | `string` | No |  |
+| `consumerId` | `string` | No |  |
+| `consumerLanguage` | `string` | No |  |
 | `country` | `string` | No |  |
-| `date_of_birth` | `string` | No |  |
-| `driver_licence_number` | `string` | No |  |
+| `dateOfBirth` | `string` | No |  |
+| `driverLicenceNumber` | `string` | No |  |
 | `email` | `string` | Yes |  |
-| `first_name` | `string` | No |  |
-| `identification_number` | `string` | No |  |
-| `last_name` | `string` | No |  |
+| `firstName` | `string` | No |  |
+| `identificationNumber` | `string` | No |  |
+| `lastName` | `string` | No |  |
 | `login` | `string` | No |  |
 | `module` | `string` | No |  |
-| `passport_number` | `string` | No |  |
+| `passportNumber` | `string` | No |  |
 | `phone` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 | `salutation` | `string` | No |  |
 | `state` | `string` | No |  |
 | `street1` | `string` | No |  |
@@ -1479,10 +1497,10 @@ const output_remove_role = client.OutputRemoveRole()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `role` | `Array` | No |  |
+| `consumerUUID` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `roles` | `Array` | No |  |
 
 ### Operations
 
@@ -1533,12 +1551,12 @@ const output_resend_link = client.OutputResendLink()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `business_registration_number` | `string` | No |  |
-| `consumer_uuid` | `string` | Yes |  |
-| `email_confirmation_code` | `string` | No |  |
-| `phone_number` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `businessRegistrationNumber` | `string` | No |  |
+| `consumerUUID` | `string` | Yes |  |
+| `emailConfirmationCode` | `string` | No |  |
+| `phoneNumber` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1548,7 +1566,7 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.OutputResendLink().create({
-  consumer_uuid: 'example_consumer_uuid',
+  consumerUUID: 'example_consumerUUID',
 })
 ```
 
@@ -1590,10 +1608,10 @@ const output_reset_password = client.OutputResetPassword()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `phone_number` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `consumerUuid` | `string` | No |  |
+| `phoneNumber` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1645,23 +1663,23 @@ const output_update_consumer = client.OutputUpdateConsumer()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `string` | No |  |
-| `consumer_uuid` | `string` | Yes |  |
+| `consumerUuid` | `string` | Yes |  |
 | `consumerlanguage` | `string` | No |  |
 | `country` | `string` | No |  |
-| `date_of_birth` | `string` | No |  |
+| `dateOfBirth` | `string` | No |  |
 | `datetime_created` | `string` | No |  |
-| `driver_licence_number` | `string` | No |  |
+| `driverLicenceNumber` | `string` | No |  |
 | `email` | `string` | No |  |
-| `first_name` | `string` | No |  |
-| `identification_number` | `string` | No |  |
-| `kyc_passed` | `boolean` | No |  |
-| `last_name` | `string` | No |  |
+| `firstName` | `string` | No |  |
+| `identificationNumber` | `string` | No |  |
+| `kycPassed` | `boolean` | No |  |
+| `lastName` | `string` | No |  |
 | `nationality` | `string` | No |  |
-| `passport_number` | `string` | No |  |
-| `phone_number` | `string` | No |  |
-| `place_of_birth` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `passportNumber` | `string` | No |  |
+| `phoneNumber` | `string` | No |  |
+| `placeOfBirth` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 | `state` | `string` | No |  |
 | `street1` | `string` | No |  |
 | `street2` | `string` | No |  |
@@ -1676,7 +1694,7 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.OutputUpdateConsumer().create({
-  consumer_uuid: 'example_consumer_uuid',
+  consumerUuid: 'example_consumerUuid',
 })
 ```
 
@@ -1718,13 +1736,13 @@ const output_update_profile = client.OutputUpdateProfile()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_language` | `string` | No |  |
+| `consumerLanguage` | `string` | No |  |
 | `email` | `string` | No |  |
-| `first_name` | `string` | No |  |
-| `last_name` | `string` | No |  |
-| `phone_number` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `firstName` | `string` | No |  |
+| `lastName` | `string` | No |  |
+| `phoneNumber` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1775,8 +1793,8 @@ const version = client.Version()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `string` | No |  |
-| `build_date` | `string` | No |  |
+| `appName` | `string` | No |  |
+| `buildDate` | `string` | No |  |
 | `version` | `string` | No |  |
 
 ### Operations

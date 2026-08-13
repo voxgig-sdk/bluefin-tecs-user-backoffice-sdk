@@ -31,7 +31,8 @@ defmodule BluefinTecsUserBackoffice.OutputGetKycDocumentEntityTest do
   test "should create then read back" do
     sdk = BluefinTecsUserBackoffice.test(S.jm(["entity", S.jm(["output_get_kyc_document", S.jm([])])]))
     ent = BluefinTecsUserBackoffice.output_get_kyc_document(sdk)
-    made = BluefinTecsUserBackoffice.Entity.OutputGetKycDocument.create(ent, S.jm(["name", "test-create"]))
+    created = BluefinTecsUserBackoffice.Entity.OutputGetKycDocument.create(ent, S.jm(["name", "test-create"]))
+    made = BluefinTecsUserBackoffice.EntityBase.data_get(created)
     assert S.ismap(made)
     assert S.getprop(made, "id") != nil
   end

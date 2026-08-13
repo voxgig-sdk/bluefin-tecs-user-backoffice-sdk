@@ -59,10 +59,10 @@ to recover from failures.
 
 ```haskell
   createEnt <- Sdk.output_activate_digital_module sdk VNoval
-  d <- jo [("response_code", VNum 1), ("response_message", VStr "example_response_message")]
+  d <- jo [("responseCode", VNum 1), ("responseMessage", VStr "example_responseMessage")]
   cctrl <- emptyMap
   created <- Sdk.eCreate createEnt d cctrl
-  print created
+  print =<< Sdk.eDataGet created
 ```
 
 
@@ -283,8 +283,8 @@ All entities share the same record interface (fields of the `Entity` type).
 
 | Field | Signature | Description |
 | --- | --- | --- |
-| `eLoad` | `Value -> Value -> IO Value` | Load a single entity by match criteria. Raises on error. |
-| `eCreate` | `Value -> Value -> IO Value` | Create a new entity. Raises on error. |
+| `eLoad` | `Value -> Value -> IO Entity` | Load a single entity by match criteria. Resolves to the entity. Raises on error. |
+| `eCreate` | `Value -> Value -> IO Entity` | Create a new entity. Resolves to the entity. Raises on error. |
 | `eDataGet` | `IO Value` | Get entity data. |
 | `eDataSet` | `Value -> IO ()` | Set entity data. |
 | `eStream` | `String -> Value -> Value -> IO [Value]` | Run an op as a lazy stream of items. |
@@ -293,9 +293,11 @@ All entities share the same record interface (fields of the `Entity` type).
 
 ### Result shape
 
-Entity operations return the bare result `Value` (a map for single-entity
-ops, a list for `eList`) and raise on error. Wrap calls in
-`Control.Exception.try` to handle failures.
+Entity operations resolve to the ENTITY, not the raw record — `eList` to
+one entity per record — and raise on error. The record is reached through
+`eDataGet`, which returns the entity's data container. `eRemove` resolves to
+the entity marked deleted (`eDeleted`); it keeps the data it held. Wrap calls
+in `Control.Exception.try` to handle failures.
 
 The `direct` escape hatch never raises — it returns a result `Value`
 you branch on via its `ok` field (read with `getp result "ok"`):
@@ -315,8 +317,8 @@ On error, `ok` is `False` and `err` carries the error value.
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -326,10 +328,10 @@ API path: `/activateDigitalModule`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `notification_email` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clientSecret` |  |
+| `notificationEmail` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -339,8 +341,8 @@ API path: `/activateMerchantPortalModule`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -350,9 +352,9 @@ API path: `/activateAppStoreModule`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -362,10 +364,10 @@ API path: `/activateUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `role` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `roles` |  |
 
 Operations: Create.
 
@@ -375,10 +377,10 @@ API path: `/assignRoles`
 
 | Field | Description |
 | --- | --- |
-| `content_as_base64` |  |
-| `mime_type` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `contentAsBase64` |  |
+| `mimeType` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -390,25 +392,22 @@ API path: `/changeLogo`
 | --- | --- |
 | `city` |  |
 | `country` |  |
-| `date_of_birth` |  |
+| `dateOfBirth` |  |
 | `description` |  |
-| `drivers_license_number` |  |
+| `driversLicenseNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `lastName` |  |
 | `login` |  |
-| `mandator` |  |
 | `name` |  |
-| `passport_number` |  |
+| `passportNumber` |  |
 | `phone` |  |
-| `response_code` |  |
-| `response_message` |  |
 | `salutation` |  |
 | `state` |  |
 | `street1` |  |
 | `street2` |  |
-| `zip_code` |  |
+| `zipCode` |  |
 
 Operations: Create.
 
@@ -418,9 +417,9 @@ API path: `/createMandator`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `mandatorName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -430,9 +429,9 @@ API path: `/createServiceUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -442,10 +441,10 @@ API path: `/deactivateUser`
 
 | Field | Description |
 | --- | --- |
-| `case_id` |  |
-| `encoded_data_base64` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `caseID` |  |
+| `encodedDataBase64` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -455,10 +454,10 @@ API path: `/getKycDocument`
 
 | Field | Description |
 | --- | --- |
-| `content_as_base64` |  |
-| `mime_type` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `contentAsBase64` |  |
+| `mimeType` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Load.
 
@@ -468,9 +467,9 @@ API path: `/getLogo`
 
 | Field | Description |
 | --- | --- |
-| `available_role` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `availableRoles` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -483,8 +482,8 @@ API path: `/listOfAvailableRoles`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -497,8 +496,8 @@ API path: `/listOfMandators`
 | --- | --- |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -509,10 +508,10 @@ API path: `/listOfModules`
 | Field | Description |
 | --- | --- |
 | `filter` |  |
-| `group_role` |  |
+| `groupRoles` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -526,8 +525,8 @@ API path: `/listOfRoleGroups`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -541,8 +540,8 @@ API path: `/listOfTransactionsHistory`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -553,10 +552,10 @@ API path: `/listOfUsers`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
+| `mandatorName` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `username` |  |
 
 Operations: Create.
@@ -568,21 +567,21 @@ API path: `/provideCredentials`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `consumer_id` |  |
-| `consumer_language` |  |
+| `consumerId` |  |
+| `consumerLanguage` |  |
 | `country` |  |
-| `date_of_birth` |  |
-| `driver_licence_number` |  |
+| `dateOfBirth` |  |
+| `driverLicenceNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `lastName` |  |
 | `login` |  |
 | `module` |  |
-| `passport_number` |  |
+| `passportNumber` |  |
 | `phone` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `salutation` |  |
 | `state` |  |
 | `street1` |  |
@@ -597,10 +596,10 @@ API path: `/registerUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `role` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `roles` |  |
 
 Operations: Create.
 
@@ -610,12 +609,12 @@ API path: `/removeRoles`
 
 | Field | Description |
 | --- | --- |
-| `business_registration_number` |  |
-| `consumer_uuid` |  |
-| `email_confirmation_code` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `businessRegistrationNumber` |  |
+| `consumerUUID` |  |
+| `emailConfirmationCode` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -625,10 +624,10 @@ API path: `/resendLink`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUuid` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -639,23 +638,23 @@ API path: `/resetPassword`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `consumer_uuid` |  |
+| `consumerUuid` |  |
 | `consumerlanguage` |  |
 | `country` |  |
-| `date_of_birth` |  |
+| `dateOfBirth` |  |
 | `datetime_created` |  |
-| `driver_licence_number` |  |
+| `driverLicenceNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `kyc_passed` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `kycPassed` |  |
+| `lastName` |  |
 | `nationality` |  |
-| `passport_number` |  |
-| `phone_number` |  |
-| `place_of_birth` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `passportNumber` |  |
+| `phoneNumber` |  |
+| `placeOfBirth` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `state` |  |
 | `street1` |  |
 | `street2` |  |
@@ -670,13 +669,13 @@ API path: `/updateConsumer`
 
 | Field | Description |
 | --- | --- |
-| `consumer_language` |  |
+| `consumerLanguage` |  |
 | `email` |  |
-| `first_name` |  |
-| `last_name` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `firstName` |  |
+| `lastName` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -686,8 +685,8 @@ API path: `/updateProfile`
 
 | Field | Description |
 | --- | --- |
-| `app_name` |  |
-| `build_date` |  |
+| `appName` |  |
+| `buildDate` |  |
 | `version` |  |
 
 Operations: Load.
@@ -707,14 +706,14 @@ Create an instance: `output_activate_digital_module <- Sdk.output_activate_digit
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -724,6 +723,7 @@ Create an instance: `output_activate_digital_module <- Sdk.output_activate_digit
     []
   ctrl <- emptyMap
   output_activate_digital_module <- Sdk.eCreate ent d ctrl
+  output_activate_digital_moduleData <- Sdk.eDataGet output_activate_digital_module
 ```
 
 
@@ -735,27 +735,28 @@ Create an instance: `output_activate_portal_module <- Sdk.output_activate_portal
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `String` |  |
-| `notification_email` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `clientSecret` | `String` |  |
+| `notificationEmail` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.output_activate_portal_module sdk VNoval
   d <- jo
-    [ ("client_secret", VStr "example_client_secret")   -- String
-    , ("notification_email", VStr "example_notification_email")   -- String
+    [ ("clientSecret", VStr "example_clientSecret")   -- String
+    , ("notificationEmail", VStr "example_notificationEmail")   -- String
     ]
   ctrl <- emptyMap
   output_activate_portal_module <- Sdk.eCreate ent d ctrl
+  output_activate_portal_moduleData <- Sdk.eDataGet output_activate_portal_module
 ```
 
 
@@ -767,14 +768,14 @@ Create an instance: `output_activate_store_module <- Sdk.output_activate_store_m
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -784,6 +785,7 @@ Create an instance: `output_activate_store_module <- Sdk.output_activate_store_m
     []
   ctrl <- emptyMap
   output_activate_store_module <- Sdk.eCreate ent d ctrl
+  output_activate_store_moduleData <- Sdk.eDataGet output_activate_store_module
 ```
 
 
@@ -795,15 +797,15 @@ Create an instance: `output_activate_user <- Sdk.output_activate_user sdk VNoval
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `consumerUUID` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -813,6 +815,7 @@ Create an instance: `output_activate_user <- Sdk.output_activate_user sdk VNoval
     []
   ctrl <- emptyMap
   output_activate_user <- Sdk.eCreate ent d ctrl
+  output_activate_userData <- Sdk.eDataGet output_activate_user
 ```
 
 
@@ -824,27 +827,28 @@ Create an instance: `output_assign_role <- Sdk.output_assign_role sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `role` | `[Value]` |  |
+| `consumerUUID` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `roles` | `[Value]` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.output_assign_role sdk VNoval
   d <- jo
-    [ ("consumer_uuid", VStr "example_consumer_uuid")   -- String
-    , ("role", VNoval)   -- [Value]
+    [ ("consumerUUID", VStr "example_consumerUUID")   -- String
+    , ("roles", VNoval)   -- [Value]
     ]
   ctrl <- emptyMap
   output_assign_role <- Sdk.eCreate ent d ctrl
+  output_assign_roleData <- Sdk.eDataGet output_assign_role
 ```
 
 
@@ -856,27 +860,28 @@ Create an instance: `output_change_logo <- Sdk.output_change_logo sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `content_as_base64` | `String` |  |
-| `mime_type` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `contentAsBase64` | `String` |  |
+| `mimeType` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.output_change_logo sdk VNoval
   d <- jo
-    [ ("content_as_base64", VStr "example_content_as_base64")   -- String
-    , ("mime_type", VStr "example_mime_type")   -- String
+    [ ("contentAsBase64", VStr "example_contentAsBase64")   -- String
+    , ("mimeType", VStr "example_mimeType")   -- String
     ]
   ctrl <- emptyMap
   output_change_logo <- Sdk.eCreate ent d ctrl
+  output_change_logoData <- Sdk.eDataGet output_change_logo
 ```
 
 
@@ -888,7 +893,7 @@ Create an instance: `output_create_mandator <- Sdk.output_create_mandator sdk VN
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
@@ -896,39 +901,35 @@ Create an instance: `output_create_mandator <- Sdk.output_create_mandator sdk VN
 | --- | --- | --- |
 | `city` | `String` |  |
 | `country` | `String` |  |
-| `date_of_birth` | `String` |  |
+| `dateOfBirth` | `String` |  |
 | `description` | `String` |  |
-| `drivers_license_number` | `String` |  |
+| `driversLicenseNumber` | `String` |  |
 | `email` | `String` |  |
-| `first_name` | `String` |  |
-| `identification_number` | `String` |  |
-| `last_name` | `String` |  |
+| `firstName` | `String` |  |
+| `identificationNumber` | `String` |  |
+| `lastName` | `String` |  |
 | `login` | `String` |  |
-| `mandator` | `Value` |  |
 | `name` | `String` |  |
-| `passport_number` | `String` |  |
+| `passportNumber` | `String` |  |
 | `phone` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
 | `salutation` | `String` |  |
 | `state` | `String` |  |
 | `street1` | `String` |  |
 | `street2` | `String` |  |
-| `zip_code` | `String` |  |
+| `zipCode` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.output_create_mandator sdk VNoval
   d <- jo
-    [ ("description", VStr "example_description")   -- String
-    , ("email", VStr "example_email")   -- String
+    [ ("email", VStr "example_email")   -- String
     , ("login", VStr "example_login")   -- String
-    , ("name", VStr "example_name")   -- String
     , ("phone", VStr "example_phone")   -- String
     ]
   ctrl <- emptyMap
   output_create_mandator <- Sdk.eCreate ent d ctrl
+  output_create_mandatorData <- Sdk.eDataGet output_create_mandator
 ```
 
 
@@ -940,25 +941,26 @@ Create an instance: `output_create_service_user <- Sdk.output_create_service_use
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `mandatorName` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.output_create_service_user sdk VNoval
   d <- jo
-    [ ("mandator_name", VStr "example_mandator_name")   -- String
+    [ ("mandatorName", VStr "example_mandatorName")   -- String
     ]
   ctrl <- emptyMap
   output_create_service_user <- Sdk.eCreate ent d ctrl
+  output_create_service_userData <- Sdk.eDataGet output_create_service_user
 ```
 
 
@@ -970,15 +972,15 @@ Create an instance: `output_deactivate_user <- Sdk.output_deactivate_user sdk VN
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `consumerUUID` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -988,6 +990,7 @@ Create an instance: `output_deactivate_user <- Sdk.output_deactivate_user sdk VN
     []
   ctrl <- emptyMap
   output_deactivate_user <- Sdk.eCreate ent d ctrl
+  output_deactivate_userData <- Sdk.eDataGet output_deactivate_user
 ```
 
 
@@ -999,16 +1002,16 @@ Create an instance: `output_get_kyc_document <- Sdk.output_get_kyc_document sdk 
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `case_id` | `String` |  |
-| `encoded_data_base64` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `caseID` | `String` |  |
+| `encodedDataBase64` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -1018,6 +1021,7 @@ Create an instance: `output_get_kyc_document <- Sdk.output_get_kyc_document sdk 
     []
   ctrl <- emptyMap
   output_get_kyc_document <- Sdk.eCreate ent d ctrl
+  output_get_kyc_documentData <- Sdk.eDataGet output_get_kyc_document
 ```
 
 
@@ -1029,16 +1033,16 @@ Create an instance: `output_get_logo <- Sdk.output_get_logo sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eLoad ent match ctrl` | Load a single entity by match criteria. |
+| `eLoad ent match ctrl` | Load a single entity by match criteria. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `content_as_base64` | `String` |  |
-| `mime_type` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `contentAsBase64` | `String` |  |
+| `mimeType` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Load
 
@@ -1047,6 +1051,8 @@ Create an instance: `output_get_logo <- Sdk.output_get_logo sdk VNoval`
   match <- jo []
   ctrl <- emptyMap
   output_get_logo <- Sdk.eLoad ent match ctrl
+  -- The op resolves to the ENTITY; the record is inside it.
+  output_get_logoData <- Sdk.eDataGet output_get_logo
 ```
 
 
@@ -1058,15 +1064,15 @@ Create an instance: `output_list_of_available_role <- Sdk.output_list_of_availab
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `available_role` | `[Value]` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `availableRoles` | `[Value]` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -1076,6 +1082,7 @@ Create an instance: `output_list_of_available_role <- Sdk.output_list_of_availab
     []
   ctrl <- emptyMap
   output_list_of_available_role <- Sdk.eCreate ent d ctrl
+  output_list_of_available_roleData <- Sdk.eDataGet output_list_of_available_role
 ```
 
 
@@ -1087,7 +1094,7 @@ Create an instance: `output_list_of_mandator <- Sdk.output_list_of_mandator sdk 
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
@@ -1096,8 +1103,8 @@ Create an instance: `output_list_of_mandator <- Sdk.output_list_of_mandator sdk 
 | `filter` | `Value` |  |
 | `list` | `[Value]` |  |
 | `pagination` | `Value` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 | `sorting` | `Value` |  |
 
 #### Example: Create
@@ -1108,6 +1115,7 @@ Create an instance: `output_list_of_mandator <- Sdk.output_list_of_mandator sdk 
     []
   ctrl <- emptyMap
   output_list_of_mandator <- Sdk.eCreate ent d ctrl
+  output_list_of_mandatorData <- Sdk.eDataGet output_list_of_mandator
 ```
 
 
@@ -1119,7 +1127,7 @@ Create an instance: `output_list_of_module <- Sdk.output_list_of_module sdk VNov
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
@@ -1127,8 +1135,8 @@ Create an instance: `output_list_of_module <- Sdk.output_list_of_module sdk VNov
 | --- | --- | --- |
 | `list` | `[Value]` |  |
 | `pagination` | `Value` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -1138,6 +1146,7 @@ Create an instance: `output_list_of_module <- Sdk.output_list_of_module sdk VNov
     []
   ctrl <- emptyMap
   output_list_of_module <- Sdk.eCreate ent d ctrl
+  output_list_of_moduleData <- Sdk.eDataGet output_list_of_module
 ```
 
 
@@ -1149,17 +1158,17 @@ Create an instance: `output_list_of_role_group <- Sdk.output_list_of_role_group 
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
 | `filter` | `Value` |  |
-| `group_role` | `[Value]` |  |
+| `groupRoles` | `[Value]` |  |
 | `pagination` | `Value` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 | `sorting` | `Value` |  |
 
 #### Example: Create
@@ -1170,6 +1179,7 @@ Create an instance: `output_list_of_role_group <- Sdk.output_list_of_role_group 
     []
   ctrl <- emptyMap
   output_list_of_role_group <- Sdk.eCreate ent d ctrl
+  output_list_of_role_groupData <- Sdk.eDataGet output_list_of_role_group
 ```
 
 
@@ -1181,7 +1191,7 @@ Create an instance: `output_list_of_transactions_history <- Sdk.output_list_of_t
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
@@ -1190,8 +1200,8 @@ Create an instance: `output_list_of_transactions_history <- Sdk.output_list_of_t
 | `filter` | `Value` |  |
 | `list` | `[Value]` |  |
 | `pagination` | `Value` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 | `sorting` | `Value` |  |
 
 #### Example: Create
@@ -1202,6 +1212,7 @@ Create an instance: `output_list_of_transactions_history <- Sdk.output_list_of_t
     []
   ctrl <- emptyMap
   output_list_of_transactions_history <- Sdk.eCreate ent d ctrl
+  output_list_of_transactions_historyData <- Sdk.eDataGet output_list_of_transactions_history
 ```
 
 
@@ -1213,7 +1224,7 @@ Create an instance: `output_list_of_user <- Sdk.output_list_of_user sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
@@ -1222,8 +1233,8 @@ Create an instance: `output_list_of_user <- Sdk.output_list_of_user sdk VNoval`
 | `filter` | `Value` |  |
 | `list` | `[Value]` |  |
 | `pagination` | `Value` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 | `sorting` | `Value` |  |
 
 #### Example: Create
@@ -1234,6 +1245,7 @@ Create an instance: `output_list_of_user <- Sdk.output_list_of_user sdk VNoval`
     []
   ctrl <- emptyMap
   output_list_of_user <- Sdk.eCreate ent d ctrl
+  output_list_of_userData <- Sdk.eDataGet output_list_of_user
 ```
 
 
@@ -1245,16 +1257,16 @@ Create an instance: `output_provide_credential <- Sdk.output_provide_credential 
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `String` |  |
+| `mandatorName` | `String` |  |
 | `password` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 | `username` | `String` |  |
 
 #### Example: Create
@@ -1262,10 +1274,11 @@ Create an instance: `output_provide_credential <- Sdk.output_provide_credential 
 ```haskell
   ent <- Sdk.output_provide_credential sdk VNoval
   d <- jo
-    [ ("mandator_name", VStr "example_mandator_name")   -- String
+    [ ("mandatorName", VStr "example_mandatorName")   -- String
     ]
   ctrl <- emptyMap
   output_provide_credential <- Sdk.eCreate ent d ctrl
+  output_provide_credentialData <- Sdk.eDataGet output_provide_credential
 ```
 
 
@@ -1277,28 +1290,28 @@ Create an instance: `output_register_user <- Sdk.output_register_user sdk VNoval
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `String` |  |
-| `consumer_id` | `String` |  |
-| `consumer_language` | `String` |  |
+| `consumerId` | `String` |  |
+| `consumerLanguage` | `String` |  |
 | `country` | `String` |  |
-| `date_of_birth` | `String` |  |
-| `driver_licence_number` | `String` |  |
+| `dateOfBirth` | `String` |  |
+| `driverLicenceNumber` | `String` |  |
 | `email` | `String` |  |
-| `first_name` | `String` |  |
-| `identification_number` | `String` |  |
-| `last_name` | `String` |  |
+| `firstName` | `String` |  |
+| `identificationNumber` | `String` |  |
+| `lastName` | `String` |  |
 | `login` | `String` |  |
 | `module` | `String` |  |
-| `passport_number` | `String` |  |
+| `passportNumber` | `String` |  |
 | `phone` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 | `salutation` | `String` |  |
 | `state` | `String` |  |
 | `street1` | `String` |  |
@@ -1314,6 +1327,7 @@ Create an instance: `output_register_user <- Sdk.output_register_user sdk VNoval
     ]
   ctrl <- emptyMap
   output_register_user <- Sdk.eCreate ent d ctrl
+  output_register_userData <- Sdk.eDataGet output_register_user
 ```
 
 
@@ -1325,16 +1339,16 @@ Create an instance: `output_remove_role <- Sdk.output_remove_role sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `role` | `[Value]` |  |
+| `consumerUUID` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `roles` | `[Value]` |  |
 
 #### Example: Create
 
@@ -1344,6 +1358,7 @@ Create an instance: `output_remove_role <- Sdk.output_remove_role sdk VNoval`
     []
   ctrl <- emptyMap
   output_remove_role <- Sdk.eCreate ent d ctrl
+  output_remove_roleData <- Sdk.eDataGet output_remove_role
 ```
 
 
@@ -1355,28 +1370,29 @@ Create an instance: `output_resend_link <- Sdk.output_resend_link sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `business_registration_number` | `String` |  |
-| `consumer_uuid` | `String` |  |
-| `email_confirmation_code` | `String` |  |
-| `phone_number` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `businessRegistrationNumber` | `String` |  |
+| `consumerUUID` | `String` |  |
+| `emailConfirmationCode` | `String` |  |
+| `phoneNumber` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.output_resend_link sdk VNoval
   d <- jo
-    [ ("consumer_uuid", VStr "example_consumer_uuid")   -- String
+    [ ("consumerUUID", VStr "example_consumerUUID")   -- String
     ]
   ctrl <- emptyMap
   output_resend_link <- Sdk.eCreate ent d ctrl
+  output_resend_linkData <- Sdk.eDataGet output_resend_link
 ```
 
 
@@ -1388,16 +1404,16 @@ Create an instance: `output_reset_password <- Sdk.output_reset_password sdk VNov
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String` |  |
-| `phone_number` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `consumerUuid` | `String` |  |
+| `phoneNumber` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -1407,6 +1423,7 @@ Create an instance: `output_reset_password <- Sdk.output_reset_password sdk VNov
     []
   ctrl <- emptyMap
   output_reset_password <- Sdk.eCreate ent d ctrl
+  output_reset_passwordData <- Sdk.eDataGet output_reset_password
 ```
 
 
@@ -1418,30 +1435,30 @@ Create an instance: `output_update_consumer <- Sdk.output_update_consumer sdk VN
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `String` |  |
-| `consumer_uuid` | `String` |  |
+| `consumerUuid` | `String` |  |
 | `consumerlanguage` | `String` |  |
 | `country` | `String` |  |
-| `date_of_birth` | `String` |  |
+| `dateOfBirth` | `String` |  |
 | `datetime_created` | `String` |  |
-| `driver_licence_number` | `String` |  |
+| `driverLicenceNumber` | `String` |  |
 | `email` | `String` |  |
-| `first_name` | `String` |  |
-| `identification_number` | `String` |  |
-| `kyc_passed` | `Bool` |  |
-| `last_name` | `String` |  |
+| `firstName` | `String` |  |
+| `identificationNumber` | `String` |  |
+| `kycPassed` | `Bool` |  |
+| `lastName` | `String` |  |
 | `nationality` | `String` |  |
-| `passport_number` | `String` |  |
-| `phone_number` | `String` |  |
-| `place_of_birth` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `passportNumber` | `String` |  |
+| `phoneNumber` | `String` |  |
+| `placeOfBirth` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 | `state` | `String` |  |
 | `street1` | `String` |  |
 | `street2` | `String` |  |
@@ -1453,10 +1470,11 @@ Create an instance: `output_update_consumer <- Sdk.output_update_consumer sdk VN
 ```haskell
   ent <- Sdk.output_update_consumer sdk VNoval
   d <- jo
-    [ ("consumer_uuid", VStr "example_consumer_uuid")   -- String
+    [ ("consumerUuid", VStr "example_consumerUuid")   -- String
     ]
   ctrl <- emptyMap
   output_update_consumer <- Sdk.eCreate ent d ctrl
+  output_update_consumerData <- Sdk.eDataGet output_update_consumer
 ```
 
 
@@ -1468,19 +1486,19 @@ Create an instance: `output_update_profile <- Sdk.output_update_profile sdk VNov
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_language` | `String` |  |
+| `consumerLanguage` | `String` |  |
 | `email` | `String` |  |
-| `first_name` | `String` |  |
-| `last_name` | `String` |  |
-| `phone_number` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `firstName` | `String` |  |
+| `lastName` | `String` |  |
+| `phoneNumber` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -1490,6 +1508,7 @@ Create an instance: `output_update_profile <- Sdk.output_update_profile sdk VNov
     []
   ctrl <- emptyMap
   output_update_profile <- Sdk.eCreate ent d ctrl
+  output_update_profileData <- Sdk.eDataGet output_update_profile
 ```
 
 
@@ -1501,14 +1520,14 @@ Create an instance: `version <- Sdk.version sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eLoad ent match ctrl` | Load a single entity by match criteria. |
+| `eLoad ent match ctrl` | Load a single entity by match criteria. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_name` | `String` |  |
-| `build_date` | `String` |  |
+| `appName` | `String` |  |
+| `buildDate` | `String` |  |
 | `version` | `String` |  |
 
 #### Example: Load
@@ -1518,6 +1537,8 @@ Create an instance: `version <- Sdk.version sdk VNoval`
   match <- jo []
   ctrl <- emptyMap
   version <- Sdk.eLoad ent match ctrl
+  -- The op resolves to the ENTITY; the record is inside it.
+  versionData <- Sdk.eDataGet version
 ```
 
 

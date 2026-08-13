@@ -47,7 +47,7 @@ void tests() {
       final output_provide_credential_ref01_ent = client.OutputProvideCredential();
       dynamic output_provide_credential_ref01_data = setup['data']['new']['output_provide_credential']['output_provide_credential_ref01'];
 
-      output_provide_credential_ref01_data = await output_provide_credential_ref01_ent.create(output_provide_credential_ref01_data);
+      output_provide_credential_ref01_data = (await output_provide_credential_ref01_ent.create(output_provide_credential_ref01_data)).data();
       ok(null != output_provide_credential_ref01_data);
 
 

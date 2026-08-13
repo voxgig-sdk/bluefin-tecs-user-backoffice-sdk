@@ -6,12 +6,12 @@ main: kit: entity: version: {
 
   fields: [
     {
-      name: "app_name"
+      name: "appName"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "build_date"
+      name: "buildDate"
       req: false
       type: "`$STRING`"
     }

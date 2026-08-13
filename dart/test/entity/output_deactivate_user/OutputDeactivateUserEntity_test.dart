@@ -47,7 +47,7 @@ void tests() {
       final output_deactivate_user_ref01_ent = client.OutputDeactivateUser();
       dynamic output_deactivate_user_ref01_data = setup['data']['new']['output_deactivate_user']['output_deactivate_user_ref01'];
 
-      output_deactivate_user_ref01_data = await output_deactivate_user_ref01_ent.create(output_deactivate_user_ref01_data);
+      output_deactivate_user_ref01_data = (await output_deactivate_user_ref01_ent.create(output_deactivate_user_ref01_data)).data();
       ok(null != output_deactivate_user_ref01_data);
 
 

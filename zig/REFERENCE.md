@@ -213,8 +213,8 @@ const output_activate_digital_module = client.output_activate_digital_module(h.v
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
 
 ### Operations
 
@@ -261,10 +261,10 @@ const output_activate_portal_module = client.output_activate_portal_module(h.vnu
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `[]const u8` | Yes |  |
-| `notification_email` | `[]const u8` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
+| `clientSecret` | `[]const u8` | Yes |  |
+| `notificationEmail` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
 
 ### Operations
 
@@ -274,8 +274,8 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.output_activate_portal_module(h.vnull()).create(h.jo(&.{
-    .{ "client_secret", h.vstr("example_client_secret") }, // []const u8
-    .{ "notification_email", h.vstr("example_notification_email") }, // []const u8
+    .{ "clientSecret", h.vstr("example_clientSecret") }, // []const u8
+    .{ "notificationEmail", h.vstr("example_notificationEmail") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -313,8 +313,8 @@ const output_activate_store_module = client.output_activate_store_module(h.vnull
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
 
 ### Operations
 
@@ -361,9 +361,9 @@ const output_activate_user = client.output_activate_user(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `[]const u8` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
+| `consumerUUID` | `[]const u8` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
 
 ### Operations
 
@@ -410,10 +410,10 @@ const output_assign_role = client.output_assign_role(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `[]const u8` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `role` | `Value (array)` | Yes |  |
+| `consumerUUID` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `roles` | `Value (array)` | Yes |  |
 
 ### Operations
 
@@ -423,8 +423,8 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.output_assign_role(h.vnull()).create(h.jo(&.{
-    .{ "consumer_uuid", h.vstr("example_consumer_uuid") }, // []const u8
-    .{ "role", h.olist() }, // Value (array)
+    .{ "consumerUUID", h.vstr("example_consumerUUID") }, // []const u8
+    .{ "roles", h.olist() }, // Value (array)
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -462,10 +462,10 @@ const output_change_logo = client.output_change_logo(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `[]const u8` | Yes |  |
-| `mime_type` | `[]const u8` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
+| `contentAsBase64` | `[]const u8` | Yes |  |
+| `mimeType` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
 
 ### Operations
 
@@ -475,8 +475,8 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.output_change_logo(h.vnull()).create(h.jo(&.{
-    .{ "content_as_base64", h.vstr("example_content_as_base64") }, // []const u8
-    .{ "mime_type", h.vstr("example_mime_type") }, // []const u8
+    .{ "contentAsBase64", h.vstr("example_contentAsBase64") }, // []const u8
+    .{ "mimeType", h.vstr("example_mimeType") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -516,25 +516,45 @@ const output_create_mandator = client.output_create_mandator(h.vnull());
 | --- | --- | --- | --- |
 | `city` | `[]const u8` | No |  |
 | `country` | `[]const u8` | No |  |
-| `date_of_birth` | `[]const u8` | No |  |
-| `description` | `[]const u8` | Yes |  |
-| `drivers_license_number` | `[]const u8` | No |  |
+| `dateOfBirth` | `[]const u8` | No |  |
+| `description` | `[]const u8` | No |  |
+| `driversLicenseNumber` | `[]const u8` | No |  |
 | `email` | `[]const u8` | Yes |  |
-| `first_name` | `[]const u8` | No |  |
-| `identification_number` | `[]const u8` | No |  |
-| `last_name` | `[]const u8` | No |  |
+| `firstName` | `[]const u8` | No |  |
+| `identificationNumber` | `[]const u8` | No |  |
+| `lastName` | `[]const u8` | No |  |
 | `login` | `[]const u8` | Yes |  |
-| `mandator` | `Value (object)` | No |  |
-| `name` | `[]const u8` | Yes |  |
-| `passport_number` | `[]const u8` | No |  |
+| `name` | `[]const u8` | No |  |
+| `passportNumber` | `[]const u8` | No |  |
 | `phone` | `[]const u8` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
 | `salutation` | `[]const u8` | No |  |
 | `state` | `[]const u8` | No |  |
 | `street1` | `[]const u8` | No |  |
 | `street2` | `[]const u8` | No |  |
-| `zip_code` | `[]const u8` | No |  |
+| `zipCode` | `[]const u8` | No |  |
+
+### Field Usage by Operation
+
+| Field | create |
+| --- | --- |
+| `city` | - |
+| `country` | - |
+| `dateOfBirth` | - |
+| `description` | Yes |
+| `driversLicenseNumber` | - |
+| `email` | - |
+| `firstName` | - |
+| `identificationNumber` | - |
+| `lastName` | - |
+| `login` | - |
+| `name` | Yes |
+| `passportNumber` | - |
+| `phone` | - |
+| `salutation` | - |
+| `state` | - |
+| `street1` | - |
+| `street2` | - |
+| `zipCode` | - |
 
 ### Operations
 
@@ -544,10 +564,8 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.output_create_mandator(h.vnull()).create(h.jo(&.{
-    .{ "description", h.vstr("example_description") }, // []const u8
     .{ "email", h.vstr("example_email") }, // []const u8
     .{ "login", h.vstr("example_login") }, // []const u8
-    .{ "name", h.vstr("example_name") }, // []const u8
     .{ "phone", h.vstr("example_phone") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
@@ -586,9 +604,9 @@ const output_create_service_user = client.output_create_service_user(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `[]const u8` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
+| `mandatorName` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
 
 ### Operations
 
@@ -598,7 +616,7 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.output_create_service_user(h.vnull()).create(h.jo(&.{
-    .{ "mandator_name", h.vstr("example_mandator_name") }, // []const u8
+    .{ "mandatorName", h.vstr("example_mandatorName") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -636,9 +654,9 @@ const output_deactivate_user = client.output_deactivate_user(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `[]const u8` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
+| `consumerUUID` | `[]const u8` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
 
 ### Operations
 
@@ -685,10 +703,10 @@ const output_get_kyc_document = client.output_get_kyc_document(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `case_id` | `[]const u8` | No |  |
-| `encoded_data_base64` | `[]const u8` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
+| `caseID` | `[]const u8` | No |  |
+| `encodedDataBase64` | `[]const u8` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
 
 ### Operations
 
@@ -735,10 +753,10 @@ const output_get_logo = client.output_get_logo(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `[]const u8` | Yes |  |
-| `mime_type` | `[]const u8` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
+| `contentAsBase64` | `[]const u8` | Yes |  |
+| `mimeType` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
 
 ### Operations
 
@@ -784,9 +802,9 @@ const output_list_of_available_role = client.output_list_of_available_role(h.vnu
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `available_role` | `Value (array)` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
+| `availableRoles` | `Value (array)` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
 
 ### Operations
 
@@ -836,8 +854,8 @@ const output_list_of_mandator = client.output_list_of_mandator(h.vnull());
 | `filter` | `Value (object)` | No |  |
 | `list` | `Value (array)` | No |  |
 | `pagination` | `Value (object)` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
 | `sorting` | `Value (object)` | No |  |
 
 ### Operations
@@ -887,8 +905,8 @@ const output_list_of_module = client.output_list_of_module(h.vnull());
 | --- | --- | --- | --- |
 | `list` | `Value (array)` | No |  |
 | `pagination` | `Value (object)` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
 
 ### Operations
 
@@ -936,10 +954,10 @@ const output_list_of_role_group = client.output_list_of_role_group(h.vnull());
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `filter` | `Value (object)` | No |  |
-| `group_role` | `Value (array)` | No |  |
+| `groupRoles` | `Value (array)` | No |  |
 | `pagination` | `Value (object)` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
 | `sorting` | `Value (object)` | No |  |
 
 ### Operations
@@ -990,8 +1008,8 @@ const output_list_of_transactions_history = client.output_list_of_transactions_h
 | `filter` | `Value (object)` | No |  |
 | `list` | `Value (array)` | No |  |
 | `pagination` | `Value (object)` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
 | `sorting` | `Value (object)` | No |  |
 
 ### Operations
@@ -1042,8 +1060,8 @@ const output_list_of_user = client.output_list_of_user(h.vnull());
 | `filter` | `Value (object)` | No |  |
 | `list` | `Value (array)` | No |  |
 | `pagination` | `Value (object)` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
 | `sorting` | `Value (object)` | No |  |
 
 ### Operations
@@ -1091,10 +1109,10 @@ const output_provide_credential = client.output_provide_credential(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `[]const u8` | Yes |  |
+| `mandatorName` | `[]const u8` | Yes |  |
 | `password` | `[]const u8` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
 | `username` | `[]const u8` | No |  |
 
 ### Operations
@@ -1105,7 +1123,7 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.output_provide_credential(h.vnull()).create(h.jo(&.{
-    .{ "mandator_name", h.vstr("example_mandator_name") }, // []const u8
+    .{ "mandatorName", h.vstr("example_mandatorName") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1144,21 +1162,21 @@ const output_register_user = client.output_register_user(h.vnull());
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `[]const u8` | No |  |
-| `consumer_id` | `[]const u8` | No |  |
-| `consumer_language` | `[]const u8` | No |  |
+| `consumerId` | `[]const u8` | No |  |
+| `consumerLanguage` | `[]const u8` | No |  |
 | `country` | `[]const u8` | No |  |
-| `date_of_birth` | `[]const u8` | No |  |
-| `driver_licence_number` | `[]const u8` | No |  |
+| `dateOfBirth` | `[]const u8` | No |  |
+| `driverLicenceNumber` | `[]const u8` | No |  |
 | `email` | `[]const u8` | Yes |  |
-| `first_name` | `[]const u8` | No |  |
-| `identification_number` | `[]const u8` | No |  |
-| `last_name` | `[]const u8` | No |  |
+| `firstName` | `[]const u8` | No |  |
+| `identificationNumber` | `[]const u8` | No |  |
+| `lastName` | `[]const u8` | No |  |
 | `login` | `[]const u8` | No |  |
 | `module` | `[]const u8` | No |  |
-| `passport_number` | `[]const u8` | No |  |
+| `passportNumber` | `[]const u8` | No |  |
 | `phone` | `[]const u8` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
 | `salutation` | `[]const u8` | No |  |
 | `state` | `[]const u8` | No |  |
 | `street1` | `[]const u8` | No |  |
@@ -1211,10 +1229,10 @@ const output_remove_role = client.output_remove_role(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `[]const u8` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `role` | `Value (array)` | No |  |
+| `consumerUUID` | `[]const u8` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `roles` | `Value (array)` | No |  |
 
 ### Operations
 
@@ -1261,12 +1279,12 @@ const output_resend_link = client.output_resend_link(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `business_registration_number` | `[]const u8` | No |  |
-| `consumer_uuid` | `[]const u8` | Yes |  |
-| `email_confirmation_code` | `[]const u8` | No |  |
-| `phone_number` | `[]const u8` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
+| `businessRegistrationNumber` | `[]const u8` | No |  |
+| `consumerUUID` | `[]const u8` | Yes |  |
+| `emailConfirmationCode` | `[]const u8` | No |  |
+| `phoneNumber` | `[]const u8` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
 
 ### Operations
 
@@ -1276,7 +1294,7 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.output_resend_link(h.vnull()).create(h.jo(&.{
-    .{ "consumer_uuid", h.vstr("example_consumer_uuid") }, // []const u8
+    .{ "consumerUUID", h.vstr("example_consumerUUID") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1314,10 +1332,10 @@ const output_reset_password = client.output_reset_password(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `[]const u8` | No |  |
-| `phone_number` | `[]const u8` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
+| `consumerUuid` | `[]const u8` | No |  |
+| `phoneNumber` | `[]const u8` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
 
 ### Operations
 
@@ -1365,23 +1383,23 @@ const output_update_consumer = client.output_update_consumer(h.vnull());
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `[]const u8` | No |  |
-| `consumer_uuid` | `[]const u8` | Yes |  |
+| `consumerUuid` | `[]const u8` | Yes |  |
 | `consumerlanguage` | `[]const u8` | No |  |
 | `country` | `[]const u8` | No |  |
-| `date_of_birth` | `[]const u8` | No |  |
+| `dateOfBirth` | `[]const u8` | No |  |
 | `datetime_created` | `[]const u8` | No |  |
-| `driver_licence_number` | `[]const u8` | No |  |
+| `driverLicenceNumber` | `[]const u8` | No |  |
 | `email` | `[]const u8` | No |  |
-| `first_name` | `[]const u8` | No |  |
-| `identification_number` | `[]const u8` | No |  |
-| `kyc_passed` | `bool` | No |  |
-| `last_name` | `[]const u8` | No |  |
+| `firstName` | `[]const u8` | No |  |
+| `identificationNumber` | `[]const u8` | No |  |
+| `kycPassed` | `bool` | No |  |
+| `lastName` | `[]const u8` | No |  |
 | `nationality` | `[]const u8` | No |  |
-| `passport_number` | `[]const u8` | No |  |
-| `phone_number` | `[]const u8` | No |  |
-| `place_of_birth` | `[]const u8` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
+| `passportNumber` | `[]const u8` | No |  |
+| `phoneNumber` | `[]const u8` | No |  |
+| `placeOfBirth` | `[]const u8` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
 | `state` | `[]const u8` | No |  |
 | `street1` | `[]const u8` | No |  |
 | `street2` | `[]const u8` | No |  |
@@ -1396,7 +1414,7 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.output_update_consumer(h.vnull()).create(h.jo(&.{
-    .{ "consumer_uuid", h.vstr("example_consumer_uuid") }, // []const u8
+    .{ "consumerUuid", h.vstr("example_consumerUuid") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1434,13 +1452,13 @@ const output_update_profile = client.output_update_profile(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_language` | `[]const u8` | No |  |
+| `consumerLanguage` | `[]const u8` | No |  |
 | `email` | `[]const u8` | No |  |
-| `first_name` | `[]const u8` | No |  |
-| `last_name` | `[]const u8` | No |  |
-| `phone_number` | `[]const u8` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
+| `firstName` | `[]const u8` | No |  |
+| `lastName` | `[]const u8` | No |  |
+| `phoneNumber` | `[]const u8` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
 
 ### Operations
 
@@ -1487,8 +1505,8 @@ const version = client.version(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `[]const u8` | No |  |
-| `build_date` | `[]const u8` | No |  |
+| `appName` | `[]const u8` | No |  |
+| `buildDate` | `[]const u8` | No |  |
 | `version` | `[]const u8` | No |  |
 
 ### Operations

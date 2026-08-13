@@ -195,8 +195,8 @@ fmt.Println(outputActivateDigitalModule.GetName()) // "output_activate_digital_m
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -248,10 +248,10 @@ fmt.Println(outputActivatePortalModule.GetName()) // "output_activate_portal_mod
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `string` | Yes |  |
-| `notification_email` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `clientSecret` | `string` | Yes |  |
+| `notificationEmail` | `string` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -261,8 +261,8 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.OutputActivatePortalModule(nil).Create(map[string]any{
-    "client_secret": "example_client_secret",
-    "notification_email": "example_notification_email",
+    "clientSecret": "example_clientSecret",
+    "notificationEmail": "example_notificationEmail",
 }, nil)
 if err != nil {
     panic(err)
@@ -305,8 +305,8 @@ fmt.Println(outputActivateStoreModule.GetName()) // "output_activate_store_modul
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -358,9 +358,9 @@ fmt.Println(outputActivateUser.GetName()) // "output_activate_user"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `consumerUUID` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -412,10 +412,10 @@ fmt.Println(outputAssignRole.GetName()) // "output_assign_role"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `role` | `[]any` | Yes |  |
+| `consumerUUID` | `string` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `roles` | `[]any` | Yes |  |
 
 ### Operations
 
@@ -425,8 +425,8 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.OutputAssignRole(nil).Create(map[string]any{
-    "consumer_uuid": "example_consumer_uuid",
-    "role": []any{},
+    "consumerUUID": "example_consumerUUID",
+    "roles": []any{},
 }, nil)
 if err != nil {
     panic(err)
@@ -469,10 +469,10 @@ fmt.Println(outputChangeLogo.GetName()) // "output_change_logo"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `string` | Yes |  |
-| `mime_type` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `contentAsBase64` | `string` | Yes |  |
+| `mimeType` | `string` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -482,8 +482,8 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.OutputChangeLogo(nil).Create(map[string]any{
-    "content_as_base64": "example_content_as_base64",
-    "mime_type": "example_mime_type",
+    "contentAsBase64": "example_contentAsBase64",
+    "mimeType": "example_mimeType",
 }, nil)
 if err != nil {
     panic(err)
@@ -528,25 +528,45 @@ fmt.Println(outputCreateMandator.GetName()) // "output_create_mandator"
 | --- | --- | --- | --- |
 | `city` | `string` | No |  |
 | `country` | `string` | No |  |
-| `date_of_birth` | `string` | No |  |
-| `description` | `string` | Yes |  |
-| `drivers_license_number` | `string` | No |  |
+| `dateOfBirth` | `string` | No |  |
+| `description` | `string` | No |  |
+| `driversLicenseNumber` | `string` | No |  |
 | `email` | `string` | Yes |  |
-| `first_name` | `string` | No |  |
-| `identification_number` | `string` | No |  |
-| `last_name` | `string` | No |  |
+| `firstName` | `string` | No |  |
+| `identificationNumber` | `string` | No |  |
+| `lastName` | `string` | No |  |
 | `login` | `string` | Yes |  |
-| `mandator` | `map[string]any` | No |  |
-| `name` | `string` | Yes |  |
-| `passport_number` | `string` | No |  |
+| `name` | `string` | No |  |
+| `passportNumber` | `string` | No |  |
 | `phone` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
 | `salutation` | `string` | No |  |
 | `state` | `string` | No |  |
 | `street1` | `string` | No |  |
 | `street2` | `string` | No |  |
-| `zip_code` | `string` | No |  |
+| `zipCode` | `string` | No |  |
+
+### Field Usage by Operation
+
+| Field | create |
+| --- | --- |
+| `city` | - |
+| `country` | - |
+| `dateOfBirth` | - |
+| `description` | Yes |
+| `driversLicenseNumber` | - |
+| `email` | - |
+| `firstName` | - |
+| `identificationNumber` | - |
+| `lastName` | - |
+| `login` | - |
+| `name` | Yes |
+| `passportNumber` | - |
+| `phone` | - |
+| `salutation` | - |
+| `state` | - |
+| `street1` | - |
+| `street2` | - |
+| `zipCode` | - |
 
 ### Operations
 
@@ -556,10 +576,8 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.OutputCreateMandator(nil).Create(map[string]any{
-    "description": "example_description",
     "email": "example_email",
     "login": "example_login",
-    "name": "example_name",
     "phone": "example_phone",
 }, nil)
 if err != nil {
@@ -603,9 +621,9 @@ fmt.Println(outputCreateServiceUser.GetName()) // "output_create_service_user"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `mandatorName` | `string` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -615,7 +633,7 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.OutputCreateServiceUser(nil).Create(map[string]any{
-    "mandator_name": "example_mandator_name",
+    "mandatorName": "example_mandatorName",
 }, nil)
 if err != nil {
     panic(err)
@@ -658,9 +676,9 @@ fmt.Println(outputDeactivateUser.GetName()) // "output_deactivate_user"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `consumerUUID` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -712,10 +730,10 @@ fmt.Println(outputGetKycDocument.GetName()) // "output_get_kyc_document"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `case_id` | `string` | No |  |
-| `encoded_data_base64` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `caseID` | `string` | No |  |
+| `encodedDataBase64` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -767,10 +785,10 @@ fmt.Println(outputGetLogo.GetName()) // "output_get_logo"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `string` | Yes |  |
-| `mime_type` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `contentAsBase64` | `string` | Yes |  |
+| `mimeType` | `string` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -821,9 +839,9 @@ fmt.Println(outputListOfAvailableRole.GetName()) // "output_list_of_available_ro
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `available_role` | `[]any` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `availableRoles` | `[]any` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -878,8 +896,8 @@ fmt.Println(outputListOfMandator.GetName()) // "output_list_of_mandator"
 | `filter` | `map[string]any` | No |  |
 | `list` | `[]any` | No |  |
 | `pagination` | `map[string]any` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 | `sorting` | `map[string]any` | No |  |
 
 ### Operations
@@ -934,8 +952,8 @@ fmt.Println(outputListOfModule.GetName()) // "output_list_of_module"
 | --- | --- | --- | --- |
 | `list` | `[]any` | No |  |
 | `pagination` | `map[string]any` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -988,10 +1006,10 @@ fmt.Println(outputListOfRoleGroup.GetName()) // "output_list_of_role_group"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `filter` | `map[string]any` | No |  |
-| `group_role` | `[]any` | No |  |
+| `groupRoles` | `[]any` | No |  |
 | `pagination` | `map[string]any` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 | `sorting` | `map[string]any` | No |  |
 
 ### Operations
@@ -1047,8 +1065,8 @@ fmt.Println(outputListOfTransactionsHistory.GetName()) // "output_list_of_transa
 | `filter` | `map[string]any` | No |  |
 | `list` | `[]any` | No |  |
 | `pagination` | `map[string]any` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 | `sorting` | `map[string]any` | No |  |
 
 ### Operations
@@ -1104,8 +1122,8 @@ fmt.Println(outputListOfUser.GetName()) // "output_list_of_user"
 | `filter` | `map[string]any` | No |  |
 | `list` | `[]any` | No |  |
 | `pagination` | `map[string]any` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 | `sorting` | `map[string]any` | No |  |
 
 ### Operations
@@ -1158,10 +1176,10 @@ fmt.Println(outputProvideCredential.GetName()) // "output_provide_credential"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `string` | Yes |  |
+| `mandatorName` | `string` | Yes |  |
 | `password` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 | `username` | `string` | No |  |
 
 ### Operations
@@ -1172,7 +1190,7 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.OutputProvideCredential(nil).Create(map[string]any{
-    "mandator_name": "example_mandator_name",
+    "mandatorName": "example_mandatorName",
 }, nil)
 if err != nil {
     panic(err)
@@ -1216,21 +1234,21 @@ fmt.Println(outputRegisterUser.GetName()) // "output_register_user"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `string` | No |  |
-| `consumer_id` | `string` | No |  |
-| `consumer_language` | `string` | No |  |
+| `consumerId` | `string` | No |  |
+| `consumerLanguage` | `string` | No |  |
 | `country` | `string` | No |  |
-| `date_of_birth` | `string` | No |  |
-| `driver_licence_number` | `string` | No |  |
+| `dateOfBirth` | `string` | No |  |
+| `driverLicenceNumber` | `string` | No |  |
 | `email` | `string` | Yes |  |
-| `first_name` | `string` | No |  |
-| `identification_number` | `string` | No |  |
-| `last_name` | `string` | No |  |
+| `firstName` | `string` | No |  |
+| `identificationNumber` | `string` | No |  |
+| `lastName` | `string` | No |  |
 | `login` | `string` | No |  |
 | `module` | `string` | No |  |
-| `passport_number` | `string` | No |  |
+| `passportNumber` | `string` | No |  |
 | `phone` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 | `salutation` | `string` | No |  |
 | `state` | `string` | No |  |
 | `street1` | `string` | No |  |
@@ -1288,10 +1306,10 @@ fmt.Println(outputRemoveRole.GetName()) // "output_remove_role"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `role` | `[]any` | No |  |
+| `consumerUUID` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `roles` | `[]any` | No |  |
 
 ### Operations
 
@@ -1343,12 +1361,12 @@ fmt.Println(outputResendLink.GetName()) // "output_resend_link"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `business_registration_number` | `string` | No |  |
-| `consumer_uuid` | `string` | Yes |  |
-| `email_confirmation_code` | `string` | No |  |
-| `phone_number` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `businessRegistrationNumber` | `string` | No |  |
+| `consumerUUID` | `string` | Yes |  |
+| `emailConfirmationCode` | `string` | No |  |
+| `phoneNumber` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1358,7 +1376,7 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.OutputResendLink(nil).Create(map[string]any{
-    "consumer_uuid": "example_consumer_uuid",
+    "consumerUUID": "example_consumerUUID",
 }, nil)
 if err != nil {
     panic(err)
@@ -1401,10 +1419,10 @@ fmt.Println(outputResetPassword.GetName()) // "output_reset_password"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `phone_number` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `consumerUuid` | `string` | No |  |
+| `phoneNumber` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1457,23 +1475,23 @@ fmt.Println(outputUpdateConsumer.GetName()) // "output_update_consumer"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `string` | No |  |
-| `consumer_uuid` | `string` | Yes |  |
+| `consumerUuid` | `string` | Yes |  |
 | `consumerlanguage` | `string` | No |  |
 | `country` | `string` | No |  |
-| `date_of_birth` | `string` | No |  |
+| `dateOfBirth` | `string` | No |  |
 | `datetime_created` | `string` | No |  |
-| `driver_licence_number` | `string` | No |  |
+| `driverLicenceNumber` | `string` | No |  |
 | `email` | `string` | No |  |
-| `first_name` | `string` | No |  |
-| `identification_number` | `string` | No |  |
-| `kyc_passed` | `bool` | No |  |
-| `last_name` | `string` | No |  |
+| `firstName` | `string` | No |  |
+| `identificationNumber` | `string` | No |  |
+| `kycPassed` | `bool` | No |  |
+| `lastName` | `string` | No |  |
 | `nationality` | `string` | No |  |
-| `passport_number` | `string` | No |  |
-| `phone_number` | `string` | No |  |
-| `place_of_birth` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `passportNumber` | `string` | No |  |
+| `phoneNumber` | `string` | No |  |
+| `placeOfBirth` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 | `state` | `string` | No |  |
 | `street1` | `string` | No |  |
 | `street2` | `string` | No |  |
@@ -1488,7 +1506,7 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.OutputUpdateConsumer(nil).Create(map[string]any{
-    "consumer_uuid": "example_consumer_uuid",
+    "consumerUuid": "example_consumerUuid",
 }, nil)
 if err != nil {
     panic(err)
@@ -1531,13 +1549,13 @@ fmt.Println(outputUpdateProfile.GetName()) // "output_update_profile"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_language` | `string` | No |  |
+| `consumerLanguage` | `string` | No |  |
 | `email` | `string` | No |  |
-| `first_name` | `string` | No |  |
-| `last_name` | `string` | No |  |
-| `phone_number` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `firstName` | `string` | No |  |
+| `lastName` | `string` | No |  |
+| `phoneNumber` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1589,8 +1607,8 @@ fmt.Println(version.GetName()) // "version"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `string` | No |  |
-| `build_date` | `string` | No |  |
+| `appName` | `string` | No |  |
+| `buildDate` | `string` | No |  |
 | `version` | `string` | No |  |
 
 ### Operations

@@ -14,6 +14,8 @@ typedef struct output_assign_role_entity {
   voxgig_value* data;     // Map
   voxgig_value* mtch;     // Map
   Context* entctx;
+  // Set once a successful `remove` resolves on this instance.
+  bool deleted;
 } output_assign_role_entity;
 
 typedef void (*output_assign_role_postdone_fn)(output_assign_role_entity* self, Context* ctx);
@@ -24,11 +26,14 @@ static const char* output_assign_role_get_name(Entity* e);
 static Entity* output_assign_role_make(Entity* e);
 static voxgig_value* output_assign_role_data(Entity* e, voxgig_value* args);
 static voxgig_value* output_assign_role_matchv(Entity* e, voxgig_value* args);
-static voxgig_value* output_assign_role_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_assign_role_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_assign_role_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_assign_role_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_assign_role_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+// Ops resolve to the ENTITY (`list` to a NULL-terminated array of them).
+static Entity* output_assign_role_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity** output_assign_role_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity* output_assign_role_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* output_assign_role_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* output_assign_role_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static void output_assign_role_mark_deleted(Entity* e);
+static bool output_assign_role_deleted(Entity* e);
 
 static Context* output_assign_role_ent_ctx(output_assign_role_entity* self) {
   return self->entctx;
@@ -236,13 +241,13 @@ static voxgig_value* output_assign_role_matchv(Entity* e, voxgig_value* args) {
   return voxgig_clone(self->mtch);
 }
 
-static voxgig_value* output_assign_role_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* output_assign_role_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("load", "output_assign_role");
   return NULL;
 }
 
-static voxgig_value* output_assign_role_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity** output_assign_role_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("list", "output_assign_role");
   return NULL;
@@ -260,7 +265,7 @@ static void output_assign_role_create_postdone(output_assign_role_entity* self, 
   }
 }
 
-static voxgig_value* output_assign_role_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
+static Entity* output_assign_role_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
   output_assign_role_entity* self = (output_assign_role_entity*)e;
   CtxSpec cs;
   memset(&cs, 0, sizeof(cs));
@@ -270,20 +275,38 @@ static voxgig_value* output_assign_role_create(Entity* e, voxgig_value* reqdata,
   cs.data = self->data;
   cs.reqdata = reqdata;
   Context* ctx = make_context_util(cs, output_assign_role_ent_ctx(self));
-  return output_assign_role_run_op(self, ctx, output_assign_role_create_postdone, err);
+  output_assign_role_run_op(self, ctx, output_assign_role_create_postdone, err);
+  if (*err) return NULL;
+
+  // The operation resolves to THIS entity: run_op has just absorbed the
+  // result into it, and the caller reaches the record through vt->data.
+  // See AGENTS.md "Entity operations return ENTITIES".
+
+  return e;
 }
 
 
-static voxgig_value* output_assign_role_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* output_assign_role_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("update", "output_assign_role");
   return NULL;
 }
 
-static voxgig_value* output_assign_role_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* output_assign_role_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("remove", "output_assign_role");
   return NULL;
+}
+
+// `remove` resolves to the entity, marked. The instance KEEPS the data it
+// held - a caller can still read what was deleted - but it is no longer a
+// live record.
+static void output_assign_role_mark_deleted(Entity* e) {
+  ((output_assign_role_entity*)e)->deleted = true;
+}
+
+static bool output_assign_role_deleted(Entity* e) {
+  return ((output_assign_role_entity*)e)->deleted;
 }
 
 static const EntityVT output_assign_role_VT = {
@@ -291,6 +314,8 @@ static const EntityVT output_assign_role_VT = {
   output_assign_role_make,
   output_assign_role_data,
   output_assign_role_matchv,
+  output_assign_role_mark_deleted,
+  output_assign_role_deleted,
   output_assign_role_load,
   output_assign_role_list,
   output_assign_role_create,

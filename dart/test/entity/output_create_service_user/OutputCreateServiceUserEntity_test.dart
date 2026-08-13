@@ -47,7 +47,7 @@ void tests() {
       final output_create_service_user_ref01_ent = client.OutputCreateServiceUser();
       dynamic output_create_service_user_ref01_data = setup['data']['new']['output_create_service_user']['output_create_service_user_ref01'];
 
-      output_create_service_user_ref01_data = await output_create_service_user_ref01_ent.create(output_create_service_user_ref01_data);
+      output_create_service_user_ref01_data = (await output_create_service_user_ref01_ent.create(output_create_service_user_ref01_data)).data();
       ok(null != output_create_service_user_ref01_data);
 
 

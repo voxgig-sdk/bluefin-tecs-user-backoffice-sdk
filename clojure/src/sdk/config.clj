@@ -10,13 +10,13 @@
           (vs/jm
             "active" true
             "index$" 0
-            "name" "response_code"
+            "name" "responseCode"
             "req" false
             "type" "`$INTEGER`")
           (vs/jm
             "active" true
             "index$" 1
-            "name" "response_message"
+            "name" "responseMessage"
             "req" false
             "type" "`$STRING`"))
         "name" "output_activate_digital_module"
@@ -38,6 +38,7 @@
                       "reqd" true
                       "type" "`$STRING`")))
                 "index$" 0
+                "kind" "http"
                 "method" "POST"
                 "orig" "/activateDigitalModule"
                 "parts" (vs/jt
@@ -55,25 +56,25 @@
           (vs/jm
             "active" true
             "index$" 0
-            "name" "client_secret"
+            "name" "clientSecret"
             "req" true
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 1
-            "name" "notification_email"
+            "name" "notificationEmail"
             "req" true
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 2
-            "name" "response_code"
+            "name" "responseCode"
             "req" false
             "type" "`$INTEGER`")
           (vs/jm
             "active" true
             "index$" 3
-            "name" "response_message"
+            "name" "responseMessage"
             "req" false
             "type" "`$STRING`"))
         "name" "output_activate_portal_module"
@@ -95,6 +96,7 @@
                       "reqd" true
                       "type" "`$STRING`")))
                 "index$" 0
+                "kind" "http"
                 "method" "POST"
                 "orig" "/activateMerchantPortalModule"
                 "parts" (vs/jt
@@ -112,13 +114,13 @@
           (vs/jm
             "active" true
             "index$" 0
-            "name" "response_code"
+            "name" "responseCode"
             "req" false
             "type" "`$INTEGER`")
           (vs/jm
             "active" true
             "index$" 1
-            "name" "response_message"
+            "name" "responseMessage"
             "req" false
             "type" "`$STRING`"))
         "name" "output_activate_store_module"
@@ -140,6 +142,7 @@
                       "reqd" true
                       "type" "`$STRING`")))
                 "index$" 0
+                "kind" "http"
                 "method" "POST"
                 "orig" "/activateAppStoreModule"
                 "parts" (vs/jt
@@ -157,19 +160,19 @@
           (vs/jm
             "active" true
             "index$" 0
-            "name" "consumer_uuid"
+            "name" "consumerUUID"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 1
-            "name" "response_code"
+            "name" "responseCode"
             "req" false
             "type" "`$INTEGER`")
           (vs/jm
             "active" true
             "index$" 2
-            "name" "response_message"
+            "name" "responseMessage"
             "req" false
             "type" "`$STRING`"))
         "name" "output_activate_user"
@@ -191,6 +194,7 @@
                       "reqd" true
                       "type" "`$STRING`")))
                 "index$" 0
+                "kind" "http"
                 "method" "POST"
                 "orig" "/activateUser"
                 "parts" (vs/jt
@@ -208,25 +212,25 @@
           (vs/jm
             "active" true
             "index$" 0
-            "name" "consumer_uuid"
+            "name" "consumerUUID"
             "req" true
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 1
-            "name" "response_code"
+            "name" "responseCode"
             "req" false
             "type" "`$INTEGER`")
           (vs/jm
             "active" true
             "index$" 2
-            "name" "response_message"
+            "name" "responseMessage"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 3
-            "name" "role"
+            "name" "roles"
             "req" true
             "type" "`$ARRAY`"))
         "name" "output_assign_role"
@@ -248,6 +252,7 @@
                       "reqd" true
                       "type" "`$STRING`")))
                 "index$" 0
+                "kind" "http"
                 "method" "POST"
                 "orig" "/assignRoles"
                 "parts" (vs/jt
@@ -265,25 +270,25 @@
           (vs/jm
             "active" true
             "index$" 0
-            "name" "content_as_base64"
+            "name" "contentAsBase64"
             "req" true
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 1
-            "name" "mime_type"
+            "name" "mimeType"
             "req" true
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 2
-            "name" "response_code"
+            "name" "responseCode"
             "req" false
             "type" "`$INTEGER`")
           (vs/jm
             "active" true
             "index$" 3
-            "name" "response_message"
+            "name" "responseMessage"
             "req" false
             "type" "`$STRING`"))
         "name" "output_change_logo"
@@ -305,6 +310,7 @@
                       "reqd" true
                       "type" "`$STRING`")))
                 "index$" 0
+                "kind" "http"
                 "method" "POST"
                 "orig" "/changeLogo"
                 "parts" (vs/jt
@@ -334,19 +340,23 @@
           (vs/jm
             "active" true
             "index$" 2
-            "name" "date_of_birth"
+            "name" "dateOfBirth"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 3
             "name" "description"
-            "req" true
+            "op" (vs/jm
+              "create" (vs/jm
+                "req" true
+                "type" "`$STRING`"))
+            "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 4
-            "name" "drivers_license_number"
+            "name" "driversLicenseNumber"
             "req" false
             "type" "`$STRING`")
           (vs/jm
@@ -358,19 +368,19 @@
           (vs/jm
             "active" true
             "index$" 6
-            "name" "first_name"
+            "name" "firstName"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 7
-            "name" "identification_number"
+            "name" "identificationNumber"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 8
-            "name" "last_name"
+            "name" "lastName"
             "req" false
             "type" "`$STRING`")
           (vs/jm
@@ -382,67 +392,53 @@
           (vs/jm
             "active" true
             "index$" 10
-            "name" "mandator"
+            "name" "name"
+            "op" (vs/jm
+              "create" (vs/jm
+                "req" true
+                "type" "`$STRING`"))
             "req" false
-            "type" "`$OBJECT`")
+            "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 11
-            "name" "name"
-            "req" true
+            "name" "passportNumber"
+            "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 12
-            "name" "passport_number"
-            "req" false
-            "type" "`$STRING`")
-          (vs/jm
-            "active" true
-            "index$" 13
             "name" "phone"
             "req" true
             "type" "`$STRING`")
           (vs/jm
             "active" true
-            "index$" 14
-            "name" "response_code"
-            "req" false
-            "type" "`$INTEGER`")
-          (vs/jm
-            "active" true
-            "index$" 15
-            "name" "response_message"
-            "req" false
-            "type" "`$STRING`")
-          (vs/jm
-            "active" true
-            "index$" 16
+            "index$" 13
             "name" "salutation"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
-            "index$" 17
+            "index$" 14
             "name" "state"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
-            "index$" 18
+            "index$" 15
             "name" "street1"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
-            "index$" 19
+            "index$" 16
             "name" "street2"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
-            "index$" 20
-            "name" "zip_code"
+            "index$" 17
+            "name" "zipCode"
             "req" false
             "type" "`$STRING`"))
         "name" "output_create_mandator"
@@ -464,6 +460,7 @@
                       "reqd" true
                       "type" "`$STRING`")))
                 "index$" 0
+                "kind" "http"
                 "method" "POST"
                 "orig" "/createMandator"
                 "parts" (vs/jt
@@ -481,19 +478,19 @@
           (vs/jm
             "active" true
             "index$" 0
-            "name" "mandator_name"
+            "name" "mandatorName"
             "req" true
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 1
-            "name" "response_code"
+            "name" "responseCode"
             "req" false
             "type" "`$INTEGER`")
           (vs/jm
             "active" true
             "index$" 2
-            "name" "response_message"
+            "name" "responseMessage"
             "req" false
             "type" "`$STRING`"))
         "name" "output_create_service_user"
@@ -515,6 +512,7 @@
                       "reqd" true
                       "type" "`$STRING`")))
                 "index$" 0
+                "kind" "http"
                 "method" "POST"
                 "orig" "/createServiceUser"
                 "parts" (vs/jt
@@ -532,19 +530,19 @@
           (vs/jm
             "active" true
             "index$" 0
-            "name" "consumer_uuid"
+            "name" "consumerUUID"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 1
-            "name" "response_code"
+            "name" "responseCode"
             "req" false
             "type" "`$INTEGER`")
           (vs/jm
             "active" true
             "index$" 2
-            "name" "response_message"
+            "name" "responseMessage"
             "req" false
             "type" "`$STRING`"))
         "name" "output_deactivate_user"
@@ -566,6 +564,7 @@
                       "reqd" true
                       "type" "`$STRING`")))
                 "index$" 0
+                "kind" "http"
                 "method" "POST"
                 "orig" "/deactivateUser"
                 "parts" (vs/jt
@@ -583,25 +582,25 @@
           (vs/jm
             "active" true
             "index$" 0
-            "name" "case_id"
+            "name" "caseID"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 1
-            "name" "encoded_data_base64"
+            "name" "encodedDataBase64"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 2
-            "name" "response_code"
+            "name" "responseCode"
             "req" false
             "type" "`$INTEGER`")
           (vs/jm
             "active" true
             "index$" 3
-            "name" "response_message"
+            "name" "responseMessage"
             "req" false
             "type" "`$STRING`"))
         "name" "output_get_kyc_document"
@@ -623,6 +622,7 @@
                       "reqd" true
                       "type" "`$STRING`")))
                 "index$" 0
+                "kind" "http"
                 "method" "POST"
                 "orig" "/getKycDocument"
                 "parts" (vs/jt
@@ -640,25 +640,25 @@
           (vs/jm
             "active" true
             "index$" 0
-            "name" "content_as_base64"
+            "name" "contentAsBase64"
             "req" true
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 1
-            "name" "mime_type"
+            "name" "mimeType"
             "req" true
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 2
-            "name" "response_code"
+            "name" "responseCode"
             "req" false
             "type" "`$INTEGER`")
           (vs/jm
             "active" true
             "index$" 3
-            "name" "response_message"
+            "name" "responseMessage"
             "req" false
             "type" "`$STRING`"))
         "name" "output_get_logo"
@@ -680,6 +680,7 @@
                       "reqd" true
                       "type" "`$STRING`")))
                 "index$" 0
+                "kind" "http"
                 "method" "GET"
                 "orig" "/getLogo"
                 "parts" (vs/jt
@@ -697,19 +698,19 @@
           (vs/jm
             "active" true
             "index$" 0
-            "name" "available_role"
+            "name" "availableRoles"
             "req" false
             "type" "`$ARRAY`")
           (vs/jm
             "active" true
             "index$" 1
-            "name" "response_code"
+            "name" "responseCode"
             "req" false
             "type" "`$INTEGER`")
           (vs/jm
             "active" true
             "index$" 2
-            "name" "response_message"
+            "name" "responseMessage"
             "req" false
             "type" "`$STRING`"))
         "name" "output_list_of_available_role"
@@ -731,6 +732,7 @@
                       "reqd" true
                       "type" "`$STRING`")))
                 "index$" 0
+                "kind" "http"
                 "method" "POST"
                 "orig" "/listOfAvailableRoles"
                 "parts" (vs/jt
@@ -766,13 +768,13 @@
           (vs/jm
             "active" true
             "index$" 3
-            "name" "response_code"
+            "name" "responseCode"
             "req" false
             "type" "`$INTEGER`")
           (vs/jm
             "active" true
             "index$" 4
-            "name" "response_message"
+            "name" "responseMessage"
             "req" false
             "type" "`$STRING`")
           (vs/jm
@@ -800,6 +802,7 @@
                       "reqd" true
                       "type" "`$STRING`")))
                 "index$" 0
+                "kind" "http"
                 "method" "POST"
                 "orig" "/listOfMandators"
                 "parts" (vs/jt
@@ -829,13 +832,13 @@
           (vs/jm
             "active" true
             "index$" 2
-            "name" "response_code"
+            "name" "responseCode"
             "req" false
             "type" "`$INTEGER`")
           (vs/jm
             "active" true
             "index$" 3
-            "name" "response_message"
+            "name" "responseMessage"
             "req" false
             "type" "`$STRING`"))
         "name" "output_list_of_module"
@@ -857,6 +860,7 @@
                       "reqd" true
                       "type" "`$STRING`")))
                 "index$" 0
+                "kind" "http"
                 "method" "POST"
                 "orig" "/listOfModules"
                 "parts" (vs/jt
@@ -880,7 +884,7 @@
           (vs/jm
             "active" true
             "index$" 1
-            "name" "group_role"
+            "name" "groupRoles"
             "req" false
             "type" "`$ARRAY`")
           (vs/jm
@@ -892,13 +896,13 @@
           (vs/jm
             "active" true
             "index$" 3
-            "name" "response_code"
+            "name" "responseCode"
             "req" false
             "type" "`$INTEGER`")
           (vs/jm
             "active" true
             "index$" 4
-            "name" "response_message"
+            "name" "responseMessage"
             "req" false
             "type" "`$STRING`")
           (vs/jm
@@ -926,6 +930,7 @@
                       "reqd" true
                       "type" "`$STRING`")))
                 "index$" 0
+                "kind" "http"
                 "method" "POST"
                 "orig" "/listOfRoleGroups"
                 "parts" (vs/jt
@@ -961,13 +966,13 @@
           (vs/jm
             "active" true
             "index$" 3
-            "name" "response_code"
+            "name" "responseCode"
             "req" false
             "type" "`$INTEGER`")
           (vs/jm
             "active" true
             "index$" 4
-            "name" "response_message"
+            "name" "responseMessage"
             "req" false
             "type" "`$STRING`")
           (vs/jm
@@ -995,6 +1000,7 @@
                       "reqd" true
                       "type" "`$STRING`")))
                 "index$" 0
+                "kind" "http"
                 "method" "POST"
                 "orig" "/listOfTransactionsHistory"
                 "parts" (vs/jt
@@ -1030,13 +1036,13 @@
           (vs/jm
             "active" true
             "index$" 3
-            "name" "response_code"
+            "name" "responseCode"
             "req" false
             "type" "`$INTEGER`")
           (vs/jm
             "active" true
             "index$" 4
-            "name" "response_message"
+            "name" "responseMessage"
             "req" false
             "type" "`$STRING`")
           (vs/jm
@@ -1064,6 +1070,7 @@
                       "reqd" true
                       "type" "`$STRING`")))
                 "index$" 0
+                "kind" "http"
                 "method" "POST"
                 "orig" "/listOfUsers"
                 "parts" (vs/jt
@@ -1081,7 +1088,7 @@
           (vs/jm
             "active" true
             "index$" 0
-            "name" "mandator_name"
+            "name" "mandatorName"
             "req" true
             "type" "`$STRING`")
           (vs/jm
@@ -1093,13 +1100,13 @@
           (vs/jm
             "active" true
             "index$" 2
-            "name" "response_code"
+            "name" "responseCode"
             "req" false
             "type" "`$INTEGER`")
           (vs/jm
             "active" true
             "index$" 3
-            "name" "response_message"
+            "name" "responseMessage"
             "req" false
             "type" "`$STRING`")
           (vs/jm
@@ -1127,6 +1134,7 @@
                       "reqd" true
                       "type" "`$STRING`")))
                 "index$" 0
+                "kind" "http"
                 "method" "POST"
                 "orig" "/provideCredentials"
                 "parts" (vs/jt
@@ -1150,13 +1158,13 @@
           (vs/jm
             "active" true
             "index$" 1
-            "name" "consumer_id"
+            "name" "consumerId"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 2
-            "name" "consumer_language"
+            "name" "consumerLanguage"
             "req" false
             "type" "`$STRING`")
           (vs/jm
@@ -1168,13 +1176,13 @@
           (vs/jm
             "active" true
             "index$" 4
-            "name" "date_of_birth"
+            "name" "dateOfBirth"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 5
-            "name" "driver_licence_number"
+            "name" "driverLicenceNumber"
             "req" false
             "type" "`$STRING`")
           (vs/jm
@@ -1186,19 +1194,19 @@
           (vs/jm
             "active" true
             "index$" 7
-            "name" "first_name"
+            "name" "firstName"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 8
-            "name" "identification_number"
+            "name" "identificationNumber"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 9
-            "name" "last_name"
+            "name" "lastName"
             "req" false
             "type" "`$STRING`")
           (vs/jm
@@ -1216,7 +1224,7 @@
           (vs/jm
             "active" true
             "index$" 12
-            "name" "passport_number"
+            "name" "passportNumber"
             "req" false
             "type" "`$STRING`")
           (vs/jm
@@ -1228,13 +1236,13 @@
           (vs/jm
             "active" true
             "index$" 14
-            "name" "response_code"
+            "name" "responseCode"
             "req" false
             "type" "`$INTEGER`")
           (vs/jm
             "active" true
             "index$" 15
-            "name" "response_message"
+            "name" "responseMessage"
             "req" false
             "type" "`$STRING`")
           (vs/jm
@@ -1286,6 +1294,7 @@
                       "reqd" true
                       "type" "`$STRING`")))
                 "index$" 0
+                "kind" "http"
                 "method" "POST"
                 "orig" "/registerUser"
                 "parts" (vs/jt
@@ -1303,25 +1312,25 @@
           (vs/jm
             "active" true
             "index$" 0
-            "name" "consumer_uuid"
+            "name" "consumerUUID"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 1
-            "name" "response_code"
+            "name" "responseCode"
             "req" false
             "type" "`$INTEGER`")
           (vs/jm
             "active" true
             "index$" 2
-            "name" "response_message"
+            "name" "responseMessage"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 3
-            "name" "role"
+            "name" "roles"
             "req" false
             "type" "`$ARRAY`"))
         "name" "output_remove_role"
@@ -1343,6 +1352,7 @@
                       "reqd" true
                       "type" "`$STRING`")))
                 "index$" 0
+                "kind" "http"
                 "method" "POST"
                 "orig" "/removeRoles"
                 "parts" (vs/jt
@@ -1360,37 +1370,37 @@
           (vs/jm
             "active" true
             "index$" 0
-            "name" "business_registration_number"
+            "name" "businessRegistrationNumber"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 1
-            "name" "consumer_uuid"
+            "name" "consumerUUID"
             "req" true
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 2
-            "name" "email_confirmation_code"
+            "name" "emailConfirmationCode"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 3
-            "name" "phone_number"
+            "name" "phoneNumber"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 4
-            "name" "response_code"
+            "name" "responseCode"
             "req" false
             "type" "`$INTEGER`")
           (vs/jm
             "active" true
             "index$" 5
-            "name" "response_message"
+            "name" "responseMessage"
             "req" false
             "type" "`$STRING`"))
         "name" "output_resend_link"
@@ -1412,6 +1422,7 @@
                       "reqd" false
                       "type" "`$STRING`")))
                 "index$" 0
+                "kind" "http"
                 "method" "POST"
                 "orig" "/resendLink"
                 "parts" (vs/jt
@@ -1429,25 +1440,25 @@
           (vs/jm
             "active" true
             "index$" 0
-            "name" "consumer_uuid"
+            "name" "consumerUuid"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 1
-            "name" "phone_number"
+            "name" "phoneNumber"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 2
-            "name" "response_code"
+            "name" "responseCode"
             "req" false
             "type" "`$INTEGER`")
           (vs/jm
             "active" true
             "index$" 3
-            "name" "response_message"
+            "name" "responseMessage"
             "req" false
             "type" "`$STRING`"))
         "name" "output_reset_password"
@@ -1469,6 +1480,7 @@
                       "reqd" true
                       "type" "`$STRING`")))
                 "index$" 0
+                "kind" "http"
                 "method" "POST"
                 "orig" "/resetPassword"
                 "parts" (vs/jt
@@ -1492,7 +1504,7 @@
           (vs/jm
             "active" true
             "index$" 1
-            "name" "consumer_uuid"
+            "name" "consumerUuid"
             "req" true
             "type" "`$STRING`")
           (vs/jm
@@ -1510,7 +1522,7 @@
           (vs/jm
             "active" true
             "index$" 4
-            "name" "date_of_birth"
+            "name" "dateOfBirth"
             "req" false
             "type" "`$STRING`")
           (vs/jm
@@ -1522,7 +1534,7 @@
           (vs/jm
             "active" true
             "index$" 6
-            "name" "driver_licence_number"
+            "name" "driverLicenceNumber"
             "req" false
             "type" "`$STRING`")
           (vs/jm
@@ -1534,25 +1546,25 @@
           (vs/jm
             "active" true
             "index$" 8
-            "name" "first_name"
+            "name" "firstName"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 9
-            "name" "identification_number"
+            "name" "identificationNumber"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 10
-            "name" "kyc_passed"
+            "name" "kycPassed"
             "req" false
             "type" "`$BOOLEAN`")
           (vs/jm
             "active" true
             "index$" 11
-            "name" "last_name"
+            "name" "lastName"
             "req" false
             "type" "`$STRING`")
           (vs/jm
@@ -1564,31 +1576,31 @@
           (vs/jm
             "active" true
             "index$" 13
-            "name" "passport_number"
+            "name" "passportNumber"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 14
-            "name" "phone_number"
+            "name" "phoneNumber"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 15
-            "name" "place_of_birth"
+            "name" "placeOfBirth"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 16
-            "name" "response_code"
+            "name" "responseCode"
             "req" false
             "type" "`$INTEGER`")
           (vs/jm
             "active" true
             "index$" 17
-            "name" "response_message"
+            "name" "responseMessage"
             "req" false
             "type" "`$STRING`")
           (vs/jm
@@ -1640,6 +1652,7 @@
                       "reqd" false
                       "type" "`$STRING`")))
                 "index$" 0
+                "kind" "http"
                 "method" "POST"
                 "orig" "/updateConsumer"
                 "parts" (vs/jt
@@ -1657,7 +1670,7 @@
           (vs/jm
             "active" true
             "index$" 0
-            "name" "consumer_language"
+            "name" "consumerLanguage"
             "req" false
             "type" "`$STRING`")
           (vs/jm
@@ -1669,31 +1682,31 @@
           (vs/jm
             "active" true
             "index$" 2
-            "name" "first_name"
+            "name" "firstName"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 3
-            "name" "last_name"
+            "name" "lastName"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 4
-            "name" "phone_number"
+            "name" "phoneNumber"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 5
-            "name" "response_code"
+            "name" "responseCode"
             "req" false
             "type" "`$INTEGER`")
           (vs/jm
             "active" true
             "index$" 6
-            "name" "response_message"
+            "name" "responseMessage"
             "req" false
             "type" "`$STRING`"))
         "name" "output_update_profile"
@@ -1715,6 +1728,7 @@
                       "reqd" false
                       "type" "`$STRING`")))
                 "index$" 0
+                "kind" "http"
                 "method" "POST"
                 "orig" "/updateProfile"
                 "parts" (vs/jt
@@ -1732,13 +1746,13 @@
           (vs/jm
             "active" true
             "index$" 0
-            "name" "app_name"
+            "name" "appName"
             "req" false
             "type" "`$STRING`")
           (vs/jm
             "active" true
             "index$" 1
-            "name" "build_date"
+            "name" "buildDate"
             "req" false
             "type" "`$STRING`")
           (vs/jm
@@ -1758,6 +1772,7 @@
                 "active" true
                 "args" (vs/jm)
                 "index$" 0
+                "kind" "http"
                 "method" "GET"
                 "orig" "/version"
                 "parts" (vs/jt

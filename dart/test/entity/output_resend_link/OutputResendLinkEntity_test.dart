@@ -47,7 +47,7 @@ void tests() {
       final output_resend_link_ref01_ent = client.OutputResendLink();
       dynamic output_resend_link_ref01_data = setup['data']['new']['output_resend_link']['output_resend_link_ref01'];
 
-      output_resend_link_ref01_data = await output_resend_link_ref01_ent.create(output_resend_link_ref01_data);
+      output_resend_link_ref01_data = (await output_resend_link_ref01_ent.create(output_resend_link_ref01_data)).data();
       ok(null != output_resend_link_ref01_data);
 
 

@@ -190,8 +190,8 @@ output_activate_digital_module = client.OutputActivateDigitalModule
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `Integer` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Integer` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -244,10 +244,10 @@ output_activate_portal_module = client.OutputActivatePortalModule
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `String` | Yes |  |
-| `notification_email` | `String` | Yes |  |
-| `response_code` | `Integer` | No |  |
-| `response_message` | `String` | No |  |
+| `clientSecret` | `String` | Yes |  |
+| `notificationEmail` | `String` | Yes |  |
+| `responseCode` | `Integer` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -257,8 +257,8 @@ Create a new entity with the given data. Raises on error.
 
 ```ruby
 result = client.OutputActivatePortalModule.create({
-  "client_secret" => "example_client_secret", # String
-  "notification_email" => "example_notification_email", # String
+  "clientSecret" => "example_clientSecret", # String
+  "notificationEmail" => "example_notificationEmail", # String
 })
 ```
 
@@ -302,8 +302,8 @@ output_activate_store_module = client.OutputActivateStoreModule
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `Integer` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Integer` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -356,9 +356,9 @@ output_activate_user = client.OutputActivateUser
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String` | No |  |
-| `response_code` | `Integer` | No |  |
-| `response_message` | `String` | No |  |
+| `consumerUUID` | `String` | No |  |
+| `responseCode` | `Integer` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -411,10 +411,10 @@ output_assign_role = client.OutputAssignRole
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String` | Yes |  |
-| `response_code` | `Integer` | No |  |
-| `response_message` | `String` | No |  |
-| `role` | `Array` | Yes |  |
+| `consumerUUID` | `String` | Yes |  |
+| `responseCode` | `Integer` | No |  |
+| `responseMessage` | `String` | No |  |
+| `roles` | `Array` | Yes |  |
 
 ### Operations
 
@@ -424,8 +424,8 @@ Create a new entity with the given data. Raises on error.
 
 ```ruby
 result = client.OutputAssignRole.create({
-  "consumer_uuid" => "example_consumer_uuid", # String
-  "role" => [], # Array
+  "consumerUUID" => "example_consumerUUID", # String
+  "roles" => [], # Array
 })
 ```
 
@@ -469,10 +469,10 @@ output_change_logo = client.OutputChangeLogo
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `String` | Yes |  |
-| `mime_type` | `String` | Yes |  |
-| `response_code` | `Integer` | No |  |
-| `response_message` | `String` | No |  |
+| `contentAsBase64` | `String` | Yes |  |
+| `mimeType` | `String` | Yes |  |
+| `responseCode` | `Integer` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -482,8 +482,8 @@ Create a new entity with the given data. Raises on error.
 
 ```ruby
 result = client.OutputChangeLogo.create({
-  "content_as_base64" => "example_content_as_base64", # String
-  "mime_type" => "example_mime_type", # String
+  "contentAsBase64" => "example_contentAsBase64", # String
+  "mimeType" => "example_mimeType", # String
 })
 ```
 
@@ -529,25 +529,45 @@ output_create_mandator = client.OutputCreateMandator
 | --- | --- | --- | --- |
 | `city` | `String` | No |  |
 | `country` | `String` | No |  |
-| `date_of_birth` | `String` | No |  |
-| `description` | `String` | Yes |  |
-| `drivers_license_number` | `String` | No |  |
+| `dateOfBirth` | `String` | No |  |
+| `description` | `String` | No |  |
+| `driversLicenseNumber` | `String` | No |  |
 | `email` | `String` | Yes |  |
-| `first_name` | `String` | No |  |
-| `identification_number` | `String` | No |  |
-| `last_name` | `String` | No |  |
+| `firstName` | `String` | No |  |
+| `identificationNumber` | `String` | No |  |
+| `lastName` | `String` | No |  |
 | `login` | `String` | Yes |  |
-| `mandator` | `Hash` | No |  |
-| `name` | `String` | Yes |  |
-| `passport_number` | `String` | No |  |
+| `name` | `String` | No |  |
+| `passportNumber` | `String` | No |  |
 | `phone` | `String` | Yes |  |
-| `response_code` | `Integer` | No |  |
-| `response_message` | `String` | No |  |
 | `salutation` | `String` | No |  |
 | `state` | `String` | No |  |
 | `street1` | `String` | No |  |
 | `street2` | `String` | No |  |
-| `zip_code` | `String` | No |  |
+| `zipCode` | `String` | No |  |
+
+### Field Usage by Operation
+
+| Field | create |
+| --- | --- |
+| `city` | - |
+| `country` | - |
+| `dateOfBirth` | - |
+| `description` | Yes |
+| `driversLicenseNumber` | - |
+| `email` | - |
+| `firstName` | - |
+| `identificationNumber` | - |
+| `lastName` | - |
+| `login` | - |
+| `name` | Yes |
+| `passportNumber` | - |
+| `phone` | - |
+| `salutation` | - |
+| `state` | - |
+| `street1` | - |
+| `street2` | - |
+| `zipCode` | - |
 
 ### Operations
 
@@ -557,10 +577,8 @@ Create a new entity with the given data. Raises on error.
 
 ```ruby
 result = client.OutputCreateMandator.create({
-  "description" => "example_description", # String
   "email" => "example_email", # String
   "login" => "example_login", # String
-  "name" => "example_name", # String
   "phone" => "example_phone", # String
 })
 ```
@@ -605,9 +623,9 @@ output_create_service_user = client.OutputCreateServiceUser
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `String` | Yes |  |
-| `response_code` | `Integer` | No |  |
-| `response_message` | `String` | No |  |
+| `mandatorName` | `String` | Yes |  |
+| `responseCode` | `Integer` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -617,7 +635,7 @@ Create a new entity with the given data. Raises on error.
 
 ```ruby
 result = client.OutputCreateServiceUser.create({
-  "mandator_name" => "example_mandator_name", # String
+  "mandatorName" => "example_mandatorName", # String
 })
 ```
 
@@ -661,9 +679,9 @@ output_deactivate_user = client.OutputDeactivateUser
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String` | No |  |
-| `response_code` | `Integer` | No |  |
-| `response_message` | `String` | No |  |
+| `consumerUUID` | `String` | No |  |
+| `responseCode` | `Integer` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -716,10 +734,10 @@ output_get_kyc_document = client.OutputGetKycDocument
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `case_id` | `String` | No |  |
-| `encoded_data_base64` | `String` | No |  |
-| `response_code` | `Integer` | No |  |
-| `response_message` | `String` | No |  |
+| `caseID` | `String` | No |  |
+| `encodedDataBase64` | `String` | No |  |
+| `responseCode` | `Integer` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -772,10 +790,10 @@ output_get_logo = client.OutputGetLogo
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `String` | Yes |  |
-| `mime_type` | `String` | Yes |  |
-| `response_code` | `Integer` | No |  |
-| `response_message` | `String` | No |  |
+| `contentAsBase64` | `String` | Yes |  |
+| `mimeType` | `String` | Yes |  |
+| `responseCode` | `Integer` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -827,9 +845,9 @@ output_list_of_available_role = client.OutputListOfAvailableRole
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `available_role` | `Array` | No |  |
-| `response_code` | `Integer` | No |  |
-| `response_message` | `String` | No |  |
+| `availableRoles` | `Array` | No |  |
+| `responseCode` | `Integer` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -885,8 +903,8 @@ output_list_of_mandator = client.OutputListOfMandator
 | `filter` | `Hash` | No |  |
 | `list` | `Array` | No |  |
 | `pagination` | `Hash` | No |  |
-| `response_code` | `Integer` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Integer` | No |  |
+| `responseMessage` | `String` | No |  |
 | `sorting` | `Hash` | No |  |
 
 ### Operations
@@ -942,8 +960,8 @@ output_list_of_module = client.OutputListOfModule
 | --- | --- | --- | --- |
 | `list` | `Array` | No |  |
 | `pagination` | `Hash` | No |  |
-| `response_code` | `Integer` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Integer` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -997,10 +1015,10 @@ output_list_of_role_group = client.OutputListOfRoleGroup
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `filter` | `Hash` | No |  |
-| `group_role` | `Array` | No |  |
+| `groupRoles` | `Array` | No |  |
 | `pagination` | `Hash` | No |  |
-| `response_code` | `Integer` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Integer` | No |  |
+| `responseMessage` | `String` | No |  |
 | `sorting` | `Hash` | No |  |
 
 ### Operations
@@ -1057,8 +1075,8 @@ output_list_of_transactions_history = client.OutputListOfTransactionsHistory
 | `filter` | `Hash` | No |  |
 | `list` | `Array` | No |  |
 | `pagination` | `Hash` | No |  |
-| `response_code` | `Integer` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Integer` | No |  |
+| `responseMessage` | `String` | No |  |
 | `sorting` | `Hash` | No |  |
 
 ### Operations
@@ -1115,8 +1133,8 @@ output_list_of_user = client.OutputListOfUser
 | `filter` | `Hash` | No |  |
 | `list` | `Array` | No |  |
 | `pagination` | `Hash` | No |  |
-| `response_code` | `Integer` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Integer` | No |  |
+| `responseMessage` | `String` | No |  |
 | `sorting` | `Hash` | No |  |
 
 ### Operations
@@ -1170,10 +1188,10 @@ output_provide_credential = client.OutputProvideCredential
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `String` | Yes |  |
+| `mandatorName` | `String` | Yes |  |
 | `password` | `String` | No |  |
-| `response_code` | `Integer` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Integer` | No |  |
+| `responseMessage` | `String` | No |  |
 | `username` | `String` | No |  |
 
 ### Operations
@@ -1184,7 +1202,7 @@ Create a new entity with the given data. Raises on error.
 
 ```ruby
 result = client.OutputProvideCredential.create({
-  "mandator_name" => "example_mandator_name", # String
+  "mandatorName" => "example_mandatorName", # String
 })
 ```
 
@@ -1229,21 +1247,21 @@ output_register_user = client.OutputRegisterUser
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `String` | No |  |
-| `consumer_id` | `String` | No |  |
-| `consumer_language` | `String` | No |  |
+| `consumerId` | `String` | No |  |
+| `consumerLanguage` | `String` | No |  |
 | `country` | `String` | No |  |
-| `date_of_birth` | `String` | No |  |
-| `driver_licence_number` | `String` | No |  |
+| `dateOfBirth` | `String` | No |  |
+| `driverLicenceNumber` | `String` | No |  |
 | `email` | `String` | Yes |  |
-| `first_name` | `String` | No |  |
-| `identification_number` | `String` | No |  |
-| `last_name` | `String` | No |  |
+| `firstName` | `String` | No |  |
+| `identificationNumber` | `String` | No |  |
+| `lastName` | `String` | No |  |
 | `login` | `String` | No |  |
 | `module` | `String` | No |  |
-| `passport_number` | `String` | No |  |
+| `passportNumber` | `String` | No |  |
 | `phone` | `String` | No |  |
-| `response_code` | `Integer` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Integer` | No |  |
+| `responseMessage` | `String` | No |  |
 | `salutation` | `String` | No |  |
 | `state` | `String` | No |  |
 | `street1` | `String` | No |  |
@@ -1302,10 +1320,10 @@ output_remove_role = client.OutputRemoveRole
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String` | No |  |
-| `response_code` | `Integer` | No |  |
-| `response_message` | `String` | No |  |
-| `role` | `Array` | No |  |
+| `consumerUUID` | `String` | No |  |
+| `responseCode` | `Integer` | No |  |
+| `responseMessage` | `String` | No |  |
+| `roles` | `Array` | No |  |
 
 ### Operations
 
@@ -1358,12 +1376,12 @@ output_resend_link = client.OutputResendLink
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `business_registration_number` | `String` | No |  |
-| `consumer_uuid` | `String` | Yes |  |
-| `email_confirmation_code` | `String` | No |  |
-| `phone_number` | `String` | No |  |
-| `response_code` | `Integer` | No |  |
-| `response_message` | `String` | No |  |
+| `businessRegistrationNumber` | `String` | No |  |
+| `consumerUUID` | `String` | Yes |  |
+| `emailConfirmationCode` | `String` | No |  |
+| `phoneNumber` | `String` | No |  |
+| `responseCode` | `Integer` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -1373,7 +1391,7 @@ Create a new entity with the given data. Raises on error.
 
 ```ruby
 result = client.OutputResendLink.create({
-  "consumer_uuid" => "example_consumer_uuid", # String
+  "consumerUUID" => "example_consumerUUID", # String
 })
 ```
 
@@ -1417,10 +1435,10 @@ output_reset_password = client.OutputResetPassword
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String` | No |  |
-| `phone_number` | `String` | No |  |
-| `response_code` | `Integer` | No |  |
-| `response_message` | `String` | No |  |
+| `consumerUuid` | `String` | No |  |
+| `phoneNumber` | `String` | No |  |
+| `responseCode` | `Integer` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -1474,23 +1492,23 @@ output_update_consumer = client.OutputUpdateConsumer
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `String` | No |  |
-| `consumer_uuid` | `String` | Yes |  |
+| `consumerUuid` | `String` | Yes |  |
 | `consumerlanguage` | `String` | No |  |
 | `country` | `String` | No |  |
-| `date_of_birth` | `String` | No |  |
+| `dateOfBirth` | `String` | No |  |
 | `datetime_created` | `String` | No |  |
-| `driver_licence_number` | `String` | No |  |
+| `driverLicenceNumber` | `String` | No |  |
 | `email` | `String` | No |  |
-| `first_name` | `String` | No |  |
-| `identification_number` | `String` | No |  |
-| `kyc_passed` | `Boolean` | No |  |
-| `last_name` | `String` | No |  |
+| `firstName` | `String` | No |  |
+| `identificationNumber` | `String` | No |  |
+| `kycPassed` | `Boolean` | No |  |
+| `lastName` | `String` | No |  |
 | `nationality` | `String` | No |  |
-| `passport_number` | `String` | No |  |
-| `phone_number` | `String` | No |  |
-| `place_of_birth` | `String` | No |  |
-| `response_code` | `Integer` | No |  |
-| `response_message` | `String` | No |  |
+| `passportNumber` | `String` | No |  |
+| `phoneNumber` | `String` | No |  |
+| `placeOfBirth` | `String` | No |  |
+| `responseCode` | `Integer` | No |  |
+| `responseMessage` | `String` | No |  |
 | `state` | `String` | No |  |
 | `street1` | `String` | No |  |
 | `street2` | `String` | No |  |
@@ -1505,7 +1523,7 @@ Create a new entity with the given data. Raises on error.
 
 ```ruby
 result = client.OutputUpdateConsumer.create({
-  "consumer_uuid" => "example_consumer_uuid", # String
+  "consumerUuid" => "example_consumerUuid", # String
 })
 ```
 
@@ -1549,13 +1567,13 @@ output_update_profile = client.OutputUpdateProfile
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_language` | `String` | No |  |
+| `consumerLanguage` | `String` | No |  |
 | `email` | `String` | No |  |
-| `first_name` | `String` | No |  |
-| `last_name` | `String` | No |  |
-| `phone_number` | `String` | No |  |
-| `response_code` | `Integer` | No |  |
-| `response_message` | `String` | No |  |
+| `firstName` | `String` | No |  |
+| `lastName` | `String` | No |  |
+| `phoneNumber` | `String` | No |  |
+| `responseCode` | `Integer` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -1608,8 +1626,8 @@ version = client.Version
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `String` | No |  |
-| `build_date` | `String` | No |  |
+| `appName` | `String` | No |  |
+| `buildDate` | `String` | No |  |
 | `version` | `String` | No |  |
 
 ### Operations

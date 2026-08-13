@@ -65,16 +65,16 @@ function output_get_logo_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_GET_LOGO_ENTID" => [],
-        "BLUEFINTECSUSERBACKOFFICE_TEST_LIVE" => "FALSE",
-        "BLUEFINTECSUSERBACKOFFICE_APIKEY" => "NONE",
+        "BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_GET_LOGO_ENTID" => [],
+        "BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE" => "FALSE",
+        "BLUEFIN_TECS_USER_BACKOFFICE_APIKEY" => "NONE",
     ]);
 
-    $live = $env["BLUEFINTECSUSERBACKOFFICE_TEST_LIVE"] === "TRUE";
+    $live = $env["BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["BLUEFINTECSUSERBACKOFFICE_APIKEY"],
+            "apikey" => $env["BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"],
         ];
         $client = new BluefinTecsUserBackofficeSDK($merged_opts);
         return [

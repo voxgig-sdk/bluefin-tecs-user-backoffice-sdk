@@ -41,7 +41,7 @@ fn output_get_logo_entity_basic() {
     // The basic flow consumes synthetic IDs from the fixture. In live mode
     // without an *_ENTID env override, those IDs hit the live API and 4xx.
     if setup.synthetic_only {
-        eprintln!("skip: live entity test uses synthetic IDs from fixture — set BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_GET_LOGO_ENTID JSON to run live");
+        eprintln!("skip: live entity test uses synthetic IDs from fixture — set BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_GET_LOGO_ENTID JSON to run live");
         return;
     }
     let client = setup.client.clone();
@@ -59,9 +59,10 @@ fn output_get_logo_entity_basic() {
     let output_get_logo_ref01_data_dt0_loaded = output_get_logo_ref01_ent
         .load(output_get_logo_ref01_match_dt0.clone(), Value::Noval)
         .expect("load failed");
+    // load resolves to the ENTITY; the record is reached through data().
     assert!(
-        !output_get_logo_ref01_data_dt0_loaded.is_noval(),
-        "expected load result to be non-nil"
+        !output_get_logo_ref01_data_dt0_loaded.data(None).is_noval(),
+        "expected load result to carry data"
     );
 
 }
@@ -110,27 +111,27 @@ fn output_get_logo_basic_setup(extra: Value) -> EntityTestSetup {
     // Detect ENTID env override before env_override consumes it. When live
     // mode is on without a real override, the basic test runs against
     // synthetic IDs from the fixture and 4xx's.
-    let entid_env_raw = std::env::var("BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_GET_LOGO_ENTID").unwrap_or_default();
+    let entid_env_raw = std::env::var("BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_GET_LOGO_ENTID").unwrap_or_default();
     let idmap_overridden =
         !entid_env_raw.trim().is_empty() && entid_env_raw.trim().starts_with('{');
 
     let env = env_override(jo(vec![
-        ("BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_GET_LOGO_ENTID", idmap.clone()),
-        ("BLUEFINTECSUSERBACKOFFICE_TEST_LIVE", Value::str("FALSE")),
-        ("BLUEFINTECSUSERBACKOFFICE_TEST_EXPLAIN", Value::str("FALSE")),
-        ("BLUEFINTECSUSERBACKOFFICE_APIKEY", Value::str("NONE")),
+        ("BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_GET_LOGO_ENTID", idmap.clone()),
+        ("BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE", Value::str("FALSE")),
+        ("BLUEFIN_TECS_USER_BACKOFFICE_TEST_EXPLAIN", Value::str("FALSE")),
+        ("BLUEFIN_TECS_USER_BACKOFFICE_APIKEY", Value::str("NONE")),
     ]));
 
-    let idmap_resolved = match to_map(&getp(&env, "BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_GET_LOGO_ENTID")) {
+    let idmap_resolved = match to_map(&getp(&env, "BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_GET_LOGO_ENTID")) {
         Value::Map(m) => Value::Map(m),
         _ => to_map(&idmap),
     };
 
-    let live = getp(&env, "BLUEFINTECSUSERBACKOFFICE_TEST_LIVE") == Value::str("TRUE");
+    let live = getp(&env, "BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE") == Value::str("TRUE");
 
     let client = if live {
         let merged = vs::merge(
-            &ja(vec![jo(vec![("apikey", getp(&env, "BLUEFINTECSUSERBACKOFFICE_APIKEY"))]), extra]),
+            &ja(vec![jo(vec![("apikey", getp(&env, "BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"))]), extra]),
             None,
         );
         BluefinTecsUserBackofficeSDK::new(to_map(&merged))
@@ -143,7 +144,7 @@ fn output_get_logo_basic_setup(extra: Value) -> EntityTestSetup {
         data: entity_data,
         idmap: idmap_resolved,
         env: env.clone(),
-        explain: getp(&env, "BLUEFINTECSUSERBACKOFFICE_TEST_EXPLAIN") == Value::str("TRUE"),
+        explain: getp(&env, "BLUEFIN_TECS_USER_BACKOFFICE_TEST_EXPLAIN") == Value::str("TRUE"),
         live,
         synthetic_only: live && !idmap_overridden,
         now: now_ms(),

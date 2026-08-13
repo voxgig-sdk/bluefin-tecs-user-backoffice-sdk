@@ -33,7 +33,7 @@ class OutputListOfModuleEntityTest extends TestCase
         // The basic flow consumes synthetic IDs from the fixture. In live mode
         // without an *_ENTID env override, those IDs hit the live API and 4xx.
         if (!empty($setup["synthetic_only"])) {
-            $this->markTestSkipped("live entity test uses synthetic IDs from fixture — set BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_LIST_OF_MODULE_ENTID JSON to run live");
+            $this->markTestSkipped("live entity test uses synthetic IDs from fixture — set BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_LIST_OF_MODULE_ENTID JSON to run live");
             return;
         }
         $client = $setup["client"];
@@ -44,7 +44,7 @@ class OutputListOfModuleEntityTest extends TestCase
             Vs::getpath($setup["data"], "new.output_list_of_module"), "output_list_of_module_ref01"));
 
         $output_list_of_module_ref01_data_result = $output_list_of_module_ref01_ent->create($output_list_of_module_ref01_data, null);
-        $output_list_of_module_ref01_data = Helpers::to_map($output_list_of_module_ref01_data_result);
+        $output_list_of_module_ref01_data = Helpers::to_map(is_object($output_list_of_module_ref01_data_result) && method_exists($output_list_of_module_ref01_data_result, 'data_get') ? $output_list_of_module_ref01_data_result->data_get() : $output_list_of_module_ref01_data_result);
         $this->assertNotNull($output_list_of_module_ref01_data);
 
     }
@@ -72,39 +72,39 @@ function output_list_of_module_basic_setup($extra)
     // Detect ENTID env override before envOverride consumes it. When live
     // mode is on without a real override, the basic test runs against synthetic
     // IDs from the fixture and 4xx's. Surface this so the test can skip.
-    $entid_env_raw = getenv("BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_LIST_OF_MODULE_ENTID");
+    $entid_env_raw = getenv("BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_LIST_OF_MODULE_ENTID");
     $idmap_overridden = $entid_env_raw !== false && str_starts_with(trim($entid_env_raw), "{");
 
     $env = Runner::env_override([
-        "BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_LIST_OF_MODULE_ENTID" => $idmap,
-        "BLUEFINTECSUSERBACKOFFICE_TEST_LIVE" => "FALSE",
-        "BLUEFINTECSUSERBACKOFFICE_TEST_EXPLAIN" => "FALSE",
-        "BLUEFINTECSUSERBACKOFFICE_APIKEY" => "NONE",
+        "BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_LIST_OF_MODULE_ENTID" => $idmap,
+        "BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE" => "FALSE",
+        "BLUEFIN_TECS_USER_BACKOFFICE_TEST_EXPLAIN" => "FALSE",
+        "BLUEFIN_TECS_USER_BACKOFFICE_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
-        $env["BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_LIST_OF_MODULE_ENTID"]);
+        $env["BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_LIST_OF_MODULE_ENTID"]);
     if ($idmap_resolved === null) {
         $idmap_resolved = Helpers::to_map($idmap);
     }
 
-    if ($env["BLUEFINTECSUSERBACKOFFICE_TEST_LIVE"] === "TRUE") {
+    if ($env["BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["BLUEFINTECSUSERBACKOFFICE_APIKEY"],
+                "apikey" => $env["BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"],
             ],
             $extra ?? [],
         ]);
         $client = new BluefinTecsUserBackofficeSDK(Helpers::to_map($merged_opts));
     }
 
-    $live = $env["BLUEFINTECSUSERBACKOFFICE_TEST_LIVE"] === "TRUE";
+    $live = $env["BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE"] === "TRUE";
     return [
         "client" => $client,
         "data" => $entity_data,
         "idmap" => $idmap_resolved,
         "env" => $env,
-        "explain" => $env["BLUEFINTECSUSERBACKOFFICE_TEST_EXPLAIN"] === "TRUE",
+        "explain" => $env["BLUEFIN_TECS_USER_BACKOFFICE_TEST_EXPLAIN"] === "TRUE",
         "live" => $live,
         "synthetic_only" => $live && !$idmap_overridden,
         "now" => (int)(microtime(true) * 1000),

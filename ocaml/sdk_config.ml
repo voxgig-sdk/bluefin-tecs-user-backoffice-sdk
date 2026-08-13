@@ -53,13 +53,13 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool false));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (1.))) ]) ]));
@@ -80,6 +80,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/activateDigitalModule"));
                 ("parts", (ja [
@@ -98,25 +99,25 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "client_secret"));
+            ("name", (Str "clientSecret"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "notification_email"));
+            ("name", (Str "notificationEmail"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (1.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool false));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (2.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (3.))) ]) ]));
@@ -137,6 +138,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/activateMerchantPortalModule"));
                 ("parts", (ja [
@@ -155,13 +157,13 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool false));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (1.))) ]) ]));
@@ -182,6 +184,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/activateAppStoreModule"));
                 ("parts", (ja [
@@ -200,19 +203,19 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "consumer_uuid"));
+            ("name", (Str "consumerUUID"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool false));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (1.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (2.))) ]) ]));
@@ -233,6 +236,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/activateUser"));
                 ("parts", (ja [
@@ -251,25 +255,25 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "consumer_uuid"));
+            ("name", (Str "consumerUUID"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool false));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (1.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (2.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "role"));
+            ("name", (Str "roles"));
             ("req", (Bool true));
             ("type", (Str "`$ARRAY`"));
             ("index$", (Num (3.))) ]) ]));
@@ -290,6 +294,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/assignRoles"));
                 ("parts", (ja [
@@ -308,25 +313,25 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "content_as_base64"));
+            ("name", (Str "contentAsBase64"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "mime_type"));
+            ("name", (Str "mimeType"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (1.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool false));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (2.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (3.))) ]) ]));
@@ -347,6 +352,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/changeLogo"));
                 ("parts", (ja [
@@ -377,19 +383,23 @@ let make_config () : value =
             ("index$", (Num (1.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "date_of_birth"));
+            ("name", (Str "dateOfBirth"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (2.))) ]);
           (jo [
             ("active", (Bool true));
             ("name", (Str "description"));
-            ("req", (Bool true));
+            ("op", (jo [
+              ("create", (jo [
+                ("req", (Bool true));
+                ("type", (Str "`$STRING`")) ])) ]));
+            ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (3.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "drivers_license_number"));
+            ("name", (Str "driversLicenseNumber"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (4.))) ]);
@@ -401,19 +411,19 @@ let make_config () : value =
             ("index$", (Num (5.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "first_name"));
+            ("name", (Str "firstName"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (6.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "identification_number"));
+            ("name", (Str "identificationNumber"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (7.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "last_name"));
+            ("name", (Str "lastName"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (8.))) ]);
@@ -425,70 +435,56 @@ let make_config () : value =
             ("index$", (Num (9.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "mandator"));
+            ("name", (Str "name"));
+            ("op", (jo [
+              ("create", (jo [
+                ("req", (Bool true));
+                ("type", (Str "`$STRING`")) ])) ]));
             ("req", (Bool false));
-            ("type", (Str "`$OBJECT`"));
+            ("type", (Str "`$STRING`"));
             ("index$", (Num (10.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "name"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`"));
-            ("index$", (Num (11.))) ]);
-          (jo [
-            ("active", (Bool true));
-            ("name", (Str "passport_number"));
+            ("name", (Str "passportNumber"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
-            ("index$", (Num (12.))) ]);
+            ("index$", (Num (11.))) ]);
           (jo [
             ("active", (Bool true));
             ("name", (Str "phone"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
-            ("index$", (Num (13.))) ]);
-          (jo [
-            ("active", (Bool true));
-            ("name", (Str "response_code"));
-            ("req", (Bool false));
-            ("type", (Str "`$INTEGER`"));
-            ("index$", (Num (14.))) ]);
-          (jo [
-            ("active", (Bool true));
-            ("name", (Str "response_message"));
-            ("req", (Bool false));
-            ("type", (Str "`$STRING`"));
-            ("index$", (Num (15.))) ]);
+            ("index$", (Num (12.))) ]);
           (jo [
             ("active", (Bool true));
             ("name", (Str "salutation"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
-            ("index$", (Num (16.))) ]);
+            ("index$", (Num (13.))) ]);
           (jo [
             ("active", (Bool true));
             ("name", (Str "state"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
-            ("index$", (Num (17.))) ]);
+            ("index$", (Num (14.))) ]);
           (jo [
             ("active", (Bool true));
             ("name", (Str "street1"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
-            ("index$", (Num (18.))) ]);
+            ("index$", (Num (15.))) ]);
           (jo [
             ("active", (Bool true));
             ("name", (Str "street2"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
-            ("index$", (Num (19.))) ]);
+            ("index$", (Num (16.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "zip_code"));
+            ("name", (Str "zipCode"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
-            ("index$", (Num (20.))) ]) ]));
+            ("index$", (Num (17.))) ]) ]));
         ("name", (Str "output_create_mandator"));
         ("op", (jo [
           ("create", (jo [
@@ -506,6 +502,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/createMandator"));
                 ("parts", (ja [
@@ -524,19 +521,19 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "mandator_name"));
+            ("name", (Str "mandatorName"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool false));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (1.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (2.))) ]) ]));
@@ -557,6 +554,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/createServiceUser"));
                 ("parts", (ja [
@@ -575,19 +573,19 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "consumer_uuid"));
+            ("name", (Str "consumerUUID"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool false));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (1.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (2.))) ]) ]));
@@ -608,6 +606,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/deactivateUser"));
                 ("parts", (ja [
@@ -626,25 +625,25 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "case_id"));
+            ("name", (Str "caseID"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "encoded_data_base64"));
+            ("name", (Str "encodedDataBase64"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (1.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool false));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (2.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (3.))) ]) ]));
@@ -665,6 +664,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/getKycDocument"));
                 ("parts", (ja [
@@ -683,25 +683,25 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "content_as_base64"));
+            ("name", (Str "contentAsBase64"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "mime_type"));
+            ("name", (Str "mimeType"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (1.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool false));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (2.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (3.))) ]) ]));
@@ -722,6 +722,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "GET"));
                 ("orig", (Str "/getLogo"));
                 ("parts", (ja [
@@ -740,19 +741,19 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "available_role"));
+            ("name", (Str "availableRoles"));
             ("req", (Bool false));
             ("type", (Str "`$ARRAY`"));
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool false));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (1.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (2.))) ]) ]));
@@ -773,6 +774,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/listOfAvailableRoles"));
                 ("parts", (ja [
@@ -809,13 +811,13 @@ let make_config () : value =
             ("index$", (Num (2.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool false));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (3.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (4.))) ]);
@@ -842,6 +844,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/listOfMandators"));
                 ("parts", (ja [
@@ -872,13 +875,13 @@ let make_config () : value =
             ("index$", (Num (1.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool false));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (2.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (3.))) ]) ]));
@@ -899,6 +902,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/listOfModules"));
                 ("parts", (ja [
@@ -923,7 +927,7 @@ let make_config () : value =
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "group_role"));
+            ("name", (Str "groupRoles"));
             ("req", (Bool false));
             ("type", (Str "`$ARRAY`"));
             ("index$", (Num (1.))) ]);
@@ -935,13 +939,13 @@ let make_config () : value =
             ("index$", (Num (2.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool false));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (3.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (4.))) ]);
@@ -968,6 +972,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/listOfRoleGroups"));
                 ("parts", (ja [
@@ -1004,13 +1009,13 @@ let make_config () : value =
             ("index$", (Num (2.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool false));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (3.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (4.))) ]);
@@ -1037,6 +1042,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/listOfTransactionsHistory"));
                 ("parts", (ja [
@@ -1073,13 +1079,13 @@ let make_config () : value =
             ("index$", (Num (2.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool false));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (3.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (4.))) ]);
@@ -1106,6 +1112,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/listOfUsers"));
                 ("parts", (ja [
@@ -1124,7 +1131,7 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "mandator_name"));
+            ("name", (Str "mandatorName"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (0.))) ]);
@@ -1136,13 +1143,13 @@ let make_config () : value =
             ("index$", (Num (1.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool false));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (2.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (3.))) ]);
@@ -1169,6 +1176,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/provideCredentials"));
                 ("parts", (ja [
@@ -1193,13 +1201,13 @@ let make_config () : value =
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "consumer_id"));
+            ("name", (Str "consumerId"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (1.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "consumer_language"));
+            ("name", (Str "consumerLanguage"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (2.))) ]);
@@ -1211,13 +1219,13 @@ let make_config () : value =
             ("index$", (Num (3.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "date_of_birth"));
+            ("name", (Str "dateOfBirth"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (4.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "driver_licence_number"));
+            ("name", (Str "driverLicenceNumber"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (5.))) ]);
@@ -1229,19 +1237,19 @@ let make_config () : value =
             ("index$", (Num (6.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "first_name"));
+            ("name", (Str "firstName"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (7.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "identification_number"));
+            ("name", (Str "identificationNumber"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (8.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "last_name"));
+            ("name", (Str "lastName"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (9.))) ]);
@@ -1259,7 +1267,7 @@ let make_config () : value =
             ("index$", (Num (11.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "passport_number"));
+            ("name", (Str "passportNumber"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (12.))) ]);
@@ -1271,13 +1279,13 @@ let make_config () : value =
             ("index$", (Num (13.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool false));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (14.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (15.))) ]);
@@ -1328,6 +1336,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/registerUser"));
                 ("parts", (ja [
@@ -1346,25 +1355,25 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "consumer_uuid"));
+            ("name", (Str "consumerUUID"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool false));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (1.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (2.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "role"));
+            ("name", (Str "roles"));
             ("req", (Bool false));
             ("type", (Str "`$ARRAY`"));
             ("index$", (Num (3.))) ]) ]));
@@ -1385,6 +1394,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/removeRoles"));
                 ("parts", (ja [
@@ -1403,37 +1413,37 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "business_registration_number"));
+            ("name", (Str "businessRegistrationNumber"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "consumer_uuid"));
+            ("name", (Str "consumerUUID"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (1.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "email_confirmation_code"));
+            ("name", (Str "emailConfirmationCode"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (2.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "phone_number"));
+            ("name", (Str "phoneNumber"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (3.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool false));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (4.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (5.))) ]) ]));
@@ -1454,6 +1464,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool false));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/resendLink"));
                 ("parts", (ja [
@@ -1472,25 +1483,25 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "consumer_uuid"));
+            ("name", (Str "consumerUuid"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "phone_number"));
+            ("name", (Str "phoneNumber"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (1.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool false));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (2.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (3.))) ]) ]));
@@ -1511,6 +1522,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool true));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/resetPassword"));
                 ("parts", (ja [
@@ -1535,7 +1547,7 @@ let make_config () : value =
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "consumer_uuid"));
+            ("name", (Str "consumerUuid"));
             ("req", (Bool true));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (1.))) ]);
@@ -1553,7 +1565,7 @@ let make_config () : value =
             ("index$", (Num (3.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "date_of_birth"));
+            ("name", (Str "dateOfBirth"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (4.))) ]);
@@ -1565,7 +1577,7 @@ let make_config () : value =
             ("index$", (Num (5.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "driver_licence_number"));
+            ("name", (Str "driverLicenceNumber"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (6.))) ]);
@@ -1577,25 +1589,25 @@ let make_config () : value =
             ("index$", (Num (7.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "first_name"));
+            ("name", (Str "firstName"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (8.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "identification_number"));
+            ("name", (Str "identificationNumber"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (9.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "kyc_passed"));
+            ("name", (Str "kycPassed"));
             ("req", (Bool false));
             ("type", (Str "`$BOOLEAN`"));
             ("index$", (Num (10.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "last_name"));
+            ("name", (Str "lastName"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (11.))) ]);
@@ -1607,31 +1619,31 @@ let make_config () : value =
             ("index$", (Num (12.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "passport_number"));
+            ("name", (Str "passportNumber"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (13.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "phone_number"));
+            ("name", (Str "phoneNumber"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (14.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "place_of_birth"));
+            ("name", (Str "placeOfBirth"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (15.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool false));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (16.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (17.))) ]);
@@ -1682,6 +1694,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool false));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/updateConsumer"));
                 ("parts", (ja [
@@ -1700,7 +1713,7 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "consumer_language"));
+            ("name", (Str "consumerLanguage"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (0.))) ]);
@@ -1712,31 +1725,31 @@ let make_config () : value =
             ("index$", (Num (1.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "first_name"));
+            ("name", (Str "firstName"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (2.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "last_name"));
+            ("name", (Str "lastName"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (3.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "phone_number"));
+            ("name", (Str "phoneNumber"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (4.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_code"));
+            ("name", (Str "responseCode"));
             ("req", (Bool false));
             ("type", (Str "`$INTEGER`"));
             ("index$", (Num (5.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "response_message"));
+            ("name", (Str "responseMessage"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (6.))) ]) ]));
@@ -1757,6 +1770,7 @@ let make_config () : value =
                       ("orig", (Str "authorization"));
                       ("reqd", (Bool false));
                       ("type", (Str "`$STRING`")) ]) ])) ]));
+                ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/updateProfile"));
                 ("parts", (ja [
@@ -1775,13 +1789,13 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("active", (Bool true));
-            ("name", (Str "app_name"));
+            ("name", (Str "appName"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (0.))) ]);
           (jo [
             ("active", (Bool true));
-            ("name", (Str "build_date"));
+            ("name", (Str "buildDate"));
             ("req", (Bool false));
             ("type", (Str "`$STRING`"));
             ("index$", (Num (1.))) ]);
@@ -1800,6 +1814,7 @@ let make_config () : value =
               (jo [
                 ("active", (Bool true));
                 ("args", (empty_map ()));
+                ("kind", (Str "http"));
                 ("method", (Str "GET"));
                 ("orig", (Str "/version"));
                 ("parts", (ja [

@@ -6,22 +6,22 @@ main: kit: entity: output_get_kyc_document: {
 
   fields: [
     {
-      name: "case_id"
+      name: "caseID"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "encoded_data_base64"
+      name: "encodedDataBase64"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }

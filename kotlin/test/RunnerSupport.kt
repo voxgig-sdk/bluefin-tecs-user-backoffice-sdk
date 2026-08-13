@@ -63,7 +63,7 @@ object RunnerSupport {
   }
 
   fun envOverride(m: MutableMap<String, Any?>): MutableMap<String, Any?> {
-    if ("TRUE" == getenv("BLUEFINTECSUSERBACKOFFICE_TEST_LIVE") || "TRUE" == getenv("BLUEFINTECSUSERBACKOFFICE_TEST_OVERRIDE")) {
+    if ("TRUE" == getenv("BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE") || "TRUE" == getenv("BLUEFIN_TECS_USER_BACKOFFICE_TEST_OVERRIDE")) {
       for (key in ArrayList(m.keys)) {
         var envval = getenv(key)
         if (envval != null && envval.isNotEmpty()) {
@@ -80,9 +80,9 @@ object RunnerSupport {
       }
     }
 
-    val explain = getenv("BLUEFINTECSUSERBACKOFFICE_TEST_EXPLAIN")
+    val explain = getenv("BLUEFIN_TECS_USER_BACKOFFICE_TEST_EXPLAIN")
     if (explain != null && explain.isNotEmpty()) {
-      m["BLUEFINTECSUSERBACKOFFICE_TEST_EXPLAIN"] = explain
+      m["BLUEFIN_TECS_USER_BACKOFFICE_TEST_EXPLAIN"] = explain
     }
 
     return m

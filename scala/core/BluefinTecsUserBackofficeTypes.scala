@@ -16,104 +16,104 @@ package voxgig.bluefintecsuserbackofficesdk.core
 
 object BluefinTecsUserBackofficeTypes {
 
-  final case class OutputActivateDigitalModule(response_code: java.lang.Long, response_message: String)
+  final case class OutputActivateDigitalModule(responseCode: java.lang.Long, responseMessage: String)
 
-  final case class OutputActivateDigitalModuleCreateData(response_code: java.lang.Long, response_message: String)
+  final case class OutputActivateDigitalModuleCreateData(responseCode: java.lang.Long, responseMessage: String)
 
-  final case class OutputActivatePortalModule(client_secret: String, notification_email: String, response_code: java.lang.Long, response_message: String)
+  final case class OutputActivatePortalModule(clientSecret: String, notificationEmail: String, responseCode: java.lang.Long, responseMessage: String)
 
-  final case class OutputActivatePortalModuleCreateData(client_secret: String, notification_email: String, response_code: java.lang.Long, response_message: String)
+  final case class OutputActivatePortalModuleCreateData(clientSecret: String, notificationEmail: String, responseCode: java.lang.Long, responseMessage: String)
 
-  final case class OutputActivateStoreModule(response_code: java.lang.Long, response_message: String)
+  final case class OutputActivateStoreModule(responseCode: java.lang.Long, responseMessage: String)
 
-  final case class OutputActivateStoreModuleCreateData(response_code: java.lang.Long, response_message: String)
+  final case class OutputActivateStoreModuleCreateData(responseCode: java.lang.Long, responseMessage: String)
 
-  final case class OutputActivateUser(consumer_uuid: String, response_code: java.lang.Long, response_message: String)
+  final case class OutputActivateUser(consumerUUID: String, responseCode: java.lang.Long, responseMessage: String)
 
-  final case class OutputActivateUserCreateData(consumer_uuid: String, response_code: java.lang.Long, response_message: String)
+  final case class OutputActivateUserCreateData(consumerUUID: String, responseCode: java.lang.Long, responseMessage: String)
 
-  final case class OutputAssignRole(consumer_uuid: String, response_code: java.lang.Long, response_message: String, role: java.util.List[Object])
+  final case class OutputAssignRole(consumerUUID: String, responseCode: java.lang.Long, responseMessage: String, roles: java.util.List[Object])
 
-  final case class OutputAssignRoleCreateData(consumer_uuid: String, response_code: java.lang.Long, response_message: String, role: java.util.List[Object])
+  final case class OutputAssignRoleCreateData(consumerUUID: String, responseCode: java.lang.Long, responseMessage: String, roles: java.util.List[Object])
 
-  final case class OutputChangeLogo(content_as_base64: String, mime_type: String, response_code: java.lang.Long, response_message: String)
+  final case class OutputChangeLogo(contentAsBase64: String, mimeType: String, responseCode: java.lang.Long, responseMessage: String)
 
-  final case class OutputChangeLogoCreateData(content_as_base64: String, mime_type: String, response_code: java.lang.Long, response_message: String)
+  final case class OutputChangeLogoCreateData(contentAsBase64: String, mimeType: String, responseCode: java.lang.Long, responseMessage: String)
 
-  final case class OutputCreateMandator(city: String, country: String, date_of_birth: String, description: String, drivers_license_number: String, email: String, first_name: String, identification_number: String, last_name: String, login: String, mandator: java.util.Map[String, Object], name: String, passport_number: String, phone: String, response_code: java.lang.Long, response_message: String, salutation: String, state: String, street1: String, street2: String, zip_code: String)
+  final case class OutputCreateMandator(city: String, country: String, dateOfBirth: String, description: String, driversLicenseNumber: String, email: String, firstName: String, identificationNumber: String, lastName: String, login: String, name: String, passportNumber: String, phone: String, salutation: String, state: String, street1: String, street2: String, zipCode: String)
 
-  final case class OutputCreateMandatorCreateData(city: String, country: String, date_of_birth: String, description: String, drivers_license_number: String, email: String, first_name: String, identification_number: String, last_name: String, login: String, mandator: java.util.Map[String, Object], name: String, passport_number: String, phone: String, response_code: java.lang.Long, response_message: String, salutation: String, state: String, street1: String, street2: String, zip_code: String)
+  final case class OutputCreateMandatorCreateData(city: String, country: String, dateOfBirth: String, description: String, driversLicenseNumber: String, email: String, firstName: String, identificationNumber: String, lastName: String, login: String, name: String, passportNumber: String, phone: String, salutation: String, state: String, street1: String, street2: String, zipCode: String)
 
-  final case class OutputCreateServiceUser(mandator_name: String, response_code: java.lang.Long, response_message: String)
+  final case class OutputCreateServiceUser(mandatorName: String, responseCode: java.lang.Long, responseMessage: String)
 
-  final case class OutputCreateServiceUserCreateData(mandator_name: String, response_code: java.lang.Long, response_message: String)
+  final case class OutputCreateServiceUserCreateData(mandatorName: String, responseCode: java.lang.Long, responseMessage: String)
 
-  final case class OutputDeactivateUser(consumer_uuid: String, response_code: java.lang.Long, response_message: String)
+  final case class OutputDeactivateUser(consumerUUID: String, responseCode: java.lang.Long, responseMessage: String)
 
-  final case class OutputDeactivateUserCreateData(consumer_uuid: String, response_code: java.lang.Long, response_message: String)
+  final case class OutputDeactivateUserCreateData(consumerUUID: String, responseCode: java.lang.Long, responseMessage: String)
 
-  final case class OutputGetKycDocument(case_id: String, encoded_data_base64: String, response_code: java.lang.Long, response_message: String)
+  final case class OutputGetKycDocument(caseID: String, encodedDataBase64: String, responseCode: java.lang.Long, responseMessage: String)
 
-  final case class OutputGetKycDocumentCreateData(case_id: String, encoded_data_base64: String, response_code: java.lang.Long, response_message: String)
+  final case class OutputGetKycDocumentCreateData(caseID: String, encodedDataBase64: String, responseCode: java.lang.Long, responseMessage: String)
 
-  final case class OutputGetLogo(content_as_base64: String, mime_type: String, response_code: java.lang.Long, response_message: String)
+  final case class OutputGetLogo(contentAsBase64: String, mimeType: String, responseCode: java.lang.Long, responseMessage: String)
 
-  final case class OutputGetLogoLoadMatch(content_as_base64: String, mime_type: String, response_code: java.lang.Long, response_message: String)
+  final case class OutputGetLogoLoadMatch(contentAsBase64: String, mimeType: String, responseCode: java.lang.Long, responseMessage: String)
 
-  final case class OutputListOfAvailableRole(available_role: java.util.List[Object], response_code: java.lang.Long, response_message: String)
+  final case class OutputListOfAvailableRole(availableRoles: java.util.List[Object], responseCode: java.lang.Long, responseMessage: String)
 
-  final case class OutputListOfAvailableRoleCreateData(available_role: java.util.List[Object], response_code: java.lang.Long, response_message: String)
+  final case class OutputListOfAvailableRoleCreateData(availableRoles: java.util.List[Object], responseCode: java.lang.Long, responseMessage: String)
 
-  final case class OutputListOfMandator(filter: java.util.Map[String, Object], list: java.util.List[Object], pagination: java.util.Map[String, Object], response_code: java.lang.Long, response_message: String, sorting: java.util.Map[String, Object])
+  final case class OutputListOfMandator(filter: java.util.Map[String, Object], list: java.util.List[Object], pagination: java.util.Map[String, Object], responseCode: java.lang.Long, responseMessage: String, sorting: java.util.Map[String, Object])
 
-  final case class OutputListOfMandatorCreateData(filter: java.util.Map[String, Object], list: java.util.List[Object], pagination: java.util.Map[String, Object], response_code: java.lang.Long, response_message: String, sorting: java.util.Map[String, Object])
+  final case class OutputListOfMandatorCreateData(filter: java.util.Map[String, Object], list: java.util.List[Object], pagination: java.util.Map[String, Object], responseCode: java.lang.Long, responseMessage: String, sorting: java.util.Map[String, Object])
 
-  final case class OutputListOfModule(list: java.util.List[Object], pagination: java.util.Map[String, Object], response_code: java.lang.Long, response_message: String)
+  final case class OutputListOfModule(list: java.util.List[Object], pagination: java.util.Map[String, Object], responseCode: java.lang.Long, responseMessage: String)
 
-  final case class OutputListOfModuleCreateData(list: java.util.List[Object], pagination: java.util.Map[String, Object], response_code: java.lang.Long, response_message: String)
+  final case class OutputListOfModuleCreateData(list: java.util.List[Object], pagination: java.util.Map[String, Object], responseCode: java.lang.Long, responseMessage: String)
 
-  final case class OutputListOfRoleGroup(filter: java.util.Map[String, Object], group_role: java.util.List[Object], pagination: java.util.Map[String, Object], response_code: java.lang.Long, response_message: String, sorting: java.util.Map[String, Object])
+  final case class OutputListOfRoleGroup(filter: java.util.Map[String, Object], groupRoles: java.util.List[Object], pagination: java.util.Map[String, Object], responseCode: java.lang.Long, responseMessage: String, sorting: java.util.Map[String, Object])
 
-  final case class OutputListOfRoleGroupCreateData(filter: java.util.Map[String, Object], group_role: java.util.List[Object], pagination: java.util.Map[String, Object], response_code: java.lang.Long, response_message: String, sorting: java.util.Map[String, Object])
+  final case class OutputListOfRoleGroupCreateData(filter: java.util.Map[String, Object], groupRoles: java.util.List[Object], pagination: java.util.Map[String, Object], responseCode: java.lang.Long, responseMessage: String, sorting: java.util.Map[String, Object])
 
-  final case class OutputListOfTransactionsHistory(filter: java.util.Map[String, Object], list: java.util.List[Object], pagination: java.util.Map[String, Object], response_code: java.lang.Long, response_message: String, sorting: java.util.Map[String, Object])
+  final case class OutputListOfTransactionsHistory(filter: java.util.Map[String, Object], list: java.util.List[Object], pagination: java.util.Map[String, Object], responseCode: java.lang.Long, responseMessage: String, sorting: java.util.Map[String, Object])
 
-  final case class OutputListOfTransactionsHistoryCreateData(filter: java.util.Map[String, Object], list: java.util.List[Object], pagination: java.util.Map[String, Object], response_code: java.lang.Long, response_message: String, sorting: java.util.Map[String, Object])
+  final case class OutputListOfTransactionsHistoryCreateData(filter: java.util.Map[String, Object], list: java.util.List[Object], pagination: java.util.Map[String, Object], responseCode: java.lang.Long, responseMessage: String, sorting: java.util.Map[String, Object])
 
-  final case class OutputListOfUser(filter: java.util.Map[String, Object], list: java.util.List[Object], pagination: java.util.Map[String, Object], response_code: java.lang.Long, response_message: String, sorting: java.util.Map[String, Object])
+  final case class OutputListOfUser(filter: java.util.Map[String, Object], list: java.util.List[Object], pagination: java.util.Map[String, Object], responseCode: java.lang.Long, responseMessage: String, sorting: java.util.Map[String, Object])
 
-  final case class OutputListOfUserCreateData(filter: java.util.Map[String, Object], list: java.util.List[Object], pagination: java.util.Map[String, Object], response_code: java.lang.Long, response_message: String, sorting: java.util.Map[String, Object])
+  final case class OutputListOfUserCreateData(filter: java.util.Map[String, Object], list: java.util.List[Object], pagination: java.util.Map[String, Object], responseCode: java.lang.Long, responseMessage: String, sorting: java.util.Map[String, Object])
 
-  final case class OutputProvideCredential(mandator_name: String, password: String, response_code: java.lang.Long, response_message: String, username: String)
+  final case class OutputProvideCredential(mandatorName: String, password: String, responseCode: java.lang.Long, responseMessage: String, username: String)
 
-  final case class OutputProvideCredentialCreateData(mandator_name: String, password: String, response_code: java.lang.Long, response_message: String, username: String)
+  final case class OutputProvideCredentialCreateData(mandatorName: String, password: String, responseCode: java.lang.Long, responseMessage: String, username: String)
 
-  final case class OutputRegisterUser(city: String, consumer_id: String, consumer_language: String, country: String, date_of_birth: String, driver_licence_number: String, email: String, first_name: String, identification_number: String, last_name: String, login: String, module: String, passport_number: String, phone: String, response_code: java.lang.Long, response_message: String, salutation: String, state: String, street1: String, street2: String, zip: String)
+  final case class OutputRegisterUser(city: String, consumerId: String, consumerLanguage: String, country: String, dateOfBirth: String, driverLicenceNumber: String, email: String, firstName: String, identificationNumber: String, lastName: String, login: String, module: String, passportNumber: String, phone: String, responseCode: java.lang.Long, responseMessage: String, salutation: String, state: String, street1: String, street2: String, zip: String)
 
-  final case class OutputRegisterUserCreateData(city: String, consumer_id: String, consumer_language: String, country: String, date_of_birth: String, driver_licence_number: String, email: String, first_name: String, identification_number: String, last_name: String, login: String, module: String, passport_number: String, phone: String, response_code: java.lang.Long, response_message: String, salutation: String, state: String, street1: String, street2: String, zip: String)
+  final case class OutputRegisterUserCreateData(city: String, consumerId: String, consumerLanguage: String, country: String, dateOfBirth: String, driverLicenceNumber: String, email: String, firstName: String, identificationNumber: String, lastName: String, login: String, module: String, passportNumber: String, phone: String, responseCode: java.lang.Long, responseMessage: String, salutation: String, state: String, street1: String, street2: String, zip: String)
 
-  final case class OutputRemoveRole(consumer_uuid: String, response_code: java.lang.Long, response_message: String, role: java.util.List[Object])
+  final case class OutputRemoveRole(consumerUUID: String, responseCode: java.lang.Long, responseMessage: String, roles: java.util.List[Object])
 
-  final case class OutputRemoveRoleCreateData(consumer_uuid: String, response_code: java.lang.Long, response_message: String, role: java.util.List[Object])
+  final case class OutputRemoveRoleCreateData(consumerUUID: String, responseCode: java.lang.Long, responseMessage: String, roles: java.util.List[Object])
 
-  final case class OutputResendLink(business_registration_number: String, consumer_uuid: String, email_confirmation_code: String, phone_number: String, response_code: java.lang.Long, response_message: String)
+  final case class OutputResendLink(businessRegistrationNumber: String, consumerUUID: String, emailConfirmationCode: String, phoneNumber: String, responseCode: java.lang.Long, responseMessage: String)
 
-  final case class OutputResendLinkCreateData(business_registration_number: String, consumer_uuid: String, email_confirmation_code: String, phone_number: String, response_code: java.lang.Long, response_message: String)
+  final case class OutputResendLinkCreateData(businessRegistrationNumber: String, consumerUUID: String, emailConfirmationCode: String, phoneNumber: String, responseCode: java.lang.Long, responseMessage: String)
 
-  final case class OutputResetPassword(consumer_uuid: String, phone_number: String, response_code: java.lang.Long, response_message: String)
+  final case class OutputResetPassword(consumerUuid: String, phoneNumber: String, responseCode: java.lang.Long, responseMessage: String)
 
-  final case class OutputResetPasswordCreateData(consumer_uuid: String, phone_number: String, response_code: java.lang.Long, response_message: String)
+  final case class OutputResetPasswordCreateData(consumerUuid: String, phoneNumber: String, responseCode: java.lang.Long, responseMessage: String)
 
-  final case class OutputUpdateConsumer(city: String, consumer_uuid: String, consumerlanguage: String, country: String, date_of_birth: String, datetime_created: String, driver_licence_number: String, email: String, first_name: String, identification_number: String, kyc_passed: java.lang.Boolean, last_name: String, nationality: String, passport_number: String, phone_number: String, place_of_birth: String, response_code: java.lang.Long, response_message: String, state: String, street1: String, street2: String, transactionhistory_id: String, zip: String)
+  final case class OutputUpdateConsumer(city: String, consumerUuid: String, consumerlanguage: String, country: String, dateOfBirth: String, datetime_created: String, driverLicenceNumber: String, email: String, firstName: String, identificationNumber: String, kycPassed: java.lang.Boolean, lastName: String, nationality: String, passportNumber: String, phoneNumber: String, placeOfBirth: String, responseCode: java.lang.Long, responseMessage: String, state: String, street1: String, street2: String, transactionhistory_id: String, zip: String)
 
-  final case class OutputUpdateConsumerCreateData(city: String, consumer_uuid: String, consumerlanguage: String, country: String, date_of_birth: String, datetime_created: String, driver_licence_number: String, email: String, first_name: String, identification_number: String, kyc_passed: java.lang.Boolean, last_name: String, nationality: String, passport_number: String, phone_number: String, place_of_birth: String, response_code: java.lang.Long, response_message: String, state: String, street1: String, street2: String, transactionhistory_id: String, zip: String)
+  final case class OutputUpdateConsumerCreateData(city: String, consumerUuid: String, consumerlanguage: String, country: String, dateOfBirth: String, datetime_created: String, driverLicenceNumber: String, email: String, firstName: String, identificationNumber: String, kycPassed: java.lang.Boolean, lastName: String, nationality: String, passportNumber: String, phoneNumber: String, placeOfBirth: String, responseCode: java.lang.Long, responseMessage: String, state: String, street1: String, street2: String, transactionhistory_id: String, zip: String)
 
-  final case class OutputUpdateProfile(consumer_language: String, email: String, first_name: String, last_name: String, phone_number: String, response_code: java.lang.Long, response_message: String)
+  final case class OutputUpdateProfile(consumerLanguage: String, email: String, firstName: String, lastName: String, phoneNumber: String, responseCode: java.lang.Long, responseMessage: String)
 
-  final case class OutputUpdateProfileCreateData(consumer_language: String, email: String, first_name: String, last_name: String, phone_number: String, response_code: java.lang.Long, response_message: String)
+  final case class OutputUpdateProfileCreateData(consumerLanguage: String, email: String, firstName: String, lastName: String, phoneNumber: String, responseCode: java.lang.Long, responseMessage: String)
 
-  final case class Version(app_name: String, build_date: String, version: String)
+  final case class Version(appName: String, buildDate: String, version: String)
 
-  final case class VersionLoadMatch(app_name: String, build_date: String, version: String)
+  final case class VersionLoadMatch(appName: String, buildDate: String, version: String)
 
 }

@@ -11,7 +11,7 @@ main: kit: entity: output_update_consumer: {
       type: "`$STRING`"
     }
     {
-      name: "consumer_uuid"
+      name: "consumerUuid"
       req: true
       type: "`$STRING`"
     }
@@ -26,7 +26,7 @@ main: kit: entity: output_update_consumer: {
       type: "`$STRING`"
     }
     {
-      name: "date_of_birth"
+      name: "dateOfBirth"
       req: false
       type: "`$STRING`"
     }
@@ -36,7 +36,7 @@ main: kit: entity: output_update_consumer: {
       type: "`$STRING`"
     }
     {
-      name: "driver_licence_number"
+      name: "driverLicenceNumber"
       req: false
       type: "`$STRING`"
     }
@@ -46,22 +46,22 @@ main: kit: entity: output_update_consumer: {
       type: "`$STRING`"
     }
     {
-      name: "first_name"
+      name: "firstName"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "identification_number"
+      name: "identificationNumber"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "kyc_passed"
+      name: "kycPassed"
       req: false
       type: "`$BOOLEAN`"
     }
     {
-      name: "last_name"
+      name: "lastName"
       req: false
       type: "`$STRING`"
     }
@@ -71,27 +71,27 @@ main: kit: entity: output_update_consumer: {
       type: "`$STRING`"
     }
     {
-      name: "passport_number"
+      name: "passportNumber"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "phone_number"
+      name: "phoneNumber"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "place_of_birth"
+      name: "placeOfBirth"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }

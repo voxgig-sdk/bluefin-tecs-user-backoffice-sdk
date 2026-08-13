@@ -35,7 +35,7 @@ object OutputListOfAvailableRoleEntityTest {
       var outputListOfAvailableRoleRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.output_list_of_available_role"), "output_list_of_available_role_ref01"))
       val outputListOfAvailableRoleRef01DataResult = outputListOfAvailableRoleRef01Ent.create(outputListOfAvailableRoleRef01Data, null)
-      outputListOfAvailableRoleRef01Data = Helpers.toMapAny(outputListOfAvailableRoleRef01DataResult)
+      outputListOfAvailableRoleRef01Data = Helpers.toMapAny(outputListOfAvailableRoleRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("output_list_of_available_role.create.map", outputListOfAvailableRoleRef01Data != null, "expected create result to be a map")
     }
   }

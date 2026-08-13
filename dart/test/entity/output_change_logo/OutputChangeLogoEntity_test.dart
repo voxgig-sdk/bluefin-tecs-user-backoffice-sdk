@@ -47,7 +47,7 @@ void tests() {
       final output_change_logo_ref01_ent = client.OutputChangeLogo();
       dynamic output_change_logo_ref01_data = setup['data']['new']['output_change_logo']['output_change_logo_ref01'];
 
-      output_change_logo_ref01_data = await output_change_logo_ref01_ent.create(output_change_logo_ref01_data);
+      output_change_logo_ref01_data = (await output_change_logo_ref01_ent.create(output_change_logo_ref01_data)).data();
       ok(null != output_change_logo_ref01_data);
 
 

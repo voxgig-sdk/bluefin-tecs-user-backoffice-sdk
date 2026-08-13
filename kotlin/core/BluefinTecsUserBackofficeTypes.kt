@@ -16,104 +16,104 @@ package voxgig.bluefintecsuserbackofficesdk.core
 @Suppress("unused")
 object BluefinTecsUserBackofficeTypes {
 
-  data class OutputActivateDigitalModule(val response_code: Long?, val response_message: String?)
+  data class OutputActivateDigitalModule(val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputActivateDigitalModuleCreateData(val response_code: Long?, val response_message: String?)
+  data class OutputActivateDigitalModuleCreateData(val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputActivatePortalModule(val client_secret: String?, val notification_email: String?, val response_code: Long?, val response_message: String?)
+  data class OutputActivatePortalModule(val clientSecret: String?, val notificationEmail: String?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputActivatePortalModuleCreateData(val client_secret: String?, val notification_email: String?, val response_code: Long?, val response_message: String?)
+  data class OutputActivatePortalModuleCreateData(val clientSecret: String?, val notificationEmail: String?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputActivateStoreModule(val response_code: Long?, val response_message: String?)
+  data class OutputActivateStoreModule(val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputActivateStoreModuleCreateData(val response_code: Long?, val response_message: String?)
+  data class OutputActivateStoreModuleCreateData(val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputActivateUser(val consumer_uuid: String?, val response_code: Long?, val response_message: String?)
+  data class OutputActivateUser(val consumerUUID: String?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputActivateUserCreateData(val consumer_uuid: String?, val response_code: Long?, val response_message: String?)
+  data class OutputActivateUserCreateData(val consumerUUID: String?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputAssignRole(val consumer_uuid: String?, val response_code: Long?, val response_message: String?, val role: List<Any?>?)
+  data class OutputAssignRole(val consumerUUID: String?, val responseCode: Long?, val responseMessage: String?, val roles: List<Any?>?)
 
-  data class OutputAssignRoleCreateData(val consumer_uuid: String?, val response_code: Long?, val response_message: String?, val role: List<Any?>?)
+  data class OutputAssignRoleCreateData(val consumerUUID: String?, val responseCode: Long?, val responseMessage: String?, val roles: List<Any?>?)
 
-  data class OutputChangeLogo(val content_as_base64: String?, val mime_type: String?, val response_code: Long?, val response_message: String?)
+  data class OutputChangeLogo(val contentAsBase64: String?, val mimeType: String?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputChangeLogoCreateData(val content_as_base64: String?, val mime_type: String?, val response_code: Long?, val response_message: String?)
+  data class OutputChangeLogoCreateData(val contentAsBase64: String?, val mimeType: String?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputCreateMandator(val city: String?, val country: String?, val date_of_birth: String?, val description: String?, val drivers_license_number: String?, val email: String?, val first_name: String?, val identification_number: String?, val last_name: String?, val login: String?, val mandator: Map<String, Any?>?, val name: String?, val passport_number: String?, val phone: String?, val response_code: Long?, val response_message: String?, val salutation: String?, val state: String?, val street1: String?, val street2: String?, val zip_code: String?)
+  data class OutputCreateMandator(val city: String?, val country: String?, val dateOfBirth: String?, val description: String?, val driversLicenseNumber: String?, val email: String?, val firstName: String?, val identificationNumber: String?, val lastName: String?, val login: String?, val name: String?, val passportNumber: String?, val phone: String?, val salutation: String?, val state: String?, val street1: String?, val street2: String?, val zipCode: String?)
 
-  data class OutputCreateMandatorCreateData(val city: String?, val country: String?, val date_of_birth: String?, val description: String?, val drivers_license_number: String?, val email: String?, val first_name: String?, val identification_number: String?, val last_name: String?, val login: String?, val mandator: Map<String, Any?>?, val name: String?, val passport_number: String?, val phone: String?, val response_code: Long?, val response_message: String?, val salutation: String?, val state: String?, val street1: String?, val street2: String?, val zip_code: String?)
+  data class OutputCreateMandatorCreateData(val city: String?, val country: String?, val dateOfBirth: String?, val description: String?, val driversLicenseNumber: String?, val email: String?, val firstName: String?, val identificationNumber: String?, val lastName: String?, val login: String?, val name: String?, val passportNumber: String?, val phone: String?, val salutation: String?, val state: String?, val street1: String?, val street2: String?, val zipCode: String?)
 
-  data class OutputCreateServiceUser(val mandator_name: String?, val response_code: Long?, val response_message: String?)
+  data class OutputCreateServiceUser(val mandatorName: String?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputCreateServiceUserCreateData(val mandator_name: String?, val response_code: Long?, val response_message: String?)
+  data class OutputCreateServiceUserCreateData(val mandatorName: String?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputDeactivateUser(val consumer_uuid: String?, val response_code: Long?, val response_message: String?)
+  data class OutputDeactivateUser(val consumerUUID: String?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputDeactivateUserCreateData(val consumer_uuid: String?, val response_code: Long?, val response_message: String?)
+  data class OutputDeactivateUserCreateData(val consumerUUID: String?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputGetKycDocument(val case_id: String?, val encoded_data_base64: String?, val response_code: Long?, val response_message: String?)
+  data class OutputGetKycDocument(val caseID: String?, val encodedDataBase64: String?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputGetKycDocumentCreateData(val case_id: String?, val encoded_data_base64: String?, val response_code: Long?, val response_message: String?)
+  data class OutputGetKycDocumentCreateData(val caseID: String?, val encodedDataBase64: String?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputGetLogo(val content_as_base64: String?, val mime_type: String?, val response_code: Long?, val response_message: String?)
+  data class OutputGetLogo(val contentAsBase64: String?, val mimeType: String?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputGetLogoLoadMatch(val content_as_base64: String?, val mime_type: String?, val response_code: Long?, val response_message: String?)
+  data class OutputGetLogoLoadMatch(val contentAsBase64: String?, val mimeType: String?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputListOfAvailableRole(val available_role: List<Any?>?, val response_code: Long?, val response_message: String?)
+  data class OutputListOfAvailableRole(val availableRoles: List<Any?>?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputListOfAvailableRoleCreateData(val available_role: List<Any?>?, val response_code: Long?, val response_message: String?)
+  data class OutputListOfAvailableRoleCreateData(val availableRoles: List<Any?>?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputListOfMandator(val filter: Map<String, Any?>?, val list: List<Any?>?, val pagination: Map<String, Any?>?, val response_code: Long?, val response_message: String?, val sorting: Map<String, Any?>?)
+  data class OutputListOfMandator(val filter: Map<String, Any?>?, val list: List<Any?>?, val pagination: Map<String, Any?>?, val responseCode: Long?, val responseMessage: String?, val sorting: Map<String, Any?>?)
 
-  data class OutputListOfMandatorCreateData(val filter: Map<String, Any?>?, val list: List<Any?>?, val pagination: Map<String, Any?>?, val response_code: Long?, val response_message: String?, val sorting: Map<String, Any?>?)
+  data class OutputListOfMandatorCreateData(val filter: Map<String, Any?>?, val list: List<Any?>?, val pagination: Map<String, Any?>?, val responseCode: Long?, val responseMessage: String?, val sorting: Map<String, Any?>?)
 
-  data class OutputListOfModule(val list: List<Any?>?, val pagination: Map<String, Any?>?, val response_code: Long?, val response_message: String?)
+  data class OutputListOfModule(val list: List<Any?>?, val pagination: Map<String, Any?>?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputListOfModuleCreateData(val list: List<Any?>?, val pagination: Map<String, Any?>?, val response_code: Long?, val response_message: String?)
+  data class OutputListOfModuleCreateData(val list: List<Any?>?, val pagination: Map<String, Any?>?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputListOfRoleGroup(val filter: Map<String, Any?>?, val group_role: List<Any?>?, val pagination: Map<String, Any?>?, val response_code: Long?, val response_message: String?, val sorting: Map<String, Any?>?)
+  data class OutputListOfRoleGroup(val filter: Map<String, Any?>?, val groupRoles: List<Any?>?, val pagination: Map<String, Any?>?, val responseCode: Long?, val responseMessage: String?, val sorting: Map<String, Any?>?)
 
-  data class OutputListOfRoleGroupCreateData(val filter: Map<String, Any?>?, val group_role: List<Any?>?, val pagination: Map<String, Any?>?, val response_code: Long?, val response_message: String?, val sorting: Map<String, Any?>?)
+  data class OutputListOfRoleGroupCreateData(val filter: Map<String, Any?>?, val groupRoles: List<Any?>?, val pagination: Map<String, Any?>?, val responseCode: Long?, val responseMessage: String?, val sorting: Map<String, Any?>?)
 
-  data class OutputListOfTransactionsHistory(val filter: Map<String, Any?>?, val list: List<Any?>?, val pagination: Map<String, Any?>?, val response_code: Long?, val response_message: String?, val sorting: Map<String, Any?>?)
+  data class OutputListOfTransactionsHistory(val filter: Map<String, Any?>?, val list: List<Any?>?, val pagination: Map<String, Any?>?, val responseCode: Long?, val responseMessage: String?, val sorting: Map<String, Any?>?)
 
-  data class OutputListOfTransactionsHistoryCreateData(val filter: Map<String, Any?>?, val list: List<Any?>?, val pagination: Map<String, Any?>?, val response_code: Long?, val response_message: String?, val sorting: Map<String, Any?>?)
+  data class OutputListOfTransactionsHistoryCreateData(val filter: Map<String, Any?>?, val list: List<Any?>?, val pagination: Map<String, Any?>?, val responseCode: Long?, val responseMessage: String?, val sorting: Map<String, Any?>?)
 
-  data class OutputListOfUser(val filter: Map<String, Any?>?, val list: List<Any?>?, val pagination: Map<String, Any?>?, val response_code: Long?, val response_message: String?, val sorting: Map<String, Any?>?)
+  data class OutputListOfUser(val filter: Map<String, Any?>?, val list: List<Any?>?, val pagination: Map<String, Any?>?, val responseCode: Long?, val responseMessage: String?, val sorting: Map<String, Any?>?)
 
-  data class OutputListOfUserCreateData(val filter: Map<String, Any?>?, val list: List<Any?>?, val pagination: Map<String, Any?>?, val response_code: Long?, val response_message: String?, val sorting: Map<String, Any?>?)
+  data class OutputListOfUserCreateData(val filter: Map<String, Any?>?, val list: List<Any?>?, val pagination: Map<String, Any?>?, val responseCode: Long?, val responseMessage: String?, val sorting: Map<String, Any?>?)
 
-  data class OutputProvideCredential(val mandator_name: String?, val password: String?, val response_code: Long?, val response_message: String?, val username: String?)
+  data class OutputProvideCredential(val mandatorName: String?, val password: String?, val responseCode: Long?, val responseMessage: String?, val username: String?)
 
-  data class OutputProvideCredentialCreateData(val mandator_name: String?, val password: String?, val response_code: Long?, val response_message: String?, val username: String?)
+  data class OutputProvideCredentialCreateData(val mandatorName: String?, val password: String?, val responseCode: Long?, val responseMessage: String?, val username: String?)
 
-  data class OutputRegisterUser(val city: String?, val consumer_id: String?, val consumer_language: String?, val country: String?, val date_of_birth: String?, val driver_licence_number: String?, val email: String?, val first_name: String?, val identification_number: String?, val last_name: String?, val login: String?, val module: String?, val passport_number: String?, val phone: String?, val response_code: Long?, val response_message: String?, val salutation: String?, val state: String?, val street1: String?, val street2: String?, val zip: String?)
+  data class OutputRegisterUser(val city: String?, val consumerId: String?, val consumerLanguage: String?, val country: String?, val dateOfBirth: String?, val driverLicenceNumber: String?, val email: String?, val firstName: String?, val identificationNumber: String?, val lastName: String?, val login: String?, val module: String?, val passportNumber: String?, val phone: String?, val responseCode: Long?, val responseMessage: String?, val salutation: String?, val state: String?, val street1: String?, val street2: String?, val zip: String?)
 
-  data class OutputRegisterUserCreateData(val city: String?, val consumer_id: String?, val consumer_language: String?, val country: String?, val date_of_birth: String?, val driver_licence_number: String?, val email: String?, val first_name: String?, val identification_number: String?, val last_name: String?, val login: String?, val module: String?, val passport_number: String?, val phone: String?, val response_code: Long?, val response_message: String?, val salutation: String?, val state: String?, val street1: String?, val street2: String?, val zip: String?)
+  data class OutputRegisterUserCreateData(val city: String?, val consumerId: String?, val consumerLanguage: String?, val country: String?, val dateOfBirth: String?, val driverLicenceNumber: String?, val email: String?, val firstName: String?, val identificationNumber: String?, val lastName: String?, val login: String?, val module: String?, val passportNumber: String?, val phone: String?, val responseCode: Long?, val responseMessage: String?, val salutation: String?, val state: String?, val street1: String?, val street2: String?, val zip: String?)
 
-  data class OutputRemoveRole(val consumer_uuid: String?, val response_code: Long?, val response_message: String?, val role: List<Any?>?)
+  data class OutputRemoveRole(val consumerUUID: String?, val responseCode: Long?, val responseMessage: String?, val roles: List<Any?>?)
 
-  data class OutputRemoveRoleCreateData(val consumer_uuid: String?, val response_code: Long?, val response_message: String?, val role: List<Any?>?)
+  data class OutputRemoveRoleCreateData(val consumerUUID: String?, val responseCode: Long?, val responseMessage: String?, val roles: List<Any?>?)
 
-  data class OutputResendLink(val business_registration_number: String?, val consumer_uuid: String?, val email_confirmation_code: String?, val phone_number: String?, val response_code: Long?, val response_message: String?)
+  data class OutputResendLink(val businessRegistrationNumber: String?, val consumerUUID: String?, val emailConfirmationCode: String?, val phoneNumber: String?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputResendLinkCreateData(val business_registration_number: String?, val consumer_uuid: String?, val email_confirmation_code: String?, val phone_number: String?, val response_code: Long?, val response_message: String?)
+  data class OutputResendLinkCreateData(val businessRegistrationNumber: String?, val consumerUUID: String?, val emailConfirmationCode: String?, val phoneNumber: String?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputResetPassword(val consumer_uuid: String?, val phone_number: String?, val response_code: Long?, val response_message: String?)
+  data class OutputResetPassword(val consumerUuid: String?, val phoneNumber: String?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputResetPasswordCreateData(val consumer_uuid: String?, val phone_number: String?, val response_code: Long?, val response_message: String?)
+  data class OutputResetPasswordCreateData(val consumerUuid: String?, val phoneNumber: String?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputUpdateConsumer(val city: String?, val consumer_uuid: String?, val consumerlanguage: String?, val country: String?, val date_of_birth: String?, val datetime_created: String?, val driver_licence_number: String?, val email: String?, val first_name: String?, val identification_number: String?, val kyc_passed: Boolean?, val last_name: String?, val nationality: String?, val passport_number: String?, val phone_number: String?, val place_of_birth: String?, val response_code: Long?, val response_message: String?, val state: String?, val street1: String?, val street2: String?, val transactionhistory_id: String?, val zip: String?)
+  data class OutputUpdateConsumer(val city: String?, val consumerUuid: String?, val consumerlanguage: String?, val country: String?, val dateOfBirth: String?, val datetime_created: String?, val driverLicenceNumber: String?, val email: String?, val firstName: String?, val identificationNumber: String?, val kycPassed: Boolean?, val lastName: String?, val nationality: String?, val passportNumber: String?, val phoneNumber: String?, val placeOfBirth: String?, val responseCode: Long?, val responseMessage: String?, val state: String?, val street1: String?, val street2: String?, val transactionhistory_id: String?, val zip: String?)
 
-  data class OutputUpdateConsumerCreateData(val city: String?, val consumer_uuid: String?, val consumerlanguage: String?, val country: String?, val date_of_birth: String?, val datetime_created: String?, val driver_licence_number: String?, val email: String?, val first_name: String?, val identification_number: String?, val kyc_passed: Boolean?, val last_name: String?, val nationality: String?, val passport_number: String?, val phone_number: String?, val place_of_birth: String?, val response_code: Long?, val response_message: String?, val state: String?, val street1: String?, val street2: String?, val transactionhistory_id: String?, val zip: String?)
+  data class OutputUpdateConsumerCreateData(val city: String?, val consumerUuid: String?, val consumerlanguage: String?, val country: String?, val dateOfBirth: String?, val datetime_created: String?, val driverLicenceNumber: String?, val email: String?, val firstName: String?, val identificationNumber: String?, val kycPassed: Boolean?, val lastName: String?, val nationality: String?, val passportNumber: String?, val phoneNumber: String?, val placeOfBirth: String?, val responseCode: Long?, val responseMessage: String?, val state: String?, val street1: String?, val street2: String?, val transactionhistory_id: String?, val zip: String?)
 
-  data class OutputUpdateProfile(val consumer_language: String?, val email: String?, val first_name: String?, val last_name: String?, val phone_number: String?, val response_code: Long?, val response_message: String?)
+  data class OutputUpdateProfile(val consumerLanguage: String?, val email: String?, val firstName: String?, val lastName: String?, val phoneNumber: String?, val responseCode: Long?, val responseMessage: String?)
 
-  data class OutputUpdateProfileCreateData(val consumer_language: String?, val email: String?, val first_name: String?, val last_name: String?, val phone_number: String?, val response_code: Long?, val response_message: String?)
+  data class OutputUpdateProfileCreateData(val consumerLanguage: String?, val email: String?, val firstName: String?, val lastName: String?, val phoneNumber: String?, val responseCode: Long?, val responseMessage: String?)
 
-  data class Version(val app_name: String?, val build_date: String?, val version: String?)
+  data class Version(val appName: String?, val buildDate: String?, val version: String?)
 
-  data class VersionLoadMatch(val app_name: String?, val build_date: String?, val version: String?)
+  data class VersionLoadMatch(val appName: String?, val buildDate: String?, val version: String?)
 
 }

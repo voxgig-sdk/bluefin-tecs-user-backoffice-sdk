@@ -47,7 +47,7 @@ void tests() {
       final output_get_kyc_document_ref01_ent = client.OutputGetKycDocument();
       dynamic output_get_kyc_document_ref01_data = setup['data']['new']['output_get_kyc_document']['output_get_kyc_document_ref01'];
 
-      output_get_kyc_document_ref01_data = await output_get_kyc_document_ref01_ent.create(output_get_kyc_document_ref01_data);
+      output_get_kyc_document_ref01_data = (await output_get_kyc_document_ref01_ent.create(output_get_kyc_document_ref01_data)).data();
       ok(null != output_get_kyc_document_ref01_data);
 
 

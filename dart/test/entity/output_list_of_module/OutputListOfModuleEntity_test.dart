@@ -47,7 +47,7 @@ void tests() {
       final output_list_of_module_ref01_ent = client.OutputListOfModule();
       dynamic output_list_of_module_ref01_data = setup['data']['new']['output_list_of_module']['output_list_of_module_ref01'];
 
-      output_list_of_module_ref01_data = await output_list_of_module_ref01_ent.create(output_list_of_module_ref01_data);
+      output_list_of_module_ref01_data = (await output_list_of_module_ref01_ent.create(output_list_of_module_ref01_data)).data();
       ok(null != output_list_of_module_ref01_data);
 
 

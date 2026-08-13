@@ -38,9 +38,11 @@
   (t/run-check rec "gen-smoke-output_activate_digital_module"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/output_activate_digital_module sdk nil)]
-             (let [res (e-output_activate_digital_module/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-output_activate_digital_module/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-output_activate_portal_module"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -48,9 +50,11 @@
   (t/run-check rec "gen-smoke-output_activate_portal_module"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/output_activate_portal_module sdk nil)]
-             (let [res (e-output_activate_portal_module/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-output_activate_portal_module/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-output_activate_store_module"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -58,9 +62,11 @@
   (t/run-check rec "gen-smoke-output_activate_store_module"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/output_activate_store_module sdk nil)]
-             (let [res (e-output_activate_store_module/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-output_activate_store_module/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-output_activate_user"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -68,9 +74,11 @@
   (t/run-check rec "gen-smoke-output_activate_user"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/output_activate_user sdk nil)]
-             (let [res (e-output_activate_user/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-output_activate_user/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-output_assign_role"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -78,9 +86,11 @@
   (t/run-check rec "gen-smoke-output_assign_role"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/output_assign_role sdk nil)]
-             (let [res (e-output_assign_role/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-output_assign_role/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-output_change_logo"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -88,9 +98,11 @@
   (t/run-check rec "gen-smoke-output_change_logo"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/output_change_logo sdk nil)]
-             (let [res (e-output_change_logo/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-output_change_logo/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-output_create_mandator"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -98,9 +110,11 @@
   (t/run-check rec "gen-smoke-output_create_mandator"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/output_create_mandator sdk nil)]
-             (let [res (e-output_create_mandator/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-output_create_mandator/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-output_create_service_user"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -108,9 +122,11 @@
   (t/run-check rec "gen-smoke-output_create_service_user"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/output_create_service_user sdk nil)]
-             (let [res (e-output_create_service_user/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-output_create_service_user/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-output_deactivate_user"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -118,9 +134,11 @@
   (t/run-check rec "gen-smoke-output_deactivate_user"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/output_deactivate_user sdk nil)]
-             (let [res (e-output_deactivate_user/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-output_deactivate_user/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-output_get_kyc_document"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -128,9 +146,11 @@
   (t/run-check rec "gen-smoke-output_get_kyc_document"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/output_get_kyc_document sdk nil)]
-             (let [res (e-output_get_kyc_document/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-output_get_kyc_document/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-output_get_logo"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -141,9 +161,11 @@
   (t/run-check rec "gen-smoke-output_list_of_available_role"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/output_list_of_available_role sdk nil)]
-             (let [res (e-output_list_of_available_role/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-output_list_of_available_role/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-output_list_of_mandator"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -151,9 +173,11 @@
   (t/run-check rec "gen-smoke-output_list_of_mandator"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/output_list_of_mandator sdk nil)]
-             (let [res (e-output_list_of_mandator/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-output_list_of_mandator/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-output_list_of_module"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -161,9 +185,11 @@
   (t/run-check rec "gen-smoke-output_list_of_module"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/output_list_of_module sdk nil)]
-             (let [res (e-output_list_of_module/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-output_list_of_module/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-output_list_of_role_group"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -171,9 +197,11 @@
   (t/run-check rec "gen-smoke-output_list_of_role_group"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/output_list_of_role_group sdk nil)]
-             (let [res (e-output_list_of_role_group/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-output_list_of_role_group/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-output_list_of_transactions_history"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -181,9 +209,11 @@
   (t/run-check rec "gen-smoke-output_list_of_transactions_history"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/output_list_of_transactions_history sdk nil)]
-             (let [res (e-output_list_of_transactions_history/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-output_list_of_transactions_history/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-output_list_of_user"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -191,9 +221,11 @@
   (t/run-check rec "gen-smoke-output_list_of_user"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/output_list_of_user sdk nil)]
-             (let [res (e-output_list_of_user/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-output_list_of_user/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-output_provide_credential"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -201,9 +233,11 @@
   (t/run-check rec "gen-smoke-output_provide_credential"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/output_provide_credential sdk nil)]
-             (let [res (e-output_provide_credential/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-output_provide_credential/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-output_register_user"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -211,9 +245,11 @@
   (t/run-check rec "gen-smoke-output_register_user"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/output_register_user sdk nil)]
-             (let [res (e-output_register_user/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-output_register_user/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-output_remove_role"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -221,9 +257,11 @@
   (t/run-check rec "gen-smoke-output_remove_role"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/output_remove_role sdk nil)]
-             (let [res (e-output_remove_role/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-output_remove_role/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-output_resend_link"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -231,9 +269,11 @@
   (t/run-check rec "gen-smoke-output_resend_link"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/output_resend_link sdk nil)]
-             (let [res (e-output_resend_link/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-output_resend_link/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-output_reset_password"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -241,9 +281,11 @@
   (t/run-check rec "gen-smoke-output_reset_password"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/output_reset_password sdk nil)]
-             (let [res (e-output_reset_password/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-output_reset_password/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-output_update_consumer"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -251,9 +293,11 @@
   (t/run-check rec "gen-smoke-output_update_consumer"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/output_update_consumer sdk nil)]
-             (let [res (e-output_update_consumer/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-output_update_consumer/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-output_update_profile"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -261,9 +305,11 @@
   (t/run-check rec "gen-smoke-output_update_profile"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/output_update_profile sdk nil)]
-             (let [res (e-output_update_profile/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-output_update_profile/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-version"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -300,9 +346,10 @@
              (t/is-true (vs/ismap result) "direct returns a result map")
              (t/is-true (vs/getprop result "ok") "direct 200 => ok true")
              (t/is-eq (vs/getprop result "status") 200 "direct surfaces the status"))))
-  (letfn [(clj-blocks [text]
-            (let [fence (apply str (repeat 3 (char 96)))
-                  parts (clojure.string/split text (re-pattern fence))]
+  (letfn [(fence-pat [] (re-pattern (apply str (repeat 3 (char 96)))))
+          (fence-count [text] (count (re-seq (fence-pat) text)))
+          (clj-blocks [text]
+            (let [parts (clojure.string/split text (fence-pat))]
               (->> parts
                    (map-indexed vector)
                    (filter (fn [[i _]] (odd? i)))
@@ -320,9 +367,19 @@
         (fn []
           (if-not (.exists (java.io.File. ^String path))
             (t/is-true true (str label " absent (skipped)"))
-            (let [blocks (clj-blocks (slurp path))]
-              (doseq [b blocks]
-                (binding [*read-eval* false]
-                  (read-string (str "[\n" b "\n]"))))
-              (t/is-true true (str label " clojure blocks parse cleanly"))))))))
+            (let [text (slurp path)]
+              ;; A code fence opened but never closed leaves an ODD number of
+              ;; fence markers; the split-on-fence then captures the trailing
+              ;; prose (everything after the last opener) as if it were a
+              ;; clojure block, which can parse cleanly and pass silently. Fail
+              ;; on the malformed doc instead. (Count markers directly rather
+              ;; than split parts: split drops trailing empty segments, so a
+              ;; closing fence at EOF would be miscounted.)
+              (t/is-true (even? (fence-count text))
+                         (str label " code fences balanced (no unclosed fence)"))
+              (let [blocks (clj-blocks text)]
+                (doseq [b blocks]
+                  (binding [*read-eval* false]
+                    (read-string (str "[\n" b "\n]"))))
+                (t/is-true true (str label " clojure blocks parse cleanly")))))))))
   nil)

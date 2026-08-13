@@ -35,7 +35,7 @@ object OutputProvideCredentialEntityTest {
       var outputProvideCredentialRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.output_provide_credential"), "output_provide_credential_ref01"))
       val outputProvideCredentialRef01DataResult = outputProvideCredentialRef01Ent.create(outputProvideCredentialRef01Data, null)
-      outputProvideCredentialRef01Data = Helpers.toMapAny(outputProvideCredentialRef01DataResult)
+      outputProvideCredentialRef01Data = Helpers.toMapAny(outputProvideCredentialRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("output_provide_credential.create.map", outputProvideCredentialRef01Data != null, "expected create result to be a map")
     }
   }

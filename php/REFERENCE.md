@@ -189,8 +189,8 @@ $output_activate_digital_module = $client->OutputActivateDigitalModule();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -243,10 +243,10 @@ $output_activate_portal_module = $client->OutputActivatePortalModule();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `string` | Yes |  |
-| `notification_email` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `clientSecret` | `string` | Yes |  |
+| `notificationEmail` | `string` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -256,8 +256,8 @@ Create a new entity with the given data. Throws on error.
 
 ```php
 $result = $client->OutputActivatePortalModule()->create([
-  "client_secret" => null, // string
-  "notification_email" => null, // string
+  "clientSecret" => null, // string
+  "notificationEmail" => null, // string
 ]);
 ```
 
@@ -301,8 +301,8 @@ $output_activate_store_module = $client->OutputActivateStoreModule();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -355,9 +355,9 @@ $output_activate_user = $client->OutputActivateUser();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `consumerUUID` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -410,10 +410,10 @@ $output_assign_role = $client->OutputAssignRole();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `role` | `array` | Yes |  |
+| `consumerUUID` | `string` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `roles` | `array` | Yes |  |
 
 ### Operations
 
@@ -423,8 +423,8 @@ Create a new entity with the given data. Throws on error.
 
 ```php
 $result = $client->OutputAssignRole()->create([
-  "consumer_uuid" => null, // string
-  "role" => null, // array
+  "consumerUUID" => null, // string
+  "roles" => null, // array
 ]);
 ```
 
@@ -468,10 +468,10 @@ $output_change_logo = $client->OutputChangeLogo();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `string` | Yes |  |
-| `mime_type` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `contentAsBase64` | `string` | Yes |  |
+| `mimeType` | `string` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -481,8 +481,8 @@ Create a new entity with the given data. Throws on error.
 
 ```php
 $result = $client->OutputChangeLogo()->create([
-  "content_as_base64" => null, // string
-  "mime_type" => null, // string
+  "contentAsBase64" => null, // string
+  "mimeType" => null, // string
 ]);
 ```
 
@@ -528,25 +528,45 @@ $output_create_mandator = $client->OutputCreateMandator();
 | --- | --- | --- | --- |
 | `city` | `string` | No |  |
 | `country` | `string` | No |  |
-| `date_of_birth` | `string` | No |  |
-| `description` | `string` | Yes |  |
-| `drivers_license_number` | `string` | No |  |
+| `dateOfBirth` | `string` | No |  |
+| `description` | `string` | No |  |
+| `driversLicenseNumber` | `string` | No |  |
 | `email` | `string` | Yes |  |
-| `first_name` | `string` | No |  |
-| `identification_number` | `string` | No |  |
-| `last_name` | `string` | No |  |
+| `firstName` | `string` | No |  |
+| `identificationNumber` | `string` | No |  |
+| `lastName` | `string` | No |  |
 | `login` | `string` | Yes |  |
-| `mandator` | `array` | No |  |
-| `name` | `string` | Yes |  |
-| `passport_number` | `string` | No |  |
+| `name` | `string` | No |  |
+| `passportNumber` | `string` | No |  |
 | `phone` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
 | `salutation` | `string` | No |  |
 | `state` | `string` | No |  |
 | `street1` | `string` | No |  |
 | `street2` | `string` | No |  |
-| `zip_code` | `string` | No |  |
+| `zipCode` | `string` | No |  |
+
+### Field Usage by Operation
+
+| Field | create |
+| --- | --- |
+| `city` | - |
+| `country` | - |
+| `dateOfBirth` | - |
+| `description` | Yes |
+| `driversLicenseNumber` | - |
+| `email` | - |
+| `firstName` | - |
+| `identificationNumber` | - |
+| `lastName` | - |
+| `login` | - |
+| `name` | Yes |
+| `passportNumber` | - |
+| `phone` | - |
+| `salutation` | - |
+| `state` | - |
+| `street1` | - |
+| `street2` | - |
+| `zipCode` | - |
 
 ### Operations
 
@@ -556,10 +576,8 @@ Create a new entity with the given data. Throws on error.
 
 ```php
 $result = $client->OutputCreateMandator()->create([
-  "description" => null, // string
   "email" => null, // string
   "login" => null, // string
-  "name" => null, // string
   "phone" => null, // string
 ]);
 ```
@@ -604,9 +622,9 @@ $output_create_service_user = $client->OutputCreateServiceUser();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `mandatorName` | `string` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -616,7 +634,7 @@ Create a new entity with the given data. Throws on error.
 
 ```php
 $result = $client->OutputCreateServiceUser()->create([
-  "mandator_name" => null, // string
+  "mandatorName" => null, // string
 ]);
 ```
 
@@ -660,9 +678,9 @@ $output_deactivate_user = $client->OutputDeactivateUser();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `consumerUUID` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -715,10 +733,10 @@ $output_get_kyc_document = $client->OutputGetKycDocument();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `case_id` | `string` | No |  |
-| `encoded_data_base64` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `caseID` | `string` | No |  |
+| `encodedDataBase64` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -771,10 +789,10 @@ $output_get_logo = $client->OutputGetLogo();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `string` | Yes |  |
-| `mime_type` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `contentAsBase64` | `string` | Yes |  |
+| `mimeType` | `string` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -826,9 +844,9 @@ $output_list_of_available_role = $client->OutputListOfAvailableRole();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `available_role` | `array` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `availableRoles` | `array` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -884,8 +902,8 @@ $output_list_of_mandator = $client->OutputListOfMandator();
 | `filter` | `array` | No |  |
 | `list` | `array` | No |  |
 | `pagination` | `array` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 | `sorting` | `array` | No |  |
 
 ### Operations
@@ -941,8 +959,8 @@ $output_list_of_module = $client->OutputListOfModule();
 | --- | --- | --- | --- |
 | `list` | `array` | No |  |
 | `pagination` | `array` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -996,10 +1014,10 @@ $output_list_of_role_group = $client->OutputListOfRoleGroup();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `filter` | `array` | No |  |
-| `group_role` | `array` | No |  |
+| `groupRoles` | `array` | No |  |
 | `pagination` | `array` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 | `sorting` | `array` | No |  |
 
 ### Operations
@@ -1056,8 +1074,8 @@ $output_list_of_transactions_history = $client->OutputListOfTransactionsHistory(
 | `filter` | `array` | No |  |
 | `list` | `array` | No |  |
 | `pagination` | `array` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 | `sorting` | `array` | No |  |
 
 ### Operations
@@ -1114,8 +1132,8 @@ $output_list_of_user = $client->OutputListOfUser();
 | `filter` | `array` | No |  |
 | `list` | `array` | No |  |
 | `pagination` | `array` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 | `sorting` | `array` | No |  |
 
 ### Operations
@@ -1169,10 +1187,10 @@ $output_provide_credential = $client->OutputProvideCredential();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `string` | Yes |  |
+| `mandatorName` | `string` | Yes |  |
 | `password` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 | `username` | `string` | No |  |
 
 ### Operations
@@ -1183,7 +1201,7 @@ Create a new entity with the given data. Throws on error.
 
 ```php
 $result = $client->OutputProvideCredential()->create([
-  "mandator_name" => null, // string
+  "mandatorName" => null, // string
 ]);
 ```
 
@@ -1228,21 +1246,21 @@ $output_register_user = $client->OutputRegisterUser();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `string` | No |  |
-| `consumer_id` | `string` | No |  |
-| `consumer_language` | `string` | No |  |
+| `consumerId` | `string` | No |  |
+| `consumerLanguage` | `string` | No |  |
 | `country` | `string` | No |  |
-| `date_of_birth` | `string` | No |  |
-| `driver_licence_number` | `string` | No |  |
+| `dateOfBirth` | `string` | No |  |
+| `driverLicenceNumber` | `string` | No |  |
 | `email` | `string` | Yes |  |
-| `first_name` | `string` | No |  |
-| `identification_number` | `string` | No |  |
-| `last_name` | `string` | No |  |
+| `firstName` | `string` | No |  |
+| `identificationNumber` | `string` | No |  |
+| `lastName` | `string` | No |  |
 | `login` | `string` | No |  |
 | `module` | `string` | No |  |
-| `passport_number` | `string` | No |  |
+| `passportNumber` | `string` | No |  |
 | `phone` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 | `salutation` | `string` | No |  |
 | `state` | `string` | No |  |
 | `street1` | `string` | No |  |
@@ -1301,10 +1319,10 @@ $output_remove_role = $client->OutputRemoveRole();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `role` | `array` | No |  |
+| `consumerUUID` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `roles` | `array` | No |  |
 
 ### Operations
 
@@ -1357,12 +1375,12 @@ $output_resend_link = $client->OutputResendLink();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `business_registration_number` | `string` | No |  |
-| `consumer_uuid` | `string` | Yes |  |
-| `email_confirmation_code` | `string` | No |  |
-| `phone_number` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `businessRegistrationNumber` | `string` | No |  |
+| `consumerUUID` | `string` | Yes |  |
+| `emailConfirmationCode` | `string` | No |  |
+| `phoneNumber` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1372,7 +1390,7 @@ Create a new entity with the given data. Throws on error.
 
 ```php
 $result = $client->OutputResendLink()->create([
-  "consumer_uuid" => null, // string
+  "consumerUUID" => null, // string
 ]);
 ```
 
@@ -1416,10 +1434,10 @@ $output_reset_password = $client->OutputResetPassword();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `phone_number` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `consumerUuid` | `string` | No |  |
+| `phoneNumber` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1473,23 +1491,23 @@ $output_update_consumer = $client->OutputUpdateConsumer();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `string` | No |  |
-| `consumer_uuid` | `string` | Yes |  |
+| `consumerUuid` | `string` | Yes |  |
 | `consumerlanguage` | `string` | No |  |
 | `country` | `string` | No |  |
-| `date_of_birth` | `string` | No |  |
+| `dateOfBirth` | `string` | No |  |
 | `datetime_created` | `string` | No |  |
-| `driver_licence_number` | `string` | No |  |
+| `driverLicenceNumber` | `string` | No |  |
 | `email` | `string` | No |  |
-| `first_name` | `string` | No |  |
-| `identification_number` | `string` | No |  |
-| `kyc_passed` | `bool` | No |  |
-| `last_name` | `string` | No |  |
+| `firstName` | `string` | No |  |
+| `identificationNumber` | `string` | No |  |
+| `kycPassed` | `bool` | No |  |
+| `lastName` | `string` | No |  |
 | `nationality` | `string` | No |  |
-| `passport_number` | `string` | No |  |
-| `phone_number` | `string` | No |  |
-| `place_of_birth` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `passportNumber` | `string` | No |  |
+| `phoneNumber` | `string` | No |  |
+| `placeOfBirth` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 | `state` | `string` | No |  |
 | `street1` | `string` | No |  |
 | `street2` | `string` | No |  |
@@ -1504,7 +1522,7 @@ Create a new entity with the given data. Throws on error.
 
 ```php
 $result = $client->OutputUpdateConsumer()->create([
-  "consumer_uuid" => null, // string
+  "consumerUuid" => null, // string
 ]);
 ```
 
@@ -1548,13 +1566,13 @@ $output_update_profile = $client->OutputUpdateProfile();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_language` | `string` | No |  |
+| `consumerLanguage` | `string` | No |  |
 | `email` | `string` | No |  |
-| `first_name` | `string` | No |  |
-| `last_name` | `string` | No |  |
-| `phone_number` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `firstName` | `string` | No |  |
+| `lastName` | `string` | No |  |
+| `phoneNumber` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1607,8 +1625,8 @@ $version = $client->Version();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `string` | No |  |
-| `build_date` | `string` | No |  |
+| `appName` | `string` | No |  |
+| `buildDate` | `string` | No |  |
 | `version` | `string` | No |  |
 
 ### Operations

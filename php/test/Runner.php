@@ -43,8 +43,8 @@ class BluefinTecsUserBackofficeTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('BLUEFINTECSUSERBACKOFFICE_TEST_LIVE');
-        $override = self::getenv('BLUEFINTECSUSERBACKOFFICE_TEST_OVERRIDE');
+        $live = self::getenv('BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE');
+        $override = self::getenv('BLUEFIN_TECS_USER_BACKOFFICE_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class BluefinTecsUserBackofficeTestRunner
             }
         }
 
-        $explain = self::getenv('BLUEFINTECSUSERBACKOFFICE_TEST_EXPLAIN');
+        $explain = self::getenv('BLUEFIN_TECS_USER_BACKOFFICE_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['BLUEFINTECSUSERBACKOFFICE_TEST_EXPLAIN'] = $explain;
+            $m['BLUEFIN_TECS_USER_BACKOFFICE_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

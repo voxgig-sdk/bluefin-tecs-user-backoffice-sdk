@@ -27,16 +27,16 @@ fn output_get_logo_direct_setup(mockres: Value) -> OutputGetLogoDirectSetup {
     let calls: Rc<RefCell<Vec<Value>>> = Rc::new(RefCell::new(Vec::new()));
 
     let env = env_override(jo(vec![
-        ("BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_GET_LOGO_ENTID", Value::empty_map()),
-        ("BLUEFINTECSUSERBACKOFFICE_TEST_LIVE", Value::str("FALSE")),
-        ("BLUEFINTECSUSERBACKOFFICE_APIKEY", Value::str("NONE")),
+        ("BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_GET_LOGO_ENTID", Value::empty_map()),
+        ("BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE", Value::str("FALSE")),
+        ("BLUEFIN_TECS_USER_BACKOFFICE_APIKEY", Value::str("NONE")),
     ]));
 
-    let live = getp(&env, "BLUEFINTECSUSERBACKOFFICE_TEST_LIVE") == Value::str("TRUE");
+    let live = getp(&env, "BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE") == Value::str("TRUE");
 
     if live {
-        let client = BluefinTecsUserBackofficeSDK::new(jo(vec![("apikey", getp(&env, "BLUEFINTECSUSERBACKOFFICE_APIKEY"))]));
-        let idmap = match to_map(&getp(&env, "BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_GET_LOGO_ENTID")) {
+        let client = BluefinTecsUserBackofficeSDK::new(jo(vec![("apikey", getp(&env, "BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"))]));
+        let idmap = match to_map(&getp(&env, "BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_GET_LOGO_ENTID")) {
             Value::Map(m) => Value::Map(m),
             _ => Value::empty_map(),
         };

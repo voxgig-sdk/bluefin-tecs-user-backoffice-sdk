@@ -14,6 +14,8 @@ typedef struct output_get_kyc_document_entity {
   voxgig_value* data;     // Map
   voxgig_value* mtch;     // Map
   Context* entctx;
+  // Set once a successful `remove` resolves on this instance.
+  bool deleted;
 } output_get_kyc_document_entity;
 
 typedef void (*output_get_kyc_document_postdone_fn)(output_get_kyc_document_entity* self, Context* ctx);
@@ -24,11 +26,14 @@ static const char* output_get_kyc_document_get_name(Entity* e);
 static Entity* output_get_kyc_document_make(Entity* e);
 static voxgig_value* output_get_kyc_document_data(Entity* e, voxgig_value* args);
 static voxgig_value* output_get_kyc_document_matchv(Entity* e, voxgig_value* args);
-static voxgig_value* output_get_kyc_document_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_get_kyc_document_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_get_kyc_document_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_get_kyc_document_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_get_kyc_document_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+// Ops resolve to the ENTITY (`list` to a NULL-terminated array of them).
+static Entity* output_get_kyc_document_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity** output_get_kyc_document_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity* output_get_kyc_document_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* output_get_kyc_document_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* output_get_kyc_document_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static void output_get_kyc_document_mark_deleted(Entity* e);
+static bool output_get_kyc_document_deleted(Entity* e);
 
 static Context* output_get_kyc_document_ent_ctx(output_get_kyc_document_entity* self) {
   return self->entctx;
@@ -236,13 +241,13 @@ static voxgig_value* output_get_kyc_document_matchv(Entity* e, voxgig_value* arg
   return voxgig_clone(self->mtch);
 }
 
-static voxgig_value* output_get_kyc_document_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* output_get_kyc_document_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("load", "output_get_kyc_document");
   return NULL;
 }
 
-static voxgig_value* output_get_kyc_document_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity** output_get_kyc_document_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("list", "output_get_kyc_document");
   return NULL;
@@ -260,7 +265,7 @@ static void output_get_kyc_document_create_postdone(output_get_kyc_document_enti
   }
 }
 
-static voxgig_value* output_get_kyc_document_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
+static Entity* output_get_kyc_document_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
   output_get_kyc_document_entity* self = (output_get_kyc_document_entity*)e;
   CtxSpec cs;
   memset(&cs, 0, sizeof(cs));
@@ -270,20 +275,38 @@ static voxgig_value* output_get_kyc_document_create(Entity* e, voxgig_value* req
   cs.data = self->data;
   cs.reqdata = reqdata;
   Context* ctx = make_context_util(cs, output_get_kyc_document_ent_ctx(self));
-  return output_get_kyc_document_run_op(self, ctx, output_get_kyc_document_create_postdone, err);
+  output_get_kyc_document_run_op(self, ctx, output_get_kyc_document_create_postdone, err);
+  if (*err) return NULL;
+
+  // The operation resolves to THIS entity: run_op has just absorbed the
+  // result into it, and the caller reaches the record through vt->data.
+  // See AGENTS.md "Entity operations return ENTITIES".
+
+  return e;
 }
 
 
-static voxgig_value* output_get_kyc_document_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* output_get_kyc_document_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("update", "output_get_kyc_document");
   return NULL;
 }
 
-static voxgig_value* output_get_kyc_document_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* output_get_kyc_document_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("remove", "output_get_kyc_document");
   return NULL;
+}
+
+// `remove` resolves to the entity, marked. The instance KEEPS the data it
+// held - a caller can still read what was deleted - but it is no longer a
+// live record.
+static void output_get_kyc_document_mark_deleted(Entity* e) {
+  ((output_get_kyc_document_entity*)e)->deleted = true;
+}
+
+static bool output_get_kyc_document_deleted(Entity* e) {
+  return ((output_get_kyc_document_entity*)e)->deleted;
 }
 
 static const EntityVT output_get_kyc_document_VT = {
@@ -291,6 +314,8 @@ static const EntityVT output_get_kyc_document_VT = {
   output_get_kyc_document_make,
   output_get_kyc_document_data,
   output_get_kyc_document_matchv,
+  output_get_kyc_document_mark_deleted,
+  output_get_kyc_document_deleted,
   output_get_kyc_document_load,
   output_get_kyc_document_list,
   output_get_kyc_document_create,

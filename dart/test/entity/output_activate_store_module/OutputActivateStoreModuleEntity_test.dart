@@ -47,7 +47,7 @@ void tests() {
       final output_activate_store_module_ref01_ent = client.OutputActivateStoreModule();
       dynamic output_activate_store_module_ref01_data = setup['data']['new']['output_activate_store_module']['output_activate_store_module_ref01'];
 
-      output_activate_store_module_ref01_data = await output_activate_store_module_ref01_ent.create(output_activate_store_module_ref01_data);
+      output_activate_store_module_ref01_data = (await output_activate_store_module_ref01_ent.create(output_activate_store_module_ref01_data)).data();
       ok(null != output_activate_store_module_ref01_data);
 
 

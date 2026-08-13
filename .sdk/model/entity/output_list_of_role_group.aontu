@@ -11,7 +11,7 @@ main: kit: entity: output_list_of_role_group: {
       type: "`$OBJECT`"
     }
     {
-      name: "group_role"
+      name: "groupRoles"
       req: false
       type: "`$ARRAY`"
     }
@@ -21,12 +21,12 @@ main: kit: entity: output_list_of_role_group: {
       type: "`$OBJECT`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }

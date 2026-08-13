@@ -14,6 +14,8 @@ typedef struct version_entity {
   voxgig_value* data;     // Map
   voxgig_value* mtch;     // Map
   Context* entctx;
+  // Set once a successful `remove` resolves on this instance.
+  bool deleted;
 } version_entity;
 
 typedef void (*version_postdone_fn)(version_entity* self, Context* ctx);
@@ -24,11 +26,14 @@ static const char* version_get_name(Entity* e);
 static Entity* version_make(Entity* e);
 static voxgig_value* version_data(Entity* e, voxgig_value* args);
 static voxgig_value* version_matchv(Entity* e, voxgig_value* args);
-static voxgig_value* version_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* version_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* version_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* version_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* version_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+// Ops resolve to the ENTITY (`list` to a NULL-terminated array of them).
+static Entity* version_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity** version_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity* version_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* version_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* version_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static void version_mark_deleted(Entity* e);
+static bool version_deleted(Entity* e);
 
 static Context* version_ent_ctx(version_entity* self) {
   return self->entctx;
@@ -250,7 +255,7 @@ static void version_load_postdone(version_entity* self, Context* ctx) {
   }
 }
 
-static voxgig_value* version_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err) {
+static Entity* version_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err) {
   version_entity* self = (version_entity*)e;
   CtxSpec cs;
   memset(&cs, 0, sizeof(cs));
@@ -260,32 +265,50 @@ static voxgig_value* version_load(Entity* e, voxgig_value* reqmatch, voxgig_valu
   cs.data = self->data;
   cs.reqmatch = reqmatch;
   Context* ctx = make_context_util(cs, version_ent_ctx(self));
-  return version_run_op(self, ctx, version_load_postdone, err);
+  version_run_op(self, ctx, version_load_postdone, err);
+  if (*err) return NULL;
+
+  // The operation resolves to THIS entity: run_op has just absorbed the
+  // result into it, and the caller reaches the record through vt->data.
+  // See AGENTS.md "Entity operations return ENTITIES".
+
+  return e;
 }
 
 
-static voxgig_value* version_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity** version_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("list", "version");
   return NULL;
 }
 
-static voxgig_value* version_create(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* version_create(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("create", "version");
   return NULL;
 }
 
-static voxgig_value* version_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* version_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("update", "version");
   return NULL;
 }
 
-static voxgig_value* version_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* version_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("remove", "version");
   return NULL;
+}
+
+// `remove` resolves to the entity, marked. The instance KEEPS the data it
+// held - a caller can still read what was deleted - but it is no longer a
+// live record.
+static void version_mark_deleted(Entity* e) {
+  ((version_entity*)e)->deleted = true;
+}
+
+static bool version_deleted(Entity* e) {
+  return ((version_entity*)e)->deleted;
 }
 
 static const EntityVT version_VT = {
@@ -293,6 +316,8 @@ static const EntityVT version_VT = {
   version_make,
   version_data,
   version_matchv,
+  version_mark_deleted,
+  version_deleted,
   version_load,
   version_list,
   version_create,

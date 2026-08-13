@@ -21,12 +21,12 @@ main: kit: entity: output_list_of_mandator: {
       type: "`$OBJECT`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }

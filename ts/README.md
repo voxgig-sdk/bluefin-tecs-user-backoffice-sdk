@@ -38,10 +38,10 @@ const client = new BluefinTecsUserBackofficeSDK({
 ### 4. Create, update, and remove
 
 ```ts
-// Create — returns the created OutputActivateDigitalModule
+// Create — returns the created OutputActivateDigitalModule ENTITY (.data() for the record)
 const created = await client.OutputActivateDigitalModule().create({
-  response_code: 1,
-  response_message: 'example_response_message',
+  responseCode: 1,
+  responseMessage: 'example_responseMessage',
 })
 
 ```
@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 const client = BluefinTecsUserBackofficeSDK.test()
 
 const outputgetlogo = await client.OutputGetLogo().load()
-// outputgetlogo is a bare entity populated with mock response data
+// outputgetlogo is the entity, populated with mock response data
+// — call outputgetlogo.data() for the record itself
 console.log(outputgetlogo)
 ```
 
@@ -313,8 +314,8 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -324,10 +325,10 @@ API path: `/activateDigitalModule`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `notification_email` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clientSecret` |  |
+| `notificationEmail` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -337,8 +338,8 @@ API path: `/activateMerchantPortalModule`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -348,9 +349,9 @@ API path: `/activateAppStoreModule`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -360,10 +361,10 @@ API path: `/activateUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `role` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `roles` |  |
 
 Operations: create.
 
@@ -373,10 +374,10 @@ API path: `/assignRoles`
 
 | Field | Description |
 | --- | --- |
-| `content_as_base64` |  |
-| `mime_type` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `contentAsBase64` |  |
+| `mimeType` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -388,25 +389,22 @@ API path: `/changeLogo`
 | --- | --- |
 | `city` |  |
 | `country` |  |
-| `date_of_birth` |  |
+| `dateOfBirth` |  |
 | `description` |  |
-| `drivers_license_number` |  |
+| `driversLicenseNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `lastName` |  |
 | `login` |  |
-| `mandator` |  |
 | `name` |  |
-| `passport_number` |  |
+| `passportNumber` |  |
 | `phone` |  |
-| `response_code` |  |
-| `response_message` |  |
 | `salutation` |  |
 | `state` |  |
 | `street1` |  |
 | `street2` |  |
-| `zip_code` |  |
+| `zipCode` |  |
 
 Operations: create.
 
@@ -416,9 +414,9 @@ API path: `/createMandator`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `mandatorName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -428,9 +426,9 @@ API path: `/createServiceUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -440,10 +438,10 @@ API path: `/deactivateUser`
 
 | Field | Description |
 | --- | --- |
-| `case_id` |  |
-| `encoded_data_base64` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `caseID` |  |
+| `encodedDataBase64` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -453,10 +451,10 @@ API path: `/getKycDocument`
 
 | Field | Description |
 | --- | --- |
-| `content_as_base64` |  |
-| `mime_type` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `contentAsBase64` |  |
+| `mimeType` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: load.
 
@@ -466,9 +464,9 @@ API path: `/getLogo`
 
 | Field | Description |
 | --- | --- |
-| `available_role` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `availableRoles` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -481,8 +479,8 @@ API path: `/listOfAvailableRoles`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: create.
@@ -495,8 +493,8 @@ API path: `/listOfMandators`
 | --- | --- |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -507,10 +505,10 @@ API path: `/listOfModules`
 | Field | Description |
 | --- | --- |
 | `filter` |  |
-| `group_role` |  |
+| `groupRoles` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: create.
@@ -524,8 +522,8 @@ API path: `/listOfRoleGroups`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: create.
@@ -539,8 +537,8 @@ API path: `/listOfTransactionsHistory`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: create.
@@ -551,10 +549,10 @@ API path: `/listOfUsers`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
+| `mandatorName` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `username` |  |
 
 Operations: create.
@@ -566,21 +564,21 @@ API path: `/provideCredentials`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `consumer_id` |  |
-| `consumer_language` |  |
+| `consumerId` |  |
+| `consumerLanguage` |  |
 | `country` |  |
-| `date_of_birth` |  |
-| `driver_licence_number` |  |
+| `dateOfBirth` |  |
+| `driverLicenceNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `lastName` |  |
 | `login` |  |
 | `module` |  |
-| `passport_number` |  |
+| `passportNumber` |  |
 | `phone` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `salutation` |  |
 | `state` |  |
 | `street1` |  |
@@ -595,10 +593,10 @@ API path: `/registerUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `role` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `roles` |  |
 
 Operations: create.
 
@@ -608,12 +606,12 @@ API path: `/removeRoles`
 
 | Field | Description |
 | --- | --- |
-| `business_registration_number` |  |
-| `consumer_uuid` |  |
-| `email_confirmation_code` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `businessRegistrationNumber` |  |
+| `consumerUUID` |  |
+| `emailConfirmationCode` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -623,10 +621,10 @@ API path: `/resendLink`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUuid` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -637,23 +635,23 @@ API path: `/resetPassword`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `consumer_uuid` |  |
+| `consumerUuid` |  |
 | `consumerlanguage` |  |
 | `country` |  |
-| `date_of_birth` |  |
+| `dateOfBirth` |  |
 | `datetime_created` |  |
-| `driver_licence_number` |  |
+| `driverLicenceNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `kyc_passed` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `kycPassed` |  |
+| `lastName` |  |
 | `nationality` |  |
-| `passport_number` |  |
-| `phone_number` |  |
-| `place_of_birth` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `passportNumber` |  |
+| `phoneNumber` |  |
+| `placeOfBirth` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `state` |  |
 | `street1` |  |
 | `street2` |  |
@@ -668,13 +666,13 @@ API path: `/updateConsumer`
 
 | Field | Description |
 | --- | --- |
-| `consumer_language` |  |
+| `consumerLanguage` |  |
 | `email` |  |
-| `first_name` |  |
-| `last_name` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `firstName` |  |
+| `lastName` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: create.
 
@@ -684,8 +682,8 @@ API path: `/updateProfile`
 
 | Field | Description |
 | --- | --- |
-| `app_name` |  |
-| `build_date` |  |
+| `appName` |  |
+| `buildDate` |  |
 | `version` |  |
 
 Operations: load.
@@ -711,8 +709,8 @@ Create an instance: `const output_activate_digital_module = client.OutputActivat
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -736,17 +734,17 @@ Create an instance: `const output_activate_portal_module = client.OutputActivate
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `string` |  |
-| `notification_email` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `clientSecret` | `string` |  |
+| `notificationEmail` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```ts
 const output_activate_portal_module = await client.OutputActivatePortalModule().create({
-  client_secret: 'example_client_secret',
-  notification_email: 'example_notification_email',
+  clientSecret: 'example_clientSecret',
+  notificationEmail: 'example_notificationEmail',
 })
 ```
 
@@ -765,8 +763,8 @@ Create an instance: `const output_activate_store_module = client.OutputActivateS
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -790,9 +788,9 @@ Create an instance: `const output_activate_user = client.OutputActivateUser()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `consumerUUID` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -816,17 +814,17 @@ Create an instance: `const output_assign_role = client.OutputAssignRole()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
-| `role` | `any[]` |  |
+| `consumerUUID` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
+| `roles` | `any[]` |  |
 
 #### Example: Create
 
 ```ts
 const output_assign_role = await client.OutputAssignRole().create({
-  consumer_uuid: 'example_consumer_uuid',
-  role: [],
+  consumerUUID: 'example_consumerUUID',
+  roles: [],
 })
 ```
 
@@ -845,17 +843,17 @@ Create an instance: `const output_change_logo = client.OutputChangeLogo()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `content_as_base64` | `string` |  |
-| `mime_type` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `contentAsBase64` | `string` |  |
+| `mimeType` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```ts
 const output_change_logo = await client.OutputChangeLogo().create({
-  content_as_base64: 'example_content_as_base64',
-  mime_type: 'example_mime_type',
+  contentAsBase64: 'example_contentAsBase64',
+  mimeType: 'example_mimeType',
 })
 ```
 
@@ -876,34 +874,29 @@ Create an instance: `const output_create_mandator = client.OutputCreateMandator(
 | --- | --- | --- |
 | `city` | `string` |  |
 | `country` | `string` |  |
-| `date_of_birth` | `string` |  |
+| `dateOfBirth` | `string` |  |
 | `description` | `string` |  |
-| `drivers_license_number` | `string` |  |
+| `driversLicenseNumber` | `string` |  |
 | `email` | `string` |  |
-| `first_name` | `string` |  |
-| `identification_number` | `string` |  |
-| `last_name` | `string` |  |
+| `firstName` | `string` |  |
+| `identificationNumber` | `string` |  |
+| `lastName` | `string` |  |
 | `login` | `string` |  |
-| `mandator` | `Record<string, any>` |  |
 | `name` | `string` |  |
-| `passport_number` | `string` |  |
+| `passportNumber` | `string` |  |
 | `phone` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
 | `salutation` | `string` |  |
 | `state` | `string` |  |
 | `street1` | `string` |  |
 | `street2` | `string` |  |
-| `zip_code` | `string` |  |
+| `zipCode` | `string` |  |
 
 #### Example: Create
 
 ```ts
 const output_create_mandator = await client.OutputCreateMandator().create({
-  description: 'example_description',
   email: 'example_email',
   login: 'example_login',
-  name: 'example_name',
   phone: 'example_phone',
 })
 ```
@@ -923,15 +916,15 @@ Create an instance: `const output_create_service_user = client.OutputCreateServi
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `mandatorName` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```ts
 const output_create_service_user = await client.OutputCreateServiceUser().create({
-  mandator_name: 'example_mandator_name',
+  mandatorName: 'example_mandatorName',
 })
 ```
 
@@ -950,9 +943,9 @@ Create an instance: `const output_deactivate_user = client.OutputDeactivateUser(
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `consumerUUID` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -976,10 +969,10 @@ Create an instance: `const output_get_kyc_document = client.OutputGetKycDocument
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `case_id` | `string` |  |
-| `encoded_data_base64` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `caseID` | `string` |  |
+| `encodedDataBase64` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -1003,10 +996,10 @@ Create an instance: `const output_get_logo = client.OutputGetLogo()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `content_as_base64` | `string` |  |
-| `mime_type` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `contentAsBase64` | `string` |  |
+| `mimeType` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Load
 
@@ -1029,9 +1022,9 @@ Create an instance: `const output_list_of_available_role = client.OutputListOfAv
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `available_role` | `any[]` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `availableRoles` | `any[]` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -1058,8 +1051,8 @@ Create an instance: `const output_list_of_mandator = client.OutputListOfMandator
 | `filter` | `Record<string, any>` |  |
 | `list` | `any[]` |  |
 | `pagination` | `Record<string, any>` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 | `sorting` | `Record<string, any>` |  |
 
 #### Example: Create
@@ -1086,8 +1079,8 @@ Create an instance: `const output_list_of_module = client.OutputListOfModule()`
 | --- | --- | --- |
 | `list` | `any[]` |  |
 | `pagination` | `Record<string, any>` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -1112,10 +1105,10 @@ Create an instance: `const output_list_of_role_group = client.OutputListOfRoleGr
 | Field | Type | Description |
 | --- | --- | --- |
 | `filter` | `Record<string, any>` |  |
-| `group_role` | `any[]` |  |
+| `groupRoles` | `any[]` |  |
 | `pagination` | `Record<string, any>` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 | `sorting` | `Record<string, any>` |  |
 
 #### Example: Create
@@ -1143,8 +1136,8 @@ Create an instance: `const output_list_of_transactions_history = client.OutputLi
 | `filter` | `Record<string, any>` |  |
 | `list` | `any[]` |  |
 | `pagination` | `Record<string, any>` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 | `sorting` | `Record<string, any>` |  |
 
 #### Example: Create
@@ -1172,8 +1165,8 @@ Create an instance: `const output_list_of_user = client.OutputListOfUser()`
 | `filter` | `Record<string, any>` |  |
 | `list` | `any[]` |  |
 | `pagination` | `Record<string, any>` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 | `sorting` | `Record<string, any>` |  |
 
 #### Example: Create
@@ -1198,17 +1191,17 @@ Create an instance: `const output_provide_credential = client.OutputProvideCrede
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `string` |  |
+| `mandatorName` | `string` |  |
 | `password` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 | `username` | `string` |  |
 
 #### Example: Create
 
 ```ts
 const output_provide_credential = await client.OutputProvideCredential().create({
-  mandator_name: 'example_mandator_name',
+  mandatorName: 'example_mandatorName',
 })
 ```
 
@@ -1228,21 +1221,21 @@ Create an instance: `const output_register_user = client.OutputRegisterUser()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `string` |  |
-| `consumer_id` | `string` |  |
-| `consumer_language` | `string` |  |
+| `consumerId` | `string` |  |
+| `consumerLanguage` | `string` |  |
 | `country` | `string` |  |
-| `date_of_birth` | `string` |  |
-| `driver_licence_number` | `string` |  |
+| `dateOfBirth` | `string` |  |
+| `driverLicenceNumber` | `string` |  |
 | `email` | `string` |  |
-| `first_name` | `string` |  |
-| `identification_number` | `string` |  |
-| `last_name` | `string` |  |
+| `firstName` | `string` |  |
+| `identificationNumber` | `string` |  |
+| `lastName` | `string` |  |
 | `login` | `string` |  |
 | `module` | `string` |  |
-| `passport_number` | `string` |  |
+| `passportNumber` | `string` |  |
 | `phone` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 | `salutation` | `string` |  |
 | `state` | `string` |  |
 | `street1` | `string` |  |
@@ -1272,10 +1265,10 @@ Create an instance: `const output_remove_role = client.OutputRemoveRole()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
-| `role` | `any[]` |  |
+| `consumerUUID` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
+| `roles` | `any[]` |  |
 
 #### Example: Create
 
@@ -1299,18 +1292,18 @@ Create an instance: `const output_resend_link = client.OutputResendLink()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `business_registration_number` | `string` |  |
-| `consumer_uuid` | `string` |  |
-| `email_confirmation_code` | `string` |  |
-| `phone_number` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `businessRegistrationNumber` | `string` |  |
+| `consumerUUID` | `string` |  |
+| `emailConfirmationCode` | `string` |  |
+| `phoneNumber` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```ts
 const output_resend_link = await client.OutputResendLink().create({
-  consumer_uuid: 'example_consumer_uuid',
+  consumerUUID: 'example_consumerUUID',
 })
 ```
 
@@ -1329,10 +1322,10 @@ Create an instance: `const output_reset_password = client.OutputResetPassword()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `phone_number` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `consumerUuid` | `string` |  |
+| `phoneNumber` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -1357,23 +1350,23 @@ Create an instance: `const output_update_consumer = client.OutputUpdateConsumer(
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `string` |  |
-| `consumer_uuid` | `string` |  |
+| `consumerUuid` | `string` |  |
 | `consumerlanguage` | `string` |  |
 | `country` | `string` |  |
-| `date_of_birth` | `string` |  |
+| `dateOfBirth` | `string` |  |
 | `datetime_created` | `string` |  |
-| `driver_licence_number` | `string` |  |
+| `driverLicenceNumber` | `string` |  |
 | `email` | `string` |  |
-| `first_name` | `string` |  |
-| `identification_number` | `string` |  |
-| `kyc_passed` | `boolean` |  |
-| `last_name` | `string` |  |
+| `firstName` | `string` |  |
+| `identificationNumber` | `string` |  |
+| `kycPassed` | `boolean` |  |
+| `lastName` | `string` |  |
 | `nationality` | `string` |  |
-| `passport_number` | `string` |  |
-| `phone_number` | `string` |  |
-| `place_of_birth` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `passportNumber` | `string` |  |
+| `phoneNumber` | `string` |  |
+| `placeOfBirth` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 | `state` | `string` |  |
 | `street1` | `string` |  |
 | `street2` | `string` |  |
@@ -1384,7 +1377,7 @@ Create an instance: `const output_update_consumer = client.OutputUpdateConsumer(
 
 ```ts
 const output_update_consumer = await client.OutputUpdateConsumer().create({
-  consumer_uuid: 'example_consumer_uuid',
+  consumerUuid: 'example_consumerUuid',
 })
 ```
 
@@ -1403,13 +1396,13 @@ Create an instance: `const output_update_profile = client.OutputUpdateProfile()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_language` | `string` |  |
+| `consumerLanguage` | `string` |  |
 | `email` | `string` |  |
-| `first_name` | `string` |  |
-| `last_name` | `string` |  |
-| `phone_number` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `firstName` | `string` |  |
+| `lastName` | `string` |  |
+| `phoneNumber` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -1433,8 +1426,8 @@ Create an instance: `const version = client.Version()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_name` | `string` |  |
-| `build_date` | `string` |  |
+| `appName` | `string` |  |
+| `buildDate` | `string` |  |
 | `version` | `string` |  |
 
 #### Example: Load

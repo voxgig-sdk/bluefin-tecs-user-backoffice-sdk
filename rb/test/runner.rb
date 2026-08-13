@@ -23,8 +23,8 @@ module BluefinTecsUserBackofficeTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("BLUEFINTECSUSERBACKOFFICE_TEST_LIVE")
-    override = getenv("BLUEFINTECSUSERBACKOFFICE_TEST_OVERRIDE")
+    live = getenv("BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE")
+    override = getenv("BLUEFIN_TECS_USER_BACKOFFICE_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module BluefinTecsUserBackofficeTestRunner
       end
     end
 
-    explain = getenv("BLUEFINTECSUSERBACKOFFICE_TEST_EXPLAIN")
-    m["BLUEFINTECSUSERBACKOFFICE_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("BLUEFIN_TECS_USER_BACKOFFICE_TEST_EXPLAIN")
+    m["BLUEFIN_TECS_USER_BACKOFFICE_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

@@ -6,12 +6,12 @@ main: kit: entity: output_activate_store_module: {
 
   fields: [
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }

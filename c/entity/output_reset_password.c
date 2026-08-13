@@ -14,6 +14,8 @@ typedef struct output_reset_password_entity {
   voxgig_value* data;     // Map
   voxgig_value* mtch;     // Map
   Context* entctx;
+  // Set once a successful `remove` resolves on this instance.
+  bool deleted;
 } output_reset_password_entity;
 
 typedef void (*output_reset_password_postdone_fn)(output_reset_password_entity* self, Context* ctx);
@@ -24,11 +26,14 @@ static const char* output_reset_password_get_name(Entity* e);
 static Entity* output_reset_password_make(Entity* e);
 static voxgig_value* output_reset_password_data(Entity* e, voxgig_value* args);
 static voxgig_value* output_reset_password_matchv(Entity* e, voxgig_value* args);
-static voxgig_value* output_reset_password_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_reset_password_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_reset_password_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_reset_password_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* output_reset_password_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+// Ops resolve to the ENTITY (`list` to a NULL-terminated array of them).
+static Entity* output_reset_password_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity** output_reset_password_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity* output_reset_password_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* output_reset_password_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* output_reset_password_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static void output_reset_password_mark_deleted(Entity* e);
+static bool output_reset_password_deleted(Entity* e);
 
 static Context* output_reset_password_ent_ctx(output_reset_password_entity* self) {
   return self->entctx;
@@ -236,13 +241,13 @@ static voxgig_value* output_reset_password_matchv(Entity* e, voxgig_value* args)
   return voxgig_clone(self->mtch);
 }
 
-static voxgig_value* output_reset_password_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* output_reset_password_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("load", "output_reset_password");
   return NULL;
 }
 
-static voxgig_value* output_reset_password_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity** output_reset_password_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("list", "output_reset_password");
   return NULL;
@@ -260,7 +265,7 @@ static void output_reset_password_create_postdone(output_reset_password_entity* 
   }
 }
 
-static voxgig_value* output_reset_password_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
+static Entity* output_reset_password_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
   output_reset_password_entity* self = (output_reset_password_entity*)e;
   CtxSpec cs;
   memset(&cs, 0, sizeof(cs));
@@ -270,20 +275,38 @@ static voxgig_value* output_reset_password_create(Entity* e, voxgig_value* reqda
   cs.data = self->data;
   cs.reqdata = reqdata;
   Context* ctx = make_context_util(cs, output_reset_password_ent_ctx(self));
-  return output_reset_password_run_op(self, ctx, output_reset_password_create_postdone, err);
+  output_reset_password_run_op(self, ctx, output_reset_password_create_postdone, err);
+  if (*err) return NULL;
+
+  // The operation resolves to THIS entity: run_op has just absorbed the
+  // result into it, and the caller reaches the record through vt->data.
+  // See AGENTS.md "Entity operations return ENTITIES".
+
+  return e;
 }
 
 
-static voxgig_value* output_reset_password_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* output_reset_password_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("update", "output_reset_password");
   return NULL;
 }
 
-static voxgig_value* output_reset_password_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* output_reset_password_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("remove", "output_reset_password");
   return NULL;
+}
+
+// `remove` resolves to the entity, marked. The instance KEEPS the data it
+// held - a caller can still read what was deleted - but it is no longer a
+// live record.
+static void output_reset_password_mark_deleted(Entity* e) {
+  ((output_reset_password_entity*)e)->deleted = true;
+}
+
+static bool output_reset_password_deleted(Entity* e) {
+  return ((output_reset_password_entity*)e)->deleted;
 }
 
 static const EntityVT output_reset_password_VT = {
@@ -291,6 +314,8 @@ static const EntityVT output_reset_password_VT = {
   output_reset_password_make,
   output_reset_password_data,
   output_reset_password_matchv,
+  output_reset_password_mark_deleted,
+  output_reset_password_deleted,
   output_reset_password_load,
   output_reset_password_list,
   output_reset_password_create,

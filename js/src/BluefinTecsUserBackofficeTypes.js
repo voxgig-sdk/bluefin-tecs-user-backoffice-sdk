@@ -8,212 +8,206 @@
 
 /**
  * @typedef {Object} OutputActivateDigitalModule
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  */
 
 /**
  * @typedef {Object} OutputActivateDigitalModuleCreateData
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  */
 
 /**
  * @typedef {Object} OutputActivatePortalModule
- * @property {string} client_secret
- * @property {string} notification_email
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {string} clientSecret
+ * @property {string} notificationEmail
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  */
 
 /**
  * @typedef {Object} OutputActivatePortalModuleCreateData
- * @property {string} client_secret
- * @property {string} notification_email
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {string} clientSecret
+ * @property {string} notificationEmail
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  */
 
 /**
  * @typedef {Object} OutputActivateStoreModule
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  */
 
 /**
  * @typedef {Object} OutputActivateStoreModuleCreateData
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  */
 
 /**
  * @typedef {Object} OutputActivateUser
- * @property {string} [consumer_uuid]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {string} [consumerUUID]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  */
 
 /**
  * @typedef {Object} OutputActivateUserCreateData
- * @property {string} [consumer_uuid]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {string} [consumerUUID]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  */
 
 /**
  * @typedef {Object} OutputAssignRole
- * @property {string} consumer_uuid
- * @property {number} [response_code]
- * @property {string} [response_message]
- * @property {Array} role
+ * @property {string} consumerUUID
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
+ * @property {Array} roles
  */
 
 /**
  * @typedef {Object} OutputAssignRoleCreateData
- * @property {string} consumer_uuid
- * @property {number} [response_code]
- * @property {string} [response_message]
- * @property {Array} role
+ * @property {string} consumerUUID
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
+ * @property {Array} roles
  */
 
 /**
  * @typedef {Object} OutputChangeLogo
- * @property {string} content_as_base64
- * @property {string} mime_type
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {string} contentAsBase64
+ * @property {string} mimeType
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  */
 
 /**
  * @typedef {Object} OutputChangeLogoCreateData
- * @property {string} content_as_base64
- * @property {string} mime_type
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {string} contentAsBase64
+ * @property {string} mimeType
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  */
 
 /**
  * @typedef {Object} OutputCreateMandator
  * @property {string} [city]
  * @property {string} [country]
- * @property {string} [date_of_birth]
- * @property {string} description
- * @property {string} [drivers_license_number]
+ * @property {string} [dateOfBirth]
+ * @property {string} [description]
+ * @property {string} [driversLicenseNumber]
  * @property {string} email
- * @property {string} [first_name]
- * @property {string} [identification_number]
- * @property {string} [last_name]
+ * @property {string} [firstName]
+ * @property {string} [identificationNumber]
+ * @property {string} [lastName]
  * @property {string} login
- * @property {Object} [mandator]
- * @property {string} name
- * @property {string} [passport_number]
+ * @property {string} [name]
+ * @property {string} [passportNumber]
  * @property {string} phone
- * @property {number} [response_code]
- * @property {string} [response_message]
  * @property {string} [salutation]
  * @property {string} [state]
  * @property {string} [street1]
  * @property {string} [street2]
- * @property {string} [zip_code]
+ * @property {string} [zipCode]
  */
 
 /**
  * @typedef {Object} OutputCreateMandatorCreateData
  * @property {string} [city]
  * @property {string} [country]
- * @property {string} [date_of_birth]
- * @property {string} description
- * @property {string} [drivers_license_number]
+ * @property {string} [dateOfBirth]
+ * @property {string} [description]
+ * @property {string} [driversLicenseNumber]
  * @property {string} email
- * @property {string} [first_name]
- * @property {string} [identification_number]
- * @property {string} [last_name]
+ * @property {string} [firstName]
+ * @property {string} [identificationNumber]
+ * @property {string} [lastName]
  * @property {string} login
- * @property {Object} [mandator]
- * @property {string} name
- * @property {string} [passport_number]
+ * @property {string} [name]
+ * @property {string} [passportNumber]
  * @property {string} phone
- * @property {number} [response_code]
- * @property {string} [response_message]
  * @property {string} [salutation]
  * @property {string} [state]
  * @property {string} [street1]
  * @property {string} [street2]
- * @property {string} [zip_code]
+ * @property {string} [zipCode]
  */
 
 /**
  * @typedef {Object} OutputCreateServiceUser
- * @property {string} mandator_name
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {string} mandatorName
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  */
 
 /**
  * @typedef {Object} OutputCreateServiceUserCreateData
- * @property {string} mandator_name
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {string} mandatorName
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  */
 
 /**
  * @typedef {Object} OutputDeactivateUser
- * @property {string} [consumer_uuid]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {string} [consumerUUID]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  */
 
 /**
  * @typedef {Object} OutputDeactivateUserCreateData
- * @property {string} [consumer_uuid]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {string} [consumerUUID]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  */
 
 /**
  * @typedef {Object} OutputGetKycDocument
- * @property {string} [case_id]
- * @property {string} [encoded_data_base64]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {string} [caseID]
+ * @property {string} [encodedDataBase64]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  */
 
 /**
  * @typedef {Object} OutputGetKycDocumentCreateData
- * @property {string} [case_id]
- * @property {string} [encoded_data_base64]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {string} [caseID]
+ * @property {string} [encodedDataBase64]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  */
 
 /**
  * @typedef {Object} OutputGetLogo
- * @property {string} content_as_base64
- * @property {string} mime_type
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {string} contentAsBase64
+ * @property {string} mimeType
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  */
 
 /**
  * @typedef {Object} OutputGetLogoLoadMatch
- * @property {string} [content_as_base64]
- * @property {string} [mime_type]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {string} [contentAsBase64]
+ * @property {string} [mimeType]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  */
 
 /**
  * @typedef {Object} OutputListOfAvailableRole
- * @property {Array} [available_role]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {Array} [availableRoles]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  */
 
 /**
  * @typedef {Object} OutputListOfAvailableRoleCreateData
- * @property {Array} [available_role]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {Array} [availableRoles]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  */
 
 /**
@@ -221,8 +215,8 @@
  * @property {Object} [filter]
  * @property {Array} [list]
  * @property {Object} [pagination]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  * @property {Object} [sorting]
  */
 
@@ -231,8 +225,8 @@
  * @property {Object} [filter]
  * @property {Array} [list]
  * @property {Object} [pagination]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  * @property {Object} [sorting]
  */
 
@@ -240,35 +234,35 @@
  * @typedef {Object} OutputListOfModule
  * @property {Array} [list]
  * @property {Object} [pagination]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  */
 
 /**
  * @typedef {Object} OutputListOfModuleCreateData
  * @property {Array} [list]
  * @property {Object} [pagination]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  */
 
 /**
  * @typedef {Object} OutputListOfRoleGroup
  * @property {Object} [filter]
- * @property {Array} [group_role]
+ * @property {Array} [groupRoles]
  * @property {Object} [pagination]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  * @property {Object} [sorting]
  */
 
 /**
  * @typedef {Object} OutputListOfRoleGroupCreateData
  * @property {Object} [filter]
- * @property {Array} [group_role]
+ * @property {Array} [groupRoles]
  * @property {Object} [pagination]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  * @property {Object} [sorting]
  */
 
@@ -277,8 +271,8 @@
  * @property {Object} [filter]
  * @property {Array} [list]
  * @property {Object} [pagination]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  * @property {Object} [sorting]
  */
 
@@ -287,8 +281,8 @@
  * @property {Object} [filter]
  * @property {Array} [list]
  * @property {Object} [pagination]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  * @property {Object} [sorting]
  */
 
@@ -297,8 +291,8 @@
  * @property {Object} [filter]
  * @property {Array} [list]
  * @property {Object} [pagination]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  * @property {Object} [sorting]
  */
 
@@ -307,47 +301,47 @@
  * @property {Object} [filter]
  * @property {Array} [list]
  * @property {Object} [pagination]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  * @property {Object} [sorting]
  */
 
 /**
  * @typedef {Object} OutputProvideCredential
- * @property {string} mandator_name
+ * @property {string} mandatorName
  * @property {string} [password]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  * @property {string} [username]
  */
 
 /**
  * @typedef {Object} OutputProvideCredentialCreateData
- * @property {string} mandator_name
+ * @property {string} mandatorName
  * @property {string} [password]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  * @property {string} [username]
  */
 
 /**
  * @typedef {Object} OutputRegisterUser
  * @property {string} [city]
- * @property {string} [consumer_id]
- * @property {string} [consumer_language]
+ * @property {string} [consumerId]
+ * @property {string} [consumerLanguage]
  * @property {string} [country]
- * @property {string} [date_of_birth]
- * @property {string} [driver_licence_number]
+ * @property {string} [dateOfBirth]
+ * @property {string} [driverLicenceNumber]
  * @property {string} email
- * @property {string} [first_name]
- * @property {string} [identification_number]
- * @property {string} [last_name]
+ * @property {string} [firstName]
+ * @property {string} [identificationNumber]
+ * @property {string} [lastName]
  * @property {string} [login]
  * @property {string} [module]
- * @property {string} [passport_number]
+ * @property {string} [passportNumber]
  * @property {string} [phone]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  * @property {string} [salutation]
  * @property {string} [state]
  * @property {string} [street1]
@@ -358,21 +352,21 @@
 /**
  * @typedef {Object} OutputRegisterUserCreateData
  * @property {string} [city]
- * @property {string} [consumer_id]
- * @property {string} [consumer_language]
+ * @property {string} [consumerId]
+ * @property {string} [consumerLanguage]
  * @property {string} [country]
- * @property {string} [date_of_birth]
- * @property {string} [driver_licence_number]
+ * @property {string} [dateOfBirth]
+ * @property {string} [driverLicenceNumber]
  * @property {string} email
- * @property {string} [first_name]
- * @property {string} [identification_number]
- * @property {string} [last_name]
+ * @property {string} [firstName]
+ * @property {string} [identificationNumber]
+ * @property {string} [lastName]
  * @property {string} [login]
  * @property {string} [module]
- * @property {string} [passport_number]
+ * @property {string} [passportNumber]
  * @property {string} [phone]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  * @property {string} [salutation]
  * @property {string} [state]
  * @property {string} [street1]
@@ -382,76 +376,76 @@
 
 /**
  * @typedef {Object} OutputRemoveRole
- * @property {string} [consumer_uuid]
- * @property {number} [response_code]
- * @property {string} [response_message]
- * @property {Array} [role]
+ * @property {string} [consumerUUID]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
+ * @property {Array} [roles]
  */
 
 /**
  * @typedef {Object} OutputRemoveRoleCreateData
- * @property {string} [consumer_uuid]
- * @property {number} [response_code]
- * @property {string} [response_message]
- * @property {Array} [role]
+ * @property {string} [consumerUUID]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
+ * @property {Array} [roles]
  */
 
 /**
  * @typedef {Object} OutputResendLink
- * @property {string} [business_registration_number]
- * @property {string} consumer_uuid
- * @property {string} [email_confirmation_code]
- * @property {string} [phone_number]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {string} [businessRegistrationNumber]
+ * @property {string} consumerUUID
+ * @property {string} [emailConfirmationCode]
+ * @property {string} [phoneNumber]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  */
 
 /**
  * @typedef {Object} OutputResendLinkCreateData
- * @property {string} [business_registration_number]
- * @property {string} consumer_uuid
- * @property {string} [email_confirmation_code]
- * @property {string} [phone_number]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {string} [businessRegistrationNumber]
+ * @property {string} consumerUUID
+ * @property {string} [emailConfirmationCode]
+ * @property {string} [phoneNumber]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  */
 
 /**
  * @typedef {Object} OutputResetPassword
- * @property {string} [consumer_uuid]
- * @property {string} [phone_number]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {string} [consumerUuid]
+ * @property {string} [phoneNumber]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  */
 
 /**
  * @typedef {Object} OutputResetPasswordCreateData
- * @property {string} [consumer_uuid]
- * @property {string} [phone_number]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {string} [consumerUuid]
+ * @property {string} [phoneNumber]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  */
 
 /**
  * @typedef {Object} OutputUpdateConsumer
  * @property {string} [city]
- * @property {string} consumer_uuid
+ * @property {string} consumerUuid
  * @property {string} [consumerlanguage]
  * @property {string} [country]
- * @property {string} [date_of_birth]
+ * @property {string} [dateOfBirth]
  * @property {string} [datetime_created]
- * @property {string} [driver_licence_number]
+ * @property {string} [driverLicenceNumber]
  * @property {string} [email]
- * @property {string} [first_name]
- * @property {string} [identification_number]
- * @property {boolean} [kyc_passed]
- * @property {string} [last_name]
+ * @property {string} [firstName]
+ * @property {string} [identificationNumber]
+ * @property {boolean} [kycPassed]
+ * @property {string} [lastName]
  * @property {string} [nationality]
- * @property {string} [passport_number]
- * @property {string} [phone_number]
- * @property {string} [place_of_birth]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {string} [passportNumber]
+ * @property {string} [phoneNumber]
+ * @property {string} [placeOfBirth]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  * @property {string} [state]
  * @property {string} [street1]
  * @property {string} [street2]
@@ -462,23 +456,23 @@
 /**
  * @typedef {Object} OutputUpdateConsumerCreateData
  * @property {string} [city]
- * @property {string} consumer_uuid
+ * @property {string} consumerUuid
  * @property {string} [consumerlanguage]
  * @property {string} [country]
- * @property {string} [date_of_birth]
+ * @property {string} [dateOfBirth]
  * @property {string} [datetime_created]
- * @property {string} [driver_licence_number]
+ * @property {string} [driverLicenceNumber]
  * @property {string} [email]
- * @property {string} [first_name]
- * @property {string} [identification_number]
- * @property {boolean} [kyc_passed]
- * @property {string} [last_name]
+ * @property {string} [firstName]
+ * @property {string} [identificationNumber]
+ * @property {boolean} [kycPassed]
+ * @property {string} [lastName]
  * @property {string} [nationality]
- * @property {string} [passport_number]
- * @property {string} [phone_number]
- * @property {string} [place_of_birth]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {string} [passportNumber]
+ * @property {string} [phoneNumber]
+ * @property {string} [placeOfBirth]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  * @property {string} [state]
  * @property {string} [street1]
  * @property {string} [street2]
@@ -488,37 +482,37 @@
 
 /**
  * @typedef {Object} OutputUpdateProfile
- * @property {string} [consumer_language]
+ * @property {string} [consumerLanguage]
  * @property {string} [email]
- * @property {string} [first_name]
- * @property {string} [last_name]
- * @property {string} [phone_number]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {string} [firstName]
+ * @property {string} [lastName]
+ * @property {string} [phoneNumber]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  */
 
 /**
  * @typedef {Object} OutputUpdateProfileCreateData
- * @property {string} [consumer_language]
+ * @property {string} [consumerLanguage]
  * @property {string} [email]
- * @property {string} [first_name]
- * @property {string} [last_name]
- * @property {string} [phone_number]
- * @property {number} [response_code]
- * @property {string} [response_message]
+ * @property {string} [firstName]
+ * @property {string} [lastName]
+ * @property {string} [phoneNumber]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
  */
 
 /**
  * @typedef {Object} Version
- * @property {string} [app_name]
- * @property {string} [build_date]
+ * @property {string} [appName]
+ * @property {string} [buildDate]
  * @property {string} [version]
  */
 
 /**
  * @typedef {Object} VersionLoadMatch
- * @property {string} [app_name]
- * @property {string} [build_date]
+ * @property {string} [appName]
+ * @property {string} [buildDate]
  * @property {string} [version]
  */
 

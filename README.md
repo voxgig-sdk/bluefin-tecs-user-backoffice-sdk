@@ -22,8 +22,8 @@ support (`load`, `create`):
 ```ts
 const client = new BluefinTecsUserBackofficeSDK()
 const outputactivatedigitalmodule = await client.OutputActivateDigitalModule().create({
-  response_code: 1,
-  response_message: 'example',
+  responseCode: 1,
+  responseMessage: 'example',
 })
 ```
 
@@ -39,9 +39,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = BluefinTecsUserBackofficeSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = BluefinTecsUserBackofficeSDK.test({
+  entity: {
+    output_get_logo: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const outputgetlogo = await client.OutputGetLogo().load()
-// outputgetlogo is a bare OutputGetLogo populated with mock data
+// outputgetlogo is the OutputGetLogo entity, populated with mock data
+// — call outputgetlogo.data() for the record itself
 console.log(outputgetlogo)
 ```
 
@@ -182,7 +191,8 @@ System.out.println(outputGetLogo);
 ```js
 const client = BluefinTecsUserBackofficeSDK.test()
 const outputgetlogo = await client.OutputGetLogo().load()
-// outputgetlogo is a bare entity populated with mock data
+// outputgetlogo is the entity, populated with mock data
+// — call outputgetlogo.data() for the record itself
 console.log(outputgetlogo)
 ```
 
@@ -200,7 +210,7 @@ println(outputGetLogo)
 let () =
   let client = Sdk_client.test () in
   let result = (Sdk_client.output_get_logo client Noval).e_load (empty_map ()) Noval in
-  print_endline (stringify result)
+  print_endline (stringify (result.e_data_get ()))
 ```
 
 ### Perl
@@ -898,6 +908,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://www.tecs.at/contact/](https://www.tecs.at/contact/)
 

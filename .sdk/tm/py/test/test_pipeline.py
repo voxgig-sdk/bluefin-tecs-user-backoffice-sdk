@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import BluefinTecsUserBackofficeSDK
-from core.error import BluefinTecsUserBackofficeError
-from core.result import BluefinTecsUserBackofficeResult
-from core.response import BluefinTecsUserBackofficeResponse
-from core.spec import BluefinTecsUserBackofficeSpec
-from feature.base_feature import BluefinTecsUserBackofficeBaseFeature
+from projectname_sdk.core.error import BluefinTecsUserBackofficeError
+from projectname_sdk.core.result import BluefinTecsUserBackofficeResult
+from projectname_sdk.core.response import BluefinTecsUserBackofficeResponse
+from projectname_sdk.core.spec import BluefinTecsUserBackofficeSpec
+from projectname_sdk.feature.base_feature import BluefinTecsUserBackofficeBaseFeature
 
 
 def _client():

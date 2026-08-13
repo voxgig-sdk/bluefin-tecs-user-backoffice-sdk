@@ -138,8 +138,9 @@ output_activate_digital_moduleBasicTest c = do
     d <- newRefData fixture "output_activate_digital_module"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_activate_digital_moduleDirectTest :: Counters -> IO ()
 output_activate_digital_moduleDirectTest c = runTest c "output_activate_digital_module.direct" $ do
@@ -177,8 +178,9 @@ output_activate_portal_moduleBasicTest c = do
     d <- newRefData fixture "output_activate_portal_module"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_activate_portal_moduleDirectTest :: Counters -> IO ()
 output_activate_portal_moduleDirectTest c = runTest c "output_activate_portal_module.direct" $ do
@@ -216,8 +218,9 @@ output_activate_store_moduleBasicTest c = do
     d <- newRefData fixture "output_activate_store_module"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_activate_store_moduleDirectTest :: Counters -> IO ()
 output_activate_store_moduleDirectTest c = runTest c "output_activate_store_module.direct" $ do
@@ -255,8 +258,9 @@ output_activate_userBasicTest c = do
     d <- newRefData fixture "output_activate_user"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_activate_userDirectTest :: Counters -> IO ()
 output_activate_userDirectTest c = runTest c "output_activate_user.direct" $ do
@@ -294,8 +298,9 @@ output_assign_roleBasicTest c = do
     d <- newRefData fixture "output_assign_role"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_assign_roleDirectTest :: Counters -> IO ()
 output_assign_roleDirectTest c = runTest c "output_assign_role.direct" $ do
@@ -333,8 +338,9 @@ output_change_logoBasicTest c = do
     d <- newRefData fixture "output_change_logo"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_change_logoDirectTest :: Counters -> IO ()
 output_change_logoDirectTest c = runTest c "output_change_logo.direct" $ do
@@ -372,8 +378,9 @@ output_create_mandatorBasicTest c = do
     d <- newRefData fixture "output_create_mandator"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_create_mandatorDirectTest :: Counters -> IO ()
 output_create_mandatorDirectTest c = runTest c "output_create_mandator.direct" $ do
@@ -411,8 +418,9 @@ output_create_service_userBasicTest c = do
     d <- newRefData fixture "output_create_service_user"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_create_service_userDirectTest :: Counters -> IO ()
 output_create_service_userDirectTest c = runTest c "output_create_service_user.direct" $ do
@@ -450,8 +458,9 @@ output_deactivate_userBasicTest c = do
     d <- newRefData fixture "output_deactivate_user"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_deactivate_userDirectTest :: Counters -> IO ()
 output_deactivate_userDirectTest c = runTest c "output_deactivate_user.direct" $ do
@@ -489,8 +498,9 @@ output_get_kyc_documentBasicTest c = do
     d <- newRefData fixture "output_get_kyc_document"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_get_kyc_documentDirectTest :: Counters -> IO ()
 output_get_kyc_documentDirectTest c = runTest c "output_get_kyc_document.direct" $ do
@@ -532,8 +542,9 @@ output_get_logoBasicTest c = do
       (id0 : _) -> do
         m <- jo [("id", VStr id0)]; ctrl <- emptyMap
         loaded <- eLoad ent m ctrl
-        lid <- getp loaded "id"
-        pure (ismap loaded && vstring lid == id0)
+        ld <- eDataGet loaded
+        lid <- getp ld "id"
+        pure (ismap ld && vstring lid == id0)
 
 output_get_logoDirectTest :: Counters -> IO ()
 output_get_logoDirectTest c = runTest c "output_get_logo.direct" $ do
@@ -571,8 +582,9 @@ output_list_of_available_roleBasicTest c = do
     d <- newRefData fixture "output_list_of_available_role"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_list_of_available_roleDirectTest :: Counters -> IO ()
 output_list_of_available_roleDirectTest c = runTest c "output_list_of_available_role.direct" $ do
@@ -610,8 +622,9 @@ output_list_of_mandatorBasicTest c = do
     d <- newRefData fixture "output_list_of_mandator"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_list_of_mandatorDirectTest :: Counters -> IO ()
 output_list_of_mandatorDirectTest c = runTest c "output_list_of_mandator.direct" $ do
@@ -649,8 +662,9 @@ output_list_of_moduleBasicTest c = do
     d <- newRefData fixture "output_list_of_module"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_list_of_moduleDirectTest :: Counters -> IO ()
 output_list_of_moduleDirectTest c = runTest c "output_list_of_module.direct" $ do
@@ -688,8 +702,9 @@ output_list_of_role_groupBasicTest c = do
     d <- newRefData fixture "output_list_of_role_group"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_list_of_role_groupDirectTest :: Counters -> IO ()
 output_list_of_role_groupDirectTest c = runTest c "output_list_of_role_group.direct" $ do
@@ -727,8 +742,9 @@ output_list_of_transactions_historyBasicTest c = do
     d <- newRefData fixture "output_list_of_transactions_history"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_list_of_transactions_historyDirectTest :: Counters -> IO ()
 output_list_of_transactions_historyDirectTest c = runTest c "output_list_of_transactions_history.direct" $ do
@@ -766,8 +782,9 @@ output_list_of_userBasicTest c = do
     d <- newRefData fixture "output_list_of_user"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_list_of_userDirectTest :: Counters -> IO ()
 output_list_of_userDirectTest c = runTest c "output_list_of_user.direct" $ do
@@ -805,8 +822,9 @@ output_provide_credentialBasicTest c = do
     d <- newRefData fixture "output_provide_credential"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_provide_credentialDirectTest :: Counters -> IO ()
 output_provide_credentialDirectTest c = runTest c "output_provide_credential.direct" $ do
@@ -844,8 +862,9 @@ output_register_userBasicTest c = do
     d <- newRefData fixture "output_register_user"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_register_userDirectTest :: Counters -> IO ()
 output_register_userDirectTest c = runTest c "output_register_user.direct" $ do
@@ -883,8 +902,9 @@ output_remove_roleBasicTest c = do
     d <- newRefData fixture "output_remove_role"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_remove_roleDirectTest :: Counters -> IO ()
 output_remove_roleDirectTest c = runTest c "output_remove_role.direct" $ do
@@ -922,8 +942,9 @@ output_resend_linkBasicTest c = do
     d <- newRefData fixture "output_resend_link"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_resend_linkDirectTest :: Counters -> IO ()
 output_resend_linkDirectTest c = runTest c "output_resend_link.direct" $ do
@@ -961,8 +982,9 @@ output_reset_passwordBasicTest c = do
     d <- newRefData fixture "output_reset_password"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_reset_passwordDirectTest :: Counters -> IO ()
 output_reset_passwordDirectTest c = runTest c "output_reset_password.direct" $ do
@@ -1000,8 +1022,9 @@ output_update_consumerBasicTest c = do
     d <- newRefData fixture "output_update_consumer"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_update_consumerDirectTest :: Counters -> IO ()
 output_update_consumerDirectTest c = runTest c "output_update_consumer.direct" $ do
@@ -1039,8 +1062,9 @@ output_update_profileBasicTest c = do
     d <- newRefData fixture "output_update_profile"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 output_update_profileDirectTest :: Counters -> IO ()
 output_update_profileDirectTest c = runTest c "output_update_profile.direct" $ do
@@ -1082,8 +1106,9 @@ versionBasicTest c = do
       (id0 : _) -> do
         m <- jo [("id", VStr id0)]; ctrl <- emptyMap
         loaded <- eLoad ent m ctrl
-        lid <- getp loaded "id"
-        pure (ismap loaded && vstring lid == id0)
+        ld <- eDataGet loaded
+        lid <- getp ld "id"
+        pure (ismap ld && vstring lid == id0)
 
 versionDirectTest :: Counters -> IO ()
 versionDirectTest c = runTest c "version.direct" $ do

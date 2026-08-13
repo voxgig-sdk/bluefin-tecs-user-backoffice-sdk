@@ -31,7 +31,8 @@ defmodule BluefinTecsUserBackoffice.OutputChangeLogoEntityTest do
   test "should create then read back" do
     sdk = BluefinTecsUserBackoffice.test(S.jm(["entity", S.jm(["output_change_logo", S.jm([])])]))
     ent = BluefinTecsUserBackoffice.output_change_logo(sdk)
-    made = BluefinTecsUserBackoffice.Entity.OutputChangeLogo.create(ent, S.jm(["name", "test-create"]))
+    created = BluefinTecsUserBackoffice.Entity.OutputChangeLogo.create(ent, S.jm(["name", "test-create"]))
+    made = BluefinTecsUserBackoffice.EntityBase.data_get(created)
     assert S.ismap(made)
     assert S.getprop(made, "id") != nil
   end

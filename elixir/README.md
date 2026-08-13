@@ -59,7 +59,7 @@ sdk = BluefinTecsUserBackoffice.new(H.deep(%{"apikey" => System.get_env("BLUEFIN
 output_activate_digital_module = BluefinTecsUserBackoffice.output_activate_digital_module(sdk)
 
 # Create — returns the bare created record
-created = BluefinTecsUserBackoffice.Entity.OutputActivateDigitalModule.create(output_activate_digital_module, H.deep(%{"response_code" => 1, "response_message" => "example_response_message"}))
+created = BluefinTecsUserBackoffice.Entity.OutputActivateDigitalModule.create(output_activate_digital_module, H.deep(%{"responseCode" => 1, "responseMessage" => "example_responseMessage"}))
 
 ```
 
@@ -294,8 +294,8 @@ On error, `ok` is `false` and `err` carries the error value.
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -305,10 +305,10 @@ API path: `/activateDigitalModule`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `notification_email` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clientSecret` |  |
+| `notificationEmail` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -318,8 +318,8 @@ API path: `/activateMerchantPortalModule`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -329,9 +329,9 @@ API path: `/activateAppStoreModule`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -341,10 +341,10 @@ API path: `/activateUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `role` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `roles` |  |
 
 Operations: Create.
 
@@ -354,10 +354,10 @@ API path: `/assignRoles`
 
 | Field | Description |
 | --- | --- |
-| `content_as_base64` |  |
-| `mime_type` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `contentAsBase64` |  |
+| `mimeType` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -369,25 +369,22 @@ API path: `/changeLogo`
 | --- | --- |
 | `city` |  |
 | `country` |  |
-| `date_of_birth` |  |
+| `dateOfBirth` |  |
 | `description` |  |
-| `drivers_license_number` |  |
+| `driversLicenseNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `lastName` |  |
 | `login` |  |
-| `mandator` |  |
 | `name` |  |
-| `passport_number` |  |
+| `passportNumber` |  |
 | `phone` |  |
-| `response_code` |  |
-| `response_message` |  |
 | `salutation` |  |
 | `state` |  |
 | `street1` |  |
 | `street2` |  |
-| `zip_code` |  |
+| `zipCode` |  |
 
 Operations: Create.
 
@@ -397,9 +394,9 @@ API path: `/createMandator`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `mandatorName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -409,9 +406,9 @@ API path: `/createServiceUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -421,10 +418,10 @@ API path: `/deactivateUser`
 
 | Field | Description |
 | --- | --- |
-| `case_id` |  |
-| `encoded_data_base64` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `caseID` |  |
+| `encodedDataBase64` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -434,10 +431,10 @@ API path: `/getKycDocument`
 
 | Field | Description |
 | --- | --- |
-| `content_as_base64` |  |
-| `mime_type` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `contentAsBase64` |  |
+| `mimeType` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Load.
 
@@ -447,9 +444,9 @@ API path: `/getLogo`
 
 | Field | Description |
 | --- | --- |
-| `available_role` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `availableRoles` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -462,8 +459,8 @@ API path: `/listOfAvailableRoles`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -476,8 +473,8 @@ API path: `/listOfMandators`
 | --- | --- |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -488,10 +485,10 @@ API path: `/listOfModules`
 | Field | Description |
 | --- | --- |
 | `filter` |  |
-| `group_role` |  |
+| `groupRoles` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -505,8 +502,8 @@ API path: `/listOfRoleGroups`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -520,8 +517,8 @@ API path: `/listOfTransactionsHistory`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -532,10 +529,10 @@ API path: `/listOfUsers`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
+| `mandatorName` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `username` |  |
 
 Operations: Create.
@@ -547,21 +544,21 @@ API path: `/provideCredentials`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `consumer_id` |  |
-| `consumer_language` |  |
+| `consumerId` |  |
+| `consumerLanguage` |  |
 | `country` |  |
-| `date_of_birth` |  |
-| `driver_licence_number` |  |
+| `dateOfBirth` |  |
+| `driverLicenceNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `lastName` |  |
 | `login` |  |
 | `module` |  |
-| `passport_number` |  |
+| `passportNumber` |  |
 | `phone` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `salutation` |  |
 | `state` |  |
 | `street1` |  |
@@ -576,10 +573,10 @@ API path: `/registerUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `role` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `roles` |  |
 
 Operations: Create.
 
@@ -589,12 +586,12 @@ API path: `/removeRoles`
 
 | Field | Description |
 | --- | --- |
-| `business_registration_number` |  |
-| `consumer_uuid` |  |
-| `email_confirmation_code` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `businessRegistrationNumber` |  |
+| `consumerUUID` |  |
+| `emailConfirmationCode` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -604,10 +601,10 @@ API path: `/resendLink`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUuid` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -618,23 +615,23 @@ API path: `/resetPassword`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `consumer_uuid` |  |
+| `consumerUuid` |  |
 | `consumerlanguage` |  |
 | `country` |  |
-| `date_of_birth` |  |
+| `dateOfBirth` |  |
 | `datetime_created` |  |
-| `driver_licence_number` |  |
+| `driverLicenceNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `kyc_passed` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `kycPassed` |  |
+| `lastName` |  |
 | `nationality` |  |
-| `passport_number` |  |
-| `phone_number` |  |
-| `place_of_birth` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `passportNumber` |  |
+| `phoneNumber` |  |
+| `placeOfBirth` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `state` |  |
 | `street1` |  |
 | `street2` |  |
@@ -649,13 +646,13 @@ API path: `/updateConsumer`
 
 | Field | Description |
 | --- | --- |
-| `consumer_language` |  |
+| `consumerLanguage` |  |
 | `email` |  |
-| `first_name` |  |
-| `last_name` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `firstName` |  |
+| `lastName` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -665,8 +662,8 @@ API path: `/updateProfile`
 
 | Field | Description |
 | --- | --- |
-| `app_name` |  |
-| `build_date` |  |
+| `appName` |  |
+| `buildDate` |  |
 | `version` |  |
 
 Operations: Load.
@@ -695,8 +692,8 @@ Create a handle: `output_activate_digital_module = BluefinTecsUserBackoffice.out
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
 
 #### Example: Create
 
@@ -721,18 +718,18 @@ Create a handle: `output_activate_portal_module = BluefinTecsUserBackoffice.outp
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `String.t()` |  |
-| `notification_email` | `String.t()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
+| `clientSecret` | `String.t()` |  |
+| `notificationEmail` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
 
 #### Example: Create
 
 ```elixir
 output_activate_portal_module = BluefinTecsUserBackoffice.output_activate_portal_module(sdk)
 record = BluefinTecsUserBackoffice.Entity.OutputActivatePortalModule.create(output_activate_portal_module, BluefinTecsUserBackoffice.Helpers.deep(%{
-  "client_secret" => "example_client_secret",  # String.t()
-  "notification_email" => "example_notification_email",  # String.t()
+  "clientSecret" => "example_clientSecret",  # String.t()
+  "notificationEmail" => "example_notificationEmail",  # String.t()
 }))
 ```
 
@@ -751,8 +748,8 @@ Create a handle: `output_activate_store_module = BluefinTecsUserBackoffice.outpu
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
 
 #### Example: Create
 
@@ -777,9 +774,9 @@ Create a handle: `output_activate_user = BluefinTecsUserBackoffice.output_activa
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String.t()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
+| `consumerUUID` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
 
 #### Example: Create
 
@@ -804,18 +801,18 @@ Create a handle: `output_assign_role = BluefinTecsUserBackoffice.output_assign_r
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String.t()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
-| `role` | `list()` |  |
+| `consumerUUID` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
+| `roles` | `list()` |  |
 
 #### Example: Create
 
 ```elixir
 output_assign_role = BluefinTecsUserBackoffice.output_assign_role(sdk)
 record = BluefinTecsUserBackoffice.Entity.OutputAssignRole.create(output_assign_role, BluefinTecsUserBackoffice.Helpers.deep(%{
-  "consumer_uuid" => "example_consumer_uuid",  # String.t()
-  "role" => [],  # list()
+  "consumerUUID" => "example_consumerUUID",  # String.t()
+  "roles" => [],  # list()
 }))
 ```
 
@@ -834,18 +831,18 @@ Create a handle: `output_change_logo = BluefinTecsUserBackoffice.output_change_l
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `content_as_base64` | `String.t()` |  |
-| `mime_type` | `String.t()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
+| `contentAsBase64` | `String.t()` |  |
+| `mimeType` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
 
 #### Example: Create
 
 ```elixir
 output_change_logo = BluefinTecsUserBackoffice.output_change_logo(sdk)
 record = BluefinTecsUserBackoffice.Entity.OutputChangeLogo.create(output_change_logo, BluefinTecsUserBackoffice.Helpers.deep(%{
-  "content_as_base64" => "example_content_as_base64",  # String.t()
-  "mime_type" => "example_mime_type",  # String.t()
+  "contentAsBase64" => "example_contentAsBase64",  # String.t()
+  "mimeType" => "example_mimeType",  # String.t()
 }))
 ```
 
@@ -866,35 +863,30 @@ Create a handle: `output_create_mandator = BluefinTecsUserBackoffice.output_crea
 | --- | --- | --- |
 | `city` | `String.t()` |  |
 | `country` | `String.t()` |  |
-| `date_of_birth` | `String.t()` |  |
+| `dateOfBirth` | `String.t()` |  |
 | `description` | `String.t()` |  |
-| `drivers_license_number` | `String.t()` |  |
+| `driversLicenseNumber` | `String.t()` |  |
 | `email` | `String.t()` |  |
-| `first_name` | `String.t()` |  |
-| `identification_number` | `String.t()` |  |
-| `last_name` | `String.t()` |  |
+| `firstName` | `String.t()` |  |
+| `identificationNumber` | `String.t()` |  |
+| `lastName` | `String.t()` |  |
 | `login` | `String.t()` |  |
-| `mandator` | `map()` |  |
 | `name` | `String.t()` |  |
-| `passport_number` | `String.t()` |  |
+| `passportNumber` | `String.t()` |  |
 | `phone` | `String.t()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
 | `salutation` | `String.t()` |  |
 | `state` | `String.t()` |  |
 | `street1` | `String.t()` |  |
 | `street2` | `String.t()` |  |
-| `zip_code` | `String.t()` |  |
+| `zipCode` | `String.t()` |  |
 
 #### Example: Create
 
 ```elixir
 output_create_mandator = BluefinTecsUserBackoffice.output_create_mandator(sdk)
 record = BluefinTecsUserBackoffice.Entity.OutputCreateMandator.create(output_create_mandator, BluefinTecsUserBackoffice.Helpers.deep(%{
-  "description" => "example_description",  # String.t()
   "email" => "example_email",  # String.t()
   "login" => "example_login",  # String.t()
-  "name" => "example_name",  # String.t()
   "phone" => "example_phone",  # String.t()
 }))
 ```
@@ -914,16 +906,16 @@ Create a handle: `output_create_service_user = BluefinTecsUserBackoffice.output_
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `String.t()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
+| `mandatorName` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
 
 #### Example: Create
 
 ```elixir
 output_create_service_user = BluefinTecsUserBackoffice.output_create_service_user(sdk)
 record = BluefinTecsUserBackoffice.Entity.OutputCreateServiceUser.create(output_create_service_user, BluefinTecsUserBackoffice.Helpers.deep(%{
-  "mandator_name" => "example_mandator_name",  # String.t()
+  "mandatorName" => "example_mandatorName",  # String.t()
 }))
 ```
 
@@ -942,9 +934,9 @@ Create a handle: `output_deactivate_user = BluefinTecsUserBackoffice.output_deac
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String.t()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
+| `consumerUUID` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
 
 #### Example: Create
 
@@ -969,10 +961,10 @@ Create a handle: `output_get_kyc_document = BluefinTecsUserBackoffice.output_get
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `case_id` | `String.t()` |  |
-| `encoded_data_base64` | `String.t()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
+| `caseID` | `String.t()` |  |
+| `encodedDataBase64` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
 
 #### Example: Create
 
@@ -997,10 +989,10 @@ Create a handle: `output_get_logo = BluefinTecsUserBackoffice.output_get_logo(sd
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `content_as_base64` | `String.t()` |  |
-| `mime_type` | `String.t()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
+| `contentAsBase64` | `String.t()` |  |
+| `mimeType` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
 
 #### Example: Load
 
@@ -1024,9 +1016,9 @@ Create a handle: `output_list_of_available_role = BluefinTecsUserBackoffice.outp
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `available_role` | `list()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
+| `availableRoles` | `list()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
 
 #### Example: Create
 
@@ -1054,8 +1046,8 @@ Create a handle: `output_list_of_mandator = BluefinTecsUserBackoffice.output_lis
 | `filter` | `map()` |  |
 | `list` | `list()` |  |
 | `pagination` | `map()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
 | `sorting` | `map()` |  |
 
 #### Example: Create
@@ -1083,8 +1075,8 @@ Create a handle: `output_list_of_module = BluefinTecsUserBackoffice.output_list_
 | --- | --- | --- |
 | `list` | `list()` |  |
 | `pagination` | `map()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
 
 #### Example: Create
 
@@ -1110,10 +1102,10 @@ Create a handle: `output_list_of_role_group = BluefinTecsUserBackoffice.output_l
 | Field | Type | Description |
 | --- | --- | --- |
 | `filter` | `map()` |  |
-| `group_role` | `list()` |  |
+| `groupRoles` | `list()` |  |
 | `pagination` | `map()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
 | `sorting` | `map()` |  |
 
 #### Example: Create
@@ -1142,8 +1134,8 @@ Create a handle: `output_list_of_transactions_history = BluefinTecsUserBackoffic
 | `filter` | `map()` |  |
 | `list` | `list()` |  |
 | `pagination` | `map()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
 | `sorting` | `map()` |  |
 
 #### Example: Create
@@ -1172,8 +1164,8 @@ Create a handle: `output_list_of_user = BluefinTecsUserBackoffice.output_list_of
 | `filter` | `map()` |  |
 | `list` | `list()` |  |
 | `pagination` | `map()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
 | `sorting` | `map()` |  |
 
 #### Example: Create
@@ -1199,10 +1191,10 @@ Create a handle: `output_provide_credential = BluefinTecsUserBackoffice.output_p
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `String.t()` |  |
+| `mandatorName` | `String.t()` |  |
 | `password` | `String.t()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
 | `username` | `String.t()` |  |
 
 #### Example: Create
@@ -1210,7 +1202,7 @@ Create a handle: `output_provide_credential = BluefinTecsUserBackoffice.output_p
 ```elixir
 output_provide_credential = BluefinTecsUserBackoffice.output_provide_credential(sdk)
 record = BluefinTecsUserBackoffice.Entity.OutputProvideCredential.create(output_provide_credential, BluefinTecsUserBackoffice.Helpers.deep(%{
-  "mandator_name" => "example_mandator_name",  # String.t()
+  "mandatorName" => "example_mandatorName",  # String.t()
 }))
 ```
 
@@ -1230,21 +1222,21 @@ Create a handle: `output_register_user = BluefinTecsUserBackoffice.output_regist
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `String.t()` |  |
-| `consumer_id` | `String.t()` |  |
-| `consumer_language` | `String.t()` |  |
+| `consumerId` | `String.t()` |  |
+| `consumerLanguage` | `String.t()` |  |
 | `country` | `String.t()` |  |
-| `date_of_birth` | `String.t()` |  |
-| `driver_licence_number` | `String.t()` |  |
+| `dateOfBirth` | `String.t()` |  |
+| `driverLicenceNumber` | `String.t()` |  |
 | `email` | `String.t()` |  |
-| `first_name` | `String.t()` |  |
-| `identification_number` | `String.t()` |  |
-| `last_name` | `String.t()` |  |
+| `firstName` | `String.t()` |  |
+| `identificationNumber` | `String.t()` |  |
+| `lastName` | `String.t()` |  |
 | `login` | `String.t()` |  |
 | `module` | `String.t()` |  |
-| `passport_number` | `String.t()` |  |
+| `passportNumber` | `String.t()` |  |
 | `phone` | `String.t()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
 | `salutation` | `String.t()` |  |
 | `state` | `String.t()` |  |
 | `street1` | `String.t()` |  |
@@ -1275,10 +1267,10 @@ Create a handle: `output_remove_role = BluefinTecsUserBackoffice.output_remove_r
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String.t()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
-| `role` | `list()` |  |
+| `consumerUUID` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
+| `roles` | `list()` |  |
 
 #### Example: Create
 
@@ -1303,19 +1295,19 @@ Create a handle: `output_resend_link = BluefinTecsUserBackoffice.output_resend_l
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `business_registration_number` | `String.t()` |  |
-| `consumer_uuid` | `String.t()` |  |
-| `email_confirmation_code` | `String.t()` |  |
-| `phone_number` | `String.t()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
+| `businessRegistrationNumber` | `String.t()` |  |
+| `consumerUUID` | `String.t()` |  |
+| `emailConfirmationCode` | `String.t()` |  |
+| `phoneNumber` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
 
 #### Example: Create
 
 ```elixir
 output_resend_link = BluefinTecsUserBackoffice.output_resend_link(sdk)
 record = BluefinTecsUserBackoffice.Entity.OutputResendLink.create(output_resend_link, BluefinTecsUserBackoffice.Helpers.deep(%{
-  "consumer_uuid" => "example_consumer_uuid",  # String.t()
+  "consumerUUID" => "example_consumerUUID",  # String.t()
 }))
 ```
 
@@ -1334,10 +1326,10 @@ Create a handle: `output_reset_password = BluefinTecsUserBackoffice.output_reset
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `String.t()` |  |
-| `phone_number` | `String.t()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
+| `consumerUuid` | `String.t()` |  |
+| `phoneNumber` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
 
 #### Example: Create
 
@@ -1363,23 +1355,23 @@ Create a handle: `output_update_consumer = BluefinTecsUserBackoffice.output_upda
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `String.t()` |  |
-| `consumer_uuid` | `String.t()` |  |
+| `consumerUuid` | `String.t()` |  |
 | `consumerlanguage` | `String.t()` |  |
 | `country` | `String.t()` |  |
-| `date_of_birth` | `String.t()` |  |
+| `dateOfBirth` | `String.t()` |  |
 | `datetime_created` | `String.t()` |  |
-| `driver_licence_number` | `String.t()` |  |
+| `driverLicenceNumber` | `String.t()` |  |
 | `email` | `String.t()` |  |
-| `first_name` | `String.t()` |  |
-| `identification_number` | `String.t()` |  |
-| `kyc_passed` | `boolean()` |  |
-| `last_name` | `String.t()` |  |
+| `firstName` | `String.t()` |  |
+| `identificationNumber` | `String.t()` |  |
+| `kycPassed` | `boolean()` |  |
+| `lastName` | `String.t()` |  |
 | `nationality` | `String.t()` |  |
-| `passport_number` | `String.t()` |  |
-| `phone_number` | `String.t()` |  |
-| `place_of_birth` | `String.t()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
+| `passportNumber` | `String.t()` |  |
+| `phoneNumber` | `String.t()` |  |
+| `placeOfBirth` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
 | `state` | `String.t()` |  |
 | `street1` | `String.t()` |  |
 | `street2` | `String.t()` |  |
@@ -1391,7 +1383,7 @@ Create a handle: `output_update_consumer = BluefinTecsUserBackoffice.output_upda
 ```elixir
 output_update_consumer = BluefinTecsUserBackoffice.output_update_consumer(sdk)
 record = BluefinTecsUserBackoffice.Entity.OutputUpdateConsumer.create(output_update_consumer, BluefinTecsUserBackoffice.Helpers.deep(%{
-  "consumer_uuid" => "example_consumer_uuid",  # String.t()
+  "consumerUuid" => "example_consumerUuid",  # String.t()
 }))
 ```
 
@@ -1410,13 +1402,13 @@ Create a handle: `output_update_profile = BluefinTecsUserBackoffice.output_updat
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_language` | `String.t()` |  |
+| `consumerLanguage` | `String.t()` |  |
 | `email` | `String.t()` |  |
-| `first_name` | `String.t()` |  |
-| `last_name` | `String.t()` |  |
-| `phone_number` | `String.t()` |  |
-| `response_code` | `integer()` |  |
-| `response_message` | `String.t()` |  |
+| `firstName` | `String.t()` |  |
+| `lastName` | `String.t()` |  |
+| `phoneNumber` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
 
 #### Example: Create
 
@@ -1441,8 +1433,8 @@ Create a handle: `version = BluefinTecsUserBackoffice.version(sdk)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_name` | `String.t()` |  |
-| `build_date` | `String.t()` |  |
+| `appName` | `String.t()` |  |
+| `buildDate` | `String.t()` |  |
 | `version` | `String.t()` |  |
 
 #### Example: Load

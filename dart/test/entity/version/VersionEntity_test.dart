@@ -48,7 +48,7 @@ void tests() {
       // LOAD
       final version_ref01_ent = client.Version();
       final version_ref01_match_dt0 = <String, dynamic>{};
-      final version_ref01_data_dt0 = await version_ref01_ent.load(version_ref01_match_dt0);
+      final version_ref01_data_dt0 = (await version_ref01_ent.load(version_ref01_match_dt0)).data();
       ok(null != version_ref01_data_dt0);
 
 

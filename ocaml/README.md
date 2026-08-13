@@ -43,9 +43,9 @@ let client = Sdk_client.make (jo [("apikey", Str (Sys.getenv "BLUEFIN_TECS_USER_
 ### 4. Create, update, and remove
 
 ```ocaml
-(* Create — returns the bare created record (a Map) *)
-let created = (Sdk_client.output_activate_digital_module client Noval).e_create (jo [("response_code", (Num 1.)); ("response_message", (Str "example_response_message"))]) Noval in
-ignore created;
+(* Create — resolves to the ENTITY; e_data_get gives the record *)
+let created = (Sdk_client.output_activate_digital_module client Noval).e_create (jo [("responseCode", (Num 1.)); ("responseMessage", (Str "example_responseMessage"))]) Noval in
+print_endline (stringify (created.e_data_get ()));
 
 ```
 
@@ -123,9 +123,9 @@ Create a mock client for unit testing — no server required:
 ```ocaml
 let () =
   let client = Sdk_client.test () in
-  (* Entity ops return the bare record and raise on error. *)
+  (* Entity ops resolve to the ENTITY and raise on error. *)
   let output_get_logo = (Sdk_client.output_get_logo client Noval).e_load (empty_map ()) Noval in
-  print_endline (stringify output_get_logo)  (* the mock response record *)
+  print_endline (stringify (output_get_logo.e_data_get ()))  (* the mock response record *)
 ```
 
 ### Use a custom fetch function
@@ -232,8 +232,8 @@ All entities are `entity_obj` records sharing the same fields.
 
 | Field | Signature | Description |
 | --- | --- | --- |
-| `e_load` | `value -> value -> value` | Load a single entity by match criteria. Raises on error. |
-| `e_create` | `value -> value -> value` | Create a new entity. Raises on error. |
+| `e_load` | `value -> value -> entity_obj` | Load a single entity by match criteria. Resolves to the entity. Raises on error. |
+| `e_create` | `value -> value -> entity_obj` | Create a new entity. Resolves to the entity. Raises on error. |
 | `e_data_get` | `unit -> value` | Get entity data. |
 | `e_data_set` | `value -> unit` | Set entity data. |
 | `e_match_get` | `unit -> value` | Get entity match criteria. |
@@ -243,9 +243,11 @@ All entities are `entity_obj` records sharing the same fields.
 
 ### Result shape
 
-Entity operations return the bare result value (a `Map` for single-entity
-ops, a `List` for `e_list`) and raise `Sdk_error.E` on error. Wrap calls
-in `try`/`with` to handle failures.
+Entity operations resolve to the ENTITY, not the raw record — `e_list` to
+one entity per record — and raise `Sdk_error.E` on error. The record is
+reached through `e_data_get`, which returns the entity's data container.
+`e_remove` resolves to the entity marked deleted (`e_deleted`); it keeps the
+data it held. Wrap calls in `try`/`with` to handle failures.
 
 The `direct` escape hatch never raises — it returns a result `value` map
 you branch on via `getp result "ok"`:
@@ -265,8 +267,8 @@ On error, `ok` is `Bool false` and `err` carries the error value.
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -276,10 +278,10 @@ API path: `/activateDigitalModule`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `notification_email` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clientSecret` |  |
+| `notificationEmail` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -289,8 +291,8 @@ API path: `/activateMerchantPortalModule`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -300,9 +302,9 @@ API path: `/activateAppStoreModule`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -312,10 +314,10 @@ API path: `/activateUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `role` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `roles` |  |
 
 Operations: Create.
 
@@ -325,10 +327,10 @@ API path: `/assignRoles`
 
 | Field | Description |
 | --- | --- |
-| `content_as_base64` |  |
-| `mime_type` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `contentAsBase64` |  |
+| `mimeType` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -340,25 +342,22 @@ API path: `/changeLogo`
 | --- | --- |
 | `city` |  |
 | `country` |  |
-| `date_of_birth` |  |
+| `dateOfBirth` |  |
 | `description` |  |
-| `drivers_license_number` |  |
+| `driversLicenseNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `lastName` |  |
 | `login` |  |
-| `mandator` |  |
 | `name` |  |
-| `passport_number` |  |
+| `passportNumber` |  |
 | `phone` |  |
-| `response_code` |  |
-| `response_message` |  |
 | `salutation` |  |
 | `state` |  |
 | `street1` |  |
 | `street2` |  |
-| `zip_code` |  |
+| `zipCode` |  |
 
 Operations: Create.
 
@@ -368,9 +367,9 @@ API path: `/createMandator`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `mandatorName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -380,9 +379,9 @@ API path: `/createServiceUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -392,10 +391,10 @@ API path: `/deactivateUser`
 
 | Field | Description |
 | --- | --- |
-| `case_id` |  |
-| `encoded_data_base64` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `caseID` |  |
+| `encodedDataBase64` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -405,10 +404,10 @@ API path: `/getKycDocument`
 
 | Field | Description |
 | --- | --- |
-| `content_as_base64` |  |
-| `mime_type` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `contentAsBase64` |  |
+| `mimeType` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Load.
 
@@ -418,9 +417,9 @@ API path: `/getLogo`
 
 | Field | Description |
 | --- | --- |
-| `available_role` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `availableRoles` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -433,8 +432,8 @@ API path: `/listOfAvailableRoles`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -447,8 +446,8 @@ API path: `/listOfMandators`
 | --- | --- |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -459,10 +458,10 @@ API path: `/listOfModules`
 | Field | Description |
 | --- | --- |
 | `filter` |  |
-| `group_role` |  |
+| `groupRoles` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -476,8 +475,8 @@ API path: `/listOfRoleGroups`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -491,8 +490,8 @@ API path: `/listOfTransactionsHistory`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -503,10 +502,10 @@ API path: `/listOfUsers`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
+| `mandatorName` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `username` |  |
 
 Operations: Create.
@@ -518,21 +517,21 @@ API path: `/provideCredentials`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `consumer_id` |  |
-| `consumer_language` |  |
+| `consumerId` |  |
+| `consumerLanguage` |  |
 | `country` |  |
-| `date_of_birth` |  |
-| `driver_licence_number` |  |
+| `dateOfBirth` |  |
+| `driverLicenceNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `lastName` |  |
 | `login` |  |
 | `module` |  |
-| `passport_number` |  |
+| `passportNumber` |  |
 | `phone` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `salutation` |  |
 | `state` |  |
 | `street1` |  |
@@ -547,10 +546,10 @@ API path: `/registerUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `role` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `roles` |  |
 
 Operations: Create.
 
@@ -560,12 +559,12 @@ API path: `/removeRoles`
 
 | Field | Description |
 | --- | --- |
-| `business_registration_number` |  |
-| `consumer_uuid` |  |
-| `email_confirmation_code` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `businessRegistrationNumber` |  |
+| `consumerUUID` |  |
+| `emailConfirmationCode` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -575,10 +574,10 @@ API path: `/resendLink`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUuid` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -589,23 +588,23 @@ API path: `/resetPassword`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `consumer_uuid` |  |
+| `consumerUuid` |  |
 | `consumerlanguage` |  |
 | `country` |  |
-| `date_of_birth` |  |
+| `dateOfBirth` |  |
 | `datetime_created` |  |
-| `driver_licence_number` |  |
+| `driverLicenceNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `kyc_passed` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `kycPassed` |  |
+| `lastName` |  |
 | `nationality` |  |
-| `passport_number` |  |
-| `phone_number` |  |
-| `place_of_birth` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `passportNumber` |  |
+| `phoneNumber` |  |
+| `placeOfBirth` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `state` |  |
 | `street1` |  |
 | `street2` |  |
@@ -620,13 +619,13 @@ API path: `/updateConsumer`
 
 | Field | Description |
 | --- | --- |
-| `consumer_language` |  |
+| `consumerLanguage` |  |
 | `email` |  |
-| `first_name` |  |
-| `last_name` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `firstName` |  |
+| `lastName` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -636,8 +635,8 @@ API path: `/updateProfile`
 
 | Field | Description |
 | --- | --- |
-| `app_name` |  |
-| `build_date` |  |
+| `appName` |  |
+| `buildDate` |  |
 | `version` |  |
 
 Operations: Load.
@@ -657,20 +656,21 @@ Create an instance: `let output_activate_digital_module = Sdk_client.output_acti
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let output_activate_digital_module = (Sdk_client.output_activate_digital_module client Noval).e_create (jo [
 ]) Noval
+let output_activate_digital_module_data = output_activate_digital_module.e_data_get ()
 ```
 
 
@@ -682,24 +682,25 @@ Create an instance: `let output_activate_portal_module = Sdk_client.output_activ
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `string` |  |
-| `notification_email` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `clientSecret` | `string` |  |
+| `notificationEmail` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let output_activate_portal_module = (Sdk_client.output_activate_portal_module client Noval).e_create (jo [
-    ("client_secret", (Str "example_client_secret"));  (* string *)
-    ("notification_email", (Str "example_notification_email"));  (* string *)
+    ("clientSecret", (Str "example_clientSecret"));  (* string *)
+    ("notificationEmail", (Str "example_notificationEmail"));  (* string *)
 ]) Noval
+let output_activate_portal_module_data = output_activate_portal_module.e_data_get ()
 ```
 
 
@@ -711,20 +712,21 @@ Create an instance: `let output_activate_store_module = Sdk_client.output_activa
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let output_activate_store_module = (Sdk_client.output_activate_store_module client Noval).e_create (jo [
 ]) Noval
+let output_activate_store_module_data = output_activate_store_module.e_data_get ()
 ```
 
 
@@ -736,21 +738,22 @@ Create an instance: `let output_activate_user = Sdk_client.output_activate_user 
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `consumerUUID` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let output_activate_user = (Sdk_client.output_activate_user client Noval).e_create (jo [
 ]) Noval
+let output_activate_user_data = output_activate_user.e_data_get ()
 ```
 
 
@@ -762,24 +765,25 @@ Create an instance: `let output_assign_role = Sdk_client.output_assign_role clie
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `role` | `value list` |  |
+| `consumerUUID` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `roles` | `value list` |  |
 
 #### Example: Create
 
 ```ocaml
 let output_assign_role = (Sdk_client.output_assign_role client Noval).e_create (jo [
-    ("consumer_uuid", (Str "example_consumer_uuid"));  (* string *)
-    ("role", (empty_list ()));  (* value list *)
+    ("consumerUUID", (Str "example_consumerUUID"));  (* string *)
+    ("roles", (empty_list ()));  (* value list *)
 ]) Noval
+let output_assign_role_data = output_assign_role.e_data_get ()
 ```
 
 
@@ -791,24 +795,25 @@ Create an instance: `let output_change_logo = Sdk_client.output_change_logo clie
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `content_as_base64` | `string` |  |
-| `mime_type` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `contentAsBase64` | `string` |  |
+| `mimeType` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let output_change_logo = (Sdk_client.output_change_logo client Noval).e_create (jo [
-    ("content_as_base64", (Str "example_content_as_base64"));  (* string *)
-    ("mime_type", (Str "example_mime_type"));  (* string *)
+    ("contentAsBase64", (Str "example_contentAsBase64"));  (* string *)
+    ("mimeType", (Str "example_mimeType"));  (* string *)
 ]) Noval
+let output_change_logo_data = output_change_logo.e_data_get ()
 ```
 
 
@@ -820,7 +825,7 @@ Create an instance: `let output_create_mandator = Sdk_client.output_create_manda
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
@@ -828,36 +833,32 @@ Create an instance: `let output_create_mandator = Sdk_client.output_create_manda
 | --- | --- | --- |
 | `city` | `string` |  |
 | `country` | `string` |  |
-| `date_of_birth` | `string` |  |
+| `dateOfBirth` | `string` |  |
 | `description` | `string` |  |
-| `drivers_license_number` | `string` |  |
+| `driversLicenseNumber` | `string` |  |
 | `email` | `string` |  |
-| `first_name` | `string` |  |
-| `identification_number` | `string` |  |
-| `last_name` | `string` |  |
+| `firstName` | `string` |  |
+| `identificationNumber` | `string` |  |
+| `lastName` | `string` |  |
 | `login` | `string` |  |
-| `mandator` | `value map` |  |
 | `name` | `string` |  |
-| `passport_number` | `string` |  |
+| `passportNumber` | `string` |  |
 | `phone` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
 | `salutation` | `string` |  |
 | `state` | `string` |  |
 | `street1` | `string` |  |
 | `street2` | `string` |  |
-| `zip_code` | `string` |  |
+| `zipCode` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let output_create_mandator = (Sdk_client.output_create_mandator client Noval).e_create (jo [
-    ("description", (Str "example_description"));  (* string *)
     ("email", (Str "example_email"));  (* string *)
     ("login", (Str "example_login"));  (* string *)
-    ("name", (Str "example_name"));  (* string *)
     ("phone", (Str "example_phone"));  (* string *)
 ]) Noval
+let output_create_mandator_data = output_create_mandator.e_data_get ()
 ```
 
 
@@ -869,22 +870,23 @@ Create an instance: `let output_create_service_user = Sdk_client.output_create_s
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `mandatorName` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let output_create_service_user = (Sdk_client.output_create_service_user client Noval).e_create (jo [
-    ("mandator_name", (Str "example_mandator_name"));  (* string *)
+    ("mandatorName", (Str "example_mandatorName"));  (* string *)
 ]) Noval
+let output_create_service_user_data = output_create_service_user.e_data_get ()
 ```
 
 
@@ -896,21 +898,22 @@ Create an instance: `let output_deactivate_user = Sdk_client.output_deactivate_u
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `consumerUUID` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let output_deactivate_user = (Sdk_client.output_deactivate_user client Noval).e_create (jo [
 ]) Noval
+let output_deactivate_user_data = output_deactivate_user.e_data_get ()
 ```
 
 
@@ -922,22 +925,23 @@ Create an instance: `let output_get_kyc_document = Sdk_client.output_get_kyc_doc
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `case_id` | `string` |  |
-| `encoded_data_base64` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `caseID` | `string` |  |
+| `encodedDataBase64` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let output_get_kyc_document = (Sdk_client.output_get_kyc_document client Noval).e_create (jo [
 ]) Noval
+let output_get_kyc_document_data = output_get_kyc_document.e_data_get ()
 ```
 
 
@@ -949,21 +953,23 @@ Create an instance: `let output_get_logo = Sdk_client.output_get_logo client Nov
 
 | Method | Description |
 | --- | --- |
-| `e_load reqmatch ctrl` | Load a single entity by match criteria. |
+| `e_load reqmatch ctrl` | Load a single entity by match criteria. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `content_as_base64` | `string` |  |
-| `mime_type` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `contentAsBase64` | `string` |  |
+| `mimeType` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Load
 
 ```ocaml
+(* The op resolves to the ENTITY; the record is inside it. *)
 let output_get_logo = (Sdk_client.output_get_logo client Noval).e_load (Noval) Noval
+let output_get_logo_data = output_get_logo.e_data_get ()
 ```
 
 
@@ -975,21 +981,22 @@ Create an instance: `let output_list_of_available_role = Sdk_client.output_list_
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `available_role` | `value list` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `availableRoles` | `value list` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let output_list_of_available_role = (Sdk_client.output_list_of_available_role client Noval).e_create (jo [
 ]) Noval
+let output_list_of_available_role_data = output_list_of_available_role.e_data_get ()
 ```
 
 
@@ -1001,7 +1008,7 @@ Create an instance: `let output_list_of_mandator = Sdk_client.output_list_of_man
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
@@ -1010,8 +1017,8 @@ Create an instance: `let output_list_of_mandator = Sdk_client.output_list_of_man
 | `filter` | `value map` |  |
 | `list` | `value list` |  |
 | `pagination` | `value map` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 | `sorting` | `value map` |  |
 
 #### Example: Create
@@ -1019,6 +1026,7 @@ Create an instance: `let output_list_of_mandator = Sdk_client.output_list_of_man
 ```ocaml
 let output_list_of_mandator = (Sdk_client.output_list_of_mandator client Noval).e_create (jo [
 ]) Noval
+let output_list_of_mandator_data = output_list_of_mandator.e_data_get ()
 ```
 
 
@@ -1030,7 +1038,7 @@ Create an instance: `let output_list_of_module = Sdk_client.output_list_of_modul
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
@@ -1038,14 +1046,15 @@ Create an instance: `let output_list_of_module = Sdk_client.output_list_of_modul
 | --- | --- | --- |
 | `list` | `value list` |  |
 | `pagination` | `value map` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let output_list_of_module = (Sdk_client.output_list_of_module client Noval).e_create (jo [
 ]) Noval
+let output_list_of_module_data = output_list_of_module.e_data_get ()
 ```
 
 
@@ -1057,17 +1066,17 @@ Create an instance: `let output_list_of_role_group = Sdk_client.output_list_of_r
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
 | `filter` | `value map` |  |
-| `group_role` | `value list` |  |
+| `groupRoles` | `value list` |  |
 | `pagination` | `value map` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 | `sorting` | `value map` |  |
 
 #### Example: Create
@@ -1075,6 +1084,7 @@ Create an instance: `let output_list_of_role_group = Sdk_client.output_list_of_r
 ```ocaml
 let output_list_of_role_group = (Sdk_client.output_list_of_role_group client Noval).e_create (jo [
 ]) Noval
+let output_list_of_role_group_data = output_list_of_role_group.e_data_get ()
 ```
 
 
@@ -1086,7 +1096,7 @@ Create an instance: `let output_list_of_transactions_history = Sdk_client.output
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
@@ -1095,8 +1105,8 @@ Create an instance: `let output_list_of_transactions_history = Sdk_client.output
 | `filter` | `value map` |  |
 | `list` | `value list` |  |
 | `pagination` | `value map` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 | `sorting` | `value map` |  |
 
 #### Example: Create
@@ -1104,6 +1114,7 @@ Create an instance: `let output_list_of_transactions_history = Sdk_client.output
 ```ocaml
 let output_list_of_transactions_history = (Sdk_client.output_list_of_transactions_history client Noval).e_create (jo [
 ]) Noval
+let output_list_of_transactions_history_data = output_list_of_transactions_history.e_data_get ()
 ```
 
 
@@ -1115,7 +1126,7 @@ Create an instance: `let output_list_of_user = Sdk_client.output_list_of_user cl
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
@@ -1124,8 +1135,8 @@ Create an instance: `let output_list_of_user = Sdk_client.output_list_of_user cl
 | `filter` | `value map` |  |
 | `list` | `value list` |  |
 | `pagination` | `value map` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 | `sorting` | `value map` |  |
 
 #### Example: Create
@@ -1133,6 +1144,7 @@ Create an instance: `let output_list_of_user = Sdk_client.output_list_of_user cl
 ```ocaml
 let output_list_of_user = (Sdk_client.output_list_of_user client Noval).e_create (jo [
 ]) Noval
+let output_list_of_user_data = output_list_of_user.e_data_get ()
 ```
 
 
@@ -1144,24 +1156,25 @@ Create an instance: `let output_provide_credential = Sdk_client.output_provide_c
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `string` |  |
+| `mandatorName` | `string` |  |
 | `password` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 | `username` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let output_provide_credential = (Sdk_client.output_provide_credential client Noval).e_create (jo [
-    ("mandator_name", (Str "example_mandator_name"));  (* string *)
+    ("mandatorName", (Str "example_mandatorName"));  (* string *)
 ]) Noval
+let output_provide_credential_data = output_provide_credential.e_data_get ()
 ```
 
 
@@ -1173,28 +1186,28 @@ Create an instance: `let output_register_user = Sdk_client.output_register_user 
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `string` |  |
-| `consumer_id` | `string` |  |
-| `consumer_language` | `string` |  |
+| `consumerId` | `string` |  |
+| `consumerLanguage` | `string` |  |
 | `country` | `string` |  |
-| `date_of_birth` | `string` |  |
-| `driver_licence_number` | `string` |  |
+| `dateOfBirth` | `string` |  |
+| `driverLicenceNumber` | `string` |  |
 | `email` | `string` |  |
-| `first_name` | `string` |  |
-| `identification_number` | `string` |  |
-| `last_name` | `string` |  |
+| `firstName` | `string` |  |
+| `identificationNumber` | `string` |  |
+| `lastName` | `string` |  |
 | `login` | `string` |  |
 | `module` | `string` |  |
-| `passport_number` | `string` |  |
+| `passportNumber` | `string` |  |
 | `phone` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 | `salutation` | `string` |  |
 | `state` | `string` |  |
 | `street1` | `string` |  |
@@ -1207,6 +1220,7 @@ Create an instance: `let output_register_user = Sdk_client.output_register_user 
 let output_register_user = (Sdk_client.output_register_user client Noval).e_create (jo [
     ("email", (Str "example_email"));  (* string *)
 ]) Noval
+let output_register_user_data = output_register_user.e_data_get ()
 ```
 
 
@@ -1218,22 +1232,23 @@ Create an instance: `let output_remove_role = Sdk_client.output_remove_role clie
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `role` | `value list` |  |
+| `consumerUUID` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `roles` | `value list` |  |
 
 #### Example: Create
 
 ```ocaml
 let output_remove_role = (Sdk_client.output_remove_role client Noval).e_create (jo [
 ]) Noval
+let output_remove_role_data = output_remove_role.e_data_get ()
 ```
 
 
@@ -1245,25 +1260,26 @@ Create an instance: `let output_resend_link = Sdk_client.output_resend_link clie
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `business_registration_number` | `string` |  |
-| `consumer_uuid` | `string` |  |
-| `email_confirmation_code` | `string` |  |
-| `phone_number` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `businessRegistrationNumber` | `string` |  |
+| `consumerUUID` | `string` |  |
+| `emailConfirmationCode` | `string` |  |
+| `phoneNumber` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let output_resend_link = (Sdk_client.output_resend_link client Noval).e_create (jo [
-    ("consumer_uuid", (Str "example_consumer_uuid"));  (* string *)
+    ("consumerUUID", (Str "example_consumerUUID"));  (* string *)
 ]) Noval
+let output_resend_link_data = output_resend_link.e_data_get ()
 ```
 
 
@@ -1275,22 +1291,23 @@ Create an instance: `let output_reset_password = Sdk_client.output_reset_passwor
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `phone_number` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `consumerUuid` | `string` |  |
+| `phoneNumber` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let output_reset_password = (Sdk_client.output_reset_password client Noval).e_create (jo [
 ]) Noval
+let output_reset_password_data = output_reset_password.e_data_get ()
 ```
 
 
@@ -1302,30 +1319,30 @@ Create an instance: `let output_update_consumer = Sdk_client.output_update_consu
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `string` |  |
-| `consumer_uuid` | `string` |  |
+| `consumerUuid` | `string` |  |
 | `consumerlanguage` | `string` |  |
 | `country` | `string` |  |
-| `date_of_birth` | `string` |  |
+| `dateOfBirth` | `string` |  |
 | `datetime_created` | `string` |  |
-| `driver_licence_number` | `string` |  |
+| `driverLicenceNumber` | `string` |  |
 | `email` | `string` |  |
-| `first_name` | `string` |  |
-| `identification_number` | `string` |  |
-| `kyc_passed` | `bool` |  |
-| `last_name` | `string` |  |
+| `firstName` | `string` |  |
+| `identificationNumber` | `string` |  |
+| `kycPassed` | `bool` |  |
+| `lastName` | `string` |  |
 | `nationality` | `string` |  |
-| `passport_number` | `string` |  |
-| `phone_number` | `string` |  |
-| `place_of_birth` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `passportNumber` | `string` |  |
+| `phoneNumber` | `string` |  |
+| `placeOfBirth` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 | `state` | `string` |  |
 | `street1` | `string` |  |
 | `street2` | `string` |  |
@@ -1336,8 +1353,9 @@ Create an instance: `let output_update_consumer = Sdk_client.output_update_consu
 
 ```ocaml
 let output_update_consumer = (Sdk_client.output_update_consumer client Noval).e_create (jo [
-    ("consumer_uuid", (Str "example_consumer_uuid"));  (* string *)
+    ("consumerUuid", (Str "example_consumerUuid"));  (* string *)
 ]) Noval
+let output_update_consumer_data = output_update_consumer.e_data_get ()
 ```
 
 
@@ -1349,25 +1367,26 @@ Create an instance: `let output_update_profile = Sdk_client.output_update_profil
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_language` | `string` |  |
+| `consumerLanguage` | `string` |  |
 | `email` | `string` |  |
-| `first_name` | `string` |  |
-| `last_name` | `string` |  |
-| `phone_number` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `firstName` | `string` |  |
+| `lastName` | `string` |  |
+| `phoneNumber` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let output_update_profile = (Sdk_client.output_update_profile client Noval).e_create (jo [
 ]) Noval
+let output_update_profile_data = output_update_profile.e_data_get ()
 ```
 
 
@@ -1379,20 +1398,22 @@ Create an instance: `let version = Sdk_client.version client Noval`
 
 | Method | Description |
 | --- | --- |
-| `e_load reqmatch ctrl` | Load a single entity by match criteria. |
+| `e_load reqmatch ctrl` | Load a single entity by match criteria. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_name` | `string` |  |
-| `build_date` | `string` |  |
+| `appName` | `string` |  |
+| `buildDate` | `string` |  |
 | `version` | `string` |  |
 
 #### Example: Load
 
 ```ocaml
+(* The op resolves to the ENTITY; the record is inside it. *)
 let version = (Sdk_client.version client Noval).e_load (Noval) Noval
+let version_data = version.e_data_get ()
 ```
 
 

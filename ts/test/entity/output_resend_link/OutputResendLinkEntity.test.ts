@@ -26,8 +26,8 @@ import {
 describe('OutputResendLinkEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSUSERBACKOFFICE_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSUSERBACKOFFICE_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsUserBackofficeSDK.test()
@@ -62,7 +62,7 @@ describe('OutputResendLinkEntity', async () => {
     const output_resend_link_ref01_ent = client.OutputResendLink()
     let output_resend_link_ref01_data = setup.data.new.output_resend_link['output_resend_link_ref01']
 
-    output_resend_link_ref01_data = await output_resend_link_ref01_ent.create(output_resend_link_ref01_data)
+    output_resend_link_ref01_data = (await output_resend_link_ref01_ent.create(output_resend_link_ref01_data)).data()
     assert(null != output_resend_link_ref01_data)
 
 

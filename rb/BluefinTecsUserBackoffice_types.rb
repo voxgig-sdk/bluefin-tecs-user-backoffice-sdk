@@ -10,213 +10,213 @@
 
 # OutputActivateDigitalModule entity data model.
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 OutputActivateDigitalModule = Struct.new(
-  :response_code,
-  :response_message,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # Request payload for OutputActivateDigitalModule#create.
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 OutputActivateDigitalModuleCreateData = Struct.new(
-  :response_code,
-  :response_message,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # OutputActivatePortalModule entity data model.
 #
-# @!attribute [rw] client_secret
+# @!attribute [rw] clientSecret
 #   @return [String]
 #
-# @!attribute [rw] notification_email
+# @!attribute [rw] notificationEmail
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 OutputActivatePortalModule = Struct.new(
-  :client_secret,
-  :notification_email,
-  :response_code,
-  :response_message,
+  :clientSecret,
+  :notificationEmail,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # Request payload for OutputActivatePortalModule#create.
 #
-# @!attribute [rw] client_secret
+# @!attribute [rw] clientSecret
 #   @return [String]
 #
-# @!attribute [rw] notification_email
+# @!attribute [rw] notificationEmail
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 OutputActivatePortalModuleCreateData = Struct.new(
-  :client_secret,
-  :notification_email,
-  :response_code,
-  :response_message,
+  :clientSecret,
+  :notificationEmail,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # OutputActivateStoreModule entity data model.
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 OutputActivateStoreModule = Struct.new(
-  :response_code,
-  :response_message,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # Request payload for OutputActivateStoreModule#create.
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 OutputActivateStoreModuleCreateData = Struct.new(
-  :response_code,
-  :response_message,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # OutputActivateUser entity data model.
 #
-# @!attribute [rw] consumer_uuid
+# @!attribute [rw] consumerUUID
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 OutputActivateUser = Struct.new(
-  :consumer_uuid,
-  :response_code,
-  :response_message,
+  :consumerUUID,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # Request payload for OutputActivateUser#create.
 #
-# @!attribute [rw] consumer_uuid
+# @!attribute [rw] consumerUUID
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 OutputActivateUserCreateData = Struct.new(
-  :consumer_uuid,
-  :response_code,
-  :response_message,
+  :consumerUUID,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # OutputAssignRole entity data model.
 #
-# @!attribute [rw] consumer_uuid
+# @!attribute [rw] consumerUUID
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] role
+# @!attribute [rw] roles
 #   @return [Array]
 OutputAssignRole = Struct.new(
-  :consumer_uuid,
-  :response_code,
-  :response_message,
-  :role,
+  :consumerUUID,
+  :responseCode,
+  :responseMessage,
+  :roles,
   keyword_init: true
 )
 
 # Request payload for OutputAssignRole#create.
 #
-# @!attribute [rw] consumer_uuid
+# @!attribute [rw] consumerUUID
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] role
+# @!attribute [rw] roles
 #   @return [Array]
 OutputAssignRoleCreateData = Struct.new(
-  :consumer_uuid,
-  :response_code,
-  :response_message,
-  :role,
+  :consumerUUID,
+  :responseCode,
+  :responseMessage,
+  :roles,
   keyword_init: true
 )
 
 # OutputChangeLogo entity data model.
 #
-# @!attribute [rw] content_as_base64
+# @!attribute [rw] contentAsBase64
 #   @return [String]
 #
-# @!attribute [rw] mime_type
+# @!attribute [rw] mimeType
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 OutputChangeLogo = Struct.new(
-  :content_as_base64,
-  :mime_type,
-  :response_code,
-  :response_message,
+  :contentAsBase64,
+  :mimeType,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # Request payload for OutputChangeLogo#create.
 #
-# @!attribute [rw] content_as_base64
+# @!attribute [rw] contentAsBase64
 #   @return [String]
 #
-# @!attribute [rw] mime_type
+# @!attribute [rw] mimeType
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 OutputChangeLogoCreateData = Struct.new(
-  :content_as_base64,
-  :mime_type,
-  :response_code,
-  :response_message,
+  :contentAsBase64,
+  :mimeType,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
@@ -228,47 +228,38 @@ OutputChangeLogoCreateData = Struct.new(
 # @!attribute [rw] country
 #   @return [String, nil]
 #
-# @!attribute [rw] date_of_birth
+# @!attribute [rw] dateOfBirth
 #   @return [String, nil]
 #
 # @!attribute [rw] description
-#   @return [String]
+#   @return [String, nil]
 #
-# @!attribute [rw] drivers_license_number
+# @!attribute [rw] driversLicenseNumber
 #   @return [String, nil]
 #
 # @!attribute [rw] email
 #   @return [String]
 #
-# @!attribute [rw] first_name
+# @!attribute [rw] firstName
 #   @return [String, nil]
 #
-# @!attribute [rw] identification_number
+# @!attribute [rw] identificationNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] last_name
+# @!attribute [rw] lastName
 #   @return [String, nil]
 #
 # @!attribute [rw] login
 #   @return [String]
 #
-# @!attribute [rw] mandator
-#   @return [Hash, nil]
-#
 # @!attribute [rw] name
-#   @return [String]
+#   @return [String, nil]
 #
-# @!attribute [rw] passport_number
+# @!attribute [rw] passportNumber
 #   @return [String, nil]
 #
 # @!attribute [rw] phone
 #   @return [String]
-#
-# @!attribute [rw] response_code
-#   @return [Integer, nil]
-#
-# @!attribute [rw] response_message
-#   @return [String, nil]
 #
 # @!attribute [rw] salutation
 #   @return [String, nil]
@@ -282,30 +273,27 @@ OutputChangeLogoCreateData = Struct.new(
 # @!attribute [rw] street2
 #   @return [String, nil]
 #
-# @!attribute [rw] zip_code
+# @!attribute [rw] zipCode
 #   @return [String, nil]
 OutputCreateMandator = Struct.new(
   :city,
   :country,
-  :date_of_birth,
+  :dateOfBirth,
   :description,
-  :drivers_license_number,
+  :driversLicenseNumber,
   :email,
-  :first_name,
-  :identification_number,
-  :last_name,
+  :firstName,
+  :identificationNumber,
+  :lastName,
   :login,
-  :mandator,
   :name,
-  :passport_number,
+  :passportNumber,
   :phone,
-  :response_code,
-  :response_message,
   :salutation,
   :state,
   :street1,
   :street2,
-  :zip_code,
+  :zipCode,
   keyword_init: true
 )
 
@@ -317,47 +305,38 @@ OutputCreateMandator = Struct.new(
 # @!attribute [rw] country
 #   @return [String, nil]
 #
-# @!attribute [rw] date_of_birth
+# @!attribute [rw] dateOfBirth
 #   @return [String, nil]
 #
 # @!attribute [rw] description
-#   @return [String]
+#   @return [String, nil]
 #
-# @!attribute [rw] drivers_license_number
+# @!attribute [rw] driversLicenseNumber
 #   @return [String, nil]
 #
 # @!attribute [rw] email
 #   @return [String]
 #
-# @!attribute [rw] first_name
+# @!attribute [rw] firstName
 #   @return [String, nil]
 #
-# @!attribute [rw] identification_number
+# @!attribute [rw] identificationNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] last_name
+# @!attribute [rw] lastName
 #   @return [String, nil]
 #
 # @!attribute [rw] login
 #   @return [String]
 #
-# @!attribute [rw] mandator
-#   @return [Hash, nil]
-#
 # @!attribute [rw] name
-#   @return [String]
+#   @return [String, nil]
 #
-# @!attribute [rw] passport_number
+# @!attribute [rw] passportNumber
 #   @return [String, nil]
 #
 # @!attribute [rw] phone
 #   @return [String]
-#
-# @!attribute [rw] response_code
-#   @return [Integer, nil]
-#
-# @!attribute [rw] response_message
-#   @return [String, nil]
 #
 # @!attribute [rw] salutation
 #   @return [String, nil]
@@ -371,216 +350,213 @@ OutputCreateMandator = Struct.new(
 # @!attribute [rw] street2
 #   @return [String, nil]
 #
-# @!attribute [rw] zip_code
+# @!attribute [rw] zipCode
 #   @return [String, nil]
 OutputCreateMandatorCreateData = Struct.new(
   :city,
   :country,
-  :date_of_birth,
+  :dateOfBirth,
   :description,
-  :drivers_license_number,
+  :driversLicenseNumber,
   :email,
-  :first_name,
-  :identification_number,
-  :last_name,
+  :firstName,
+  :identificationNumber,
+  :lastName,
   :login,
-  :mandator,
   :name,
-  :passport_number,
+  :passportNumber,
   :phone,
-  :response_code,
-  :response_message,
   :salutation,
   :state,
   :street1,
   :street2,
-  :zip_code,
+  :zipCode,
   keyword_init: true
 )
 
 # OutputCreateServiceUser entity data model.
 #
-# @!attribute [rw] mandator_name
+# @!attribute [rw] mandatorName
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 OutputCreateServiceUser = Struct.new(
-  :mandator_name,
-  :response_code,
-  :response_message,
+  :mandatorName,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # Request payload for OutputCreateServiceUser#create.
 #
-# @!attribute [rw] mandator_name
+# @!attribute [rw] mandatorName
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 OutputCreateServiceUserCreateData = Struct.new(
-  :mandator_name,
-  :response_code,
-  :response_message,
+  :mandatorName,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # OutputDeactivateUser entity data model.
 #
-# @!attribute [rw] consumer_uuid
+# @!attribute [rw] consumerUUID
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 OutputDeactivateUser = Struct.new(
-  :consumer_uuid,
-  :response_code,
-  :response_message,
+  :consumerUUID,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # Request payload for OutputDeactivateUser#create.
 #
-# @!attribute [rw] consumer_uuid
+# @!attribute [rw] consumerUUID
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 OutputDeactivateUserCreateData = Struct.new(
-  :consumer_uuid,
-  :response_code,
-  :response_message,
+  :consumerUUID,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # OutputGetKycDocument entity data model.
 #
-# @!attribute [rw] case_id
+# @!attribute [rw] caseID
 #   @return [String, nil]
 #
-# @!attribute [rw] encoded_data_base64
+# @!attribute [rw] encodedDataBase64
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 OutputGetKycDocument = Struct.new(
-  :case_id,
-  :encoded_data_base64,
-  :response_code,
-  :response_message,
+  :caseID,
+  :encodedDataBase64,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # Request payload for OutputGetKycDocument#create.
 #
-# @!attribute [rw] case_id
+# @!attribute [rw] caseID
 #   @return [String, nil]
 #
-# @!attribute [rw] encoded_data_base64
+# @!attribute [rw] encodedDataBase64
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 OutputGetKycDocumentCreateData = Struct.new(
-  :case_id,
-  :encoded_data_base64,
-  :response_code,
-  :response_message,
+  :caseID,
+  :encodedDataBase64,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # OutputGetLogo entity data model.
 #
-# @!attribute [rw] content_as_base64
+# @!attribute [rw] contentAsBase64
 #   @return [String]
 #
-# @!attribute [rw] mime_type
+# @!attribute [rw] mimeType
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 OutputGetLogo = Struct.new(
-  :content_as_base64,
-  :mime_type,
-  :response_code,
-  :response_message,
+  :contentAsBase64,
+  :mimeType,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # Request payload for OutputGetLogo#load.
 #
-# @!attribute [rw] content_as_base64
+# @!attribute [rw] contentAsBase64
 #   @return [String, nil]
 #
-# @!attribute [rw] mime_type
+# @!attribute [rw] mimeType
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 OutputGetLogoLoadMatch = Struct.new(
-  :content_as_base64,
-  :mime_type,
-  :response_code,
-  :response_message,
+  :contentAsBase64,
+  :mimeType,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # OutputListOfAvailableRole entity data model.
 #
-# @!attribute [rw] available_role
+# @!attribute [rw] availableRoles
 #   @return [Array, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 OutputListOfAvailableRole = Struct.new(
-  :available_role,
-  :response_code,
-  :response_message,
+  :availableRoles,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # Request payload for OutputListOfAvailableRole#create.
 #
-# @!attribute [rw] available_role
+# @!attribute [rw] availableRoles
 #   @return [Array, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 OutputListOfAvailableRoleCreateData = Struct.new(
-  :available_role,
-  :response_code,
-  :response_message,
+  :availableRoles,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
@@ -595,10 +571,10 @@ OutputListOfAvailableRoleCreateData = Struct.new(
 # @!attribute [rw] pagination
 #   @return [Hash, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
 # @!attribute [rw] sorting
@@ -607,8 +583,8 @@ OutputListOfMandator = Struct.new(
   :filter,
   :list,
   :pagination,
-  :response_code,
-  :response_message,
+  :responseCode,
+  :responseMessage,
   :sorting,
   keyword_init: true
 )
@@ -624,10 +600,10 @@ OutputListOfMandator = Struct.new(
 # @!attribute [rw] pagination
 #   @return [Hash, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
 # @!attribute [rw] sorting
@@ -636,8 +612,8 @@ OutputListOfMandatorCreateData = Struct.new(
   :filter,
   :list,
   :pagination,
-  :response_code,
-  :response_message,
+  :responseCode,
+  :responseMessage,
   :sorting,
   keyword_init: true
 )
@@ -650,16 +626,16 @@ OutputListOfMandatorCreateData = Struct.new(
 # @!attribute [rw] pagination
 #   @return [Hash, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 OutputListOfModule = Struct.new(
   :list,
   :pagination,
-  :response_code,
-  :response_message,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
@@ -671,16 +647,16 @@ OutputListOfModule = Struct.new(
 # @!attribute [rw] pagination
 #   @return [Hash, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 OutputListOfModuleCreateData = Struct.new(
   :list,
   :pagination,
-  :response_code,
-  :response_message,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
@@ -689,26 +665,26 @@ OutputListOfModuleCreateData = Struct.new(
 # @!attribute [rw] filter
 #   @return [Hash, nil]
 #
-# @!attribute [rw] group_role
+# @!attribute [rw] groupRoles
 #   @return [Array, nil]
 #
 # @!attribute [rw] pagination
 #   @return [Hash, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
 # @!attribute [rw] sorting
 #   @return [Hash, nil]
 OutputListOfRoleGroup = Struct.new(
   :filter,
-  :group_role,
+  :groupRoles,
   :pagination,
-  :response_code,
-  :response_message,
+  :responseCode,
+  :responseMessage,
   :sorting,
   keyword_init: true
 )
@@ -718,26 +694,26 @@ OutputListOfRoleGroup = Struct.new(
 # @!attribute [rw] filter
 #   @return [Hash, nil]
 #
-# @!attribute [rw] group_role
+# @!attribute [rw] groupRoles
 #   @return [Array, nil]
 #
 # @!attribute [rw] pagination
 #   @return [Hash, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
 # @!attribute [rw] sorting
 #   @return [Hash, nil]
 OutputListOfRoleGroupCreateData = Struct.new(
   :filter,
-  :group_role,
+  :groupRoles,
   :pagination,
-  :response_code,
-  :response_message,
+  :responseCode,
+  :responseMessage,
   :sorting,
   keyword_init: true
 )
@@ -753,10 +729,10 @@ OutputListOfRoleGroupCreateData = Struct.new(
 # @!attribute [rw] pagination
 #   @return [Hash, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
 # @!attribute [rw] sorting
@@ -765,8 +741,8 @@ OutputListOfTransactionsHistory = Struct.new(
   :filter,
   :list,
   :pagination,
-  :response_code,
-  :response_message,
+  :responseCode,
+  :responseMessage,
   :sorting,
   keyword_init: true
 )
@@ -782,10 +758,10 @@ OutputListOfTransactionsHistory = Struct.new(
 # @!attribute [rw] pagination
 #   @return [Hash, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
 # @!attribute [rw] sorting
@@ -794,8 +770,8 @@ OutputListOfTransactionsHistoryCreateData = Struct.new(
   :filter,
   :list,
   :pagination,
-  :response_code,
-  :response_message,
+  :responseCode,
+  :responseMessage,
   :sorting,
   keyword_init: true
 )
@@ -811,10 +787,10 @@ OutputListOfTransactionsHistoryCreateData = Struct.new(
 # @!attribute [rw] pagination
 #   @return [Hash, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
 # @!attribute [rw] sorting
@@ -823,8 +799,8 @@ OutputListOfUser = Struct.new(
   :filter,
   :list,
   :pagination,
-  :response_code,
-  :response_message,
+  :responseCode,
+  :responseMessage,
   :sorting,
   keyword_init: true
 )
@@ -840,10 +816,10 @@ OutputListOfUser = Struct.new(
 # @!attribute [rw] pagination
 #   @return [Hash, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
 # @!attribute [rw] sorting
@@ -852,58 +828,58 @@ OutputListOfUserCreateData = Struct.new(
   :filter,
   :list,
   :pagination,
-  :response_code,
-  :response_message,
+  :responseCode,
+  :responseMessage,
   :sorting,
   keyword_init: true
 )
 
 # OutputProvideCredential entity data model.
 #
-# @!attribute [rw] mandator_name
+# @!attribute [rw] mandatorName
 #   @return [String]
 #
 # @!attribute [rw] password
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
 # @!attribute [rw] username
 #   @return [String, nil]
 OutputProvideCredential = Struct.new(
-  :mandator_name,
+  :mandatorName,
   :password,
-  :response_code,
-  :response_message,
+  :responseCode,
+  :responseMessage,
   :username,
   keyword_init: true
 )
 
 # Request payload for OutputProvideCredential#create.
 #
-# @!attribute [rw] mandator_name
+# @!attribute [rw] mandatorName
 #   @return [String]
 #
 # @!attribute [rw] password
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
 # @!attribute [rw] username
 #   @return [String, nil]
 OutputProvideCredentialCreateData = Struct.new(
-  :mandator_name,
+  :mandatorName,
   :password,
-  :response_code,
-  :response_message,
+  :responseCode,
+  :responseMessage,
   :username,
   keyword_init: true
 )
@@ -913,31 +889,31 @@ OutputProvideCredentialCreateData = Struct.new(
 # @!attribute [rw] city
 #   @return [String, nil]
 #
-# @!attribute [rw] consumer_id
+# @!attribute [rw] consumerId
 #   @return [String, nil]
 #
-# @!attribute [rw] consumer_language
+# @!attribute [rw] consumerLanguage
 #   @return [String, nil]
 #
 # @!attribute [rw] country
 #   @return [String, nil]
 #
-# @!attribute [rw] date_of_birth
+# @!attribute [rw] dateOfBirth
 #   @return [String, nil]
 #
-# @!attribute [rw] driver_licence_number
+# @!attribute [rw] driverLicenceNumber
 #   @return [String, nil]
 #
 # @!attribute [rw] email
 #   @return [String]
 #
-# @!attribute [rw] first_name
+# @!attribute [rw] firstName
 #   @return [String, nil]
 #
-# @!attribute [rw] identification_number
+# @!attribute [rw] identificationNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] last_name
+# @!attribute [rw] lastName
 #   @return [String, nil]
 #
 # @!attribute [rw] login
@@ -946,16 +922,16 @@ OutputProvideCredentialCreateData = Struct.new(
 # @!attribute [rw] module
 #   @return [String, nil]
 #
-# @!attribute [rw] passport_number
+# @!attribute [rw] passportNumber
 #   @return [String, nil]
 #
 # @!attribute [rw] phone
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
 # @!attribute [rw] salutation
@@ -974,21 +950,21 @@ OutputProvideCredentialCreateData = Struct.new(
 #   @return [String, nil]
 OutputRegisterUser = Struct.new(
   :city,
-  :consumer_id,
-  :consumer_language,
+  :consumerId,
+  :consumerLanguage,
   :country,
-  :date_of_birth,
-  :driver_licence_number,
+  :dateOfBirth,
+  :driverLicenceNumber,
   :email,
-  :first_name,
-  :identification_number,
-  :last_name,
+  :firstName,
+  :identificationNumber,
+  :lastName,
   :login,
   :module,
-  :passport_number,
+  :passportNumber,
   :phone,
-  :response_code,
-  :response_message,
+  :responseCode,
+  :responseMessage,
   :salutation,
   :state,
   :street1,
@@ -1002,31 +978,31 @@ OutputRegisterUser = Struct.new(
 # @!attribute [rw] city
 #   @return [String, nil]
 #
-# @!attribute [rw] consumer_id
+# @!attribute [rw] consumerId
 #   @return [String, nil]
 #
-# @!attribute [rw] consumer_language
+# @!attribute [rw] consumerLanguage
 #   @return [String, nil]
 #
 # @!attribute [rw] country
 #   @return [String, nil]
 #
-# @!attribute [rw] date_of_birth
+# @!attribute [rw] dateOfBirth
 #   @return [String, nil]
 #
-# @!attribute [rw] driver_licence_number
+# @!attribute [rw] driverLicenceNumber
 #   @return [String, nil]
 #
 # @!attribute [rw] email
 #   @return [String]
 #
-# @!attribute [rw] first_name
+# @!attribute [rw] firstName
 #   @return [String, nil]
 #
-# @!attribute [rw] identification_number
+# @!attribute [rw] identificationNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] last_name
+# @!attribute [rw] lastName
 #   @return [String, nil]
 #
 # @!attribute [rw] login
@@ -1035,16 +1011,16 @@ OutputRegisterUser = Struct.new(
 # @!attribute [rw] module
 #   @return [String, nil]
 #
-# @!attribute [rw] passport_number
+# @!attribute [rw] passportNumber
 #   @return [String, nil]
 #
 # @!attribute [rw] phone
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
 # @!attribute [rw] salutation
@@ -1063,21 +1039,21 @@ OutputRegisterUser = Struct.new(
 #   @return [String, nil]
 OutputRegisterUserCreateData = Struct.new(
   :city,
-  :consumer_id,
-  :consumer_language,
+  :consumerId,
+  :consumerLanguage,
   :country,
-  :date_of_birth,
-  :driver_licence_number,
+  :dateOfBirth,
+  :driverLicenceNumber,
   :email,
-  :first_name,
-  :identification_number,
-  :last_name,
+  :firstName,
+  :identificationNumber,
+  :lastName,
   :login,
   :module,
-  :passport_number,
+  :passportNumber,
   :phone,
-  :response_code,
-  :response_message,
+  :responseCode,
+  :responseMessage,
   :salutation,
   :state,
   :street1,
@@ -1088,143 +1064,143 @@ OutputRegisterUserCreateData = Struct.new(
 
 # OutputRemoveRole entity data model.
 #
-# @!attribute [rw] consumer_uuid
+# @!attribute [rw] consumerUUID
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] role
+# @!attribute [rw] roles
 #   @return [Array, nil]
 OutputRemoveRole = Struct.new(
-  :consumer_uuid,
-  :response_code,
-  :response_message,
-  :role,
+  :consumerUUID,
+  :responseCode,
+  :responseMessage,
+  :roles,
   keyword_init: true
 )
 
 # Request payload for OutputRemoveRole#create.
 #
-# @!attribute [rw] consumer_uuid
+# @!attribute [rw] consumerUUID
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] role
+# @!attribute [rw] roles
 #   @return [Array, nil]
 OutputRemoveRoleCreateData = Struct.new(
-  :consumer_uuid,
-  :response_code,
-  :response_message,
-  :role,
+  :consumerUUID,
+  :responseCode,
+  :responseMessage,
+  :roles,
   keyword_init: true
 )
 
 # OutputResendLink entity data model.
 #
-# @!attribute [rw] business_registration_number
+# @!attribute [rw] businessRegistrationNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] consumer_uuid
+# @!attribute [rw] consumerUUID
 #   @return [String]
 #
-# @!attribute [rw] email_confirmation_code
+# @!attribute [rw] emailConfirmationCode
 #   @return [String, nil]
 #
-# @!attribute [rw] phone_number
+# @!attribute [rw] phoneNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 OutputResendLink = Struct.new(
-  :business_registration_number,
-  :consumer_uuid,
-  :email_confirmation_code,
-  :phone_number,
-  :response_code,
-  :response_message,
+  :businessRegistrationNumber,
+  :consumerUUID,
+  :emailConfirmationCode,
+  :phoneNumber,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # Request payload for OutputResendLink#create.
 #
-# @!attribute [rw] business_registration_number
+# @!attribute [rw] businessRegistrationNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] consumer_uuid
+# @!attribute [rw] consumerUUID
 #   @return [String]
 #
-# @!attribute [rw] email_confirmation_code
+# @!attribute [rw] emailConfirmationCode
 #   @return [String, nil]
 #
-# @!attribute [rw] phone_number
+# @!attribute [rw] phoneNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 OutputResendLinkCreateData = Struct.new(
-  :business_registration_number,
-  :consumer_uuid,
-  :email_confirmation_code,
-  :phone_number,
-  :response_code,
-  :response_message,
+  :businessRegistrationNumber,
+  :consumerUUID,
+  :emailConfirmationCode,
+  :phoneNumber,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # OutputResetPassword entity data model.
 #
-# @!attribute [rw] consumer_uuid
+# @!attribute [rw] consumerUuid
 #   @return [String, nil]
 #
-# @!attribute [rw] phone_number
+# @!attribute [rw] phoneNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 OutputResetPassword = Struct.new(
-  :consumer_uuid,
-  :phone_number,
-  :response_code,
-  :response_message,
+  :consumerUuid,
+  :phoneNumber,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # Request payload for OutputResetPassword#create.
 #
-# @!attribute [rw] consumer_uuid
+# @!attribute [rw] consumerUuid
 #   @return [String, nil]
 #
-# @!attribute [rw] phone_number
+# @!attribute [rw] phoneNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 OutputResetPasswordCreateData = Struct.new(
-  :consumer_uuid,
-  :phone_number,
-  :response_code,
-  :response_message,
+  :consumerUuid,
+  :phoneNumber,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
@@ -1233,7 +1209,7 @@ OutputResetPasswordCreateData = Struct.new(
 # @!attribute [rw] city
 #   @return [String, nil]
 #
-# @!attribute [rw] consumer_uuid
+# @!attribute [rw] consumerUuid
 #   @return [String]
 #
 # @!attribute [rw] consumerlanguage
@@ -1242,46 +1218,46 @@ OutputResetPasswordCreateData = Struct.new(
 # @!attribute [rw] country
 #   @return [String, nil]
 #
-# @!attribute [rw] date_of_birth
+# @!attribute [rw] dateOfBirth
 #   @return [String, nil]
 #
 # @!attribute [rw] datetime_created
 #   @return [String, nil]
 #
-# @!attribute [rw] driver_licence_number
+# @!attribute [rw] driverLicenceNumber
 #   @return [String, nil]
 #
 # @!attribute [rw] email
 #   @return [String, nil]
 #
-# @!attribute [rw] first_name
+# @!attribute [rw] firstName
 #   @return [String, nil]
 #
-# @!attribute [rw] identification_number
+# @!attribute [rw] identificationNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] kyc_passed
+# @!attribute [rw] kycPassed
 #   @return [Boolean, nil]
 #
-# @!attribute [rw] last_name
+# @!attribute [rw] lastName
 #   @return [String, nil]
 #
 # @!attribute [rw] nationality
 #   @return [String, nil]
 #
-# @!attribute [rw] passport_number
+# @!attribute [rw] passportNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] phone_number
+# @!attribute [rw] phoneNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] place_of_birth
+# @!attribute [rw] placeOfBirth
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
 # @!attribute [rw] state
@@ -1300,23 +1276,23 @@ OutputResetPasswordCreateData = Struct.new(
 #   @return [String, nil]
 OutputUpdateConsumer = Struct.new(
   :city,
-  :consumer_uuid,
+  :consumerUuid,
   :consumerlanguage,
   :country,
-  :date_of_birth,
+  :dateOfBirth,
   :datetime_created,
-  :driver_licence_number,
+  :driverLicenceNumber,
   :email,
-  :first_name,
-  :identification_number,
-  :kyc_passed,
-  :last_name,
+  :firstName,
+  :identificationNumber,
+  :kycPassed,
+  :lastName,
   :nationality,
-  :passport_number,
-  :phone_number,
-  :place_of_birth,
-  :response_code,
-  :response_message,
+  :passportNumber,
+  :phoneNumber,
+  :placeOfBirth,
+  :responseCode,
+  :responseMessage,
   :state,
   :street1,
   :street2,
@@ -1330,7 +1306,7 @@ OutputUpdateConsumer = Struct.new(
 # @!attribute [rw] city
 #   @return [String, nil]
 #
-# @!attribute [rw] consumer_uuid
+# @!attribute [rw] consumerUuid
 #   @return [String]
 #
 # @!attribute [rw] consumerlanguage
@@ -1339,46 +1315,46 @@ OutputUpdateConsumer = Struct.new(
 # @!attribute [rw] country
 #   @return [String, nil]
 #
-# @!attribute [rw] date_of_birth
+# @!attribute [rw] dateOfBirth
 #   @return [String, nil]
 #
 # @!attribute [rw] datetime_created
 #   @return [String, nil]
 #
-# @!attribute [rw] driver_licence_number
+# @!attribute [rw] driverLicenceNumber
 #   @return [String, nil]
 #
 # @!attribute [rw] email
 #   @return [String, nil]
 #
-# @!attribute [rw] first_name
+# @!attribute [rw] firstName
 #   @return [String, nil]
 #
-# @!attribute [rw] identification_number
+# @!attribute [rw] identificationNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] kyc_passed
+# @!attribute [rw] kycPassed
 #   @return [Boolean, nil]
 #
-# @!attribute [rw] last_name
+# @!attribute [rw] lastName
 #   @return [String, nil]
 #
 # @!attribute [rw] nationality
 #   @return [String, nil]
 #
-# @!attribute [rw] passport_number
+# @!attribute [rw] passportNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] phone_number
+# @!attribute [rw] phoneNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] place_of_birth
+# @!attribute [rw] placeOfBirth
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
 # @!attribute [rw] state
@@ -1397,23 +1373,23 @@ OutputUpdateConsumer = Struct.new(
 #   @return [String, nil]
 OutputUpdateConsumerCreateData = Struct.new(
   :city,
-  :consumer_uuid,
+  :consumerUuid,
   :consumerlanguage,
   :country,
-  :date_of_birth,
+  :dateOfBirth,
   :datetime_created,
-  :driver_licence_number,
+  :driverLicenceNumber,
   :email,
-  :first_name,
-  :identification_number,
-  :kyc_passed,
-  :last_name,
+  :firstName,
+  :identificationNumber,
+  :kycPassed,
+  :lastName,
   :nationality,
-  :passport_number,
-  :phone_number,
-  :place_of_birth,
-  :response_code,
-  :response_message,
+  :passportNumber,
+  :phoneNumber,
+  :placeOfBirth,
+  :responseCode,
+  :responseMessage,
   :state,
   :street1,
   :street2,
@@ -1424,100 +1400,100 @@ OutputUpdateConsumerCreateData = Struct.new(
 
 # OutputUpdateProfile entity data model.
 #
-# @!attribute [rw] consumer_language
+# @!attribute [rw] consumerLanguage
 #   @return [String, nil]
 #
 # @!attribute [rw] email
 #   @return [String, nil]
 #
-# @!attribute [rw] first_name
+# @!attribute [rw] firstName
 #   @return [String, nil]
 #
-# @!attribute [rw] last_name
+# @!attribute [rw] lastName
 #   @return [String, nil]
 #
-# @!attribute [rw] phone_number
+# @!attribute [rw] phoneNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 OutputUpdateProfile = Struct.new(
-  :consumer_language,
+  :consumerLanguage,
   :email,
-  :first_name,
-  :last_name,
-  :phone_number,
-  :response_code,
-  :response_message,
+  :firstName,
+  :lastName,
+  :phoneNumber,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # Request payload for OutputUpdateProfile#create.
 #
-# @!attribute [rw] consumer_language
+# @!attribute [rw] consumerLanguage
 #   @return [String, nil]
 #
 # @!attribute [rw] email
 #   @return [String, nil]
 #
-# @!attribute [rw] first_name
+# @!attribute [rw] firstName
 #   @return [String, nil]
 #
-# @!attribute [rw] last_name
+# @!attribute [rw] lastName
 #   @return [String, nil]
 #
-# @!attribute [rw] phone_number
+# @!attribute [rw] phoneNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 OutputUpdateProfileCreateData = Struct.new(
-  :consumer_language,
+  :consumerLanguage,
   :email,
-  :first_name,
-  :last_name,
-  :phone_number,
-  :response_code,
-  :response_message,
+  :firstName,
+  :lastName,
+  :phoneNumber,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # Version entity data model.
 #
-# @!attribute [rw] app_name
+# @!attribute [rw] appName
 #   @return [String, nil]
 #
-# @!attribute [rw] build_date
+# @!attribute [rw] buildDate
 #   @return [String, nil]
 #
 # @!attribute [rw] version
 #   @return [String, nil]
 Version = Struct.new(
-  :app_name,
-  :build_date,
+  :appName,
+  :buildDate,
   :version,
   keyword_init: true
 )
 
 # Request payload for Version#load.
 #
-# @!attribute [rw] app_name
+# @!attribute [rw] appName
 #   @return [String, nil]
 #
-# @!attribute [rw] build_date
+# @!attribute [rw] buildDate
 #   @return [String, nil]
 #
 # @!attribute [rw] version
 #   @return [String, nil]
 VersionLoadMatch = Struct.new(
-  :app_name,
-  :build_date,
+  :appName,
+  :buildDate,
   :version,
   keyword_init: true
 )

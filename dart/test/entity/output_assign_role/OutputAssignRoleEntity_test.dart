@@ -47,7 +47,7 @@ void tests() {
       final output_assign_role_ref01_ent = client.OutputAssignRole();
       dynamic output_assign_role_ref01_data = setup['data']['new']['output_assign_role']['output_assign_role_ref01'];
 
-      output_assign_role_ref01_data = await output_assign_role_ref01_ent.create(output_assign_role_ref01_data);
+      output_assign_role_ref01_data = (await output_assign_role_ref01_ent.create(output_assign_role_ref01_data)).data();
       ok(null != output_assign_role_ref01_data);
 
 

@@ -6,22 +6,22 @@ main: kit: entity: output_remove_role: {
 
   fields: [
     {
-      name: "consumer_uuid"
+      name: "consumerUUID"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "role"
+      name: "roles"
       req: false
       type: "`$ARRAY`"
     }

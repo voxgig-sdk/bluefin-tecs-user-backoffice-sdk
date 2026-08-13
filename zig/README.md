@@ -56,7 +56,7 @@ const client = sdk.BluefinTecsUserBackofficeSDK.new(h.jo(&.{
 
 ```zig
 // Create — .ok carries the created record
-switch (client.output_activate_digital_module(h.vnull()).create(h.jo(&.{.{ "response_code", h.vnum(1) }, .{ "response_message", h.vstr("example_response_message") }}), h.vnull())) {
+switch (client.output_activate_digital_module(h.vnull()).create(h.jo(&.{.{ "responseCode", h.vnum(1) }, .{ "responseMessage", h.vstr("example_responseMessage") }}), h.vnull())) {
     .ok => |created| std.debug.print("{s}\n", .{h.stringify(created)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
@@ -275,8 +275,8 @@ On error, `ok` is `false` and `err` carries the error message.
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -286,10 +286,10 @@ API path: `/activateDigitalModule`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `notification_email` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clientSecret` |  |
+| `notificationEmail` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -299,8 +299,8 @@ API path: `/activateMerchantPortalModule`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -310,9 +310,9 @@ API path: `/activateAppStoreModule`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -322,10 +322,10 @@ API path: `/activateUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `role` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `roles` |  |
 
 Operations: Create.
 
@@ -335,10 +335,10 @@ API path: `/assignRoles`
 
 | Field | Description |
 | --- | --- |
-| `content_as_base64` |  |
-| `mime_type` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `contentAsBase64` |  |
+| `mimeType` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -350,25 +350,22 @@ API path: `/changeLogo`
 | --- | --- |
 | `city` |  |
 | `country` |  |
-| `date_of_birth` |  |
+| `dateOfBirth` |  |
 | `description` |  |
-| `drivers_license_number` |  |
+| `driversLicenseNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `lastName` |  |
 | `login` |  |
-| `mandator` |  |
 | `name` |  |
-| `passport_number` |  |
+| `passportNumber` |  |
 | `phone` |  |
-| `response_code` |  |
-| `response_message` |  |
 | `salutation` |  |
 | `state` |  |
 | `street1` |  |
 | `street2` |  |
-| `zip_code` |  |
+| `zipCode` |  |
 
 Operations: Create.
 
@@ -378,9 +375,9 @@ API path: `/createMandator`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `mandatorName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -390,9 +387,9 @@ API path: `/createServiceUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -402,10 +399,10 @@ API path: `/deactivateUser`
 
 | Field | Description |
 | --- | --- |
-| `case_id` |  |
-| `encoded_data_base64` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `caseID` |  |
+| `encodedDataBase64` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -415,10 +412,10 @@ API path: `/getKycDocument`
 
 | Field | Description |
 | --- | --- |
-| `content_as_base64` |  |
-| `mime_type` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `contentAsBase64` |  |
+| `mimeType` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Load.
 
@@ -428,9 +425,9 @@ API path: `/getLogo`
 
 | Field | Description |
 | --- | --- |
-| `available_role` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `availableRoles` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -443,8 +440,8 @@ API path: `/listOfAvailableRoles`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -457,8 +454,8 @@ API path: `/listOfMandators`
 | --- | --- |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -469,10 +466,10 @@ API path: `/listOfModules`
 | Field | Description |
 | --- | --- |
 | `filter` |  |
-| `group_role` |  |
+| `groupRoles` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -486,8 +483,8 @@ API path: `/listOfRoleGroups`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -501,8 +498,8 @@ API path: `/listOfTransactionsHistory`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -513,10 +510,10 @@ API path: `/listOfUsers`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
+| `mandatorName` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `username` |  |
 
 Operations: Create.
@@ -528,21 +525,21 @@ API path: `/provideCredentials`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `consumer_id` |  |
-| `consumer_language` |  |
+| `consumerId` |  |
+| `consumerLanguage` |  |
 | `country` |  |
-| `date_of_birth` |  |
-| `driver_licence_number` |  |
+| `dateOfBirth` |  |
+| `driverLicenceNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `lastName` |  |
 | `login` |  |
 | `module` |  |
-| `passport_number` |  |
+| `passportNumber` |  |
 | `phone` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `salutation` |  |
 | `state` |  |
 | `street1` |  |
@@ -557,10 +554,10 @@ API path: `/registerUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `role` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `roles` |  |
 
 Operations: Create.
 
@@ -570,12 +567,12 @@ API path: `/removeRoles`
 
 | Field | Description |
 | --- | --- |
-| `business_registration_number` |  |
-| `consumer_uuid` |  |
-| `email_confirmation_code` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `businessRegistrationNumber` |  |
+| `consumerUUID` |  |
+| `emailConfirmationCode` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -585,10 +582,10 @@ API path: `/resendLink`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUuid` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -599,23 +596,23 @@ API path: `/resetPassword`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `consumer_uuid` |  |
+| `consumerUuid` |  |
 | `consumerlanguage` |  |
 | `country` |  |
-| `date_of_birth` |  |
+| `dateOfBirth` |  |
 | `datetime_created` |  |
-| `driver_licence_number` |  |
+| `driverLicenceNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `kyc_passed` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `kycPassed` |  |
+| `lastName` |  |
 | `nationality` |  |
-| `passport_number` |  |
-| `phone_number` |  |
-| `place_of_birth` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `passportNumber` |  |
+| `phoneNumber` |  |
+| `placeOfBirth` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `state` |  |
 | `street1` |  |
 | `street2` |  |
@@ -630,13 +627,13 @@ API path: `/updateConsumer`
 
 | Field | Description |
 | --- | --- |
-| `consumer_language` |  |
+| `consumerLanguage` |  |
 | `email` |  |
-| `first_name` |  |
-| `last_name` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `firstName` |  |
+| `lastName` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -646,8 +643,8 @@ API path: `/updateProfile`
 
 | Field | Description |
 | --- | --- |
-| `app_name` |  |
-| `build_date` |  |
+| `appName` |  |
+| `buildDate` |  |
 | `version` |  |
 
 Operations: Load.
@@ -676,8 +673,8 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 
 #### Example: Create
 
@@ -707,17 +704,17 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `[]const u8` |  |
-| `notification_email` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `clientSecret` | `[]const u8` |  |
+| `notificationEmail` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.output_activate_portal_module(h.vnull()).create(h.jo(&.{
-    .{ "client_secret", h.vstr("example_client_secret") }, // []const u8
-    .{ "notification_email", h.vstr("example_notification_email") }, // []const u8
+    .{ "clientSecret", h.vstr("example_clientSecret") }, // []const u8
+    .{ "notificationEmail", h.vstr("example_notificationEmail") }, // []const u8
 }), h.vnull())) {
     .ok => |output_activate_portal_module| std.debug.print("{s}\n", .{h.stringify(output_activate_portal_module)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -742,8 +739,8 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 
 #### Example: Create
 
@@ -773,9 +770,9 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `consumerUUID` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 
 #### Example: Create
 
@@ -805,17 +802,17 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `role` | `Value (array)` |  |
+| `consumerUUID` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `roles` | `Value (array)` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.output_assign_role(h.vnull()).create(h.jo(&.{
-    .{ "consumer_uuid", h.vstr("example_consumer_uuid") }, // []const u8
-    .{ "role", h.olist() }, // Value (array)
+    .{ "consumerUUID", h.vstr("example_consumerUUID") }, // []const u8
+    .{ "roles", h.olist() }, // Value (array)
 }), h.vnull())) {
     .ok => |output_assign_role| std.debug.print("{s}\n", .{h.stringify(output_assign_role)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -840,17 +837,17 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `content_as_base64` | `[]const u8` |  |
-| `mime_type` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `contentAsBase64` | `[]const u8` |  |
+| `mimeType` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.output_change_logo(h.vnull()).create(h.jo(&.{
-    .{ "content_as_base64", h.vstr("example_content_as_base64") }, // []const u8
-    .{ "mime_type", h.vstr("example_mime_type") }, // []const u8
+    .{ "contentAsBase64", h.vstr("example_contentAsBase64") }, // []const u8
+    .{ "mimeType", h.vstr("example_mimeType") }, // []const u8
 }), h.vnull())) {
     .ok => |output_change_logo| std.debug.print("{s}\n", .{h.stringify(output_change_logo)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -877,34 +874,29 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 | --- | --- | --- |
 | `city` | `[]const u8` |  |
 | `country` | `[]const u8` |  |
-| `date_of_birth` | `[]const u8` |  |
+| `dateOfBirth` | `[]const u8` |  |
 | `description` | `[]const u8` |  |
-| `drivers_license_number` | `[]const u8` |  |
+| `driversLicenseNumber` | `[]const u8` |  |
 | `email` | `[]const u8` |  |
-| `first_name` | `[]const u8` |  |
-| `identification_number` | `[]const u8` |  |
-| `last_name` | `[]const u8` |  |
+| `firstName` | `[]const u8` |  |
+| `identificationNumber` | `[]const u8` |  |
+| `lastName` | `[]const u8` |  |
 | `login` | `[]const u8` |  |
-| `mandator` | `Value (object)` |  |
 | `name` | `[]const u8` |  |
-| `passport_number` | `[]const u8` |  |
+| `passportNumber` | `[]const u8` |  |
 | `phone` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
 | `salutation` | `[]const u8` |  |
 | `state` | `[]const u8` |  |
 | `street1` | `[]const u8` |  |
 | `street2` | `[]const u8` |  |
-| `zip_code` | `[]const u8` |  |
+| `zipCode` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.output_create_mandator(h.vnull()).create(h.jo(&.{
-    .{ "description", h.vstr("example_description") }, // []const u8
     .{ "email", h.vstr("example_email") }, // []const u8
     .{ "login", h.vstr("example_login") }, // []const u8
-    .{ "name", h.vstr("example_name") }, // []const u8
     .{ "phone", h.vstr("example_phone") }, // []const u8
 }), h.vnull())) {
     .ok => |output_create_mandator| std.debug.print("{s}\n", .{h.stringify(output_create_mandator)}),
@@ -930,15 +922,15 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `mandatorName` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.output_create_service_user(h.vnull()).create(h.jo(&.{
-    .{ "mandator_name", h.vstr("example_mandator_name") }, // []const u8
+    .{ "mandatorName", h.vstr("example_mandatorName") }, // []const u8
 }), h.vnull())) {
     .ok => |output_create_service_user| std.debug.print("{s}\n", .{h.stringify(output_create_service_user)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -963,9 +955,9 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `consumerUUID` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 
 #### Example: Create
 
@@ -995,10 +987,10 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `case_id` | `[]const u8` |  |
-| `encoded_data_base64` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `caseID` | `[]const u8` |  |
+| `encodedDataBase64` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 
 #### Example: Create
 
@@ -1028,10 +1020,10 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `content_as_base64` | `[]const u8` |  |
-| `mime_type` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `contentAsBase64` | `[]const u8` |  |
+| `mimeType` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 
 #### Example: Load
 
@@ -1060,9 +1052,9 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `available_role` | `Value (array)` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `availableRoles` | `Value (array)` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 
 #### Example: Create
 
@@ -1095,8 +1087,8 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 | `filter` | `Value (object)` |  |
 | `list` | `Value (array)` |  |
 | `pagination` | `Value (object)` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 | `sorting` | `Value (object)` |  |
 
 #### Example: Create
@@ -1129,8 +1121,8 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 | --- | --- | --- |
 | `list` | `Value (array)` |  |
 | `pagination` | `Value (object)` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 
 #### Example: Create
 
@@ -1161,10 +1153,10 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 | Field | Type | Description |
 | --- | --- | --- |
 | `filter` | `Value (object)` |  |
-| `group_role` | `Value (array)` |  |
+| `groupRoles` | `Value (array)` |  |
 | `pagination` | `Value (object)` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 | `sorting` | `Value (object)` |  |
 
 #### Example: Create
@@ -1198,8 +1190,8 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 | `filter` | `Value (object)` |  |
 | `list` | `Value (array)` |  |
 | `pagination` | `Value (object)` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 | `sorting` | `Value (object)` |  |
 
 #### Example: Create
@@ -1233,8 +1225,8 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 | `filter` | `Value (object)` |  |
 | `list` | `Value (array)` |  |
 | `pagination` | `Value (object)` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 | `sorting` | `Value (object)` |  |
 
 #### Example: Create
@@ -1265,17 +1257,17 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `[]const u8` |  |
+| `mandatorName` | `[]const u8` |  |
 | `password` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 | `username` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.output_provide_credential(h.vnull()).create(h.jo(&.{
-    .{ "mandator_name", h.vstr("example_mandator_name") }, // []const u8
+    .{ "mandatorName", h.vstr("example_mandatorName") }, // []const u8
 }), h.vnull())) {
     .ok => |output_provide_credential| std.debug.print("{s}\n", .{h.stringify(output_provide_credential)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1301,21 +1293,21 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `[]const u8` |  |
-| `consumer_id` | `[]const u8` |  |
-| `consumer_language` | `[]const u8` |  |
+| `consumerId` | `[]const u8` |  |
+| `consumerLanguage` | `[]const u8` |  |
 | `country` | `[]const u8` |  |
-| `date_of_birth` | `[]const u8` |  |
-| `driver_licence_number` | `[]const u8` |  |
+| `dateOfBirth` | `[]const u8` |  |
+| `driverLicenceNumber` | `[]const u8` |  |
 | `email` | `[]const u8` |  |
-| `first_name` | `[]const u8` |  |
-| `identification_number` | `[]const u8` |  |
-| `last_name` | `[]const u8` |  |
+| `firstName` | `[]const u8` |  |
+| `identificationNumber` | `[]const u8` |  |
+| `lastName` | `[]const u8` |  |
 | `login` | `[]const u8` |  |
 | `module` | `[]const u8` |  |
-| `passport_number` | `[]const u8` |  |
+| `passportNumber` | `[]const u8` |  |
 | `phone` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 | `salutation` | `[]const u8` |  |
 | `state` | `[]const u8` |  |
 | `street1` | `[]const u8` |  |
@@ -1351,10 +1343,10 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `role` | `Value (array)` |  |
+| `consumerUUID` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `roles` | `Value (array)` |  |
 
 #### Example: Create
 
@@ -1384,18 +1376,18 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `business_registration_number` | `[]const u8` |  |
-| `consumer_uuid` | `[]const u8` |  |
-| `email_confirmation_code` | `[]const u8` |  |
-| `phone_number` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `businessRegistrationNumber` | `[]const u8` |  |
+| `consumerUUID` | `[]const u8` |  |
+| `emailConfirmationCode` | `[]const u8` |  |
+| `phoneNumber` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.output_resend_link(h.vnull()).create(h.jo(&.{
-    .{ "consumer_uuid", h.vstr("example_consumer_uuid") }, // []const u8
+    .{ "consumerUUID", h.vstr("example_consumerUUID") }, // []const u8
 }), h.vnull())) {
     .ok => |output_resend_link| std.debug.print("{s}\n", .{h.stringify(output_resend_link)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1420,10 +1412,10 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `[]const u8` |  |
-| `phone_number` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `consumerUuid` | `[]const u8` |  |
+| `phoneNumber` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 
 #### Example: Create
 
@@ -1454,23 +1446,23 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `[]const u8` |  |
-| `consumer_uuid` | `[]const u8` |  |
+| `consumerUuid` | `[]const u8` |  |
 | `consumerlanguage` | `[]const u8` |  |
 | `country` | `[]const u8` |  |
-| `date_of_birth` | `[]const u8` |  |
+| `dateOfBirth` | `[]const u8` |  |
 | `datetime_created` | `[]const u8` |  |
-| `driver_licence_number` | `[]const u8` |  |
+| `driverLicenceNumber` | `[]const u8` |  |
 | `email` | `[]const u8` |  |
-| `first_name` | `[]const u8` |  |
-| `identification_number` | `[]const u8` |  |
-| `kyc_passed` | `bool` |  |
-| `last_name` | `[]const u8` |  |
+| `firstName` | `[]const u8` |  |
+| `identificationNumber` | `[]const u8` |  |
+| `kycPassed` | `bool` |  |
+| `lastName` | `[]const u8` |  |
 | `nationality` | `[]const u8` |  |
-| `passport_number` | `[]const u8` |  |
-| `phone_number` | `[]const u8` |  |
-| `place_of_birth` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `passportNumber` | `[]const u8` |  |
+| `phoneNumber` | `[]const u8` |  |
+| `placeOfBirth` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 | `state` | `[]const u8` |  |
 | `street1` | `[]const u8` |  |
 | `street2` | `[]const u8` |  |
@@ -1481,7 +1473,7 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 ```zig
 switch (client.output_update_consumer(h.vnull()).create(h.jo(&.{
-    .{ "consumer_uuid", h.vstr("example_consumer_uuid") }, // []const u8
+    .{ "consumerUuid", h.vstr("example_consumerUuid") }, // []const u8
 }), h.vnull())) {
     .ok => |output_update_consumer| std.debug.print("{s}\n", .{h.stringify(output_update_consumer)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1506,13 +1498,13 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_language` | `[]const u8` |  |
+| `consumerLanguage` | `[]const u8` |  |
 | `email` | `[]const u8` |  |
-| `first_name` | `[]const u8` |  |
-| `last_name` | `[]const u8` |  |
-| `phone_number` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `firstName` | `[]const u8` |  |
+| `lastName` | `[]const u8` |  |
+| `phoneNumber` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 
 #### Example: Create
 
@@ -1542,8 +1534,8 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_name` | `[]const u8` |  |
-| `build_date` | `[]const u8` |  |
+| `appName` | `[]const u8` |  |
+| `buildDate` | `[]const u8` |  |
 | `version` | `[]const u8` |  |
 
 #### Example: Load

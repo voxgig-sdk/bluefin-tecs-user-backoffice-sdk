@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# BluefinTecsUserBackoffice SDK exists test
 
 import pytest
 from bluefintecsuserbackoffice_sdk import BluefinTecsUserBackofficeSDK

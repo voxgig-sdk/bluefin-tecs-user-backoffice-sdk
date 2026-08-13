@@ -40,7 +40,7 @@ class OutputListOfMandatorEntityTest {
     }
     Assumptions.assumeFalse(
       setup.syntheticOnly,
-      "live entity test uses synthetic IDs from fixture — set BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_LIST_OF_MANDATOR_ENTID JSON to run live",
+      "live entity test uses synthetic IDs from fixture — set BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_LIST_OF_MANDATOR_ENTID JSON to run live",
     )
     val client = setup.client
 
@@ -50,7 +50,7 @@ class OutputListOfMandatorEntityTest {
         Struct.getpath(setup.data, "new.output_list_of_mandator"), "output_list_of_mandator_ref01")) ?: linkedMapOf())
 
     val outputListOfMandatorRef01DataResult = outputListOfMandatorRef01Ent.create(outputListOfMandatorRef01Data, null)
-    outputListOfMandatorRef01Data = Helpers.toMapAny(outputListOfMandatorRef01DataResult) ?: linkedMapOf()
+    outputListOfMandatorRef01Data = Helpers.toMapAny(if (outputListOfMandatorRef01DataResult is SdkEntity) outputListOfMandatorRef01DataResult.data() else outputListOfMandatorRef01DataResult) ?: linkedMapOf()
     assertNotNull(outputListOfMandatorRef01Data, "expected create result to be a map")
 
   }
@@ -85,25 +85,25 @@ class OutputListOfMandatorEntityTest {
           "}]}"))
 
       // Detect ENTID env override before envOverride consumes it.
-      val entidEnvRaw = RunnerSupport.getenv("BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_LIST_OF_MANDATOR_ENTID")
+      val entidEnvRaw = RunnerSupport.getenv("BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_LIST_OF_MANDATOR_ENTID")
       val idmapOverridden = entidEnvRaw != null && entidEnvRaw.trim().startsWith("{")
 
       val envm = linkedMapOf<String, Any?>()
-      envm["BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_LIST_OF_MANDATOR_ENTID"] = idmap
-      envm["BLUEFINTECSUSERBACKOFFICE_TEST_LIVE"] = "FALSE"
-      envm["BLUEFINTECSUSERBACKOFFICE_TEST_EXPLAIN"] = "FALSE"
-      envm["BLUEFINTECSUSERBACKOFFICE_APIKEY"] = "NONE"
+      envm["BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_LIST_OF_MANDATOR_ENTID"] = idmap
+      envm["BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE"] = "FALSE"
+      envm["BLUEFIN_TECS_USER_BACKOFFICE_TEST_EXPLAIN"] = "FALSE"
+      envm["BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"] = "NONE"
       val env = RunnerSupport.envOverride(envm)
 
-      var idmapResolved = Helpers.toMapAny(env["BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_LIST_OF_MANDATOR_ENTID"])
+      var idmapResolved = Helpers.toMapAny(env["BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_LIST_OF_MANDATOR_ENTID"])
       if (idmapResolved == null) {
         idmapResolved = Helpers.toMapAny(idmap) ?: linkedMapOf()
       }
 
-      val live = "TRUE" == env["BLUEFINTECSUSERBACKOFFICE_TEST_LIVE"]
+      val live = "TRUE" == env["BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE"]
       if (live) {
         val liveOpts = linkedMapOf<String, Any?>()
-        liveOpts["apikey"] = env["BLUEFINTECSUSERBACKOFFICE_APIKEY"]
+        liveOpts["apikey"] = env["BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"]
         val mergedOpts = Struct.merge(Struct.jt(liveOpts, extra))
         client = BluefinTecsUserBackofficeSDK(Helpers.toMapAny(mergedOpts))
       }
@@ -113,7 +113,7 @@ class OutputListOfMandatorEntityTest {
       setup.data = entityData
       setup.idmap = idmapResolved
       setup.env = env
-      setup.explain = "TRUE" == env["BLUEFINTECSUSERBACKOFFICE_TEST_EXPLAIN"]
+      setup.explain = "TRUE" == env["BLUEFIN_TECS_USER_BACKOFFICE_TEST_EXPLAIN"]
       setup.live = live
       setup.syntheticOnly = live && !idmapOverridden
       setup.now = System.currentTimeMillis()

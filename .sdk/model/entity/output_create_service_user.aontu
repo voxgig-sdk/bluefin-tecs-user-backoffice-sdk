@@ -6,17 +6,17 @@ main: kit: entity: output_create_service_user: {
 
   fields: [
     {
-      name: "mandator_name"
+      name: "mandatorName"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }

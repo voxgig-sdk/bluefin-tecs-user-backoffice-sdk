@@ -35,7 +35,7 @@ object OutputUpdateProfileEntityTest {
       var outputUpdateProfileRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.output_update_profile"), "output_update_profile_ref01"))
       val outputUpdateProfileRef01DataResult = outputUpdateProfileRef01Ent.create(outputUpdateProfileRef01Data, null)
-      outputUpdateProfileRef01Data = Helpers.toMapAny(outputUpdateProfileRef01DataResult)
+      outputUpdateProfileRef01Data = Helpers.toMapAny(outputUpdateProfileRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("output_update_profile.create.map", outputUpdateProfileRef01Data != null, "expected create result to be a map")
     }
   }

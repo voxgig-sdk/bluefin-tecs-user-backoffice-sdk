@@ -204,8 +204,8 @@ Entity* output_activate_digital_module = bluefintecsuserbackoffice_output_activa
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `char*` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `char*` | No |  |
 
 ### Operations
 
@@ -249,10 +249,10 @@ Entity* output_activate_portal_module = bluefintecsuserbackoffice_output_activat
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `char*` | Yes |  |
-| `notification_email` | `char*` | Yes |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `char*` | No |  |
+| `clientSecret` | `char*` | Yes |  |
+| `notificationEmail` | `char*` | Yes |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `char*` | No |  |
 
 ### Operations
 
@@ -263,8 +263,8 @@ Create a new entity with the given data. Returns the created entity data and set
 ```c
 Entity* output_activate_portal_module = bluefintecsuserbackoffice_output_activate_portal_module(client, NULL);
 voxgig_value* result = output_activate_portal_module->vt->create(output_activate_portal_module, cmap(2,
-    "client_secret", v_str("example_client_secret"),  // char*
-    "notification_email", v_str("example_notification_email"))  // char*
+    "clientSecret", v_str("example_clientSecret"),  // char*
+    "notificationEmail", v_str("example_notificationEmail"))  // char*
 , NULL, &err);
 ```
 
@@ -299,8 +299,8 @@ Entity* output_activate_store_module = bluefintecsuserbackoffice_output_activate
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `char*` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `char*` | No |  |
 
 ### Operations
 
@@ -344,9 +344,9 @@ Entity* output_activate_user = bluefintecsuserbackoffice_output_activate_user(cl
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `char*` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `char*` | No |  |
+| `consumerUUID` | `char*` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `char*` | No |  |
 
 ### Operations
 
@@ -390,10 +390,10 @@ Entity* output_assign_role = bluefintecsuserbackoffice_output_assign_role(client
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `char*` | Yes |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `char*` | No |  |
-| `role` | `voxgig_value* (list)` | Yes |  |
+| `consumerUUID` | `char*` | Yes |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `char*` | No |  |
+| `roles` | `voxgig_value* (list)` | Yes |  |
 
 ### Operations
 
@@ -404,8 +404,8 @@ Create a new entity with the given data. Returns the created entity data and set
 ```c
 Entity* output_assign_role = bluefintecsuserbackoffice_output_assign_role(client, NULL);
 voxgig_value* result = output_assign_role->vt->create(output_assign_role, cmap(2,
-    "consumer_uuid", v_str("example_consumer_uuid"),  // char*
-    "role", v_list())  // voxgig_value* (list)
+    "consumerUUID", v_str("example_consumerUUID"),  // char*
+    "roles", v_list())  // voxgig_value* (list)
 , NULL, &err);
 ```
 
@@ -440,10 +440,10 @@ Entity* output_change_logo = bluefintecsuserbackoffice_output_change_logo(client
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `char*` | Yes |  |
-| `mime_type` | `char*` | Yes |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `char*` | No |  |
+| `contentAsBase64` | `char*` | Yes |  |
+| `mimeType` | `char*` | Yes |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `char*` | No |  |
 
 ### Operations
 
@@ -454,8 +454,8 @@ Create a new entity with the given data. Returns the created entity data and set
 ```c
 Entity* output_change_logo = bluefintecsuserbackoffice_output_change_logo(client, NULL);
 voxgig_value* result = output_change_logo->vt->create(output_change_logo, cmap(2,
-    "content_as_base64", v_str("example_content_as_base64"),  // char*
-    "mime_type", v_str("example_mime_type"))  // char*
+    "contentAsBase64", v_str("example_contentAsBase64"),  // char*
+    "mimeType", v_str("example_mimeType"))  // char*
 , NULL, &err);
 ```
 
@@ -492,25 +492,45 @@ Entity* output_create_mandator = bluefintecsuserbackoffice_output_create_mandato
 | --- | --- | --- | --- |
 | `city` | `char*` | No |  |
 | `country` | `char*` | No |  |
-| `date_of_birth` | `char*` | No |  |
-| `description` | `char*` | Yes |  |
-| `drivers_license_number` | `char*` | No |  |
+| `dateOfBirth` | `char*` | No |  |
+| `description` | `char*` | No |  |
+| `driversLicenseNumber` | `char*` | No |  |
 | `email` | `char*` | Yes |  |
-| `first_name` | `char*` | No |  |
-| `identification_number` | `char*` | No |  |
-| `last_name` | `char*` | No |  |
+| `firstName` | `char*` | No |  |
+| `identificationNumber` | `char*` | No |  |
+| `lastName` | `char*` | No |  |
 | `login` | `char*` | Yes |  |
-| `mandator` | `voxgig_value* (map)` | No |  |
-| `name` | `char*` | Yes |  |
-| `passport_number` | `char*` | No |  |
+| `name` | `char*` | No |  |
+| `passportNumber` | `char*` | No |  |
 | `phone` | `char*` | Yes |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `char*` | No |  |
 | `salutation` | `char*` | No |  |
 | `state` | `char*` | No |  |
 | `street1` | `char*` | No |  |
 | `street2` | `char*` | No |  |
-| `zip_code` | `char*` | No |  |
+| `zipCode` | `char*` | No |  |
+
+### Field Usage by Operation
+
+| Field | create |
+| --- | --- |
+| `city` | - |
+| `country` | - |
+| `dateOfBirth` | - |
+| `description` | Yes |
+| `driversLicenseNumber` | - |
+| `email` | - |
+| `firstName` | - |
+| `identificationNumber` | - |
+| `lastName` | - |
+| `login` | - |
+| `name` | Yes |
+| `passportNumber` | - |
+| `phone` | - |
+| `salutation` | - |
+| `state` | - |
+| `street1` | - |
+| `street2` | - |
+| `zipCode` | - |
 
 ### Operations
 
@@ -520,11 +540,9 @@ Create a new entity with the given data. Returns the created entity data and set
 
 ```c
 Entity* output_create_mandator = bluefintecsuserbackoffice_output_create_mandator(client, NULL);
-voxgig_value* result = output_create_mandator->vt->create(output_create_mandator, cmap(5,
-    "description", v_str("example_description"),  // char*
+voxgig_value* result = output_create_mandator->vt->create(output_create_mandator, cmap(3,
     "email", v_str("example_email"),  // char*
     "login", v_str("example_login"),  // char*
-    "name", v_str("example_name"),  // char*
     "phone", v_str("example_phone"))  // char*
 , NULL, &err);
 ```
@@ -560,9 +578,9 @@ Entity* output_create_service_user = bluefintecsuserbackoffice_output_create_ser
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `char*` | Yes |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `char*` | No |  |
+| `mandatorName` | `char*` | Yes |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `char*` | No |  |
 
 ### Operations
 
@@ -573,7 +591,7 @@ Create a new entity with the given data. Returns the created entity data and set
 ```c
 Entity* output_create_service_user = bluefintecsuserbackoffice_output_create_service_user(client, NULL);
 voxgig_value* result = output_create_service_user->vt->create(output_create_service_user, cmap(1,
-    "mandator_name", v_str("example_mandator_name"))  // char*
+    "mandatorName", v_str("example_mandatorName"))  // char*
 , NULL, &err);
 ```
 
@@ -608,9 +626,9 @@ Entity* output_deactivate_user = bluefintecsuserbackoffice_output_deactivate_use
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `char*` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `char*` | No |  |
+| `consumerUUID` | `char*` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `char*` | No |  |
 
 ### Operations
 
@@ -654,10 +672,10 @@ Entity* output_get_kyc_document = bluefintecsuserbackoffice_output_get_kyc_docum
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `case_id` | `char*` | No |  |
-| `encoded_data_base64` | `char*` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `char*` | No |  |
+| `caseID` | `char*` | No |  |
+| `encodedDataBase64` | `char*` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `char*` | No |  |
 
 ### Operations
 
@@ -701,10 +719,10 @@ Entity* output_get_logo = bluefintecsuserbackoffice_output_get_logo(client, NULL
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `char*` | Yes |  |
-| `mime_type` | `char*` | Yes |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `char*` | No |  |
+| `contentAsBase64` | `char*` | Yes |  |
+| `mimeType` | `char*` | Yes |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `char*` | No |  |
 
 ### Operations
 
@@ -748,9 +766,9 @@ Entity* output_list_of_available_role = bluefintecsuserbackoffice_output_list_of
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `available_role` | `voxgig_value* (list)` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `char*` | No |  |
+| `availableRoles` | `voxgig_value* (list)` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `char*` | No |  |
 
 ### Operations
 
@@ -797,8 +815,8 @@ Entity* output_list_of_mandator = bluefintecsuserbackoffice_output_list_of_manda
 | `filter` | `voxgig_value* (map)` | No |  |
 | `list` | `voxgig_value* (list)` | No |  |
 | `pagination` | `voxgig_value* (map)` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `char*` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `char*` | No |  |
 | `sorting` | `voxgig_value* (map)` | No |  |
 
 ### Operations
@@ -845,8 +863,8 @@ Entity* output_list_of_module = bluefintecsuserbackoffice_output_list_of_module(
 | --- | --- | --- | --- |
 | `list` | `voxgig_value* (list)` | No |  |
 | `pagination` | `voxgig_value* (map)` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `char*` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `char*` | No |  |
 
 ### Operations
 
@@ -891,10 +909,10 @@ Entity* output_list_of_role_group = bluefintecsuserbackoffice_output_list_of_rol
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `filter` | `voxgig_value* (map)` | No |  |
-| `group_role` | `voxgig_value* (list)` | No |  |
+| `groupRoles` | `voxgig_value* (list)` | No |  |
 | `pagination` | `voxgig_value* (map)` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `char*` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `char*` | No |  |
 | `sorting` | `voxgig_value* (map)` | No |  |
 
 ### Operations
@@ -942,8 +960,8 @@ Entity* output_list_of_transactions_history = bluefintecsuserbackoffice_output_l
 | `filter` | `voxgig_value* (map)` | No |  |
 | `list` | `voxgig_value* (list)` | No |  |
 | `pagination` | `voxgig_value* (map)` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `char*` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `char*` | No |  |
 | `sorting` | `voxgig_value* (map)` | No |  |
 
 ### Operations
@@ -991,8 +1009,8 @@ Entity* output_list_of_user = bluefintecsuserbackoffice_output_list_of_user(clie
 | `filter` | `voxgig_value* (map)` | No |  |
 | `list` | `voxgig_value* (list)` | No |  |
 | `pagination` | `voxgig_value* (map)` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `char*` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `char*` | No |  |
 | `sorting` | `voxgig_value* (map)` | No |  |
 
 ### Operations
@@ -1037,10 +1055,10 @@ Entity* output_provide_credential = bluefintecsuserbackoffice_output_provide_cre
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `char*` | Yes |  |
+| `mandatorName` | `char*` | Yes |  |
 | `password` | `char*` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `char*` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `char*` | No |  |
 | `username` | `char*` | No |  |
 
 ### Operations
@@ -1052,7 +1070,7 @@ Create a new entity with the given data. Returns the created entity data and set
 ```c
 Entity* output_provide_credential = bluefintecsuserbackoffice_output_provide_credential(client, NULL);
 voxgig_value* result = output_provide_credential->vt->create(output_provide_credential, cmap(1,
-    "mandator_name", v_str("example_mandator_name"))  // char*
+    "mandatorName", v_str("example_mandatorName"))  // char*
 , NULL, &err);
 ```
 
@@ -1088,21 +1106,21 @@ Entity* output_register_user = bluefintecsuserbackoffice_output_register_user(cl
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `char*` | No |  |
-| `consumer_id` | `char*` | No |  |
-| `consumer_language` | `char*` | No |  |
+| `consumerId` | `char*` | No |  |
+| `consumerLanguage` | `char*` | No |  |
 | `country` | `char*` | No |  |
-| `date_of_birth` | `char*` | No |  |
-| `driver_licence_number` | `char*` | No |  |
+| `dateOfBirth` | `char*` | No |  |
+| `driverLicenceNumber` | `char*` | No |  |
 | `email` | `char*` | Yes |  |
-| `first_name` | `char*` | No |  |
-| `identification_number` | `char*` | No |  |
-| `last_name` | `char*` | No |  |
+| `firstName` | `char*` | No |  |
+| `identificationNumber` | `char*` | No |  |
+| `lastName` | `char*` | No |  |
 | `login` | `char*` | No |  |
 | `module` | `char*` | No |  |
-| `passport_number` | `char*` | No |  |
+| `passportNumber` | `char*` | No |  |
 | `phone` | `char*` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `char*` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `char*` | No |  |
 | `salutation` | `char*` | No |  |
 | `state` | `char*` | No |  |
 | `street1` | `char*` | No |  |
@@ -1153,10 +1171,10 @@ Entity* output_remove_role = bluefintecsuserbackoffice_output_remove_role(client
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `char*` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `char*` | No |  |
-| `role` | `voxgig_value* (list)` | No |  |
+| `consumerUUID` | `char*` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `char*` | No |  |
+| `roles` | `voxgig_value* (list)` | No |  |
 
 ### Operations
 
@@ -1200,12 +1218,12 @@ Entity* output_resend_link = bluefintecsuserbackoffice_output_resend_link(client
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `business_registration_number` | `char*` | No |  |
-| `consumer_uuid` | `char*` | Yes |  |
-| `email_confirmation_code` | `char*` | No |  |
-| `phone_number` | `char*` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `char*` | No |  |
+| `businessRegistrationNumber` | `char*` | No |  |
+| `consumerUUID` | `char*` | Yes |  |
+| `emailConfirmationCode` | `char*` | No |  |
+| `phoneNumber` | `char*` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `char*` | No |  |
 
 ### Operations
 
@@ -1216,7 +1234,7 @@ Create a new entity with the given data. Returns the created entity data and set
 ```c
 Entity* output_resend_link = bluefintecsuserbackoffice_output_resend_link(client, NULL);
 voxgig_value* result = output_resend_link->vt->create(output_resend_link, cmap(1,
-    "consumer_uuid", v_str("example_consumer_uuid"))  // char*
+    "consumerUUID", v_str("example_consumerUUID"))  // char*
 , NULL, &err);
 ```
 
@@ -1251,10 +1269,10 @@ Entity* output_reset_password = bluefintecsuserbackoffice_output_reset_password(
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `char*` | No |  |
-| `phone_number` | `char*` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `char*` | No |  |
+| `consumerUuid` | `char*` | No |  |
+| `phoneNumber` | `char*` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `char*` | No |  |
 
 ### Operations
 
@@ -1299,23 +1317,23 @@ Entity* output_update_consumer = bluefintecsuserbackoffice_output_update_consume
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `char*` | No |  |
-| `consumer_uuid` | `char*` | Yes |  |
+| `consumerUuid` | `char*` | Yes |  |
 | `consumerlanguage` | `char*` | No |  |
 | `country` | `char*` | No |  |
-| `date_of_birth` | `char*` | No |  |
+| `dateOfBirth` | `char*` | No |  |
 | `datetime_created` | `char*` | No |  |
-| `driver_licence_number` | `char*` | No |  |
+| `driverLicenceNumber` | `char*` | No |  |
 | `email` | `char*` | No |  |
-| `first_name` | `char*` | No |  |
-| `identification_number` | `char*` | No |  |
-| `kyc_passed` | `bool` | No |  |
-| `last_name` | `char*` | No |  |
+| `firstName` | `char*` | No |  |
+| `identificationNumber` | `char*` | No |  |
+| `kycPassed` | `bool` | No |  |
+| `lastName` | `char*` | No |  |
 | `nationality` | `char*` | No |  |
-| `passport_number` | `char*` | No |  |
-| `phone_number` | `char*` | No |  |
-| `place_of_birth` | `char*` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `char*` | No |  |
+| `passportNumber` | `char*` | No |  |
+| `phoneNumber` | `char*` | No |  |
+| `placeOfBirth` | `char*` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `char*` | No |  |
 | `state` | `char*` | No |  |
 | `street1` | `char*` | No |  |
 | `street2` | `char*` | No |  |
@@ -1331,7 +1349,7 @@ Create a new entity with the given data. Returns the created entity data and set
 ```c
 Entity* output_update_consumer = bluefintecsuserbackoffice_output_update_consumer(client, NULL);
 voxgig_value* result = output_update_consumer->vt->create(output_update_consumer, cmap(1,
-    "consumer_uuid", v_str("example_consumer_uuid"))  // char*
+    "consumerUuid", v_str("example_consumerUuid"))  // char*
 , NULL, &err);
 ```
 
@@ -1366,13 +1384,13 @@ Entity* output_update_profile = bluefintecsuserbackoffice_output_update_profile(
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_language` | `char*` | No |  |
+| `consumerLanguage` | `char*` | No |  |
 | `email` | `char*` | No |  |
-| `first_name` | `char*` | No |  |
-| `last_name` | `char*` | No |  |
-| `phone_number` | `char*` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `char*` | No |  |
+| `firstName` | `char*` | No |  |
+| `lastName` | `char*` | No |  |
+| `phoneNumber` | `char*` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `char*` | No |  |
 
 ### Operations
 
@@ -1416,8 +1434,8 @@ Entity* version = bluefintecsuserbackoffice_version(client, NULL);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `char*` | No |  |
-| `build_date` | `char*` | No |  |
+| `appName` | `char*` | No |  |
+| `buildDate` | `char*` | No |  |
 | `version` | `char*` | No |  |
 
 ### Operations

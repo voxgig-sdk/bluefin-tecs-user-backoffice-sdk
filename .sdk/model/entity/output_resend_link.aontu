@@ -6,32 +6,32 @@ main: kit: entity: output_resend_link: {
 
   fields: [
     {
-      name: "business_registration_number"
+      name: "businessRegistrationNumber"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "consumer_uuid"
+      name: "consumerUUID"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "email_confirmation_code"
+      name: "emailConfirmationCode"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "phone_number"
+      name: "phoneNumber"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }

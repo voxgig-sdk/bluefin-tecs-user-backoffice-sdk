@@ -35,7 +35,7 @@ object OutputRemoveRoleEntityTest {
       var outputRemoveRoleRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.output_remove_role"), "output_remove_role_ref01"))
       val outputRemoveRoleRef01DataResult = outputRemoveRoleRef01Ent.create(outputRemoveRoleRef01Data, null)
-      outputRemoveRoleRef01Data = Helpers.toMapAny(outputRemoveRoleRef01DataResult)
+      outputRemoveRoleRef01Data = Helpers.toMapAny(outputRemoveRoleRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("output_remove_role.create.map", outputRemoveRoleRef01Data != null, "expected create result to be a map")
     }
   }

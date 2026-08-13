@@ -22,197 +22,191 @@ namespace sdk {
 namespace types {
 
 struct OutputActivateDigitalModule {
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct OutputActivateDigitalModuleCreateData {
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct OutputActivatePortalModule {
-  std::string client_secret;
-  std::string notification_email;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string clientSecret;
+  std::string notificationEmail;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct OutputActivatePortalModuleCreateData {
-  std::string client_secret;
-  std::string notification_email;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string clientSecret;
+  std::string notificationEmail;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct OutputActivateStoreModule {
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct OutputActivateStoreModuleCreateData {
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct OutputActivateUser {
-  std::string consumer_uuid;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string consumerUUID;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct OutputActivateUserCreateData {
-  std::string consumer_uuid;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string consumerUUID;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct OutputAssignRole {
-  std::string consumer_uuid;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::vector<Value> role;
+  std::string consumerUUID;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::vector<Value> roles;
 };
 
 struct OutputAssignRoleCreateData {
-  std::string consumer_uuid;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::vector<Value> role;
+  std::string consumerUUID;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::vector<Value> roles;
 };
 
 struct OutputChangeLogo {
-  std::string content_as_base64;
-  std::string mime_type;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string contentAsBase64;
+  std::string mimeType;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct OutputChangeLogoCreateData {
-  std::string content_as_base64;
-  std::string mime_type;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string contentAsBase64;
+  std::string mimeType;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct OutputCreateMandator {
   std::string city;  // optional
   std::string country;  // optional
-  std::string date_of_birth;  // optional
-  std::string description;
-  std::string drivers_license_number;  // optional
+  std::string dateOfBirth;  // optional
+  std::string description;  // optional
+  std::string driversLicenseNumber;  // optional
   std::string email;
-  std::string first_name;  // optional
-  std::string identification_number;  // optional
-  std::string last_name;  // optional
+  std::string firstName;  // optional
+  std::string identificationNumber;  // optional
+  std::string lastName;  // optional
   std::string login;
-  std::map<std::string, Value> mandator;  // optional
-  std::string name;
-  std::string passport_number;  // optional
+  std::string name;  // optional
+  std::string passportNumber;  // optional
   std::string phone;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
   std::string salutation;  // optional
   std::string state;  // optional
   std::string street1;  // optional
   std::string street2;  // optional
-  std::string zip_code;  // optional
+  std::string zipCode;  // optional
 };
 
 struct OutputCreateMandatorCreateData {
   std::string city;  // optional
   std::string country;  // optional
-  std::string date_of_birth;  // optional
-  std::string description;
-  std::string drivers_license_number;  // optional
+  std::string dateOfBirth;  // optional
+  std::string description;  // optional
+  std::string driversLicenseNumber;  // optional
   std::string email;
-  std::string first_name;  // optional
-  std::string identification_number;  // optional
-  std::string last_name;  // optional
+  std::string firstName;  // optional
+  std::string identificationNumber;  // optional
+  std::string lastName;  // optional
   std::string login;
-  std::map<std::string, Value> mandator;  // optional
-  std::string name;
-  std::string passport_number;  // optional
+  std::string name;  // optional
+  std::string passportNumber;  // optional
   std::string phone;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
   std::string salutation;  // optional
   std::string state;  // optional
   std::string street1;  // optional
   std::string street2;  // optional
-  std::string zip_code;  // optional
+  std::string zipCode;  // optional
 };
 
 struct OutputCreateServiceUser {
-  std::string mandator_name;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string mandatorName;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct OutputCreateServiceUserCreateData {
-  std::string mandator_name;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string mandatorName;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct OutputDeactivateUser {
-  std::string consumer_uuid;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string consumerUUID;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct OutputDeactivateUserCreateData {
-  std::string consumer_uuid;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string consumerUUID;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct OutputGetKycDocument {
-  std::string case_id;  // optional
-  std::string encoded_data_base64;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string caseID;  // optional
+  std::string encodedDataBase64;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct OutputGetKycDocumentCreateData {
-  std::string case_id;  // optional
-  std::string encoded_data_base64;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string caseID;  // optional
+  std::string encodedDataBase64;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct OutputGetLogo {
-  std::string content_as_base64;
-  std::string mime_type;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string contentAsBase64;
+  std::string mimeType;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct OutputGetLogoLoadMatch {
-  std::string content_as_base64;  // optional
-  std::string mime_type;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string contentAsBase64;  // optional
+  std::string mimeType;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct OutputListOfAvailableRole {
-  std::vector<Value> available_role;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::vector<Value> availableRoles;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct OutputListOfAvailableRoleCreateData {
-  std::vector<Value> available_role;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::vector<Value> availableRoles;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct OutputListOfMandator {
   std::map<std::string, Value> filter;  // optional
   std::vector<Value> list;  // optional
   std::map<std::string, Value> pagination;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
   std::map<std::string, Value> sorting;  // optional
 };
 
@@ -220,40 +214,40 @@ struct OutputListOfMandatorCreateData {
   std::map<std::string, Value> filter;  // optional
   std::vector<Value> list;  // optional
   std::map<std::string, Value> pagination;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
   std::map<std::string, Value> sorting;  // optional
 };
 
 struct OutputListOfModule {
   std::vector<Value> list;  // optional
   std::map<std::string, Value> pagination;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct OutputListOfModuleCreateData {
   std::vector<Value> list;  // optional
   std::map<std::string, Value> pagination;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct OutputListOfRoleGroup {
   std::map<std::string, Value> filter;  // optional
-  std::vector<Value> group_role;  // optional
+  std::vector<Value> groupRoles;  // optional
   std::map<std::string, Value> pagination;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
   std::map<std::string, Value> sorting;  // optional
 };
 
 struct OutputListOfRoleGroupCreateData {
   std::map<std::string, Value> filter;  // optional
-  std::vector<Value> group_role;  // optional
+  std::vector<Value> groupRoles;  // optional
   std::map<std::string, Value> pagination;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
   std::map<std::string, Value> sorting;  // optional
 };
 
@@ -261,8 +255,8 @@ struct OutputListOfTransactionsHistory {
   std::map<std::string, Value> filter;  // optional
   std::vector<Value> list;  // optional
   std::map<std::string, Value> pagination;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
   std::map<std::string, Value> sorting;  // optional
 };
 
@@ -270,8 +264,8 @@ struct OutputListOfTransactionsHistoryCreateData {
   std::map<std::string, Value> filter;  // optional
   std::vector<Value> list;  // optional
   std::map<std::string, Value> pagination;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
   std::map<std::string, Value> sorting;  // optional
 };
 
@@ -279,8 +273,8 @@ struct OutputListOfUser {
   std::map<std::string, Value> filter;  // optional
   std::vector<Value> list;  // optional
   std::map<std::string, Value> pagination;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
   std::map<std::string, Value> sorting;  // optional
 };
 
@@ -288,44 +282,44 @@ struct OutputListOfUserCreateData {
   std::map<std::string, Value> filter;  // optional
   std::vector<Value> list;  // optional
   std::map<std::string, Value> pagination;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
   std::map<std::string, Value> sorting;  // optional
 };
 
 struct OutputProvideCredential {
-  std::string mandator_name;
+  std::string mandatorName;
   std::string password;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
   std::string username;  // optional
 };
 
 struct OutputProvideCredentialCreateData {
-  std::string mandator_name;
+  std::string mandatorName;
   std::string password;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
   std::string username;  // optional
 };
 
 struct OutputRegisterUser {
   std::string city;  // optional
-  std::string consumer_id;  // optional
-  std::string consumer_language;  // optional
+  std::string consumerId;  // optional
+  std::string consumerLanguage;  // optional
   std::string country;  // optional
-  std::string date_of_birth;  // optional
-  std::string driver_licence_number;  // optional
+  std::string dateOfBirth;  // optional
+  std::string driverLicenceNumber;  // optional
   std::string email;
-  std::string first_name;  // optional
-  std::string identification_number;  // optional
-  std::string last_name;  // optional
+  std::string firstName;  // optional
+  std::string identificationNumber;  // optional
+  std::string lastName;  // optional
   std::string login;  // optional
   std::string module;  // optional
-  std::string passport_number;  // optional
+  std::string passportNumber;  // optional
   std::string phone;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
   std::string salutation;  // optional
   std::string state;  // optional
   std::string street1;  // optional
@@ -335,21 +329,21 @@ struct OutputRegisterUser {
 
 struct OutputRegisterUserCreateData {
   std::string city;  // optional
-  std::string consumer_id;  // optional
-  std::string consumer_language;  // optional
+  std::string consumerId;  // optional
+  std::string consumerLanguage;  // optional
   std::string country;  // optional
-  std::string date_of_birth;  // optional
-  std::string driver_licence_number;  // optional
+  std::string dateOfBirth;  // optional
+  std::string driverLicenceNumber;  // optional
   std::string email;
-  std::string first_name;  // optional
-  std::string identification_number;  // optional
-  std::string last_name;  // optional
+  std::string firstName;  // optional
+  std::string identificationNumber;  // optional
+  std::string lastName;  // optional
   std::string login;  // optional
   std::string module;  // optional
-  std::string passport_number;  // optional
+  std::string passportNumber;  // optional
   std::string phone;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
   std::string salutation;  // optional
   std::string state;  // optional
   std::string street1;  // optional
@@ -358,70 +352,70 @@ struct OutputRegisterUserCreateData {
 };
 
 struct OutputRemoveRole {
-  std::string consumer_uuid;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::vector<Value> role;  // optional
+  std::string consumerUUID;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::vector<Value> roles;  // optional
 };
 
 struct OutputRemoveRoleCreateData {
-  std::string consumer_uuid;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::vector<Value> role;  // optional
+  std::string consumerUUID;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::vector<Value> roles;  // optional
 };
 
 struct OutputResendLink {
-  std::string business_registration_number;  // optional
-  std::string consumer_uuid;
-  std::string email_confirmation_code;  // optional
-  std::string phone_number;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string businessRegistrationNumber;  // optional
+  std::string consumerUUID;
+  std::string emailConfirmationCode;  // optional
+  std::string phoneNumber;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct OutputResendLinkCreateData {
-  std::string business_registration_number;  // optional
-  std::string consumer_uuid;
-  std::string email_confirmation_code;  // optional
-  std::string phone_number;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string businessRegistrationNumber;  // optional
+  std::string consumerUUID;
+  std::string emailConfirmationCode;  // optional
+  std::string phoneNumber;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct OutputResetPassword {
-  std::string consumer_uuid;  // optional
-  std::string phone_number;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string consumerUuid;  // optional
+  std::string phoneNumber;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct OutputResetPasswordCreateData {
-  std::string consumer_uuid;  // optional
-  std::string phone_number;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string consumerUuid;  // optional
+  std::string phoneNumber;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct OutputUpdateConsumer {
   std::string city;  // optional
-  std::string consumer_uuid;
+  std::string consumerUuid;
   std::string consumerlanguage;  // optional
   std::string country;  // optional
-  std::string date_of_birth;  // optional
+  std::string dateOfBirth;  // optional
   std::string datetime_created;  // optional
-  std::string driver_licence_number;  // optional
+  std::string driverLicenceNumber;  // optional
   std::string email;  // optional
-  std::string first_name;  // optional
-  std::string identification_number;  // optional
-  bool kyc_passed;  // optional
-  std::string last_name;  // optional
+  std::string firstName;  // optional
+  std::string identificationNumber;  // optional
+  bool kycPassed;  // optional
+  std::string lastName;  // optional
   std::string nationality;  // optional
-  std::string passport_number;  // optional
-  std::string phone_number;  // optional
-  std::string place_of_birth;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string passportNumber;  // optional
+  std::string phoneNumber;  // optional
+  std::string placeOfBirth;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
   std::string state;  // optional
   std::string street1;  // optional
   std::string street2;  // optional
@@ -431,23 +425,23 @@ struct OutputUpdateConsumer {
 
 struct OutputUpdateConsumerCreateData {
   std::string city;  // optional
-  std::string consumer_uuid;
+  std::string consumerUuid;
   std::string consumerlanguage;  // optional
   std::string country;  // optional
-  std::string date_of_birth;  // optional
+  std::string dateOfBirth;  // optional
   std::string datetime_created;  // optional
-  std::string driver_licence_number;  // optional
+  std::string driverLicenceNumber;  // optional
   std::string email;  // optional
-  std::string first_name;  // optional
-  std::string identification_number;  // optional
-  bool kyc_passed;  // optional
-  std::string last_name;  // optional
+  std::string firstName;  // optional
+  std::string identificationNumber;  // optional
+  bool kycPassed;  // optional
+  std::string lastName;  // optional
   std::string nationality;  // optional
-  std::string passport_number;  // optional
-  std::string phone_number;  // optional
-  std::string place_of_birth;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string passportNumber;  // optional
+  std::string phoneNumber;  // optional
+  std::string placeOfBirth;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
   std::string state;  // optional
   std::string street1;  // optional
   std::string street2;  // optional
@@ -456,34 +450,34 @@ struct OutputUpdateConsumerCreateData {
 };
 
 struct OutputUpdateProfile {
-  std::string consumer_language;  // optional
+  std::string consumerLanguage;  // optional
   std::string email;  // optional
-  std::string first_name;  // optional
-  std::string last_name;  // optional
-  std::string phone_number;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string firstName;  // optional
+  std::string lastName;  // optional
+  std::string phoneNumber;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct OutputUpdateProfileCreateData {
-  std::string consumer_language;  // optional
+  std::string consumerLanguage;  // optional
   std::string email;  // optional
-  std::string first_name;  // optional
-  std::string last_name;  // optional
-  std::string phone_number;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string firstName;  // optional
+  std::string lastName;  // optional
+  std::string phoneNumber;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct Version {
-  std::string app_name;  // optional
-  std::string build_date;  // optional
+  std::string appName;  // optional
+  std::string buildDate;  // optional
   std::string version;  // optional
 };
 
 struct VersionLoadMatch {
-  std::string app_name;  // optional
-  std::string build_date;  // optional
+  std::string appName;  // optional
+  std::string buildDate;  // optional
   std::string version;  // optional
 };
 

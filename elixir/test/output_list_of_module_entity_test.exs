@@ -31,7 +31,8 @@ defmodule BluefinTecsUserBackoffice.OutputListOfModuleEntityTest do
   test "should create then read back" do
     sdk = BluefinTecsUserBackoffice.test(S.jm(["entity", S.jm(["output_list_of_module", S.jm([])])]))
     ent = BluefinTecsUserBackoffice.output_list_of_module(sdk)
-    made = BluefinTecsUserBackoffice.Entity.OutputListOfModule.create(ent, S.jm(["name", "test-create"]))
+    created = BluefinTecsUserBackoffice.Entity.OutputListOfModule.create(ent, S.jm(["name", "test-create"]))
+    made = BluefinTecsUserBackoffice.EntityBase.data_get(created)
     assert S.ismap(made)
     assert S.getprop(made, "id") != nil
   end

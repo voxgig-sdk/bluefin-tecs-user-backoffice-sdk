@@ -89,24 +89,24 @@ public class VersionDirectTest {
     final List<Map<String, Object>> calls = new ArrayList<>();
 
     Map<String, Object> envm = new LinkedHashMap<>();
-    envm.put("BLUEFINTECSUSERBACKOFFICE_TEST_VERSION_ENTID", new LinkedHashMap<>());
-    envm.put("BLUEFINTECSUSERBACKOFFICE_TEST_LIVE", "FALSE");
-    envm.put("BLUEFINTECSUSERBACKOFFICE_APIKEY", "NONE");
+    envm.put("BLUEFIN_TECS_USER_BACKOFFICE_TEST_VERSION_ENTID", new LinkedHashMap<>());
+    envm.put("BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE", "FALSE");
+    envm.put("BLUEFIN_TECS_USER_BACKOFFICE_APIKEY", "NONE");
     Map<String, Object> env = RunnerSupport.envOverride(envm);
 
-    boolean live = "TRUE".equals(env.get("BLUEFINTECSUSERBACKOFFICE_TEST_LIVE"));
+    boolean live = "TRUE".equals(env.get("BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE"));
 
     DirectSetup setup = new DirectSetup();
     setup.calls = calls;
 
     if (live) {
       Map<String, Object> mergedOpts = new LinkedHashMap<>();
-      mergedOpts.put("apikey", env.get("BLUEFINTECSUSERBACKOFFICE_APIKEY"));
+      mergedOpts.put("apikey", env.get("BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"));
       setup.client = new BluefinTecsUserBackofficeSDK(mergedOpts);
       setup.live = true;
 
       Map<String, Object> idmap = new LinkedHashMap<>();
-      Object entidRaw = env.get("BLUEFINTECSUSERBACKOFFICE_TEST_VERSION_ENTID");
+      Object entidRaw = env.get("BLUEFIN_TECS_USER_BACKOFFICE_TEST_VERSION_ENTID");
       if (entidRaw instanceof String && ((String) entidRaw).startsWith("{")) {
         Map<String, Object> parsed = Helpers.toMapAny(Json.parseOrNull((String) entidRaw));
         if (parsed != null) {

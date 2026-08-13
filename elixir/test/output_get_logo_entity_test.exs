@@ -34,7 +34,8 @@ defmodule BluefinTecsUserBackoffice.OutputGetLogoEntityTest do
     if id != nil do
       sdk = mk_sdk()
       ent = BluefinTecsUserBackoffice.output_get_logo(sdk)
-      rec = BluefinTecsUserBackoffice.Entity.OutputGetLogo.load(ent, S.jm(["id", id]))
+      loaded = BluefinTecsUserBackoffice.Entity.OutputGetLogo.load(ent, S.jm(["id", id]))
+      rec = BluefinTecsUserBackoffice.EntityBase.data_get(loaded)
       assert S.ismap(rec)
       assert S.getprop(rec, "id") == id
     end

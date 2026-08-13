@@ -35,7 +35,7 @@ object OutputListOfTransactionsHistoryEntityTest {
       var outputListOfTransactionsHistoryRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.output_list_of_transactions_history"), "output_list_of_transactions_history_ref01"))
       val outputListOfTransactionsHistoryRef01DataResult = outputListOfTransactionsHistoryRef01Ent.create(outputListOfTransactionsHistoryRef01Data, null)
-      outputListOfTransactionsHistoryRef01Data = Helpers.toMapAny(outputListOfTransactionsHistoryRef01DataResult)
+      outputListOfTransactionsHistoryRef01Data = Helpers.toMapAny(outputListOfTransactionsHistoryRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("output_list_of_transactions_history.create.map", outputListOfTransactionsHistoryRef01Data != null, "expected create result to be a map")
     }
   }

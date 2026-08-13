@@ -186,8 +186,8 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -246,10 +246,10 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `string` | Yes |  |
-| `notification_email` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `clientSecret` | `string` | Yes |  |
+| `notificationEmail` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -261,8 +261,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-output_activate_portal_module/create (api/output_activate_portal_module client nil)
     (vs/jm
-      "client_secret" "example_client_secret"  ;; string
-      "notification_email" "example_notification_email"  ;; string
+      "clientSecret" "example_clientSecret"  ;; string
+      "notificationEmail" "example_notificationEmail"  ;; string
       )
     nil))
 ```
@@ -310,8 +310,8 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -370,9 +370,9 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `consumerUUID` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -431,10 +431,10 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `role` | `vector` | Yes |  |
+| `consumerUUID` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `roles` | `vector` | Yes |  |
 
 ### Operations
 
@@ -446,8 +446,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-output_assign_role/create (api/output_assign_role client nil)
     (vs/jm
-      "consumer_uuid" "example_consumer_uuid"  ;; string
-      "role" (vs/jt)  ;; vector
+      "consumerUUID" "example_consumerUUID"  ;; string
+      "roles" (vs/jt)  ;; vector
       )
     nil))
 ```
@@ -495,10 +495,10 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `string` | Yes |  |
-| `mime_type` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `contentAsBase64` | `string` | Yes |  |
+| `mimeType` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -510,8 +510,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-output_change_logo/create (api/output_change_logo client nil)
     (vs/jm
-      "content_as_base64" "example_content_as_base64"  ;; string
-      "mime_type" "example_mime_type"  ;; string
+      "contentAsBase64" "example_contentAsBase64"  ;; string
+      "mimeType" "example_mimeType"  ;; string
       )
     nil))
 ```
@@ -561,25 +561,45 @@ Return the entity name.
 | --- | --- | --- | --- |
 | `city` | `string` | No |  |
 | `country` | `string` | No |  |
-| `date_of_birth` | `string` | No |  |
-| `description` | `string` | Yes |  |
-| `drivers_license_number` | `string` | No |  |
+| `dateOfBirth` | `string` | No |  |
+| `description` | `string` | No |  |
+| `driversLicenseNumber` | `string` | No |  |
 | `email` | `string` | Yes |  |
-| `first_name` | `string` | No |  |
-| `identification_number` | `string` | No |  |
-| `last_name` | `string` | No |  |
+| `firstName` | `string` | No |  |
+| `identificationNumber` | `string` | No |  |
+| `lastName` | `string` | No |  |
 | `login` | `string` | Yes |  |
-| `mandator` | `map` | No |  |
-| `name` | `string` | Yes |  |
-| `passport_number` | `string` | No |  |
+| `name` | `string` | No |  |
+| `passportNumber` | `string` | No |  |
 | `phone` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
 | `salutation` | `string` | No |  |
 | `state` | `string` | No |  |
 | `street1` | `string` | No |  |
 | `street2` | `string` | No |  |
-| `zip_code` | `string` | No |  |
+| `zipCode` | `string` | No |  |
+
+### Field Usage by Operation
+
+| Field | create |
+| --- | --- |
+| `city` | - |
+| `country` | - |
+| `dateOfBirth` | - |
+| `description` | Yes |
+| `driversLicenseNumber` | - |
+| `email` | - |
+| `firstName` | - |
+| `identificationNumber` | - |
+| `lastName` | - |
+| `login` | - |
+| `name` | Yes |
+| `passportNumber` | - |
+| `phone` | - |
+| `salutation` | - |
+| `state` | - |
+| `street1` | - |
+| `street2` | - |
+| `zipCode` | - |
 
 ### Operations
 
@@ -591,10 +611,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-output_create_mandator/create (api/output_create_mandator client nil)
     (vs/jm
-      "description" "example_description"  ;; string
       "email" "example_email"  ;; string
       "login" "example_login"  ;; string
-      "name" "example_name"  ;; string
       "phone" "example_phone"  ;; string
       )
     nil))
@@ -643,9 +661,9 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `mandatorName` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -657,7 +675,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-output_create_service_user/create (api/output_create_service_user client nil)
     (vs/jm
-      "mandator_name" "example_mandator_name"  ;; string
+      "mandatorName" "example_mandatorName"  ;; string
       )
     nil))
 ```
@@ -705,9 +723,9 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `consumerUUID` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -766,10 +784,10 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `case_id` | `string` | No |  |
-| `encoded_data_base64` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `caseID` | `string` | No |  |
+| `encodedDataBase64` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -828,10 +846,10 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `string` | Yes |  |
-| `mime_type` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `contentAsBase64` | `string` | Yes |  |
+| `mimeType` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -886,9 +904,9 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `available_role` | `vector` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `availableRoles` | `vector` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -950,8 +968,8 @@ Return the entity name.
 | `filter` | `map` | No |  |
 | `list` | `vector` | No |  |
 | `pagination` | `map` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 | `sorting` | `map` | No |  |
 
 ### Operations
@@ -1013,8 +1031,8 @@ Return the entity name.
 | --- | --- | --- | --- |
 | `list` | `vector` | No |  |
 | `pagination` | `map` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1074,10 +1092,10 @@ Return the entity name.
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `filter` | `map` | No |  |
-| `group_role` | `vector` | No |  |
+| `groupRoles` | `vector` | No |  |
 | `pagination` | `map` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 | `sorting` | `map` | No |  |
 
 ### Operations
@@ -1140,8 +1158,8 @@ Return the entity name.
 | `filter` | `map` | No |  |
 | `list` | `vector` | No |  |
 | `pagination` | `map` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 | `sorting` | `map` | No |  |
 
 ### Operations
@@ -1204,8 +1222,8 @@ Return the entity name.
 | `filter` | `map` | No |  |
 | `list` | `vector` | No |  |
 | `pagination` | `map` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 | `sorting` | `map` | No |  |
 
 ### Operations
@@ -1265,10 +1283,10 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `string` | Yes |  |
+| `mandatorName` | `string` | Yes |  |
 | `password` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 | `username` | `string` | No |  |
 
 ### Operations
@@ -1281,7 +1299,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-output_provide_credential/create (api/output_provide_credential client nil)
     (vs/jm
-      "mandator_name" "example_mandator_name"  ;; string
+      "mandatorName" "example_mandatorName"  ;; string
       )
     nil))
 ```
@@ -1330,21 +1348,21 @@ Return the entity name.
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `string` | No |  |
-| `consumer_id` | `string` | No |  |
-| `consumer_language` | `string` | No |  |
+| `consumerId` | `string` | No |  |
+| `consumerLanguage` | `string` | No |  |
 | `country` | `string` | No |  |
-| `date_of_birth` | `string` | No |  |
-| `driver_licence_number` | `string` | No |  |
+| `dateOfBirth` | `string` | No |  |
+| `driverLicenceNumber` | `string` | No |  |
 | `email` | `string` | Yes |  |
-| `first_name` | `string` | No |  |
-| `identification_number` | `string` | No |  |
-| `last_name` | `string` | No |  |
+| `firstName` | `string` | No |  |
+| `identificationNumber` | `string` | No |  |
+| `lastName` | `string` | No |  |
 | `login` | `string` | No |  |
 | `module` | `string` | No |  |
-| `passport_number` | `string` | No |  |
+| `passportNumber` | `string` | No |  |
 | `phone` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 | `salutation` | `string` | No |  |
 | `state` | `string` | No |  |
 | `street1` | `string` | No |  |
@@ -1409,10 +1427,10 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `role` | `vector` | No |  |
+| `consumerUUID` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `roles` | `vector` | No |  |
 
 ### Operations
 
@@ -1471,12 +1489,12 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `business_registration_number` | `string` | No |  |
-| `consumer_uuid` | `string` | Yes |  |
-| `email_confirmation_code` | `string` | No |  |
-| `phone_number` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `businessRegistrationNumber` | `string` | No |  |
+| `consumerUUID` | `string` | Yes |  |
+| `emailConfirmationCode` | `string` | No |  |
+| `phoneNumber` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1488,7 +1506,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-output_resend_link/create (api/output_resend_link client nil)
     (vs/jm
-      "consumer_uuid" "example_consumer_uuid"  ;; string
+      "consumerUUID" "example_consumerUUID"  ;; string
       )
     nil))
 ```
@@ -1536,10 +1554,10 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `phone_number` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `consumerUuid` | `string` | No |  |
+| `phoneNumber` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1599,23 +1617,23 @@ Return the entity name.
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `string` | No |  |
-| `consumer_uuid` | `string` | Yes |  |
+| `consumerUuid` | `string` | Yes |  |
 | `consumerlanguage` | `string` | No |  |
 | `country` | `string` | No |  |
-| `date_of_birth` | `string` | No |  |
+| `dateOfBirth` | `string` | No |  |
 | `datetime_created` | `string` | No |  |
-| `driver_licence_number` | `string` | No |  |
+| `driverLicenceNumber` | `string` | No |  |
 | `email` | `string` | No |  |
-| `first_name` | `string` | No |  |
-| `identification_number` | `string` | No |  |
-| `kyc_passed` | `boolean` | No |  |
-| `last_name` | `string` | No |  |
+| `firstName` | `string` | No |  |
+| `identificationNumber` | `string` | No |  |
+| `kycPassed` | `boolean` | No |  |
+| `lastName` | `string` | No |  |
 | `nationality` | `string` | No |  |
-| `passport_number` | `string` | No |  |
-| `phone_number` | `string` | No |  |
-| `place_of_birth` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `passportNumber` | `string` | No |  |
+| `phoneNumber` | `string` | No |  |
+| `placeOfBirth` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 | `state` | `string` | No |  |
 | `street1` | `string` | No |  |
 | `street2` | `string` | No |  |
@@ -1632,7 +1650,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-output_update_consumer/create (api/output_update_consumer client nil)
     (vs/jm
-      "consumer_uuid" "example_consumer_uuid"  ;; string
+      "consumerUuid" "example_consumerUuid"  ;; string
       )
     nil))
 ```
@@ -1680,13 +1698,13 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_language` | `string` | No |  |
+| `consumerLanguage` | `string` | No |  |
 | `email` | `string` | No |  |
-| `first_name` | `string` | No |  |
-| `last_name` | `string` | No |  |
-| `phone_number` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `firstName` | `string` | No |  |
+| `lastName` | `string` | No |  |
+| `phoneNumber` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1745,8 +1763,8 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `string` | No |  |
-| `build_date` | `string` | No |  |
+| `appName` | `string` | No |  |
+| `buildDate` | `string` | No |  |
 | `version` | `string` | No |  |
 
 ### Operations

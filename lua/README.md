@@ -39,7 +39,7 @@ local client = sdk.new({
 
 ```lua
 -- Create
-local created, err = client:OutputActivateDigitalModule():create({ response_code = 1, response_message = "example_response_message" })
+local created, err = client:OutputActivateDigitalModule():create({ responseCode = 1, responseMessage = "example_responseMessage" })
 if err then error(err) end
 
 ```
@@ -242,9 +242,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local output_activate_digital_module, err = client:OutputActivateDigitalModule():load()
+    local output_get_logo, err = client:OutputGetLogo():load()
     if err then error(err) end
-    -- output_activate_digital_module is the loaded record
+    -- output_get_logo is the loaded record
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -255,8 +255,8 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -266,10 +266,10 @@ API path: `/activateDigitalModule`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `notification_email` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clientSecret` |  |
+| `notificationEmail` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -279,8 +279,8 @@ API path: `/activateMerchantPortalModule`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -290,9 +290,9 @@ API path: `/activateAppStoreModule`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -302,10 +302,10 @@ API path: `/activateUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `role` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `roles` |  |
 
 Operations: Create.
 
@@ -315,10 +315,10 @@ API path: `/assignRoles`
 
 | Field | Description |
 | --- | --- |
-| `content_as_base64` |  |
-| `mime_type` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `contentAsBase64` |  |
+| `mimeType` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -330,25 +330,22 @@ API path: `/changeLogo`
 | --- | --- |
 | `city` |  |
 | `country` |  |
-| `date_of_birth` |  |
+| `dateOfBirth` |  |
 | `description` |  |
-| `drivers_license_number` |  |
+| `driversLicenseNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `lastName` |  |
 | `login` |  |
-| `mandator` |  |
 | `name` |  |
-| `passport_number` |  |
+| `passportNumber` |  |
 | `phone` |  |
-| `response_code` |  |
-| `response_message` |  |
 | `salutation` |  |
 | `state` |  |
 | `street1` |  |
 | `street2` |  |
-| `zip_code` |  |
+| `zipCode` |  |
 
 Operations: Create.
 
@@ -358,9 +355,9 @@ API path: `/createMandator`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `mandatorName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -370,9 +367,9 @@ API path: `/createServiceUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -382,10 +379,10 @@ API path: `/deactivateUser`
 
 | Field | Description |
 | --- | --- |
-| `case_id` |  |
-| `encoded_data_base64` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `caseID` |  |
+| `encodedDataBase64` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -395,10 +392,10 @@ API path: `/getKycDocument`
 
 | Field | Description |
 | --- | --- |
-| `content_as_base64` |  |
-| `mime_type` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `contentAsBase64` |  |
+| `mimeType` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Load.
 
@@ -408,9 +405,9 @@ API path: `/getLogo`
 
 | Field | Description |
 | --- | --- |
-| `available_role` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `availableRoles` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -423,8 +420,8 @@ API path: `/listOfAvailableRoles`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -437,8 +434,8 @@ API path: `/listOfMandators`
 | --- | --- |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -449,10 +446,10 @@ API path: `/listOfModules`
 | Field | Description |
 | --- | --- |
 | `filter` |  |
-| `group_role` |  |
+| `groupRoles` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -466,8 +463,8 @@ API path: `/listOfRoleGroups`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -481,8 +478,8 @@ API path: `/listOfTransactionsHistory`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -493,10 +490,10 @@ API path: `/listOfUsers`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
+| `mandatorName` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `username` |  |
 
 Operations: Create.
@@ -508,21 +505,21 @@ API path: `/provideCredentials`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `consumer_id` |  |
-| `consumer_language` |  |
+| `consumerId` |  |
+| `consumerLanguage` |  |
 | `country` |  |
-| `date_of_birth` |  |
-| `driver_licence_number` |  |
+| `dateOfBirth` |  |
+| `driverLicenceNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `lastName` |  |
 | `login` |  |
 | `module` |  |
-| `passport_number` |  |
+| `passportNumber` |  |
 | `phone` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `salutation` |  |
 | `state` |  |
 | `street1` |  |
@@ -537,10 +534,10 @@ API path: `/registerUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `role` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `roles` |  |
 
 Operations: Create.
 
@@ -550,12 +547,12 @@ API path: `/removeRoles`
 
 | Field | Description |
 | --- | --- |
-| `business_registration_number` |  |
-| `consumer_uuid` |  |
-| `email_confirmation_code` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `businessRegistrationNumber` |  |
+| `consumerUUID` |  |
+| `emailConfirmationCode` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -565,10 +562,10 @@ API path: `/resendLink`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUuid` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -579,23 +576,23 @@ API path: `/resetPassword`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `consumer_uuid` |  |
+| `consumerUuid` |  |
 | `consumerlanguage` |  |
 | `country` |  |
-| `date_of_birth` |  |
+| `dateOfBirth` |  |
 | `datetime_created` |  |
-| `driver_licence_number` |  |
+| `driverLicenceNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `kyc_passed` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `kycPassed` |  |
+| `lastName` |  |
 | `nationality` |  |
-| `passport_number` |  |
-| `phone_number` |  |
-| `place_of_birth` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `passportNumber` |  |
+| `phoneNumber` |  |
+| `placeOfBirth` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `state` |  |
 | `street1` |  |
 | `street2` |  |
@@ -610,13 +607,13 @@ API path: `/updateConsumer`
 
 | Field | Description |
 | --- | --- |
-| `consumer_language` |  |
+| `consumerLanguage` |  |
 | `email` |  |
-| `first_name` |  |
-| `last_name` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `firstName` |  |
+| `lastName` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -626,8 +623,8 @@ API path: `/updateProfile`
 
 | Field | Description |
 | --- | --- |
-| `app_name` |  |
-| `build_date` |  |
+| `appName` |  |
+| `buildDate` |  |
 | `version` |  |
 
 Operations: Load.
@@ -653,8 +650,8 @@ Create an instance: `local output_activate_digital_module = client:OutputActivat
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -678,17 +675,17 @@ Create an instance: `local output_activate_portal_module = client:OutputActivate
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `string` |  |
-| `notification_email` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `clientSecret` | `string` |  |
+| `notificationEmail` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```lua
 local output_activate_portal_module, err = client:OutputActivatePortalModule():create({
-  client_secret = "example_client_secret", -- string
-  notification_email = "example_notification_email", -- string
+  clientSecret = "example_clientSecret", -- string
+  notificationEmail = "example_notificationEmail", -- string
 })
 ```
 
@@ -707,8 +704,8 @@ Create an instance: `local output_activate_store_module = client:OutputActivateS
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -732,9 +729,9 @@ Create an instance: `local output_activate_user = client:OutputActivateUser(nil)
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `consumerUUID` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -758,17 +755,17 @@ Create an instance: `local output_assign_role = client:OutputAssignRole(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
-| `role` | `table` |  |
+| `consumerUUID` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
+| `roles` | `table` |  |
 
 #### Example: Create
 
 ```lua
 local output_assign_role, err = client:OutputAssignRole():create({
-  consumer_uuid = "example_consumer_uuid", -- string
-  role = {}, -- table
+  consumerUUID = "example_consumerUUID", -- string
+  roles = {}, -- table
 })
 ```
 
@@ -787,17 +784,17 @@ Create an instance: `local output_change_logo = client:OutputChangeLogo(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `content_as_base64` | `string` |  |
-| `mime_type` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `contentAsBase64` | `string` |  |
+| `mimeType` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```lua
 local output_change_logo, err = client:OutputChangeLogo():create({
-  content_as_base64 = "example_content_as_base64", -- string
-  mime_type = "example_mime_type", -- string
+  contentAsBase64 = "example_contentAsBase64", -- string
+  mimeType = "example_mimeType", -- string
 })
 ```
 
@@ -818,34 +815,29 @@ Create an instance: `local output_create_mandator = client:OutputCreateMandator(
 | --- | --- | --- |
 | `city` | `string` |  |
 | `country` | `string` |  |
-| `date_of_birth` | `string` |  |
+| `dateOfBirth` | `string` |  |
 | `description` | `string` |  |
-| `drivers_license_number` | `string` |  |
+| `driversLicenseNumber` | `string` |  |
 | `email` | `string` |  |
-| `first_name` | `string` |  |
-| `identification_number` | `string` |  |
-| `last_name` | `string` |  |
+| `firstName` | `string` |  |
+| `identificationNumber` | `string` |  |
+| `lastName` | `string` |  |
 | `login` | `string` |  |
-| `mandator` | `table` |  |
 | `name` | `string` |  |
-| `passport_number` | `string` |  |
+| `passportNumber` | `string` |  |
 | `phone` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
 | `salutation` | `string` |  |
 | `state` | `string` |  |
 | `street1` | `string` |  |
 | `street2` | `string` |  |
-| `zip_code` | `string` |  |
+| `zipCode` | `string` |  |
 
 #### Example: Create
 
 ```lua
 local output_create_mandator, err = client:OutputCreateMandator():create({
-  description = "example_description", -- string
   email = "example_email", -- string
   login = "example_login", -- string
-  name = "example_name", -- string
   phone = "example_phone", -- string
 })
 ```
@@ -865,15 +857,15 @@ Create an instance: `local output_create_service_user = client:OutputCreateServi
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `mandatorName` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```lua
 local output_create_service_user, err = client:OutputCreateServiceUser():create({
-  mandator_name = "example_mandator_name", -- string
+  mandatorName = "example_mandatorName", -- string
 })
 ```
 
@@ -892,9 +884,9 @@ Create an instance: `local output_deactivate_user = client:OutputDeactivateUser(
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `consumerUUID` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -918,10 +910,10 @@ Create an instance: `local output_get_kyc_document = client:OutputGetKycDocument
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `case_id` | `string` |  |
-| `encoded_data_base64` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `caseID` | `string` |  |
+| `encodedDataBase64` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -945,10 +937,10 @@ Create an instance: `local output_get_logo = client:OutputGetLogo(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `content_as_base64` | `string` |  |
-| `mime_type` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `contentAsBase64` | `string` |  |
+| `mimeType` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Load
 
@@ -971,9 +963,9 @@ Create an instance: `local output_list_of_available_role = client:OutputListOfAv
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `available_role` | `table` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `availableRoles` | `table` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -1000,8 +992,8 @@ Create an instance: `local output_list_of_mandator = client:OutputListOfMandator
 | `filter` | `table` |  |
 | `list` | `table` |  |
 | `pagination` | `table` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 | `sorting` | `table` |  |
 
 #### Example: Create
@@ -1028,8 +1020,8 @@ Create an instance: `local output_list_of_module = client:OutputListOfModule(nil
 | --- | --- | --- |
 | `list` | `table` |  |
 | `pagination` | `table` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -1054,10 +1046,10 @@ Create an instance: `local output_list_of_role_group = client:OutputListOfRoleGr
 | Field | Type | Description |
 | --- | --- | --- |
 | `filter` | `table` |  |
-| `group_role` | `table` |  |
+| `groupRoles` | `table` |  |
 | `pagination` | `table` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 | `sorting` | `table` |  |
 
 #### Example: Create
@@ -1085,8 +1077,8 @@ Create an instance: `local output_list_of_transactions_history = client:OutputLi
 | `filter` | `table` |  |
 | `list` | `table` |  |
 | `pagination` | `table` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 | `sorting` | `table` |  |
 
 #### Example: Create
@@ -1114,8 +1106,8 @@ Create an instance: `local output_list_of_user = client:OutputListOfUser(nil)`
 | `filter` | `table` |  |
 | `list` | `table` |  |
 | `pagination` | `table` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 | `sorting` | `table` |  |
 
 #### Example: Create
@@ -1140,17 +1132,17 @@ Create an instance: `local output_provide_credential = client:OutputProvideCrede
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `string` |  |
+| `mandatorName` | `string` |  |
 | `password` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 | `username` | `string` |  |
 
 #### Example: Create
 
 ```lua
 local output_provide_credential, err = client:OutputProvideCredential():create({
-  mandator_name = "example_mandator_name", -- string
+  mandatorName = "example_mandatorName", -- string
 })
 ```
 
@@ -1170,21 +1162,21 @@ Create an instance: `local output_register_user = client:OutputRegisterUser(nil)
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `string` |  |
-| `consumer_id` | `string` |  |
-| `consumer_language` | `string` |  |
+| `consumerId` | `string` |  |
+| `consumerLanguage` | `string` |  |
 | `country` | `string` |  |
-| `date_of_birth` | `string` |  |
-| `driver_licence_number` | `string` |  |
+| `dateOfBirth` | `string` |  |
+| `driverLicenceNumber` | `string` |  |
 | `email` | `string` |  |
-| `first_name` | `string` |  |
-| `identification_number` | `string` |  |
-| `last_name` | `string` |  |
+| `firstName` | `string` |  |
+| `identificationNumber` | `string` |  |
+| `lastName` | `string` |  |
 | `login` | `string` |  |
 | `module` | `string` |  |
-| `passport_number` | `string` |  |
+| `passportNumber` | `string` |  |
 | `phone` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 | `salutation` | `string` |  |
 | `state` | `string` |  |
 | `street1` | `string` |  |
@@ -1214,10 +1206,10 @@ Create an instance: `local output_remove_role = client:OutputRemoveRole(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
-| `role` | `table` |  |
+| `consumerUUID` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
+| `roles` | `table` |  |
 
 #### Example: Create
 
@@ -1241,18 +1233,18 @@ Create an instance: `local output_resend_link = client:OutputResendLink(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `business_registration_number` | `string` |  |
-| `consumer_uuid` | `string` |  |
-| `email_confirmation_code` | `string` |  |
-| `phone_number` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `businessRegistrationNumber` | `string` |  |
+| `consumerUUID` | `string` |  |
+| `emailConfirmationCode` | `string` |  |
+| `phoneNumber` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```lua
 local output_resend_link, err = client:OutputResendLink():create({
-  consumer_uuid = "example_consumer_uuid", -- string
+  consumerUUID = "example_consumerUUID", -- string
 })
 ```
 
@@ -1271,10 +1263,10 @@ Create an instance: `local output_reset_password = client:OutputResetPassword(ni
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `phone_number` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `consumerUuid` | `string` |  |
+| `phoneNumber` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -1299,23 +1291,23 @@ Create an instance: `local output_update_consumer = client:OutputUpdateConsumer(
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `string` |  |
-| `consumer_uuid` | `string` |  |
+| `consumerUuid` | `string` |  |
 | `consumerlanguage` | `string` |  |
 | `country` | `string` |  |
-| `date_of_birth` | `string` |  |
+| `dateOfBirth` | `string` |  |
 | `datetime_created` | `string` |  |
-| `driver_licence_number` | `string` |  |
+| `driverLicenceNumber` | `string` |  |
 | `email` | `string` |  |
-| `first_name` | `string` |  |
-| `identification_number` | `string` |  |
-| `kyc_passed` | `boolean` |  |
-| `last_name` | `string` |  |
+| `firstName` | `string` |  |
+| `identificationNumber` | `string` |  |
+| `kycPassed` | `boolean` |  |
+| `lastName` | `string` |  |
 | `nationality` | `string` |  |
-| `passport_number` | `string` |  |
-| `phone_number` | `string` |  |
-| `place_of_birth` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `passportNumber` | `string` |  |
+| `phoneNumber` | `string` |  |
+| `placeOfBirth` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 | `state` | `string` |  |
 | `street1` | `string` |  |
 | `street2` | `string` |  |
@@ -1326,7 +1318,7 @@ Create an instance: `local output_update_consumer = client:OutputUpdateConsumer(
 
 ```lua
 local output_update_consumer, err = client:OutputUpdateConsumer():create({
-  consumer_uuid = "example_consumer_uuid", -- string
+  consumerUuid = "example_consumerUuid", -- string
 })
 ```
 
@@ -1345,13 +1337,13 @@ Create an instance: `local output_update_profile = client:OutputUpdateProfile(ni
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_language` | `string` |  |
+| `consumerLanguage` | `string` |  |
 | `email` | `string` |  |
-| `first_name` | `string` |  |
-| `last_name` | `string` |  |
-| `phone_number` | `string` |  |
-| `response_code` | `number` |  |
-| `response_message` | `string` |  |
+| `firstName` | `string` |  |
+| `lastName` | `string` |  |
+| `phoneNumber` | `string` |  |
+| `responseCode` | `number` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -1375,8 +1367,8 @@ Create an instance: `local version = client:Version(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_name` | `string` |  |
-| `build_date` | `string` |  |
+| `appName` | `string` |  |
+| `buildDate` | `string` |  |
 | `version` | `string` |  |
 
 #### Example: Load

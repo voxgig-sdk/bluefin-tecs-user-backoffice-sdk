@@ -86,22 +86,22 @@ public class OutputGetLogoDirectTest
 
         var env = TestRunner.EnvOverride(new Dictionary<string, object?>
         {
-            ["BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_GET_LOGO_ENTID"] = new Dictionary<string, object?>(),
-            ["BLUEFINTECSUSERBACKOFFICE_TEST_LIVE"] = "FALSE",
-            ["BLUEFINTECSUSERBACKOFFICE_APIKEY"] = "NONE",
+            ["BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_GET_LOGO_ENTID"] = new Dictionary<string, object?>(),
+            ["BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE"] = "FALSE",
+            ["BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"] = "NONE",
         });
 
-        var live = Equals(env["BLUEFINTECSUSERBACKOFFICE_TEST_LIVE"], "TRUE");
+        var live = Equals(env["BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE"], "TRUE");
 
         if (live)
         {
             var liveClient = new BluefinTecsUserBackofficeSDK(new Dictionary<string, object?>
             {
-                ["apikey"] = env["BLUEFINTECSUSERBACKOFFICE_APIKEY"],
+                ["apikey"] = env["BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"],
             });
 
             var idmap = new Dictionary<string, object?>();
-            var entidRaw = env["BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_GET_LOGO_ENTID"];
+            var entidRaw = env["BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_GET_LOGO_ENTID"];
             if (entidRaw is string entidStr && entidStr.StartsWith("{"))
             {
                 try

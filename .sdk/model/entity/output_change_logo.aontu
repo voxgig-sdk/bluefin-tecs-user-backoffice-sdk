@@ -6,22 +6,22 @@ main: kit: entity: output_change_logo: {
 
   fields: [
     {
-      name: "content_as_base64"
+      name: "contentAsBase64"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "mime_type"
+      name: "mimeType"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }

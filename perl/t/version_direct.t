@@ -70,16 +70,16 @@ sub version_direct_setup {
   my $calls = [];
 
   my $env = BluefinTecsUserBackofficeTestRunner::env_override({
-    'BLUEFINTECSUSERBACKOFFICE_TEST_VERSION_ENTID' => {},
-    'BLUEFINTECSUSERBACKOFFICE_TEST_LIVE' => 'FALSE',
-    'BLUEFINTECSUSERBACKOFFICE_APIKEY' => 'NONE',
+    'BLUEFIN_TECS_USER_BACKOFFICE_TEST_VERSION_ENTID' => {},
+    'BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE' => 'FALSE',
+    'BLUEFIN_TECS_USER_BACKOFFICE_APIKEY' => 'NONE',
   });
 
-  my $live = ((($env->{'BLUEFINTECSUSERBACKOFFICE_TEST_LIVE'}) || '') eq 'TRUE') ? 1 : 0;
+  my $live = ((($env->{'BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE'}) || '') eq 'TRUE') ? 1 : 0;
 
   if ($live) {
     my $client = BluefinTecsUserBackofficeSDK->new({
-      'apikey' => $env->{'BLUEFINTECSUSERBACKOFFICE_APIKEY'},
+      'apikey' => $env->{'BLUEFIN_TECS_USER_BACKOFFICE_APIKEY'},
     });
     return {
       'client' => $client,

@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from bluefintecsuserbackoffice_sdk.utility.voxgig_struct import voxgig_struct as vs
 from bluefintecsuserbackoffice_sdk import BluefinTecsUserBackofficeSDK
-from core import helpers
+from bluefintecsuserbackoffice_sdk.core import helpers
 from test import runner
 
 
@@ -56,16 +56,16 @@ def _version_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "BLUEFINTECSUSERBACKOFFICE_TEST_VERSION_ENTID": {},
-        "BLUEFINTECSUSERBACKOFFICE_TEST_LIVE": "FALSE",
-        "BLUEFINTECSUSERBACKOFFICE_APIKEY": "NONE",
+        "BLUEFIN_TECS_USER_BACKOFFICE_TEST_VERSION_ENTID": {},
+        "BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE": "FALSE",
+        "BLUEFIN_TECS_USER_BACKOFFICE_APIKEY": "NONE",
     })
 
-    live = env.get("BLUEFINTECSUSERBACKOFFICE_TEST_LIVE") == "TRUE"
+    live = env.get("BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("BLUEFINTECSUSERBACKOFFICE_APIKEY"),
+            "apikey": env.get("BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"),
         }
         client = BluefinTecsUserBackofficeSDK(merged_opts)
         return {

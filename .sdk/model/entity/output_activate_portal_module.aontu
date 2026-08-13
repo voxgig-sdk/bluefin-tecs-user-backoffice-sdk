@@ -6,22 +6,22 @@ main: kit: entity: output_activate_portal_module: {
 
   fields: [
     {
-      name: "client_secret"
+      name: "clientSecret"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "notification_email"
+      name: "notificationEmail"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }

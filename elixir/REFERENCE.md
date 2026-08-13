@@ -183,8 +183,8 @@ output_activate_digital_module = BluefinTecsUserBackoffice.output_activate_digit
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
 
 ### Operations
 
@@ -236,10 +236,10 @@ output_activate_portal_module = BluefinTecsUserBackoffice.output_activate_portal
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `String.t()` | Yes |  |
-| `notification_email` | `String.t()` | Yes |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
+| `clientSecret` | `String.t()` | Yes |  |
+| `notificationEmail` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
 
 ### Operations
 
@@ -249,8 +249,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsUserBackoffice.Entity.OutputActivatePortalModule.create(output_activate_portal_module, BluefinTecsUserBackoffice.Helpers.deep(%{
-  "client_secret" => "example_client_secret",  # String.t()
-  "notification_email" => "example_notification_email",  # String.t()
+  "clientSecret" => "example_clientSecret",  # String.t()
+  "notificationEmail" => "example_notificationEmail",  # String.t()
 }))
 ```
 
@@ -293,8 +293,8 @@ output_activate_store_module = BluefinTecsUserBackoffice.output_activate_store_m
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
 
 ### Operations
 
@@ -346,9 +346,9 @@ output_activate_user = BluefinTecsUserBackoffice.output_activate_user(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String.t()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
+| `consumerUUID` | `String.t()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
 
 ### Operations
 
@@ -400,10 +400,10 @@ output_assign_role = BluefinTecsUserBackoffice.output_assign_role(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String.t()` | Yes |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `role` | `list()` | Yes |  |
+| `consumerUUID` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `roles` | `list()` | Yes |  |
 
 ### Operations
 
@@ -413,8 +413,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsUserBackoffice.Entity.OutputAssignRole.create(output_assign_role, BluefinTecsUserBackoffice.Helpers.deep(%{
-  "consumer_uuid" => "example_consumer_uuid",  # String.t()
-  "role" => [],  # list()
+  "consumerUUID" => "example_consumerUUID",  # String.t()
+  "roles" => [],  # list()
 }))
 ```
 
@@ -457,10 +457,10 @@ output_change_logo = BluefinTecsUserBackoffice.output_change_logo(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `String.t()` | Yes |  |
-| `mime_type` | `String.t()` | Yes |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
+| `contentAsBase64` | `String.t()` | Yes |  |
+| `mimeType` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
 
 ### Operations
 
@@ -470,8 +470,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsUserBackoffice.Entity.OutputChangeLogo.create(output_change_logo, BluefinTecsUserBackoffice.Helpers.deep(%{
-  "content_as_base64" => "example_content_as_base64",  # String.t()
-  "mime_type" => "example_mime_type",  # String.t()
+  "contentAsBase64" => "example_contentAsBase64",  # String.t()
+  "mimeType" => "example_mimeType",  # String.t()
 }))
 ```
 
@@ -516,25 +516,22 @@ output_create_mandator = BluefinTecsUserBackoffice.output_create_mandator(sdk)
 | --- | --- | --- | --- |
 | `city` | `String.t()` | No |  |
 | `country` | `String.t()` | No |  |
-| `date_of_birth` | `String.t()` | No |  |
-| `description` | `String.t()` | Yes |  |
-| `drivers_license_number` | `String.t()` | No |  |
+| `dateOfBirth` | `String.t()` | No |  |
+| `description` | `String.t()` | No |  |
+| `driversLicenseNumber` | `String.t()` | No |  |
 | `email` | `String.t()` | Yes |  |
-| `first_name` | `String.t()` | No |  |
-| `identification_number` | `String.t()` | No |  |
-| `last_name` | `String.t()` | No |  |
+| `firstName` | `String.t()` | No |  |
+| `identificationNumber` | `String.t()` | No |  |
+| `lastName` | `String.t()` | No |  |
 | `login` | `String.t()` | Yes |  |
-| `mandator` | `map()` | No |  |
-| `name` | `String.t()` | Yes |  |
-| `passport_number` | `String.t()` | No |  |
+| `name` | `String.t()` | No |  |
+| `passportNumber` | `String.t()` | No |  |
 | `phone` | `String.t()` | Yes |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
 | `salutation` | `String.t()` | No |  |
 | `state` | `String.t()` | No |  |
 | `street1` | `String.t()` | No |  |
 | `street2` | `String.t()` | No |  |
-| `zip_code` | `String.t()` | No |  |
+| `zipCode` | `String.t()` | No |  |
 
 ### Operations
 
@@ -544,10 +541,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsUserBackoffice.Entity.OutputCreateMandator.create(output_create_mandator, BluefinTecsUserBackoffice.Helpers.deep(%{
-  "description" => "example_description",  # String.t()
   "email" => "example_email",  # String.t()
   "login" => "example_login",  # String.t()
-  "name" => "example_name",  # String.t()
   "phone" => "example_phone",  # String.t()
 }))
 ```
@@ -591,9 +586,9 @@ output_create_service_user = BluefinTecsUserBackoffice.output_create_service_use
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `String.t()` | Yes |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
+| `mandatorName` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
 
 ### Operations
 
@@ -603,7 +598,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsUserBackoffice.Entity.OutputCreateServiceUser.create(output_create_service_user, BluefinTecsUserBackoffice.Helpers.deep(%{
-  "mandator_name" => "example_mandator_name",  # String.t()
+  "mandatorName" => "example_mandatorName",  # String.t()
 }))
 ```
 
@@ -646,9 +641,9 @@ output_deactivate_user = BluefinTecsUserBackoffice.output_deactivate_user(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String.t()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
+| `consumerUUID` | `String.t()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
 
 ### Operations
 
@@ -700,10 +695,10 @@ output_get_kyc_document = BluefinTecsUserBackoffice.output_get_kyc_document(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `case_id` | `String.t()` | No |  |
-| `encoded_data_base64` | `String.t()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
+| `caseID` | `String.t()` | No |  |
+| `encodedDataBase64` | `String.t()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
 
 ### Operations
 
@@ -755,10 +750,10 @@ output_get_logo = BluefinTecsUserBackoffice.output_get_logo(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `String.t()` | Yes |  |
-| `mime_type` | `String.t()` | Yes |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
+| `contentAsBase64` | `String.t()` | Yes |  |
+| `mimeType` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
 
 ### Operations
 
@@ -809,9 +804,9 @@ output_list_of_available_role = BluefinTecsUserBackoffice.output_list_of_availab
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `available_role` | `list()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
+| `availableRoles` | `list()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
 
 ### Operations
 
@@ -866,8 +861,8 @@ output_list_of_mandator = BluefinTecsUserBackoffice.output_list_of_mandator(sdk)
 | `filter` | `map()` | No |  |
 | `list` | `list()` | No |  |
 | `pagination` | `map()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
 | `sorting` | `map()` | No |  |
 
 ### Operations
@@ -922,8 +917,8 @@ output_list_of_module = BluefinTecsUserBackoffice.output_list_of_module(sdk)
 | --- | --- | --- | --- |
 | `list` | `list()` | No |  |
 | `pagination` | `map()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
 
 ### Operations
 
@@ -976,10 +971,10 @@ output_list_of_role_group = BluefinTecsUserBackoffice.output_list_of_role_group(
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `filter` | `map()` | No |  |
-| `group_role` | `list()` | No |  |
+| `groupRoles` | `list()` | No |  |
 | `pagination` | `map()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
 | `sorting` | `map()` | No |  |
 
 ### Operations
@@ -1035,8 +1030,8 @@ output_list_of_transactions_history = BluefinTecsUserBackoffice.output_list_of_t
 | `filter` | `map()` | No |  |
 | `list` | `list()` | No |  |
 | `pagination` | `map()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
 | `sorting` | `map()` | No |  |
 
 ### Operations
@@ -1092,8 +1087,8 @@ output_list_of_user = BluefinTecsUserBackoffice.output_list_of_user(sdk)
 | `filter` | `map()` | No |  |
 | `list` | `list()` | No |  |
 | `pagination` | `map()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
 | `sorting` | `map()` | No |  |
 
 ### Operations
@@ -1146,10 +1141,10 @@ output_provide_credential = BluefinTecsUserBackoffice.output_provide_credential(
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `String.t()` | Yes |  |
+| `mandatorName` | `String.t()` | Yes |  |
 | `password` | `String.t()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
 | `username` | `String.t()` | No |  |
 
 ### Operations
@@ -1160,7 +1155,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsUserBackoffice.Entity.OutputProvideCredential.create(output_provide_credential, BluefinTecsUserBackoffice.Helpers.deep(%{
-  "mandator_name" => "example_mandator_name",  # String.t()
+  "mandatorName" => "example_mandatorName",  # String.t()
 }))
 ```
 
@@ -1204,21 +1199,21 @@ output_register_user = BluefinTecsUserBackoffice.output_register_user(sdk)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `String.t()` | No |  |
-| `consumer_id` | `String.t()` | No |  |
-| `consumer_language` | `String.t()` | No |  |
+| `consumerId` | `String.t()` | No |  |
+| `consumerLanguage` | `String.t()` | No |  |
 | `country` | `String.t()` | No |  |
-| `date_of_birth` | `String.t()` | No |  |
-| `driver_licence_number` | `String.t()` | No |  |
+| `dateOfBirth` | `String.t()` | No |  |
+| `driverLicenceNumber` | `String.t()` | No |  |
 | `email` | `String.t()` | Yes |  |
-| `first_name` | `String.t()` | No |  |
-| `identification_number` | `String.t()` | No |  |
-| `last_name` | `String.t()` | No |  |
+| `firstName` | `String.t()` | No |  |
+| `identificationNumber` | `String.t()` | No |  |
+| `lastName` | `String.t()` | No |  |
 | `login` | `String.t()` | No |  |
 | `module` | `String.t()` | No |  |
-| `passport_number` | `String.t()` | No |  |
+| `passportNumber` | `String.t()` | No |  |
 | `phone` | `String.t()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
 | `salutation` | `String.t()` | No |  |
 | `state` | `String.t()` | No |  |
 | `street1` | `String.t()` | No |  |
@@ -1276,10 +1271,10 @@ output_remove_role = BluefinTecsUserBackoffice.output_remove_role(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String.t()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `role` | `list()` | No |  |
+| `consumerUUID` | `String.t()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `roles` | `list()` | No |  |
 
 ### Operations
 
@@ -1331,12 +1326,12 @@ output_resend_link = BluefinTecsUserBackoffice.output_resend_link(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `business_registration_number` | `String.t()` | No |  |
-| `consumer_uuid` | `String.t()` | Yes |  |
-| `email_confirmation_code` | `String.t()` | No |  |
-| `phone_number` | `String.t()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
+| `businessRegistrationNumber` | `String.t()` | No |  |
+| `consumerUUID` | `String.t()` | Yes |  |
+| `emailConfirmationCode` | `String.t()` | No |  |
+| `phoneNumber` | `String.t()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
 
 ### Operations
 
@@ -1346,7 +1341,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsUserBackoffice.Entity.OutputResendLink.create(output_resend_link, BluefinTecsUserBackoffice.Helpers.deep(%{
-  "consumer_uuid" => "example_consumer_uuid",  # String.t()
+  "consumerUUID" => "example_consumerUUID",  # String.t()
 }))
 ```
 
@@ -1389,10 +1384,10 @@ output_reset_password = BluefinTecsUserBackoffice.output_reset_password(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String.t()` | No |  |
-| `phone_number` | `String.t()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
+| `consumerUuid` | `String.t()` | No |  |
+| `phoneNumber` | `String.t()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
 
 ### Operations
 
@@ -1445,23 +1440,23 @@ output_update_consumer = BluefinTecsUserBackoffice.output_update_consumer(sdk)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `String.t()` | No |  |
-| `consumer_uuid` | `String.t()` | Yes |  |
+| `consumerUuid` | `String.t()` | Yes |  |
 | `consumerlanguage` | `String.t()` | No |  |
 | `country` | `String.t()` | No |  |
-| `date_of_birth` | `String.t()` | No |  |
+| `dateOfBirth` | `String.t()` | No |  |
 | `datetime_created` | `String.t()` | No |  |
-| `driver_licence_number` | `String.t()` | No |  |
+| `driverLicenceNumber` | `String.t()` | No |  |
 | `email` | `String.t()` | No |  |
-| `first_name` | `String.t()` | No |  |
-| `identification_number` | `String.t()` | No |  |
-| `kyc_passed` | `boolean()` | No |  |
-| `last_name` | `String.t()` | No |  |
+| `firstName` | `String.t()` | No |  |
+| `identificationNumber` | `String.t()` | No |  |
+| `kycPassed` | `boolean()` | No |  |
+| `lastName` | `String.t()` | No |  |
 | `nationality` | `String.t()` | No |  |
-| `passport_number` | `String.t()` | No |  |
-| `phone_number` | `String.t()` | No |  |
-| `place_of_birth` | `String.t()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
+| `passportNumber` | `String.t()` | No |  |
+| `phoneNumber` | `String.t()` | No |  |
+| `placeOfBirth` | `String.t()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
 | `state` | `String.t()` | No |  |
 | `street1` | `String.t()` | No |  |
 | `street2` | `String.t()` | No |  |
@@ -1476,7 +1471,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsUserBackoffice.Entity.OutputUpdateConsumer.create(output_update_consumer, BluefinTecsUserBackoffice.Helpers.deep(%{
-  "consumer_uuid" => "example_consumer_uuid",  # String.t()
+  "consumerUuid" => "example_consumerUuid",  # String.t()
 }))
 ```
 
@@ -1519,13 +1514,13 @@ output_update_profile = BluefinTecsUserBackoffice.output_update_profile(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_language` | `String.t()` | No |  |
+| `consumerLanguage` | `String.t()` | No |  |
 | `email` | `String.t()` | No |  |
-| `first_name` | `String.t()` | No |  |
-| `last_name` | `String.t()` | No |  |
-| `phone_number` | `String.t()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
+| `firstName` | `String.t()` | No |  |
+| `lastName` | `String.t()` | No |  |
+| `phoneNumber` | `String.t()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
 
 ### Operations
 
@@ -1577,8 +1572,8 @@ version = BluefinTecsUserBackoffice.version(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `String.t()` | No |  |
-| `build_date` | `String.t()` | No |  |
+| `appName` | `String.t()` | No |  |
+| `buildDate` | `String.t()` | No |  |
 | `version` | `String.t()` | No |  |
 
 ### Operations

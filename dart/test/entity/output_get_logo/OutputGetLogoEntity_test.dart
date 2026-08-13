@@ -48,7 +48,7 @@ void tests() {
       // LOAD
       final output_get_logo_ref01_ent = client.OutputGetLogo();
       final output_get_logo_ref01_match_dt0 = <String, dynamic>{};
-      final output_get_logo_ref01_data_dt0 = await output_get_logo_ref01_ent.load(output_get_logo_ref01_match_dt0);
+      final output_get_logo_ref01_data_dt0 = (await output_get_logo_ref01_ent.load(output_get_logo_ref01_match_dt0)).data();
       ok(null != output_get_logo_ref01_data_dt0);
 
 

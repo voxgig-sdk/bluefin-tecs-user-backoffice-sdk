@@ -47,7 +47,7 @@ void tests() {
       final output_register_user_ref01_ent = client.OutputRegisterUser();
       dynamic output_register_user_ref01_data = setup['data']['new']['output_register_user']['output_register_user_ref01'];
 
-      output_register_user_ref01_data = await output_register_user_ref01_ent.create(output_register_user_ref01_data);
+      output_register_user_ref01_data = (await output_register_user_ref01_ent.create(output_register_user_ref01_data)).data();
       ok(null != output_register_user_ref01_data);
 
 

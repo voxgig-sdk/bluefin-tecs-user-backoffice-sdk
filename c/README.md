@@ -53,7 +53,7 @@ PNError* err = NULL;
 ```c
 Entity* output_activate_digital_module = bluefintecsuserbackoffice_output_activate_digital_module(client, NULL);
 // Create — returns the bare created record
-voxgig_value* created = output_activate_digital_module->vt->create(output_activate_digital_module, cmap(2, "response_code", v_num(1), "response_message", v_str("example_response_message")), NULL, &err);
+voxgig_value* created = output_activate_digital_module->vt->create(output_activate_digital_module, cmap(2, "responseCode", v_num(1), "responseMessage", v_str("example_responseMessage")), NULL, &err);
 
 ```
 
@@ -287,8 +287,8 @@ On error, `ok` is `false` and `err` carries the error value.
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -298,10 +298,10 @@ API path: `/activateDigitalModule`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `notification_email` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clientSecret` |  |
+| `notificationEmail` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -311,8 +311,8 @@ API path: `/activateMerchantPortalModule`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -322,9 +322,9 @@ API path: `/activateAppStoreModule`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -334,10 +334,10 @@ API path: `/activateUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `role` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `roles` |  |
 
 Operations: Create.
 
@@ -347,10 +347,10 @@ API path: `/assignRoles`
 
 | Field | Description |
 | --- | --- |
-| `content_as_base64` |  |
-| `mime_type` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `contentAsBase64` |  |
+| `mimeType` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -362,25 +362,22 @@ API path: `/changeLogo`
 | --- | --- |
 | `city` |  |
 | `country` |  |
-| `date_of_birth` |  |
+| `dateOfBirth` |  |
 | `description` |  |
-| `drivers_license_number` |  |
+| `driversLicenseNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `lastName` |  |
 | `login` |  |
-| `mandator` |  |
 | `name` |  |
-| `passport_number` |  |
+| `passportNumber` |  |
 | `phone` |  |
-| `response_code` |  |
-| `response_message` |  |
 | `salutation` |  |
 | `state` |  |
 | `street1` |  |
 | `street2` |  |
-| `zip_code` |  |
+| `zipCode` |  |
 
 Operations: Create.
 
@@ -390,9 +387,9 @@ API path: `/createMandator`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `mandatorName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -402,9 +399,9 @@ API path: `/createServiceUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -414,10 +411,10 @@ API path: `/deactivateUser`
 
 | Field | Description |
 | --- | --- |
-| `case_id` |  |
-| `encoded_data_base64` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `caseID` |  |
+| `encodedDataBase64` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -427,10 +424,10 @@ API path: `/getKycDocument`
 
 | Field | Description |
 | --- | --- |
-| `content_as_base64` |  |
-| `mime_type` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `contentAsBase64` |  |
+| `mimeType` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Load.
 
@@ -440,9 +437,9 @@ API path: `/getLogo`
 
 | Field | Description |
 | --- | --- |
-| `available_role` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `availableRoles` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -455,8 +452,8 @@ API path: `/listOfAvailableRoles`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -469,8 +466,8 @@ API path: `/listOfMandators`
 | --- | --- |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -481,10 +478,10 @@ API path: `/listOfModules`
 | Field | Description |
 | --- | --- |
 | `filter` |  |
-| `group_role` |  |
+| `groupRoles` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -498,8 +495,8 @@ API path: `/listOfRoleGroups`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -513,8 +510,8 @@ API path: `/listOfTransactionsHistory`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -525,10 +522,10 @@ API path: `/listOfUsers`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
+| `mandatorName` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `username` |  |
 
 Operations: Create.
@@ -540,21 +537,21 @@ API path: `/provideCredentials`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `consumer_id` |  |
-| `consumer_language` |  |
+| `consumerId` |  |
+| `consumerLanguage` |  |
 | `country` |  |
-| `date_of_birth` |  |
-| `driver_licence_number` |  |
+| `dateOfBirth` |  |
+| `driverLicenceNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `lastName` |  |
 | `login` |  |
 | `module` |  |
-| `passport_number` |  |
+| `passportNumber` |  |
 | `phone` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `salutation` |  |
 | `state` |  |
 | `street1` |  |
@@ -569,10 +566,10 @@ API path: `/registerUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `role` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `roles` |  |
 
 Operations: Create.
 
@@ -582,12 +579,12 @@ API path: `/removeRoles`
 
 | Field | Description |
 | --- | --- |
-| `business_registration_number` |  |
-| `consumer_uuid` |  |
-| `email_confirmation_code` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `businessRegistrationNumber` |  |
+| `consumerUUID` |  |
+| `emailConfirmationCode` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -597,10 +594,10 @@ API path: `/resendLink`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUuid` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -611,23 +608,23 @@ API path: `/resetPassword`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `consumer_uuid` |  |
+| `consumerUuid` |  |
 | `consumerlanguage` |  |
 | `country` |  |
-| `date_of_birth` |  |
+| `dateOfBirth` |  |
 | `datetime_created` |  |
-| `driver_licence_number` |  |
+| `driverLicenceNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `kyc_passed` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `kycPassed` |  |
+| `lastName` |  |
 | `nationality` |  |
-| `passport_number` |  |
-| `phone_number` |  |
-| `place_of_birth` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `passportNumber` |  |
+| `phoneNumber` |  |
+| `placeOfBirth` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `state` |  |
 | `street1` |  |
 | `street2` |  |
@@ -642,13 +639,13 @@ API path: `/updateConsumer`
 
 | Field | Description |
 | --- | --- |
-| `consumer_language` |  |
+| `consumerLanguage` |  |
 | `email` |  |
-| `first_name` |  |
-| `last_name` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `firstName` |  |
+| `lastName` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -658,8 +655,8 @@ API path: `/updateProfile`
 
 | Field | Description |
 | --- | --- |
-| `app_name` |  |
-| `build_date` |  |
+| `appName` |  |
+| `buildDate` |  |
 | `version` |  |
 
 Operations: Load.
@@ -685,8 +682,8 @@ Create an instance: `Entity* output_activate_digital_module = bluefintecsuserbac
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 
 #### Example: Create
 
@@ -710,18 +707,18 @@ Create an instance: `Entity* output_activate_portal_module = bluefintecsuserback
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `char*` |  |
-| `notification_email` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `clientSecret` | `char*` |  |
+| `notificationEmail` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* output_activate_portal_module = bluefintecsuserbackoffice_output_activate_portal_module(client, NULL);
 voxgig_value* output_activate_portal_module_rec = output_activate_portal_module->vt->create(output_activate_portal_module, cmap(2,
-    "client_secret", v_str("example_client_secret"),  // char*
-    "notification_email", v_str("example_notification_email"))  // char*
+    "clientSecret", v_str("example_clientSecret"),  // char*
+    "notificationEmail", v_str("example_notificationEmail"))  // char*
 , NULL, &err);
 ```
 
@@ -740,8 +737,8 @@ Create an instance: `Entity* output_activate_store_module = bluefintecsuserbacko
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 
 #### Example: Create
 
@@ -765,9 +762,9 @@ Create an instance: `Entity* output_activate_user = bluefintecsuserbackoffice_ou
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `consumerUUID` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 
 #### Example: Create
 
@@ -791,18 +788,18 @@ Create an instance: `Entity* output_assign_role = bluefintecsuserbackoffice_outp
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `role` | `voxgig_value* (list)` |  |
+| `consumerUUID` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `roles` | `voxgig_value* (list)` |  |
 
 #### Example: Create
 
 ```c
 Entity* output_assign_role = bluefintecsuserbackoffice_output_assign_role(client, NULL);
 voxgig_value* output_assign_role_rec = output_assign_role->vt->create(output_assign_role, cmap(2,
-    "consumer_uuid", v_str("example_consumer_uuid"),  // char*
-    "role", v_list())  // voxgig_value* (list)
+    "consumerUUID", v_str("example_consumerUUID"),  // char*
+    "roles", v_list())  // voxgig_value* (list)
 , NULL, &err);
 ```
 
@@ -821,18 +818,18 @@ Create an instance: `Entity* output_change_logo = bluefintecsuserbackoffice_outp
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `content_as_base64` | `char*` |  |
-| `mime_type` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `contentAsBase64` | `char*` |  |
+| `mimeType` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* output_change_logo = bluefintecsuserbackoffice_output_change_logo(client, NULL);
 voxgig_value* output_change_logo_rec = output_change_logo->vt->create(output_change_logo, cmap(2,
-    "content_as_base64", v_str("example_content_as_base64"),  // char*
-    "mime_type", v_str("example_mime_type"))  // char*
+    "contentAsBase64", v_str("example_contentAsBase64"),  // char*
+    "mimeType", v_str("example_mimeType"))  // char*
 , NULL, &err);
 ```
 
@@ -853,35 +850,30 @@ Create an instance: `Entity* output_create_mandator = bluefintecsuserbackoffice_
 | --- | --- | --- |
 | `city` | `char*` |  |
 | `country` | `char*` |  |
-| `date_of_birth` | `char*` |  |
+| `dateOfBirth` | `char*` |  |
 | `description` | `char*` |  |
-| `drivers_license_number` | `char*` |  |
+| `driversLicenseNumber` | `char*` |  |
 | `email` | `char*` |  |
-| `first_name` | `char*` |  |
-| `identification_number` | `char*` |  |
-| `last_name` | `char*` |  |
+| `firstName` | `char*` |  |
+| `identificationNumber` | `char*` |  |
+| `lastName` | `char*` |  |
 | `login` | `char*` |  |
-| `mandator` | `voxgig_value* (map)` |  |
 | `name` | `char*` |  |
-| `passport_number` | `char*` |  |
+| `passportNumber` | `char*` |  |
 | `phone` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
 | `salutation` | `char*` |  |
 | `state` | `char*` |  |
 | `street1` | `char*` |  |
 | `street2` | `char*` |  |
-| `zip_code` | `char*` |  |
+| `zipCode` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* output_create_mandator = bluefintecsuserbackoffice_output_create_mandator(client, NULL);
-voxgig_value* output_create_mandator_rec = output_create_mandator->vt->create(output_create_mandator, cmap(5,
-    "description", v_str("example_description"),  // char*
+voxgig_value* output_create_mandator_rec = output_create_mandator->vt->create(output_create_mandator, cmap(3,
     "email", v_str("example_email"),  // char*
     "login", v_str("example_login"),  // char*
-    "name", v_str("example_name"),  // char*
     "phone", v_str("example_phone"))  // char*
 , NULL, &err);
 ```
@@ -901,16 +893,16 @@ Create an instance: `Entity* output_create_service_user = bluefintecsuserbackoff
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `mandatorName` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* output_create_service_user = bluefintecsuserbackoffice_output_create_service_user(client, NULL);
 voxgig_value* output_create_service_user_rec = output_create_service_user->vt->create(output_create_service_user, cmap(1,
-    "mandator_name", v_str("example_mandator_name"))  // char*
+    "mandatorName", v_str("example_mandatorName"))  // char*
 , NULL, &err);
 ```
 
@@ -929,9 +921,9 @@ Create an instance: `Entity* output_deactivate_user = bluefintecsuserbackoffice_
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `consumerUUID` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 
 #### Example: Create
 
@@ -955,10 +947,10 @@ Create an instance: `Entity* output_get_kyc_document = bluefintecsuserbackoffice
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `case_id` | `char*` |  |
-| `encoded_data_base64` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `caseID` | `char*` |  |
+| `encodedDataBase64` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 
 #### Example: Create
 
@@ -982,10 +974,10 @@ Create an instance: `Entity* output_get_logo = bluefintecsuserbackoffice_output_
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `content_as_base64` | `char*` |  |
-| `mime_type` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `contentAsBase64` | `char*` |  |
+| `mimeType` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 
 #### Example: Load
 
@@ -1009,9 +1001,9 @@ Create an instance: `Entity* output_list_of_available_role = bluefintecsuserback
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `available_role` | `voxgig_value* (list)` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `availableRoles` | `voxgig_value* (list)` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 
 #### Example: Create
 
@@ -1038,8 +1030,8 @@ Create an instance: `Entity* output_list_of_mandator = bluefintecsuserbackoffice
 | `filter` | `voxgig_value* (map)` |  |
 | `list` | `voxgig_value* (list)` |  |
 | `pagination` | `voxgig_value* (map)` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 | `sorting` | `voxgig_value* (map)` |  |
 
 #### Example: Create
@@ -1066,8 +1058,8 @@ Create an instance: `Entity* output_list_of_module = bluefintecsuserbackoffice_o
 | --- | --- | --- |
 | `list` | `voxgig_value* (list)` |  |
 | `pagination` | `voxgig_value* (map)` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 
 #### Example: Create
 
@@ -1092,10 +1084,10 @@ Create an instance: `Entity* output_list_of_role_group = bluefintecsuserbackoffi
 | Field | Type | Description |
 | --- | --- | --- |
 | `filter` | `voxgig_value* (map)` |  |
-| `group_role` | `voxgig_value* (list)` |  |
+| `groupRoles` | `voxgig_value* (list)` |  |
 | `pagination` | `voxgig_value* (map)` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 | `sorting` | `voxgig_value* (map)` |  |
 
 #### Example: Create
@@ -1123,8 +1115,8 @@ Create an instance: `Entity* output_list_of_transactions_history = bluefintecsus
 | `filter` | `voxgig_value* (map)` |  |
 | `list` | `voxgig_value* (list)` |  |
 | `pagination` | `voxgig_value* (map)` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 | `sorting` | `voxgig_value* (map)` |  |
 
 #### Example: Create
@@ -1152,8 +1144,8 @@ Create an instance: `Entity* output_list_of_user = bluefintecsuserbackoffice_out
 | `filter` | `voxgig_value* (map)` |  |
 | `list` | `voxgig_value* (list)` |  |
 | `pagination` | `voxgig_value* (map)` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 | `sorting` | `voxgig_value* (map)` |  |
 
 #### Example: Create
@@ -1178,10 +1170,10 @@ Create an instance: `Entity* output_provide_credential = bluefintecsuserbackoffi
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `char*` |  |
+| `mandatorName` | `char*` |  |
 | `password` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 | `username` | `char*` |  |
 
 #### Example: Create
@@ -1189,7 +1181,7 @@ Create an instance: `Entity* output_provide_credential = bluefintecsuserbackoffi
 ```c
 Entity* output_provide_credential = bluefintecsuserbackoffice_output_provide_credential(client, NULL);
 voxgig_value* output_provide_credential_rec = output_provide_credential->vt->create(output_provide_credential, cmap(1,
-    "mandator_name", v_str("example_mandator_name"))  // char*
+    "mandatorName", v_str("example_mandatorName"))  // char*
 , NULL, &err);
 ```
 
@@ -1209,21 +1201,21 @@ Create an instance: `Entity* output_register_user = bluefintecsuserbackoffice_ou
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `char*` |  |
-| `consumer_id` | `char*` |  |
-| `consumer_language` | `char*` |  |
+| `consumerId` | `char*` |  |
+| `consumerLanguage` | `char*` |  |
 | `country` | `char*` |  |
-| `date_of_birth` | `char*` |  |
-| `driver_licence_number` | `char*` |  |
+| `dateOfBirth` | `char*` |  |
+| `driverLicenceNumber` | `char*` |  |
 | `email` | `char*` |  |
-| `first_name` | `char*` |  |
-| `identification_number` | `char*` |  |
-| `last_name` | `char*` |  |
+| `firstName` | `char*` |  |
+| `identificationNumber` | `char*` |  |
+| `lastName` | `char*` |  |
 | `login` | `char*` |  |
 | `module` | `char*` |  |
-| `passport_number` | `char*` |  |
+| `passportNumber` | `char*` |  |
 | `phone` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 | `salutation` | `char*` |  |
 | `state` | `char*` |  |
 | `street1` | `char*` |  |
@@ -1254,10 +1246,10 @@ Create an instance: `Entity* output_remove_role = bluefintecsuserbackoffice_outp
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `role` | `voxgig_value* (list)` |  |
+| `consumerUUID` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `roles` | `voxgig_value* (list)` |  |
 
 #### Example: Create
 
@@ -1281,19 +1273,19 @@ Create an instance: `Entity* output_resend_link = bluefintecsuserbackoffice_outp
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `business_registration_number` | `char*` |  |
-| `consumer_uuid` | `char*` |  |
-| `email_confirmation_code` | `char*` |  |
-| `phone_number` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `businessRegistrationNumber` | `char*` |  |
+| `consumerUUID` | `char*` |  |
+| `emailConfirmationCode` | `char*` |  |
+| `phoneNumber` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* output_resend_link = bluefintecsuserbackoffice_output_resend_link(client, NULL);
 voxgig_value* output_resend_link_rec = output_resend_link->vt->create(output_resend_link, cmap(1,
-    "consumer_uuid", v_str("example_consumer_uuid"))  // char*
+    "consumerUUID", v_str("example_consumerUUID"))  // char*
 , NULL, &err);
 ```
 
@@ -1312,10 +1304,10 @@ Create an instance: `Entity* output_reset_password = bluefintecsuserbackoffice_o
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `char*` |  |
-| `phone_number` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `consumerUuid` | `char*` |  |
+| `phoneNumber` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 
 #### Example: Create
 
@@ -1340,23 +1332,23 @@ Create an instance: `Entity* output_update_consumer = bluefintecsuserbackoffice_
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `char*` |  |
-| `consumer_uuid` | `char*` |  |
+| `consumerUuid` | `char*` |  |
 | `consumerlanguage` | `char*` |  |
 | `country` | `char*` |  |
-| `date_of_birth` | `char*` |  |
+| `dateOfBirth` | `char*` |  |
 | `datetime_created` | `char*` |  |
-| `driver_licence_number` | `char*` |  |
+| `driverLicenceNumber` | `char*` |  |
 | `email` | `char*` |  |
-| `first_name` | `char*` |  |
-| `identification_number` | `char*` |  |
-| `kyc_passed` | `bool` |  |
-| `last_name` | `char*` |  |
+| `firstName` | `char*` |  |
+| `identificationNumber` | `char*` |  |
+| `kycPassed` | `bool` |  |
+| `lastName` | `char*` |  |
 | `nationality` | `char*` |  |
-| `passport_number` | `char*` |  |
-| `phone_number` | `char*` |  |
-| `place_of_birth` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `passportNumber` | `char*` |  |
+| `phoneNumber` | `char*` |  |
+| `placeOfBirth` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 | `state` | `char*` |  |
 | `street1` | `char*` |  |
 | `street2` | `char*` |  |
@@ -1368,7 +1360,7 @@ Create an instance: `Entity* output_update_consumer = bluefintecsuserbackoffice_
 ```c
 Entity* output_update_consumer = bluefintecsuserbackoffice_output_update_consumer(client, NULL);
 voxgig_value* output_update_consumer_rec = output_update_consumer->vt->create(output_update_consumer, cmap(1,
-    "consumer_uuid", v_str("example_consumer_uuid"))  // char*
+    "consumerUuid", v_str("example_consumerUuid"))  // char*
 , NULL, &err);
 ```
 
@@ -1387,13 +1379,13 @@ Create an instance: `Entity* output_update_profile = bluefintecsuserbackoffice_o
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_language` | `char*` |  |
+| `consumerLanguage` | `char*` |  |
 | `email` | `char*` |  |
-| `first_name` | `char*` |  |
-| `last_name` | `char*` |  |
-| `phone_number` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `firstName` | `char*` |  |
+| `lastName` | `char*` |  |
+| `phoneNumber` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 
 #### Example: Create
 
@@ -1417,8 +1409,8 @@ Create an instance: `Entity* version = bluefintecsuserbackoffice_version(client,
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_name` | `char*` |  |
-| `build_date` | `char*` |  |
+| `appName` | `char*` |  |
+| `buildDate` | `char*` |  |
 | `version` | `char*` |  |
 
 #### Example: Load

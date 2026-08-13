@@ -6,7 +6,7 @@ main: kit: entity: output_update_profile: {
 
   fields: [
     {
-      name: "consumer_language"
+      name: "consumerLanguage"
       req: false
       type: "`$STRING`"
     }
@@ -16,27 +16,27 @@ main: kit: entity: output_update_profile: {
       type: "`$STRING`"
     }
     {
-      name: "first_name"
+      name: "firstName"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "last_name"
+      name: "lastName"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "phone_number"
+      name: "phoneNumber"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }

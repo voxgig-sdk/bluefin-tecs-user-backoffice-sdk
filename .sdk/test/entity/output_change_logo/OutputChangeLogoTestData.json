@@ -2,24 +2,24 @@
   "existing": {
     "output_change_logo": {
       "OUTPUT_CHANGE_LOGO00": {
-        "content_as_base64": "s28",
-        "mime_type": "s29",
-        "response_code": "s2a",
-        "response_message": "s2b",
+        "contentAsBase64": "s28",
+        "mimeType": "s29",
+        "responseCode": "s2a",
+        "responseMessage": "s2b",
         "id": "OUTPUT_CHANGE_LOGO00"
       },
       "OUTPUT_CHANGE_LOGO01": {
-        "content_as_base64": "s50",
-        "mime_type": "s51",
-        "response_code": "s52",
-        "response_message": "s53",
+        "contentAsBase64": "s50",
+        "mimeType": "s51",
+        "responseCode": "s52",
+        "responseMessage": "s53",
         "id": "OUTPUT_CHANGE_LOGO01"
       },
       "OUTPUT_CHANGE_LOGO02": {
-        "content_as_base64": "s78",
-        "mime_type": "s79",
-        "response_code": "s7a",
-        "response_message": "s7b",
+        "contentAsBase64": "s78",
+        "mimeType": "s79",
+        "responseCode": "s7a",
+        "responseMessage": "s7b",
         "id": "OUTPUT_CHANGE_LOGO02"
       }
     }
@@ -27,10 +27,10 @@
   "new": {
     "output_change_logo": {
       "output_change_logo_ref01": {
-        "content_as_base64": "sa0",
-        "mime_type": "sa1",
-        "response_code": "sa2",
-        "response_message": "sa3"
+        "contentAsBase64": "sa0",
+        "mimeType": "sa1",
+        "responseCode": "sa2",
+        "responseMessage": "sa3"
       }
     }
   }

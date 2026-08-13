@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import BluefinTecsUserBackofficeControl
-from core.error import BluefinTecsUserBackofficeError
-from core.result import BluefinTecsUserBackofficeResult
-from core.spec import BluefinTecsUserBackofficeSpec
+from bluefintecsuserbackoffice_sdk.config import make_config
+from bluefintecsuserbackoffice_sdk.features import _make_feature
+from bluefintecsuserbackoffice_sdk.core.control import BluefinTecsUserBackofficeControl
+from bluefintecsuserbackoffice_sdk.core.error import BluefinTecsUserBackofficeError
+from bluefintecsuserbackoffice_sdk.core.result import BluefinTecsUserBackofficeResult
+from bluefintecsuserbackoffice_sdk.core.spec import BluefinTecsUserBackofficeSpec
 
 
 # True when this SDK was generated with the named feature.

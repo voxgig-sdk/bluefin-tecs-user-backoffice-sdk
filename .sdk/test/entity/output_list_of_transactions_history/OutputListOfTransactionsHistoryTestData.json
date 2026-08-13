@@ -5,8 +5,8 @@
         "filter": {},
         "list": [],
         "pagination": {},
-        "response_code": "s3f",
-        "response_message": "s40",
+        "responseCode": "s3f",
+        "responseMessage": "s40",
         "sorting": {},
         "id": "OUTPUT_LIST_OF_TRANSACTIONS_HISTORY00"
       },
@@ -14,8 +14,8 @@
         "filter": {},
         "list": [],
         "pagination": {},
-        "response_code": "s7b",
-        "response_message": "s7c",
+        "responseCode": "s7b",
+        "responseMessage": "s7c",
         "sorting": {},
         "id": "OUTPUT_LIST_OF_TRANSACTIONS_HISTORY01"
       },
@@ -23,8 +23,8 @@
         "filter": {},
         "list": [],
         "pagination": {},
-        "response_code": "sb7",
-        "response_message": "sb8",
+        "responseCode": "sb7",
+        "responseMessage": "sb8",
         "sorting": {},
         "id": "OUTPUT_LIST_OF_TRANSACTIONS_HISTORY02"
       }
@@ -36,8 +36,8 @@
         "filter": {},
         "list": [],
         "pagination": {},
-        "response_code": "sf3",
-        "response_message": "sf4",
+        "responseCode": "sf3",
+        "responseMessage": "sf4",
         "sorting": {}
       }
     }

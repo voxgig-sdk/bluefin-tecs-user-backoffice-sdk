@@ -11,12 +11,12 @@ main: kit: entity: output_register_user: {
       type: "`$STRING`"
     }
     {
-      name: "consumer_id"
+      name: "consumerId"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "consumer_language"
+      name: "consumerLanguage"
       req: false
       type: "`$STRING`"
     }
@@ -26,12 +26,12 @@ main: kit: entity: output_register_user: {
       type: "`$STRING`"
     }
     {
-      name: "date_of_birth"
+      name: "dateOfBirth"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "driver_licence_number"
+      name: "driverLicenceNumber"
       req: false
       type: "`$STRING`"
     }
@@ -41,17 +41,17 @@ main: kit: entity: output_register_user: {
       type: "`$STRING`"
     }
     {
-      name: "first_name"
+      name: "firstName"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "identification_number"
+      name: "identificationNumber"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "last_name"
+      name: "lastName"
       req: false
       type: "`$STRING`"
     }
@@ -66,7 +66,7 @@ main: kit: entity: output_register_user: {
       type: "`$STRING`"
     }
     {
-      name: "passport_number"
+      name: "passportNumber"
       req: false
       type: "`$STRING`"
     }
@@ -76,12 +76,12 @@ main: kit: entity: output_register_user: {
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }

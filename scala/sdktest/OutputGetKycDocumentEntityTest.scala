@@ -35,7 +35,7 @@ object OutputGetKycDocumentEntityTest {
       var outputGetKycDocumentRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.output_get_kyc_document"), "output_get_kyc_document_ref01"))
       val outputGetKycDocumentRef01DataResult = outputGetKycDocumentRef01Ent.create(outputGetKycDocumentRef01Data, null)
-      outputGetKycDocumentRef01Data = Helpers.toMapAny(outputGetKycDocumentRef01DataResult)
+      outputGetKycDocumentRef01Data = Helpers.toMapAny(outputGetKycDocumentRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("output_get_kyc_document.create.map", outputGetKycDocumentRef01Data != null, "expected create result to be a map")
     }
   }

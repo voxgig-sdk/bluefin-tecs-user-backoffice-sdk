@@ -67,14 +67,14 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
@@ -100,6 +100,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/activateDigitalModule",
               "parts": [
@@ -128,28 +129,28 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "client_secret",
+          "name": "clientSecret",
           "req": true,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "notification_email",
+          "name": "notificationEmail",
           "req": true,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 3
@@ -175,6 +176,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/activateMerchantPortalModule",
               "parts": [
@@ -203,14 +205,14 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
@@ -236,6 +238,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/activateAppStoreModule",
               "parts": [
@@ -264,21 +267,21 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "consumer_uuid",
+          "name": "consumerUUID",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
@@ -304,6 +307,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/activateUser",
               "parts": [
@@ -332,28 +336,28 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "consumer_uuid",
+          "name": "consumerUUID",
           "req": true,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "role",
+          "name": "roles",
           "req": true,
           "type": "`$ARRAY`",
           "index$": 3
@@ -379,6 +383,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/assignRoles",
               "parts": [
@@ -407,28 +412,28 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "content_as_base64",
+          "name": "contentAsBase64",
           "req": true,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "mime_type",
+          "name": "mimeType",
           "req": true,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 3
@@ -454,6 +459,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/changeLogo",
               "parts": [
@@ -496,7 +502,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "date_of_birth",
+          "name": "dateOfBirth",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
@@ -504,13 +510,19 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         {
           "active": true,
           "name": "description",
-          "req": true,
+          "op": {
+            "create": {
+              "req": true,
+              "type": "`$STRING`"
+            }
+          },
+          "req": false,
           "type": "`$STRING`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "drivers_license_number",
+          "name": "driversLicenseNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
@@ -524,21 +536,21 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "first_name",
+          "name": "firstName",
           "req": false,
           "type": "`$STRING`",
           "index$": 6
         },
         {
           "active": true,
-          "name": "identification_number",
+          "name": "identificationNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "last_name",
+          "name": "lastName",
           "req": false,
           "type": "`$STRING`",
           "index$": 8
@@ -552,80 +564,65 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "mandator",
+          "name": "name",
+          "op": {
+            "create": {
+              "req": true,
+              "type": "`$STRING`"
+            }
+          },
           "req": false,
-          "type": "`$OBJECT`",
+          "type": "`$STRING`",
           "index$": 10
         },
         {
           "active": true,
-          "name": "name",
-          "req": true,
-          "type": "`$STRING`",
-          "index$": 11
-        },
-        {
-          "active": true,
-          "name": "passport_number",
+          "name": "passportNumber",
           "req": false,
           "type": "`$STRING`",
-          "index$": 12
+          "index$": 11
         },
         {
           "active": true,
           "name": "phone",
           "req": true,
           "type": "`$STRING`",
-          "index$": 13
-        },
-        {
-          "active": true,
-          "name": "response_code",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 14
-        },
-        {
-          "active": true,
-          "name": "response_message",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 15
+          "index$": 12
         },
         {
           "active": true,
           "name": "salutation",
           "req": false,
           "type": "`$STRING`",
-          "index$": 16
+          "index$": 13
         },
         {
           "active": true,
           "name": "state",
           "req": false,
           "type": "`$STRING`",
-          "index$": 17
+          "index$": 14
         },
         {
           "active": true,
           "name": "street1",
           "req": false,
           "type": "`$STRING`",
-          "index$": 18
+          "index$": 15
         },
         {
           "active": true,
           "name": "street2",
           "req": false,
           "type": "`$STRING`",
-          "index$": 19
+          "index$": 16
         },
         {
           "active": true,
-          "name": "zip_code",
+          "name": "zipCode",
           "req": false,
           "type": "`$STRING`",
-          "index$": 20
+          "index$": 17
         }
       ],
       "name": "output_create_mandator",
@@ -648,6 +645,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/createMandator",
               "parts": [
@@ -676,21 +674,21 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "mandator_name",
+          "name": "mandatorName",
           "req": true,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
@@ -716,6 +714,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/createServiceUser",
               "parts": [
@@ -744,21 +743,21 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "consumer_uuid",
+          "name": "consumerUUID",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
@@ -784,6 +783,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/deactivateUser",
               "parts": [
@@ -812,28 +812,28 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "case_id",
+          "name": "caseID",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "encoded_data_base64",
+          "name": "encodedDataBase64",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 3
@@ -859,6 +859,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/getKycDocument",
               "parts": [
@@ -887,28 +888,28 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "content_as_base64",
+          "name": "contentAsBase64",
           "req": true,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "mime_type",
+          "name": "mimeType",
           "req": true,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 3
@@ -934,6 +935,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/getLogo",
               "parts": [
@@ -962,21 +964,21 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "available_role",
+          "name": "availableRoles",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
@@ -1002,6 +1004,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/listOfAvailableRoles",
               "parts": [
@@ -1051,14 +1054,14 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
@@ -1091,6 +1094,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/listOfMandators",
               "parts": [
@@ -1133,14 +1137,14 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 3
@@ -1166,6 +1170,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/listOfModules",
               "parts": [
@@ -1201,7 +1206,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "group_role",
+          "name": "groupRoles",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 1
@@ -1215,14 +1220,14 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
@@ -1255,6 +1260,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/listOfRoleGroups",
               "parts": [
@@ -1304,14 +1310,14 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
@@ -1344,6 +1350,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/listOfTransactionsHistory",
               "parts": [
@@ -1393,14 +1400,14 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
@@ -1433,6 +1440,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/listOfUsers",
               "parts": [
@@ -1461,7 +1469,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "mandator_name",
+          "name": "mandatorName",
           "req": true,
           "type": "`$STRING`",
           "index$": 0
@@ -1475,14 +1483,14 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 3
@@ -1515,6 +1523,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/provideCredentials",
               "parts": [
@@ -1550,14 +1559,14 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "consumer_id",
+          "name": "consumerId",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "consumer_language",
+          "name": "consumerLanguage",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
@@ -1571,14 +1580,14 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "date_of_birth",
+          "name": "dateOfBirth",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "driver_licence_number",
+          "name": "driverLicenceNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
@@ -1592,21 +1601,21 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "first_name",
+          "name": "firstName",
           "req": false,
           "type": "`$STRING`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "identification_number",
+          "name": "identificationNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 8
         },
         {
           "active": true,
-          "name": "last_name",
+          "name": "lastName",
           "req": false,
           "type": "`$STRING`",
           "index$": 9
@@ -1627,7 +1636,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "passport_number",
+          "name": "passportNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 12
@@ -1641,14 +1650,14 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 14
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 15
@@ -1709,6 +1718,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/registerUser",
               "parts": [
@@ -1737,28 +1747,28 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "consumer_uuid",
+          "name": "consumerUUID",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "role",
+          "name": "roles",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 3
@@ -1784,6 +1794,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/removeRoles",
               "parts": [
@@ -1812,42 +1823,42 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "business_registration_number",
+          "name": "businessRegistrationNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "consumer_uuid",
+          "name": "consumerUUID",
           "req": true,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "email_confirmation_code",
+          "name": "emailConfirmationCode",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "phone_number",
+          "name": "phoneNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
@@ -1873,6 +1884,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/resendLink",
               "parts": [
@@ -1901,28 +1913,28 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "consumer_uuid",
+          "name": "consumerUuid",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "phone_number",
+          "name": "phoneNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 3
@@ -1948,6 +1960,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/resetPassword",
               "parts": [
@@ -1983,7 +1996,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "consumer_uuid",
+          "name": "consumerUuid",
           "req": true,
           "type": "`$STRING`",
           "index$": 1
@@ -2004,7 +2017,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "date_of_birth",
+          "name": "dateOfBirth",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
@@ -2018,7 +2031,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "driver_licence_number",
+          "name": "driverLicenceNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 6
@@ -2032,28 +2045,28 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "first_name",
+          "name": "firstName",
           "req": false,
           "type": "`$STRING`",
           "index$": 8
         },
         {
           "active": true,
-          "name": "identification_number",
+          "name": "identificationNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 9
         },
         {
           "active": true,
-          "name": "kyc_passed",
+          "name": "kycPassed",
           "req": false,
           "type": "`$BOOLEAN`",
           "index$": 10
         },
         {
           "active": true,
-          "name": "last_name",
+          "name": "lastName",
           "req": false,
           "type": "`$STRING`",
           "index$": 11
@@ -2067,35 +2080,35 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "passport_number",
+          "name": "passportNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 13
         },
         {
           "active": true,
-          "name": "phone_number",
+          "name": "phoneNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 14
         },
         {
           "active": true,
-          "name": "place_of_birth",
+          "name": "placeOfBirth",
           "req": false,
           "type": "`$STRING`",
           "index$": 15
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 16
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 17
@@ -2156,6 +2169,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/updateConsumer",
               "parts": [
@@ -2184,7 +2198,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "consumer_language",
+          "name": "consumerLanguage",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
@@ -2198,35 +2212,35 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         },
         {
           "active": true,
-          "name": "first_name",
+          "name": "firstName",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "last_name",
+          "name": "lastName",
           "req": false,
           "type": "`$STRING`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "phone_number",
+          "name": "phoneNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 6
@@ -2252,6 +2266,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/updateProfile",
               "parts": [
@@ -2280,14 +2295,14 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "active": true,
-          "name": "app_name",
+          "name": "appName",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "build_date",
+          "name": "buildDate",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
@@ -2309,6 +2324,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/version",
               "parts": [

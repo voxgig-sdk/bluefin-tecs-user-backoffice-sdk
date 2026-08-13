@@ -40,7 +40,7 @@ class OutputActivateStoreModuleEntityTest {
     }
     Assumptions.assumeFalse(
       setup.syntheticOnly,
-      "live entity test uses synthetic IDs from fixture — set BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_ACTIVATE_STORE_MODULE_ENTID JSON to run live",
+      "live entity test uses synthetic IDs from fixture — set BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_ACTIVATE_STORE_MODULE_ENTID JSON to run live",
     )
     val client = setup.client
 
@@ -50,7 +50,7 @@ class OutputActivateStoreModuleEntityTest {
         Struct.getpath(setup.data, "new.output_activate_store_module"), "output_activate_store_module_ref01")) ?: linkedMapOf())
 
     val outputActivateStoreModuleRef01DataResult = outputActivateStoreModuleRef01Ent.create(outputActivateStoreModuleRef01Data, null)
-    outputActivateStoreModuleRef01Data = Helpers.toMapAny(outputActivateStoreModuleRef01DataResult) ?: linkedMapOf()
+    outputActivateStoreModuleRef01Data = Helpers.toMapAny(if (outputActivateStoreModuleRef01DataResult is SdkEntity) outputActivateStoreModuleRef01DataResult.data() else outputActivateStoreModuleRef01DataResult) ?: linkedMapOf()
     assertNotNull(outputActivateStoreModuleRef01Data, "expected create result to be a map")
 
   }
@@ -85,25 +85,25 @@ class OutputActivateStoreModuleEntityTest {
           "}]}"))
 
       // Detect ENTID env override before envOverride consumes it.
-      val entidEnvRaw = RunnerSupport.getenv("BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_ACTIVATE_STORE_MODULE_ENTID")
+      val entidEnvRaw = RunnerSupport.getenv("BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_ACTIVATE_STORE_MODULE_ENTID")
       val idmapOverridden = entidEnvRaw != null && entidEnvRaw.trim().startsWith("{")
 
       val envm = linkedMapOf<String, Any?>()
-      envm["BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_ACTIVATE_STORE_MODULE_ENTID"] = idmap
-      envm["BLUEFINTECSUSERBACKOFFICE_TEST_LIVE"] = "FALSE"
-      envm["BLUEFINTECSUSERBACKOFFICE_TEST_EXPLAIN"] = "FALSE"
-      envm["BLUEFINTECSUSERBACKOFFICE_APIKEY"] = "NONE"
+      envm["BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_ACTIVATE_STORE_MODULE_ENTID"] = idmap
+      envm["BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE"] = "FALSE"
+      envm["BLUEFIN_TECS_USER_BACKOFFICE_TEST_EXPLAIN"] = "FALSE"
+      envm["BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"] = "NONE"
       val env = RunnerSupport.envOverride(envm)
 
-      var idmapResolved = Helpers.toMapAny(env["BLUEFINTECSUSERBACKOFFICE_TEST_OUTPUT_ACTIVATE_STORE_MODULE_ENTID"])
+      var idmapResolved = Helpers.toMapAny(env["BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_ACTIVATE_STORE_MODULE_ENTID"])
       if (idmapResolved == null) {
         idmapResolved = Helpers.toMapAny(idmap) ?: linkedMapOf()
       }
 
-      val live = "TRUE" == env["BLUEFINTECSUSERBACKOFFICE_TEST_LIVE"]
+      val live = "TRUE" == env["BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE"]
       if (live) {
         val liveOpts = linkedMapOf<String, Any?>()
-        liveOpts["apikey"] = env["BLUEFINTECSUSERBACKOFFICE_APIKEY"]
+        liveOpts["apikey"] = env["BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"]
         val mergedOpts = Struct.merge(Struct.jt(liveOpts, extra))
         client = BluefinTecsUserBackofficeSDK(Helpers.toMapAny(mergedOpts))
       }
@@ -113,7 +113,7 @@ class OutputActivateStoreModuleEntityTest {
       setup.data = entityData
       setup.idmap = idmapResolved
       setup.env = env
-      setup.explain = "TRUE" == env["BLUEFINTECSUSERBACKOFFICE_TEST_EXPLAIN"]
+      setup.explain = "TRUE" == env["BLUEFIN_TECS_USER_BACKOFFICE_TEST_EXPLAIN"]
       setup.live = live
       setup.syntheticOnly = live && !idmapOverridden
       setup.now = System.currentTimeMillis()

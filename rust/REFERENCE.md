@@ -213,8 +213,8 @@ let output_activate_digital_module = client.output_activate_digital_module(Value
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -258,10 +258,10 @@ let output_activate_portal_module = client.output_activate_portal_module(Value::
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `String` | Yes |  |
-| `notification_email` | `String` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
+| `clientSecret` | `String` | Yes |  |
+| `notificationEmail` | `String` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -271,8 +271,8 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.output_activate_portal_module(Value::Noval).create(jo(vec![
-    ("client_secret", Value::str("example_client_secret")),  // String
-    ("notification_email", Value::str("example_notification_email")),  // String
+    ("clientSecret", Value::str("example_clientSecret")),  // String
+    ("notificationEmail", Value::str("example_notificationEmail")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -307,8 +307,8 @@ let output_activate_store_module = client.output_activate_store_module(Value::No
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -352,9 +352,9 @@ let output_activate_user = client.output_activate_user(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
+| `consumerUUID` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -398,10 +398,10 @@ let output_assign_role = client.output_assign_role(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `role` | `Vec<Value>` | Yes |  |
+| `consumerUUID` | `String` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `roles` | `Vec<Value>` | Yes |  |
 
 ### Operations
 
@@ -411,8 +411,8 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.output_assign_role(Value::Noval).create(jo(vec![
-    ("consumer_uuid", Value::str("example_consumer_uuid")),  // String
-    ("role", Value::empty_list()),  // Vec<Value>
+    ("consumerUUID", Value::str("example_consumerUUID")),  // String
+    ("roles", Value::empty_list()),  // Vec<Value>
 ]), Value::Noval).unwrap();
 ```
 
@@ -447,10 +447,10 @@ let output_change_logo = client.output_change_logo(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `String` | Yes |  |
-| `mime_type` | `String` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
+| `contentAsBase64` | `String` | Yes |  |
+| `mimeType` | `String` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -460,8 +460,8 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.output_change_logo(Value::Noval).create(jo(vec![
-    ("content_as_base64", Value::str("example_content_as_base64")),  // String
-    ("mime_type", Value::str("example_mime_type")),  // String
+    ("contentAsBase64", Value::str("example_contentAsBase64")),  // String
+    ("mimeType", Value::str("example_mimeType")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -498,25 +498,45 @@ let output_create_mandator = client.output_create_mandator(Value::Noval);
 | --- | --- | --- | --- |
 | `city` | `String` | No |  |
 | `country` | `String` | No |  |
-| `date_of_birth` | `String` | No |  |
-| `description` | `String` | Yes |  |
-| `drivers_license_number` | `String` | No |  |
+| `dateOfBirth` | `String` | No |  |
+| `description` | `String` | No |  |
+| `driversLicenseNumber` | `String` | No |  |
 | `email` | `String` | Yes |  |
-| `first_name` | `String` | No |  |
-| `identification_number` | `String` | No |  |
-| `last_name` | `String` | No |  |
+| `firstName` | `String` | No |  |
+| `identificationNumber` | `String` | No |  |
+| `lastName` | `String` | No |  |
 | `login` | `String` | Yes |  |
-| `mandator` | `std::collections::HashMap<String, Value>` | No |  |
-| `name` | `String` | Yes |  |
-| `passport_number` | `String` | No |  |
+| `name` | `String` | No |  |
+| `passportNumber` | `String` | No |  |
 | `phone` | `String` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
 | `salutation` | `String` | No |  |
 | `state` | `String` | No |  |
 | `street1` | `String` | No |  |
 | `street2` | `String` | No |  |
-| `zip_code` | `String` | No |  |
+| `zipCode` | `String` | No |  |
+
+### Field Usage by Operation
+
+| Field | create |
+| --- | --- |
+| `city` | - |
+| `country` | - |
+| `dateOfBirth` | - |
+| `description` | Yes |
+| `driversLicenseNumber` | - |
+| `email` | - |
+| `firstName` | - |
+| `identificationNumber` | - |
+| `lastName` | - |
+| `login` | - |
+| `name` | Yes |
+| `passportNumber` | - |
+| `phone` | - |
+| `salutation` | - |
+| `state` | - |
+| `street1` | - |
+| `street2` | - |
+| `zipCode` | - |
 
 ### Operations
 
@@ -526,10 +546,8 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.output_create_mandator(Value::Noval).create(jo(vec![
-    ("description", Value::str("example_description")),  // String
     ("email", Value::str("example_email")),  // String
     ("login", Value::str("example_login")),  // String
-    ("name", Value::str("example_name")),  // String
     ("phone", Value::str("example_phone")),  // String
 ]), Value::Noval).unwrap();
 ```
@@ -565,9 +583,9 @@ let output_create_service_user = client.output_create_service_user(Value::Noval)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `String` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
+| `mandatorName` | `String` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -577,7 +595,7 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.output_create_service_user(Value::Noval).create(jo(vec![
-    ("mandator_name", Value::str("example_mandator_name")),  // String
+    ("mandatorName", Value::str("example_mandatorName")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -612,9 +630,9 @@ let output_deactivate_user = client.output_deactivate_user(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
+| `consumerUUID` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -658,10 +676,10 @@ let output_get_kyc_document = client.output_get_kyc_document(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `case_id` | `String` | No |  |
-| `encoded_data_base64` | `String` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
+| `caseID` | `String` | No |  |
+| `encodedDataBase64` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -705,10 +723,10 @@ let output_get_logo = client.output_get_logo(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `String` | Yes |  |
-| `mime_type` | `String` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
+| `contentAsBase64` | `String` | Yes |  |
+| `mimeType` | `String` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -751,9 +769,9 @@ let output_list_of_available_role = client.output_list_of_available_role(Value::
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `available_role` | `Vec<Value>` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
+| `availableRoles` | `Vec<Value>` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -800,8 +818,8 @@ let output_list_of_mandator = client.output_list_of_mandator(Value::Noval);
 | `filter` | `std::collections::HashMap<String, Value>` | No |  |
 | `list` | `Vec<Value>` | No |  |
 | `pagination` | `std::collections::HashMap<String, Value>` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
 | `sorting` | `std::collections::HashMap<String, Value>` | No |  |
 
 ### Operations
@@ -848,8 +866,8 @@ let output_list_of_module = client.output_list_of_module(Value::Noval);
 | --- | --- | --- | --- |
 | `list` | `Vec<Value>` | No |  |
 | `pagination` | `std::collections::HashMap<String, Value>` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -894,10 +912,10 @@ let output_list_of_role_group = client.output_list_of_role_group(Value::Noval);
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `filter` | `std::collections::HashMap<String, Value>` | No |  |
-| `group_role` | `Vec<Value>` | No |  |
+| `groupRoles` | `Vec<Value>` | No |  |
 | `pagination` | `std::collections::HashMap<String, Value>` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
 | `sorting` | `std::collections::HashMap<String, Value>` | No |  |
 
 ### Operations
@@ -945,8 +963,8 @@ let output_list_of_transactions_history = client.output_list_of_transactions_his
 | `filter` | `std::collections::HashMap<String, Value>` | No |  |
 | `list` | `Vec<Value>` | No |  |
 | `pagination` | `std::collections::HashMap<String, Value>` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
 | `sorting` | `std::collections::HashMap<String, Value>` | No |  |
 
 ### Operations
@@ -994,8 +1012,8 @@ let output_list_of_user = client.output_list_of_user(Value::Noval);
 | `filter` | `std::collections::HashMap<String, Value>` | No |  |
 | `list` | `Vec<Value>` | No |  |
 | `pagination` | `std::collections::HashMap<String, Value>` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
 | `sorting` | `std::collections::HashMap<String, Value>` | No |  |
 
 ### Operations
@@ -1040,10 +1058,10 @@ let output_provide_credential = client.output_provide_credential(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `String` | Yes |  |
+| `mandatorName` | `String` | Yes |  |
 | `password` | `String` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
 | `username` | `String` | No |  |
 
 ### Operations
@@ -1054,7 +1072,7 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.output_provide_credential(Value::Noval).create(jo(vec![
-    ("mandator_name", Value::str("example_mandator_name")),  // String
+    ("mandatorName", Value::str("example_mandatorName")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -1090,21 +1108,21 @@ let output_register_user = client.output_register_user(Value::Noval);
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `String` | No |  |
-| `consumer_id` | `String` | No |  |
-| `consumer_language` | `String` | No |  |
+| `consumerId` | `String` | No |  |
+| `consumerLanguage` | `String` | No |  |
 | `country` | `String` | No |  |
-| `date_of_birth` | `String` | No |  |
-| `driver_licence_number` | `String` | No |  |
+| `dateOfBirth` | `String` | No |  |
+| `driverLicenceNumber` | `String` | No |  |
 | `email` | `String` | Yes |  |
-| `first_name` | `String` | No |  |
-| `identification_number` | `String` | No |  |
-| `last_name` | `String` | No |  |
+| `firstName` | `String` | No |  |
+| `identificationNumber` | `String` | No |  |
+| `lastName` | `String` | No |  |
 | `login` | `String` | No |  |
 | `module` | `String` | No |  |
-| `passport_number` | `String` | No |  |
+| `passportNumber` | `String` | No |  |
 | `phone` | `String` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
 | `salutation` | `String` | No |  |
 | `state` | `String` | No |  |
 | `street1` | `String` | No |  |
@@ -1154,10 +1172,10 @@ let output_remove_role = client.output_remove_role(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `role` | `Vec<Value>` | No |  |
+| `consumerUUID` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `roles` | `Vec<Value>` | No |  |
 
 ### Operations
 
@@ -1201,12 +1219,12 @@ let output_resend_link = client.output_resend_link(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `business_registration_number` | `String` | No |  |
-| `consumer_uuid` | `String` | Yes |  |
-| `email_confirmation_code` | `String` | No |  |
-| `phone_number` | `String` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
+| `businessRegistrationNumber` | `String` | No |  |
+| `consumerUUID` | `String` | Yes |  |
+| `emailConfirmationCode` | `String` | No |  |
+| `phoneNumber` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -1216,7 +1234,7 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.output_resend_link(Value::Noval).create(jo(vec![
-    ("consumer_uuid", Value::str("example_consumer_uuid")),  // String
+    ("consumerUUID", Value::str("example_consumerUUID")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -1251,10 +1269,10 @@ let output_reset_password = client.output_reset_password(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `String` | No |  |
-| `phone_number` | `String` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
+| `consumerUuid` | `String` | No |  |
+| `phoneNumber` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -1299,23 +1317,23 @@ let output_update_consumer = client.output_update_consumer(Value::Noval);
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `String` | No |  |
-| `consumer_uuid` | `String` | Yes |  |
+| `consumerUuid` | `String` | Yes |  |
 | `consumerlanguage` | `String` | No |  |
 | `country` | `String` | No |  |
-| `date_of_birth` | `String` | No |  |
+| `dateOfBirth` | `String` | No |  |
 | `datetime_created` | `String` | No |  |
-| `driver_licence_number` | `String` | No |  |
+| `driverLicenceNumber` | `String` | No |  |
 | `email` | `String` | No |  |
-| `first_name` | `String` | No |  |
-| `identification_number` | `String` | No |  |
-| `kyc_passed` | `bool` | No |  |
-| `last_name` | `String` | No |  |
+| `firstName` | `String` | No |  |
+| `identificationNumber` | `String` | No |  |
+| `kycPassed` | `bool` | No |  |
+| `lastName` | `String` | No |  |
 | `nationality` | `String` | No |  |
-| `passport_number` | `String` | No |  |
-| `phone_number` | `String` | No |  |
-| `place_of_birth` | `String` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
+| `passportNumber` | `String` | No |  |
+| `phoneNumber` | `String` | No |  |
+| `placeOfBirth` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
 | `state` | `String` | No |  |
 | `street1` | `String` | No |  |
 | `street2` | `String` | No |  |
@@ -1330,7 +1348,7 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.output_update_consumer(Value::Noval).create(jo(vec![
-    ("consumer_uuid", Value::str("example_consumer_uuid")),  // String
+    ("consumerUuid", Value::str("example_consumerUuid")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -1365,13 +1383,13 @@ let output_update_profile = client.output_update_profile(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_language` | `String` | No |  |
+| `consumerLanguage` | `String` | No |  |
 | `email` | `String` | No |  |
-| `first_name` | `String` | No |  |
-| `last_name` | `String` | No |  |
-| `phone_number` | `String` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
+| `firstName` | `String` | No |  |
+| `lastName` | `String` | No |  |
+| `phoneNumber` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -1415,8 +1433,8 @@ let version = client.version(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `String` | No |  |
-| `build_date` | `String` | No |  |
+| `appName` | `String` | No |  |
+| `buildDate` | `String` | No |  |
 | `version` | `String` | No |  |
 
 ### Operations

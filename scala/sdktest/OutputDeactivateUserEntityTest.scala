@@ -35,7 +35,7 @@ object OutputDeactivateUserEntityTest {
       var outputDeactivateUserRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.output_deactivate_user"), "output_deactivate_user_ref01"))
       val outputDeactivateUserRef01DataResult = outputDeactivateUserRef01Ent.create(outputDeactivateUserRef01Data, null)
-      outputDeactivateUserRef01Data = Helpers.toMapAny(outputDeactivateUserRef01DataResult)
+      outputDeactivateUserRef01Data = Helpers.toMapAny(outputDeactivateUserRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("output_deactivate_user.create.map", outputDeactivateUserRef01Data != null, "expected create result to be a map")
     }
   }

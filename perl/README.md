@@ -47,8 +47,8 @@ my $client = BluefinTecsUserBackofficeSDK->new({
 ### 4. Create, update, and remove
 
 ```perl
-# Create — returns the bare created record (a hashref)
-my $created = $client->OutputActivateDigitalModule->create({ 'response_code' => 1, 'response_message' => 'example_response_message' });
+# Create — returns the ENTITY (call data_get for the record)
+my $created = $client->OutputActivateDigitalModule->create({ 'responseCode' => 1, 'responseMessage' => 'example_responseMessage' });
 
 ```
 
@@ -129,7 +129,8 @@ Create a mock client for unit testing — no server required:
 ```perl
 my $client = BluefinTecsUserBackofficeSDK->test(undef, undef);
 
-# Entity ops return the bare record and die on error.
+# Entity ops return the ENTITY and dies on error;
+# call data_get for the record.
 my $outputgetlogo = $client->OutputGetLogo->load();
 # $outputgetlogo contains the mock response record
 ```
@@ -253,7 +254,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `hashref` for single-entity
+Entity operations return the ENTITY (call data_get for the record) (a `hashref` for single-entity
 ops, an `arrayref` for `list`) and die on error. Wrap calls in
 `eval { ... }` and inspect `$@` to handle failures.
 
@@ -275,8 +276,8 @@ On error, `ok` is false and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -286,10 +287,10 @@ API path: `/activateDigitalModule`
 
 | Field | Description |
 | --- | --- |
-| `client_secret` |  |
-| `notification_email` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clientSecret` |  |
+| `notificationEmail` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -299,8 +300,8 @@ API path: `/activateMerchantPortalModule`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -310,9 +311,9 @@ API path: `/activateAppStoreModule`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -322,10 +323,10 @@ API path: `/activateUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `role` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `roles` |  |
 
 Operations: Create.
 
@@ -335,10 +336,10 @@ API path: `/assignRoles`
 
 | Field | Description |
 | --- | --- |
-| `content_as_base64` |  |
-| `mime_type` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `contentAsBase64` |  |
+| `mimeType` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -350,25 +351,22 @@ API path: `/changeLogo`
 | --- | --- |
 | `city` |  |
 | `country` |  |
-| `date_of_birth` |  |
+| `dateOfBirth` |  |
 | `description` |  |
-| `drivers_license_number` |  |
+| `driversLicenseNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `lastName` |  |
 | `login` |  |
-| `mandator` |  |
 | `name` |  |
-| `passport_number` |  |
+| `passportNumber` |  |
 | `phone` |  |
-| `response_code` |  |
-| `response_message` |  |
 | `salutation` |  |
 | `state` |  |
 | `street1` |  |
 | `street2` |  |
-| `zip_code` |  |
+| `zipCode` |  |
 
 Operations: Create.
 
@@ -378,9 +376,9 @@ API path: `/createMandator`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `mandatorName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -390,9 +388,9 @@ API path: `/createServiceUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -402,10 +400,10 @@ API path: `/deactivateUser`
 
 | Field | Description |
 | --- | --- |
-| `case_id` |  |
-| `encoded_data_base64` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `caseID` |  |
+| `encodedDataBase64` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -415,10 +413,10 @@ API path: `/getKycDocument`
 
 | Field | Description |
 | --- | --- |
-| `content_as_base64` |  |
-| `mime_type` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `contentAsBase64` |  |
+| `mimeType` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Load.
 
@@ -428,9 +426,9 @@ API path: `/getLogo`
 
 | Field | Description |
 | --- | --- |
-| `available_role` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `availableRoles` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -443,8 +441,8 @@ API path: `/listOfAvailableRoles`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -457,8 +455,8 @@ API path: `/listOfMandators`
 | --- | --- |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -469,10 +467,10 @@ API path: `/listOfModules`
 | Field | Description |
 | --- | --- |
 | `filter` |  |
-| `group_role` |  |
+| `groupRoles` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -486,8 +484,8 @@ API path: `/listOfRoleGroups`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -501,8 +499,8 @@ API path: `/listOfTransactionsHistory`
 | `filter` |  |
 | `list` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `sorting` |  |
 
 Operations: Create.
@@ -513,10 +511,10 @@ API path: `/listOfUsers`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
+| `mandatorName` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `username` |  |
 
 Operations: Create.
@@ -528,21 +526,21 @@ API path: `/provideCredentials`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `consumer_id` |  |
-| `consumer_language` |  |
+| `consumerId` |  |
+| `consumerLanguage` |  |
 | `country` |  |
-| `date_of_birth` |  |
-| `driver_licence_number` |  |
+| `dateOfBirth` |  |
+| `driverLicenceNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `lastName` |  |
 | `login` |  |
 | `module` |  |
-| `passport_number` |  |
+| `passportNumber` |  |
 | `phone` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `salutation` |  |
 | `state` |  |
 | `street1` |  |
@@ -557,10 +555,10 @@ API path: `/registerUser`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `role` |  |
+| `consumerUUID` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `roles` |  |
 
 Operations: Create.
 
@@ -570,12 +568,12 @@ API path: `/removeRoles`
 
 | Field | Description |
 | --- | --- |
-| `business_registration_number` |  |
-| `consumer_uuid` |  |
-| `email_confirmation_code` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `businessRegistrationNumber` |  |
+| `consumerUUID` |  |
+| `emailConfirmationCode` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -585,10 +583,10 @@ API path: `/resendLink`
 
 | Field | Description |
 | --- | --- |
-| `consumer_uuid` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `consumerUuid` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -599,23 +597,23 @@ API path: `/resetPassword`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `consumer_uuid` |  |
+| `consumerUuid` |  |
 | `consumerlanguage` |  |
 | `country` |  |
-| `date_of_birth` |  |
+| `dateOfBirth` |  |
 | `datetime_created` |  |
-| `driver_licence_number` |  |
+| `driverLicenceNumber` |  |
 | `email` |  |
-| `first_name` |  |
-| `identification_number` |  |
-| `kyc_passed` |  |
-| `last_name` |  |
+| `firstName` |  |
+| `identificationNumber` |  |
+| `kycPassed` |  |
+| `lastName` |  |
 | `nationality` |  |
-| `passport_number` |  |
-| `phone_number` |  |
-| `place_of_birth` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `passportNumber` |  |
+| `phoneNumber` |  |
+| `placeOfBirth` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `state` |  |
 | `street1` |  |
 | `street2` |  |
@@ -630,13 +628,13 @@ API path: `/updateConsumer`
 
 | Field | Description |
 | --- | --- |
-| `consumer_language` |  |
+| `consumerLanguage` |  |
 | `email` |  |
-| `first_name` |  |
-| `last_name` |  |
-| `phone_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `firstName` |  |
+| `lastName` |  |
+| `phoneNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -646,8 +644,8 @@ API path: `/updateProfile`
 
 | Field | Description |
 | --- | --- |
-| `app_name` |  |
-| `build_date` |  |
+| `appName` |  |
+| `buildDate` |  |
 | `version` |  |
 
 Operations: Load.
@@ -673,8 +671,8 @@ Create an instance: `my $output_activate_digital_module = $client->OutputActivat
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -698,17 +696,17 @@ Create an instance: `my $output_activate_portal_module = $client->OutputActivate
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `client_secret` | `string` |  |
-| `notification_email` | `string` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
+| `clientSecret` | `string` |  |
+| `notificationEmail` | `string` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```perl
 my $output_activate_portal_module = $client->OutputActivatePortalModule->create({
-    'client_secret' => 'example_client_secret',  # string
-    'notification_email' => 'example_notification_email',  # string
+    'clientSecret' => 'example_clientSecret',  # string
+    'notificationEmail' => 'example_notificationEmail',  # string
 });
 ```
 
@@ -727,8 +725,8 @@ Create an instance: `my $output_activate_store_module = $client->OutputActivateS
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -752,9 +750,9 @@ Create an instance: `my $output_activate_user = $client->OutputActivateUser;`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
+| `consumerUUID` | `string` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -778,17 +776,17 @@ Create an instance: `my $output_assign_role = $client->OutputAssignRole;`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
-| `role` | `arrayref` |  |
+| `consumerUUID` | `string` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
+| `roles` | `arrayref` |  |
 
 #### Example: Create
 
 ```perl
 my $output_assign_role = $client->OutputAssignRole->create({
-    'consumer_uuid' => 'example_consumer_uuid',  # string
-    'role' => [],  # arrayref
+    'consumerUUID' => 'example_consumerUUID',  # string
+    'roles' => [],  # arrayref
 });
 ```
 
@@ -807,17 +805,17 @@ Create an instance: `my $output_change_logo = $client->OutputChangeLogo;`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `content_as_base64` | `string` |  |
-| `mime_type` | `string` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
+| `contentAsBase64` | `string` |  |
+| `mimeType` | `string` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```perl
 my $output_change_logo = $client->OutputChangeLogo->create({
-    'content_as_base64' => 'example_content_as_base64',  # string
-    'mime_type' => 'example_mime_type',  # string
+    'contentAsBase64' => 'example_contentAsBase64',  # string
+    'mimeType' => 'example_mimeType',  # string
 });
 ```
 
@@ -838,34 +836,29 @@ Create an instance: `my $output_create_mandator = $client->OutputCreateMandator;
 | --- | --- | --- |
 | `city` | `string` |  |
 | `country` | `string` |  |
-| `date_of_birth` | `string` |  |
+| `dateOfBirth` | `string` |  |
 | `description` | `string` |  |
-| `drivers_license_number` | `string` |  |
+| `driversLicenseNumber` | `string` |  |
 | `email` | `string` |  |
-| `first_name` | `string` |  |
-| `identification_number` | `string` |  |
-| `last_name` | `string` |  |
+| `firstName` | `string` |  |
+| `identificationNumber` | `string` |  |
+| `lastName` | `string` |  |
 | `login` | `string` |  |
-| `mandator` | `hashref` |  |
 | `name` | `string` |  |
-| `passport_number` | `string` |  |
+| `passportNumber` | `string` |  |
 | `phone` | `string` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
 | `salutation` | `string` |  |
 | `state` | `string` |  |
 | `street1` | `string` |  |
 | `street2` | `string` |  |
-| `zip_code` | `string` |  |
+| `zipCode` | `string` |  |
 
 #### Example: Create
 
 ```perl
 my $output_create_mandator = $client->OutputCreateMandator->create({
-    'description' => 'example_description',  # string
     'email' => 'example_email',  # string
     'login' => 'example_login',  # string
-    'name' => 'example_name',  # string
     'phone' => 'example_phone',  # string
 });
 ```
@@ -885,15 +878,15 @@ Create an instance: `my $output_create_service_user = $client->OutputCreateServi
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `string` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
+| `mandatorName` | `string` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```perl
 my $output_create_service_user = $client->OutputCreateServiceUser->create({
-    'mandator_name' => 'example_mandator_name',  # string
+    'mandatorName' => 'example_mandatorName',  # string
 });
 ```
 
@@ -912,9 +905,9 @@ Create an instance: `my $output_deactivate_user = $client->OutputDeactivateUser;
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
+| `consumerUUID` | `string` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -938,10 +931,10 @@ Create an instance: `my $output_get_kyc_document = $client->OutputGetKycDocument
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `case_id` | `string` |  |
-| `encoded_data_base64` | `string` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
+| `caseID` | `string` |  |
+| `encodedDataBase64` | `string` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -965,10 +958,10 @@ Create an instance: `my $output_get_logo = $client->OutputGetLogo;`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `content_as_base64` | `string` |  |
-| `mime_type` | `string` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
+| `contentAsBase64` | `string` |  |
+| `mimeType` | `string` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Load
 
@@ -991,9 +984,9 @@ Create an instance: `my $output_list_of_available_role = $client->OutputListOfAv
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `available_role` | `arrayref` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
+| `availableRoles` | `arrayref` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -1020,8 +1013,8 @@ Create an instance: `my $output_list_of_mandator = $client->OutputListOfMandator
 | `filter` | `hashref` |  |
 | `list` | `arrayref` |  |
 | `pagination` | `hashref` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
 | `sorting` | `hashref` |  |
 
 #### Example: Create
@@ -1048,8 +1041,8 @@ Create an instance: `my $output_list_of_module = $client->OutputListOfModule;`
 | --- | --- | --- |
 | `list` | `arrayref` |  |
 | `pagination` | `hashref` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -1074,10 +1067,10 @@ Create an instance: `my $output_list_of_role_group = $client->OutputListOfRoleGr
 | Field | Type | Description |
 | --- | --- | --- |
 | `filter` | `hashref` |  |
-| `group_role` | `arrayref` |  |
+| `groupRoles` | `arrayref` |  |
 | `pagination` | `hashref` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
 | `sorting` | `hashref` |  |
 
 #### Example: Create
@@ -1105,8 +1098,8 @@ Create an instance: `my $output_list_of_transactions_history = $client->OutputLi
 | `filter` | `hashref` |  |
 | `list` | `arrayref` |  |
 | `pagination` | `hashref` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
 | `sorting` | `hashref` |  |
 
 #### Example: Create
@@ -1134,8 +1127,8 @@ Create an instance: `my $output_list_of_user = $client->OutputListOfUser;`
 | `filter` | `hashref` |  |
 | `list` | `arrayref` |  |
 | `pagination` | `hashref` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
 | `sorting` | `hashref` |  |
 
 #### Example: Create
@@ -1160,17 +1153,17 @@ Create an instance: `my $output_provide_credential = $client->OutputProvideCrede
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `string` |  |
+| `mandatorName` | `string` |  |
 | `password` | `string` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
 | `username` | `string` |  |
 
 #### Example: Create
 
 ```perl
 my $output_provide_credential = $client->OutputProvideCredential->create({
-    'mandator_name' => 'example_mandator_name',  # string
+    'mandatorName' => 'example_mandatorName',  # string
 });
 ```
 
@@ -1190,21 +1183,21 @@ Create an instance: `my $output_register_user = $client->OutputRegisterUser;`
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `string` |  |
-| `consumer_id` | `string` |  |
-| `consumer_language` | `string` |  |
+| `consumerId` | `string` |  |
+| `consumerLanguage` | `string` |  |
 | `country` | `string` |  |
-| `date_of_birth` | `string` |  |
-| `driver_licence_number` | `string` |  |
+| `dateOfBirth` | `string` |  |
+| `driverLicenceNumber` | `string` |  |
 | `email` | `string` |  |
-| `first_name` | `string` |  |
-| `identification_number` | `string` |  |
-| `last_name` | `string` |  |
+| `firstName` | `string` |  |
+| `identificationNumber` | `string` |  |
+| `lastName` | `string` |  |
 | `login` | `string` |  |
 | `module` | `string` |  |
-| `passport_number` | `string` |  |
+| `passportNumber` | `string` |  |
 | `phone` | `string` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
 | `salutation` | `string` |  |
 | `state` | `string` |  |
 | `street1` | `string` |  |
@@ -1234,10 +1227,10 @@ Create an instance: `my $output_remove_role = $client->OutputRemoveRole;`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
-| `role` | `arrayref` |  |
+| `consumerUUID` | `string` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
+| `roles` | `arrayref` |  |
 
 #### Example: Create
 
@@ -1261,18 +1254,18 @@ Create an instance: `my $output_resend_link = $client->OutputResendLink;`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `business_registration_number` | `string` |  |
-| `consumer_uuid` | `string` |  |
-| `email_confirmation_code` | `string` |  |
-| `phone_number` | `string` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
+| `businessRegistrationNumber` | `string` |  |
+| `consumerUUID` | `string` |  |
+| `emailConfirmationCode` | `string` |  |
+| `phoneNumber` | `string` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```perl
 my $output_resend_link = $client->OutputResendLink->create({
-    'consumer_uuid' => 'example_consumer_uuid',  # string
+    'consumerUUID' => 'example_consumerUUID',  # string
 });
 ```
 
@@ -1291,10 +1284,10 @@ Create an instance: `my $output_reset_password = $client->OutputResetPassword;`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_uuid` | `string` |  |
-| `phone_number` | `string` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
+| `consumerUuid` | `string` |  |
+| `phoneNumber` | `string` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -1319,23 +1312,23 @@ Create an instance: `my $output_update_consumer = $client->OutputUpdateConsumer;
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `string` |  |
-| `consumer_uuid` | `string` |  |
+| `consumerUuid` | `string` |  |
 | `consumerlanguage` | `string` |  |
 | `country` | `string` |  |
-| `date_of_birth` | `string` |  |
+| `dateOfBirth` | `string` |  |
 | `datetime_created` | `string` |  |
-| `driver_licence_number` | `string` |  |
+| `driverLicenceNumber` | `string` |  |
 | `email` | `string` |  |
-| `first_name` | `string` |  |
-| `identification_number` | `string` |  |
-| `kyc_passed` | `boolean` |  |
-| `last_name` | `string` |  |
+| `firstName` | `string` |  |
+| `identificationNumber` | `string` |  |
+| `kycPassed` | `boolean` |  |
+| `lastName` | `string` |  |
 | `nationality` | `string` |  |
-| `passport_number` | `string` |  |
-| `phone_number` | `string` |  |
-| `place_of_birth` | `string` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
+| `passportNumber` | `string` |  |
+| `phoneNumber` | `string` |  |
+| `placeOfBirth` | `string` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
 | `state` | `string` |  |
 | `street1` | `string` |  |
 | `street2` | `string` |  |
@@ -1346,7 +1339,7 @@ Create an instance: `my $output_update_consumer = $client->OutputUpdateConsumer;
 
 ```perl
 my $output_update_consumer = $client->OutputUpdateConsumer->create({
-    'consumer_uuid' => 'example_consumer_uuid',  # string
+    'consumerUuid' => 'example_consumerUuid',  # string
 });
 ```
 
@@ -1365,13 +1358,13 @@ Create an instance: `my $output_update_profile = $client->OutputUpdateProfile;`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumer_language` | `string` |  |
+| `consumerLanguage` | `string` |  |
 | `email` | `string` |  |
-| `first_name` | `string` |  |
-| `last_name` | `string` |  |
-| `phone_number` | `string` |  |
-| `response_code` | `integer` |  |
-| `response_message` | `string` |  |
+| `firstName` | `string` |  |
+| `lastName` | `string` |  |
+| `phoneNumber` | `string` |  |
+| `responseCode` | `integer` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -1395,8 +1388,8 @@ Create an instance: `my $version = $client->Version;`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_name` | `string` |  |
-| `build_date` | `string` |  |
+| `appName` | `string` |  |
+| `buildDate` | `string` |  |
 | `version` | `string` |  |
 
 #### Example: Load

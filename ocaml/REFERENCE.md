@@ -183,18 +183,19 @@ let output_activate_digital_module = Sdk_client.output_activate_digital_module c
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
-#### `e_create reqdata ctrl : value`
+#### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_activate_digital_module client Noval).e_create (jo [
 ]) Noval
+let result_data = result.e_data_get ()
 ```
 
 ### Common Fields
@@ -236,22 +237,23 @@ let output_activate_portal_module = Sdk_client.output_activate_portal_module cli
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `client_secret` | `string` | Yes |  |
-| `notification_email` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `clientSecret` | `string` | Yes |  |
+| `notificationEmail` | `string` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
-#### `e_create reqdata ctrl : value`
+#### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_activate_portal_module client Noval).e_create (jo [
-    ("client_secret", (Str "example_client_secret"));  (* string *)
-    ("notification_email", (Str "example_notification_email"));  (* string *)
+    ("clientSecret", (Str "example_clientSecret"));  (* string *)
+    ("notificationEmail", (Str "example_notificationEmail"));  (* string *)
 ]) Noval
+let result_data = result.e_data_get ()
 ```
 
 ### Common Fields
@@ -293,18 +295,19 @@ let output_activate_store_module = Sdk_client.output_activate_store_module clien
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
-#### `e_create reqdata ctrl : value`
+#### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_activate_store_module client Noval).e_create (jo [
 ]) Noval
+let result_data = result.e_data_get ()
 ```
 
 ### Common Fields
@@ -346,19 +349,20 @@ let output_activate_user = Sdk_client.output_activate_user client Noval
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `consumerUUID` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
-#### `e_create reqdata ctrl : value`
+#### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_activate_user client Noval).e_create (jo [
 ]) Noval
+let result_data = result.e_data_get ()
 ```
 
 ### Common Fields
@@ -400,22 +404,23 @@ let output_assign_role = Sdk_client.output_assign_role client Noval
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `role` | `value list` | Yes |  |
+| `consumerUUID` | `string` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `roles` | `value list` | Yes |  |
 
 ### Operations
 
-#### `e_create reqdata ctrl : value`
+#### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_assign_role client Noval).e_create (jo [
-    ("consumer_uuid", (Str "example_consumer_uuid"));  (* string *)
-    ("role", (empty_list ()));  (* value list *)
+    ("consumerUUID", (Str "example_consumerUUID"));  (* string *)
+    ("roles", (empty_list ()));  (* value list *)
 ]) Noval
+let result_data = result.e_data_get ()
 ```
 
 ### Common Fields
@@ -457,22 +462,23 @@ let output_change_logo = Sdk_client.output_change_logo client Noval
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `string` | Yes |  |
-| `mime_type` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `contentAsBase64` | `string` | Yes |  |
+| `mimeType` | `string` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
-#### `e_create reqdata ctrl : value`
+#### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_change_logo client Noval).e_create (jo [
-    ("content_as_base64", (Str "example_content_as_base64"));  (* string *)
-    ("mime_type", (Str "example_mime_type"));  (* string *)
+    ("contentAsBase64", (Str "example_contentAsBase64"));  (* string *)
+    ("mimeType", (Str "example_mimeType"));  (* string *)
 ]) Noval
+let result_data = result.e_data_get ()
 ```
 
 ### Common Fields
@@ -516,40 +522,59 @@ let output_create_mandator = Sdk_client.output_create_mandator client Noval
 | --- | --- | --- | --- |
 | `city` | `string` | No |  |
 | `country` | `string` | No |  |
-| `date_of_birth` | `string` | No |  |
-| `description` | `string` | Yes |  |
-| `drivers_license_number` | `string` | No |  |
+| `dateOfBirth` | `string` | No |  |
+| `description` | `string` | No |  |
+| `driversLicenseNumber` | `string` | No |  |
 | `email` | `string` | Yes |  |
-| `first_name` | `string` | No |  |
-| `identification_number` | `string` | No |  |
-| `last_name` | `string` | No |  |
+| `firstName` | `string` | No |  |
+| `identificationNumber` | `string` | No |  |
+| `lastName` | `string` | No |  |
 | `login` | `string` | Yes |  |
-| `mandator` | `value map` | No |  |
-| `name` | `string` | Yes |  |
-| `passport_number` | `string` | No |  |
+| `name` | `string` | No |  |
+| `passportNumber` | `string` | No |  |
 | `phone` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
 | `salutation` | `string` | No |  |
 | `state` | `string` | No |  |
 | `street1` | `string` | No |  |
 | `street2` | `string` | No |  |
-| `zip_code` | `string` | No |  |
+| `zipCode` | `string` | No |  |
+
+### Field Usage by Operation
+
+| Field | create |
+| --- | --- |
+| `city` | - |
+| `country` | - |
+| `dateOfBirth` | - |
+| `description` | Yes |
+| `driversLicenseNumber` | - |
+| `email` | - |
+| `firstName` | - |
+| `identificationNumber` | - |
+| `lastName` | - |
+| `login` | - |
+| `name` | Yes |
+| `passportNumber` | - |
+| `phone` | - |
+| `salutation` | - |
+| `state` | - |
+| `street1` | - |
+| `street2` | - |
+| `zipCode` | - |
 
 ### Operations
 
-#### `e_create reqdata ctrl : value`
+#### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_create_mandator client Noval).e_create (jo [
-    ("description", (Str "example_description"));  (* string *)
     ("email", (Str "example_email"));  (* string *)
     ("login", (Str "example_login"));  (* string *)
-    ("name", (Str "example_name"));  (* string *)
     ("phone", (Str "example_phone"));  (* string *)
 ]) Noval
+let result_data = result.e_data_get ()
 ```
 
 ### Common Fields
@@ -591,20 +616,21 @@ let output_create_service_user = Sdk_client.output_create_service_user client No
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `mandatorName` | `string` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
-#### `e_create reqdata ctrl : value`
+#### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_create_service_user client Noval).e_create (jo [
-    ("mandator_name", (Str "example_mandator_name"));  (* string *)
+    ("mandatorName", (Str "example_mandatorName"));  (* string *)
 ]) Noval
+let result_data = result.e_data_get ()
 ```
 
 ### Common Fields
@@ -646,19 +672,20 @@ let output_deactivate_user = Sdk_client.output_deactivate_user client Noval
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `consumerUUID` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
-#### `e_create reqdata ctrl : value`
+#### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_deactivate_user client Noval).e_create (jo [
 ]) Noval
+let result_data = result.e_data_get ()
 ```
 
 ### Common Fields
@@ -700,20 +727,21 @@ let output_get_kyc_document = Sdk_client.output_get_kyc_document client Noval
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `case_id` | `string` | No |  |
-| `encoded_data_base64` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `caseID` | `string` | No |  |
+| `encodedDataBase64` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
-#### `e_create reqdata ctrl : value`
+#### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_get_kyc_document client Noval).e_create (jo [
 ]) Noval
+let result_data = result.e_data_get ()
 ```
 
 ### Common Fields
@@ -755,19 +783,20 @@ let output_get_logo = Sdk_client.output_get_logo client Noval
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `content_as_base64` | `string` | Yes |  |
-| `mime_type` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `contentAsBase64` | `string` | Yes |  |
+| `mimeType` | `string` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
-#### `e_load reqmatch ctrl : value`
+#### `e_load reqmatch ctrl : entity_obj`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_get_logo client Noval).e_load (Noval) Noval
+let result_data = result.e_data_get ()
 ```
 
 ### Common Fields
@@ -809,19 +838,20 @@ let output_list_of_available_role = Sdk_client.output_list_of_available_role cli
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `available_role` | `value list` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `availableRoles` | `value list` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
-#### `e_create reqdata ctrl : value`
+#### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_list_of_available_role client Noval).e_create (jo [
 ]) Noval
+let result_data = result.e_data_get ()
 ```
 
 ### Common Fields
@@ -866,19 +896,20 @@ let output_list_of_mandator = Sdk_client.output_list_of_mandator client Noval
 | `filter` | `value map` | No |  |
 | `list` | `value list` | No |  |
 | `pagination` | `value map` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 | `sorting` | `value map` | No |  |
 
 ### Operations
 
-#### `e_create reqdata ctrl : value`
+#### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_list_of_mandator client Noval).e_create (jo [
 ]) Noval
+let result_data = result.e_data_get ()
 ```
 
 ### Common Fields
@@ -922,18 +953,19 @@ let output_list_of_module = Sdk_client.output_list_of_module client Noval
 | --- | --- | --- | --- |
 | `list` | `value list` | No |  |
 | `pagination` | `value map` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
-#### `e_create reqdata ctrl : value`
+#### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_list_of_module client Noval).e_create (jo [
 ]) Noval
+let result_data = result.e_data_get ()
 ```
 
 ### Common Fields
@@ -976,21 +1008,22 @@ let output_list_of_role_group = Sdk_client.output_list_of_role_group client Nova
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `filter` | `value map` | No |  |
-| `group_role` | `value list` | No |  |
+| `groupRoles` | `value list` | No |  |
 | `pagination` | `value map` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 | `sorting` | `value map` | No |  |
 
 ### Operations
 
-#### `e_create reqdata ctrl : value`
+#### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_list_of_role_group client Noval).e_create (jo [
 ]) Noval
+let result_data = result.e_data_get ()
 ```
 
 ### Common Fields
@@ -1035,19 +1068,20 @@ let output_list_of_transactions_history = Sdk_client.output_list_of_transactions
 | `filter` | `value map` | No |  |
 | `list` | `value list` | No |  |
 | `pagination` | `value map` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 | `sorting` | `value map` | No |  |
 
 ### Operations
 
-#### `e_create reqdata ctrl : value`
+#### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_list_of_transactions_history client Noval).e_create (jo [
 ]) Noval
+let result_data = result.e_data_get ()
 ```
 
 ### Common Fields
@@ -1092,19 +1126,20 @@ let output_list_of_user = Sdk_client.output_list_of_user client Noval
 | `filter` | `value map` | No |  |
 | `list` | `value list` | No |  |
 | `pagination` | `value map` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 | `sorting` | `value map` | No |  |
 
 ### Operations
 
-#### `e_create reqdata ctrl : value`
+#### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_list_of_user client Noval).e_create (jo [
 ]) Noval
+let result_data = result.e_data_get ()
 ```
 
 ### Common Fields
@@ -1146,22 +1181,23 @@ let output_provide_credential = Sdk_client.output_provide_credential client Nova
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `string` | Yes |  |
+| `mandatorName` | `string` | Yes |  |
 | `password` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 | `username` | `string` | No |  |
 
 ### Operations
 
-#### `e_create reqdata ctrl : value`
+#### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_provide_credential client Noval).e_create (jo [
-    ("mandator_name", (Str "example_mandator_name"));  (* string *)
+    ("mandatorName", (Str "example_mandatorName"));  (* string *)
 ]) Noval
+let result_data = result.e_data_get ()
 ```
 
 ### Common Fields
@@ -1204,21 +1240,21 @@ let output_register_user = Sdk_client.output_register_user client Noval
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `string` | No |  |
-| `consumer_id` | `string` | No |  |
-| `consumer_language` | `string` | No |  |
+| `consumerId` | `string` | No |  |
+| `consumerLanguage` | `string` | No |  |
 | `country` | `string` | No |  |
-| `date_of_birth` | `string` | No |  |
-| `driver_licence_number` | `string` | No |  |
+| `dateOfBirth` | `string` | No |  |
+| `driverLicenceNumber` | `string` | No |  |
 | `email` | `string` | Yes |  |
-| `first_name` | `string` | No |  |
-| `identification_number` | `string` | No |  |
-| `last_name` | `string` | No |  |
+| `firstName` | `string` | No |  |
+| `identificationNumber` | `string` | No |  |
+| `lastName` | `string` | No |  |
 | `login` | `string` | No |  |
 | `module` | `string` | No |  |
-| `passport_number` | `string` | No |  |
+| `passportNumber` | `string` | No |  |
 | `phone` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 | `salutation` | `string` | No |  |
 | `state` | `string` | No |  |
 | `street1` | `string` | No |  |
@@ -1227,14 +1263,15 @@ let output_register_user = Sdk_client.output_register_user client Noval
 
 ### Operations
 
-#### `e_create reqdata ctrl : value`
+#### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_register_user client Noval).e_create (jo [
     ("email", (Str "example_email"));  (* string *)
 ]) Noval
+let result_data = result.e_data_get ()
 ```
 
 ### Common Fields
@@ -1276,20 +1313,21 @@ let output_remove_role = Sdk_client.output_remove_role client Noval
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `role` | `value list` | No |  |
+| `consumerUUID` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `roles` | `value list` | No |  |
 
 ### Operations
 
-#### `e_create reqdata ctrl : value`
+#### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_remove_role client Noval).e_create (jo [
 ]) Noval
+let result_data = result.e_data_get ()
 ```
 
 ### Common Fields
@@ -1331,23 +1369,24 @@ let output_resend_link = Sdk_client.output_resend_link client Noval
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `business_registration_number` | `string` | No |  |
-| `consumer_uuid` | `string` | Yes |  |
-| `email_confirmation_code` | `string` | No |  |
-| `phone_number` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `businessRegistrationNumber` | `string` | No |  |
+| `consumerUUID` | `string` | Yes |  |
+| `emailConfirmationCode` | `string` | No |  |
+| `phoneNumber` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
-#### `e_create reqdata ctrl : value`
+#### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_resend_link client Noval).e_create (jo [
-    ("consumer_uuid", (Str "example_consumer_uuid"));  (* string *)
+    ("consumerUUID", (Str "example_consumerUUID"));  (* string *)
 ]) Noval
+let result_data = result.e_data_get ()
 ```
 
 ### Common Fields
@@ -1389,20 +1428,21 @@ let output_reset_password = Sdk_client.output_reset_password client Noval
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_uuid` | `string` | No |  |
-| `phone_number` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `consumerUuid` | `string` | No |  |
+| `phoneNumber` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
-#### `e_create reqdata ctrl : value`
+#### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_reset_password client Noval).e_create (jo [
 ]) Noval
+let result_data = result.e_data_get ()
 ```
 
 ### Common Fields
@@ -1445,23 +1485,23 @@ let output_update_consumer = Sdk_client.output_update_consumer client Noval
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `string` | No |  |
-| `consumer_uuid` | `string` | Yes |  |
+| `consumerUuid` | `string` | Yes |  |
 | `consumerlanguage` | `string` | No |  |
 | `country` | `string` | No |  |
-| `date_of_birth` | `string` | No |  |
+| `dateOfBirth` | `string` | No |  |
 | `datetime_created` | `string` | No |  |
-| `driver_licence_number` | `string` | No |  |
+| `driverLicenceNumber` | `string` | No |  |
 | `email` | `string` | No |  |
-| `first_name` | `string` | No |  |
-| `identification_number` | `string` | No |  |
-| `kyc_passed` | `bool` | No |  |
-| `last_name` | `string` | No |  |
+| `firstName` | `string` | No |  |
+| `identificationNumber` | `string` | No |  |
+| `kycPassed` | `bool` | No |  |
+| `lastName` | `string` | No |  |
 | `nationality` | `string` | No |  |
-| `passport_number` | `string` | No |  |
-| `phone_number` | `string` | No |  |
-| `place_of_birth` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `passportNumber` | `string` | No |  |
+| `phoneNumber` | `string` | No |  |
+| `placeOfBirth` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 | `state` | `string` | No |  |
 | `street1` | `string` | No |  |
 | `street2` | `string` | No |  |
@@ -1470,14 +1510,15 @@ let output_update_consumer = Sdk_client.output_update_consumer client Noval
 
 ### Operations
 
-#### `e_create reqdata ctrl : value`
+#### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_update_consumer client Noval).e_create (jo [
-    ("consumer_uuid", (Str "example_consumer_uuid"));  (* string *)
+    ("consumerUuid", (Str "example_consumerUuid"));  (* string *)
 ]) Noval
+let result_data = result.e_data_get ()
 ```
 
 ### Common Fields
@@ -1519,23 +1560,24 @@ let output_update_profile = Sdk_client.output_update_profile client Noval
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumer_language` | `string` | No |  |
+| `consumerLanguage` | `string` | No |  |
 | `email` | `string` | No |  |
-| `first_name` | `string` | No |  |
-| `last_name` | `string` | No |  |
-| `phone_number` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `firstName` | `string` | No |  |
+| `lastName` | `string` | No |  |
+| `phoneNumber` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
-#### `e_create reqdata ctrl : value`
+#### `e_create reqdata ctrl : entity_obj`
 
-Create a new entity with the given data. Returns the created entity data and raises on error.
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
 
 ```ocaml
 let result = (Sdk_client.output_update_profile client Noval).e_create (jo [
 ]) Noval
+let result_data = result.e_data_get ()
 ```
 
 ### Common Fields
@@ -1577,18 +1619,19 @@ let version = Sdk_client.version client Noval
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `string` | No |  |
-| `build_date` | `string` | No |  |
+| `appName` | `string` | No |  |
+| `buildDate` | `string` | No |  |
 | `version` | `string` | No |  |
 
 ### Operations
 
-#### `e_load reqmatch ctrl : value`
+#### `e_load reqmatch ctrl : entity_obj`
 
-Load a single entity matching the given criteria. Returns the entity data and raises on error.
+Load a single entity matching the given criteria. Resolves to the ENTITY (read the record with `e_data_get`) and raises on error.
 
 ```ocaml
 let result = (Sdk_client.version client Noval).e_load (Noval) Noval
+let result_data = result.e_data_get ()
 ```
 
 ### Common Fields

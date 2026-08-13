@@ -31,7 +31,8 @@ defmodule BluefinTecsUserBackoffice.OutputCreateServiceUserEntityTest do
   test "should create then read back" do
     sdk = BluefinTecsUserBackoffice.test(S.jm(["entity", S.jm(["output_create_service_user", S.jm([])])]))
     ent = BluefinTecsUserBackoffice.output_create_service_user(sdk)
-    made = BluefinTecsUserBackoffice.Entity.OutputCreateServiceUser.create(ent, S.jm(["name", "test-create"]))
+    created = BluefinTecsUserBackoffice.Entity.OutputCreateServiceUser.create(ent, S.jm(["name", "test-create"]))
+    made = BluefinTecsUserBackoffice.EntityBase.data_get(created)
     assert S.ismap(made)
     assert S.getprop(made, "id") != nil
   end

@@ -7,274 +7,268 @@
 -- edit by hand.
 
 ---@class OutputActivateDigitalModule
----@field response_code? number
----@field response_message? string
+---@field responseCode? number
+---@field responseMessage? string
 
 ---@class OutputActivateDigitalModuleCreateData
----@field response_code? number
----@field response_message? string
+---@field responseCode? number
+---@field responseMessage? string
 
 ---@class OutputActivatePortalModule
----@field client_secret string
----@field notification_email string
----@field response_code? number
----@field response_message? string
+---@field clientSecret string
+---@field notificationEmail string
+---@field responseCode? number
+---@field responseMessage? string
 
 ---@class OutputActivatePortalModuleCreateData
----@field client_secret string
----@field notification_email string
----@field response_code? number
----@field response_message? string
+---@field clientSecret string
+---@field notificationEmail string
+---@field responseCode? number
+---@field responseMessage? string
 
 ---@class OutputActivateStoreModule
----@field response_code? number
----@field response_message? string
+---@field responseCode? number
+---@field responseMessage? string
 
 ---@class OutputActivateStoreModuleCreateData
----@field response_code? number
----@field response_message? string
+---@field responseCode? number
+---@field responseMessage? string
 
 ---@class OutputActivateUser
----@field consumer_uuid? string
----@field response_code? number
----@field response_message? string
+---@field consumerUUID? string
+---@field responseCode? number
+---@field responseMessage? string
 
 ---@class OutputActivateUserCreateData
----@field consumer_uuid? string
----@field response_code? number
----@field response_message? string
+---@field consumerUUID? string
+---@field responseCode? number
+---@field responseMessage? string
 
 ---@class OutputAssignRole
----@field consumer_uuid string
----@field response_code? number
----@field response_message? string
----@field role table
+---@field consumerUUID string
+---@field responseCode? number
+---@field responseMessage? string
+---@field roles table
 
 ---@class OutputAssignRoleCreateData
----@field consumer_uuid string
----@field response_code? number
----@field response_message? string
----@field role table
+---@field consumerUUID string
+---@field responseCode? number
+---@field responseMessage? string
+---@field roles table
 
 ---@class OutputChangeLogo
----@field content_as_base64 string
----@field mime_type string
----@field response_code? number
----@field response_message? string
+---@field contentAsBase64 string
+---@field mimeType string
+---@field responseCode? number
+---@field responseMessage? string
 
 ---@class OutputChangeLogoCreateData
----@field content_as_base64 string
----@field mime_type string
----@field response_code? number
----@field response_message? string
+---@field contentAsBase64 string
+---@field mimeType string
+---@field responseCode? number
+---@field responseMessage? string
 
 ---@class OutputCreateMandator
 ---@field city? string
 ---@field country? string
----@field date_of_birth? string
----@field description string
----@field drivers_license_number? string
+---@field dateOfBirth? string
+---@field description? string
+---@field driversLicenseNumber? string
 ---@field email string
----@field first_name? string
----@field identification_number? string
----@field last_name? string
+---@field firstName? string
+---@field identificationNumber? string
+---@field lastName? string
 ---@field login string
----@field mandator? table
----@field name string
----@field passport_number? string
+---@field name? string
+---@field passportNumber? string
 ---@field phone string
----@field response_code? number
----@field response_message? string
 ---@field salutation? string
 ---@field state? string
 ---@field street1? string
 ---@field street2? string
----@field zip_code? string
+---@field zipCode? string
 
 ---@class OutputCreateMandatorCreateData
 ---@field city? string
 ---@field country? string
----@field date_of_birth? string
----@field description string
----@field drivers_license_number? string
+---@field dateOfBirth? string
+---@field description? string
+---@field driversLicenseNumber? string
 ---@field email string
----@field first_name? string
----@field identification_number? string
----@field last_name? string
+---@field firstName? string
+---@field identificationNumber? string
+---@field lastName? string
 ---@field login string
----@field mandator? table
----@field name string
----@field passport_number? string
+---@field name? string
+---@field passportNumber? string
 ---@field phone string
----@field response_code? number
----@field response_message? string
 ---@field salutation? string
 ---@field state? string
 ---@field street1? string
 ---@field street2? string
----@field zip_code? string
+---@field zipCode? string
 
 ---@class OutputCreateServiceUser
----@field mandator_name string
----@field response_code? number
----@field response_message? string
+---@field mandatorName string
+---@field responseCode? number
+---@field responseMessage? string
 
 ---@class OutputCreateServiceUserCreateData
----@field mandator_name string
----@field response_code? number
----@field response_message? string
+---@field mandatorName string
+---@field responseCode? number
+---@field responseMessage? string
 
 ---@class OutputDeactivateUser
----@field consumer_uuid? string
----@field response_code? number
----@field response_message? string
+---@field consumerUUID? string
+---@field responseCode? number
+---@field responseMessage? string
 
 ---@class OutputDeactivateUserCreateData
----@field consumer_uuid? string
----@field response_code? number
----@field response_message? string
+---@field consumerUUID? string
+---@field responseCode? number
+---@field responseMessage? string
 
 ---@class OutputGetKycDocument
----@field case_id? string
----@field encoded_data_base64? string
----@field response_code? number
----@field response_message? string
+---@field caseID? string
+---@field encodedDataBase64? string
+---@field responseCode? number
+---@field responseMessage? string
 
 ---@class OutputGetKycDocumentCreateData
----@field case_id? string
----@field encoded_data_base64? string
----@field response_code? number
----@field response_message? string
+---@field caseID? string
+---@field encodedDataBase64? string
+---@field responseCode? number
+---@field responseMessage? string
 
 ---@class OutputGetLogo
----@field content_as_base64 string
----@field mime_type string
----@field response_code? number
----@field response_message? string
+---@field contentAsBase64 string
+---@field mimeType string
+---@field responseCode? number
+---@field responseMessage? string
 
 ---@class OutputGetLogoLoadMatch
----@field content_as_base64? string
----@field mime_type? string
----@field response_code? number
----@field response_message? string
+---@field contentAsBase64? string
+---@field mimeType? string
+---@field responseCode? number
+---@field responseMessage? string
 
 ---@class OutputListOfAvailableRole
----@field available_role? table
----@field response_code? number
----@field response_message? string
+---@field availableRoles? table
+---@field responseCode? number
+---@field responseMessage? string
 
 ---@class OutputListOfAvailableRoleCreateData
----@field available_role? table
----@field response_code? number
----@field response_message? string
+---@field availableRoles? table
+---@field responseCode? number
+---@field responseMessage? string
 
 ---@class OutputListOfMandator
 ---@field filter? table
 ---@field list? table
 ---@field pagination? table
----@field response_code? number
----@field response_message? string
+---@field responseCode? number
+---@field responseMessage? string
 ---@field sorting? table
 
 ---@class OutputListOfMandatorCreateData
 ---@field filter? table
 ---@field list? table
 ---@field pagination? table
----@field response_code? number
----@field response_message? string
+---@field responseCode? number
+---@field responseMessage? string
 ---@field sorting? table
 
 ---@class OutputListOfModule
 ---@field list? table
 ---@field pagination? table
----@field response_code? number
----@field response_message? string
+---@field responseCode? number
+---@field responseMessage? string
 
 ---@class OutputListOfModuleCreateData
 ---@field list? table
 ---@field pagination? table
----@field response_code? number
----@field response_message? string
+---@field responseCode? number
+---@field responseMessage? string
 
 ---@class OutputListOfRoleGroup
 ---@field filter? table
----@field group_role? table
+---@field groupRoles? table
 ---@field pagination? table
----@field response_code? number
----@field response_message? string
+---@field responseCode? number
+---@field responseMessage? string
 ---@field sorting? table
 
 ---@class OutputListOfRoleGroupCreateData
 ---@field filter? table
----@field group_role? table
+---@field groupRoles? table
 ---@field pagination? table
----@field response_code? number
----@field response_message? string
+---@field responseCode? number
+---@field responseMessage? string
 ---@field sorting? table
 
 ---@class OutputListOfTransactionsHistory
 ---@field filter? table
 ---@field list? table
 ---@field pagination? table
----@field response_code? number
----@field response_message? string
+---@field responseCode? number
+---@field responseMessage? string
 ---@field sorting? table
 
 ---@class OutputListOfTransactionsHistoryCreateData
 ---@field filter? table
 ---@field list? table
 ---@field pagination? table
----@field response_code? number
----@field response_message? string
+---@field responseCode? number
+---@field responseMessage? string
 ---@field sorting? table
 
 ---@class OutputListOfUser
 ---@field filter? table
 ---@field list? table
 ---@field pagination? table
----@field response_code? number
----@field response_message? string
+---@field responseCode? number
+---@field responseMessage? string
 ---@field sorting? table
 
 ---@class OutputListOfUserCreateData
 ---@field filter? table
 ---@field list? table
 ---@field pagination? table
----@field response_code? number
----@field response_message? string
+---@field responseCode? number
+---@field responseMessage? string
 ---@field sorting? table
 
 ---@class OutputProvideCredential
----@field mandator_name string
+---@field mandatorName string
 ---@field password? string
----@field response_code? number
----@field response_message? string
+---@field responseCode? number
+---@field responseMessage? string
 ---@field username? string
 
 ---@class OutputProvideCredentialCreateData
----@field mandator_name string
+---@field mandatorName string
 ---@field password? string
----@field response_code? number
----@field response_message? string
+---@field responseCode? number
+---@field responseMessage? string
 ---@field username? string
 
 ---@class OutputRegisterUser
 ---@field city? string
----@field consumer_id? string
----@field consumer_language? string
+---@field consumerId? string
+---@field consumerLanguage? string
 ---@field country? string
----@field date_of_birth? string
----@field driver_licence_number? string
+---@field dateOfBirth? string
+---@field driverLicenceNumber? string
 ---@field email string
----@field first_name? string
----@field identification_number? string
----@field last_name? string
+---@field firstName? string
+---@field identificationNumber? string
+---@field lastName? string
 ---@field login? string
 ---@field module? string
----@field passport_number? string
+---@field passportNumber? string
 ---@field phone? string
----@field response_code? number
----@field response_message? string
+---@field responseCode? number
+---@field responseMessage? string
 ---@field salutation? string
 ---@field state? string
 ---@field street1? string
@@ -283,21 +277,21 @@
 
 ---@class OutputRegisterUserCreateData
 ---@field city? string
----@field consumer_id? string
----@field consumer_language? string
+---@field consumerId? string
+---@field consumerLanguage? string
 ---@field country? string
----@field date_of_birth? string
----@field driver_licence_number? string
+---@field dateOfBirth? string
+---@field driverLicenceNumber? string
 ---@field email string
----@field first_name? string
----@field identification_number? string
----@field last_name? string
+---@field firstName? string
+---@field identificationNumber? string
+---@field lastName? string
 ---@field login? string
 ---@field module? string
----@field passport_number? string
+---@field passportNumber? string
 ---@field phone? string
----@field response_code? number
----@field response_message? string
+---@field responseCode? number
+---@field responseMessage? string
 ---@field salutation? string
 ---@field state? string
 ---@field street1? string
@@ -305,64 +299,64 @@
 ---@field zip? string
 
 ---@class OutputRemoveRole
----@field consumer_uuid? string
----@field response_code? number
----@field response_message? string
----@field role? table
+---@field consumerUUID? string
+---@field responseCode? number
+---@field responseMessage? string
+---@field roles? table
 
 ---@class OutputRemoveRoleCreateData
----@field consumer_uuid? string
----@field response_code? number
----@field response_message? string
----@field role? table
+---@field consumerUUID? string
+---@field responseCode? number
+---@field responseMessage? string
+---@field roles? table
 
 ---@class OutputResendLink
----@field business_registration_number? string
----@field consumer_uuid string
----@field email_confirmation_code? string
----@field phone_number? string
----@field response_code? number
----@field response_message? string
+---@field businessRegistrationNumber? string
+---@field consumerUUID string
+---@field emailConfirmationCode? string
+---@field phoneNumber? string
+---@field responseCode? number
+---@field responseMessage? string
 
 ---@class OutputResendLinkCreateData
----@field business_registration_number? string
----@field consumer_uuid string
----@field email_confirmation_code? string
----@field phone_number? string
----@field response_code? number
----@field response_message? string
+---@field businessRegistrationNumber? string
+---@field consumerUUID string
+---@field emailConfirmationCode? string
+---@field phoneNumber? string
+---@field responseCode? number
+---@field responseMessage? string
 
 ---@class OutputResetPassword
----@field consumer_uuid? string
----@field phone_number? string
----@field response_code? number
----@field response_message? string
+---@field consumerUuid? string
+---@field phoneNumber? string
+---@field responseCode? number
+---@field responseMessage? string
 
 ---@class OutputResetPasswordCreateData
----@field consumer_uuid? string
----@field phone_number? string
----@field response_code? number
----@field response_message? string
+---@field consumerUuid? string
+---@field phoneNumber? string
+---@field responseCode? number
+---@field responseMessage? string
 
 ---@class OutputUpdateConsumer
 ---@field city? string
----@field consumer_uuid string
+---@field consumerUuid string
 ---@field consumerlanguage? string
 ---@field country? string
----@field date_of_birth? string
+---@field dateOfBirth? string
 ---@field datetime_created? string
----@field driver_licence_number? string
+---@field driverLicenceNumber? string
 ---@field email? string
----@field first_name? string
----@field identification_number? string
----@field kyc_passed? boolean
----@field last_name? string
+---@field firstName? string
+---@field identificationNumber? string
+---@field kycPassed? boolean
+---@field lastName? string
 ---@field nationality? string
----@field passport_number? string
----@field phone_number? string
----@field place_of_birth? string
----@field response_code? number
----@field response_message? string
+---@field passportNumber? string
+---@field phoneNumber? string
+---@field placeOfBirth? string
+---@field responseCode? number
+---@field responseMessage? string
 ---@field state? string
 ---@field street1? string
 ---@field street2? string
@@ -371,23 +365,23 @@
 
 ---@class OutputUpdateConsumerCreateData
 ---@field city? string
----@field consumer_uuid string
+---@field consumerUuid string
 ---@field consumerlanguage? string
 ---@field country? string
----@field date_of_birth? string
+---@field dateOfBirth? string
 ---@field datetime_created? string
----@field driver_licence_number? string
+---@field driverLicenceNumber? string
 ---@field email? string
----@field first_name? string
----@field identification_number? string
----@field kyc_passed? boolean
----@field last_name? string
+---@field firstName? string
+---@field identificationNumber? string
+---@field kycPassed? boolean
+---@field lastName? string
 ---@field nationality? string
----@field passport_number? string
----@field phone_number? string
----@field place_of_birth? string
----@field response_code? number
----@field response_message? string
+---@field passportNumber? string
+---@field phoneNumber? string
+---@field placeOfBirth? string
+---@field responseCode? number
+---@field responseMessage? string
 ---@field state? string
 ---@field street1? string
 ---@field street2? string
@@ -395,31 +389,31 @@
 ---@field zip? string
 
 ---@class OutputUpdateProfile
----@field consumer_language? string
+---@field consumerLanguage? string
 ---@field email? string
----@field first_name? string
----@field last_name? string
----@field phone_number? string
----@field response_code? number
----@field response_message? string
+---@field firstName? string
+---@field lastName? string
+---@field phoneNumber? string
+---@field responseCode? number
+---@field responseMessage? string
 
 ---@class OutputUpdateProfileCreateData
----@field consumer_language? string
+---@field consumerLanguage? string
 ---@field email? string
----@field first_name? string
----@field last_name? string
----@field phone_number? string
----@field response_code? number
----@field response_message? string
+---@field firstName? string
+---@field lastName? string
+---@field phoneNumber? string
+---@field responseCode? number
+---@field responseMessage? string
 
 ---@class Version
----@field app_name? string
----@field build_date? string
+---@field appName? string
+---@field buildDate? string
 ---@field version? string
 
 ---@class VersionLoadMatch
----@field app_name? string
----@field build_date? string
+---@field appName? string
+---@field buildDate? string
 ---@field version? string
 
 local M = {}

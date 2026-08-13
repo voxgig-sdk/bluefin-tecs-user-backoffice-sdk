@@ -35,7 +35,7 @@ object OutputListOfModuleEntityTest {
       var outputListOfModuleRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.output_list_of_module"), "output_list_of_module_ref01"))
       val outputListOfModuleRef01DataResult = outputListOfModuleRef01Ent.create(outputListOfModuleRef01Data, null)
-      outputListOfModuleRef01Data = Helpers.toMapAny(outputListOfModuleRef01DataResult)
+      outputListOfModuleRef01Data = Helpers.toMapAny(outputListOfModuleRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("output_list_of_module.create.map", outputListOfModuleRef01Data != null, "expected create result to be a map")
     }
   }

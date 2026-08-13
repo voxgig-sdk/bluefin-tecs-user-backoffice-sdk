@@ -35,7 +35,7 @@ object OutputResendLinkEntityTest {
       var outputResendLinkRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.output_resend_link"), "output_resend_link_ref01"))
       val outputResendLinkRef01DataResult = outputResendLinkRef01Ent.create(outputResendLinkRef01Data, null)
-      outputResendLinkRef01Data = Helpers.toMapAny(outputResendLinkRef01DataResult)
+      outputResendLinkRef01Data = Helpers.toMapAny(outputResendLinkRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("output_resend_link.create.map", outputResendLinkRef01Data != null, "expected create result to be a map")
     }
   }

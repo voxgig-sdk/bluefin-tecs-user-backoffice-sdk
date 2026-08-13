@@ -26,8 +26,8 @@ import {
 describe('VersionEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSUSERBACKOFFICE_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSUSERBACKOFFICE_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsUserBackofficeSDK.test()
@@ -62,7 +62,7 @@ describe('VersionEntity', async () => {
     // LOAD
     const version_ref01_ent = client.Version()
     const version_ref01_match_dt0: any = {}
-    const version_ref01_data_dt0 = await version_ref01_ent.load(version_ref01_match_dt0)
+    const version_ref01_data_dt0 = (await version_ref01_ent.load(version_ref01_match_dt0)).data()
     assert(null != version_ref01_data_dt0)
 
 

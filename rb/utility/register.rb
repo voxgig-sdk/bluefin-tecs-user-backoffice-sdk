@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ BluefinTecsUserBackofficeUtility.registrar = ->(u) {
   u.prepare_params = BluefinTecsUserBackofficeUtilities::PrepareParams
   u.prepare_path = BluefinTecsUserBackofficeUtilities::PreparePath
   u.prepare_query = BluefinTecsUserBackofficeUtilities::PrepareQuery
+  u.graphql_body = BluefinTecsUserBackofficeUtilities::GraphqlBody
+  u.graphql_errors = BluefinTecsUserBackofficeUtilities::GraphqlErrors
   u.result_basic = BluefinTecsUserBackofficeUtilities::ResultBasic
   u.result_body = BluefinTecsUserBackofficeUtilities::ResultBody
   u.result_headers = BluefinTecsUserBackofficeUtilities::ResultHeaders
