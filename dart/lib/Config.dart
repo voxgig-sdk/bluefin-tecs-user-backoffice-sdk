@@ -76,18 +76,12 @@ class Config {
     'output_activate_digital_module': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
-          'req': false,
           'type': '`\$INTEGER`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 1,
         },
       ],
       'name': 'output_activate_digital_module',
@@ -97,11 +91,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -125,10 +117,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -138,32 +128,22 @@ class Config {
     'output_activate_portal_module': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'clientSecret',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'notificationEmail',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
-          'req': false,
           'type': '`\$INTEGER`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 3,
         },
       ],
       'name': 'output_activate_portal_module',
@@ -173,11 +153,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -201,10 +179,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -214,18 +190,12 @@ class Config {
     'output_activate_store_module': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
-          'req': false,
           'type': '`\$INTEGER`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 1,
         },
       ],
       'name': 'output_activate_store_module',
@@ -235,11 +205,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -263,10 +231,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -276,25 +242,16 @@ class Config {
     'output_activate_user': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'consumerUUID',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
-          'req': false,
           'type': '`\$INTEGER`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 2,
         },
       ],
       'name': 'output_activate_user',
@@ -304,11 +261,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -332,10 +287,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -345,32 +298,22 @@ class Config {
     'output_assign_role': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'consumerUUID',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
-          'req': false,
           'type': '`\$INTEGER`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'roles',
           'req': true,
           'type': '`\$ARRAY`',
-          'index\$': 3,
         },
       ],
       'name': 'output_assign_role',
@@ -380,11 +323,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -408,10 +349,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -421,32 +360,22 @@ class Config {
     'output_change_logo': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'contentAsBase64',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'mimeType',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
-          'req': false,
           'type': '`\$INTEGER`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 3,
         },
       ],
       'name': 'output_change_logo',
@@ -456,11 +385,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -484,10 +411,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -497,28 +422,18 @@ class Config {
     'output_create_mandator': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'city',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'country',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'dateOfBirth',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'description',
           'op': <String, dynamic>{
             'create': <String, dynamic>{
@@ -526,54 +441,35 @@ class Config {
               'type': '`\$STRING`',
             },
           },
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 3,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'driversLicenseNumber',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 4,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'email',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 5,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'firstName',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 6,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'identificationNumber',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 7,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'lastName',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 8,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'login',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 9,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'name',
           'op': <String, dynamic>{
             'create': <String, dynamic>{
@@ -581,58 +477,36 @@ class Config {
               'type': '`\$STRING`',
             },
           },
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 10,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'passportNumber',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 11,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'phone',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 12,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'salutation',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 13,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'state',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 14,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'street1',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 15,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'street2',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 16,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'zipCode',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 17,
         },
       ],
       'name': 'output_create_mandator',
@@ -642,11 +516,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -670,10 +542,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -683,25 +553,17 @@ class Config {
     'output_create_service_user': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'mandatorName',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
-          'req': false,
           'type': '`\$INTEGER`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 2,
         },
       ],
       'name': 'output_create_service_user',
@@ -711,11 +573,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -739,10 +599,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -752,25 +610,16 @@ class Config {
     'output_deactivate_user': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'consumerUUID',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
-          'req': false,
           'type': '`\$INTEGER`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 2,
         },
       ],
       'name': 'output_deactivate_user',
@@ -780,11 +629,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -808,10 +655,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -821,32 +666,20 @@ class Config {
     'output_get_kyc_document': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'caseID',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'encodedDataBase64',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
-          'req': false,
           'type': '`\$INTEGER`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 3,
         },
       ],
       'name': 'output_get_kyc_document',
@@ -856,11 +689,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -884,10 +715,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -897,32 +726,22 @@ class Config {
     'output_get_logo': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'contentAsBase64',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'mimeType',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
-          'req': false,
           'type': '`\$INTEGER`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 3,
         },
       ],
       'name': 'output_get_logo',
@@ -932,11 +751,9 @@ class Config {
           'name': 'load',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -960,10 +777,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'load',
         },
       },
       'relations': <String, dynamic>{
@@ -973,25 +788,16 @@ class Config {
     'output_list_of_available_role': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'availableRoles',
-          'req': false,
           'type': '`\$ARRAY`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
-          'req': false,
           'type': '`\$INTEGER`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 2,
         },
       ],
       'name': 'output_list_of_available_role',
@@ -1001,11 +807,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -1029,10 +833,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -1042,46 +844,28 @@ class Config {
     'output_list_of_mandator': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'filter',
-          'req': false,
           'type': '`\$OBJECT`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'list',
-          'req': false,
           'type': '`\$ARRAY`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'pagination',
-          'req': false,
           'type': '`\$OBJECT`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
-          'req': false,
           'type': '`\$INTEGER`',
-          'index\$': 3,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 4,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'sorting',
-          'req': false,
           'type': '`\$OBJECT`',
-          'index\$': 5,
         },
       ],
       'name': 'output_list_of_mandator',
@@ -1091,11 +875,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -1119,10 +901,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -1132,32 +912,20 @@ class Config {
     'output_list_of_module': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'list',
-          'req': false,
           'type': '`\$ARRAY`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'pagination',
-          'req': false,
           'type': '`\$OBJECT`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
-          'req': false,
           'type': '`\$INTEGER`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 3,
         },
       ],
       'name': 'output_list_of_module',
@@ -1167,11 +935,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -1195,10 +961,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -1208,46 +972,28 @@ class Config {
     'output_list_of_role_group': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'filter',
-          'req': false,
           'type': '`\$OBJECT`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'groupRoles',
-          'req': false,
           'type': '`\$ARRAY`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'pagination',
-          'req': false,
           'type': '`\$OBJECT`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
-          'req': false,
           'type': '`\$INTEGER`',
-          'index\$': 3,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 4,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'sorting',
-          'req': false,
           'type': '`\$OBJECT`',
-          'index\$': 5,
         },
       ],
       'name': 'output_list_of_role_group',
@@ -1257,11 +1003,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -1285,10 +1029,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -1298,46 +1040,28 @@ class Config {
     'output_list_of_transactions_history': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'filter',
-          'req': false,
           'type': '`\$OBJECT`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'list',
-          'req': false,
           'type': '`\$ARRAY`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'pagination',
-          'req': false,
           'type': '`\$OBJECT`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
-          'req': false,
           'type': '`\$INTEGER`',
-          'index\$': 3,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 4,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'sorting',
-          'req': false,
           'type': '`\$OBJECT`',
-          'index\$': 5,
         },
       ],
       'name': 'output_list_of_transactions_history',
@@ -1347,11 +1071,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -1375,10 +1097,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -1388,46 +1108,28 @@ class Config {
     'output_list_of_user': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'filter',
-          'req': false,
           'type': '`\$OBJECT`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'list',
-          'req': false,
           'type': '`\$ARRAY`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'pagination',
-          'req': false,
           'type': '`\$OBJECT`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
-          'req': false,
           'type': '`\$INTEGER`',
-          'index\$': 3,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 4,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'sorting',
-          'req': false,
           'type': '`\$OBJECT`',
-          'index\$': 5,
         },
       ],
       'name': 'output_list_of_user',
@@ -1437,11 +1139,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -1465,10 +1165,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -1478,39 +1176,25 @@ class Config {
     'output_provide_credential': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'mandatorName',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'password',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
-          'req': false,
           'type': '`\$INTEGER`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 3,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'username',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 4,
         },
       ],
       'name': 'output_provide_credential',
@@ -1520,11 +1204,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -1548,10 +1230,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -1561,151 +1241,89 @@ class Config {
     'output_register_user': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'city',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'consumerId',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'consumerLanguage',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'country',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 3,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'dateOfBirth',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 4,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'driverLicenceNumber',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 5,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'email',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 6,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'firstName',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 7,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'identificationNumber',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 8,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'lastName',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 9,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'login',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 10,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'module',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 11,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'passportNumber',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 12,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'phone',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 13,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
-          'req': false,
           'type': '`\$INTEGER`',
-          'index\$': 14,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 15,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'salutation',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 16,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'state',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 17,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'street1',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 18,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'street2',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 19,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'zip',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 20,
         },
       ],
       'name': 'output_register_user',
@@ -1715,11 +1333,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -1743,10 +1359,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -1756,32 +1370,20 @@ class Config {
     'output_remove_role': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'consumerUUID',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
-          'req': false,
           'type': '`\$INTEGER`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'roles',
-          'req': false,
           'type': '`\$ARRAY`',
-          'index\$': 3,
         },
       ],
       'name': 'output_remove_role',
@@ -1791,11 +1393,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -1819,10 +1419,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -1832,46 +1430,29 @@ class Config {
     'output_resend_link': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'businessRegistrationNumber',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'consumerUUID',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'emailConfirmationCode',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'phoneNumber',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 3,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
-          'req': false,
           'type': '`\$INTEGER`',
-          'index\$': 4,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 5,
         },
       ],
       'name': 'output_resend_link',
@@ -1881,15 +1462,12 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
-                    'reqd': false,
                     'type': '`\$STRING`',
                   },
                 ],
@@ -1909,10 +1487,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -1922,32 +1498,20 @@ class Config {
     'output_reset_password': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'consumerUuid',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'phoneNumber',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
-          'req': false,
           'type': '`\$INTEGER`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 3,
         },
       ],
       'name': 'output_reset_password',
@@ -1957,11 +1521,9 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
@@ -1985,10 +1547,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -1998,165 +1558,97 @@ class Config {
     'output_update_consumer': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'city',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'consumerUuid',
           'req': true,
           'type': '`\$STRING`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'consumerlanguage',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'country',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 3,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'dateOfBirth',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 4,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'datetime_created',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 5,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'driverLicenceNumber',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 6,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'email',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 7,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'firstName',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 8,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'identificationNumber',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 9,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'kycPassed',
-          'req': false,
           'type': '`\$BOOLEAN`',
-          'index\$': 10,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'lastName',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 11,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'nationality',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 12,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'passportNumber',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 13,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'phoneNumber',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 14,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'placeOfBirth',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 15,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
-          'req': false,
           'type': '`\$INTEGER`',
-          'index\$': 16,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 17,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'state',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 18,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'street1',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 19,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'street2',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 20,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'transactionhistory_id',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 21,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'zip',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 22,
         },
       ],
       'name': 'output_update_consumer',
@@ -2166,15 +1658,12 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
-                    'reqd': false,
                     'type': '`\$STRING`',
                   },
                 ],
@@ -2194,10 +1683,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -2207,53 +1694,32 @@ class Config {
     'output_update_profile': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'consumerLanguage',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'email',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'firstName',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 2,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'lastName',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 3,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'phoneNumber',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 4,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseCode',
-          'req': false,
           'type': '`\$INTEGER`',
-          'index\$': 5,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'responseMessage',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 6,
         },
       ],
       'name': 'output_update_profile',
@@ -2263,15 +1729,12 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{
                 'header': <dynamic>[
                   <String, dynamic>{
-                    'active': true,
                     'kind': 'header',
                     'name': 'authorization',
                     'orig': 'authorization',
-                    'reqd': false,
                     'type': '`\$STRING`',
                   },
                 ],
@@ -2291,10 +1754,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'create',
         },
       },
       'relations': <String, dynamic>{
@@ -2304,25 +1765,16 @@ class Config {
     'version': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'active': true,
           'name': 'appName',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 0,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'buildDate',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 1,
         },
         <String, dynamic>{
-          'active': true,
           'name': 'version',
-          'req': false,
           'type': '`\$STRING`',
-          'index\$': 2,
         },
       ],
       'name': 'version',
@@ -2332,7 +1784,6 @@ class Config {
           'name': 'load',
           'points': <dynamic>[
             <String, dynamic>{
-              'active': true,
               'args': <String, dynamic>{},
               'kind': 'http',
               'method': 'GET',
@@ -2345,10 +1796,8 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'index\$': 0,
             },
           ],
-          'key\$': 'load',
         },
       },
       'relations': <String, dynamic>{

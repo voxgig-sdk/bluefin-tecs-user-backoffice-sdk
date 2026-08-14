@@ -1,6 +1,20 @@
 # BluefinTecsUserBackoffice SDK configuration
 
 module BluefinTecsUserBackofficeConfig
+  # Return the process-wide config, built once on first use. The SDK reads
+  # the config on every request and never writes to it, so one instance is
+  # shared by every client rather than rebuilt per client.
+  #
+  # The returned hash is shared: treat it as read-only. Callers that need to
+  # mutate should use make_config, which always returns a fresh copy.
+  def self.shared_config
+    @shared_config ||= make_config
+  end
+
+
+  # Build a fresh, fully materialised config hash. Every call rebuilds the
+  # whole structure, so prefer shared_config unless you need a private copy
+  # you intend to mutate.
   def self.make_config
     {
       "main" => {
@@ -53,18 +67,12 @@ module BluefinTecsUserBackofficeConfig
         "output_activate_digital_module" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
               "type" => "`$INTEGER`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 1,
             },
           ],
           "name" => "output_activate_digital_module",
@@ -74,11 +82,9 @@ module BluefinTecsUserBackofficeConfig
               "name" => "create",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "header" => [
                       {
-                        "active" => true,
                         "kind" => "header",
                         "name" => "authorization",
                         "orig" => "authorization",
@@ -102,10 +108,8 @@ module BluefinTecsUserBackofficeConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "create",
             },
           },
           "relations" => {
@@ -115,32 +119,22 @@ module BluefinTecsUserBackofficeConfig
         "output_activate_portal_module" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "clientSecret",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "notificationEmail",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
               "type" => "`$INTEGER`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 3,
             },
           ],
           "name" => "output_activate_portal_module",
@@ -150,11 +144,9 @@ module BluefinTecsUserBackofficeConfig
               "name" => "create",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "header" => [
                       {
-                        "active" => true,
                         "kind" => "header",
                         "name" => "authorization",
                         "orig" => "authorization",
@@ -178,10 +170,8 @@ module BluefinTecsUserBackofficeConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "create",
             },
           },
           "relations" => {
@@ -191,18 +181,12 @@ module BluefinTecsUserBackofficeConfig
         "output_activate_store_module" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
               "type" => "`$INTEGER`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 1,
             },
           ],
           "name" => "output_activate_store_module",
@@ -212,11 +196,9 @@ module BluefinTecsUserBackofficeConfig
               "name" => "create",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "header" => [
                       {
-                        "active" => true,
                         "kind" => "header",
                         "name" => "authorization",
                         "orig" => "authorization",
@@ -240,10 +222,8 @@ module BluefinTecsUserBackofficeConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "create",
             },
           },
           "relations" => {
@@ -253,25 +233,16 @@ module BluefinTecsUserBackofficeConfig
         "output_activate_user" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "consumerUUID",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
               "type" => "`$INTEGER`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 2,
             },
           ],
           "name" => "output_activate_user",
@@ -281,11 +252,9 @@ module BluefinTecsUserBackofficeConfig
               "name" => "create",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "header" => [
                       {
-                        "active" => true,
                         "kind" => "header",
                         "name" => "authorization",
                         "orig" => "authorization",
@@ -309,10 +278,8 @@ module BluefinTecsUserBackofficeConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "create",
             },
           },
           "relations" => {
@@ -322,32 +289,22 @@ module BluefinTecsUserBackofficeConfig
         "output_assign_role" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "consumerUUID",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
               "type" => "`$INTEGER`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "roles",
               "req" => true,
               "type" => "`$ARRAY`",
-              "index$" => 3,
             },
           ],
           "name" => "output_assign_role",
@@ -357,11 +314,9 @@ module BluefinTecsUserBackofficeConfig
               "name" => "create",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "header" => [
                       {
-                        "active" => true,
                         "kind" => "header",
                         "name" => "authorization",
                         "orig" => "authorization",
@@ -385,10 +340,8 @@ module BluefinTecsUserBackofficeConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "create",
             },
           },
           "relations" => {
@@ -398,32 +351,22 @@ module BluefinTecsUserBackofficeConfig
         "output_change_logo" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "contentAsBase64",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "mimeType",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
               "type" => "`$INTEGER`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 3,
             },
           ],
           "name" => "output_change_logo",
@@ -433,11 +376,9 @@ module BluefinTecsUserBackofficeConfig
               "name" => "create",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "header" => [
                       {
-                        "active" => true,
                         "kind" => "header",
                         "name" => "authorization",
                         "orig" => "authorization",
@@ -461,10 +402,8 @@ module BluefinTecsUserBackofficeConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "create",
             },
           },
           "relations" => {
@@ -474,28 +413,18 @@ module BluefinTecsUserBackofficeConfig
         "output_create_mandator" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "city",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "country",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "dateOfBirth",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "description",
               "op" => {
                 "create" => {
@@ -503,54 +432,35 @@ module BluefinTecsUserBackofficeConfig
                   "type" => "`$STRING`",
                 },
               },
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 3,
             },
             {
-              "active" => true,
               "name" => "driversLicenseNumber",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 4,
             },
             {
-              "active" => true,
               "name" => "email",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 5,
             },
             {
-              "active" => true,
               "name" => "firstName",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 6,
             },
             {
-              "active" => true,
               "name" => "identificationNumber",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 7,
             },
             {
-              "active" => true,
               "name" => "lastName",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 8,
             },
             {
-              "active" => true,
               "name" => "login",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 9,
             },
             {
-              "active" => true,
               "name" => "name",
               "op" => {
                 "create" => {
@@ -558,58 +468,36 @@ module BluefinTecsUserBackofficeConfig
                   "type" => "`$STRING`",
                 },
               },
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 10,
             },
             {
-              "active" => true,
               "name" => "passportNumber",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 11,
             },
             {
-              "active" => true,
               "name" => "phone",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 12,
             },
             {
-              "active" => true,
               "name" => "salutation",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 13,
             },
             {
-              "active" => true,
               "name" => "state",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 14,
             },
             {
-              "active" => true,
               "name" => "street1",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 15,
             },
             {
-              "active" => true,
               "name" => "street2",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 16,
             },
             {
-              "active" => true,
               "name" => "zipCode",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 17,
             },
           ],
           "name" => "output_create_mandator",
@@ -619,11 +507,9 @@ module BluefinTecsUserBackofficeConfig
               "name" => "create",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "header" => [
                       {
-                        "active" => true,
                         "kind" => "header",
                         "name" => "authorization",
                         "orig" => "authorization",
@@ -647,10 +533,8 @@ module BluefinTecsUserBackofficeConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "create",
             },
           },
           "relations" => {
@@ -660,25 +544,17 @@ module BluefinTecsUserBackofficeConfig
         "output_create_service_user" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "mandatorName",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
               "type" => "`$INTEGER`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 2,
             },
           ],
           "name" => "output_create_service_user",
@@ -688,11 +564,9 @@ module BluefinTecsUserBackofficeConfig
               "name" => "create",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "header" => [
                       {
-                        "active" => true,
                         "kind" => "header",
                         "name" => "authorization",
                         "orig" => "authorization",
@@ -716,10 +590,8 @@ module BluefinTecsUserBackofficeConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "create",
             },
           },
           "relations" => {
@@ -729,25 +601,16 @@ module BluefinTecsUserBackofficeConfig
         "output_deactivate_user" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "consumerUUID",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
               "type" => "`$INTEGER`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 2,
             },
           ],
           "name" => "output_deactivate_user",
@@ -757,11 +620,9 @@ module BluefinTecsUserBackofficeConfig
               "name" => "create",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "header" => [
                       {
-                        "active" => true,
                         "kind" => "header",
                         "name" => "authorization",
                         "orig" => "authorization",
@@ -785,10 +646,8 @@ module BluefinTecsUserBackofficeConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "create",
             },
           },
           "relations" => {
@@ -798,32 +657,20 @@ module BluefinTecsUserBackofficeConfig
         "output_get_kyc_document" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "caseID",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "encodedDataBase64",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
               "type" => "`$INTEGER`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 3,
             },
           ],
           "name" => "output_get_kyc_document",
@@ -833,11 +680,9 @@ module BluefinTecsUserBackofficeConfig
               "name" => "create",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "header" => [
                       {
-                        "active" => true,
                         "kind" => "header",
                         "name" => "authorization",
                         "orig" => "authorization",
@@ -861,10 +706,8 @@ module BluefinTecsUserBackofficeConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "create",
             },
           },
           "relations" => {
@@ -874,32 +717,22 @@ module BluefinTecsUserBackofficeConfig
         "output_get_logo" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "contentAsBase64",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "mimeType",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
               "type" => "`$INTEGER`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 3,
             },
           ],
           "name" => "output_get_logo",
@@ -909,11 +742,9 @@ module BluefinTecsUserBackofficeConfig
               "name" => "load",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "header" => [
                       {
-                        "active" => true,
                         "kind" => "header",
                         "name" => "authorization",
                         "orig" => "authorization",
@@ -937,10 +768,8 @@ module BluefinTecsUserBackofficeConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "load",
             },
           },
           "relations" => {
@@ -950,25 +779,16 @@ module BluefinTecsUserBackofficeConfig
         "output_list_of_available_role" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "availableRoles",
-              "req" => false,
               "type" => "`$ARRAY`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
               "type" => "`$INTEGER`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 2,
             },
           ],
           "name" => "output_list_of_available_role",
@@ -978,11 +798,9 @@ module BluefinTecsUserBackofficeConfig
               "name" => "create",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "header" => [
                       {
-                        "active" => true,
                         "kind" => "header",
                         "name" => "authorization",
                         "orig" => "authorization",
@@ -1006,10 +824,8 @@ module BluefinTecsUserBackofficeConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "create",
             },
           },
           "relations" => {
@@ -1019,46 +835,28 @@ module BluefinTecsUserBackofficeConfig
         "output_list_of_mandator" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "filter",
-              "req" => false,
               "type" => "`$OBJECT`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "list",
-              "req" => false,
               "type" => "`$ARRAY`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "pagination",
-              "req" => false,
               "type" => "`$OBJECT`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
               "type" => "`$INTEGER`",
-              "index$" => 3,
             },
             {
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 4,
             },
             {
-              "active" => true,
               "name" => "sorting",
-              "req" => false,
               "type" => "`$OBJECT`",
-              "index$" => 5,
             },
           ],
           "name" => "output_list_of_mandator",
@@ -1068,11 +866,9 @@ module BluefinTecsUserBackofficeConfig
               "name" => "create",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "header" => [
                       {
-                        "active" => true,
                         "kind" => "header",
                         "name" => "authorization",
                         "orig" => "authorization",
@@ -1096,10 +892,8 @@ module BluefinTecsUserBackofficeConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "create",
             },
           },
           "relations" => {
@@ -1109,32 +903,20 @@ module BluefinTecsUserBackofficeConfig
         "output_list_of_module" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "list",
-              "req" => false,
               "type" => "`$ARRAY`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "pagination",
-              "req" => false,
               "type" => "`$OBJECT`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
               "type" => "`$INTEGER`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 3,
             },
           ],
           "name" => "output_list_of_module",
@@ -1144,11 +926,9 @@ module BluefinTecsUserBackofficeConfig
               "name" => "create",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "header" => [
                       {
-                        "active" => true,
                         "kind" => "header",
                         "name" => "authorization",
                         "orig" => "authorization",
@@ -1172,10 +952,8 @@ module BluefinTecsUserBackofficeConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "create",
             },
           },
           "relations" => {
@@ -1185,46 +963,28 @@ module BluefinTecsUserBackofficeConfig
         "output_list_of_role_group" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "filter",
-              "req" => false,
               "type" => "`$OBJECT`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "groupRoles",
-              "req" => false,
               "type" => "`$ARRAY`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "pagination",
-              "req" => false,
               "type" => "`$OBJECT`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
               "type" => "`$INTEGER`",
-              "index$" => 3,
             },
             {
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 4,
             },
             {
-              "active" => true,
               "name" => "sorting",
-              "req" => false,
               "type" => "`$OBJECT`",
-              "index$" => 5,
             },
           ],
           "name" => "output_list_of_role_group",
@@ -1234,11 +994,9 @@ module BluefinTecsUserBackofficeConfig
               "name" => "create",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "header" => [
                       {
-                        "active" => true,
                         "kind" => "header",
                         "name" => "authorization",
                         "orig" => "authorization",
@@ -1262,10 +1020,8 @@ module BluefinTecsUserBackofficeConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "create",
             },
           },
           "relations" => {
@@ -1275,46 +1031,28 @@ module BluefinTecsUserBackofficeConfig
         "output_list_of_transactions_history" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "filter",
-              "req" => false,
               "type" => "`$OBJECT`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "list",
-              "req" => false,
               "type" => "`$ARRAY`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "pagination",
-              "req" => false,
               "type" => "`$OBJECT`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
               "type" => "`$INTEGER`",
-              "index$" => 3,
             },
             {
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 4,
             },
             {
-              "active" => true,
               "name" => "sorting",
-              "req" => false,
               "type" => "`$OBJECT`",
-              "index$" => 5,
             },
           ],
           "name" => "output_list_of_transactions_history",
@@ -1324,11 +1062,9 @@ module BluefinTecsUserBackofficeConfig
               "name" => "create",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "header" => [
                       {
-                        "active" => true,
                         "kind" => "header",
                         "name" => "authorization",
                         "orig" => "authorization",
@@ -1352,10 +1088,8 @@ module BluefinTecsUserBackofficeConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "create",
             },
           },
           "relations" => {
@@ -1365,46 +1099,28 @@ module BluefinTecsUserBackofficeConfig
         "output_list_of_user" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "filter",
-              "req" => false,
               "type" => "`$OBJECT`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "list",
-              "req" => false,
               "type" => "`$ARRAY`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "pagination",
-              "req" => false,
               "type" => "`$OBJECT`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
               "type" => "`$INTEGER`",
-              "index$" => 3,
             },
             {
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 4,
             },
             {
-              "active" => true,
               "name" => "sorting",
-              "req" => false,
               "type" => "`$OBJECT`",
-              "index$" => 5,
             },
           ],
           "name" => "output_list_of_user",
@@ -1414,11 +1130,9 @@ module BluefinTecsUserBackofficeConfig
               "name" => "create",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "header" => [
                       {
-                        "active" => true,
                         "kind" => "header",
                         "name" => "authorization",
                         "orig" => "authorization",
@@ -1442,10 +1156,8 @@ module BluefinTecsUserBackofficeConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "create",
             },
           },
           "relations" => {
@@ -1455,39 +1167,25 @@ module BluefinTecsUserBackofficeConfig
         "output_provide_credential" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "mandatorName",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "password",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
               "type" => "`$INTEGER`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 3,
             },
             {
-              "active" => true,
               "name" => "username",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 4,
             },
           ],
           "name" => "output_provide_credential",
@@ -1497,11 +1195,9 @@ module BluefinTecsUserBackofficeConfig
               "name" => "create",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "header" => [
                       {
-                        "active" => true,
                         "kind" => "header",
                         "name" => "authorization",
                         "orig" => "authorization",
@@ -1525,10 +1221,8 @@ module BluefinTecsUserBackofficeConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "create",
             },
           },
           "relations" => {
@@ -1538,151 +1232,89 @@ module BluefinTecsUserBackofficeConfig
         "output_register_user" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "city",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "consumerId",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "consumerLanguage",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "country",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 3,
             },
             {
-              "active" => true,
               "name" => "dateOfBirth",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 4,
             },
             {
-              "active" => true,
               "name" => "driverLicenceNumber",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 5,
             },
             {
-              "active" => true,
               "name" => "email",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 6,
             },
             {
-              "active" => true,
               "name" => "firstName",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 7,
             },
             {
-              "active" => true,
               "name" => "identificationNumber",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 8,
             },
             {
-              "active" => true,
               "name" => "lastName",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 9,
             },
             {
-              "active" => true,
               "name" => "login",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 10,
             },
             {
-              "active" => true,
               "name" => "module",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 11,
             },
             {
-              "active" => true,
               "name" => "passportNumber",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 12,
             },
             {
-              "active" => true,
               "name" => "phone",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 13,
             },
             {
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
               "type" => "`$INTEGER`",
-              "index$" => 14,
             },
             {
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 15,
             },
             {
-              "active" => true,
               "name" => "salutation",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 16,
             },
             {
-              "active" => true,
               "name" => "state",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 17,
             },
             {
-              "active" => true,
               "name" => "street1",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 18,
             },
             {
-              "active" => true,
               "name" => "street2",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 19,
             },
             {
-              "active" => true,
               "name" => "zip",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 20,
             },
           ],
           "name" => "output_register_user",
@@ -1692,11 +1324,9 @@ module BluefinTecsUserBackofficeConfig
               "name" => "create",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "header" => [
                       {
-                        "active" => true,
                         "kind" => "header",
                         "name" => "authorization",
                         "orig" => "authorization",
@@ -1720,10 +1350,8 @@ module BluefinTecsUserBackofficeConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "create",
             },
           },
           "relations" => {
@@ -1733,32 +1361,20 @@ module BluefinTecsUserBackofficeConfig
         "output_remove_role" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "consumerUUID",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
               "type" => "`$INTEGER`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "roles",
-              "req" => false,
               "type" => "`$ARRAY`",
-              "index$" => 3,
             },
           ],
           "name" => "output_remove_role",
@@ -1768,11 +1384,9 @@ module BluefinTecsUserBackofficeConfig
               "name" => "create",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "header" => [
                       {
-                        "active" => true,
                         "kind" => "header",
                         "name" => "authorization",
                         "orig" => "authorization",
@@ -1796,10 +1410,8 @@ module BluefinTecsUserBackofficeConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "create",
             },
           },
           "relations" => {
@@ -1809,46 +1421,29 @@ module BluefinTecsUserBackofficeConfig
         "output_resend_link" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "businessRegistrationNumber",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "consumerUUID",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "emailConfirmationCode",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "phoneNumber",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 3,
             },
             {
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
               "type" => "`$INTEGER`",
-              "index$" => 4,
             },
             {
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 5,
             },
           ],
           "name" => "output_resend_link",
@@ -1858,15 +1453,12 @@ module BluefinTecsUserBackofficeConfig
               "name" => "create",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "header" => [
                       {
-                        "active" => true,
                         "kind" => "header",
                         "name" => "authorization",
                         "orig" => "authorization",
-                        "reqd" => false,
                         "type" => "`$STRING`",
                       },
                     ],
@@ -1886,10 +1478,8 @@ module BluefinTecsUserBackofficeConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "create",
             },
           },
           "relations" => {
@@ -1899,32 +1489,20 @@ module BluefinTecsUserBackofficeConfig
         "output_reset_password" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "consumerUuid",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "phoneNumber",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
               "type" => "`$INTEGER`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 3,
             },
           ],
           "name" => "output_reset_password",
@@ -1934,11 +1512,9 @@ module BluefinTecsUserBackofficeConfig
               "name" => "create",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "header" => [
                       {
-                        "active" => true,
                         "kind" => "header",
                         "name" => "authorization",
                         "orig" => "authorization",
@@ -1962,10 +1538,8 @@ module BluefinTecsUserBackofficeConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "create",
             },
           },
           "relations" => {
@@ -1975,165 +1549,97 @@ module BluefinTecsUserBackofficeConfig
         "output_update_consumer" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "city",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "consumerUuid",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "consumerlanguage",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "country",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 3,
             },
             {
-              "active" => true,
               "name" => "dateOfBirth",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 4,
             },
             {
-              "active" => true,
               "name" => "datetime_created",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 5,
             },
             {
-              "active" => true,
               "name" => "driverLicenceNumber",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 6,
             },
             {
-              "active" => true,
               "name" => "email",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 7,
             },
             {
-              "active" => true,
               "name" => "firstName",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 8,
             },
             {
-              "active" => true,
               "name" => "identificationNumber",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 9,
             },
             {
-              "active" => true,
               "name" => "kycPassed",
-              "req" => false,
               "type" => "`$BOOLEAN`",
-              "index$" => 10,
             },
             {
-              "active" => true,
               "name" => "lastName",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 11,
             },
             {
-              "active" => true,
               "name" => "nationality",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 12,
             },
             {
-              "active" => true,
               "name" => "passportNumber",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 13,
             },
             {
-              "active" => true,
               "name" => "phoneNumber",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 14,
             },
             {
-              "active" => true,
               "name" => "placeOfBirth",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 15,
             },
             {
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
               "type" => "`$INTEGER`",
-              "index$" => 16,
             },
             {
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 17,
             },
             {
-              "active" => true,
               "name" => "state",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 18,
             },
             {
-              "active" => true,
               "name" => "street1",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 19,
             },
             {
-              "active" => true,
               "name" => "street2",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 20,
             },
             {
-              "active" => true,
               "name" => "transactionhistory_id",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 21,
             },
             {
-              "active" => true,
               "name" => "zip",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 22,
             },
           ],
           "name" => "output_update_consumer",
@@ -2143,15 +1649,12 @@ module BluefinTecsUserBackofficeConfig
               "name" => "create",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "header" => [
                       {
-                        "active" => true,
                         "kind" => "header",
                         "name" => "authorization",
                         "orig" => "authorization",
-                        "reqd" => false,
                         "type" => "`$STRING`",
                       },
                     ],
@@ -2171,10 +1674,8 @@ module BluefinTecsUserBackofficeConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "create",
             },
           },
           "relations" => {
@@ -2184,53 +1685,32 @@ module BluefinTecsUserBackofficeConfig
         "output_update_profile" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "consumerLanguage",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "email",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "firstName",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "lastName",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 3,
             },
             {
-              "active" => true,
               "name" => "phoneNumber",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 4,
             },
             {
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
               "type" => "`$INTEGER`",
-              "index$" => 5,
             },
             {
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 6,
             },
           ],
           "name" => "output_update_profile",
@@ -2240,15 +1720,12 @@ module BluefinTecsUserBackofficeConfig
               "name" => "create",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "header" => [
                       {
-                        "active" => true,
                         "kind" => "header",
                         "name" => "authorization",
                         "orig" => "authorization",
-                        "reqd" => false,
                         "type" => "`$STRING`",
                       },
                     ],
@@ -2268,10 +1745,8 @@ module BluefinTecsUserBackofficeConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "create",
             },
           },
           "relations" => {
@@ -2281,25 +1756,16 @@ module BluefinTecsUserBackofficeConfig
         "version" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "appName",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "buildDate",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "version",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 2,
             },
           ],
           "name" => "version",
@@ -2309,7 +1775,6 @@ module BluefinTecsUserBackofficeConfig
               "name" => "load",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {},
                   "kind" => "http",
                   "method" => "GET",
@@ -2322,10 +1787,8 @@ module BluefinTecsUserBackofficeConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "load",
             },
           },
           "relations" => {

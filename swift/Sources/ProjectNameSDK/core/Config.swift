@@ -57,18 +57,12 @@ public enum SdkConfig {
     "output_activate_digital_module": {
       "fields": [
         {
-          "active": true,
           "name": "responseCode",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 0
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "responseMessage",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         }
       ],
       "name": "output_activate_digital_module",
@@ -78,11 +72,9 @@ public enum SdkConfig {
           "name": "create",
           "points": [
             {
-              "active": true,
               "args": {
                 "header": [
                   {
-                    "active": true,
                     "kind": "header",
                     "name": "authorization",
                     "orig": "authorization",
@@ -105,11 +97,9 @@ public enum SdkConfig {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "create"
+          ]
         }
       },
       "relations": {
@@ -119,32 +109,22 @@ public enum SdkConfig {
     "output_activate_portal_module": {
       "fields": [
         {
-          "active": true,
           "name": "clientSecret",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "notificationEmail",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "responseCode",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 2
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "responseMessage",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 3
+          "type": "`$STRING`"
         }
       ],
       "name": "output_activate_portal_module",
@@ -154,11 +134,9 @@ public enum SdkConfig {
           "name": "create",
           "points": [
             {
-              "active": true,
               "args": {
                 "header": [
                   {
-                    "active": true,
                     "kind": "header",
                     "name": "authorization",
                     "orig": "authorization",
@@ -181,11 +159,9 @@ public enum SdkConfig {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "create"
+          ]
         }
       },
       "relations": {
@@ -195,18 +171,12 @@ public enum SdkConfig {
     "output_activate_store_module": {
       "fields": [
         {
-          "active": true,
           "name": "responseCode",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 0
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "responseMessage",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         }
       ],
       "name": "output_activate_store_module",
@@ -216,11 +186,9 @@ public enum SdkConfig {
           "name": "create",
           "points": [
             {
-              "active": true,
               "args": {
                 "header": [
                   {
-                    "active": true,
                     "kind": "header",
                     "name": "authorization",
                     "orig": "authorization",
@@ -243,11 +211,9 @@ public enum SdkConfig {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "create"
+          ]
         }
       },
       "relations": {
@@ -257,25 +223,16 @@ public enum SdkConfig {
     "output_activate_user": {
       "fields": [
         {
-          "active": true,
           "name": "consumerUUID",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "responseCode",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 1
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "responseMessage",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 2
+          "type": "`$STRING`"
         }
       ],
       "name": "output_activate_user",
@@ -285,11 +242,9 @@ public enum SdkConfig {
           "name": "create",
           "points": [
             {
-              "active": true,
               "args": {
                 "header": [
                   {
-                    "active": true,
                     "kind": "header",
                     "name": "authorization",
                     "orig": "authorization",
@@ -312,11 +267,9 @@ public enum SdkConfig {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "create"
+          ]
         }
       },
       "relations": {
@@ -326,32 +279,22 @@ public enum SdkConfig {
     "output_assign_role": {
       "fields": [
         {
-          "active": true,
           "name": "consumerUUID",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "responseCode",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 1
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "responseMessage",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 2
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "roles",
           "req": true,
-          "type": "`$ARRAY`",
-          "index$": 3
+          "type": "`$ARRAY`"
         }
       ],
       "name": "output_assign_role",
@@ -361,11 +304,9 @@ public enum SdkConfig {
           "name": "create",
           "points": [
             {
-              "active": true,
               "args": {
                 "header": [
                   {
-                    "active": true,
                     "kind": "header",
                     "name": "authorization",
                     "orig": "authorization",
@@ -388,11 +329,9 @@ public enum SdkConfig {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "create"
+          ]
         }
       },
       "relations": {
@@ -402,32 +341,22 @@ public enum SdkConfig {
     "output_change_logo": {
       "fields": [
         {
-          "active": true,
           "name": "contentAsBase64",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "mimeType",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "responseCode",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 2
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "responseMessage",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 3
+          "type": "`$STRING`"
         }
       ],
       "name": "output_change_logo",
@@ -437,11 +366,9 @@ public enum SdkConfig {
           "name": "create",
           "points": [
             {
-              "active": true,
               "args": {
                 "header": [
                   {
-                    "active": true,
                     "kind": "header",
                     "name": "authorization",
                     "orig": "authorization",
@@ -464,11 +391,9 @@ public enum SdkConfig {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "create"
+          ]
         }
       },
       "relations": {
@@ -478,28 +403,18 @@ public enum SdkConfig {
     "output_create_mandator": {
       "fields": [
         {
-          "active": true,
           "name": "city",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "country",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "dateOfBirth",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 2
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "description",
           "op": {
             "create": {
@@ -507,54 +422,35 @@ public enum SdkConfig {
               "type": "`$STRING`"
             }
           },
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 3
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "driversLicenseNumber",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 4
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "email",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 5
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "firstName",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 6
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "identificationNumber",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 7
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "lastName",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 8
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "login",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 9
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "name",
           "op": {
             "create": {
@@ -562,58 +458,36 @@ public enum SdkConfig {
               "type": "`$STRING`"
             }
           },
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 10
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "passportNumber",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 11
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "phone",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 12
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "salutation",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 13
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "state",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 14
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "street1",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 15
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "street2",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 16
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "zipCode",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 17
+          "type": "`$STRING`"
         }
       ],
       "name": "output_create_mandator",
@@ -623,11 +497,9 @@ public enum SdkConfig {
           "name": "create",
           "points": [
             {
-              "active": true,
               "args": {
                 "header": [
                   {
-                    "active": true,
                     "kind": "header",
                     "name": "authorization",
                     "orig": "authorization",
@@ -650,11 +522,9 @@ public enum SdkConfig {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "create"
+          ]
         }
       },
       "relations": {
@@ -664,25 +534,17 @@ public enum SdkConfig {
     "output_create_service_user": {
       "fields": [
         {
-          "active": true,
           "name": "mandatorName",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "responseCode",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 1
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "responseMessage",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 2
+          "type": "`$STRING`"
         }
       ],
       "name": "output_create_service_user",
@@ -692,11 +554,9 @@ public enum SdkConfig {
           "name": "create",
           "points": [
             {
-              "active": true,
               "args": {
                 "header": [
                   {
-                    "active": true,
                     "kind": "header",
                     "name": "authorization",
                     "orig": "authorization",
@@ -719,11 +579,9 @@ public enum SdkConfig {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "create"
+          ]
         }
       },
       "relations": {
@@ -733,25 +591,16 @@ public enum SdkConfig {
     "output_deactivate_user": {
       "fields": [
         {
-          "active": true,
           "name": "consumerUUID",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "responseCode",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 1
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "responseMessage",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 2
+          "type": "`$STRING`"
         }
       ],
       "name": "output_deactivate_user",
@@ -761,11 +610,9 @@ public enum SdkConfig {
           "name": "create",
           "points": [
             {
-              "active": true,
               "args": {
                 "header": [
                   {
-                    "active": true,
                     "kind": "header",
                     "name": "authorization",
                     "orig": "authorization",
@@ -788,11 +635,9 @@ public enum SdkConfig {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "create"
+          ]
         }
       },
       "relations": {
@@ -802,32 +647,20 @@ public enum SdkConfig {
     "output_get_kyc_document": {
       "fields": [
         {
-          "active": true,
           "name": "caseID",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "encodedDataBase64",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "responseCode",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 2
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "responseMessage",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 3
+          "type": "`$STRING`"
         }
       ],
       "name": "output_get_kyc_document",
@@ -837,11 +670,9 @@ public enum SdkConfig {
           "name": "create",
           "points": [
             {
-              "active": true,
               "args": {
                 "header": [
                   {
-                    "active": true,
                     "kind": "header",
                     "name": "authorization",
                     "orig": "authorization",
@@ -864,11 +695,9 @@ public enum SdkConfig {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "create"
+          ]
         }
       },
       "relations": {
@@ -878,32 +707,22 @@ public enum SdkConfig {
     "output_get_logo": {
       "fields": [
         {
-          "active": true,
           "name": "contentAsBase64",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "mimeType",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "responseCode",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 2
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "responseMessage",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 3
+          "type": "`$STRING`"
         }
       ],
       "name": "output_get_logo",
@@ -913,11 +732,9 @@ public enum SdkConfig {
           "name": "load",
           "points": [
             {
-              "active": true,
               "args": {
                 "header": [
                   {
-                    "active": true,
                     "kind": "header",
                     "name": "authorization",
                     "orig": "authorization",
@@ -940,11 +757,9 @@ public enum SdkConfig {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "load"
+          ]
         }
       },
       "relations": {
@@ -954,25 +769,16 @@ public enum SdkConfig {
     "output_list_of_available_role": {
       "fields": [
         {
-          "active": true,
           "name": "availableRoles",
-          "req": false,
-          "type": "`$ARRAY`",
-          "index$": 0
+          "type": "`$ARRAY`"
         },
         {
-          "active": true,
           "name": "responseCode",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 1
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "responseMessage",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 2
+          "type": "`$STRING`"
         }
       ],
       "name": "output_list_of_available_role",
@@ -982,11 +788,9 @@ public enum SdkConfig {
           "name": "create",
           "points": [
             {
-              "active": true,
               "args": {
                 "header": [
                   {
-                    "active": true,
                     "kind": "header",
                     "name": "authorization",
                     "orig": "authorization",
@@ -1009,11 +813,9 @@ public enum SdkConfig {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "create"
+          ]
         }
       },
       "relations": {
@@ -1023,46 +825,28 @@ public enum SdkConfig {
     "output_list_of_mandator": {
       "fields": [
         {
-          "active": true,
           "name": "filter",
-          "req": false,
-          "type": "`$OBJECT`",
-          "index$": 0
+          "type": "`$OBJECT`"
         },
         {
-          "active": true,
           "name": "list",
-          "req": false,
-          "type": "`$ARRAY`",
-          "index$": 1
+          "type": "`$ARRAY`"
         },
         {
-          "active": true,
           "name": "pagination",
-          "req": false,
-          "type": "`$OBJECT`",
-          "index$": 2
+          "type": "`$OBJECT`"
         },
         {
-          "active": true,
           "name": "responseCode",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 3
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "responseMessage",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 4
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "sorting",
-          "req": false,
-          "type": "`$OBJECT`",
-          "index$": 5
+          "type": "`$OBJECT`"
         }
       ],
       "name": "output_list_of_mandator",
@@ -1072,11 +856,9 @@ public enum SdkConfig {
           "name": "create",
           "points": [
             {
-              "active": true,
               "args": {
                 "header": [
                   {
-                    "active": true,
                     "kind": "header",
                     "name": "authorization",
                     "orig": "authorization",
@@ -1099,11 +881,9 @@ public enum SdkConfig {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "create"
+          ]
         }
       },
       "relations": {
@@ -1113,32 +893,20 @@ public enum SdkConfig {
     "output_list_of_module": {
       "fields": [
         {
-          "active": true,
           "name": "list",
-          "req": false,
-          "type": "`$ARRAY`",
-          "index$": 0
+          "type": "`$ARRAY`"
         },
         {
-          "active": true,
           "name": "pagination",
-          "req": false,
-          "type": "`$OBJECT`",
-          "index$": 1
+          "type": "`$OBJECT`"
         },
         {
-          "active": true,
           "name": "responseCode",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 2
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "responseMessage",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 3
+          "type": "`$STRING`"
         }
       ],
       "name": "output_list_of_module",
@@ -1148,11 +916,9 @@ public enum SdkConfig {
           "name": "create",
           "points": [
             {
-              "active": true,
               "args": {
                 "header": [
                   {
-                    "active": true,
                     "kind": "header",
                     "name": "authorization",
                     "orig": "authorization",
@@ -1175,11 +941,9 @@ public enum SdkConfig {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "create"
+          ]
         }
       },
       "relations": {
@@ -1189,46 +953,28 @@ public enum SdkConfig {
     "output_list_of_role_group": {
       "fields": [
         {
-          "active": true,
           "name": "filter",
-          "req": false,
-          "type": "`$OBJECT`",
-          "index$": 0
+          "type": "`$OBJECT`"
         },
         {
-          "active": true,
           "name": "groupRoles",
-          "req": false,
-          "type": "`$ARRAY`",
-          "index$": 1
+          "type": "`$ARRAY`"
         },
         {
-          "active": true,
           "name": "pagination",
-          "req": false,
-          "type": "`$OBJECT`",
-          "index$": 2
+          "type": "`$OBJECT`"
         },
         {
-          "active": true,
           "name": "responseCode",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 3
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "responseMessage",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 4
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "sorting",
-          "req": false,
-          "type": "`$OBJECT`",
-          "index$": 5
+          "type": "`$OBJECT`"
         }
       ],
       "name": "output_list_of_role_group",
@@ -1238,11 +984,9 @@ public enum SdkConfig {
           "name": "create",
           "points": [
             {
-              "active": true,
               "args": {
                 "header": [
                   {
-                    "active": true,
                     "kind": "header",
                     "name": "authorization",
                     "orig": "authorization",
@@ -1265,11 +1009,9 @@ public enum SdkConfig {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "create"
+          ]
         }
       },
       "relations": {
@@ -1279,46 +1021,28 @@ public enum SdkConfig {
     "output_list_of_transactions_history": {
       "fields": [
         {
-          "active": true,
           "name": "filter",
-          "req": false,
-          "type": "`$OBJECT`",
-          "index$": 0
+          "type": "`$OBJECT`"
         },
         {
-          "active": true,
           "name": "list",
-          "req": false,
-          "type": "`$ARRAY`",
-          "index$": 1
+          "type": "`$ARRAY`"
         },
         {
-          "active": true,
           "name": "pagination",
-          "req": false,
-          "type": "`$OBJECT`",
-          "index$": 2
+          "type": "`$OBJECT`"
         },
         {
-          "active": true,
           "name": "responseCode",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 3
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "responseMessage",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 4
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "sorting",
-          "req": false,
-          "type": "`$OBJECT`",
-          "index$": 5
+          "type": "`$OBJECT`"
         }
       ],
       "name": "output_list_of_transactions_history",
@@ -1328,11 +1052,9 @@ public enum SdkConfig {
           "name": "create",
           "points": [
             {
-              "active": true,
               "args": {
                 "header": [
                   {
-                    "active": true,
                     "kind": "header",
                     "name": "authorization",
                     "orig": "authorization",
@@ -1355,11 +1077,9 @@ public enum SdkConfig {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "create"
+          ]
         }
       },
       "relations": {
@@ -1369,46 +1089,28 @@ public enum SdkConfig {
     "output_list_of_user": {
       "fields": [
         {
-          "active": true,
           "name": "filter",
-          "req": false,
-          "type": "`$OBJECT`",
-          "index$": 0
+          "type": "`$OBJECT`"
         },
         {
-          "active": true,
           "name": "list",
-          "req": false,
-          "type": "`$ARRAY`",
-          "index$": 1
+          "type": "`$ARRAY`"
         },
         {
-          "active": true,
           "name": "pagination",
-          "req": false,
-          "type": "`$OBJECT`",
-          "index$": 2
+          "type": "`$OBJECT`"
         },
         {
-          "active": true,
           "name": "responseCode",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 3
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "responseMessage",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 4
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "sorting",
-          "req": false,
-          "type": "`$OBJECT`",
-          "index$": 5
+          "type": "`$OBJECT`"
         }
       ],
       "name": "output_list_of_user",
@@ -1418,11 +1120,9 @@ public enum SdkConfig {
           "name": "create",
           "points": [
             {
-              "active": true,
               "args": {
                 "header": [
                   {
-                    "active": true,
                     "kind": "header",
                     "name": "authorization",
                     "orig": "authorization",
@@ -1445,11 +1145,9 @@ public enum SdkConfig {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "create"
+          ]
         }
       },
       "relations": {
@@ -1459,39 +1157,25 @@ public enum SdkConfig {
     "output_provide_credential": {
       "fields": [
         {
-          "active": true,
           "name": "mandatorName",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "password",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "responseCode",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 2
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "responseMessage",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 3
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "username",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 4
+          "type": "`$STRING`"
         }
       ],
       "name": "output_provide_credential",
@@ -1501,11 +1185,9 @@ public enum SdkConfig {
           "name": "create",
           "points": [
             {
-              "active": true,
               "args": {
                 "header": [
                   {
-                    "active": true,
                     "kind": "header",
                     "name": "authorization",
                     "orig": "authorization",
@@ -1528,11 +1210,9 @@ public enum SdkConfig {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "create"
+          ]
         }
       },
       "relations": {
@@ -1542,151 +1222,89 @@ public enum SdkConfig {
     "output_register_user": {
       "fields": [
         {
-          "active": true,
           "name": "city",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "consumerId",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "consumerLanguage",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 2
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "country",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 3
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "dateOfBirth",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 4
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "driverLicenceNumber",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 5
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "email",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 6
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "firstName",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 7
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "identificationNumber",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 8
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "lastName",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 9
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "login",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 10
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "module",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 11
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "passportNumber",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 12
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "phone",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 13
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "responseCode",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 14
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "responseMessage",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 15
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "salutation",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 16
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "state",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 17
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "street1",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 18
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "street2",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 19
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "zip",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 20
+          "type": "`$STRING`"
         }
       ],
       "name": "output_register_user",
@@ -1696,11 +1314,9 @@ public enum SdkConfig {
           "name": "create",
           "points": [
             {
-              "active": true,
               "args": {
                 "header": [
                   {
-                    "active": true,
                     "kind": "header",
                     "name": "authorization",
                     "orig": "authorization",
@@ -1723,11 +1339,9 @@ public enum SdkConfig {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "create"
+          ]
         }
       },
       "relations": {
@@ -1737,32 +1351,20 @@ public enum SdkConfig {
     "output_remove_role": {
       "fields": [
         {
-          "active": true,
           "name": "consumerUUID",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "responseCode",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 1
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "responseMessage",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 2
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "roles",
-          "req": false,
-          "type": "`$ARRAY`",
-          "index$": 3
+          "type": "`$ARRAY`"
         }
       ],
       "name": "output_remove_role",
@@ -1772,11 +1374,9 @@ public enum SdkConfig {
           "name": "create",
           "points": [
             {
-              "active": true,
               "args": {
                 "header": [
                   {
-                    "active": true,
                     "kind": "header",
                     "name": "authorization",
                     "orig": "authorization",
@@ -1799,11 +1399,9 @@ public enum SdkConfig {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "create"
+          ]
         }
       },
       "relations": {
@@ -1813,46 +1411,29 @@ public enum SdkConfig {
     "output_resend_link": {
       "fields": [
         {
-          "active": true,
           "name": "businessRegistrationNumber",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "consumerUUID",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "emailConfirmationCode",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 2
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "phoneNumber",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 3
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "responseCode",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 4
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "responseMessage",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 5
+          "type": "`$STRING`"
         }
       ],
       "name": "output_resend_link",
@@ -1862,15 +1443,12 @@ public enum SdkConfig {
           "name": "create",
           "points": [
             {
-              "active": true,
               "args": {
                 "header": [
                   {
-                    "active": true,
                     "kind": "header",
                     "name": "authorization",
                     "orig": "authorization",
-                    "reqd": false,
                     "type": "`$STRING`"
                   }
                 ]
@@ -1889,11 +1467,9 @@ public enum SdkConfig {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "create"
+          ]
         }
       },
       "relations": {
@@ -1903,32 +1479,20 @@ public enum SdkConfig {
     "output_reset_password": {
       "fields": [
         {
-          "active": true,
           "name": "consumerUuid",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "phoneNumber",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "responseCode",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 2
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "responseMessage",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 3
+          "type": "`$STRING`"
         }
       ],
       "name": "output_reset_password",
@@ -1938,11 +1502,9 @@ public enum SdkConfig {
           "name": "create",
           "points": [
             {
-              "active": true,
               "args": {
                 "header": [
                   {
-                    "active": true,
                     "kind": "header",
                     "name": "authorization",
                     "orig": "authorization",
@@ -1965,11 +1527,9 @@ public enum SdkConfig {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "create"
+          ]
         }
       },
       "relations": {
@@ -1979,165 +1539,97 @@ public enum SdkConfig {
     "output_update_consumer": {
       "fields": [
         {
-          "active": true,
           "name": "city",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "consumerUuid",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "consumerlanguage",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 2
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "country",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 3
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "dateOfBirth",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 4
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "datetime_created",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 5
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "driverLicenceNumber",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 6
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "email",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 7
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "firstName",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 8
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "identificationNumber",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 9
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "kycPassed",
-          "req": false,
-          "type": "`$BOOLEAN`",
-          "index$": 10
+          "type": "`$BOOLEAN`"
         },
         {
-          "active": true,
           "name": "lastName",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 11
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "nationality",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 12
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "passportNumber",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 13
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "phoneNumber",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 14
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "placeOfBirth",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 15
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "responseCode",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 16
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "responseMessage",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 17
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "state",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 18
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "street1",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 19
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "street2",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 20
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "transactionhistory_id",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 21
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "zip",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 22
+          "type": "`$STRING`"
         }
       ],
       "name": "output_update_consumer",
@@ -2147,15 +1639,12 @@ public enum SdkConfig {
           "name": "create",
           "points": [
             {
-              "active": true,
               "args": {
                 "header": [
                   {
-                    "active": true,
                     "kind": "header",
                     "name": "authorization",
                     "orig": "authorization",
-                    "reqd": false,
                     "type": "`$STRING`"
                   }
                 ]
@@ -2174,11 +1663,9 @@ public enum SdkConfig {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "create"
+          ]
         }
       },
       "relations": {
@@ -2188,53 +1675,32 @@ public enum SdkConfig {
     "output_update_profile": {
       "fields": [
         {
-          "active": true,
           "name": "consumerLanguage",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "email",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "firstName",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 2
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "lastName",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 3
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "phoneNumber",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 4
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "responseCode",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 5
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "responseMessage",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 6
+          "type": "`$STRING`"
         }
       ],
       "name": "output_update_profile",
@@ -2244,15 +1710,12 @@ public enum SdkConfig {
           "name": "create",
           "points": [
             {
-              "active": true,
               "args": {
                 "header": [
                   {
-                    "active": true,
                     "kind": "header",
                     "name": "authorization",
                     "orig": "authorization",
-                    "reqd": false,
                     "type": "`$STRING`"
                   }
                 ]
@@ -2271,11 +1734,9 @@ public enum SdkConfig {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "create"
+          ]
         }
       },
       "relations": {
@@ -2285,25 +1746,16 @@ public enum SdkConfig {
     "version": {
       "fields": [
         {
-          "active": true,
           "name": "appName",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "buildDate",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "version",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 2
+          "type": "`$STRING`"
         }
       ],
       "name": "version",
@@ -2313,7 +1765,6 @@ public enum SdkConfig {
           "name": "load",
           "points": [
             {
-              "active": true,
               "args": {},
               "kind": "http",
               "method": "GET",
@@ -2325,11 +1776,9 @@ public enum SdkConfig {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "load"
+          ]
         }
       },
       "relations": {

@@ -40,7 +40,7 @@ class BluefinTecsUserBackofficeSDK
         $utility = new BluefinTecsUserBackofficeUtility();
         $this->_utility = $utility;
 
-        $config = BluefinTecsUserBackofficeConfig::make_config();
+        $config = BluefinTecsUserBackofficeConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

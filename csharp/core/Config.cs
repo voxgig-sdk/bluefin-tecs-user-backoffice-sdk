@@ -71,19 +71,13 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseCode",
-                            ["req"] = false,
                             ["type"] = "`$INTEGER`",
-                            ["index$"] = 0,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseMessage",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 1,
                         },
                     },
                     ["name"] = "output_activate_digital_module",
@@ -97,14 +91,12 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["active"] = true,
                                     ["args"] = new Dictionary<string, object?>
                                     {
                                         ["header"] = new List<object?>
                                         {
                                             new Dictionary<string, object?>
                                             {
-                                                ["active"] = true,
                                                 ["kind"] = "header",
                                                 ["name"] = "authorization",
                                                 ["orig"] = "authorization",
@@ -132,10 +124,8 @@ public static class SdkConfig
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["index$"] = 0,
                                 },
                             },
-                            ["key$"] = "create",
                         },
                     },
                     ["relations"] = new Dictionary<string, object?>
@@ -149,35 +139,25 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "clientSecret",
                             ["req"] = true,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 0,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "notificationEmail",
                             ["req"] = true,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 1,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseCode",
-                            ["req"] = false,
                             ["type"] = "`$INTEGER`",
-                            ["index$"] = 2,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseMessage",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 3,
                         },
                     },
                     ["name"] = "output_activate_portal_module",
@@ -191,14 +171,12 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["active"] = true,
                                     ["args"] = new Dictionary<string, object?>
                                     {
                                         ["header"] = new List<object?>
                                         {
                                             new Dictionary<string, object?>
                                             {
-                                                ["active"] = true,
                                                 ["kind"] = "header",
                                                 ["name"] = "authorization",
                                                 ["orig"] = "authorization",
@@ -226,10 +204,8 @@ public static class SdkConfig
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["index$"] = 0,
                                 },
                             },
-                            ["key$"] = "create",
                         },
                     },
                     ["relations"] = new Dictionary<string, object?>
@@ -243,19 +219,13 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseCode",
-                            ["req"] = false,
                             ["type"] = "`$INTEGER`",
-                            ["index$"] = 0,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseMessage",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 1,
                         },
                     },
                     ["name"] = "output_activate_store_module",
@@ -269,14 +239,12 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["active"] = true,
                                     ["args"] = new Dictionary<string, object?>
                                     {
                                         ["header"] = new List<object?>
                                         {
                                             new Dictionary<string, object?>
                                             {
-                                                ["active"] = true,
                                                 ["kind"] = "header",
                                                 ["name"] = "authorization",
                                                 ["orig"] = "authorization",
@@ -304,10 +272,8 @@ public static class SdkConfig
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["index$"] = 0,
                                 },
                             },
-                            ["key$"] = "create",
                         },
                     },
                     ["relations"] = new Dictionary<string, object?>
@@ -321,27 +287,18 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "consumerUUID",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 0,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseCode",
-                            ["req"] = false,
                             ["type"] = "`$INTEGER`",
-                            ["index$"] = 1,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseMessage",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 2,
                         },
                     },
                     ["name"] = "output_activate_user",
@@ -355,14 +312,12 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["active"] = true,
                                     ["args"] = new Dictionary<string, object?>
                                     {
                                         ["header"] = new List<object?>
                                         {
                                             new Dictionary<string, object?>
                                             {
-                                                ["active"] = true,
                                                 ["kind"] = "header",
                                                 ["name"] = "authorization",
                                                 ["orig"] = "authorization",
@@ -390,10 +345,8 @@ public static class SdkConfig
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["index$"] = 0,
                                 },
                             },
-                            ["key$"] = "create",
                         },
                     },
                     ["relations"] = new Dictionary<string, object?>
@@ -407,35 +360,25 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "consumerUUID",
                             ["req"] = true,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 0,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseCode",
-                            ["req"] = false,
                             ["type"] = "`$INTEGER`",
-                            ["index$"] = 1,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseMessage",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 2,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "roles",
                             ["req"] = true,
                             ["type"] = "`$ARRAY`",
-                            ["index$"] = 3,
                         },
                     },
                     ["name"] = "output_assign_role",
@@ -449,14 +392,12 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["active"] = true,
                                     ["args"] = new Dictionary<string, object?>
                                     {
                                         ["header"] = new List<object?>
                                         {
                                             new Dictionary<string, object?>
                                             {
-                                                ["active"] = true,
                                                 ["kind"] = "header",
                                                 ["name"] = "authorization",
                                                 ["orig"] = "authorization",
@@ -484,10 +425,8 @@ public static class SdkConfig
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["index$"] = 0,
                                 },
                             },
-                            ["key$"] = "create",
                         },
                     },
                     ["relations"] = new Dictionary<string, object?>
@@ -501,35 +440,25 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "contentAsBase64",
                             ["req"] = true,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 0,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "mimeType",
                             ["req"] = true,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 1,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseCode",
-                            ["req"] = false,
                             ["type"] = "`$INTEGER`",
-                            ["index$"] = 2,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseMessage",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 3,
                         },
                     },
                     ["name"] = "output_change_logo",
@@ -543,14 +472,12 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["active"] = true,
                                     ["args"] = new Dictionary<string, object?>
                                     {
                                         ["header"] = new List<object?>
                                         {
                                             new Dictionary<string, object?>
                                             {
-                                                ["active"] = true,
                                                 ["kind"] = "header",
                                                 ["name"] = "authorization",
                                                 ["orig"] = "authorization",
@@ -578,10 +505,8 @@ public static class SdkConfig
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["index$"] = 0,
                                 },
                             },
-                            ["key$"] = "create",
                         },
                     },
                     ["relations"] = new Dictionary<string, object?>
@@ -595,31 +520,21 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "city",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 0,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "country",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 1,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "dateOfBirth",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 2,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "description",
                             ["op"] = new Dictionary<string, object?>
                             {
@@ -629,61 +544,42 @@ public static class SdkConfig
                                     ["type"] = "`$STRING`",
                                 },
                             },
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 3,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "driversLicenseNumber",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 4,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "email",
                             ["req"] = true,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 5,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "firstName",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 6,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "identificationNumber",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 7,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "lastName",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 8,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "login",
                             ["req"] = true,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 9,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "name",
                             ["op"] = new Dictionary<string, object?>
                             {
@@ -693,65 +589,43 @@ public static class SdkConfig
                                     ["type"] = "`$STRING`",
                                 },
                             },
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 10,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "passportNumber",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 11,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "phone",
                             ["req"] = true,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 12,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "salutation",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 13,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "state",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 14,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "street1",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 15,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "street2",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 16,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "zipCode",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 17,
                         },
                     },
                     ["name"] = "output_create_mandator",
@@ -765,14 +639,12 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["active"] = true,
                                     ["args"] = new Dictionary<string, object?>
                                     {
                                         ["header"] = new List<object?>
                                         {
                                             new Dictionary<string, object?>
                                             {
-                                                ["active"] = true,
                                                 ["kind"] = "header",
                                                 ["name"] = "authorization",
                                                 ["orig"] = "authorization",
@@ -800,10 +672,8 @@ public static class SdkConfig
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["index$"] = 0,
                                 },
                             },
-                            ["key$"] = "create",
                         },
                     },
                     ["relations"] = new Dictionary<string, object?>
@@ -817,27 +687,19 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "mandatorName",
                             ["req"] = true,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 0,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseCode",
-                            ["req"] = false,
                             ["type"] = "`$INTEGER`",
-                            ["index$"] = 1,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseMessage",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 2,
                         },
                     },
                     ["name"] = "output_create_service_user",
@@ -851,14 +713,12 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["active"] = true,
                                     ["args"] = new Dictionary<string, object?>
                                     {
                                         ["header"] = new List<object?>
                                         {
                                             new Dictionary<string, object?>
                                             {
-                                                ["active"] = true,
                                                 ["kind"] = "header",
                                                 ["name"] = "authorization",
                                                 ["orig"] = "authorization",
@@ -886,10 +746,8 @@ public static class SdkConfig
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["index$"] = 0,
                                 },
                             },
-                            ["key$"] = "create",
                         },
                     },
                     ["relations"] = new Dictionary<string, object?>
@@ -903,27 +761,18 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "consumerUUID",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 0,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseCode",
-                            ["req"] = false,
                             ["type"] = "`$INTEGER`",
-                            ["index$"] = 1,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseMessage",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 2,
                         },
                     },
                     ["name"] = "output_deactivate_user",
@@ -937,14 +786,12 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["active"] = true,
                                     ["args"] = new Dictionary<string, object?>
                                     {
                                         ["header"] = new List<object?>
                                         {
                                             new Dictionary<string, object?>
                                             {
-                                                ["active"] = true,
                                                 ["kind"] = "header",
                                                 ["name"] = "authorization",
                                                 ["orig"] = "authorization",
@@ -972,10 +819,8 @@ public static class SdkConfig
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["index$"] = 0,
                                 },
                             },
-                            ["key$"] = "create",
                         },
                     },
                     ["relations"] = new Dictionary<string, object?>
@@ -989,35 +834,23 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "caseID",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 0,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "encodedDataBase64",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 1,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseCode",
-                            ["req"] = false,
                             ["type"] = "`$INTEGER`",
-                            ["index$"] = 2,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseMessage",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 3,
                         },
                     },
                     ["name"] = "output_get_kyc_document",
@@ -1031,14 +864,12 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["active"] = true,
                                     ["args"] = new Dictionary<string, object?>
                                     {
                                         ["header"] = new List<object?>
                                         {
                                             new Dictionary<string, object?>
                                             {
-                                                ["active"] = true,
                                                 ["kind"] = "header",
                                                 ["name"] = "authorization",
                                                 ["orig"] = "authorization",
@@ -1066,10 +897,8 @@ public static class SdkConfig
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["index$"] = 0,
                                 },
                             },
-                            ["key$"] = "create",
                         },
                     },
                     ["relations"] = new Dictionary<string, object?>
@@ -1083,35 +912,25 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "contentAsBase64",
                             ["req"] = true,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 0,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "mimeType",
                             ["req"] = true,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 1,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseCode",
-                            ["req"] = false,
                             ["type"] = "`$INTEGER`",
-                            ["index$"] = 2,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseMessage",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 3,
                         },
                     },
                     ["name"] = "output_get_logo",
@@ -1125,14 +944,12 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["active"] = true,
                                     ["args"] = new Dictionary<string, object?>
                                     {
                                         ["header"] = new List<object?>
                                         {
                                             new Dictionary<string, object?>
                                             {
-                                                ["active"] = true,
                                                 ["kind"] = "header",
                                                 ["name"] = "authorization",
                                                 ["orig"] = "authorization",
@@ -1160,10 +977,8 @@ public static class SdkConfig
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["index$"] = 0,
                                 },
                             },
-                            ["key$"] = "load",
                         },
                     },
                     ["relations"] = new Dictionary<string, object?>
@@ -1177,27 +992,18 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "availableRoles",
-                            ["req"] = false,
                             ["type"] = "`$ARRAY`",
-                            ["index$"] = 0,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseCode",
-                            ["req"] = false,
                             ["type"] = "`$INTEGER`",
-                            ["index$"] = 1,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseMessage",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 2,
                         },
                     },
                     ["name"] = "output_list_of_available_role",
@@ -1211,14 +1017,12 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["active"] = true,
                                     ["args"] = new Dictionary<string, object?>
                                     {
                                         ["header"] = new List<object?>
                                         {
                                             new Dictionary<string, object?>
                                             {
-                                                ["active"] = true,
                                                 ["kind"] = "header",
                                                 ["name"] = "authorization",
                                                 ["orig"] = "authorization",
@@ -1246,10 +1050,8 @@ public static class SdkConfig
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["index$"] = 0,
                                 },
                             },
-                            ["key$"] = "create",
                         },
                     },
                     ["relations"] = new Dictionary<string, object?>
@@ -1263,51 +1065,33 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "filter",
-                            ["req"] = false,
                             ["type"] = "`$OBJECT`",
-                            ["index$"] = 0,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "list",
-                            ["req"] = false,
                             ["type"] = "`$ARRAY`",
-                            ["index$"] = 1,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "pagination",
-                            ["req"] = false,
                             ["type"] = "`$OBJECT`",
-                            ["index$"] = 2,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseCode",
-                            ["req"] = false,
                             ["type"] = "`$INTEGER`",
-                            ["index$"] = 3,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseMessage",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 4,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "sorting",
-                            ["req"] = false,
                             ["type"] = "`$OBJECT`",
-                            ["index$"] = 5,
                         },
                     },
                     ["name"] = "output_list_of_mandator",
@@ -1321,14 +1105,12 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["active"] = true,
                                     ["args"] = new Dictionary<string, object?>
                                     {
                                         ["header"] = new List<object?>
                                         {
                                             new Dictionary<string, object?>
                                             {
-                                                ["active"] = true,
                                                 ["kind"] = "header",
                                                 ["name"] = "authorization",
                                                 ["orig"] = "authorization",
@@ -1356,10 +1138,8 @@ public static class SdkConfig
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["index$"] = 0,
                                 },
                             },
-                            ["key$"] = "create",
                         },
                     },
                     ["relations"] = new Dictionary<string, object?>
@@ -1373,35 +1153,23 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "list",
-                            ["req"] = false,
                             ["type"] = "`$ARRAY`",
-                            ["index$"] = 0,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "pagination",
-                            ["req"] = false,
                             ["type"] = "`$OBJECT`",
-                            ["index$"] = 1,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseCode",
-                            ["req"] = false,
                             ["type"] = "`$INTEGER`",
-                            ["index$"] = 2,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseMessage",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 3,
                         },
                     },
                     ["name"] = "output_list_of_module",
@@ -1415,14 +1183,12 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["active"] = true,
                                     ["args"] = new Dictionary<string, object?>
                                     {
                                         ["header"] = new List<object?>
                                         {
                                             new Dictionary<string, object?>
                                             {
-                                                ["active"] = true,
                                                 ["kind"] = "header",
                                                 ["name"] = "authorization",
                                                 ["orig"] = "authorization",
@@ -1450,10 +1216,8 @@ public static class SdkConfig
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["index$"] = 0,
                                 },
                             },
-                            ["key$"] = "create",
                         },
                     },
                     ["relations"] = new Dictionary<string, object?>
@@ -1467,51 +1231,33 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "filter",
-                            ["req"] = false,
                             ["type"] = "`$OBJECT`",
-                            ["index$"] = 0,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "groupRoles",
-                            ["req"] = false,
                             ["type"] = "`$ARRAY`",
-                            ["index$"] = 1,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "pagination",
-                            ["req"] = false,
                             ["type"] = "`$OBJECT`",
-                            ["index$"] = 2,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseCode",
-                            ["req"] = false,
                             ["type"] = "`$INTEGER`",
-                            ["index$"] = 3,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseMessage",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 4,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "sorting",
-                            ["req"] = false,
                             ["type"] = "`$OBJECT`",
-                            ["index$"] = 5,
                         },
                     },
                     ["name"] = "output_list_of_role_group",
@@ -1525,14 +1271,12 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["active"] = true,
                                     ["args"] = new Dictionary<string, object?>
                                     {
                                         ["header"] = new List<object?>
                                         {
                                             new Dictionary<string, object?>
                                             {
-                                                ["active"] = true,
                                                 ["kind"] = "header",
                                                 ["name"] = "authorization",
                                                 ["orig"] = "authorization",
@@ -1560,10 +1304,8 @@ public static class SdkConfig
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["index$"] = 0,
                                 },
                             },
-                            ["key$"] = "create",
                         },
                     },
                     ["relations"] = new Dictionary<string, object?>
@@ -1577,51 +1319,33 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "filter",
-                            ["req"] = false,
                             ["type"] = "`$OBJECT`",
-                            ["index$"] = 0,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "list",
-                            ["req"] = false,
                             ["type"] = "`$ARRAY`",
-                            ["index$"] = 1,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "pagination",
-                            ["req"] = false,
                             ["type"] = "`$OBJECT`",
-                            ["index$"] = 2,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseCode",
-                            ["req"] = false,
                             ["type"] = "`$INTEGER`",
-                            ["index$"] = 3,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseMessage",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 4,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "sorting",
-                            ["req"] = false,
                             ["type"] = "`$OBJECT`",
-                            ["index$"] = 5,
                         },
                     },
                     ["name"] = "output_list_of_transactions_history",
@@ -1635,14 +1359,12 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["active"] = true,
                                     ["args"] = new Dictionary<string, object?>
                                     {
                                         ["header"] = new List<object?>
                                         {
                                             new Dictionary<string, object?>
                                             {
-                                                ["active"] = true,
                                                 ["kind"] = "header",
                                                 ["name"] = "authorization",
                                                 ["orig"] = "authorization",
@@ -1670,10 +1392,8 @@ public static class SdkConfig
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["index$"] = 0,
                                 },
                             },
-                            ["key$"] = "create",
                         },
                     },
                     ["relations"] = new Dictionary<string, object?>
@@ -1687,51 +1407,33 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "filter",
-                            ["req"] = false,
                             ["type"] = "`$OBJECT`",
-                            ["index$"] = 0,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "list",
-                            ["req"] = false,
                             ["type"] = "`$ARRAY`",
-                            ["index$"] = 1,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "pagination",
-                            ["req"] = false,
                             ["type"] = "`$OBJECT`",
-                            ["index$"] = 2,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseCode",
-                            ["req"] = false,
                             ["type"] = "`$INTEGER`",
-                            ["index$"] = 3,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseMessage",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 4,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "sorting",
-                            ["req"] = false,
                             ["type"] = "`$OBJECT`",
-                            ["index$"] = 5,
                         },
                     },
                     ["name"] = "output_list_of_user",
@@ -1745,14 +1447,12 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["active"] = true,
                                     ["args"] = new Dictionary<string, object?>
                                     {
                                         ["header"] = new List<object?>
                                         {
                                             new Dictionary<string, object?>
                                             {
-                                                ["active"] = true,
                                                 ["kind"] = "header",
                                                 ["name"] = "authorization",
                                                 ["orig"] = "authorization",
@@ -1780,10 +1480,8 @@ public static class SdkConfig
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["index$"] = 0,
                                 },
                             },
-                            ["key$"] = "create",
                         },
                     },
                     ["relations"] = new Dictionary<string, object?>
@@ -1797,43 +1495,29 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "mandatorName",
                             ["req"] = true,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 0,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "password",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 1,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseCode",
-                            ["req"] = false,
                             ["type"] = "`$INTEGER`",
-                            ["index$"] = 2,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseMessage",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 3,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "username",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 4,
                         },
                     },
                     ["name"] = "output_provide_credential",
@@ -1847,14 +1531,12 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["active"] = true,
                                     ["args"] = new Dictionary<string, object?>
                                     {
                                         ["header"] = new List<object?>
                                         {
                                             new Dictionary<string, object?>
                                             {
-                                                ["active"] = true,
                                                 ["kind"] = "header",
                                                 ["name"] = "authorization",
                                                 ["orig"] = "authorization",
@@ -1882,10 +1564,8 @@ public static class SdkConfig
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["index$"] = 0,
                                 },
                             },
-                            ["key$"] = "create",
                         },
                     },
                     ["relations"] = new Dictionary<string, object?>
@@ -1899,171 +1579,109 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "city",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 0,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "consumerId",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 1,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "consumerLanguage",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 2,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "country",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 3,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "dateOfBirth",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 4,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "driverLicenceNumber",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 5,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "email",
                             ["req"] = true,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 6,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "firstName",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 7,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "identificationNumber",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 8,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "lastName",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 9,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "login",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 10,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "module",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 11,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "passportNumber",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 12,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "phone",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 13,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseCode",
-                            ["req"] = false,
                             ["type"] = "`$INTEGER`",
-                            ["index$"] = 14,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseMessage",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 15,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "salutation",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 16,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "state",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 17,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "street1",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 18,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "street2",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 19,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "zip",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 20,
                         },
                     },
                     ["name"] = "output_register_user",
@@ -2077,14 +1695,12 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["active"] = true,
                                     ["args"] = new Dictionary<string, object?>
                                     {
                                         ["header"] = new List<object?>
                                         {
                                             new Dictionary<string, object?>
                                             {
-                                                ["active"] = true,
                                                 ["kind"] = "header",
                                                 ["name"] = "authorization",
                                                 ["orig"] = "authorization",
@@ -2112,10 +1728,8 @@ public static class SdkConfig
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["index$"] = 0,
                                 },
                             },
-                            ["key$"] = "create",
                         },
                     },
                     ["relations"] = new Dictionary<string, object?>
@@ -2129,35 +1743,23 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "consumerUUID",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 0,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseCode",
-                            ["req"] = false,
                             ["type"] = "`$INTEGER`",
-                            ["index$"] = 1,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseMessage",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 2,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "roles",
-                            ["req"] = false,
                             ["type"] = "`$ARRAY`",
-                            ["index$"] = 3,
                         },
                     },
                     ["name"] = "output_remove_role",
@@ -2171,14 +1773,12 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["active"] = true,
                                     ["args"] = new Dictionary<string, object?>
                                     {
                                         ["header"] = new List<object?>
                                         {
                                             new Dictionary<string, object?>
                                             {
-                                                ["active"] = true,
                                                 ["kind"] = "header",
                                                 ["name"] = "authorization",
                                                 ["orig"] = "authorization",
@@ -2206,10 +1806,8 @@ public static class SdkConfig
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["index$"] = 0,
                                 },
                             },
-                            ["key$"] = "create",
                         },
                     },
                     ["relations"] = new Dictionary<string, object?>
@@ -2223,51 +1821,34 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "businessRegistrationNumber",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 0,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "consumerUUID",
                             ["req"] = true,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 1,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "emailConfirmationCode",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 2,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "phoneNumber",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 3,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseCode",
-                            ["req"] = false,
                             ["type"] = "`$INTEGER`",
-                            ["index$"] = 4,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseMessage",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 5,
                         },
                     },
                     ["name"] = "output_resend_link",
@@ -2281,18 +1862,15 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["active"] = true,
                                     ["args"] = new Dictionary<string, object?>
                                     {
                                         ["header"] = new List<object?>
                                         {
                                             new Dictionary<string, object?>
                                             {
-                                                ["active"] = true,
                                                 ["kind"] = "header",
                                                 ["name"] = "authorization",
                                                 ["orig"] = "authorization",
-                                                ["reqd"] = false,
                                                 ["type"] = "`$STRING`",
                                             },
                                         },
@@ -2316,10 +1894,8 @@ public static class SdkConfig
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["index$"] = 0,
                                 },
                             },
-                            ["key$"] = "create",
                         },
                     },
                     ["relations"] = new Dictionary<string, object?>
@@ -2333,35 +1909,23 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "consumerUuid",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 0,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "phoneNumber",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 1,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseCode",
-                            ["req"] = false,
                             ["type"] = "`$INTEGER`",
-                            ["index$"] = 2,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseMessage",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 3,
                         },
                     },
                     ["name"] = "output_reset_password",
@@ -2375,14 +1939,12 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["active"] = true,
                                     ["args"] = new Dictionary<string, object?>
                                     {
                                         ["header"] = new List<object?>
                                         {
                                             new Dictionary<string, object?>
                                             {
-                                                ["active"] = true,
                                                 ["kind"] = "header",
                                                 ["name"] = "authorization",
                                                 ["orig"] = "authorization",
@@ -2410,10 +1972,8 @@ public static class SdkConfig
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["index$"] = 0,
                                 },
                             },
-                            ["key$"] = "create",
                         },
                     },
                     ["relations"] = new Dictionary<string, object?>
@@ -2427,187 +1987,119 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "city",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 0,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "consumerUuid",
                             ["req"] = true,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 1,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "consumerlanguage",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 2,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "country",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 3,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "dateOfBirth",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 4,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "datetime_created",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 5,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "driverLicenceNumber",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 6,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "email",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 7,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "firstName",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 8,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "identificationNumber",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 9,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "kycPassed",
-                            ["req"] = false,
                             ["type"] = "`$BOOLEAN`",
-                            ["index$"] = 10,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "lastName",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 11,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "nationality",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 12,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "passportNumber",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 13,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "phoneNumber",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 14,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "placeOfBirth",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 15,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseCode",
-                            ["req"] = false,
                             ["type"] = "`$INTEGER`",
-                            ["index$"] = 16,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseMessage",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 17,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "state",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 18,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "street1",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 19,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "street2",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 20,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "transactionhistory_id",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 21,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "zip",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 22,
                         },
                     },
                     ["name"] = "output_update_consumer",
@@ -2621,18 +2113,15 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["active"] = true,
                                     ["args"] = new Dictionary<string, object?>
                                     {
                                         ["header"] = new List<object?>
                                         {
                                             new Dictionary<string, object?>
                                             {
-                                                ["active"] = true,
                                                 ["kind"] = "header",
                                                 ["name"] = "authorization",
                                                 ["orig"] = "authorization",
-                                                ["reqd"] = false,
                                                 ["type"] = "`$STRING`",
                                             },
                                         },
@@ -2656,10 +2145,8 @@ public static class SdkConfig
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["index$"] = 0,
                                 },
                             },
-                            ["key$"] = "create",
                         },
                     },
                     ["relations"] = new Dictionary<string, object?>
@@ -2673,59 +2160,38 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "consumerLanguage",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 0,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "email",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 1,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "firstName",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 2,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "lastName",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 3,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "phoneNumber",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 4,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseCode",
-                            ["req"] = false,
                             ["type"] = "`$INTEGER`",
-                            ["index$"] = 5,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "responseMessage",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 6,
                         },
                     },
                     ["name"] = "output_update_profile",
@@ -2739,18 +2205,15 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["active"] = true,
                                     ["args"] = new Dictionary<string, object?>
                                     {
                                         ["header"] = new List<object?>
                                         {
                                             new Dictionary<string, object?>
                                             {
-                                                ["active"] = true,
                                                 ["kind"] = "header",
                                                 ["name"] = "authorization",
                                                 ["orig"] = "authorization",
-                                                ["reqd"] = false,
                                                 ["type"] = "`$STRING`",
                                             },
                                         },
@@ -2774,10 +2237,8 @@ public static class SdkConfig
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["index$"] = 0,
                                 },
                             },
-                            ["key$"] = "create",
                         },
                     },
                     ["relations"] = new Dictionary<string, object?>
@@ -2791,27 +2252,18 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "appName",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 0,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "buildDate",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 1,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["active"] = true,
                             ["name"] = "version",
-                            ["req"] = false,
                             ["type"] = "`$STRING`",
-                            ["index$"] = 2,
                         },
                     },
                     ["name"] = "version",
@@ -2825,7 +2277,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["active"] = true,
                                     ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "GET",
@@ -2840,10 +2291,8 @@ public static class SdkConfig
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["index$"] = 0,
                                 },
                             },
-                            ["key$"] = "load",
                         },
                     },
                     ["relations"] = new Dictionary<string, object?>

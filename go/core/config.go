@@ -1,5 +1,12 @@
 package core
 
+import (
+	"sync"
+)
+
+// MakeConfig builds a fresh, fully materialised config map. Every call
+// rebuilds the whole structure, so prefer SharedConfig unless you need a
+// private copy you intend to mutate.
 func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
@@ -52,18 +59,12 @@ func MakeConfig() map[string]any {
 			"output_activate_digital_module": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"active": true,
 						"name": "responseCode",
-						"req": false,
 						"type": "`$INTEGER`",
-						"index$": 0,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseMessage",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 1,
 					},
 				},
 				"name": "output_activate_digital_module",
@@ -73,11 +74,9 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"active": true,
 								"args": map[string]any{
 									"header": []any{
 										map[string]any{
-											"active": true,
 											"kind": "header",
 											"name": "authorization",
 											"orig": "authorization",
@@ -101,10 +100,8 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"index$": 0,
 							},
 						},
-						"key$": "create",
 					},
 				},
 				"relations": map[string]any{
@@ -114,32 +111,22 @@ func MakeConfig() map[string]any {
 			"output_activate_portal_module": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"active": true,
 						"name": "clientSecret",
 						"req": true,
 						"type": "`$STRING`",
-						"index$": 0,
 					},
 					map[string]any{
-						"active": true,
 						"name": "notificationEmail",
 						"req": true,
 						"type": "`$STRING`",
-						"index$": 1,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseCode",
-						"req": false,
 						"type": "`$INTEGER`",
-						"index$": 2,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseMessage",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 3,
 					},
 				},
 				"name": "output_activate_portal_module",
@@ -149,11 +136,9 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"active": true,
 								"args": map[string]any{
 									"header": []any{
 										map[string]any{
-											"active": true,
 											"kind": "header",
 											"name": "authorization",
 											"orig": "authorization",
@@ -177,10 +162,8 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"index$": 0,
 							},
 						},
-						"key$": "create",
 					},
 				},
 				"relations": map[string]any{
@@ -190,18 +173,12 @@ func MakeConfig() map[string]any {
 			"output_activate_store_module": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"active": true,
 						"name": "responseCode",
-						"req": false,
 						"type": "`$INTEGER`",
-						"index$": 0,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseMessage",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 1,
 					},
 				},
 				"name": "output_activate_store_module",
@@ -211,11 +188,9 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"active": true,
 								"args": map[string]any{
 									"header": []any{
 										map[string]any{
-											"active": true,
 											"kind": "header",
 											"name": "authorization",
 											"orig": "authorization",
@@ -239,10 +214,8 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"index$": 0,
 							},
 						},
-						"key$": "create",
 					},
 				},
 				"relations": map[string]any{
@@ -252,25 +225,16 @@ func MakeConfig() map[string]any {
 			"output_activate_user": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"active": true,
 						"name": "consumerUUID",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 0,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseCode",
-						"req": false,
 						"type": "`$INTEGER`",
-						"index$": 1,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseMessage",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 2,
 					},
 				},
 				"name": "output_activate_user",
@@ -280,11 +244,9 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"active": true,
 								"args": map[string]any{
 									"header": []any{
 										map[string]any{
-											"active": true,
 											"kind": "header",
 											"name": "authorization",
 											"orig": "authorization",
@@ -308,10 +270,8 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"index$": 0,
 							},
 						},
-						"key$": "create",
 					},
 				},
 				"relations": map[string]any{
@@ -321,32 +281,22 @@ func MakeConfig() map[string]any {
 			"output_assign_role": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"active": true,
 						"name": "consumerUUID",
 						"req": true,
 						"type": "`$STRING`",
-						"index$": 0,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseCode",
-						"req": false,
 						"type": "`$INTEGER`",
-						"index$": 1,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseMessage",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 2,
 					},
 					map[string]any{
-						"active": true,
 						"name": "roles",
 						"req": true,
 						"type": "`$ARRAY`",
-						"index$": 3,
 					},
 				},
 				"name": "output_assign_role",
@@ -356,11 +306,9 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"active": true,
 								"args": map[string]any{
 									"header": []any{
 										map[string]any{
-											"active": true,
 											"kind": "header",
 											"name": "authorization",
 											"orig": "authorization",
@@ -384,10 +332,8 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"index$": 0,
 							},
 						},
-						"key$": "create",
 					},
 				},
 				"relations": map[string]any{
@@ -397,32 +343,22 @@ func MakeConfig() map[string]any {
 			"output_change_logo": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"active": true,
 						"name": "contentAsBase64",
 						"req": true,
 						"type": "`$STRING`",
-						"index$": 0,
 					},
 					map[string]any{
-						"active": true,
 						"name": "mimeType",
 						"req": true,
 						"type": "`$STRING`",
-						"index$": 1,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseCode",
-						"req": false,
 						"type": "`$INTEGER`",
-						"index$": 2,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseMessage",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 3,
 					},
 				},
 				"name": "output_change_logo",
@@ -432,11 +368,9 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"active": true,
 								"args": map[string]any{
 									"header": []any{
 										map[string]any{
-											"active": true,
 											"kind": "header",
 											"name": "authorization",
 											"orig": "authorization",
@@ -460,10 +394,8 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"index$": 0,
 							},
 						},
-						"key$": "create",
 					},
 				},
 				"relations": map[string]any{
@@ -473,28 +405,18 @@ func MakeConfig() map[string]any {
 			"output_create_mandator": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"active": true,
 						"name": "city",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 0,
 					},
 					map[string]any{
-						"active": true,
 						"name": "country",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 1,
 					},
 					map[string]any{
-						"active": true,
 						"name": "dateOfBirth",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 2,
 					},
 					map[string]any{
-						"active": true,
 						"name": "description",
 						"op": map[string]any{
 							"create": map[string]any{
@@ -502,54 +424,35 @@ func MakeConfig() map[string]any {
 								"type": "`$STRING`",
 							},
 						},
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 3,
 					},
 					map[string]any{
-						"active": true,
 						"name": "driversLicenseNumber",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 4,
 					},
 					map[string]any{
-						"active": true,
 						"name": "email",
 						"req": true,
 						"type": "`$STRING`",
-						"index$": 5,
 					},
 					map[string]any{
-						"active": true,
 						"name": "firstName",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 6,
 					},
 					map[string]any{
-						"active": true,
 						"name": "identificationNumber",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 7,
 					},
 					map[string]any{
-						"active": true,
 						"name": "lastName",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 8,
 					},
 					map[string]any{
-						"active": true,
 						"name": "login",
 						"req": true,
 						"type": "`$STRING`",
-						"index$": 9,
 					},
 					map[string]any{
-						"active": true,
 						"name": "name",
 						"op": map[string]any{
 							"create": map[string]any{
@@ -557,58 +460,36 @@ func MakeConfig() map[string]any {
 								"type": "`$STRING`",
 							},
 						},
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 10,
 					},
 					map[string]any{
-						"active": true,
 						"name": "passportNumber",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 11,
 					},
 					map[string]any{
-						"active": true,
 						"name": "phone",
 						"req": true,
 						"type": "`$STRING`",
-						"index$": 12,
 					},
 					map[string]any{
-						"active": true,
 						"name": "salutation",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 13,
 					},
 					map[string]any{
-						"active": true,
 						"name": "state",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 14,
 					},
 					map[string]any{
-						"active": true,
 						"name": "street1",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 15,
 					},
 					map[string]any{
-						"active": true,
 						"name": "street2",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 16,
 					},
 					map[string]any{
-						"active": true,
 						"name": "zipCode",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 17,
 					},
 				},
 				"name": "output_create_mandator",
@@ -618,11 +499,9 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"active": true,
 								"args": map[string]any{
 									"header": []any{
 										map[string]any{
-											"active": true,
 											"kind": "header",
 											"name": "authorization",
 											"orig": "authorization",
@@ -646,10 +525,8 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"index$": 0,
 							},
 						},
-						"key$": "create",
 					},
 				},
 				"relations": map[string]any{
@@ -659,25 +536,17 @@ func MakeConfig() map[string]any {
 			"output_create_service_user": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"active": true,
 						"name": "mandatorName",
 						"req": true,
 						"type": "`$STRING`",
-						"index$": 0,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseCode",
-						"req": false,
 						"type": "`$INTEGER`",
-						"index$": 1,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseMessage",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 2,
 					},
 				},
 				"name": "output_create_service_user",
@@ -687,11 +556,9 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"active": true,
 								"args": map[string]any{
 									"header": []any{
 										map[string]any{
-											"active": true,
 											"kind": "header",
 											"name": "authorization",
 											"orig": "authorization",
@@ -715,10 +582,8 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"index$": 0,
 							},
 						},
-						"key$": "create",
 					},
 				},
 				"relations": map[string]any{
@@ -728,25 +593,16 @@ func MakeConfig() map[string]any {
 			"output_deactivate_user": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"active": true,
 						"name": "consumerUUID",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 0,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseCode",
-						"req": false,
 						"type": "`$INTEGER`",
-						"index$": 1,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseMessage",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 2,
 					},
 				},
 				"name": "output_deactivate_user",
@@ -756,11 +612,9 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"active": true,
 								"args": map[string]any{
 									"header": []any{
 										map[string]any{
-											"active": true,
 											"kind": "header",
 											"name": "authorization",
 											"orig": "authorization",
@@ -784,10 +638,8 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"index$": 0,
 							},
 						},
-						"key$": "create",
 					},
 				},
 				"relations": map[string]any{
@@ -797,32 +649,20 @@ func MakeConfig() map[string]any {
 			"output_get_kyc_document": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"active": true,
 						"name": "caseID",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 0,
 					},
 					map[string]any{
-						"active": true,
 						"name": "encodedDataBase64",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 1,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseCode",
-						"req": false,
 						"type": "`$INTEGER`",
-						"index$": 2,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseMessage",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 3,
 					},
 				},
 				"name": "output_get_kyc_document",
@@ -832,11 +672,9 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"active": true,
 								"args": map[string]any{
 									"header": []any{
 										map[string]any{
-											"active": true,
 											"kind": "header",
 											"name": "authorization",
 											"orig": "authorization",
@@ -860,10 +698,8 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"index$": 0,
 							},
 						},
-						"key$": "create",
 					},
 				},
 				"relations": map[string]any{
@@ -873,32 +709,22 @@ func MakeConfig() map[string]any {
 			"output_get_logo": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"active": true,
 						"name": "contentAsBase64",
 						"req": true,
 						"type": "`$STRING`",
-						"index$": 0,
 					},
 					map[string]any{
-						"active": true,
 						"name": "mimeType",
 						"req": true,
 						"type": "`$STRING`",
-						"index$": 1,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseCode",
-						"req": false,
 						"type": "`$INTEGER`",
-						"index$": 2,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseMessage",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 3,
 					},
 				},
 				"name": "output_get_logo",
@@ -908,11 +734,9 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"active": true,
 								"args": map[string]any{
 									"header": []any{
 										map[string]any{
-											"active": true,
 											"kind": "header",
 											"name": "authorization",
 											"orig": "authorization",
@@ -936,10 +760,8 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"index$": 0,
 							},
 						},
-						"key$": "load",
 					},
 				},
 				"relations": map[string]any{
@@ -949,25 +771,16 @@ func MakeConfig() map[string]any {
 			"output_list_of_available_role": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"active": true,
 						"name": "availableRoles",
-						"req": false,
 						"type": "`$ARRAY`",
-						"index$": 0,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseCode",
-						"req": false,
 						"type": "`$INTEGER`",
-						"index$": 1,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseMessage",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 2,
 					},
 				},
 				"name": "output_list_of_available_role",
@@ -977,11 +790,9 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"active": true,
 								"args": map[string]any{
 									"header": []any{
 										map[string]any{
-											"active": true,
 											"kind": "header",
 											"name": "authorization",
 											"orig": "authorization",
@@ -1005,10 +816,8 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"index$": 0,
 							},
 						},
-						"key$": "create",
 					},
 				},
 				"relations": map[string]any{
@@ -1018,46 +827,28 @@ func MakeConfig() map[string]any {
 			"output_list_of_mandator": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"active": true,
 						"name": "filter",
-						"req": false,
 						"type": "`$OBJECT`",
-						"index$": 0,
 					},
 					map[string]any{
-						"active": true,
 						"name": "list",
-						"req": false,
 						"type": "`$ARRAY`",
-						"index$": 1,
 					},
 					map[string]any{
-						"active": true,
 						"name": "pagination",
-						"req": false,
 						"type": "`$OBJECT`",
-						"index$": 2,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseCode",
-						"req": false,
 						"type": "`$INTEGER`",
-						"index$": 3,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseMessage",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 4,
 					},
 					map[string]any{
-						"active": true,
 						"name": "sorting",
-						"req": false,
 						"type": "`$OBJECT`",
-						"index$": 5,
 					},
 				},
 				"name": "output_list_of_mandator",
@@ -1067,11 +858,9 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"active": true,
 								"args": map[string]any{
 									"header": []any{
 										map[string]any{
-											"active": true,
 											"kind": "header",
 											"name": "authorization",
 											"orig": "authorization",
@@ -1095,10 +884,8 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"index$": 0,
 							},
 						},
-						"key$": "create",
 					},
 				},
 				"relations": map[string]any{
@@ -1108,32 +895,20 @@ func MakeConfig() map[string]any {
 			"output_list_of_module": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"active": true,
 						"name": "list",
-						"req": false,
 						"type": "`$ARRAY`",
-						"index$": 0,
 					},
 					map[string]any{
-						"active": true,
 						"name": "pagination",
-						"req": false,
 						"type": "`$OBJECT`",
-						"index$": 1,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseCode",
-						"req": false,
 						"type": "`$INTEGER`",
-						"index$": 2,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseMessage",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 3,
 					},
 				},
 				"name": "output_list_of_module",
@@ -1143,11 +918,9 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"active": true,
 								"args": map[string]any{
 									"header": []any{
 										map[string]any{
-											"active": true,
 											"kind": "header",
 											"name": "authorization",
 											"orig": "authorization",
@@ -1171,10 +944,8 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"index$": 0,
 							},
 						},
-						"key$": "create",
 					},
 				},
 				"relations": map[string]any{
@@ -1184,46 +955,28 @@ func MakeConfig() map[string]any {
 			"output_list_of_role_group": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"active": true,
 						"name": "filter",
-						"req": false,
 						"type": "`$OBJECT`",
-						"index$": 0,
 					},
 					map[string]any{
-						"active": true,
 						"name": "groupRoles",
-						"req": false,
 						"type": "`$ARRAY`",
-						"index$": 1,
 					},
 					map[string]any{
-						"active": true,
 						"name": "pagination",
-						"req": false,
 						"type": "`$OBJECT`",
-						"index$": 2,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseCode",
-						"req": false,
 						"type": "`$INTEGER`",
-						"index$": 3,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseMessage",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 4,
 					},
 					map[string]any{
-						"active": true,
 						"name": "sorting",
-						"req": false,
 						"type": "`$OBJECT`",
-						"index$": 5,
 					},
 				},
 				"name": "output_list_of_role_group",
@@ -1233,11 +986,9 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"active": true,
 								"args": map[string]any{
 									"header": []any{
 										map[string]any{
-											"active": true,
 											"kind": "header",
 											"name": "authorization",
 											"orig": "authorization",
@@ -1261,10 +1012,8 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"index$": 0,
 							},
 						},
-						"key$": "create",
 					},
 				},
 				"relations": map[string]any{
@@ -1274,46 +1023,28 @@ func MakeConfig() map[string]any {
 			"output_list_of_transactions_history": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"active": true,
 						"name": "filter",
-						"req": false,
 						"type": "`$OBJECT`",
-						"index$": 0,
 					},
 					map[string]any{
-						"active": true,
 						"name": "list",
-						"req": false,
 						"type": "`$ARRAY`",
-						"index$": 1,
 					},
 					map[string]any{
-						"active": true,
 						"name": "pagination",
-						"req": false,
 						"type": "`$OBJECT`",
-						"index$": 2,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseCode",
-						"req": false,
 						"type": "`$INTEGER`",
-						"index$": 3,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseMessage",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 4,
 					},
 					map[string]any{
-						"active": true,
 						"name": "sorting",
-						"req": false,
 						"type": "`$OBJECT`",
-						"index$": 5,
 					},
 				},
 				"name": "output_list_of_transactions_history",
@@ -1323,11 +1054,9 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"active": true,
 								"args": map[string]any{
 									"header": []any{
 										map[string]any{
-											"active": true,
 											"kind": "header",
 											"name": "authorization",
 											"orig": "authorization",
@@ -1351,10 +1080,8 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"index$": 0,
 							},
 						},
-						"key$": "create",
 					},
 				},
 				"relations": map[string]any{
@@ -1364,46 +1091,28 @@ func MakeConfig() map[string]any {
 			"output_list_of_user": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"active": true,
 						"name": "filter",
-						"req": false,
 						"type": "`$OBJECT`",
-						"index$": 0,
 					},
 					map[string]any{
-						"active": true,
 						"name": "list",
-						"req": false,
 						"type": "`$ARRAY`",
-						"index$": 1,
 					},
 					map[string]any{
-						"active": true,
 						"name": "pagination",
-						"req": false,
 						"type": "`$OBJECT`",
-						"index$": 2,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseCode",
-						"req": false,
 						"type": "`$INTEGER`",
-						"index$": 3,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseMessage",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 4,
 					},
 					map[string]any{
-						"active": true,
 						"name": "sorting",
-						"req": false,
 						"type": "`$OBJECT`",
-						"index$": 5,
 					},
 				},
 				"name": "output_list_of_user",
@@ -1413,11 +1122,9 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"active": true,
 								"args": map[string]any{
 									"header": []any{
 										map[string]any{
-											"active": true,
 											"kind": "header",
 											"name": "authorization",
 											"orig": "authorization",
@@ -1441,10 +1148,8 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"index$": 0,
 							},
 						},
-						"key$": "create",
 					},
 				},
 				"relations": map[string]any{
@@ -1454,39 +1159,25 @@ func MakeConfig() map[string]any {
 			"output_provide_credential": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"active": true,
 						"name": "mandatorName",
 						"req": true,
 						"type": "`$STRING`",
-						"index$": 0,
 					},
 					map[string]any{
-						"active": true,
 						"name": "password",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 1,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseCode",
-						"req": false,
 						"type": "`$INTEGER`",
-						"index$": 2,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseMessage",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 3,
 					},
 					map[string]any{
-						"active": true,
 						"name": "username",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 4,
 					},
 				},
 				"name": "output_provide_credential",
@@ -1496,11 +1187,9 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"active": true,
 								"args": map[string]any{
 									"header": []any{
 										map[string]any{
-											"active": true,
 											"kind": "header",
 											"name": "authorization",
 											"orig": "authorization",
@@ -1524,10 +1213,8 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"index$": 0,
 							},
 						},
-						"key$": "create",
 					},
 				},
 				"relations": map[string]any{
@@ -1537,151 +1224,89 @@ func MakeConfig() map[string]any {
 			"output_register_user": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"active": true,
 						"name": "city",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 0,
 					},
 					map[string]any{
-						"active": true,
 						"name": "consumerId",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 1,
 					},
 					map[string]any{
-						"active": true,
 						"name": "consumerLanguage",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 2,
 					},
 					map[string]any{
-						"active": true,
 						"name": "country",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 3,
 					},
 					map[string]any{
-						"active": true,
 						"name": "dateOfBirth",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 4,
 					},
 					map[string]any{
-						"active": true,
 						"name": "driverLicenceNumber",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 5,
 					},
 					map[string]any{
-						"active": true,
 						"name": "email",
 						"req": true,
 						"type": "`$STRING`",
-						"index$": 6,
 					},
 					map[string]any{
-						"active": true,
 						"name": "firstName",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 7,
 					},
 					map[string]any{
-						"active": true,
 						"name": "identificationNumber",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 8,
 					},
 					map[string]any{
-						"active": true,
 						"name": "lastName",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 9,
 					},
 					map[string]any{
-						"active": true,
 						"name": "login",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 10,
 					},
 					map[string]any{
-						"active": true,
 						"name": "module",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 11,
 					},
 					map[string]any{
-						"active": true,
 						"name": "passportNumber",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 12,
 					},
 					map[string]any{
-						"active": true,
 						"name": "phone",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 13,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseCode",
-						"req": false,
 						"type": "`$INTEGER`",
-						"index$": 14,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseMessage",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 15,
 					},
 					map[string]any{
-						"active": true,
 						"name": "salutation",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 16,
 					},
 					map[string]any{
-						"active": true,
 						"name": "state",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 17,
 					},
 					map[string]any{
-						"active": true,
 						"name": "street1",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 18,
 					},
 					map[string]any{
-						"active": true,
 						"name": "street2",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 19,
 					},
 					map[string]any{
-						"active": true,
 						"name": "zip",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 20,
 					},
 				},
 				"name": "output_register_user",
@@ -1691,11 +1316,9 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"active": true,
 								"args": map[string]any{
 									"header": []any{
 										map[string]any{
-											"active": true,
 											"kind": "header",
 											"name": "authorization",
 											"orig": "authorization",
@@ -1719,10 +1342,8 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"index$": 0,
 							},
 						},
-						"key$": "create",
 					},
 				},
 				"relations": map[string]any{
@@ -1732,32 +1353,20 @@ func MakeConfig() map[string]any {
 			"output_remove_role": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"active": true,
 						"name": "consumerUUID",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 0,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseCode",
-						"req": false,
 						"type": "`$INTEGER`",
-						"index$": 1,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseMessage",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 2,
 					},
 					map[string]any{
-						"active": true,
 						"name": "roles",
-						"req": false,
 						"type": "`$ARRAY`",
-						"index$": 3,
 					},
 				},
 				"name": "output_remove_role",
@@ -1767,11 +1376,9 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"active": true,
 								"args": map[string]any{
 									"header": []any{
 										map[string]any{
-											"active": true,
 											"kind": "header",
 											"name": "authorization",
 											"orig": "authorization",
@@ -1795,10 +1402,8 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"index$": 0,
 							},
 						},
-						"key$": "create",
 					},
 				},
 				"relations": map[string]any{
@@ -1808,46 +1413,29 @@ func MakeConfig() map[string]any {
 			"output_resend_link": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"active": true,
 						"name": "businessRegistrationNumber",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 0,
 					},
 					map[string]any{
-						"active": true,
 						"name": "consumerUUID",
 						"req": true,
 						"type": "`$STRING`",
-						"index$": 1,
 					},
 					map[string]any{
-						"active": true,
 						"name": "emailConfirmationCode",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 2,
 					},
 					map[string]any{
-						"active": true,
 						"name": "phoneNumber",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 3,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseCode",
-						"req": false,
 						"type": "`$INTEGER`",
-						"index$": 4,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseMessage",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 5,
 					},
 				},
 				"name": "output_resend_link",
@@ -1857,15 +1445,12 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"active": true,
 								"args": map[string]any{
 									"header": []any{
 										map[string]any{
-											"active": true,
 											"kind": "header",
 											"name": "authorization",
 											"orig": "authorization",
-											"reqd": false,
 											"type": "`$STRING`",
 										},
 									},
@@ -1885,10 +1470,8 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"index$": 0,
 							},
 						},
-						"key$": "create",
 					},
 				},
 				"relations": map[string]any{
@@ -1898,32 +1481,20 @@ func MakeConfig() map[string]any {
 			"output_reset_password": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"active": true,
 						"name": "consumerUuid",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 0,
 					},
 					map[string]any{
-						"active": true,
 						"name": "phoneNumber",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 1,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseCode",
-						"req": false,
 						"type": "`$INTEGER`",
-						"index$": 2,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseMessage",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 3,
 					},
 				},
 				"name": "output_reset_password",
@@ -1933,11 +1504,9 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"active": true,
 								"args": map[string]any{
 									"header": []any{
 										map[string]any{
-											"active": true,
 											"kind": "header",
 											"name": "authorization",
 											"orig": "authorization",
@@ -1961,10 +1530,8 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"index$": 0,
 							},
 						},
-						"key$": "create",
 					},
 				},
 				"relations": map[string]any{
@@ -1974,165 +1541,97 @@ func MakeConfig() map[string]any {
 			"output_update_consumer": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"active": true,
 						"name": "city",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 0,
 					},
 					map[string]any{
-						"active": true,
 						"name": "consumerUuid",
 						"req": true,
 						"type": "`$STRING`",
-						"index$": 1,
 					},
 					map[string]any{
-						"active": true,
 						"name": "consumerlanguage",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 2,
 					},
 					map[string]any{
-						"active": true,
 						"name": "country",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 3,
 					},
 					map[string]any{
-						"active": true,
 						"name": "dateOfBirth",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 4,
 					},
 					map[string]any{
-						"active": true,
 						"name": "datetime_created",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 5,
 					},
 					map[string]any{
-						"active": true,
 						"name": "driverLicenceNumber",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 6,
 					},
 					map[string]any{
-						"active": true,
 						"name": "email",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 7,
 					},
 					map[string]any{
-						"active": true,
 						"name": "firstName",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 8,
 					},
 					map[string]any{
-						"active": true,
 						"name": "identificationNumber",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 9,
 					},
 					map[string]any{
-						"active": true,
 						"name": "kycPassed",
-						"req": false,
 						"type": "`$BOOLEAN`",
-						"index$": 10,
 					},
 					map[string]any{
-						"active": true,
 						"name": "lastName",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 11,
 					},
 					map[string]any{
-						"active": true,
 						"name": "nationality",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 12,
 					},
 					map[string]any{
-						"active": true,
 						"name": "passportNumber",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 13,
 					},
 					map[string]any{
-						"active": true,
 						"name": "phoneNumber",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 14,
 					},
 					map[string]any{
-						"active": true,
 						"name": "placeOfBirth",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 15,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseCode",
-						"req": false,
 						"type": "`$INTEGER`",
-						"index$": 16,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseMessage",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 17,
 					},
 					map[string]any{
-						"active": true,
 						"name": "state",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 18,
 					},
 					map[string]any{
-						"active": true,
 						"name": "street1",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 19,
 					},
 					map[string]any{
-						"active": true,
 						"name": "street2",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 20,
 					},
 					map[string]any{
-						"active": true,
 						"name": "transactionhistory_id",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 21,
 					},
 					map[string]any{
-						"active": true,
 						"name": "zip",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 22,
 					},
 				},
 				"name": "output_update_consumer",
@@ -2142,15 +1641,12 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"active": true,
 								"args": map[string]any{
 									"header": []any{
 										map[string]any{
-											"active": true,
 											"kind": "header",
 											"name": "authorization",
 											"orig": "authorization",
-											"reqd": false,
 											"type": "`$STRING`",
 										},
 									},
@@ -2170,10 +1666,8 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"index$": 0,
 							},
 						},
-						"key$": "create",
 					},
 				},
 				"relations": map[string]any{
@@ -2183,53 +1677,32 @@ func MakeConfig() map[string]any {
 			"output_update_profile": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"active": true,
 						"name": "consumerLanguage",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 0,
 					},
 					map[string]any{
-						"active": true,
 						"name": "email",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 1,
 					},
 					map[string]any{
-						"active": true,
 						"name": "firstName",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 2,
 					},
 					map[string]any{
-						"active": true,
 						"name": "lastName",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 3,
 					},
 					map[string]any{
-						"active": true,
 						"name": "phoneNumber",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 4,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseCode",
-						"req": false,
 						"type": "`$INTEGER`",
-						"index$": 5,
 					},
 					map[string]any{
-						"active": true,
 						"name": "responseMessage",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 6,
 					},
 				},
 				"name": "output_update_profile",
@@ -2239,15 +1712,12 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"active": true,
 								"args": map[string]any{
 									"header": []any{
 										map[string]any{
-											"active": true,
 											"kind": "header",
 											"name": "authorization",
 											"orig": "authorization",
-											"reqd": false,
 											"type": "`$STRING`",
 										},
 									},
@@ -2267,10 +1737,8 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"index$": 0,
 							},
 						},
-						"key$": "create",
 					},
 				},
 				"relations": map[string]any{
@@ -2280,25 +1748,16 @@ func MakeConfig() map[string]any {
 			"version": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"active": true,
 						"name": "appName",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 0,
 					},
 					map[string]any{
-						"active": true,
 						"name": "buildDate",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 1,
 					},
 					map[string]any{
-						"active": true,
 						"name": "version",
-						"req": false,
 						"type": "`$STRING`",
-						"index$": 2,
 					},
 				},
 				"name": "version",
@@ -2308,7 +1767,6 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"active": true,
 								"args": map[string]any{},
 								"kind": "http",
 								"method": "GET",
@@ -2321,10 +1779,8 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"index$": 0,
 							},
 						},
-						"key$": "load",
 					},
 				},
 				"relations": map[string]any{
@@ -2333,6 +1789,24 @@ func MakeConfig() map[string]any {
 			},
 		},
 	}
+}
+
+var (
+	sharedConfigOnce sync.Once
+	sharedConfigVal  map[string]any
+)
+
+// SharedConfig returns the process-wide config, built once on first use.
+// The SDK reads the config on every request and never writes to it, so one
+// instance is shared by every client rather than rebuilt per client.
+//
+// The returned map is shared: treat it as read-only. Callers that need to
+// mutate should use MakeConfig, which always returns a fresh copy.
+func SharedConfig() map[string]any {
+	sharedConfigOnce.Do(func() {
+		sharedConfigVal = MakeConfig()
+	})
+	return sharedConfigVal
 }
 
 func makeFeature(name string) Feature {

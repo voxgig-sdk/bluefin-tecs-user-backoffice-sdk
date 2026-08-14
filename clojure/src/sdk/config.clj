@@ -8,36 +8,26 @@
       "output_activate_digital_module" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`"))
         "name" "output_activate_digital_module"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/activateDigitalModule"
@@ -54,48 +44,34 @@
       "output_activate_portal_module" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "clientSecret"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "notificationEmail"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`"))
         "name" "output_activate_portal_module"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/activateMerchantPortalModule"
@@ -112,36 +88,26 @@
       "output_activate_store_module" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`"))
         "name" "output_activate_store_module"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/activateAppStoreModule"
@@ -158,42 +124,29 @@
       "output_activate_user" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "consumerUUID"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`"))
         "name" "output_activate_user"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/activateUser"
@@ -210,26 +163,16 @@
       "output_assign_role" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "consumerUUID"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "roles"
             "req" true
             "type" "`$ARRAY`"))
@@ -237,21 +180,17 @@
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/assignRoles"
@@ -268,48 +207,34 @@
       "output_change_logo" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "contentAsBase64"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "mimeType"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`"))
         "name" "output_change_logo"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/changeLogo"
@@ -326,140 +251,85 @@
       "output_create_mandator" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "city"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "country"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "dateOfBirth"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "description"
             "op" (vs/jm
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "driversLicenseNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "email"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "firstName"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 7
             "name" "identificationNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 8
             "name" "lastName"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 9
             "name" "login"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 10
             "name" "name"
             "op" (vs/jm
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 11
             "name" "passportNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 12
             "name" "phone"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 13
             "name" "salutation"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 14
             "name" "state"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 15
             "name" "street1"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 16
             "name" "street2"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 17
             "name" "zipCode"
-            "req" false
             "type" "`$STRING`"))
         "name" "output_create_mandator"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/createMandator"
@@ -476,42 +346,30 @@
       "output_create_service_user" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "mandatorName"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`"))
         "name" "output_create_service_user"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/createServiceUser"
@@ -528,42 +386,29 @@
       "output_deactivate_user" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "consumerUUID"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`"))
         "name" "output_deactivate_user"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/deactivateUser"
@@ -580,48 +425,32 @@
       "output_get_kyc_document" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "caseID"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "encodedDataBase64"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`"))
         "name" "output_get_kyc_document"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/getKycDocument"
@@ -638,48 +467,34 @@
       "output_get_logo" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "contentAsBase64"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "mimeType"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`"))
         "name" "output_get_logo"
         "op" (vs/jm
           "load" (vs/jm
             "input" "data"
-            "key$" "load"
             "name" "load"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "GET"
                 "orig" "/getLogo"
@@ -696,42 +511,29 @@
       "output_list_of_available_role" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "availableRoles"
-            "req" false
             "type" "`$ARRAY`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`"))
         "name" "output_list_of_available_role"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/listOfAvailableRoles"
@@ -748,60 +550,38 @@
       "output_list_of_mandator" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "filter"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "list"
-            "req" false
             "type" "`$ARRAY`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "pagination"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "sorting"
-            "req" false
             "type" "`$OBJECT`"))
         "name" "output_list_of_mandator"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/listOfMandators"
@@ -818,48 +598,32 @@
       "output_list_of_module" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "list"
-            "req" false
             "type" "`$ARRAY`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "pagination"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`"))
         "name" "output_list_of_module"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/listOfModules"
@@ -876,60 +640,38 @@
       "output_list_of_role_group" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "filter"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "groupRoles"
-            "req" false
             "type" "`$ARRAY`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "pagination"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "sorting"
-            "req" false
             "type" "`$OBJECT`"))
         "name" "output_list_of_role_group"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/listOfRoleGroups"
@@ -946,60 +688,38 @@
       "output_list_of_transactions_history" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "filter"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "list"
-            "req" false
             "type" "`$ARRAY`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "pagination"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "sorting"
-            "req" false
             "type" "`$OBJECT`"))
         "name" "output_list_of_transactions_history"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/listOfTransactionsHistory"
@@ -1016,60 +736,38 @@
       "output_list_of_user" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "filter"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "list"
-            "req" false
             "type" "`$ARRAY`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "pagination"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "sorting"
-            "req" false
             "type" "`$OBJECT`"))
         "name" "output_list_of_user"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/listOfUsers"
@@ -1086,54 +784,36 @@
       "output_provide_credential" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "mandatorName"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "password"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "username"
-            "req" false
             "type" "`$STRING`"))
         "name" "output_provide_credential"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/provideCredentials"
@@ -1150,150 +830,84 @@
       "output_register_user" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "city"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "consumerId"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "consumerLanguage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "country"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "dateOfBirth"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "driverLicenceNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "email"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 7
             "name" "firstName"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 8
             "name" "identificationNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 9
             "name" "lastName"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 10
             "name" "login"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 11
             "name" "module"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 12
             "name" "passportNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 13
             "name" "phone"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 14
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 15
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 16
             "name" "salutation"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 17
             "name" "state"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 18
             "name" "street1"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 19
             "name" "street2"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 20
             "name" "zip"
-            "req" false
             "type" "`$STRING`"))
         "name" "output_register_user"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/registerUser"
@@ -1310,48 +924,32 @@
       "output_remove_role" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "consumerUUID"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "roles"
-            "req" false
             "type" "`$ARRAY`"))
         "name" "output_remove_role"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/removeRoles"
@@ -1368,60 +966,38 @@
       "output_resend_link" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "businessRegistrationNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "consumerUUID"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "emailConfirmationCode"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "phoneNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`"))
         "name" "output_resend_link"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
-                      "reqd" false
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/resendLink"
@@ -1438,48 +1014,32 @@
       "output_reset_password" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "consumerUuid"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "phoneNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`"))
         "name" "output_reset_password"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/resetPassword"
@@ -1496,162 +1056,89 @@
       "output_update_consumer" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "city"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "consumerUuid"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "consumerlanguage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "country"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "dateOfBirth"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "datetime_created"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "driverLicenceNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 7
             "name" "email"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 8
             "name" "firstName"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 9
             "name" "identificationNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 10
             "name" "kycPassed"
-            "req" false
             "type" "`$BOOLEAN`")
           (vs/jm
-            "active" true
-            "index$" 11
             "name" "lastName"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 12
             "name" "nationality"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 13
             "name" "passportNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 14
             "name" "phoneNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 15
             "name" "placeOfBirth"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 16
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 17
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 18
             "name" "state"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 19
             "name" "street1"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 20
             "name" "street2"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 21
             "name" "transactionhistory_id"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 22
             "name" "zip"
-            "req" false
             "type" "`$STRING`"))
         "name" "output_update_consumer"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
-                      "reqd" false
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/updateConsumer"
@@ -1668,66 +1155,40 @@
       "output_update_profile" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "consumerLanguage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "email"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "firstName"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "lastName"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "phoneNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`"))
         "name" "output_update_profile"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
-                      "reqd" false
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/updateProfile"
@@ -1744,34 +1205,22 @@
       "version" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "appName"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "buildDate"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "version"
-            "req" false
             "type" "`$STRING`"))
         "name" "version"
         "op" (vs/jm
           "load" (vs/jm
             "input" "data"
-            "key$" "load"
             "name" "load"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "GET"
                 "orig" "/version"

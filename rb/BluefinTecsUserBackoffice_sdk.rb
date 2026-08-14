@@ -28,7 +28,7 @@ class BluefinTecsUserBackofficeSDK
     utility = BluefinTecsUserBackofficeUtility.new
     @_utility = utility
 
-    config = BluefinTecsUserBackofficeConfig.make_config
+    config = BluefinTecsUserBackofficeConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

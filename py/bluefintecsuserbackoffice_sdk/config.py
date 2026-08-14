@@ -1,7 +1,30 @@
 # BluefinTecsUserBackoffice SDK configuration
 
 
+_shared_config = None
+
+
+def shared_config():
+    """Return the process-wide config, built once on first use.
+
+    The SDK reads the config on every request and never writes to it, so one
+    instance is shared by every client rather than rebuilt per client.
+
+    The returned dict is shared: treat it as read-only. Callers that need to
+    mutate should use make_config, which always returns a fresh copy.
+    """
+    global _shared_config
+    if _shared_config is None:
+        _shared_config = make_config()
+    return _shared_config
+
+
 def make_config():
+    """Build a fresh, fully materialised config dict.
+
+    Every call rebuilds the whole structure, so prefer shared_config unless
+    you need a private copy you intend to mutate.
+    """
     return {
         "main": {
             "name": "BluefinTecsUserBackoffice",
@@ -53,18 +76,12 @@ def make_config():
       "output_activate_digital_module": {
         "fields": [
           {
-            "active": True,
             "name": "responseCode",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "responseMessage",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 1,
           },
         ],
         "name": "output_activate_digital_module",
@@ -74,11 +91,9 @@ def make_config():
             "name": "create",
             "points": [
               {
-                "active": True,
                 "args": {
                   "header": [
                     {
-                      "active": True,
                       "kind": "header",
                       "name": "authorization",
                       "orig": "authorization",
@@ -102,10 +117,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "create",
           },
         },
         "relations": {
@@ -115,32 +128,22 @@ def make_config():
       "output_activate_portal_module": {
         "fields": [
           {
-            "active": True,
             "name": "clientSecret",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "notificationEmail",
             "req": True,
             "type": "`$STRING`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "responseCode",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "responseMessage",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 3,
           },
         ],
         "name": "output_activate_portal_module",
@@ -150,11 +153,9 @@ def make_config():
             "name": "create",
             "points": [
               {
-                "active": True,
                 "args": {
                   "header": [
                     {
-                      "active": True,
                       "kind": "header",
                       "name": "authorization",
                       "orig": "authorization",
@@ -178,10 +179,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "create",
           },
         },
         "relations": {
@@ -191,18 +190,12 @@ def make_config():
       "output_activate_store_module": {
         "fields": [
           {
-            "active": True,
             "name": "responseCode",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "responseMessage",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 1,
           },
         ],
         "name": "output_activate_store_module",
@@ -212,11 +205,9 @@ def make_config():
             "name": "create",
             "points": [
               {
-                "active": True,
                 "args": {
                   "header": [
                     {
-                      "active": True,
                       "kind": "header",
                       "name": "authorization",
                       "orig": "authorization",
@@ -240,10 +231,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "create",
           },
         },
         "relations": {
@@ -253,25 +242,16 @@ def make_config():
       "output_activate_user": {
         "fields": [
           {
-            "active": True,
             "name": "consumerUUID",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "responseCode",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "responseMessage",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 2,
           },
         ],
         "name": "output_activate_user",
@@ -281,11 +261,9 @@ def make_config():
             "name": "create",
             "points": [
               {
-                "active": True,
                 "args": {
                   "header": [
                     {
-                      "active": True,
                       "kind": "header",
                       "name": "authorization",
                       "orig": "authorization",
@@ -309,10 +287,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "create",
           },
         },
         "relations": {
@@ -322,32 +298,22 @@ def make_config():
       "output_assign_role": {
         "fields": [
           {
-            "active": True,
             "name": "consumerUUID",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "responseCode",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "responseMessage",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "roles",
             "req": True,
             "type": "`$ARRAY`",
-            "index$": 3,
           },
         ],
         "name": "output_assign_role",
@@ -357,11 +323,9 @@ def make_config():
             "name": "create",
             "points": [
               {
-                "active": True,
                 "args": {
                   "header": [
                     {
-                      "active": True,
                       "kind": "header",
                       "name": "authorization",
                       "orig": "authorization",
@@ -385,10 +349,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "create",
           },
         },
         "relations": {
@@ -398,32 +360,22 @@ def make_config():
       "output_change_logo": {
         "fields": [
           {
-            "active": True,
             "name": "contentAsBase64",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "mimeType",
             "req": True,
             "type": "`$STRING`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "responseCode",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "responseMessage",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 3,
           },
         ],
         "name": "output_change_logo",
@@ -433,11 +385,9 @@ def make_config():
             "name": "create",
             "points": [
               {
-                "active": True,
                 "args": {
                   "header": [
                     {
-                      "active": True,
                       "kind": "header",
                       "name": "authorization",
                       "orig": "authorization",
@@ -461,10 +411,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "create",
           },
         },
         "relations": {
@@ -474,28 +422,18 @@ def make_config():
       "output_create_mandator": {
         "fields": [
           {
-            "active": True,
             "name": "city",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "country",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "dateOfBirth",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "description",
             "op": {
               "create": {
@@ -503,54 +441,35 @@ def make_config():
                 "type": "`$STRING`",
               },
             },
-            "req": False,
             "type": "`$STRING`",
-            "index$": 3,
           },
           {
-            "active": True,
             "name": "driversLicenseNumber",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 4,
           },
           {
-            "active": True,
             "name": "email",
             "req": True,
             "type": "`$STRING`",
-            "index$": 5,
           },
           {
-            "active": True,
             "name": "firstName",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 6,
           },
           {
-            "active": True,
             "name": "identificationNumber",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 7,
           },
           {
-            "active": True,
             "name": "lastName",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 8,
           },
           {
-            "active": True,
             "name": "login",
             "req": True,
             "type": "`$STRING`",
-            "index$": 9,
           },
           {
-            "active": True,
             "name": "name",
             "op": {
               "create": {
@@ -558,58 +477,36 @@ def make_config():
                 "type": "`$STRING`",
               },
             },
-            "req": False,
             "type": "`$STRING`",
-            "index$": 10,
           },
           {
-            "active": True,
             "name": "passportNumber",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 11,
           },
           {
-            "active": True,
             "name": "phone",
             "req": True,
             "type": "`$STRING`",
-            "index$": 12,
           },
           {
-            "active": True,
             "name": "salutation",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 13,
           },
           {
-            "active": True,
             "name": "state",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 14,
           },
           {
-            "active": True,
             "name": "street1",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 15,
           },
           {
-            "active": True,
             "name": "street2",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 16,
           },
           {
-            "active": True,
             "name": "zipCode",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 17,
           },
         ],
         "name": "output_create_mandator",
@@ -619,11 +516,9 @@ def make_config():
             "name": "create",
             "points": [
               {
-                "active": True,
                 "args": {
                   "header": [
                     {
-                      "active": True,
                       "kind": "header",
                       "name": "authorization",
                       "orig": "authorization",
@@ -647,10 +542,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "create",
           },
         },
         "relations": {
@@ -660,25 +553,17 @@ def make_config():
       "output_create_service_user": {
         "fields": [
           {
-            "active": True,
             "name": "mandatorName",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "responseCode",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "responseMessage",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 2,
           },
         ],
         "name": "output_create_service_user",
@@ -688,11 +573,9 @@ def make_config():
             "name": "create",
             "points": [
               {
-                "active": True,
                 "args": {
                   "header": [
                     {
-                      "active": True,
                       "kind": "header",
                       "name": "authorization",
                       "orig": "authorization",
@@ -716,10 +599,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "create",
           },
         },
         "relations": {
@@ -729,25 +610,16 @@ def make_config():
       "output_deactivate_user": {
         "fields": [
           {
-            "active": True,
             "name": "consumerUUID",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "responseCode",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "responseMessage",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 2,
           },
         ],
         "name": "output_deactivate_user",
@@ -757,11 +629,9 @@ def make_config():
             "name": "create",
             "points": [
               {
-                "active": True,
                 "args": {
                   "header": [
                     {
-                      "active": True,
                       "kind": "header",
                       "name": "authorization",
                       "orig": "authorization",
@@ -785,10 +655,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "create",
           },
         },
         "relations": {
@@ -798,32 +666,20 @@ def make_config():
       "output_get_kyc_document": {
         "fields": [
           {
-            "active": True,
             "name": "caseID",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "encodedDataBase64",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "responseCode",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "responseMessage",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 3,
           },
         ],
         "name": "output_get_kyc_document",
@@ -833,11 +689,9 @@ def make_config():
             "name": "create",
             "points": [
               {
-                "active": True,
                 "args": {
                   "header": [
                     {
-                      "active": True,
                       "kind": "header",
                       "name": "authorization",
                       "orig": "authorization",
@@ -861,10 +715,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "create",
           },
         },
         "relations": {
@@ -874,32 +726,22 @@ def make_config():
       "output_get_logo": {
         "fields": [
           {
-            "active": True,
             "name": "contentAsBase64",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "mimeType",
             "req": True,
             "type": "`$STRING`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "responseCode",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "responseMessage",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 3,
           },
         ],
         "name": "output_get_logo",
@@ -909,11 +751,9 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {
                   "header": [
                     {
-                      "active": True,
                       "kind": "header",
                       "name": "authorization",
                       "orig": "authorization",
@@ -937,10 +777,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
@@ -950,25 +788,16 @@ def make_config():
       "output_list_of_available_role": {
         "fields": [
           {
-            "active": True,
             "name": "availableRoles",
-            "req": False,
             "type": "`$ARRAY`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "responseCode",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "responseMessage",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 2,
           },
         ],
         "name": "output_list_of_available_role",
@@ -978,11 +807,9 @@ def make_config():
             "name": "create",
             "points": [
               {
-                "active": True,
                 "args": {
                   "header": [
                     {
-                      "active": True,
                       "kind": "header",
                       "name": "authorization",
                       "orig": "authorization",
@@ -1006,10 +833,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "create",
           },
         },
         "relations": {
@@ -1019,46 +844,28 @@ def make_config():
       "output_list_of_mandator": {
         "fields": [
           {
-            "active": True,
             "name": "filter",
-            "req": False,
             "type": "`$OBJECT`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "list",
-            "req": False,
             "type": "`$ARRAY`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "pagination",
-            "req": False,
             "type": "`$OBJECT`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "responseCode",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 3,
           },
           {
-            "active": True,
             "name": "responseMessage",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 4,
           },
           {
-            "active": True,
             "name": "sorting",
-            "req": False,
             "type": "`$OBJECT`",
-            "index$": 5,
           },
         ],
         "name": "output_list_of_mandator",
@@ -1068,11 +875,9 @@ def make_config():
             "name": "create",
             "points": [
               {
-                "active": True,
                 "args": {
                   "header": [
                     {
-                      "active": True,
                       "kind": "header",
                       "name": "authorization",
                       "orig": "authorization",
@@ -1096,10 +901,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "create",
           },
         },
         "relations": {
@@ -1109,32 +912,20 @@ def make_config():
       "output_list_of_module": {
         "fields": [
           {
-            "active": True,
             "name": "list",
-            "req": False,
             "type": "`$ARRAY`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "pagination",
-            "req": False,
             "type": "`$OBJECT`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "responseCode",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "responseMessage",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 3,
           },
         ],
         "name": "output_list_of_module",
@@ -1144,11 +935,9 @@ def make_config():
             "name": "create",
             "points": [
               {
-                "active": True,
                 "args": {
                   "header": [
                     {
-                      "active": True,
                       "kind": "header",
                       "name": "authorization",
                       "orig": "authorization",
@@ -1172,10 +961,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "create",
           },
         },
         "relations": {
@@ -1185,46 +972,28 @@ def make_config():
       "output_list_of_role_group": {
         "fields": [
           {
-            "active": True,
             "name": "filter",
-            "req": False,
             "type": "`$OBJECT`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "groupRoles",
-            "req": False,
             "type": "`$ARRAY`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "pagination",
-            "req": False,
             "type": "`$OBJECT`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "responseCode",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 3,
           },
           {
-            "active": True,
             "name": "responseMessage",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 4,
           },
           {
-            "active": True,
             "name": "sorting",
-            "req": False,
             "type": "`$OBJECT`",
-            "index$": 5,
           },
         ],
         "name": "output_list_of_role_group",
@@ -1234,11 +1003,9 @@ def make_config():
             "name": "create",
             "points": [
               {
-                "active": True,
                 "args": {
                   "header": [
                     {
-                      "active": True,
                       "kind": "header",
                       "name": "authorization",
                       "orig": "authorization",
@@ -1262,10 +1029,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "create",
           },
         },
         "relations": {
@@ -1275,46 +1040,28 @@ def make_config():
       "output_list_of_transactions_history": {
         "fields": [
           {
-            "active": True,
             "name": "filter",
-            "req": False,
             "type": "`$OBJECT`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "list",
-            "req": False,
             "type": "`$ARRAY`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "pagination",
-            "req": False,
             "type": "`$OBJECT`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "responseCode",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 3,
           },
           {
-            "active": True,
             "name": "responseMessage",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 4,
           },
           {
-            "active": True,
             "name": "sorting",
-            "req": False,
             "type": "`$OBJECT`",
-            "index$": 5,
           },
         ],
         "name": "output_list_of_transactions_history",
@@ -1324,11 +1071,9 @@ def make_config():
             "name": "create",
             "points": [
               {
-                "active": True,
                 "args": {
                   "header": [
                     {
-                      "active": True,
                       "kind": "header",
                       "name": "authorization",
                       "orig": "authorization",
@@ -1352,10 +1097,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "create",
           },
         },
         "relations": {
@@ -1365,46 +1108,28 @@ def make_config():
       "output_list_of_user": {
         "fields": [
           {
-            "active": True,
             "name": "filter",
-            "req": False,
             "type": "`$OBJECT`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "list",
-            "req": False,
             "type": "`$ARRAY`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "pagination",
-            "req": False,
             "type": "`$OBJECT`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "responseCode",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 3,
           },
           {
-            "active": True,
             "name": "responseMessage",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 4,
           },
           {
-            "active": True,
             "name": "sorting",
-            "req": False,
             "type": "`$OBJECT`",
-            "index$": 5,
           },
         ],
         "name": "output_list_of_user",
@@ -1414,11 +1139,9 @@ def make_config():
             "name": "create",
             "points": [
               {
-                "active": True,
                 "args": {
                   "header": [
                     {
-                      "active": True,
                       "kind": "header",
                       "name": "authorization",
                       "orig": "authorization",
@@ -1442,10 +1165,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "create",
           },
         },
         "relations": {
@@ -1455,39 +1176,25 @@ def make_config():
       "output_provide_credential": {
         "fields": [
           {
-            "active": True,
             "name": "mandatorName",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "password",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "responseCode",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "responseMessage",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 3,
           },
           {
-            "active": True,
             "name": "username",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 4,
           },
         ],
         "name": "output_provide_credential",
@@ -1497,11 +1204,9 @@ def make_config():
             "name": "create",
             "points": [
               {
-                "active": True,
                 "args": {
                   "header": [
                     {
-                      "active": True,
                       "kind": "header",
                       "name": "authorization",
                       "orig": "authorization",
@@ -1525,10 +1230,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "create",
           },
         },
         "relations": {
@@ -1538,151 +1241,89 @@ def make_config():
       "output_register_user": {
         "fields": [
           {
-            "active": True,
             "name": "city",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "consumerId",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "consumerLanguage",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "country",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 3,
           },
           {
-            "active": True,
             "name": "dateOfBirth",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 4,
           },
           {
-            "active": True,
             "name": "driverLicenceNumber",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 5,
           },
           {
-            "active": True,
             "name": "email",
             "req": True,
             "type": "`$STRING`",
-            "index$": 6,
           },
           {
-            "active": True,
             "name": "firstName",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 7,
           },
           {
-            "active": True,
             "name": "identificationNumber",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 8,
           },
           {
-            "active": True,
             "name": "lastName",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 9,
           },
           {
-            "active": True,
             "name": "login",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 10,
           },
           {
-            "active": True,
             "name": "module",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 11,
           },
           {
-            "active": True,
             "name": "passportNumber",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 12,
           },
           {
-            "active": True,
             "name": "phone",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 13,
           },
           {
-            "active": True,
             "name": "responseCode",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 14,
           },
           {
-            "active": True,
             "name": "responseMessage",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 15,
           },
           {
-            "active": True,
             "name": "salutation",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 16,
           },
           {
-            "active": True,
             "name": "state",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 17,
           },
           {
-            "active": True,
             "name": "street1",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 18,
           },
           {
-            "active": True,
             "name": "street2",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 19,
           },
           {
-            "active": True,
             "name": "zip",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 20,
           },
         ],
         "name": "output_register_user",
@@ -1692,11 +1333,9 @@ def make_config():
             "name": "create",
             "points": [
               {
-                "active": True,
                 "args": {
                   "header": [
                     {
-                      "active": True,
                       "kind": "header",
                       "name": "authorization",
                       "orig": "authorization",
@@ -1720,10 +1359,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "create",
           },
         },
         "relations": {
@@ -1733,32 +1370,20 @@ def make_config():
       "output_remove_role": {
         "fields": [
           {
-            "active": True,
             "name": "consumerUUID",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "responseCode",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "responseMessage",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "roles",
-            "req": False,
             "type": "`$ARRAY`",
-            "index$": 3,
           },
         ],
         "name": "output_remove_role",
@@ -1768,11 +1393,9 @@ def make_config():
             "name": "create",
             "points": [
               {
-                "active": True,
                 "args": {
                   "header": [
                     {
-                      "active": True,
                       "kind": "header",
                       "name": "authorization",
                       "orig": "authorization",
@@ -1796,10 +1419,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "create",
           },
         },
         "relations": {
@@ -1809,46 +1430,29 @@ def make_config():
       "output_resend_link": {
         "fields": [
           {
-            "active": True,
             "name": "businessRegistrationNumber",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "consumerUUID",
             "req": True,
             "type": "`$STRING`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "emailConfirmationCode",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "phoneNumber",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 3,
           },
           {
-            "active": True,
             "name": "responseCode",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 4,
           },
           {
-            "active": True,
             "name": "responseMessage",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 5,
           },
         ],
         "name": "output_resend_link",
@@ -1858,15 +1462,12 @@ def make_config():
             "name": "create",
             "points": [
               {
-                "active": True,
                 "args": {
                   "header": [
                     {
-                      "active": True,
                       "kind": "header",
                       "name": "authorization",
                       "orig": "authorization",
-                      "reqd": False,
                       "type": "`$STRING`",
                     },
                   ],
@@ -1886,10 +1487,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "create",
           },
         },
         "relations": {
@@ -1899,32 +1498,20 @@ def make_config():
       "output_reset_password": {
         "fields": [
           {
-            "active": True,
             "name": "consumerUuid",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "phoneNumber",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "responseCode",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "responseMessage",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 3,
           },
         ],
         "name": "output_reset_password",
@@ -1934,11 +1521,9 @@ def make_config():
             "name": "create",
             "points": [
               {
-                "active": True,
                 "args": {
                   "header": [
                     {
-                      "active": True,
                       "kind": "header",
                       "name": "authorization",
                       "orig": "authorization",
@@ -1962,10 +1547,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "create",
           },
         },
         "relations": {
@@ -1975,165 +1558,97 @@ def make_config():
       "output_update_consumer": {
         "fields": [
           {
-            "active": True,
             "name": "city",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "consumerUuid",
             "req": True,
             "type": "`$STRING`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "consumerlanguage",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "country",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 3,
           },
           {
-            "active": True,
             "name": "dateOfBirth",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 4,
           },
           {
-            "active": True,
             "name": "datetime_created",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 5,
           },
           {
-            "active": True,
             "name": "driverLicenceNumber",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 6,
           },
           {
-            "active": True,
             "name": "email",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 7,
           },
           {
-            "active": True,
             "name": "firstName",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 8,
           },
           {
-            "active": True,
             "name": "identificationNumber",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 9,
           },
           {
-            "active": True,
             "name": "kycPassed",
-            "req": False,
             "type": "`$BOOLEAN`",
-            "index$": 10,
           },
           {
-            "active": True,
             "name": "lastName",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 11,
           },
           {
-            "active": True,
             "name": "nationality",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 12,
           },
           {
-            "active": True,
             "name": "passportNumber",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 13,
           },
           {
-            "active": True,
             "name": "phoneNumber",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 14,
           },
           {
-            "active": True,
             "name": "placeOfBirth",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 15,
           },
           {
-            "active": True,
             "name": "responseCode",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 16,
           },
           {
-            "active": True,
             "name": "responseMessage",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 17,
           },
           {
-            "active": True,
             "name": "state",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 18,
           },
           {
-            "active": True,
             "name": "street1",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 19,
           },
           {
-            "active": True,
             "name": "street2",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 20,
           },
           {
-            "active": True,
             "name": "transactionhistory_id",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 21,
           },
           {
-            "active": True,
             "name": "zip",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 22,
           },
         ],
         "name": "output_update_consumer",
@@ -2143,15 +1658,12 @@ def make_config():
             "name": "create",
             "points": [
               {
-                "active": True,
                 "args": {
                   "header": [
                     {
-                      "active": True,
                       "kind": "header",
                       "name": "authorization",
                       "orig": "authorization",
-                      "reqd": False,
                       "type": "`$STRING`",
                     },
                   ],
@@ -2171,10 +1683,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "create",
           },
         },
         "relations": {
@@ -2184,53 +1694,32 @@ def make_config():
       "output_update_profile": {
         "fields": [
           {
-            "active": True,
             "name": "consumerLanguage",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "email",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "firstName",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "lastName",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 3,
           },
           {
-            "active": True,
             "name": "phoneNumber",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 4,
           },
           {
-            "active": True,
             "name": "responseCode",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 5,
           },
           {
-            "active": True,
             "name": "responseMessage",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 6,
           },
         ],
         "name": "output_update_profile",
@@ -2240,15 +1729,12 @@ def make_config():
             "name": "create",
             "points": [
               {
-                "active": True,
                 "args": {
                   "header": [
                     {
-                      "active": True,
                       "kind": "header",
                       "name": "authorization",
                       "orig": "authorization",
-                      "reqd": False,
                       "type": "`$STRING`",
                     },
                   ],
@@ -2268,10 +1754,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "create",
           },
         },
         "relations": {
@@ -2281,25 +1765,16 @@ def make_config():
       "version": {
         "fields": [
           {
-            "active": True,
             "name": "appName",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "buildDate",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "version",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 2,
           },
         ],
         "name": "version",
@@ -2309,7 +1784,6 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {},
                 "kind": "http",
                 "method": "GET",
@@ -2322,10 +1796,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
