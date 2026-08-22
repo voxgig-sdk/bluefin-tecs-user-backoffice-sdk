@@ -14,6 +14,27 @@ public final class Config {
     return (Map<String, Object>) Json.parse(configJson());
   }
 
+  // SHARED CONFIG (sdkgen rung L2).
+  //
+  // The SDK reads the config on every request and never writes to it, so one
+  // instance is shared by every client rather than rebuilt per client - the
+  // difference between parsing the embedded JSON once and once per client.
+  //
+  // Initialization-on-demand holder: the JLS guarantees the class initializer
+  // runs once, lazily, and safely under concurrency, with no locking on the
+  // read path.
+  private static final class SharedHolder {
+    static final Map<String, Object> VALUE = makeConfig();
+  }
+
+  // The process-wide config, built once on first use.
+  //
+  // The returned map is SHARED: treat it as read-only. Callers that need to
+  // mutate should use makeConfig, which always parses a fresh copy.
+  public static Map<String, Object> sharedConfig() {
+    return SharedHolder.VALUE;
+  }
+
   public static Feature makeFeature(String name) {
     switch (name) {
       case "test":
@@ -27,7 +48,10 @@ public final class Config {
     StringBuilder b = new StringBuilder();
     b.append("{");
     b.append(" \"main\": {");
-    b.append("  \"name\": \"BluefinTecsUserBackoffice\"");
+    b.append("  \"name\": \"BluefinTecsUserBackoffice\",");
+    b.append("  \"slug\": \"bluefin-tecs-user-backoffice\",");
+    b.append("  \"version\": \"0.0.1\",");
+    b.append("  \"target\": \"java\"");
     b.append(" },");
     b.append(" \"feature\": {");
     b.append("  \"test\": {");
@@ -300,19 +324,23 @@ public final class Config {
     b.append("    {");
     b.append("     \"name\": \"consumerUUID\",");
     b.append("     \"req\": true,");
+    b.append("     \"short\": \"Unique identifier of the consumer (user) to whom the role(s) will be assigned.\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"responseCode\",");
+    b.append("     \"short\": \"Response code: 0 indicates success; any non-zero value indicates an error.\",");
     b.append("     \"type\": \"`$INTEGER`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"responseMessage\",");
+    b.append("     \"short\": \"A human-readable message providing additional details about the outcome.\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"roles\",");
     b.append("     \"req\": true,");
+    b.append("     \"short\": \"List of roles to assign to the consumer.\",");
     b.append("     \"type\": \"`$ARRAY`\"");
     b.append("    }");
     b.append("   ],");
@@ -362,11 +390,13 @@ public final class Config {
     b.append("    {");
     b.append("     \"name\": \"contentAsBase64\",");
     b.append("     \"req\": true,");
+    b.append("     \"short\": \"The content of the image as base64 encoded string\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"mimeType\",");
     b.append("     \"req\": true,");
+    b.append("     \"short\": \"The MIME type of the image\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
@@ -728,11 +758,13 @@ public final class Config {
     b.append("    {");
     b.append("     \"name\": \"contentAsBase64\",");
     b.append("     \"req\": true,");
+    b.append("     \"short\": \"The content of the image as base64 encoded string\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"mimeType\",");
     b.append("     \"req\": true,");
+    b.append("     \"short\": \"The MIME type of the image\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
@@ -1242,87 +1274,108 @@ public final class Config {
     b.append("   \"fields\": [");
     b.append("    {");
     b.append("     \"name\": \"city\",");
+    b.append("     \"short\": \"City where the user resides.\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"consumerId\",");
+    b.append("     \"short\": \"User login or unique user identifier.\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"consumerLanguage\",");
+    b.append("     \"short\": \"Preferred language for the user (e.g., 'en').\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"country\",");
+    b.append("     \"short\": \"User's country.\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"dateOfBirth\",");
+    b.append("     \"short\": \"User's date of birth (expected format: dd.MM.yyyy).\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"driverLicenceNumber\",");
+    b.append("     \"short\": \"User's driver's license number.\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"email\",");
     b.append("     \"req\": true,");
+    b.append("     \"short\": \"User's email address (must be unique).\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"firstName\",");
+    b.append("     \"short\": \"User's first name.\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"identificationNumber\",");
+    b.append("     \"short\": \"User's identification number.\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"lastName\",");
+    b.append("     \"short\": \"User's last name.\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"login\",");
+    b.append("     \"short\": \"User login identifier (should be unique).\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"module\",");
+    b.append("     \"short\": \"Module identifier (if applicable).\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"passportNumber\",");
+    b.append("     \"short\": \"User's passport number.\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"phone\",");
+    b.append("     \"short\": \"User's phone number.\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"responseCode\",");
+    b.append("     \"short\": \"Response code (0 indicates success; non-zero indicates an error).\",");
     b.append("     \"type\": \"`$INTEGER`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"responseMessage\",");
+    b.append("     \"short\": \"Human-readable response message.\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"salutation\",");
+    b.append("     \"short\": \"User's salutation (e.g., Mr., Ms.).\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"state\",");
+    b.append("     \"short\": \"User's state or region.\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"street1\",");
+    b.append("     \"short\": \"Primary address line.\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"street2\",");
+    b.append("     \"short\": \"Secondary address line.\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"zip\",");
+    b.append("     \"short\": \"Postal code.\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    }");
     b.append("   ],");

@@ -372,10 +372,10 @@ auto output_assign_role = client->output_assign_role();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumerUUID` | `std::string` | Yes |  |
-| `responseCode` | `int64_t` | No |  |
-| `responseMessage` | `std::string` | No |  |
-| `roles` | `std::vector<Value>` | Yes |  |
+| `consumerUUID` | `std::string` | Yes | Unique identifier of the consumer (user) to whom the role(s) will be assigned. |
+| `responseCode` | `int64_t` | No | Response code: 0 indicates success; any non-zero value indicates an error. |
+| `responseMessage` | `std::string` | No | A human-readable message providing additional details about the outcome. |
+| `roles` | `std::vector<Value>` | Yes | List of roles to assign to the consumer. |
 
 ### Operations
 
@@ -421,8 +421,8 @@ auto output_change_logo = client->output_change_logo();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `contentAsBase64` | `std::string` | Yes |  |
-| `mimeType` | `std::string` | Yes |  |
+| `contentAsBase64` | `std::string` | Yes | The content of the image as base64 encoded string |
+| `mimeType` | `std::string` | Yes | The MIME type of the image |
 | `responseCode` | `int64_t` | No |  |
 | `responseMessage` | `std::string` | No |  |
 
@@ -697,8 +697,8 @@ auto output_get_logo = client->output_get_logo();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `contentAsBase64` | `std::string` | Yes |  |
-| `mimeType` | `std::string` | Yes |  |
+| `contentAsBase64` | `std::string` | Yes | The content of the image as base64 encoded string |
+| `mimeType` | `std::string` | Yes | The MIME type of the image |
 | `responseCode` | `int64_t` | No |  |
 | `responseMessage` | `std::string` | No |  |
 
@@ -1081,27 +1081,27 @@ auto output_register_user = client->output_register_user();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `city` | `std::string` | No |  |
-| `consumerId` | `std::string` | No |  |
-| `consumerLanguage` | `std::string` | No |  |
-| `country` | `std::string` | No |  |
-| `dateOfBirth` | `std::string` | No |  |
-| `driverLicenceNumber` | `std::string` | No |  |
-| `email` | `std::string` | Yes |  |
-| `firstName` | `std::string` | No |  |
-| `identificationNumber` | `std::string` | No |  |
-| `lastName` | `std::string` | No |  |
-| `login` | `std::string` | No |  |
-| `module` | `std::string` | No |  |
-| `passportNumber` | `std::string` | No |  |
-| `phone` | `std::string` | No |  |
-| `responseCode` | `int64_t` | No |  |
-| `responseMessage` | `std::string` | No |  |
-| `salutation` | `std::string` | No |  |
-| `state` | `std::string` | No |  |
-| `street1` | `std::string` | No |  |
-| `street2` | `std::string` | No |  |
-| `zip` | `std::string` | No |  |
+| `city` | `std::string` | No | City where the user resides. |
+| `consumerId` | `std::string` | No | User login or unique user identifier. |
+| `consumerLanguage` | `std::string` | No | Preferred language for the user (e.g., 'en'). |
+| `country` | `std::string` | No | User's country. |
+| `dateOfBirth` | `std::string` | No | User's date of birth (expected format: dd.MM.yyyy). |
+| `driverLicenceNumber` | `std::string` | No | User's driver's license number. |
+| `email` | `std::string` | Yes | User's email address (must be unique). |
+| `firstName` | `std::string` | No | User's first name. |
+| `identificationNumber` | `std::string` | No | User's identification number. |
+| `lastName` | `std::string` | No | User's last name. |
+| `login` | `std::string` | No | User login identifier (should be unique). |
+| `module` | `std::string` | No | Module identifier (if applicable). |
+| `passportNumber` | `std::string` | No | User's passport number. |
+| `phone` | `std::string` | No | User's phone number. |
+| `responseCode` | `int64_t` | No | Response code (0 indicates success; non-zero indicates an error). |
+| `responseMessage` | `std::string` | No | Human-readable response message. |
+| `salutation` | `std::string` | No | User's salutation (e.g., Mr., Ms.). |
+| `state` | `std::string` | No | User's state or region. |
+| `street1` | `std::string` | No | Primary address line. |
+| `street2` | `std::string` | No | Secondary address line. |
+| `zip` | `std::string` | No | Postal code. |
 
 ### Operations
 

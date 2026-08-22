@@ -410,10 +410,10 @@ $output_assign_role = $client->OutputAssignRole();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumerUUID` | `string` | Yes |  |
-| `responseCode` | `int` | No |  |
-| `responseMessage` | `string` | No |  |
-| `roles` | `array` | Yes |  |
+| `consumerUUID` | `string` | Yes | Unique identifier of the consumer (user) to whom the role(s) will be assigned. |
+| `responseCode` | `int` | No | Response code: 0 indicates success; any non-zero value indicates an error. |
+| `responseMessage` | `string` | No | A human-readable message providing additional details about the outcome. |
+| `roles` | `array` | Yes | List of roles to assign to the consumer. |
 
 ### Operations
 
@@ -468,8 +468,8 @@ $output_change_logo = $client->OutputChangeLogo();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `contentAsBase64` | `string` | Yes |  |
-| `mimeType` | `string` | Yes |  |
+| `contentAsBase64` | `string` | Yes | The content of the image as base64 encoded string |
+| `mimeType` | `string` | Yes | The MIME type of the image |
 | `responseCode` | `int` | No |  |
 | `responseMessage` | `string` | No |  |
 
@@ -789,8 +789,8 @@ $output_get_logo = $client->OutputGetLogo();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `contentAsBase64` | `string` | Yes |  |
-| `mimeType` | `string` | Yes |  |
+| `contentAsBase64` | `string` | Yes | The content of the image as base64 encoded string |
+| `mimeType` | `string` | Yes | The MIME type of the image |
 | `responseCode` | `int` | No |  |
 | `responseMessage` | `string` | No |  |
 
@@ -1245,27 +1245,27 @@ $output_register_user = $client->OutputRegisterUser();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `city` | `string` | No |  |
-| `consumerId` | `string` | No |  |
-| `consumerLanguage` | `string` | No |  |
-| `country` | `string` | No |  |
-| `dateOfBirth` | `string` | No |  |
-| `driverLicenceNumber` | `string` | No |  |
-| `email` | `string` | Yes |  |
-| `firstName` | `string` | No |  |
-| `identificationNumber` | `string` | No |  |
-| `lastName` | `string` | No |  |
-| `login` | `string` | No |  |
-| `module` | `string` | No |  |
-| `passportNumber` | `string` | No |  |
-| `phone` | `string` | No |  |
-| `responseCode` | `int` | No |  |
-| `responseMessage` | `string` | No |  |
-| `salutation` | `string` | No |  |
-| `state` | `string` | No |  |
-| `street1` | `string` | No |  |
-| `street2` | `string` | No |  |
-| `zip` | `string` | No |  |
+| `city` | `string` | No | City where the user resides. |
+| `consumerId` | `string` | No | User login or unique user identifier. |
+| `consumerLanguage` | `string` | No | Preferred language for the user (e.g., 'en'). |
+| `country` | `string` | No | User's country. |
+| `dateOfBirth` | `string` | No | User's date of birth (expected format: dd.MM.yyyy). |
+| `driverLicenceNumber` | `string` | No | User's driver's license number. |
+| `email` | `string` | Yes | User's email address (must be unique). |
+| `firstName` | `string` | No | User's first name. |
+| `identificationNumber` | `string` | No | User's identification number. |
+| `lastName` | `string` | No | User's last name. |
+| `login` | `string` | No | User login identifier (should be unique). |
+| `module` | `string` | No | Module identifier (if applicable). |
+| `passportNumber` | `string` | No | User's passport number. |
+| `phone` | `string` | No | User's phone number. |
+| `responseCode` | `int` | No | Response code (0 indicates success; non-zero indicates an error). |
+| `responseMessage` | `string` | No | Human-readable response message. |
+| `salutation` | `string` | No | User's salutation (e.g., Mr., Ms.). |
+| `state` | `string` | No | User's state or region. |
+| `street1` | `string` | No | Primary address line. |
+| `street2` | `string` | No | Secondary address line. |
+| `zip` | `string` | No | Postal code. |
 
 ### Operations
 

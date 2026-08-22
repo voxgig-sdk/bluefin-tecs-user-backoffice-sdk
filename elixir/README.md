@@ -341,10 +341,10 @@ API path: `/activateUser`
 
 | Field | Description |
 | --- | --- |
-| `consumerUUID` |  |
-| `responseCode` |  |
-| `responseMessage` |  |
-| `roles` |  |
+| `consumerUUID` | Unique identifier of the consumer (user) to whom the role(s) will be assigned. |
+| `responseCode` | Response code: 0 indicates success; any non-zero value indicates an error. |
+| `responseMessage` | A human-readable message providing additional details about the outcome. |
+| `roles` | List of roles to assign to the consumer. |
 
 Operations: Create.
 
@@ -354,8 +354,8 @@ API path: `/assignRoles`
 
 | Field | Description |
 | --- | --- |
-| `contentAsBase64` |  |
-| `mimeType` |  |
+| `contentAsBase64` | The content of the image as base64 encoded string |
+| `mimeType` | The MIME type of the image |
 | `responseCode` |  |
 | `responseMessage` |  |
 
@@ -431,8 +431,8 @@ API path: `/getKycDocument`
 
 | Field | Description |
 | --- | --- |
-| `contentAsBase64` |  |
-| `mimeType` |  |
+| `contentAsBase64` | The content of the image as base64 encoded string |
+| `mimeType` | The MIME type of the image |
 | `responseCode` |  |
 | `responseMessage` |  |
 
@@ -543,27 +543,27 @@ API path: `/provideCredentials`
 
 | Field | Description |
 | --- | --- |
-| `city` |  |
-| `consumerId` |  |
-| `consumerLanguage` |  |
-| `country` |  |
-| `dateOfBirth` |  |
-| `driverLicenceNumber` |  |
-| `email` |  |
-| `firstName` |  |
-| `identificationNumber` |  |
-| `lastName` |  |
-| `login` |  |
-| `module` |  |
-| `passportNumber` |  |
-| `phone` |  |
-| `responseCode` |  |
-| `responseMessage` |  |
-| `salutation` |  |
-| `state` |  |
-| `street1` |  |
-| `street2` |  |
-| `zip` |  |
+| `city` | City where the user resides. |
+| `consumerId` | User login or unique user identifier. |
+| `consumerLanguage` | Preferred language for the user (e.g., 'en'). |
+| `country` | User's country. |
+| `dateOfBirth` | User's date of birth (expected format: dd.MM.yyyy). |
+| `driverLicenceNumber` | User's driver's license number. |
+| `email` | User's email address (must be unique). |
+| `firstName` | User's first name. |
+| `identificationNumber` | User's identification number. |
+| `lastName` | User's last name. |
+| `login` | User login identifier (should be unique). |
+| `module` | Module identifier (if applicable). |
+| `passportNumber` | User's passport number. |
+| `phone` | User's phone number. |
+| `responseCode` | Response code (0 indicates success; non-zero indicates an error). |
+| `responseMessage` | Human-readable response message. |
+| `salutation` | User's salutation (e.g., Mr., Ms.). |
+| `state` | User's state or region. |
+| `street1` | Primary address line. |
+| `street2` | Secondary address line. |
+| `zip` | Postal code. |
 
 Operations: Create.
 
@@ -801,10 +801,10 @@ Create a handle: `output_assign_role = BluefinTecsUserBackoffice.output_assign_r
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumerUUID` | `String.t()` |  |
-| `responseCode` | `integer()` |  |
-| `responseMessage` | `String.t()` |  |
-| `roles` | `list()` |  |
+| `consumerUUID` | `String.t()` | Unique identifier of the consumer (user) to whom the role(s) will be assigned. |
+| `responseCode` | `integer()` | Response code: 0 indicates success; any non-zero value indicates an error. |
+| `responseMessage` | `String.t()` | A human-readable message providing additional details about the outcome. |
+| `roles` | `list()` | List of roles to assign to the consumer. |
 
 #### Example: Create
 
@@ -831,8 +831,8 @@ Create a handle: `output_change_logo = BluefinTecsUserBackoffice.output_change_l
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `contentAsBase64` | `String.t()` |  |
-| `mimeType` | `String.t()` |  |
+| `contentAsBase64` | `String.t()` | The content of the image as base64 encoded string |
+| `mimeType` | `String.t()` | The MIME type of the image |
 | `responseCode` | `integer()` |  |
 | `responseMessage` | `String.t()` |  |
 
@@ -989,8 +989,8 @@ Create a handle: `output_get_logo = BluefinTecsUserBackoffice.output_get_logo(sd
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `contentAsBase64` | `String.t()` |  |
-| `mimeType` | `String.t()` |  |
+| `contentAsBase64` | `String.t()` | The content of the image as base64 encoded string |
+| `mimeType` | `String.t()` | The MIME type of the image |
 | `responseCode` | `integer()` |  |
 | `responseMessage` | `String.t()` |  |
 
@@ -1221,27 +1221,27 @@ Create a handle: `output_register_user = BluefinTecsUserBackoffice.output_regist
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `city` | `String.t()` |  |
-| `consumerId` | `String.t()` |  |
-| `consumerLanguage` | `String.t()` |  |
-| `country` | `String.t()` |  |
-| `dateOfBirth` | `String.t()` |  |
-| `driverLicenceNumber` | `String.t()` |  |
-| `email` | `String.t()` |  |
-| `firstName` | `String.t()` |  |
-| `identificationNumber` | `String.t()` |  |
-| `lastName` | `String.t()` |  |
-| `login` | `String.t()` |  |
-| `module` | `String.t()` |  |
-| `passportNumber` | `String.t()` |  |
-| `phone` | `String.t()` |  |
-| `responseCode` | `integer()` |  |
-| `responseMessage` | `String.t()` |  |
-| `salutation` | `String.t()` |  |
-| `state` | `String.t()` |  |
-| `street1` | `String.t()` |  |
-| `street2` | `String.t()` |  |
-| `zip` | `String.t()` |  |
+| `city` | `String.t()` | City where the user resides. |
+| `consumerId` | `String.t()` | User login or unique user identifier. |
+| `consumerLanguage` | `String.t()` | Preferred language for the user (e.g., 'en'). |
+| `country` | `String.t()` | User's country. |
+| `dateOfBirth` | `String.t()` | User's date of birth (expected format: dd.MM.yyyy). |
+| `driverLicenceNumber` | `String.t()` | User's driver's license number. |
+| `email` | `String.t()` | User's email address (must be unique). |
+| `firstName` | `String.t()` | User's first name. |
+| `identificationNumber` | `String.t()` | User's identification number. |
+| `lastName` | `String.t()` | User's last name. |
+| `login` | `String.t()` | User login identifier (should be unique). |
+| `module` | `String.t()` | Module identifier (if applicable). |
+| `passportNumber` | `String.t()` | User's passport number. |
+| `phone` | `String.t()` | User's phone number. |
+| `responseCode` | `integer()` | Response code (0 indicates success; non-zero indicates an error). |
+| `responseMessage` | `String.t()` | Human-readable response message. |
+| `salutation` | `String.t()` | User's salutation (e.g., Mr., Ms.). |
+| `state` | `String.t()` | User's state or region. |
+| `street1` | `String.t()` | Primary address line. |
+| `street2` | `String.t()` | Secondary address line. |
+| `zip` | `String.t()` | Postal code. |
 
 #### Example: Create
 

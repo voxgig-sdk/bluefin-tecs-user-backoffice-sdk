@@ -390,10 +390,10 @@ Entity* output_assign_role = bluefintecsuserbackoffice_output_assign_role(client
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumerUUID` | `char*` | Yes |  |
-| `responseCode` | `int64_t` | No |  |
-| `responseMessage` | `char*` | No |  |
-| `roles` | `voxgig_value* (list)` | Yes |  |
+| `consumerUUID` | `char*` | Yes | Unique identifier of the consumer (user) to whom the role(s) will be assigned. |
+| `responseCode` | `int64_t` | No | Response code: 0 indicates success; any non-zero value indicates an error. |
+| `responseMessage` | `char*` | No | A human-readable message providing additional details about the outcome. |
+| `roles` | `voxgig_value* (list)` | Yes | List of roles to assign to the consumer. |
 
 ### Operations
 
@@ -440,8 +440,8 @@ Entity* output_change_logo = bluefintecsuserbackoffice_output_change_logo(client
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `contentAsBase64` | `char*` | Yes |  |
-| `mimeType` | `char*` | Yes |  |
+| `contentAsBase64` | `char*` | Yes | The content of the image as base64 encoded string |
+| `mimeType` | `char*` | Yes | The MIME type of the image |
 | `responseCode` | `int64_t` | No |  |
 | `responseMessage` | `char*` | No |  |
 
@@ -719,8 +719,8 @@ Entity* output_get_logo = bluefintecsuserbackoffice_output_get_logo(client, NULL
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `contentAsBase64` | `char*` | Yes |  |
-| `mimeType` | `char*` | Yes |  |
+| `contentAsBase64` | `char*` | Yes | The content of the image as base64 encoded string |
+| `mimeType` | `char*` | Yes | The MIME type of the image |
 | `responseCode` | `int64_t` | No |  |
 | `responseMessage` | `char*` | No |  |
 
@@ -1105,27 +1105,27 @@ Entity* output_register_user = bluefintecsuserbackoffice_output_register_user(cl
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `city` | `char*` | No |  |
-| `consumerId` | `char*` | No |  |
-| `consumerLanguage` | `char*` | No |  |
-| `country` | `char*` | No |  |
-| `dateOfBirth` | `char*` | No |  |
-| `driverLicenceNumber` | `char*` | No |  |
-| `email` | `char*` | Yes |  |
-| `firstName` | `char*` | No |  |
-| `identificationNumber` | `char*` | No |  |
-| `lastName` | `char*` | No |  |
-| `login` | `char*` | No |  |
-| `module` | `char*` | No |  |
-| `passportNumber` | `char*` | No |  |
-| `phone` | `char*` | No |  |
-| `responseCode` | `int64_t` | No |  |
-| `responseMessage` | `char*` | No |  |
-| `salutation` | `char*` | No |  |
-| `state` | `char*` | No |  |
-| `street1` | `char*` | No |  |
-| `street2` | `char*` | No |  |
-| `zip` | `char*` | No |  |
+| `city` | `char*` | No | City where the user resides. |
+| `consumerId` | `char*` | No | User login or unique user identifier. |
+| `consumerLanguage` | `char*` | No | Preferred language for the user (e.g., 'en'). |
+| `country` | `char*` | No | User's country. |
+| `dateOfBirth` | `char*` | No | User's date of birth (expected format: dd.MM.yyyy). |
+| `driverLicenceNumber` | `char*` | No | User's driver's license number. |
+| `email` | `char*` | Yes | User's email address (must be unique). |
+| `firstName` | `char*` | No | User's first name. |
+| `identificationNumber` | `char*` | No | User's identification number. |
+| `lastName` | `char*` | No | User's last name. |
+| `login` | `char*` | No | User login identifier (should be unique). |
+| `module` | `char*` | No | Module identifier (if applicable). |
+| `passportNumber` | `char*` | No | User's passport number. |
+| `phone` | `char*` | No | User's phone number. |
+| `responseCode` | `int64_t` | No | Response code (0 indicates success; non-zero indicates an error). |
+| `responseMessage` | `char*` | No | Human-readable response message. |
+| `salutation` | `char*` | No | User's salutation (e.g., Mr., Ms.). |
+| `state` | `char*` | No | User's state or region. |
+| `street1` | `char*` | No | Primary address line. |
+| `street2` | `char*` | No | Secondary address line. |
+| `zip` | `char*` | No | Postal code. |
 
 ### Operations
 

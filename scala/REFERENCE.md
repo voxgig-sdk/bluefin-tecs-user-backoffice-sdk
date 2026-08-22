@@ -395,10 +395,10 @@ val outputAssignRole = client.outputAssignRole(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumerUUID` | `String` | Yes |  |
-| `responseCode` | `java.lang.Long` | No |  |
-| `responseMessage` | `String` | No |  |
-| `roles` | `java.util.List[Object]` | Yes |  |
+| `consumerUUID` | `String` | Yes | Unique identifier of the consumer (user) to whom the role(s) will be assigned. |
+| `responseCode` | `java.lang.Long` | No | Response code: 0 indicates success; any non-zero value indicates an error. |
+| `responseMessage` | `String` | No | A human-readable message providing additional details about the outcome. |
+| `roles` | `java.util.List[Object]` | Yes | List of roles to assign to the consumer. |
 
 ### Operations
 
@@ -444,8 +444,8 @@ val outputChangeLogo = client.outputChangeLogo(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `contentAsBase64` | `String` | Yes |  |
-| `mimeType` | `String` | Yes |  |
+| `contentAsBase64` | `String` | Yes | The content of the image as base64 encoded string |
+| `mimeType` | `String` | Yes | The MIME type of the image |
 | `responseCode` | `java.lang.Long` | No |  |
 | `responseMessage` | `String` | No |  |
 
@@ -720,8 +720,8 @@ val outputGetLogo = client.outputGetLogo(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `contentAsBase64` | `String` | Yes |  |
-| `mimeType` | `String` | Yes |  |
+| `contentAsBase64` | `String` | Yes | The content of the image as base64 encoded string |
+| `mimeType` | `String` | Yes | The MIME type of the image |
 | `responseCode` | `java.lang.Long` | No |  |
 | `responseMessage` | `String` | No |  |
 
@@ -1104,27 +1104,27 @@ val outputRegisterUser = client.outputRegisterUser(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `city` | `String` | No |  |
-| `consumerId` | `String` | No |  |
-| `consumerLanguage` | `String` | No |  |
-| `country` | `String` | No |  |
-| `dateOfBirth` | `String` | No |  |
-| `driverLicenceNumber` | `String` | No |  |
-| `email` | `String` | Yes |  |
-| `firstName` | `String` | No |  |
-| `identificationNumber` | `String` | No |  |
-| `lastName` | `String` | No |  |
-| `login` | `String` | No |  |
-| `module` | `String` | No |  |
-| `passportNumber` | `String` | No |  |
-| `phone` | `String` | No |  |
-| `responseCode` | `java.lang.Long` | No |  |
-| `responseMessage` | `String` | No |  |
-| `salutation` | `String` | No |  |
-| `state` | `String` | No |  |
-| `street1` | `String` | No |  |
-| `street2` | `String` | No |  |
-| `zip` | `String` | No |  |
+| `city` | `String` | No | City where the user resides. |
+| `consumerId` | `String` | No | User login or unique user identifier. |
+| `consumerLanguage` | `String` | No | Preferred language for the user (e.g., 'en'). |
+| `country` | `String` | No | User's country. |
+| `dateOfBirth` | `String` | No | User's date of birth (expected format: dd.MM.yyyy). |
+| `driverLicenceNumber` | `String` | No | User's driver's license number. |
+| `email` | `String` | Yes | User's email address (must be unique). |
+| `firstName` | `String` | No | User's first name. |
+| `identificationNumber` | `String` | No | User's identification number. |
+| `lastName` | `String` | No | User's last name. |
+| `login` | `String` | No | User login identifier (should be unique). |
+| `module` | `String` | No | Module identifier (if applicable). |
+| `passportNumber` | `String` | No | User's passport number. |
+| `phone` | `String` | No | User's phone number. |
+| `responseCode` | `java.lang.Long` | No | Response code (0 indicates success; non-zero indicates an error). |
+| `responseMessage` | `String` | No | Human-readable response message. |
+| `salutation` | `String` | No | User's salutation (e.g., Mr., Ms.). |
+| `state` | `String` | No | User's state or region. |
+| `street1` | `String` | No | Primary address line. |
+| `street2` | `String` | No | Secondary address line. |
+| `zip` | `String` | No | Postal code. |
 
 ### Operations
 

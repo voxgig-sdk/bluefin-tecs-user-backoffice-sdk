@@ -401,10 +401,10 @@ output_assign_role = client.OutputAssignRole()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumerUUID` | `str` | Yes |  |
-| `responseCode` | `int` | No |  |
-| `responseMessage` | `str` | No |  |
-| `roles` | `list` | Yes |  |
+| `consumerUUID` | `str` | Yes | Unique identifier of the consumer (user) to whom the role(s) will be assigned. |
+| `responseCode` | `int` | No | Response code: 0 indicates success; any non-zero value indicates an error. |
+| `responseMessage` | `str` | No | A human-readable message providing additional details about the outcome. |
+| `roles` | `list` | Yes | List of roles to assign to the consumer. |
 
 ### Operations
 
@@ -458,8 +458,8 @@ output_change_logo = client.OutputChangeLogo()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `contentAsBase64` | `str` | Yes |  |
-| `mimeType` | `str` | Yes |  |
+| `contentAsBase64` | `str` | Yes | The content of the image as base64 encoded string |
+| `mimeType` | `str` | Yes | The MIME type of the image |
 | `responseCode` | `int` | No |  |
 | `responseMessage` | `str` | No |  |
 
@@ -774,8 +774,8 @@ output_get_logo = client.OutputGetLogo()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `contentAsBase64` | `str` | Yes |  |
-| `mimeType` | `str` | Yes |  |
+| `contentAsBase64` | `str` | Yes | The content of the image as base64 encoded string |
+| `mimeType` | `str` | Yes | The MIME type of the image |
 | `responseCode` | `int` | No |  |
 | `responseMessage` | `str` | No |  |
 
@@ -1222,27 +1222,27 @@ output_register_user = client.OutputRegisterUser()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `city` | `str` | No |  |
-| `consumerId` | `str` | No |  |
-| `consumerLanguage` | `str` | No |  |
-| `country` | `str` | No |  |
-| `dateOfBirth` | `str` | No |  |
-| `driverLicenceNumber` | `str` | No |  |
-| `email` | `str` | Yes |  |
-| `firstName` | `str` | No |  |
-| `identificationNumber` | `str` | No |  |
-| `lastName` | `str` | No |  |
-| `login` | `str` | No |  |
-| `module` | `str` | No |  |
-| `passportNumber` | `str` | No |  |
-| `phone` | `str` | No |  |
-| `responseCode` | `int` | No |  |
-| `responseMessage` | `str` | No |  |
-| `salutation` | `str` | No |  |
-| `state` | `str` | No |  |
-| `street1` | `str` | No |  |
-| `street2` | `str` | No |  |
-| `zip` | `str` | No |  |
+| `city` | `str` | No | City where the user resides. |
+| `consumerId` | `str` | No | User login or unique user identifier. |
+| `consumerLanguage` | `str` | No | Preferred language for the user (e.g., 'en'). |
+| `country` | `str` | No | User's country. |
+| `dateOfBirth` | `str` | No | User's date of birth (expected format: dd.MM.yyyy). |
+| `driverLicenceNumber` | `str` | No | User's driver's license number. |
+| `email` | `str` | Yes | User's email address (must be unique). |
+| `firstName` | `str` | No | User's first name. |
+| `identificationNumber` | `str` | No | User's identification number. |
+| `lastName` | `str` | No | User's last name. |
+| `login` | `str` | No | User login identifier (should be unique). |
+| `module` | `str` | No | Module identifier (if applicable). |
+| `passportNumber` | `str` | No | User's passport number. |
+| `phone` | `str` | No | User's phone number. |
+| `responseCode` | `int` | No | Response code (0 indicates success; non-zero indicates an error). |
+| `responseMessage` | `str` | No | Human-readable response message. |
+| `salutation` | `str` | No | User's salutation (e.g., Mr., Ms.). |
+| `state` | `str` | No | User's state or region. |
+| `street1` | `str` | No | Primary address line. |
+| `street2` | `str` | No | Secondary address line. |
+| `zip` | `str` | No | Postal code. |
 
 ### Operations
 

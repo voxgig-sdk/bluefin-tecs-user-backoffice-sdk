@@ -8,21 +8,25 @@ main: kit: entity: output_assign_role: {
     {
       name: "consumerUUID"
       req: true
+      short: "Unique identifier of the consumer (user) to whom the role(s) will be assigned."
       type: "`$STRING`"
     }
     {
       name: "responseCode"
       req: false
+      short: "Response code: 0 indicates success; any non-zero value indicates an error."
       type: "`$INTEGER`"
     }
     {
       name: "responseMessage"
       req: false
+      short: "A human-readable message providing additional details about the outcome."
       type: "`$STRING`"
     }
     {
       name: "roles"
       req: true
+      short: "List of roles to assign to the consumer."
       type: "`$ARRAY`"
     }
   ]

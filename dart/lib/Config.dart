@@ -18,8 +18,17 @@ class Config {
     return fc();
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  bool hasFeature(String fn) => null != FEATURE_CLASS[fn];
+
   final Map<String, dynamic> main = <String, dynamic>{
     'name': 'BluefinTecsUserBackoffice',
+        'slug': 'bluefin-tecs-user-backoffice',
+    'version': '0.0.1',
+    'target': 'dart',
+
   };
 
   final Map<String, dynamic> feature = <String, dynamic>{
@@ -31,19 +40,21 @@ class Config {
 
   };
 
+  // Rendered whole from the canonical config definition rather than assembled
+  // slot by slot. Assembling it here meant `options.server` - the OpenAPI
+  // server-variable defaults - was simply absent from this branch, so a
+  // templated server URL produced a different config either side of the
+  // threshold.
   final Map<String, dynamic> options = <String, dynamic>{
     'base': 'https://test.tecs.at/usermanagement-backofficews',
-
     'auth': <String, dynamic>{
       'prefix': 'Bearer',
     },
-
     'headers': <String, dynamic>{
       'content-type': 'application/json',
     },
-
     'entity': <String, dynamic>{
-            'output_activate_digital_module': <String, dynamic>{},
+      'output_activate_digital_module': <String, dynamic>{},
       'output_activate_portal_module': <String, dynamic>{},
       'output_activate_store_module': <String, dynamic>{},
       'output_activate_user': <String, dynamic>{},
@@ -68,8 +79,7 @@ class Config {
       'output_update_consumer': <String, dynamic>{},
       'output_update_profile': <String, dynamic>{},
       'version': <String, dynamic>{},
-
-    }
+    },
   };
 
   final Map<String, dynamic> entity = <String, dynamic>{
@@ -300,19 +310,23 @@ class Config {
         <String, dynamic>{
           'name': 'consumerUUID',
           'req': true,
+          'short': 'Unique identifier of the consumer (user) to whom the role(s) will be assigned.',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'responseCode',
+          'short': 'Response code: 0 indicates success; any non-zero value indicates an error.',
           'type': '`\$INTEGER`',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'short': 'A human-readable message providing additional details about the outcome.',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'roles',
           'req': true,
+          'short': 'List of roles to assign to the consumer.',
           'type': '`\$ARRAY`',
         },
       ],
@@ -362,11 +376,13 @@ class Config {
         <String, dynamic>{
           'name': 'contentAsBase64',
           'req': true,
+          'short': 'The content of the image as base64 encoded string',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'mimeType',
           'req': true,
+          'short': 'The MIME type of the image',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
@@ -728,11 +744,13 @@ class Config {
         <String, dynamic>{
           'name': 'contentAsBase64',
           'req': true,
+          'short': 'The content of the image as base64 encoded string',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'mimeType',
           'req': true,
+          'short': 'The MIME type of the image',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
@@ -1242,87 +1260,108 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'city',
+          'short': 'City where the user resides.',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'consumerId',
+          'short': 'User login or unique user identifier.',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'consumerLanguage',
+          'short': 'Preferred language for the user (e.g., \'en\').',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'country',
+          'short': 'User\'s country.',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'dateOfBirth',
+          'short': 'User\'s date of birth (expected format: dd.MM.yyyy).',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'driverLicenceNumber',
+          'short': 'User\'s driver\'s license number.',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'email',
           'req': true,
+          'short': 'User\'s email address (must be unique).',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'firstName',
+          'short': 'User\'s first name.',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'identificationNumber',
+          'short': 'User\'s identification number.',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'lastName',
+          'short': 'User\'s last name.',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'login',
+          'short': 'User login identifier (should be unique).',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'module',
+          'short': 'Module identifier (if applicable).',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'passportNumber',
+          'short': 'User\'s passport number.',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'phone',
+          'short': 'User\'s phone number.',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'responseCode',
+          'short': 'Response code (0 indicates success; non-zero indicates an error).',
           'type': '`\$INTEGER`',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'short': 'Human-readable response message.',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'salutation',
+          'short': 'User\'s salutation (e.g., Mr., Ms.).',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'state',
+          'short': 'User\'s state or region.',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'street1',
+          'short': 'Primary address line.',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'street2',
+          'short': 'Secondary address line.',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'zip',
+          'short': 'Postal code.',
           'type': '`\$STRING`',
         },
       ],

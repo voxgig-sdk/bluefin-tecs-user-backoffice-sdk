@@ -410,10 +410,10 @@ const output_assign_role = client.output_assign_role(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumerUUID` | `[]const u8` | Yes |  |
-| `responseCode` | `i64` | No |  |
-| `responseMessage` | `[]const u8` | No |  |
-| `roles` | `Value (array)` | Yes |  |
+| `consumerUUID` | `[]const u8` | Yes | Unique identifier of the consumer (user) to whom the role(s) will be assigned. |
+| `responseCode` | `i64` | No | Response code: 0 indicates success; any non-zero value indicates an error. |
+| `responseMessage` | `[]const u8` | No | A human-readable message providing additional details about the outcome. |
+| `roles` | `Value (array)` | Yes | List of roles to assign to the consumer. |
 
 ### Operations
 
@@ -462,8 +462,8 @@ const output_change_logo = client.output_change_logo(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `contentAsBase64` | `[]const u8` | Yes |  |
-| `mimeType` | `[]const u8` | Yes |  |
+| `contentAsBase64` | `[]const u8` | Yes | The content of the image as base64 encoded string |
+| `mimeType` | `[]const u8` | Yes | The MIME type of the image |
 | `responseCode` | `i64` | No |  |
 | `responseMessage` | `[]const u8` | No |  |
 
@@ -753,8 +753,8 @@ const output_get_logo = client.output_get_logo(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `contentAsBase64` | `[]const u8` | Yes |  |
-| `mimeType` | `[]const u8` | Yes |  |
+| `contentAsBase64` | `[]const u8` | Yes | The content of the image as base64 encoded string |
+| `mimeType` | `[]const u8` | Yes | The MIME type of the image |
 | `responseCode` | `i64` | No |  |
 | `responseMessage` | `[]const u8` | No |  |
 
@@ -1161,27 +1161,27 @@ const output_register_user = client.output_register_user(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `city` | `[]const u8` | No |  |
-| `consumerId` | `[]const u8` | No |  |
-| `consumerLanguage` | `[]const u8` | No |  |
-| `country` | `[]const u8` | No |  |
-| `dateOfBirth` | `[]const u8` | No |  |
-| `driverLicenceNumber` | `[]const u8` | No |  |
-| `email` | `[]const u8` | Yes |  |
-| `firstName` | `[]const u8` | No |  |
-| `identificationNumber` | `[]const u8` | No |  |
-| `lastName` | `[]const u8` | No |  |
-| `login` | `[]const u8` | No |  |
-| `module` | `[]const u8` | No |  |
-| `passportNumber` | `[]const u8` | No |  |
-| `phone` | `[]const u8` | No |  |
-| `responseCode` | `i64` | No |  |
-| `responseMessage` | `[]const u8` | No |  |
-| `salutation` | `[]const u8` | No |  |
-| `state` | `[]const u8` | No |  |
-| `street1` | `[]const u8` | No |  |
-| `street2` | `[]const u8` | No |  |
-| `zip` | `[]const u8` | No |  |
+| `city` | `[]const u8` | No | City where the user resides. |
+| `consumerId` | `[]const u8` | No | User login or unique user identifier. |
+| `consumerLanguage` | `[]const u8` | No | Preferred language for the user (e.g., 'en'). |
+| `country` | `[]const u8` | No | User's country. |
+| `dateOfBirth` | `[]const u8` | No | User's date of birth (expected format: dd.MM.yyyy). |
+| `driverLicenceNumber` | `[]const u8` | No | User's driver's license number. |
+| `email` | `[]const u8` | Yes | User's email address (must be unique). |
+| `firstName` | `[]const u8` | No | User's first name. |
+| `identificationNumber` | `[]const u8` | No | User's identification number. |
+| `lastName` | `[]const u8` | No | User's last name. |
+| `login` | `[]const u8` | No | User login identifier (should be unique). |
+| `module` | `[]const u8` | No | Module identifier (if applicable). |
+| `passportNumber` | `[]const u8` | No | User's passport number. |
+| `phone` | `[]const u8` | No | User's phone number. |
+| `responseCode` | `i64` | No | Response code (0 indicates success; non-zero indicates an error). |
+| `responseMessage` | `[]const u8` | No | Human-readable response message. |
+| `salutation` | `[]const u8` | No | User's salutation (e.g., Mr., Ms.). |
+| `state` | `[]const u8` | No | User's state or region. |
+| `street1` | `[]const u8` | No | Primary address line. |
+| `street2` | `[]const u8` | No | Secondary address line. |
+| `zip` | `[]const u8` | No | Postal code. |
 
 ### Operations
 

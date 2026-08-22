@@ -20,6 +20,9 @@ pub fn make_config() Value {
         }) },
         .{ "options", h.jo(&.{
             .{ "base", h.vstr("https://test.tecs.at/usermanagement-backofficews") },
+            .{ "auth", h.jo(&.{
+                .{ "prefix", h.vstr("Bearer") },
+            }) },
             .{ "headers", h.jo(&.{
                 .{ "content-type", h.vstr("application/json") },
             }) },
@@ -49,9 +52,6 @@ pub fn make_config() Value {
                 .{ "output_update_consumer", h.omap() },
                 .{ "output_update_profile", h.omap() },
                 .{ "version", h.omap() },
-            }) },
-            .{ "auth", h.jo(&.{
-                .{ "prefix", h.vstr("Bearer") },
             }) },
         }) },
         .{ "entity", h.jo(&.{
@@ -282,19 +282,23 @@ pub fn make_config() Value {
                     h.jo(&.{
                         .{ "name", h.vstr("consumerUUID") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Unique identifier of the consumer (user) to whom the role(s) will be assigned.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseCode") },
+                        .{ "short", h.vstr("Response code: 0 indicates success; any non-zero value indicates an error.") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseMessage") },
+                        .{ "short", h.vstr("A human-readable message providing additional details about the outcome.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("roles") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("List of roles to assign to the consumer.") },
                         .{ "type", h.vstr("`$ARRAY`") },
                     }),
                 }) },
@@ -344,11 +348,13 @@ pub fn make_config() Value {
                     h.jo(&.{
                         .{ "name", h.vstr("contentAsBase64") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("The content of the image as base64 encoded string") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("mimeType") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("The MIME type of the image") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
@@ -710,11 +716,13 @@ pub fn make_config() Value {
                     h.jo(&.{
                         .{ "name", h.vstr("contentAsBase64") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("The content of the image as base64 encoded string") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("mimeType") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("The MIME type of the image") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
@@ -1224,87 +1232,108 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "name", h.vstr("city") },
+                        .{ "short", h.vstr("City where the user resides.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("consumerId") },
+                        .{ "short", h.vstr("User login or unique user identifier.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("consumerLanguage") },
+                        .{ "short", h.vstr("Preferred language for the user (e.g., 'en').") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("country") },
+                        .{ "short", h.vstr("User's country.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("dateOfBirth") },
+                        .{ "short", h.vstr("User's date of birth (expected format: dd.MM.yyyy).") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("driverLicenceNumber") },
+                        .{ "short", h.vstr("User's driver's license number.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("email") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("User's email address (must be unique).") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("firstName") },
+                        .{ "short", h.vstr("User's first name.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("identificationNumber") },
+                        .{ "short", h.vstr("User's identification number.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("lastName") },
+                        .{ "short", h.vstr("User's last name.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("login") },
+                        .{ "short", h.vstr("User login identifier (should be unique).") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("module") },
+                        .{ "short", h.vstr("Module identifier (if applicable).") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("passportNumber") },
+                        .{ "short", h.vstr("User's passport number.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("phone") },
+                        .{ "short", h.vstr("User's phone number.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseCode") },
+                        .{ "short", h.vstr("Response code (0 indicates success; non-zero indicates an error).") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseMessage") },
+                        .{ "short", h.vstr("Human-readable response message.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("salutation") },
+                        .{ "short", h.vstr("User's salutation (e.g., Mr., Ms.).") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("state") },
+                        .{ "short", h.vstr("User's state or region.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("street1") },
+                        .{ "short", h.vstr("Primary address line.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("street2") },
+                        .{ "short", h.vstr("Secondary address line.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("zip") },
+                        .{ "short", h.vstr("Postal code.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                 }) },
@@ -1788,6 +1817,28 @@ pub fn make_config() Value {
             }) },
         }) },
     });
+}
+
+// SHARED CONFIG (sdkgen rung L2).
+//
+// The SDK reads the config on every request and never writes to it, so one
+// instance is shared by every client rather than rebuilt per client. Above the
+// size threshold make_config re-parses the whole embedded JSON, so this is the
+// difference between parsing the model once and once per client.
+//
+// Value nodes are arena-allocated and reference-stable, so the shared value is
+// genuinely one structure, not a copy.
+var shared_config_val: ?Value = null;
+
+/// The process-wide config, built once on first use.
+///
+/// The returned Value SHARES its nodes: treat it as read-only. Callers that
+/// need to mutate should use make_config, which always returns a fresh copy.
+pub fn shared_config() Value {
+    if (shared_config_val) |c| return c;
+    const c = make_config();
+    shared_config_val = c;
+    return c;
 }
 
 pub fn make_feature(name: []const u8) Feature {

@@ -12,6 +12,9 @@ public static class SdkConfig
             ["main"] = new Dictionary<string, object?>
             {
                 ["name"] = "BluefinTecsUserBackoffice",
+                ["slug"] = "bluefin-tecs-user-backoffice",
+                ["version"] = "0.0.1",
+                ["target"] = "csharp",
             },
             ["feature"] = new Dictionary<string, object?>
             {
@@ -362,22 +365,26 @@ public static class SdkConfig
                         {
                             ["name"] = "consumerUUID",
                             ["req"] = true,
+                            ["short"] = "Unique identifier of the consumer (user) to whom the role(s) will be assigned.",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseCode",
+                            ["short"] = "Response code: 0 indicates success; any non-zero value indicates an error.",
                             ["type"] = "`$INTEGER`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["short"] = "A human-readable message providing additional details about the outcome.",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "roles",
                             ["req"] = true,
+                            ["short"] = "List of roles to assign to the consumer.",
                             ["type"] = "`$ARRAY`",
                         },
                     },
@@ -442,12 +449,14 @@ public static class SdkConfig
                         {
                             ["name"] = "contentAsBase64",
                             ["req"] = true,
+                            ["short"] = "The content of the image as base64 encoded string",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "mimeType",
                             ["req"] = true,
+                            ["short"] = "The MIME type of the image",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
@@ -914,12 +923,14 @@ public static class SdkConfig
                         {
                             ["name"] = "contentAsBase64",
                             ["req"] = true,
+                            ["short"] = "The content of the image as base64 encoded string",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "mimeType",
                             ["req"] = true,
+                            ["short"] = "The MIME type of the image",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
@@ -1580,107 +1591,128 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "city",
+                            ["short"] = "City where the user resides.",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "consumerId",
+                            ["short"] = "User login or unique user identifier.",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "consumerLanguage",
+                            ["short"] = "Preferred language for the user (e.g., 'en').",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "country",
+                            ["short"] = "User's country.",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "dateOfBirth",
+                            ["short"] = "User's date of birth (expected format: dd.MM.yyyy).",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "driverLicenceNumber",
+                            ["short"] = "User's driver's license number.",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "email",
                             ["req"] = true,
+                            ["short"] = "User's email address (must be unique).",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "firstName",
+                            ["short"] = "User's first name.",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "identificationNumber",
+                            ["short"] = "User's identification number.",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "lastName",
+                            ["short"] = "User's last name.",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "login",
+                            ["short"] = "User login identifier (should be unique).",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "module",
+                            ["short"] = "Module identifier (if applicable).",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "passportNumber",
+                            ["short"] = "User's passport number.",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "phone",
+                            ["short"] = "User's phone number.",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseCode",
+                            ["short"] = "Response code (0 indicates success; non-zero indicates an error).",
                             ["type"] = "`$INTEGER`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["short"] = "Human-readable response message.",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "salutation",
+                            ["short"] = "User's salutation (e.g., Mr., Ms.).",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "state",
+                            ["short"] = "User's state or region.",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "street1",
+                            ["short"] = "Primary address line.",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "street2",
+                            ["short"] = "Secondary address line.",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "zip",
+                            ["short"] = "Postal code.",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -2302,6 +2334,18 @@ public static class SdkConfig
                 },
             },
         };
+    }
+
+    private static readonly Lazy<Dictionary<string, object?>> SharedConfigVal =
+        new(MakeConfig);
+
+    // The process-wide config, built once on first use.
+    //
+    // The returned dictionary is SHARED: treat it as read-only. Callers that
+    // need to mutate should use MakeConfig, which always returns a fresh copy.
+    public static Dictionary<string, object?> SharedConfig()
+    {
+        return SharedConfigVal.Value;
     }
 
     public static Feature.BaseFeature MakeFeature(string name)

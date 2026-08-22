@@ -28,6 +28,9 @@ def make_config():
     return {
         "main": {
             "name": "BluefinTecsUserBackoffice",
+            "slug": "bluefin-tecs-user-backoffice",
+            "version": "0.0.1",
+            "target": "py",
         },
         "feature": {
             "test": {
@@ -300,19 +303,23 @@ def make_config():
           {
             "name": "consumerUUID",
             "req": True,
+            "short": "Unique identifier of the consumer (user) to whom the role(s) will be assigned.",
             "type": "`$STRING`",
           },
           {
             "name": "responseCode",
+            "short": "Response code: 0 indicates success; any non-zero value indicates an error.",
             "type": "`$INTEGER`",
           },
           {
             "name": "responseMessage",
+            "short": "A human-readable message providing additional details about the outcome.",
             "type": "`$STRING`",
           },
           {
             "name": "roles",
             "req": True,
+            "short": "List of roles to assign to the consumer.",
             "type": "`$ARRAY`",
           },
         ],
@@ -362,11 +369,13 @@ def make_config():
           {
             "name": "contentAsBase64",
             "req": True,
+            "short": "The content of the image as base64 encoded string",
             "type": "`$STRING`",
           },
           {
             "name": "mimeType",
             "req": True,
+            "short": "The MIME type of the image",
             "type": "`$STRING`",
           },
           {
@@ -728,11 +737,13 @@ def make_config():
           {
             "name": "contentAsBase64",
             "req": True,
+            "short": "The content of the image as base64 encoded string",
             "type": "`$STRING`",
           },
           {
             "name": "mimeType",
             "req": True,
+            "short": "The MIME type of the image",
             "type": "`$STRING`",
           },
           {
@@ -1242,87 +1253,108 @@ def make_config():
         "fields": [
           {
             "name": "city",
+            "short": "City where the user resides.",
             "type": "`$STRING`",
           },
           {
             "name": "consumerId",
+            "short": "User login or unique user identifier.",
             "type": "`$STRING`",
           },
           {
             "name": "consumerLanguage",
+            "short": "Preferred language for the user (e.g., 'en').",
             "type": "`$STRING`",
           },
           {
             "name": "country",
+            "short": "User's country.",
             "type": "`$STRING`",
           },
           {
             "name": "dateOfBirth",
+            "short": "User's date of birth (expected format: dd.MM.yyyy).",
             "type": "`$STRING`",
           },
           {
             "name": "driverLicenceNumber",
+            "short": "User's driver's license number.",
             "type": "`$STRING`",
           },
           {
             "name": "email",
             "req": True,
+            "short": "User's email address (must be unique).",
             "type": "`$STRING`",
           },
           {
             "name": "firstName",
+            "short": "User's first name.",
             "type": "`$STRING`",
           },
           {
             "name": "identificationNumber",
+            "short": "User's identification number.",
             "type": "`$STRING`",
           },
           {
             "name": "lastName",
+            "short": "User's last name.",
             "type": "`$STRING`",
           },
           {
             "name": "login",
+            "short": "User login identifier (should be unique).",
             "type": "`$STRING`",
           },
           {
             "name": "module",
+            "short": "Module identifier (if applicable).",
             "type": "`$STRING`",
           },
           {
             "name": "passportNumber",
+            "short": "User's passport number.",
             "type": "`$STRING`",
           },
           {
             "name": "phone",
+            "short": "User's phone number.",
             "type": "`$STRING`",
           },
           {
             "name": "responseCode",
+            "short": "Response code (0 indicates success; non-zero indicates an error).",
             "type": "`$INTEGER`",
           },
           {
             "name": "responseMessage",
+            "short": "Human-readable response message.",
             "type": "`$STRING`",
           },
           {
             "name": "salutation",
+            "short": "User's salutation (e.g., Mr., Ms.).",
             "type": "`$STRING`",
           },
           {
             "name": "state",
+            "short": "User's state or region.",
             "type": "`$STRING`",
           },
           {
             "name": "street1",
+            "short": "Primary address line.",
             "type": "`$STRING`",
           },
           {
             "name": "street2",
+            "short": "Secondary address line.",
             "type": "`$STRING`",
           },
           {
             "name": "zip",
+            "short": "Postal code.",
             "type": "`$STRING`",
           },
         ],

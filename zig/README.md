@@ -322,10 +322,10 @@ API path: `/activateUser`
 
 | Field | Description |
 | --- | --- |
-| `consumerUUID` |  |
-| `responseCode` |  |
-| `responseMessage` |  |
-| `roles` |  |
+| `consumerUUID` | Unique identifier of the consumer (user) to whom the role(s) will be assigned. |
+| `responseCode` | Response code: 0 indicates success; any non-zero value indicates an error. |
+| `responseMessage` | A human-readable message providing additional details about the outcome. |
+| `roles` | List of roles to assign to the consumer. |
 
 Operations: Create.
 
@@ -335,8 +335,8 @@ API path: `/assignRoles`
 
 | Field | Description |
 | --- | --- |
-| `contentAsBase64` |  |
-| `mimeType` |  |
+| `contentAsBase64` | The content of the image as base64 encoded string |
+| `mimeType` | The MIME type of the image |
 | `responseCode` |  |
 | `responseMessage` |  |
 
@@ -412,8 +412,8 @@ API path: `/getKycDocument`
 
 | Field | Description |
 | --- | --- |
-| `contentAsBase64` |  |
-| `mimeType` |  |
+| `contentAsBase64` | The content of the image as base64 encoded string |
+| `mimeType` | The MIME type of the image |
 | `responseCode` |  |
 | `responseMessage` |  |
 
@@ -524,27 +524,27 @@ API path: `/provideCredentials`
 
 | Field | Description |
 | --- | --- |
-| `city` |  |
-| `consumerId` |  |
-| `consumerLanguage` |  |
-| `country` |  |
-| `dateOfBirth` |  |
-| `driverLicenceNumber` |  |
-| `email` |  |
-| `firstName` |  |
-| `identificationNumber` |  |
-| `lastName` |  |
-| `login` |  |
-| `module` |  |
-| `passportNumber` |  |
-| `phone` |  |
-| `responseCode` |  |
-| `responseMessage` |  |
-| `salutation` |  |
-| `state` |  |
-| `street1` |  |
-| `street2` |  |
-| `zip` |  |
+| `city` | City where the user resides. |
+| `consumerId` | User login or unique user identifier. |
+| `consumerLanguage` | Preferred language for the user (e.g., 'en'). |
+| `country` | User's country. |
+| `dateOfBirth` | User's date of birth (expected format: dd.MM.yyyy). |
+| `driverLicenceNumber` | User's driver's license number. |
+| `email` | User's email address (must be unique). |
+| `firstName` | User's first name. |
+| `identificationNumber` | User's identification number. |
+| `lastName` | User's last name. |
+| `login` | User login identifier (should be unique). |
+| `module` | Module identifier (if applicable). |
+| `passportNumber` | User's passport number. |
+| `phone` | User's phone number. |
+| `responseCode` | Response code (0 indicates success; non-zero indicates an error). |
+| `responseMessage` | Human-readable response message. |
+| `salutation` | User's salutation (e.g., Mr., Ms.). |
+| `state` | User's state or region. |
+| `street1` | Primary address line. |
+| `street2` | Secondary address line. |
+| `zip` | Postal code. |
 
 Operations: Create.
 
@@ -802,10 +802,10 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumerUUID` | `[]const u8` |  |
-| `responseCode` | `i64` |  |
-| `responseMessage` | `[]const u8` |  |
-| `roles` | `Value (array)` |  |
+| `consumerUUID` | `[]const u8` | Unique identifier of the consumer (user) to whom the role(s) will be assigned. |
+| `responseCode` | `i64` | Response code: 0 indicates success; any non-zero value indicates an error. |
+| `responseMessage` | `[]const u8` | A human-readable message providing additional details about the outcome. |
+| `roles` | `Value (array)` | List of roles to assign to the consumer. |
 
 #### Example: Create
 
@@ -837,8 +837,8 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `contentAsBase64` | `[]const u8` |  |
-| `mimeType` | `[]const u8` |  |
+| `contentAsBase64` | `[]const u8` | The content of the image as base64 encoded string |
+| `mimeType` | `[]const u8` | The MIME type of the image |
 | `responseCode` | `i64` |  |
 | `responseMessage` | `[]const u8` |  |
 
@@ -1020,8 +1020,8 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `contentAsBase64` | `[]const u8` |  |
-| `mimeType` | `[]const u8` |  |
+| `contentAsBase64` | `[]const u8` | The content of the image as base64 encoded string |
+| `mimeType` | `[]const u8` | The MIME type of the image |
 | `responseCode` | `i64` |  |
 | `responseMessage` | `[]const u8` |  |
 
@@ -1292,27 +1292,27 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `city` | `[]const u8` |  |
-| `consumerId` | `[]const u8` |  |
-| `consumerLanguage` | `[]const u8` |  |
-| `country` | `[]const u8` |  |
-| `dateOfBirth` | `[]const u8` |  |
-| `driverLicenceNumber` | `[]const u8` |  |
-| `email` | `[]const u8` |  |
-| `firstName` | `[]const u8` |  |
-| `identificationNumber` | `[]const u8` |  |
-| `lastName` | `[]const u8` |  |
-| `login` | `[]const u8` |  |
-| `module` | `[]const u8` |  |
-| `passportNumber` | `[]const u8` |  |
-| `phone` | `[]const u8` |  |
-| `responseCode` | `i64` |  |
-| `responseMessage` | `[]const u8` |  |
-| `salutation` | `[]const u8` |  |
-| `state` | `[]const u8` |  |
-| `street1` | `[]const u8` |  |
-| `street2` | `[]const u8` |  |
-| `zip` | `[]const u8` |  |
+| `city` | `[]const u8` | City where the user resides. |
+| `consumerId` | `[]const u8` | User login or unique user identifier. |
+| `consumerLanguage` | `[]const u8` | Preferred language for the user (e.g., 'en'). |
+| `country` | `[]const u8` | User's country. |
+| `dateOfBirth` | `[]const u8` | User's date of birth (expected format: dd.MM.yyyy). |
+| `driverLicenceNumber` | `[]const u8` | User's driver's license number. |
+| `email` | `[]const u8` | User's email address (must be unique). |
+| `firstName` | `[]const u8` | User's first name. |
+| `identificationNumber` | `[]const u8` | User's identification number. |
+| `lastName` | `[]const u8` | User's last name. |
+| `login` | `[]const u8` | User login identifier (should be unique). |
+| `module` | `[]const u8` | Module identifier (if applicable). |
+| `passportNumber` | `[]const u8` | User's passport number. |
+| `phone` | `[]const u8` | User's phone number. |
+| `responseCode` | `i64` | Response code (0 indicates success; non-zero indicates an error). |
+| `responseMessage` | `[]const u8` | Human-readable response message. |
+| `salutation` | `[]const u8` | User's salutation (e.g., Mr., Ms.). |
+| `state` | `[]const u8` | User's state or region. |
+| `street1` | `[]const u8` | Primary address line. |
+| `street2` | `[]const u8` | Secondary address line. |
+| `zip` | `[]const u8` | Postal code. |
 
 #### Example: Create
 

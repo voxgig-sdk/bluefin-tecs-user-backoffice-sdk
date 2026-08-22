@@ -17,7 +17,10 @@ package BluefinTecsUserBackofficeConfig;
 my $CONFIG_JSON = <<'END_CONFIG_JSON';
 {
   "main": {
-    "name": "BluefinTecsUserBackoffice"
+    "name": "BluefinTecsUserBackoffice",
+    "slug": "bluefin-tecs-user-backoffice",
+    "version": "0.0.1",
+    "target": "perl"
   },
   "feature": {
     "test": {
@@ -290,19 +293,23 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         {
           "name": "consumerUUID",
           "req": true,
+          "short": "Unique identifier of the consumer (user) to whom the role(s) will be assigned.",
           "type": "`$STRING`"
         },
         {
           "name": "responseCode",
+          "short": "Response code: 0 indicates success; any non-zero value indicates an error.",
           "type": "`$INTEGER`"
         },
         {
           "name": "responseMessage",
+          "short": "A human-readable message providing additional details about the outcome.",
           "type": "`$STRING`"
         },
         {
           "name": "roles",
           "req": true,
+          "short": "List of roles to assign to the consumer.",
           "type": "`$ARRAY`"
         }
       ],
@@ -352,11 +359,13 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         {
           "name": "contentAsBase64",
           "req": true,
+          "short": "The content of the image as base64 encoded string",
           "type": "`$STRING`"
         },
         {
           "name": "mimeType",
           "req": true,
+          "short": "The MIME type of the image",
           "type": "`$STRING`"
         },
         {
@@ -718,11 +727,13 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
         {
           "name": "contentAsBase64",
           "req": true,
+          "short": "The content of the image as base64 encoded string",
           "type": "`$STRING`"
         },
         {
           "name": "mimeType",
           "req": true,
+          "short": "The MIME type of the image",
           "type": "`$STRING`"
         },
         {
@@ -1232,87 +1243,108 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "city",
+          "short": "City where the user resides.",
           "type": "`$STRING`"
         },
         {
           "name": "consumerId",
+          "short": "User login or unique user identifier.",
           "type": "`$STRING`"
         },
         {
           "name": "consumerLanguage",
+          "short": "Preferred language for the user (e.g., 'en').",
           "type": "`$STRING`"
         },
         {
           "name": "country",
+          "short": "User's country.",
           "type": "`$STRING`"
         },
         {
           "name": "dateOfBirth",
+          "short": "User's date of birth (expected format: dd.MM.yyyy).",
           "type": "`$STRING`"
         },
         {
           "name": "driverLicenceNumber",
+          "short": "User's driver's license number.",
           "type": "`$STRING`"
         },
         {
           "name": "email",
           "req": true,
+          "short": "User's email address (must be unique).",
           "type": "`$STRING`"
         },
         {
           "name": "firstName",
+          "short": "User's first name.",
           "type": "`$STRING`"
         },
         {
           "name": "identificationNumber",
+          "short": "User's identification number.",
           "type": "`$STRING`"
         },
         {
           "name": "lastName",
+          "short": "User's last name.",
           "type": "`$STRING`"
         },
         {
           "name": "login",
+          "short": "User login identifier (should be unique).",
           "type": "`$STRING`"
         },
         {
           "name": "module",
+          "short": "Module identifier (if applicable).",
           "type": "`$STRING`"
         },
         {
           "name": "passportNumber",
+          "short": "User's passport number.",
           "type": "`$STRING`"
         },
         {
           "name": "phone",
+          "short": "User's phone number.",
           "type": "`$STRING`"
         },
         {
           "name": "responseCode",
+          "short": "Response code (0 indicates success; non-zero indicates an error).",
           "type": "`$INTEGER`"
         },
         {
           "name": "responseMessage",
+          "short": "Human-readable response message.",
           "type": "`$STRING`"
         },
         {
           "name": "salutation",
+          "short": "User's salutation (e.g., Mr., Ms.).",
           "type": "`$STRING`"
         },
         {
           "name": "state",
+          "short": "User's state or region.",
           "type": "`$STRING`"
         },
         {
           "name": "street1",
+          "short": "Primary address line.",
           "type": "`$STRING`"
         },
         {
           "name": "street2",
+          "short": "Secondary address line.",
           "type": "`$STRING`"
         },
         {
           "name": "zip",
+          "short": "Postal code.",
           "type": "`$STRING`"
         }
       ],
@@ -1800,6 +1832,21 @@ END_CONFIG_JSON
 
 sub make_config {
   return Voxgig::Struct::parse_json($CONFIG_JSON);
+}
+
+# SHARED CONFIG (sdkgen rung L2).
+#
+# The SDK reads the config on every request and never writes to it, so one
+# instance is shared by every client rather than rebuilt per client - the
+# difference between parsing the embedded JSON once and once per client.
+#
+# The returned structure is SHARED: treat it as read-only. Callers that need to
+# mutate should use make_config, which always parses a fresh copy.
+my $SHARED_CONFIG;
+
+sub shared_config {
+  $SHARED_CONFIG = make_config() unless defined $SHARED_CONFIG;
+  return $SHARED_CONFIG;
 }
 
 sub make_feature {

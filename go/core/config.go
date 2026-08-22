@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "BluefinTecsUserBackoffice",
+			"slug": "bluefin-tecs-user-backoffice",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -283,19 +286,23 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "consumerUUID",
 						"req": true,
+						"short": "Unique identifier of the consumer (user) to whom the role(s) will be assigned.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "responseCode",
+						"short": "Response code: 0 indicates success; any non-zero value indicates an error.",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"short": "A human-readable message providing additional details about the outcome.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "roles",
 						"req": true,
+						"short": "List of roles to assign to the consumer.",
 						"type": "`$ARRAY`",
 					},
 				},
@@ -345,11 +352,13 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "contentAsBase64",
 						"req": true,
+						"short": "The content of the image as base64 encoded string",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "mimeType",
 						"req": true,
+						"short": "The MIME type of the image",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -711,11 +720,13 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "contentAsBase64",
 						"req": true,
+						"short": "The content of the image as base64 encoded string",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "mimeType",
 						"req": true,
+						"short": "The MIME type of the image",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -1225,87 +1236,108 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "city",
+						"short": "City where the user resides.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "consumerId",
+						"short": "User login or unique user identifier.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "consumerLanguage",
+						"short": "Preferred language for the user (e.g., 'en').",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "country",
+						"short": "User's country.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "dateOfBirth",
+						"short": "User's date of birth (expected format: dd.MM.yyyy).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "driverLicenceNumber",
+						"short": "User's driver's license number.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "email",
 						"req": true,
+						"short": "User's email address (must be unique).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "firstName",
+						"short": "User's first name.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "identificationNumber",
+						"short": "User's identification number.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "lastName",
+						"short": "User's last name.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "login",
+						"short": "User login identifier (should be unique).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "module",
+						"short": "Module identifier (if applicable).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "passportNumber",
+						"short": "User's passport number.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "phone",
+						"short": "User's phone number.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "responseCode",
+						"short": "Response code (0 indicates success; non-zero indicates an error).",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"short": "Human-readable response message.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "salutation",
+						"short": "User's salutation (e.g., Mr., Ms.).",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "state",
+						"short": "User's state or region.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "street1",
+						"short": "Primary address line.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "street2",
+						"short": "Secondary address line.",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "zip",
+						"short": "Postal code.",
 						"type": "`$STRING`",
 					},
 				},

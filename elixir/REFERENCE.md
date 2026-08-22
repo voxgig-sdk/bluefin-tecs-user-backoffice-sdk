@@ -400,10 +400,10 @@ output_assign_role = BluefinTecsUserBackoffice.output_assign_role(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumerUUID` | `String.t()` | Yes |  |
-| `responseCode` | `integer()` | No |  |
-| `responseMessage` | `String.t()` | No |  |
-| `roles` | `list()` | Yes |  |
+| `consumerUUID` | `String.t()` | Yes | Unique identifier of the consumer (user) to whom the role(s) will be assigned. |
+| `responseCode` | `integer()` | No | Response code: 0 indicates success; any non-zero value indicates an error. |
+| `responseMessage` | `String.t()` | No | A human-readable message providing additional details about the outcome. |
+| `roles` | `list()` | Yes | List of roles to assign to the consumer. |
 
 ### Operations
 
@@ -457,8 +457,8 @@ output_change_logo = BluefinTecsUserBackoffice.output_change_logo(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `contentAsBase64` | `String.t()` | Yes |  |
-| `mimeType` | `String.t()` | Yes |  |
+| `contentAsBase64` | `String.t()` | Yes | The content of the image as base64 encoded string |
+| `mimeType` | `String.t()` | Yes | The MIME type of the image |
 | `responseCode` | `integer()` | No |  |
 | `responseMessage` | `String.t()` | No |  |
 
@@ -750,8 +750,8 @@ output_get_logo = BluefinTecsUserBackoffice.output_get_logo(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `contentAsBase64` | `String.t()` | Yes |  |
-| `mimeType` | `String.t()` | Yes |  |
+| `contentAsBase64` | `String.t()` | Yes | The content of the image as base64 encoded string |
+| `mimeType` | `String.t()` | Yes | The MIME type of the image |
 | `responseCode` | `integer()` | No |  |
 | `responseMessage` | `String.t()` | No |  |
 
@@ -1198,27 +1198,27 @@ output_register_user = BluefinTecsUserBackoffice.output_register_user(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `city` | `String.t()` | No |  |
-| `consumerId` | `String.t()` | No |  |
-| `consumerLanguage` | `String.t()` | No |  |
-| `country` | `String.t()` | No |  |
-| `dateOfBirth` | `String.t()` | No |  |
-| `driverLicenceNumber` | `String.t()` | No |  |
-| `email` | `String.t()` | Yes |  |
-| `firstName` | `String.t()` | No |  |
-| `identificationNumber` | `String.t()` | No |  |
-| `lastName` | `String.t()` | No |  |
-| `login` | `String.t()` | No |  |
-| `module` | `String.t()` | No |  |
-| `passportNumber` | `String.t()` | No |  |
-| `phone` | `String.t()` | No |  |
-| `responseCode` | `integer()` | No |  |
-| `responseMessage` | `String.t()` | No |  |
-| `salutation` | `String.t()` | No |  |
-| `state` | `String.t()` | No |  |
-| `street1` | `String.t()` | No |  |
-| `street2` | `String.t()` | No |  |
-| `zip` | `String.t()` | No |  |
+| `city` | `String.t()` | No | City where the user resides. |
+| `consumerId` | `String.t()` | No | User login or unique user identifier. |
+| `consumerLanguage` | `String.t()` | No | Preferred language for the user (e.g., 'en'). |
+| `country` | `String.t()` | No | User's country. |
+| `dateOfBirth` | `String.t()` | No | User's date of birth (expected format: dd.MM.yyyy). |
+| `driverLicenceNumber` | `String.t()` | No | User's driver's license number. |
+| `email` | `String.t()` | Yes | User's email address (must be unique). |
+| `firstName` | `String.t()` | No | User's first name. |
+| `identificationNumber` | `String.t()` | No | User's identification number. |
+| `lastName` | `String.t()` | No | User's last name. |
+| `login` | `String.t()` | No | User login identifier (should be unique). |
+| `module` | `String.t()` | No | Module identifier (if applicable). |
+| `passportNumber` | `String.t()` | No | User's passport number. |
+| `phone` | `String.t()` | No | User's phone number. |
+| `responseCode` | `integer()` | No | Response code (0 indicates success; non-zero indicates an error). |
+| `responseMessage` | `String.t()` | No | Human-readable response message. |
+| `salutation` | `String.t()` | No | User's salutation (e.g., Mr., Ms.). |
+| `state` | `String.t()` | No | User's state or region. |
+| `street1` | `String.t()` | No | Primary address line. |
+| `street2` | `String.t()` | No | Secondary address line. |
+| `zip` | `String.t()` | No | Postal code. |
 
 ### Operations
 

@@ -10,6 +10,9 @@ pub fn make_config() -> Value {
     Value::map_of([
         ("main".to_string(), Value::map_of([
             ("name".to_string(), Value::str("BluefinTecsUserBackoffice")),
+            ("slug".to_string(), Value::str("bluefin-tecs-user-backoffice")),
+            ("version".to_string(), Value::str("0.0.1")),
+            ("target".to_string(), Value::str("rust")),
         ])),
         ("feature".to_string(), Value::map_of([
             ("test".to_string(), Value::map_of([
@@ -20,6 +23,9 @@ pub fn make_config() -> Value {
         ])),
         ("options".to_string(), Value::map_of([
             ("base".to_string(), Value::str("https://test.tecs.at/usermanagement-backofficews")),
+            ("auth".to_string(), Value::map_of([
+                ("prefix".to_string(), Value::str("Bearer")),
+            ])),
             ("headers".to_string(), Value::map_of([
                 ("content-type".to_string(), Value::str("application/json")),
             ])),
@@ -49,9 +55,6 @@ pub fn make_config() -> Value {
                 ("output_update_consumer".to_string(), Value::empty_map()),
                 ("output_update_profile".to_string(), Value::empty_map()),
                 ("version".to_string(), Value::empty_map()),
-            ])),
-            ("auth".to_string(), Value::map_of([
-                ("prefix".to_string(), Value::str("Bearer")),
             ])),
         ])),
         ("entity".to_string(), Value::map_of([
@@ -282,19 +285,23 @@ pub fn make_config() -> Value {
                     Value::map_of([
                         ("name".to_string(), Value::str("consumerUUID")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Unique identifier of the consumer (user) to whom the role(s) will be assigned.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("responseCode")),
+                        ("short".to_string(), Value::str("Response code: 0 indicates success; any non-zero value indicates an error.")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("responseMessage")),
+                        ("short".to_string(), Value::str("A human-readable message providing additional details about the outcome.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("roles")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("List of roles to assign to the consumer.")),
                         ("type".to_string(), Value::str("`$ARRAY`")),
                     ]),
                 ])),
@@ -344,11 +351,13 @@ pub fn make_config() -> Value {
                     Value::map_of([
                         ("name".to_string(), Value::str("contentAsBase64")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("The content of the image as base64 encoded string")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("mimeType")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("The MIME type of the image")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
@@ -710,11 +719,13 @@ pub fn make_config() -> Value {
                     Value::map_of([
                         ("name".to_string(), Value::str("contentAsBase64")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("The content of the image as base64 encoded string")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("mimeType")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("The MIME type of the image")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
@@ -1224,87 +1235,108 @@ pub fn make_config() -> Value {
                 ("fields".to_string(), Value::list(vec![
                     Value::map_of([
                         ("name".to_string(), Value::str("city")),
+                        ("short".to_string(), Value::str("City where the user resides.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("consumerId")),
+                        ("short".to_string(), Value::str("User login or unique user identifier.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("consumerLanguage")),
+                        ("short".to_string(), Value::str("Preferred language for the user (e.g., 'en').")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("country")),
+                        ("short".to_string(), Value::str("User's country.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("dateOfBirth")),
+                        ("short".to_string(), Value::str("User's date of birth (expected format: dd.MM.yyyy).")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("driverLicenceNumber")),
+                        ("short".to_string(), Value::str("User's driver's license number.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("email")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("User's email address (must be unique).")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("firstName")),
+                        ("short".to_string(), Value::str("User's first name.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("identificationNumber")),
+                        ("short".to_string(), Value::str("User's identification number.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("lastName")),
+                        ("short".to_string(), Value::str("User's last name.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("login")),
+                        ("short".to_string(), Value::str("User login identifier (should be unique).")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("module")),
+                        ("short".to_string(), Value::str("Module identifier (if applicable).")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("passportNumber")),
+                        ("short".to_string(), Value::str("User's passport number.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("phone")),
+                        ("short".to_string(), Value::str("User's phone number.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("responseCode")),
+                        ("short".to_string(), Value::str("Response code (0 indicates success; non-zero indicates an error).")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("responseMessage")),
+                        ("short".to_string(), Value::str("Human-readable response message.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("salutation")),
+                        ("short".to_string(), Value::str("User's salutation (e.g., Mr., Ms.).")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("state")),
+                        ("short".to_string(), Value::str("User's state or region.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("street1")),
+                        ("short".to_string(), Value::str("Primary address line.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("street2")),
+                        ("short".to_string(), Value::str("Secondary address line.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("zip")),
+                        ("short".to_string(), Value::str("Postal code.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                 ])),
@@ -1788,6 +1820,28 @@ pub fn make_config() -> Value {
             ])),
         ])),
     ])
+}
+
+// SHARED CONFIG (sdkgen rung L2).
+//
+// The SDK reads the config on every request and never writes to it, so one
+// instance is shared by every client rather than rebuilt per client. Above the
+// size threshold make_config re-parses the whole embedded JSON, so this is the
+// difference between parsing the model once and once per client.
+//
+// THREAD-LOCAL, not a global: Value is Rc/RefCell-backed and so is neither
+// Send nor Sync. One config per thread is the widest scope that is sound here,
+// and the clone is an Rc bump, not a deep copy.
+thread_local! {
+    static SHARED_CONFIG: Value = make_config();
+}
+
+/// The per-thread config, built once on first use.
+///
+/// The returned Value SHARES its nodes: treat it as read-only. Callers that
+/// need to mutate should use make_config, which always returns a fresh copy.
+pub fn shared_config() -> Value {
+    SHARED_CONFIG.with(|c| c.clone())
 }
 
 pub fn make_feature(name: &str) -> FeatureRef {

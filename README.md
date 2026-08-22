@@ -10,7 +10,7 @@ This is an unofficial SDK for the User Back Office Web Service Documentation pub
 
 Learn more about Voxgig SDKs at [voxgig.com/sdk](https://voxgig.com/sdk/).
 
-> TypeScript, Python, PHP, Golang, Ruby, Lua, C, Clojure, C++, C#, Dart, Elixir, Haskell, Java, JavaScript, Kotlin, OCaml, Perl, Rust, Scala, Swift, Zig SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
+> TypeScript, Python, PHP, Golang, Ruby, Lua, C, Clojure, C++, C#, Dart, Elixir, Java, JavaScript, Kotlin, OCaml, Perl, Rust, Scala, Swift, Zig SDKs, a CLI with an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
 
 ## Entities, not endpoints
 
@@ -161,23 +161,6 @@ record = BluefinTecsUserBackoffice.Entity.OutputGetLogo.load(output_get_logo, H.
 IO.inspect(record)
 ```
 
-### Haskell
-
-```haskell
-import qualified SdkClient as Sdk
-import VoxgigStruct (Value (..), emptyMap)
-import SdkHelpers (jo)
-
-main :: IO ()
-main = do
-  sdk <- Sdk.testSdk0
-  ent <- Sdk.output_get_logo sdk VNoval
-  arg <- emptyMap
-  ctrl <- emptyMap
-  output_get_logo <- Sdk.eLoad ent arg ctrl
-  print output_get_logo
-```
-
 ### Java
 
 ```java
@@ -280,7 +263,6 @@ switch (client.output_get_logo(h.vnull()).load(h.vnull(), h.vnull())) {
 | C# | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
 | Dart | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
 | Elixir | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
-| Haskell | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
 | Java | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
 | JavaScript | `@voxgig-sdk/bluefin-tecs-user-backoffice-js` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
 | Kotlin | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
@@ -312,7 +294,7 @@ See the [TypeScript README](ts/README.md) for the full guide.
 
 | Surface | Path |
 | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua, C, Clojure, C++, C#, Dart, Elixir, Haskell, Java, JavaScript, Kotlin, OCaml, Perl, Rust, Scala, Swift, Zig) | `ts/` `py/` `php/` `go/` `rb/` `lua/` `c/` `clojure/` `cpp/` `csharp/` `dart/` `elixir/` `haskell/` `java/` `js/` `kotlin/` `ocaml/` `perl/` `rust/` `scala/` `swift/` `zig/` |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua, C, Clojure, C++, C#, Dart, Elixir, Java, JavaScript, Kotlin, OCaml, Perl, Rust, Scala, Swift, Zig) | `ts/` `py/` `php/` `go/` `rb/` `lua/` `c/` `clojure/` `cpp/` `csharp/` `dart/` `elixir/` `java/` `js/` `kotlin/` `ocaml/` `perl/` `rust/` `scala/` `swift/` `zig/` |
 | **CLI** | `go-cli/` |
 | **MCP server** | `go-mcp/` |
 
@@ -503,21 +485,6 @@ alias BluefinTecsUserBackoffice.Helpers, as: H
 sdk = BluefinTecsUserBackoffice.new(H.deep(%{"apikey" => System.get_env("BLUEFIN_TECS_USER_BACKOFFICE_APIKEY")}))
 
 output_activate_digital_module = BluefinTecsUserBackoffice.output_activate_digital_module(sdk)
-```
-
-### Haskell
-
-```haskell
-import System.Environment (lookupEnv)
-import qualified SdkClient as Sdk
-import VoxgigStruct (Value (..), emptyMap)
-import SdkHelpers (jo)
-
-main :: IO ()
-main = do
-  mkey <- lookupEnv "BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"
-  opts <- jo [("apikey", maybe VNoval VStr mkey)]
-  sdk <- Sdk.newSdk opts
 ```
 
 ### Java
@@ -755,22 +722,6 @@ result = BluefinTecsUserBackoffice.direct(sdk, BluefinTecsUserBackoffice.Helpers
 }))
 ```
 
-**Haskell:**
-```haskell
-import qualified SdkClient as Sdk
-import qualified SdkFeatures as F
-import VoxgigStruct (Value (..))
-import SdkHelpers (jo)
-
-main :: IO ()
-main = do
-  sdk <- Sdk.newSdk0
-  params <- jo [("id", VStr "example")]
-  args <- jo [("path", VStr "/api/resource/{id}"), ("method", VStr "GET"), ("params", params)]
-  result <- F.direct sdk args
-  print result
-```
-
 **Java:**
 ```java
 Map<String, Object> result = client.direct(Map.of(
@@ -893,7 +844,6 @@ Pass custom features via the `extend` option at construction time.
 - [C#](csharp/README.md)
 - [Dart](dart/README.md)
 - [Elixir](elixir/README.md)
-- [Haskell](haskell/README.md)
 - [Java](java/README.md)
 - [JavaScript](js/README.md)
 - [Kotlin](kotlin/README.md)

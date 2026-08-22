@@ -18,6 +18,8 @@ let make_config () : value =
           ("active", (Bool false)) ])) ])) ]));
     ("options", (jo [
       ("base", (Str "https://test.tecs.at/usermanagement-backofficews"));
+      ("auth", (jo [
+        ("prefix", (Str "Bearer")) ]));
       ("headers", (jo [
         ("content-type", (Str "application/json")) ]));
       ("entity", (jo [
@@ -45,9 +47,7 @@ let make_config () : value =
         ("output_reset_password", (empty_map ()));
         ("output_update_consumer", (empty_map ()));
         ("output_update_profile", (empty_map ()));
-        ("version", (empty_map ())) ]));
-      ("auth", (jo [
-        ("prefix", (Str "Bearer")) ])) ]));
+        ("version", (empty_map ())) ])) ]));
     ("entity", (jo [
       ("output_activate_digital_module", (jo [
         ("fields", (ja [
@@ -209,16 +209,20 @@ let make_config () : value =
           (jo [
             ("name", (Str "consumerUUID"));
             ("req", (Bool true));
+            ("short", (Str "Unique identifier of the consumer (user) to whom the role(s) will be assigned."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "responseCode"));
+            ("short", (Str "Response code: 0 indicates success; any non-zero value indicates an error."));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("short", (Str "A human-readable message providing additional details about the outcome."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "roles"));
             ("req", (Bool true));
+            ("short", (Str "List of roles to assign to the consumer."));
             ("type", (Str "`$ARRAY`")) ]) ]));
         ("name", (Str "output_assign_role"));
         ("op", (jo [
@@ -253,10 +257,12 @@ let make_config () : value =
           (jo [
             ("name", (Str "contentAsBase64"));
             ("req", (Bool true));
+            ("short", (Str "The content of the image as base64 encoded string"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "mimeType"));
             ("req", (Bool true));
+            ("short", (Str "The MIME type of the image"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "responseCode"));
@@ -513,10 +519,12 @@ let make_config () : value =
           (jo [
             ("name", (Str "contentAsBase64"));
             ("req", (Bool true));
+            ("short", (Str "The content of the image as base64 encoded string"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "mimeType"));
             ("req", (Bool true));
+            ("short", (Str "The MIME type of the image"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "responseCode"));
@@ -875,67 +883,88 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("name", (Str "city"));
+            ("short", (Str "City where the user resides."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "consumerId"));
+            ("short", (Str "User login or unique user identifier."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "consumerLanguage"));
+            ("short", (Str "Preferred language for the user (e.g., 'en')."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "country"));
+            ("short", (Str "User's country."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "dateOfBirth"));
+            ("short", (Str "User's date of birth (expected format: dd.MM.yyyy)."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "driverLicenceNumber"));
+            ("short", (Str "User's driver's license number."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "email"));
             ("req", (Bool true));
+            ("short", (Str "User's email address (must be unique)."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "firstName"));
+            ("short", (Str "User's first name."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "identificationNumber"));
+            ("short", (Str "User's identification number."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "lastName"));
+            ("short", (Str "User's last name."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "login"));
+            ("short", (Str "User login identifier (should be unique)."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "module"));
+            ("short", (Str "Module identifier (if applicable)."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "passportNumber"));
+            ("short", (Str "User's passport number."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "phone"));
+            ("short", (Str "User's phone number."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "responseCode"));
+            ("short", (Str "Response code (0 indicates success; non-zero indicates an error)."));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("short", (Str "Human-readable response message."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "salutation"));
+            ("short", (Str "User's salutation (e.g., Mr., Ms.)."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "state"));
+            ("short", (Str "User's state or region."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "street1"));
+            ("short", (Str "Primary address line."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "street2"));
+            ("short", (Str "Secondary address line."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "zip"));
+            ("short", (Str "Postal code."));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "output_register_user"));
         ("op", (jo [

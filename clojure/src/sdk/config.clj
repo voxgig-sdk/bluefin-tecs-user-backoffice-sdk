@@ -165,16 +165,20 @@
           (vs/jm
             "name" "consumerUUID"
             "req" true
+            "short" "Unique identifier of the consumer (user) to whom the role(s) will be assigned."
             "type" "`$STRING`")
           (vs/jm
             "name" "responseCode"
+            "short" "Response code: 0 indicates success; any non-zero value indicates an error."
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "short" "A human-readable message providing additional details about the outcome."
             "type" "`$STRING`")
           (vs/jm
             "name" "roles"
             "req" true
+            "short" "List of roles to assign to the consumer."
             "type" "`$ARRAY`"))
         "name" "output_assign_role"
         "op" (vs/jm
@@ -209,10 +213,12 @@
           (vs/jm
             "name" "contentAsBase64"
             "req" true
+            "short" "The content of the image as base64 encoded string"
             "type" "`$STRING`")
           (vs/jm
             "name" "mimeType"
             "req" true
+            "short" "The MIME type of the image"
             "type" "`$STRING`")
           (vs/jm
             "name" "responseCode"
@@ -469,10 +475,12 @@
           (vs/jm
             "name" "contentAsBase64"
             "req" true
+            "short" "The content of the image as base64 encoded string"
             "type" "`$STRING`")
           (vs/jm
             "name" "mimeType"
             "req" true
+            "short" "The MIME type of the image"
             "type" "`$STRING`")
           (vs/jm
             "name" "responseCode"
@@ -831,67 +839,88 @@
         "fields" (vs/jt
           (vs/jm
             "name" "city"
+            "short" "City where the user resides."
             "type" "`$STRING`")
           (vs/jm
             "name" "consumerId"
+            "short" "User login or unique user identifier."
             "type" "`$STRING`")
           (vs/jm
             "name" "consumerLanguage"
+            "short" "Preferred language for the user (e.g., 'en')."
             "type" "`$STRING`")
           (vs/jm
             "name" "country"
+            "short" "User's country."
             "type" "`$STRING`")
           (vs/jm
             "name" "dateOfBirth"
+            "short" "User's date of birth (expected format: dd.MM.yyyy)."
             "type" "`$STRING`")
           (vs/jm
             "name" "driverLicenceNumber"
+            "short" "User's driver's license number."
             "type" "`$STRING`")
           (vs/jm
             "name" "email"
             "req" true
+            "short" "User's email address (must be unique)."
             "type" "`$STRING`")
           (vs/jm
             "name" "firstName"
+            "short" "User's first name."
             "type" "`$STRING`")
           (vs/jm
             "name" "identificationNumber"
+            "short" "User's identification number."
             "type" "`$STRING`")
           (vs/jm
             "name" "lastName"
+            "short" "User's last name."
             "type" "`$STRING`")
           (vs/jm
             "name" "login"
+            "short" "User login identifier (should be unique)."
             "type" "`$STRING`")
           (vs/jm
             "name" "module"
+            "short" "Module identifier (if applicable)."
             "type" "`$STRING`")
           (vs/jm
             "name" "passportNumber"
+            "short" "User's passport number."
             "type" "`$STRING`")
           (vs/jm
             "name" "phone"
+            "short" "User's phone number."
             "type" "`$STRING`")
           (vs/jm
             "name" "responseCode"
+            "short" "Response code (0 indicates success; non-zero indicates an error)."
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "short" "Human-readable response message."
             "type" "`$STRING`")
           (vs/jm
             "name" "salutation"
+            "short" "User's salutation (e.g., Mr., Ms.)."
             "type" "`$STRING`")
           (vs/jm
             "name" "state"
+            "short" "User's state or region."
             "type" "`$STRING`")
           (vs/jm
             "name" "street1"
+            "short" "Primary address line."
             "type" "`$STRING`")
           (vs/jm
             "name" "street2"
+            "short" "Secondary address line."
             "type" "`$STRING`")
           (vs/jm
             "name" "zip"
+            "short" "Postal code."
             "type" "`$STRING`"))
         "name" "output_register_user"
         "op" (vs/jm

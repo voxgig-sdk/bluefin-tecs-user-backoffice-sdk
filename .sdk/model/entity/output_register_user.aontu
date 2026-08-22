@@ -8,106 +8,127 @@ main: kit: entity: output_register_user: {
     {
       name: "city"
       req: false
+      short: "City where the user resides."
       type: "`$STRING`"
     }
     {
       name: "consumerId"
       req: false
+      short: "User login or unique user identifier."
       type: "`$STRING`"
     }
     {
       name: "consumerLanguage"
       req: false
+      short: "Preferred language for the user (e.g., 'en')."
       type: "`$STRING`"
     }
     {
       name: "country"
       req: false
+      short: "User's country."
       type: "`$STRING`"
     }
     {
       name: "dateOfBirth"
       req: false
+      short: "User's date of birth (expected format: dd.MM.yyyy)."
       type: "`$STRING`"
     }
     {
       name: "driverLicenceNumber"
       req: false
+      short: "User's driver's license number."
       type: "`$STRING`"
     }
     {
       name: "email"
       req: true
+      short: "User's email address (must be unique)."
       type: "`$STRING`"
     }
     {
       name: "firstName"
       req: false
+      short: "User's first name."
       type: "`$STRING`"
     }
     {
       name: "identificationNumber"
       req: false
+      short: "User's identification number."
       type: "`$STRING`"
     }
     {
       name: "lastName"
       req: false
+      short: "User's last name."
       type: "`$STRING`"
     }
     {
       name: "login"
       req: false
+      short: "User login identifier (should be unique)."
       type: "`$STRING`"
     }
     {
       name: "module"
       req: false
+      short: "Module identifier (if applicable)."
       type: "`$STRING`"
     }
     {
       name: "passportNumber"
       req: false
+      short: "User's passport number."
       type: "`$STRING`"
     }
     {
       name: "phone"
       req: false
+      short: "User's phone number."
       type: "`$STRING`"
     }
     {
       name: "responseCode"
       req: false
+      short: "Response code (0 indicates success; non-zero indicates an error)."
       type: "`$INTEGER`"
     }
     {
       name: "responseMessage"
       req: false
+      short: "Human-readable response message."
       type: "`$STRING`"
     }
     {
       name: "salutation"
       req: false
+      short: "User's salutation (e.g., Mr., Ms.)."
       type: "`$STRING`"
     }
     {
       name: "state"
       req: false
+      short: "User's state or region."
       type: "`$STRING`"
     }
     {
       name: "street1"
       req: false
+      short: "Primary address line."
       type: "`$STRING`"
     }
     {
       name: "street2"
       req: false
+      short: "Secondary address line."
       type: "`$STRING`"
     }
     {
       name: "zip"
       req: false
+      short: "Postal code."
       type: "`$STRING`"
     }
   ]

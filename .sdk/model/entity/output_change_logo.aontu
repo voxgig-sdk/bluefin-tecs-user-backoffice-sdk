@@ -8,11 +8,13 @@ main: kit: entity: output_change_logo: {
     {
       name: "contentAsBase64"
       req: true
+      short: "The content of the image as base64 encoded string"
       type: "`$STRING`"
     }
     {
       name: "mimeType"
       req: true
+      short: "The MIME type of the image"
       type: "`$STRING`"
     }
     {

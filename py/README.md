@@ -314,10 +314,10 @@ API path: `/activateUser`
 
 | Field | Description |
 | --- | --- |
-| `consumerUUID` |  |
-| `responseCode` |  |
-| `responseMessage` |  |
-| `roles` |  |
+| `consumerUUID` | Unique identifier of the consumer (user) to whom the role(s) will be assigned. |
+| `responseCode` | Response code: 0 indicates success; any non-zero value indicates an error. |
+| `responseMessage` | A human-readable message providing additional details about the outcome. |
+| `roles` | List of roles to assign to the consumer. |
 
 Operations: Create.
 
@@ -327,8 +327,8 @@ API path: `/assignRoles`
 
 | Field | Description |
 | --- | --- |
-| `contentAsBase64` |  |
-| `mimeType` |  |
+| `contentAsBase64` | The content of the image as base64 encoded string |
+| `mimeType` | The MIME type of the image |
 | `responseCode` |  |
 | `responseMessage` |  |
 
@@ -404,8 +404,8 @@ API path: `/getKycDocument`
 
 | Field | Description |
 | --- | --- |
-| `contentAsBase64` |  |
-| `mimeType` |  |
+| `contentAsBase64` | The content of the image as base64 encoded string |
+| `mimeType` | The MIME type of the image |
 | `responseCode` |  |
 | `responseMessage` |  |
 
@@ -516,27 +516,27 @@ API path: `/provideCredentials`
 
 | Field | Description |
 | --- | --- |
-| `city` |  |
-| `consumerId` |  |
-| `consumerLanguage` |  |
-| `country` |  |
-| `dateOfBirth` |  |
-| `driverLicenceNumber` |  |
-| `email` |  |
-| `firstName` |  |
-| `identificationNumber` |  |
-| `lastName` |  |
-| `login` |  |
-| `module` |  |
-| `passportNumber` |  |
-| `phone` |  |
-| `responseCode` |  |
-| `responseMessage` |  |
-| `salutation` |  |
-| `state` |  |
-| `street1` |  |
-| `street2` |  |
-| `zip` |  |
+| `city` | City where the user resides. |
+| `consumerId` | User login or unique user identifier. |
+| `consumerLanguage` | Preferred language for the user (e.g., 'en'). |
+| `country` | User's country. |
+| `dateOfBirth` | User's date of birth (expected format: dd.MM.yyyy). |
+| `driverLicenceNumber` | User's driver's license number. |
+| `email` | User's email address (must be unique). |
+| `firstName` | User's first name. |
+| `identificationNumber` | User's identification number. |
+| `lastName` | User's last name. |
+| `login` | User login identifier (should be unique). |
+| `module` | Module identifier (if applicable). |
+| `passportNumber` | User's passport number. |
+| `phone` | User's phone number. |
+| `responseCode` | Response code (0 indicates success; non-zero indicates an error). |
+| `responseMessage` | Human-readable response message. |
+| `salutation` | User's salutation (e.g., Mr., Ms.). |
+| `state` | User's state or region. |
+| `street1` | Primary address line. |
+| `street2` | Secondary address line. |
+| `zip` | Postal code. |
 
 Operations: Create.
 
@@ -767,10 +767,10 @@ Create an instance: `output_assign_role = client.OutputAssignRole()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumerUUID` | `str` |  |
-| `responseCode` | `int` |  |
-| `responseMessage` | `str` |  |
-| `roles` | `list` |  |
+| `consumerUUID` | `str` | Unique identifier of the consumer (user) to whom the role(s) will be assigned. |
+| `responseCode` | `int` | Response code: 0 indicates success; any non-zero value indicates an error. |
+| `responseMessage` | `str` | A human-readable message providing additional details about the outcome. |
+| `roles` | `list` | List of roles to assign to the consumer. |
 
 #### Example: Create
 
@@ -796,8 +796,8 @@ Create an instance: `output_change_logo = client.OutputChangeLogo()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `contentAsBase64` | `str` |  |
-| `mimeType` | `str` |  |
+| `contentAsBase64` | `str` | The content of the image as base64 encoded string |
+| `mimeType` | `str` | The MIME type of the image |
 | `responseCode` | `int` |  |
 | `responseMessage` | `str` |  |
 
@@ -949,8 +949,8 @@ Create an instance: `output_get_logo = client.OutputGetLogo()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `contentAsBase64` | `str` |  |
-| `mimeType` | `str` |  |
+| `contentAsBase64` | `str` | The content of the image as base64 encoded string |
+| `mimeType` | `str` | The MIME type of the image |
 | `responseCode` | `int` |  |
 | `responseMessage` | `str` |  |
 
@@ -1173,27 +1173,27 @@ Create an instance: `output_register_user = client.OutputRegisterUser()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `city` | `str` |  |
-| `consumerId` | `str` |  |
-| `consumerLanguage` | `str` |  |
-| `country` | `str` |  |
-| `dateOfBirth` | `str` |  |
-| `driverLicenceNumber` | `str` |  |
-| `email` | `str` |  |
-| `firstName` | `str` |  |
-| `identificationNumber` | `str` |  |
-| `lastName` | `str` |  |
-| `login` | `str` |  |
-| `module` | `str` |  |
-| `passportNumber` | `str` |  |
-| `phone` | `str` |  |
-| `responseCode` | `int` |  |
-| `responseMessage` | `str` |  |
-| `salutation` | `str` |  |
-| `state` | `str` |  |
-| `street1` | `str` |  |
-| `street2` | `str` |  |
-| `zip` | `str` |  |
+| `city` | `str` | City where the user resides. |
+| `consumerId` | `str` | User login or unique user identifier. |
+| `consumerLanguage` | `str` | Preferred language for the user (e.g., 'en'). |
+| `country` | `str` | User's country. |
+| `dateOfBirth` | `str` | User's date of birth (expected format: dd.MM.yyyy). |
+| `driverLicenceNumber` | `str` | User's driver's license number. |
+| `email` | `str` | User's email address (must be unique). |
+| `firstName` | `str` | User's first name. |
+| `identificationNumber` | `str` | User's identification number. |
+| `lastName` | `str` | User's last name. |
+| `login` | `str` | User login identifier (should be unique). |
+| `module` | `str` | Module identifier (if applicable). |
+| `passportNumber` | `str` | User's passport number. |
+| `phone` | `str` | User's phone number. |
+| `responseCode` | `int` | Response code (0 indicates success; non-zero indicates an error). |
+| `responseMessage` | `str` | Human-readable response message. |
+| `salutation` | `str` | User's salutation (e.g., Mr., Ms.). |
+| `state` | `str` | User's state or region. |
+| `street1` | `str` | Primary address line. |
+| `street2` | `str` | Secondary address line. |
+| `zip` | `str` | Postal code. |
 
 #### Example: Create
 
