@@ -1,0 +1,150 @@
+# Entity: output_create_mandator
+
+main: kit: entity: output_create_mandator: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "city"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "country"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "dateOfBirth"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "description"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "driversLicenseNumber"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "email"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "firstName"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "identificationNumber"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "lastName"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "login"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "name"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "passportNumber"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "phone"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "salutation"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "state"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "street1"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "street2"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "zipCode"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "output_create_mandator"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          args: {
+            header: [
+              {
+                kind: "header"
+                name: "authorization"
+                orig: "authorization"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "POST"
+          orig: "/createMandator"
+          parts: [
+            "createMandator"
+          ]
+          select: {
+            exist: [
+              "authorization"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.mandator`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

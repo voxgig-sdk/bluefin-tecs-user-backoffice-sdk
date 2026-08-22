@@ -26,7 +26,7 @@ class Config {
   final Map<String, dynamic> main = <String, dynamic>{
     'name': 'BluefinTecsUserBackoffice',
         'slug': 'bluefin-tecs-user-backoffice',
-    'version': '0.0.1',
+    'version': '0.1.1',
     'target': 'dart',
 
   };
@@ -556,7 +556,7 @@ class Config {
               },
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
-                'res': '`body`',
+                'res': '`body.mandator`',
               },
             },
           ],

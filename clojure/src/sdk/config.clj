@@ -346,7 +346,7 @@
                     "authorization"))
                 "transform" (vs/jm
                   "req" "`reqdata`"
-                  "res" "`body`")))))
+                  "res" "`body.mandator`")))))
         "relations" (vs/jm
           "ancestors" (vs/jt)))
       "output_create_service_user" (vs/jm

@@ -50,7 +50,7 @@ public final class Config {
     b.append(" \"main\": {");
     b.append("  \"name\": \"BluefinTecsUserBackoffice\",");
     b.append("  \"slug\": \"bluefin-tecs-user-backoffice\",");
-    b.append("  \"version\": \"0.0.1\",");
+    b.append("  \"version\": \"0.1.1\",");
     b.append("  \"target\": \"java\"");
     b.append(" },");
     b.append(" \"feature\": {");
@@ -570,7 +570,7 @@ public final class Config {
     b.append("       },");
     b.append("       \"transform\": {");
     b.append("        \"req\": \"`reqdata`\",");
-    b.append("        \"res\": \"`body`\"");
+    b.append("        \"res\": \"`body.mandator`\"");
     b.append("       }");
     b.append("      }");
     b.append("     ]");

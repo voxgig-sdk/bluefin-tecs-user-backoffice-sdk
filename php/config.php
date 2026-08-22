@@ -34,7 +34,7 @@ class BluefinTecsUserBackofficeConfig
             "main" => [
                 "name" => "BluefinTecsUserBackoffice",
                 "slug" => "bluefin-tecs-user-backoffice",
-                "version" => "0.0.1",
+                "version" => "0.1.1",
                 "target" => "php",
             ],
             "feature" => [
@@ -554,7 +554,7 @@ class BluefinTecsUserBackofficeConfig
                   ],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.mandator`',
                   ],
                 ],
               ],
