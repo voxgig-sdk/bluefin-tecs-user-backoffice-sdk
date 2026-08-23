@@ -6,7 +6,7 @@
 import java.util.{ArrayList, LinkedHashMap, List => JList, Map => JMap}
 import java.util.function.{BiFunction, Supplier}
 
-import voxgig.bluefintecsuserbackofficesdk.core.{Helpers, BluefinTecsUserBackofficeSDK}
+import voxgig.bluefintecsuserbackofficesdk.core.{Helpers, SdkEntity, BluefinTecsUserBackofficeSDK}
 
 object VersionDirectTest {
 

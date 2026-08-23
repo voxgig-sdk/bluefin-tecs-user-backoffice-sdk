@@ -5,7 +5,7 @@
 
 import java.util.{ArrayList, LinkedHashMap, List => JList, Map => JMap}
 
-import voxgig.bluefintecsuserbackofficesdk.core.{Helpers, BluefinTecsUserBackofficeSDK}
+import voxgig.bluefintecsuserbackofficesdk.core.{Helpers, SdkEntity, BluefinTecsUserBackofficeSDK}
 import voxgig.bluefintecsuserbackofficesdk.utility.struct.Struct
 
 object OutputRegisterUserEntityTest {
