@@ -1,6 +1,15 @@
 {
+  "NAME": "BLUEFIN-TECS-USER-BACKOFFICE",
+  "Name": "BluefinTecsUserBackoffice",
   "def": "tecs-user-backoffice-openapi.json",
   "main": {
+    "api": {
+      "entity": {},
+      "guide": {}
+    },
+    "custom": {
+      "plurals": {}
+    },
     "def": {
       "desc": ""
     },
@@ -4398,5 +4407,8 @@
     }
   },
   "name": "bluefin-tecs-user-backoffice",
+  "name-": "bluefin-tecs-user-backoffice",
+  "name_": "bluefin_tecs_user_backoffice",
+  "name__orig": "bluefin-tecs-user-backoffice",
   "origin": "voxgig-sdk"
 }
