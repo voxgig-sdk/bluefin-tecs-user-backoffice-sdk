@@ -21,7 +21,7 @@ BASIC_FLOW: {
   my $setup = output_get_logo_basic_setup(undef);
   my $_live = $setup->{live} ? 1 : 0;
   # Per-op sdk-test-control.json skip.
-  for my $_op ('load') {
+  for my $_op (('load')) {
     my ($_should_skip, $_reason) = BluefinTecsUserBackofficeTestRunner::is_control_skipped(
       'entityOp', "output_get_logo." . $_op, $_live ? 'live' : 'unit');
     if ($_should_skip) {

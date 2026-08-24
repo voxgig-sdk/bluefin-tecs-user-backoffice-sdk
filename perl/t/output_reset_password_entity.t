@@ -21,7 +21,7 @@ BASIC_FLOW: {
   my $setup = output_reset_password_basic_setup(undef);
   my $_live = $setup->{live} ? 1 : 0;
   # Per-op sdk-test-control.json skip.
-  for my $_op ('create') {
+  for my $_op (('create')) {
     my ($_should_skip, $_reason) = BluefinTecsUserBackofficeTestRunner::is_control_skipped(
       'entityOp', "output_reset_password." . $_op, $_live ? 'live' : 'unit');
     if ($_should_skip) {
