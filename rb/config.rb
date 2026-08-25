@@ -28,6 +28,7 @@ module BluefinTecsUserBackofficeConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {

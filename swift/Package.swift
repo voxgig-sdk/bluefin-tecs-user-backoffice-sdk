@@ -14,10 +14,10 @@ let package = Package(
     targets: [
         .target(
             name: "BluefinTecsUserBackofficeSdk",
-            path: "Sources/ProjectNameSDK"),
+            path: "Sources/BluefinTecsUserBackofficeSdk"),
         .testTarget(
             name: "BluefinTecsUserBackofficeSdkTests",
             dependencies: ["BluefinTecsUserBackofficeSdk"],
-            path: "Tests/ProjectNameSDKTests"),
+            path: "Tests/BluefinTecsUserBackofficeSdkTests"),
     ]
 )
