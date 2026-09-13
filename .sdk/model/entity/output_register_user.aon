@@ -42,6 +42,7 @@ main: kit: entity: output_register_user: {
       type: "`$STRING`"
     }
     {
+      format: "email"
       name: "email"
       req: true
       short: "User's email address (must be unique)."
@@ -90,6 +91,7 @@ main: kit: entity: output_register_user: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       short: "Response code (0 indicates success; non-zero indicates an error)."
@@ -152,8 +154,10 @@ main: kit: entity: output_register_user: {
           }
           method: "POST"
           orig: "/registerUser"
-          parts: [
-            "registerUser"
+          segments: [
+            {
+              lit: "registerUser"
+            }
           ]
           select: {
             exist: [

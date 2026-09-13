@@ -143,3 +143,33 @@ let output_update_profile (client : sdk_client) (entopts : value) : entity_obj =
 (* Version entity bound to a client:  version client entopts *)
 let version (client : sdk_client) (entopts : value) : entity_obj =
   Sdk_entity_version.make client entopts
+
+(* Entity by name (None for a name this SDK did not generate). *)
+let entity (client : sdk_client) (name : string) (entopts : value) : entity_obj option =
+  match name with
+  | "output_activate_digital_module" -> Some (Sdk_entity_output_activate_digital_module.make client entopts)
+  | "output_activate_portal_module" -> Some (Sdk_entity_output_activate_portal_module.make client entopts)
+  | "output_activate_store_module" -> Some (Sdk_entity_output_activate_store_module.make client entopts)
+  | "output_activate_user" -> Some (Sdk_entity_output_activate_user.make client entopts)
+  | "output_assign_role" -> Some (Sdk_entity_output_assign_role.make client entopts)
+  | "output_change_logo" -> Some (Sdk_entity_output_change_logo.make client entopts)
+  | "output_create_mandator" -> Some (Sdk_entity_output_create_mandator.make client entopts)
+  | "output_create_service_user" -> Some (Sdk_entity_output_create_service_user.make client entopts)
+  | "output_deactivate_user" -> Some (Sdk_entity_output_deactivate_user.make client entopts)
+  | "output_get_kyc_document" -> Some (Sdk_entity_output_get_kyc_document.make client entopts)
+  | "output_get_logo" -> Some (Sdk_entity_output_get_logo.make client entopts)
+  | "output_list_of_available_role" -> Some (Sdk_entity_output_list_of_available_role.make client entopts)
+  | "output_list_of_mandator" -> Some (Sdk_entity_output_list_of_mandator.make client entopts)
+  | "output_list_of_module" -> Some (Sdk_entity_output_list_of_module.make client entopts)
+  | "output_list_of_role_group" -> Some (Sdk_entity_output_list_of_role_group.make client entopts)
+  | "output_list_of_transactions_history" -> Some (Sdk_entity_output_list_of_transactions_history.make client entopts)
+  | "output_list_of_user" -> Some (Sdk_entity_output_list_of_user.make client entopts)
+  | "output_provide_credential" -> Some (Sdk_entity_output_provide_credential.make client entopts)
+  | "output_register_user" -> Some (Sdk_entity_output_register_user.make client entopts)
+  | "output_remove_role" -> Some (Sdk_entity_output_remove_role.make client entopts)
+  | "output_resend_link" -> Some (Sdk_entity_output_resend_link.make client entopts)
+  | "output_reset_password" -> Some (Sdk_entity_output_reset_password.make client entopts)
+  | "output_update_consumer" -> Some (Sdk_entity_output_update_consumer.make client entopts)
+  | "output_update_profile" -> Some (Sdk_entity_output_update_profile.make client entopts)
+  | "version" -> Some (Sdk_entity_version.make client entopts)
+  | _ -> None

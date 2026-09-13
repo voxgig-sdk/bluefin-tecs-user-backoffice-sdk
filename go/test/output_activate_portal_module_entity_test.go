@@ -52,7 +52,7 @@ func TestOutputActivatePortalModuleEntity(t *testing.T) {
 		// CREATE
 		outputActivatePortalModuleRef01Ent := client.OutputActivatePortalModule(nil)
 		outputActivatePortalModuleRef01Data := core.ToMapAny(vs.GetProp(
-			vs.GetPath([]any{"new", "output_activate_portal_module"}, setup.data), "output_activate_portal_module_ref01"))
+			vs.GetPath(setup.data, []any{"new", "output_activate_portal_module"}), "output_activate_portal_module_ref01"))
 
 		outputActivatePortalModuleRef01DataResult, err := outputActivatePortalModuleRef01Ent.Create(outputActivatePortalModuleRef01Data, nil)
 		if err != nil {
@@ -90,7 +90,7 @@ func output_activate_portal_moduleBasicSetup(extra map[string]any) *entityTestSe
 	client := sdk.TestSDK(options, extra)
 
 	// Generate idmap via transform, matching TS pattern.
-	idmap := vs.Transform(
+	idmap, _ := vs.Transform(
 		[]any{"output_activate_portal_module01", "output_activate_portal_module02", "output_activate_portal_module03"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
@@ -110,7 +110,7 @@ func output_activate_portal_moduleBasicSetup(extra map[string]any) *entityTestSe
 		"BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_ACTIVATE_PORTAL_MODULE_ENTID": idmap,
 		"BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE":      "FALSE",
 		"BLUEFIN_TECS_USER_BACKOFFICE_TEST_EXPLAIN":   "FALSE",
-		"BLUEFIN_TECS_USER_BACKOFFICE_APIKEY":         "NONE",
+		"BLUEFIN_TECS_USER_BACKOFFICE_APIKEY":         "",
 	})
 
 	idmapResolved := core.ToMapAny(env["BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_ACTIVATE_PORTAL_MODULE_ENTID"])
@@ -119,11 +119,23 @@ func output_activate_portal_moduleBasicSetup(extra map[string]any) *entityTestSe
 	}
 
 	if env["BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE"] == "TRUE" {
+		// An empty map, not a nil one: Merge returns nil when its last entry
+		// is nil, and BasicSetup is normally called with no extras - so a
+		// bare nil silently discarded the apikey and server values below.
+		extraOpts := extra
+		if extraOpts == nil {
+			extraOpts = map[string]any{}
+		}
+
 		mergedOpts := vs.Merge([]any{
+			// liveClientOptions() FIRST, so the generated fields below win:
+			// sdk-test-control.json's test.client.options adds to the live
+			// client, it does not redirect it.
+			liveClientOptions(),
 			map[string]any{
 				"apikey": env["BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"],
 			},
-			extra,
+			extraOpts,
 		})
 		client = sdk.NewBluefinTecsUserBackofficeSDK(core.ToMapAny(mergedOpts))
 	}

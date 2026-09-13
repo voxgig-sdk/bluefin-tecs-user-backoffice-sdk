@@ -95,7 +95,7 @@ sub version_basic_setup {
     'BLUEFIN_TECS_USER_BACKOFFICE_TEST_VERSION_ENTID' => $idmap,
     'BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE' => 'FALSE',
     'BLUEFIN_TECS_USER_BACKOFFICE_TEST_EXPLAIN' => 'FALSE',
-    'BLUEFIN_TECS_USER_BACKOFFICE_APIKEY' => 'NONE',
+    'BLUEFIN_TECS_USER_BACKOFFICE_APIKEY' => '',
   });
 
   my $idmap_resolved = BluefinTecsUserBackofficeHelpers::to_map($env->{'BLUEFIN_TECS_USER_BACKOFFICE_TEST_VERSION_ENTID'});
@@ -105,6 +105,9 @@ sub version_basic_setup {
 
   if ((($env->{'BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE'}) || '') eq 'TRUE') {
     my $merged_opts = Voxgig::Struct::merge([
+      # FIRST, so the generated fields below win: sdk-test-control.json's
+      # test.client.options adds to the live client, it does not redirect it.
+      BluefinTecsUserBackofficeTestRunner::live_client_options(),
       {
         'apikey' => $env->{'BLUEFIN_TECS_USER_BACKOFFICE_APIKEY'},
       },

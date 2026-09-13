@@ -130,6 +130,7 @@ let make_config () : value =
       ("output_activate_digital_module", (jo [
         ("fields", (ja [
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -153,14 +154,17 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/activateDigitalModule"));
-                ("parts", (ja [
-                  (Str "activateDigitalModule") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "activateDigitalModule")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "activateDigitalModule") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_activate_portal_module", (jo [
@@ -174,6 +178,7 @@ let make_config () : value =
             ("req", (Bool true));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -197,19 +202,23 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/activateMerchantPortalModule"));
-                ("parts", (ja [
-                  (Str "activateMerchantPortalModule") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "activateMerchantPortalModule")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "activateMerchantPortalModule") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_activate_store_module", (jo [
         ("fields", (ja [
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -233,14 +242,17 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/activateAppStoreModule"));
-                ("parts", (ja [
-                  (Str "activateAppStoreModule") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "activateAppStoreModule")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "activateAppStoreModule") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_activate_user", (jo [
@@ -249,6 +261,7 @@ let make_config () : value =
             ("name", (Str "consumerUUID"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -272,14 +285,17 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/activateUser"));
-                ("parts", (ja [
-                  (Str "activateUser") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "activateUser")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "activateUser") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_assign_role", (jo [
@@ -290,6 +306,7 @@ let make_config () : value =
             ("short", (Str "Unique identifier of the consumer (user) to whom the role(s) will be assigned."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("short", (Str "Response code: 0 indicates success; any non-zero value indicates an error."));
             ("type", (Str "`$INTEGER`")) ]);
@@ -320,14 +337,17 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/assignRoles"));
-                ("parts", (ja [
-                  (Str "assignRoles") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "assignRoles")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "assignRoles") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_change_logo", (jo [
@@ -343,6 +363,7 @@ let make_config () : value =
             ("short", (Str "The MIME type of the image"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -366,14 +387,17 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/changeLogo"));
-                ("parts", (ja [
-                  (Str "changeLogo") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "changeLogo")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "changeLogo") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_create_mandator", (jo [
@@ -461,14 +485,17 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/createMandator"));
-                ("parts", (ja [
-                  (Str "createMandator") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "createMandator")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body.mandator`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body.mandator`")) ]));
+                ("parts", (ja [
+                  (Str "createMandator") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_create_service_user", (jo [
@@ -478,6 +505,7 @@ let make_config () : value =
             ("req", (Bool true));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -501,14 +529,17 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/createServiceUser"));
-                ("parts", (ja [
-                  (Str "createServiceUser") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "createServiceUser")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "createServiceUser") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_deactivate_user", (jo [
@@ -517,6 +548,7 @@ let make_config () : value =
             ("name", (Str "consumerUUID"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -540,14 +572,17 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/deactivateUser"));
-                ("parts", (ja [
-                  (Str "deactivateUser") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "deactivateUser")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "deactivateUser") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_get_kyc_document", (jo [
@@ -559,6 +594,7 @@ let make_config () : value =
             ("name", (Str "encodedDataBase64"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -582,14 +618,17 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/getKycDocument"));
-                ("parts", (ja [
-                  (Str "getKycDocument") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "getKycDocument")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "getKycDocument") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_get_logo", (jo [
@@ -605,6 +644,7 @@ let make_config () : value =
             ("short", (Str "The MIME type of the image"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -628,14 +668,17 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "GET"));
                 ("orig", (Str "/getLogo"));
-                ("parts", (ja [
-                  (Str "getLogo") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "getLogo")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "getLogo") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_list_of_available_role", (jo [
@@ -644,6 +687,7 @@ let make_config () : value =
             ("name", (Str "availableRoles"));
             ("type", (Str "`$ARRAY`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -667,14 +711,17 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/listOfAvailableRoles"));
-                ("parts", (ja [
-                  (Str "listOfAvailableRoles") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "listOfAvailableRoles")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "listOfAvailableRoles") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_list_of_mandator", (jo [
@@ -689,6 +736,7 @@ let make_config () : value =
             ("name", (Str "pagination"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -715,14 +763,17 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/listOfMandators"));
-                ("parts", (ja [
-                  (Str "listOfMandators") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "listOfMandators")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "listOfMandators") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_list_of_module", (jo [
@@ -734,6 +785,7 @@ let make_config () : value =
             ("name", (Str "pagination"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -757,14 +809,17 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/listOfModules"));
-                ("parts", (ja [
-                  (Str "listOfModules") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "listOfModules")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "listOfModules") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_list_of_role_group", (jo [
@@ -779,6 +834,7 @@ let make_config () : value =
             ("name", (Str "pagination"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -805,14 +861,17 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/listOfRoleGroups"));
-                ("parts", (ja [
-                  (Str "listOfRoleGroups") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "listOfRoleGroups")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "listOfRoleGroups") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_list_of_transactions_history", (jo [
@@ -827,6 +886,7 @@ let make_config () : value =
             ("name", (Str "pagination"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -853,14 +913,17 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/listOfTransactionsHistory"));
-                ("parts", (ja [
-                  (Str "listOfTransactionsHistory") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "listOfTransactionsHistory")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "listOfTransactionsHistory") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_list_of_user", (jo [
@@ -875,6 +938,7 @@ let make_config () : value =
             ("name", (Str "pagination"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -901,14 +965,17 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/listOfUsers"));
-                ("parts", (ja [
-                  (Str "listOfUsers") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "listOfUsers")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "listOfUsers") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_provide_credential", (jo [
@@ -921,6 +988,7 @@ let make_config () : value =
             ("name", (Str "password"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -947,14 +1015,17 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/provideCredentials"));
-                ("parts", (ja [
-                  (Str "provideCredentials") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "provideCredentials")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "provideCredentials") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_register_user", (jo [
@@ -984,6 +1055,7 @@ let make_config () : value =
             ("short", (Str "User's driver's license number."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "email"));
             ("name", (Str "email"));
             ("req", (Bool true));
             ("short", (Str "User's email address (must be unique)."));
@@ -1017,6 +1089,7 @@ let make_config () : value =
             ("short", (Str "User's phone number."));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("short", (Str "Response code (0 indicates success; non-zero indicates an error)."));
             ("type", (Str "`$INTEGER`")) ]);
@@ -1062,14 +1135,17 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/registerUser"));
-                ("parts", (ja [
-                  (Str "registerUser") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "registerUser")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "registerUser") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_remove_role", (jo [
@@ -1078,6 +1154,7 @@ let make_config () : value =
             ("name", (Str "consumerUUID"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -1104,14 +1181,17 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/removeRoles"));
-                ("parts", (ja [
-                  (Str "removeRoles") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "removeRoles")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "removeRoles") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_resend_link", (jo [
@@ -1130,6 +1210,7 @@ let make_config () : value =
             ("name", (Str "phoneNumber"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -1152,14 +1233,17 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/resendLink"));
-                ("parts", (ja [
-                  (Str "resendLink") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "resendLink")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "resendLink") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_reset_password", (jo [
@@ -1171,6 +1255,7 @@ let make_config () : value =
             ("name", (Str "phoneNumber"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -1194,14 +1279,17 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/resetPassword"));
-                ("parts", (ja [
-                  (Str "resetPassword") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "resetPassword")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "resetPassword") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_update_consumer", (jo [
@@ -1256,6 +1344,7 @@ let make_config () : value =
             ("name", (Str "placeOfBirth"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -1293,14 +1382,17 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/updateConsumer"));
-                ("parts", (ja [
-                  (Str "updateConsumer") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "updateConsumer")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "updateConsumer") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_update_profile", (jo [
@@ -1321,6 +1413,7 @@ let make_config () : value =
             ("name", (Str "phoneNumber"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -1343,14 +1436,17 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/updateProfile"));
-                ("parts", (ja [
-                  (Str "updateProfile") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "updateProfile")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "updateProfile") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("version", (jo [
@@ -1375,14 +1471,21 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "GET"));
                 ("orig", (Str "/version"));
-                ("parts", (ja [
-                  (Str "version") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "version")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "version") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ])) ])) ])
+
+(* The plugin definitions the model selected, per feature: none - no
+ * plugin-bearing feature is active in this SDK. *)
+let feature_plugins (_name : string) = []
 
 let make_feature (name : string) : feature =
   match name with

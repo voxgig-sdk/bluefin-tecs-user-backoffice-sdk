@@ -29,13 +29,22 @@ fn version_direct_setup(mockres: Value) -> VersionDirectSetup {
     let env = env_override(jo(vec![
         ("BLUEFIN_TECS_USER_BACKOFFICE_TEST_VERSION_ENTID", Value::empty_map()),
         ("BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE", Value::str("FALSE")),
-        ("BLUEFIN_TECS_USER_BACKOFFICE_APIKEY", Value::str("NONE")),
+        ("BLUEFIN_TECS_USER_BACKOFFICE_APIKEY", Value::str("")),
     ]));
 
     let live = getp(&env, "BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE") == Value::str("TRUE");
 
     if live {
-        let client = BluefinTecsUserBackofficeSDK::new(jo(vec![("apikey", getp(&env, "BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"))]));
+        // live_client_options() FIRST, so the generated entries below win:
+        // sdk-test-control.json's test.client.options adds to the live
+        // client, it does not redirect it.
+        let client = BluefinTecsUserBackofficeSDK::new(to_map(&vs::merge(
+            &ja(vec![
+                live_client_options(),
+                jo(vec![("apikey", getp(&env, "BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"))]),
+            ]),
+            None,
+        )));
         let idmap = match to_map(&getp(&env, "BLUEFIN_TECS_USER_BACKOFFICE_TEST_VERSION_ENTID")) {
             Value::Map(m) => Value::Map(m),
             _ => Value::empty_map(),

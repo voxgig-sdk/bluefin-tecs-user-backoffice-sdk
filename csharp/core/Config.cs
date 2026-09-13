@@ -195,6 +195,7 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -232,9 +233,12 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/activateDigitalModule",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "activateDigitalModule",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "activateDigitalModule",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -247,6 +251,10 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "activateDigitalModule",
                                     },
                                 },
                             },
@@ -275,6 +283,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -312,9 +321,12 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/activateMerchantPortalModule",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "activateMerchantPortalModule",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "activateMerchantPortalModule",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -327,6 +339,10 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "activateMerchantPortalModule",
                                     },
                                 },
                             },
@@ -343,6 +359,7 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -380,9 +397,12 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/activateAppStoreModule",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "activateAppStoreModule",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "activateAppStoreModule",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -395,6 +415,10 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "activateAppStoreModule",
                                     },
                                 },
                             },
@@ -416,6 +440,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -453,9 +478,12 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/activateUser",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "activateUser",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "activateUser",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -468,6 +496,10 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "activateUser",
                                     },
                                 },
                             },
@@ -491,6 +523,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["short"] = "Response code: 0 indicates success; any non-zero value indicates an error.",
                             ["type"] = "`$INTEGER`",
@@ -537,9 +570,12 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/assignRoles",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "assignRoles",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "assignRoles",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -552,6 +588,10 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "assignRoles",
                                     },
                                 },
                             },
@@ -582,6 +622,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -619,9 +660,12 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/changeLogo",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "changeLogo",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "changeLogo",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -634,6 +678,10 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "changeLogo",
                                     },
                                 },
                             },
@@ -786,9 +834,12 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/createMandator",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "createMandator",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "createMandator",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -801,6 +852,10 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body.mandator`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "createMandator",
                                     },
                                 },
                             },
@@ -823,6 +878,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -860,9 +916,12 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/createServiceUser",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "createServiceUser",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "createServiceUser",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -875,6 +934,10 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "createServiceUser",
                                     },
                                 },
                             },
@@ -896,6 +959,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -933,9 +997,12 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/deactivateUser",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "deactivateUser",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "deactivateUser",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -948,6 +1015,10 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "deactivateUser",
                                     },
                                 },
                             },
@@ -974,6 +1045,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -1011,9 +1083,12 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/getKycDocument",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "getKycDocument",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "getKycDocument",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -1026,6 +1101,10 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "getKycDocument",
                                     },
                                 },
                             },
@@ -1056,6 +1135,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -1093,9 +1173,12 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "GET",
                                     ["orig"] = "/getLogo",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "getLogo",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "getLogo",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -1108,6 +1191,10 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "getLogo",
                                     },
                                 },
                             },
@@ -1129,6 +1216,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -1166,9 +1254,12 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/listOfAvailableRoles",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "listOfAvailableRoles",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "listOfAvailableRoles",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -1181,6 +1272,10 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "listOfAvailableRoles",
                                     },
                                 },
                             },
@@ -1212,6 +1307,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -1254,9 +1350,12 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/listOfMandators",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "listOfMandators",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "listOfMandators",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -1269,6 +1368,10 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "listOfMandators",
                                     },
                                 },
                             },
@@ -1295,6 +1398,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -1332,9 +1436,12 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/listOfModules",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "listOfModules",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "listOfModules",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -1347,6 +1454,10 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "listOfModules",
                                     },
                                 },
                             },
@@ -1378,6 +1489,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -1420,9 +1532,12 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/listOfRoleGroups",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "listOfRoleGroups",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "listOfRoleGroups",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -1435,6 +1550,10 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "listOfRoleGroups",
                                     },
                                 },
                             },
@@ -1466,6 +1585,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -1508,9 +1628,12 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/listOfTransactionsHistory",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "listOfTransactionsHistory",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "listOfTransactionsHistory",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -1523,6 +1646,10 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "listOfTransactionsHistory",
                                     },
                                 },
                             },
@@ -1554,6 +1681,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -1596,9 +1724,12 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/listOfUsers",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "listOfUsers",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "listOfUsers",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -1611,6 +1742,10 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "listOfUsers",
                                     },
                                 },
                             },
@@ -1638,6 +1773,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -1680,9 +1816,12 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/provideCredentials",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "provideCredentials",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "provideCredentials",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -1695,6 +1834,10 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "provideCredentials",
                                     },
                                 },
                             },
@@ -1747,6 +1890,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "email",
                             ["name"] = "email",
                             ["req"] = true,
                             ["short"] = "User's email address (must be unique).",
@@ -1796,6 +1940,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["short"] = "Response code (0 indicates success; non-zero indicates an error).",
                             ["type"] = "`$INTEGER`",
@@ -1865,9 +2010,12 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/registerUser",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "registerUser",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "registerUser",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -1880,6 +2028,10 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "registerUser",
                                     },
                                 },
                             },
@@ -1901,6 +2053,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -1943,9 +2096,12 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/removeRoles",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "removeRoles",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "removeRoles",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -1958,6 +2114,10 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "removeRoles",
                                     },
                                 },
                             },
@@ -1995,6 +2155,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -2031,9 +2192,12 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/resendLink",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "resendLink",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "resendLink",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -2046,6 +2210,10 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "resendLink",
                                     },
                                 },
                             },
@@ -2072,6 +2240,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -2109,9 +2278,12 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/resetPassword",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "resetPassword",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "resetPassword",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -2124,6 +2296,10 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "resetPassword",
                                     },
                                 },
                             },
@@ -2221,6 +2397,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -2282,9 +2459,12 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/updateConsumer",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "updateConsumer",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "updateConsumer",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -2297,6 +2477,10 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "updateConsumer",
                                     },
                                 },
                             },
@@ -2338,6 +2522,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -2374,9 +2559,12 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/updateProfile",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "updateProfile",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "updateProfile",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -2389,6 +2577,10 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "updateProfile",
                                     },
                                 },
                             },
@@ -2434,15 +2626,22 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "GET",
                                     ["orig"] = "/version",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "version",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "version",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "version",
                                     },
                                 },
                             },
@@ -2467,6 +2666,15 @@ public static class SdkConfig
     public static Dictionary<string, object?> SharedConfig()
     {
         return SharedConfigVal.Value;
+    }
+
+    public static List<object?> FeaturePlugins(string name)
+    {
+        switch (name)
+        {
+            default:
+                return new List<object?>();
+        }
     }
 
     public static Feature.BaseFeature MakeFeature(string name)

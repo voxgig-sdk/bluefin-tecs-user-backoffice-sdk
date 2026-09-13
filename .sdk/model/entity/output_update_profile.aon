@@ -31,6 +31,7 @@ main: kit: entity: output_update_profile: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -61,8 +62,10 @@ main: kit: entity: output_update_profile: {
           }
           method: "POST"
           orig: "/updateProfile"
-          parts: [
-            "updateProfile"
+          segments: [
+            {
+              lit: "updateProfile"
+            }
           ]
           select: {
             exist: [

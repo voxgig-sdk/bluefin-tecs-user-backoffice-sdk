@@ -160,6 +160,7 @@ func MakeConfig() map[string]any {
 			"output_activate_digital_module": map[string]any{
 				"fields": []any{
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -189,8 +190,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/activateDigitalModule",
-								"parts": []any{
-									"activateDigitalModule",
+								"segments": []any{
+									map[string]any{
+										"lit": "activateDigitalModule",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -200,6 +203,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"activateDigitalModule",
 								},
 							},
 						},
@@ -222,6 +228,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -251,8 +258,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/activateMerchantPortalModule",
-								"parts": []any{
-									"activateMerchantPortalModule",
+								"segments": []any{
+									map[string]any{
+										"lit": "activateMerchantPortalModule",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -262,6 +271,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"activateMerchantPortalModule",
 								},
 							},
 						},
@@ -274,6 +286,7 @@ func MakeConfig() map[string]any {
 			"output_activate_store_module": map[string]any{
 				"fields": []any{
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -303,8 +316,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/activateAppStoreModule",
-								"parts": []any{
-									"activateAppStoreModule",
+								"segments": []any{
+									map[string]any{
+										"lit": "activateAppStoreModule",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -314,6 +329,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"activateAppStoreModule",
 								},
 							},
 						},
@@ -330,6 +348,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -359,8 +378,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/activateUser",
-								"parts": []any{
-									"activateUser",
+								"segments": []any{
+									map[string]any{
+										"lit": "activateUser",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -370,6 +391,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"activateUser",
 								},
 							},
 						},
@@ -388,6 +412,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"short": "Response code: 0 indicates success; any non-zero value indicates an error.",
 						"type": "`$INTEGER`",
@@ -425,8 +450,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/assignRoles",
-								"parts": []any{
-									"assignRoles",
+								"segments": []any{
+									map[string]any{
+										"lit": "assignRoles",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -436,6 +463,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"assignRoles",
 								},
 							},
 						},
@@ -460,6 +490,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -489,8 +520,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/changeLogo",
-								"parts": []any{
-									"changeLogo",
+								"segments": []any{
+									map[string]any{
+										"lit": "changeLogo",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -500,6 +533,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"changeLogo",
 								},
 							},
 						},
@@ -620,8 +656,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/createMandator",
-								"parts": []any{
-									"createMandator",
+								"segments": []any{
+									map[string]any{
+										"lit": "createMandator",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -631,6 +669,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body.mandator`",
+								},
+								"parts": []any{
+									"createMandator",
 								},
 							},
 						},
@@ -648,6 +689,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -677,8 +719,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/createServiceUser",
-								"parts": []any{
-									"createServiceUser",
+								"segments": []any{
+									map[string]any{
+										"lit": "createServiceUser",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -688,6 +732,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"createServiceUser",
 								},
 							},
 						},
@@ -704,6 +751,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -733,8 +781,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/deactivateUser",
-								"parts": []any{
-									"deactivateUser",
+								"segments": []any{
+									map[string]any{
+										"lit": "deactivateUser",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -744,6 +794,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"deactivateUser",
 								},
 							},
 						},
@@ -764,6 +817,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -793,8 +847,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/getKycDocument",
-								"parts": []any{
-									"getKycDocument",
+								"segments": []any{
+									map[string]any{
+										"lit": "getKycDocument",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -804,6 +860,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"getKycDocument",
 								},
 							},
 						},
@@ -828,6 +887,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -857,8 +917,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/getLogo",
-								"parts": []any{
-									"getLogo",
+								"segments": []any{
+									map[string]any{
+										"lit": "getLogo",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -868,6 +930,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"getLogo",
 								},
 							},
 						},
@@ -884,6 +949,7 @@ func MakeConfig() map[string]any {
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -913,8 +979,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/listOfAvailableRoles",
-								"parts": []any{
-									"listOfAvailableRoles",
+								"segments": []any{
+									map[string]any{
+										"lit": "listOfAvailableRoles",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -924,6 +992,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"listOfAvailableRoles",
 								},
 							},
 						},
@@ -948,6 +1019,7 @@ func MakeConfig() map[string]any {
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -981,8 +1053,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/listOfMandators",
-								"parts": []any{
-									"listOfMandators",
+								"segments": []any{
+									map[string]any{
+										"lit": "listOfMandators",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -992,6 +1066,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"listOfMandators",
 								},
 							},
 						},
@@ -1012,6 +1089,7 @@ func MakeConfig() map[string]any {
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -1041,8 +1119,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/listOfModules",
-								"parts": []any{
-									"listOfModules",
+								"segments": []any{
+									map[string]any{
+										"lit": "listOfModules",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1052,6 +1132,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"listOfModules",
 								},
 							},
 						},
@@ -1076,6 +1159,7 @@ func MakeConfig() map[string]any {
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -1109,8 +1193,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/listOfRoleGroups",
-								"parts": []any{
-									"listOfRoleGroups",
+								"segments": []any{
+									map[string]any{
+										"lit": "listOfRoleGroups",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1120,6 +1206,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"listOfRoleGroups",
 								},
 							},
 						},
@@ -1144,6 +1233,7 @@ func MakeConfig() map[string]any {
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -1177,8 +1267,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/listOfTransactionsHistory",
-								"parts": []any{
-									"listOfTransactionsHistory",
+								"segments": []any{
+									map[string]any{
+										"lit": "listOfTransactionsHistory",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1188,6 +1280,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"listOfTransactionsHistory",
 								},
 							},
 						},
@@ -1212,6 +1307,7 @@ func MakeConfig() map[string]any {
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -1245,8 +1341,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/listOfUsers",
-								"parts": []any{
-									"listOfUsers",
+								"segments": []any{
+									map[string]any{
+										"lit": "listOfUsers",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1256,6 +1354,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"listOfUsers",
 								},
 							},
 						},
@@ -1277,6 +1378,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -1310,8 +1412,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/provideCredentials",
-								"parts": []any{
-									"provideCredentials",
+								"segments": []any{
+									map[string]any{
+										"lit": "provideCredentials",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1321,6 +1425,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"provideCredentials",
 								},
 							},
 						},
@@ -1363,6 +1470,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "email",
 						"name": "email",
 						"req": true,
 						"short": "User's email address (must be unique).",
@@ -1404,6 +1512,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"short": "Response code (0 indicates success; non-zero indicates an error).",
 						"type": "`$INTEGER`",
@@ -1460,8 +1569,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/registerUser",
-								"parts": []any{
-									"registerUser",
+								"segments": []any{
+									map[string]any{
+										"lit": "registerUser",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1471,6 +1582,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"registerUser",
 								},
 							},
 						},
@@ -1487,6 +1601,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -1520,8 +1635,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/removeRoles",
-								"parts": []any{
-									"removeRoles",
+								"segments": []any{
+									map[string]any{
+										"lit": "removeRoles",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1531,6 +1648,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"removeRoles",
 								},
 							},
 						},
@@ -1560,6 +1680,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -1588,8 +1709,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/resendLink",
-								"parts": []any{
-									"resendLink",
+								"segments": []any{
+									map[string]any{
+										"lit": "resendLink",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1599,6 +1722,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"resendLink",
 								},
 							},
 						},
@@ -1619,6 +1745,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -1648,8 +1775,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/resetPassword",
-								"parts": []any{
-									"resetPassword",
+								"segments": []any{
+									map[string]any{
+										"lit": "resetPassword",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1659,6 +1788,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"resetPassword",
 								},
 							},
 						},
@@ -1736,6 +1868,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -1784,8 +1917,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/updateConsumer",
-								"parts": []any{
-									"updateConsumer",
+								"segments": []any{
+									map[string]any{
+										"lit": "updateConsumer",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1795,6 +1930,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"updateConsumer",
 								},
 							},
 						},
@@ -1827,6 +1965,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -1855,8 +1994,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/updateProfile",
-								"parts": []any{
-									"updateProfile",
+								"segments": []any{
+									map[string]any{
+										"lit": "updateProfile",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1866,6 +2007,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"updateProfile",
 								},
 							},
 						},
@@ -1901,13 +2045,18 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/version",
-								"parts": []any{
-									"version",
+								"segments": []any{
+									map[string]any{
+										"lit": "version",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"version",
 								},
 							},
 						},
@@ -1919,6 +2068,17 @@ func MakeConfig() map[string]any {
 			},
 		},
 	}
+}
+
+// The plugin definitions the model selected per feature, as []any so a
+// feature package can consume them without core naming its types. Empty
+// when no active feature declares active plugin groups for this target.
+var featurePlugins = map[string][]any{
+}
+
+// FeaturePlugins is the definitions list for one feature's chain.
+func FeaturePlugins(name string) []any {
+	return featurePlugins[name]
 }
 
 var (

@@ -11,6 +11,7 @@ main: kit: entity: output_deactivate_user: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -41,8 +42,10 @@ main: kit: entity: output_deactivate_user: {
           }
           method: "POST"
           orig: "/deactivateUser"
-          parts: [
-            "deactivateUser"
+          segments: [
+            {
+              lit: "deactivateUser"
+            }
           ]
           select: {
             exist: [

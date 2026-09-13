@@ -12,6 +12,7 @@ main: kit: entity: output_assign_role: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       short: "Response code: 0 indicates success; any non-zero value indicates an error."
@@ -50,8 +51,10 @@ main: kit: entity: output_assign_role: {
           }
           method: "POST"
           orig: "/assignRoles"
-          parts: [
-            "assignRoles"
+          segments: [
+            {
+              lit: "assignRoles"
+            }
           ]
           select: {
             exist: [

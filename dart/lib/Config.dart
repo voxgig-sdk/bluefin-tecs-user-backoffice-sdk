@@ -12,6 +12,7 @@ import 'feature/test/TestFeature.dart';
 import 'feature/timeout/TimeoutFeature.dart';
 
 
+
 // ignore: non_constant_identifier_names
 final Map<String, BaseFeature Function()> FEATURE_CLASS = {
     'audit': () => AuditFeature(),
@@ -26,6 +27,24 @@ final Map<String, BaseFeature Function()> FEATURE_CLASS = {
   'test': () => TestFeature(),
   'timeout': () => TimeoutFeature(),
 
+};
+
+// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
+// the model's active plugin groups. A feature that takes a `plugins` option
+// (secrets over sekreto) reads its own entry; a feature with no plugins has
+// none. The named `show` imports above make each definition statically
+// reachable, so an SDK carries exactly the plugin libraries its model
+// selects - the same leanness the old side-effect registry bought, without
+// a registry.
+//
+// Emitted UNCONDITIONALLY, empty when no group is active: SecretsFeature
+// imports this name, and the feature source can be present in a tree whose
+// model selects no plugin group at all. An emission conditional on the map
+// having entries would make that tree fail `dart analyze`.
+//
+// ignore: non_constant_identifier_names
+final Map<String, List<dynamic>> FEATURE_PLUGINS = <String, List<dynamic>>{
+  
 };
 
 class Config {
@@ -204,6 +223,7 @@ class Config {
     'output_activate_digital_module': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -233,8 +253,10 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/activateDigitalModule',
-              'parts': <dynamic>[
-                'activateDigitalModule',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'activateDigitalModule',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -245,6 +267,9 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'activateDigitalModule',
+              ],
             },
           ],
         },
@@ -266,6 +291,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -295,8 +321,10 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/activateMerchantPortalModule',
-              'parts': <dynamic>[
-                'activateMerchantPortalModule',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'activateMerchantPortalModule',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -307,6 +335,9 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'activateMerchantPortalModule',
+              ],
             },
           ],
         },
@@ -318,6 +349,7 @@ class Config {
     'output_activate_store_module': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -347,8 +379,10 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/activateAppStoreModule',
-              'parts': <dynamic>[
-                'activateAppStoreModule',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'activateAppStoreModule',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -359,6 +393,9 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'activateAppStoreModule',
+              ],
             },
           ],
         },
@@ -374,6 +411,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -403,8 +441,10 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/activateUser',
-              'parts': <dynamic>[
-                'activateUser',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'activateUser',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -415,6 +455,9 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'activateUser',
+              ],
             },
           ],
         },
@@ -432,6 +475,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'short': 'Response code: 0 indicates success; any non-zero value indicates an error.',
           'type': '`\$INTEGER`',
@@ -469,8 +513,10 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/assignRoles',
-              'parts': <dynamic>[
-                'assignRoles',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'assignRoles',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -481,6 +527,9 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'assignRoles',
+              ],
             },
           ],
         },
@@ -504,6 +553,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -533,8 +583,10 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/changeLogo',
-              'parts': <dynamic>[
-                'changeLogo',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'changeLogo',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -545,6 +597,9 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'changeLogo',
+              ],
             },
           ],
         },
@@ -664,8 +719,10 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/createMandator',
-              'parts': <dynamic>[
-                'createMandator',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'createMandator',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -676,6 +733,9 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body.mandator`',
               },
+              'parts': <dynamic>[
+                'createMandator',
+              ],
             },
           ],
         },
@@ -692,6 +752,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -721,8 +782,10 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/createServiceUser',
-              'parts': <dynamic>[
-                'createServiceUser',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'createServiceUser',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -733,6 +796,9 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'createServiceUser',
+              ],
             },
           ],
         },
@@ -748,6 +814,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -777,8 +844,10 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/deactivateUser',
-              'parts': <dynamic>[
-                'deactivateUser',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'deactivateUser',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -789,6 +858,9 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'deactivateUser',
+              ],
             },
           ],
         },
@@ -808,6 +880,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -837,8 +910,10 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/getKycDocument',
-              'parts': <dynamic>[
-                'getKycDocument',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'getKycDocument',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -849,6 +924,9 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'getKycDocument',
+              ],
             },
           ],
         },
@@ -872,6 +950,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -901,8 +980,10 @@ class Config {
               'kind': 'http',
               'method': 'GET',
               'orig': '/getLogo',
-              'parts': <dynamic>[
-                'getLogo',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'getLogo',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -913,6 +994,9 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'getLogo',
+              ],
             },
           ],
         },
@@ -928,6 +1012,7 @@ class Config {
           'type': '`\$ARRAY`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -957,8 +1042,10 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/listOfAvailableRoles',
-              'parts': <dynamic>[
-                'listOfAvailableRoles',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'listOfAvailableRoles',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -969,6 +1056,9 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'listOfAvailableRoles',
+              ],
             },
           ],
         },
@@ -992,6 +1082,7 @@ class Config {
           'type': '`\$OBJECT`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -1025,8 +1116,10 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/listOfMandators',
-              'parts': <dynamic>[
-                'listOfMandators',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'listOfMandators',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1037,6 +1130,9 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'listOfMandators',
+              ],
             },
           ],
         },
@@ -1056,6 +1152,7 @@ class Config {
           'type': '`\$OBJECT`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -1085,8 +1182,10 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/listOfModules',
-              'parts': <dynamic>[
-                'listOfModules',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'listOfModules',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1097,6 +1196,9 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'listOfModules',
+              ],
             },
           ],
         },
@@ -1120,6 +1222,7 @@ class Config {
           'type': '`\$OBJECT`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -1153,8 +1256,10 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/listOfRoleGroups',
-              'parts': <dynamic>[
-                'listOfRoleGroups',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'listOfRoleGroups',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1165,6 +1270,9 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'listOfRoleGroups',
+              ],
             },
           ],
         },
@@ -1188,6 +1296,7 @@ class Config {
           'type': '`\$OBJECT`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -1221,8 +1330,10 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/listOfTransactionsHistory',
-              'parts': <dynamic>[
-                'listOfTransactionsHistory',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'listOfTransactionsHistory',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1233,6 +1344,9 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'listOfTransactionsHistory',
+              ],
             },
           ],
         },
@@ -1256,6 +1370,7 @@ class Config {
           'type': '`\$OBJECT`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -1289,8 +1404,10 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/listOfUsers',
-              'parts': <dynamic>[
-                'listOfUsers',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'listOfUsers',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1301,6 +1418,9 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'listOfUsers',
+              ],
             },
           ],
         },
@@ -1321,6 +1441,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -1354,8 +1475,10 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/provideCredentials',
-              'parts': <dynamic>[
-                'provideCredentials',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'provideCredentials',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1366,6 +1489,9 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'provideCredentials',
+              ],
             },
           ],
         },
@@ -1407,6 +1533,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'email',
           'name': 'email',
           'req': true,
           'short': 'User\'s email address (must be unique).',
@@ -1448,6 +1575,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'short': 'Response code (0 indicates success; non-zero indicates an error).',
           'type': '`\$INTEGER`',
@@ -1504,8 +1632,10 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/registerUser',
-              'parts': <dynamic>[
-                'registerUser',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'registerUser',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1516,6 +1646,9 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'registerUser',
+              ],
             },
           ],
         },
@@ -1531,6 +1664,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -1564,8 +1698,10 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/removeRoles',
-              'parts': <dynamic>[
-                'removeRoles',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'removeRoles',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1576,6 +1712,9 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'removeRoles',
+              ],
             },
           ],
         },
@@ -1604,6 +1743,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -1632,8 +1772,10 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/resendLink',
-              'parts': <dynamic>[
-                'resendLink',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'resendLink',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1644,6 +1786,9 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'resendLink',
+              ],
             },
           ],
         },
@@ -1663,6 +1808,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -1692,8 +1838,10 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/resetPassword',
-              'parts': <dynamic>[
-                'resetPassword',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'resetPassword',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1704,6 +1852,9 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'resetPassword',
+              ],
             },
           ],
         },
@@ -1780,6 +1931,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -1828,8 +1980,10 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/updateConsumer',
-              'parts': <dynamic>[
-                'updateConsumer',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'updateConsumer',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1840,6 +1994,9 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'updateConsumer',
+              ],
             },
           ],
         },
@@ -1871,6 +2028,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -1899,8 +2057,10 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/updateProfile',
-              'parts': <dynamic>[
-                'updateProfile',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'updateProfile',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -1911,6 +2071,9 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'updateProfile',
+              ],
             },
           ],
         },
@@ -1945,14 +2108,19 @@ class Config {
               'kind': 'http',
               'method': 'GET',
               'orig': '/version',
-              'parts': <dynamic>[
-                'version',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'version',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'version',
+              ],
             },
           ],
         },

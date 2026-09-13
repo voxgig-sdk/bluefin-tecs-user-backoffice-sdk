@@ -98,7 +98,7 @@ Map<String, dynamic> basicSetup([dynamic extra]) {
     'BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_CREATE_MANDATOR_ENTID': idmap,
     'BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE': 'FALSE',
     'BLUEFIN_TECS_USER_BACKOFFICE_TEST_EXPLAIN': 'FALSE',
-    'BLUEFIN_TECS_USER_BACKOFFICE_APIKEY': 'NONE',
+    'BLUEFIN_TECS_USER_BACKOFFICE_APIKEY': '',
   });
 
   idmap = env['BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_CREATE_MANDATOR_ENTID'];
@@ -107,10 +107,17 @@ Map<String, dynamic> basicSetup([dynamic extra]) {
 
   if (live) {
     client = BluefinTecsUserBackofficeSDK(merge([
+      // FIRST, so the generated fields below win: sdk-test-control.json's
+      // test.client.options adds to the live client, it does not redirect it.
+      liveClientOptions(),
       <String, dynamic>{
         'apikey': env['BLUEFIN_TECS_USER_BACKOFFICE_APIKEY'],
       },
-      extra
+      // 'extra ?? {}', not a bare 'extra': merge returns null when the last
+      // entry is null, and basicSetup is normally called with no argument at
+      // all - so a bare 'extra' silently discarded the apikey and server
+      // values above and handed the SDK null.
+      extra ?? <String, dynamic>{}
     ]));
   }
 

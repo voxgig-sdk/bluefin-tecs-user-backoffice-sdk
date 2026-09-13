@@ -67,13 +67,16 @@ Map<String, dynamic> directSetup([dynamic mockres]) {
   final env = envOverride({
     'BLUEFIN_TECS_USER_BACKOFFICE_TEST_VERSION_ENTID': <String, dynamic>{},
     'BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE': 'FALSE',
-    'BLUEFIN_TECS_USER_BACKOFFICE_APIKEY': 'NONE',
+    'BLUEFIN_TECS_USER_BACKOFFICE_APIKEY': '',
   });
 
   final live = 'TRUE' == env['BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE'];
 
   if (live) {
-    final client = BluefinTecsUserBackofficeSDK({
+    // Spread FIRST, so the generated fields below win: sdk-test-control.json's
+    // test.client.options adds to the live client, it does not redirect it.
+    final client = BluefinTecsUserBackofficeSDK(<String, dynamic>{
+      ...liveClientOptions(),
       'apikey': env['BLUEFIN_TECS_USER_BACKOFFICE_APIKEY'],
     });
 

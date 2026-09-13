@@ -1,4 +1,5 @@
 import { BaseFeature } from './feature/base/BaseFeature';
+declare const FEATURE_PLUGINS: Record<string, any[]>;
 declare class Config {
     makeFeature(this: any, fn: string): BaseFeature;
     hasFeature(this: any, fn: string): boolean;
@@ -134,52 +135,14 @@ declare class Config {
     };
     entity: {
         output_activate_digital_module: {
-            fields: {
-                name: string;
-                type: string;
-            }[];
-            name: string;
-            op: {
-                create: {
-                    input: string;
-                    name: string;
-                    points: {
-                        args: {
-                            header: {
-                                kind: string;
-                                name: string;
-                                orig: string;
-                                reqd: boolean;
-                                type: string;
-                            }[];
-                        };
-                        kind: string;
-                        method: string;
-                        orig: string;
-                        parts: string[];
-                        select: {
-                            exist: string[];
-                        };
-                        transform: {
-                            req: string;
-                            res: string;
-                        };
-                    }[];
-                };
-            };
-            relations: {
-                ancestors: never[];
-            };
-        };
-        output_activate_portal_module: {
             fields: ({
+                format: string;
                 name: string;
-                req: boolean;
                 type: string;
             } | {
                 name: string;
                 type: string;
-                req?: undefined;
+                format?: undefined;
             })[];
             name: string;
             op: {
@@ -199,7 +162,9 @@ declare class Config {
                         kind: string;
                         method: string;
                         orig: string;
-                        parts: string[];
+                        segments: {
+                            lit: string;
+                        }[];
                         select: {
                             exist: string[];
                         };
@@ -207,6 +172,60 @@ declare class Config {
                             req: string;
                             res: string;
                         };
+                        parts: string[];
+                    }[];
+                };
+            };
+            relations: {
+                ancestors: never[];
+            };
+        };
+        output_activate_portal_module: {
+            fields: ({
+                name: string;
+                req: boolean;
+                type: string;
+                format?: undefined;
+            } | {
+                format: string;
+                name: string;
+                type: string;
+                req?: undefined;
+            } | {
+                name: string;
+                type: string;
+                req?: undefined;
+                format?: undefined;
+            })[];
+            name: string;
+            op: {
+                create: {
+                    input: string;
+                    name: string;
+                    points: {
+                        args: {
+                            header: {
+                                kind: string;
+                                name: string;
+                                orig: string;
+                                reqd: boolean;
+                                type: string;
+                            }[];
+                        };
+                        kind: string;
+                        method: string;
+                        orig: string;
+                        segments: {
+                            lit: string;
+                        }[];
+                        select: {
+                            exist: string[];
+                        };
+                        transform: {
+                            req: string;
+                            res: string;
+                        };
+                        parts: string[];
                     }[];
                 };
             };
@@ -215,10 +234,15 @@ declare class Config {
             };
         };
         output_activate_store_module: {
-            fields: {
+            fields: ({
+                format: string;
                 name: string;
                 type: string;
-            }[];
+            } | {
+                name: string;
+                type: string;
+                format?: undefined;
+            })[];
             name: string;
             op: {
                 create: {
@@ -237,7 +261,9 @@ declare class Config {
                         kind: string;
                         method: string;
                         orig: string;
-                        parts: string[];
+                        segments: {
+                            lit: string;
+                        }[];
                         select: {
                             exist: string[];
                         };
@@ -245,6 +271,7 @@ declare class Config {
                             req: string;
                             res: string;
                         };
+                        parts: string[];
                     }[];
                 };
             };
@@ -253,10 +280,15 @@ declare class Config {
             };
         };
         output_activate_user: {
-            fields: {
+            fields: ({
                 name: string;
                 type: string;
-            }[];
+                format?: undefined;
+            } | {
+                format: string;
+                name: string;
+                type: string;
+            })[];
             name: string;
             op: {
                 create: {
@@ -275,7 +307,9 @@ declare class Config {
                         kind: string;
                         method: string;
                         orig: string;
-                        parts: string[];
+                        segments: {
+                            lit: string;
+                        }[];
                         select: {
                             exist: string[];
                         };
@@ -283,6 +317,7 @@ declare class Config {
                             req: string;
                             res: string;
                         };
+                        parts: string[];
                     }[];
                 };
             };
@@ -296,11 +331,19 @@ declare class Config {
                 req: boolean;
                 short: string;
                 type: string;
+                format?: undefined;
+            } | {
+                format: string;
+                name: string;
+                short: string;
+                type: string;
+                req?: undefined;
             } | {
                 name: string;
                 short: string;
                 type: string;
                 req?: undefined;
+                format?: undefined;
             })[];
             name: string;
             op: {
@@ -320,7 +363,9 @@ declare class Config {
                         kind: string;
                         method: string;
                         orig: string;
-                        parts: string[];
+                        segments: {
+                            lit: string;
+                        }[];
                         select: {
                             exist: string[];
                         };
@@ -328,6 +373,7 @@ declare class Config {
                             req: string;
                             res: string;
                         };
+                        parts: string[];
                     }[];
                 };
             };
@@ -341,11 +387,19 @@ declare class Config {
                 req: boolean;
                 short: string;
                 type: string;
+                format?: undefined;
+            } | {
+                format: string;
+                name: string;
+                type: string;
+                req?: undefined;
+                short?: undefined;
             } | {
                 name: string;
                 type: string;
                 req?: undefined;
                 short?: undefined;
+                format?: undefined;
             })[];
             name: string;
             op: {
@@ -365,7 +419,9 @@ declare class Config {
                         kind: string;
                         method: string;
                         orig: string;
-                        parts: string[];
+                        segments: {
+                            lit: string;
+                        }[];
                         select: {
                             exist: string[];
                         };
@@ -373,6 +429,7 @@ declare class Config {
                             req: string;
                             res: string;
                         };
+                        parts: string[];
                     }[];
                 };
             };
@@ -420,7 +477,9 @@ declare class Config {
                         kind: string;
                         method: string;
                         orig: string;
-                        parts: string[];
+                        segments: {
+                            lit: string;
+                        }[];
                         select: {
                             exist: string[];
                         };
@@ -428,6 +487,7 @@ declare class Config {
                             req: string;
                             res: string;
                         };
+                        parts: string[];
                     }[];
                 };
             };
@@ -440,10 +500,17 @@ declare class Config {
                 name: string;
                 req: boolean;
                 type: string;
+                format?: undefined;
+            } | {
+                format: string;
+                name: string;
+                type: string;
+                req?: undefined;
             } | {
                 name: string;
                 type: string;
                 req?: undefined;
+                format?: undefined;
             })[];
             name: string;
             op: {
@@ -463,7 +530,9 @@ declare class Config {
                         kind: string;
                         method: string;
                         orig: string;
-                        parts: string[];
+                        segments: {
+                            lit: string;
+                        }[];
                         select: {
                             exist: string[];
                         };
@@ -471,6 +540,7 @@ declare class Config {
                             req: string;
                             res: string;
                         };
+                        parts: string[];
                     }[];
                 };
             };
@@ -479,10 +549,15 @@ declare class Config {
             };
         };
         output_deactivate_user: {
-            fields: {
+            fields: ({
                 name: string;
                 type: string;
-            }[];
+                format?: undefined;
+            } | {
+                format: string;
+                name: string;
+                type: string;
+            })[];
             name: string;
             op: {
                 create: {
@@ -501,7 +576,9 @@ declare class Config {
                         kind: string;
                         method: string;
                         orig: string;
-                        parts: string[];
+                        segments: {
+                            lit: string;
+                        }[];
                         select: {
                             exist: string[];
                         };
@@ -509,6 +586,7 @@ declare class Config {
                             req: string;
                             res: string;
                         };
+                        parts: string[];
                     }[];
                 };
             };
@@ -517,10 +595,15 @@ declare class Config {
             };
         };
         output_get_kyc_document: {
-            fields: {
+            fields: ({
                 name: string;
                 type: string;
-            }[];
+                format?: undefined;
+            } | {
+                format: string;
+                name: string;
+                type: string;
+            })[];
             name: string;
             op: {
                 create: {
@@ -539,7 +622,9 @@ declare class Config {
                         kind: string;
                         method: string;
                         orig: string;
-                        parts: string[];
+                        segments: {
+                            lit: string;
+                        }[];
                         select: {
                             exist: string[];
                         };
@@ -547,6 +632,7 @@ declare class Config {
                             req: string;
                             res: string;
                         };
+                        parts: string[];
                     }[];
                 };
             };
@@ -560,11 +646,19 @@ declare class Config {
                 req: boolean;
                 short: string;
                 type: string;
+                format?: undefined;
+            } | {
+                format: string;
+                name: string;
+                type: string;
+                req?: undefined;
+                short?: undefined;
             } | {
                 name: string;
                 type: string;
                 req?: undefined;
                 short?: undefined;
+                format?: undefined;
             })[];
             name: string;
             op: {
@@ -584,7 +678,9 @@ declare class Config {
                         kind: string;
                         method: string;
                         orig: string;
-                        parts: string[];
+                        segments: {
+                            lit: string;
+                        }[];
                         select: {
                             exist: string[];
                         };
@@ -592,6 +688,7 @@ declare class Config {
                             req: string;
                             res: string;
                         };
+                        parts: string[];
                     }[];
                 };
             };
@@ -600,10 +697,15 @@ declare class Config {
             };
         };
         output_list_of_available_role: {
-            fields: {
+            fields: ({
                 name: string;
                 type: string;
-            }[];
+                format?: undefined;
+            } | {
+                format: string;
+                name: string;
+                type: string;
+            })[];
             name: string;
             op: {
                 create: {
@@ -622,7 +724,9 @@ declare class Config {
                         kind: string;
                         method: string;
                         orig: string;
-                        parts: string[];
+                        segments: {
+                            lit: string;
+                        }[];
                         select: {
                             exist: string[];
                         };
@@ -630,6 +734,7 @@ declare class Config {
                             req: string;
                             res: string;
                         };
+                        parts: string[];
                     }[];
                 };
             };
@@ -638,10 +743,15 @@ declare class Config {
             };
         };
         output_list_of_mandator: {
-            fields: {
+            fields: ({
                 name: string;
                 type: string;
-            }[];
+                format?: undefined;
+            } | {
+                format: string;
+                name: string;
+                type: string;
+            })[];
             name: string;
             op: {
                 create: {
@@ -660,7 +770,9 @@ declare class Config {
                         kind: string;
                         method: string;
                         orig: string;
-                        parts: string[];
+                        segments: {
+                            lit: string;
+                        }[];
                         select: {
                             exist: string[];
                         };
@@ -668,6 +780,7 @@ declare class Config {
                             req: string;
                             res: string;
                         };
+                        parts: string[];
                     }[];
                 };
             };
@@ -676,10 +789,15 @@ declare class Config {
             };
         };
         output_list_of_module: {
-            fields: {
+            fields: ({
                 name: string;
                 type: string;
-            }[];
+                format?: undefined;
+            } | {
+                format: string;
+                name: string;
+                type: string;
+            })[];
             name: string;
             op: {
                 create: {
@@ -698,7 +816,9 @@ declare class Config {
                         kind: string;
                         method: string;
                         orig: string;
-                        parts: string[];
+                        segments: {
+                            lit: string;
+                        }[];
                         select: {
                             exist: string[];
                         };
@@ -706,6 +826,7 @@ declare class Config {
                             req: string;
                             res: string;
                         };
+                        parts: string[];
                     }[];
                 };
             };
@@ -714,10 +835,15 @@ declare class Config {
             };
         };
         output_list_of_role_group: {
-            fields: {
+            fields: ({
                 name: string;
                 type: string;
-            }[];
+                format?: undefined;
+            } | {
+                format: string;
+                name: string;
+                type: string;
+            })[];
             name: string;
             op: {
                 create: {
@@ -736,7 +862,9 @@ declare class Config {
                         kind: string;
                         method: string;
                         orig: string;
-                        parts: string[];
+                        segments: {
+                            lit: string;
+                        }[];
                         select: {
                             exist: string[];
                         };
@@ -744,6 +872,7 @@ declare class Config {
                             req: string;
                             res: string;
                         };
+                        parts: string[];
                     }[];
                 };
             };
@@ -752,10 +881,15 @@ declare class Config {
             };
         };
         output_list_of_transactions_history: {
-            fields: {
+            fields: ({
                 name: string;
                 type: string;
-            }[];
+                format?: undefined;
+            } | {
+                format: string;
+                name: string;
+                type: string;
+            })[];
             name: string;
             op: {
                 create: {
@@ -774,7 +908,9 @@ declare class Config {
                         kind: string;
                         method: string;
                         orig: string;
-                        parts: string[];
+                        segments: {
+                            lit: string;
+                        }[];
                         select: {
                             exist: string[];
                         };
@@ -782,6 +918,7 @@ declare class Config {
                             req: string;
                             res: string;
                         };
+                        parts: string[];
                     }[];
                 };
             };
@@ -790,10 +927,15 @@ declare class Config {
             };
         };
         output_list_of_user: {
-            fields: {
+            fields: ({
                 name: string;
                 type: string;
-            }[];
+                format?: undefined;
+            } | {
+                format: string;
+                name: string;
+                type: string;
+            })[];
             name: string;
             op: {
                 create: {
@@ -812,7 +954,9 @@ declare class Config {
                         kind: string;
                         method: string;
                         orig: string;
-                        parts: string[];
+                        segments: {
+                            lit: string;
+                        }[];
                         select: {
                             exist: string[];
                         };
@@ -820,6 +964,7 @@ declare class Config {
                             req: string;
                             res: string;
                         };
+                        parts: string[];
                     }[];
                 };
             };
@@ -832,7 +977,14 @@ declare class Config {
                 name: string;
                 req: boolean;
                 type: string;
+                format?: undefined;
             } | {
+                name: string;
+                type: string;
+                req?: undefined;
+                format?: undefined;
+            } | {
+                format: string;
                 name: string;
                 type: string;
                 req?: undefined;
@@ -855,7 +1007,9 @@ declare class Config {
                         kind: string;
                         method: string;
                         orig: string;
-                        parts: string[];
+                        segments: {
+                            lit: string;
+                        }[];
                         select: {
                             exist: string[];
                         };
@@ -863,6 +1017,7 @@ declare class Config {
                             req: string;
                             res: string;
                         };
+                        parts: string[];
                     }[];
                 };
             };
@@ -875,11 +1030,65 @@ declare class Config {
                 name: string;
                 short: string;
                 type: string;
+                format?: undefined;
                 req?: undefined;
             } | {
+                format: string;
                 name: string;
                 req: boolean;
                 short: string;
+                type: string;
+            } | {
+                format: string;
+                name: string;
+                short: string;
+                type: string;
+                req?: undefined;
+            })[];
+            name: string;
+            op: {
+                create: {
+                    input: string;
+                    name: string;
+                    points: {
+                        args: {
+                            header: {
+                                kind: string;
+                                name: string;
+                                orig: string;
+                                reqd: boolean;
+                                type: string;
+                            }[];
+                        };
+                        kind: string;
+                        method: string;
+                        orig: string;
+                        segments: {
+                            lit: string;
+                        }[];
+                        select: {
+                            exist: string[];
+                        };
+                        transform: {
+                            req: string;
+                            res: string;
+                        };
+                        parts: string[];
+                    }[];
+                };
+            };
+            relations: {
+                ancestors: never[];
+            };
+        };
+        output_remove_role: {
+            fields: ({
+                name: string;
+                type: string;
+                format?: undefined;
+            } | {
+                format: string;
+                name: string;
                 type: string;
             })[];
             name: string;
@@ -900,7 +1109,9 @@ declare class Config {
                         kind: string;
                         method: string;
                         orig: string;
-                        parts: string[];
+                        segments: {
+                            lit: string;
+                        }[];
                         select: {
                             exist: string[];
                         };
@@ -908,44 +1119,7 @@ declare class Config {
                             req: string;
                             res: string;
                         };
-                    }[];
-                };
-            };
-            relations: {
-                ancestors: never[];
-            };
-        };
-        output_remove_role: {
-            fields: {
-                name: string;
-                type: string;
-            }[];
-            name: string;
-            op: {
-                create: {
-                    input: string;
-                    name: string;
-                    points: {
-                        args: {
-                            header: {
-                                kind: string;
-                                name: string;
-                                orig: string;
-                                reqd: boolean;
-                                type: string;
-                            }[];
-                        };
-                        kind: string;
-                        method: string;
-                        orig: string;
                         parts: string[];
-                        select: {
-                            exist: string[];
-                        };
-                        transform: {
-                            req: string;
-                            res: string;
-                        };
                     }[];
                 };
             };
@@ -958,10 +1132,17 @@ declare class Config {
                 name: string;
                 type: string;
                 req?: undefined;
+                format?: undefined;
             } | {
                 name: string;
                 req: boolean;
                 type: string;
+                format?: undefined;
+            } | {
+                format: string;
+                name: string;
+                type: string;
+                req?: undefined;
             })[];
             name: string;
             op: {
@@ -980,7 +1161,9 @@ declare class Config {
                         kind: string;
                         method: string;
                         orig: string;
-                        parts: string[];
+                        segments: {
+                            lit: string;
+                        }[];
                         select: {
                             exist: string[];
                         };
@@ -988,6 +1171,7 @@ declare class Config {
                             req: string;
                             res: string;
                         };
+                        parts: string[];
                     }[];
                 };
             };
@@ -996,10 +1180,15 @@ declare class Config {
             };
         };
         output_reset_password: {
-            fields: {
+            fields: ({
                 name: string;
                 type: string;
-            }[];
+                format?: undefined;
+            } | {
+                format: string;
+                name: string;
+                type: string;
+            })[];
             name: string;
             op: {
                 create: {
@@ -1018,7 +1207,9 @@ declare class Config {
                         kind: string;
                         method: string;
                         orig: string;
-                        parts: string[];
+                        segments: {
+                            lit: string;
+                        }[];
                         select: {
                             exist: string[];
                         };
@@ -1026,6 +1217,7 @@ declare class Config {
                             req: string;
                             res: string;
                         };
+                        parts: string[];
                     }[];
                 };
             };
@@ -1038,9 +1230,61 @@ declare class Config {
                 name: string;
                 type: string;
                 req?: undefined;
+                format?: undefined;
             } | {
                 name: string;
                 req: boolean;
+                type: string;
+                format?: undefined;
+            } | {
+                format: string;
+                name: string;
+                type: string;
+                req?: undefined;
+            })[];
+            name: string;
+            op: {
+                create: {
+                    input: string;
+                    name: string;
+                    points: {
+                        args: {
+                            header: {
+                                kind: string;
+                                name: string;
+                                orig: string;
+                                type: string;
+                            }[];
+                        };
+                        kind: string;
+                        method: string;
+                        orig: string;
+                        segments: {
+                            lit: string;
+                        }[];
+                        select: {
+                            exist: string[];
+                        };
+                        transform: {
+                            req: string;
+                            res: string;
+                        };
+                        parts: string[];
+                    }[];
+                };
+            };
+            relations: {
+                ancestors: never[];
+            };
+        };
+        output_update_profile: {
+            fields: ({
+                name: string;
+                type: string;
+                format?: undefined;
+            } | {
+                format: string;
+                name: string;
                 type: string;
             })[];
             name: string;
@@ -1060,7 +1304,9 @@ declare class Config {
                         kind: string;
                         method: string;
                         orig: string;
-                        parts: string[];
+                        segments: {
+                            lit: string;
+                        }[];
                         select: {
                             exist: string[];
                         };
@@ -1068,43 +1314,7 @@ declare class Config {
                             req: string;
                             res: string;
                         };
-                    }[];
-                };
-            };
-            relations: {
-                ancestors: never[];
-            };
-        };
-        output_update_profile: {
-            fields: {
-                name: string;
-                type: string;
-            }[];
-            name: string;
-            op: {
-                create: {
-                    input: string;
-                    name: string;
-                    points: {
-                        args: {
-                            header: {
-                                kind: string;
-                                name: string;
-                                orig: string;
-                                type: string;
-                            }[];
-                        };
-                        kind: string;
-                        method: string;
-                        orig: string;
                         parts: string[];
-                        select: {
-                            exist: string[];
-                        };
-                        transform: {
-                            req: string;
-                            res: string;
-                        };
                     }[];
                 };
             };
@@ -1127,12 +1337,15 @@ declare class Config {
                         kind: string;
                         method: string;
                         orig: string;
-                        parts: string[];
+                        segments: {
+                            lit: string;
+                        }[];
                         select: {};
                         transform: {
                             req: string;
                             res: string;
                         };
+                        parts: string[];
                     }[];
                 };
             };
@@ -1143,4 +1356,4 @@ declare class Config {
     };
 }
 declare const config: Config;
-export { config };
+export { config, FEATURE_PLUGINS, };

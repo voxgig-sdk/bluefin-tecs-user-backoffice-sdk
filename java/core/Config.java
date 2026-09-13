@@ -1,5 +1,6 @@
 package voxgig.bluefintecsuserbackofficesdk.core;
 
+import java.util.List;
 import java.util.Map;
 
 import voxgig.bluefintecsuserbackofficesdk.utility.Json;
@@ -61,6 +62,18 @@ public final class Config {
         return new voxgig.bluefintecsuserbackofficesdk.feature.TimeoutFeature();
       default:
         return new voxgig.bluefintecsuserbackofficesdk.feature.BaseFeature();
+    }
+  }
+
+  /**
+   * The plugin definitions the model selected for one feature's chain, as
+   * List&lt;Object&gt; so core never names a vendored type. Empty for a
+   * feature whose model declares no active plugin group.
+   */
+  public static List<Object> featurePlugins(String name) {
+    switch (name) {
+      default:
+        return List.of();
     }
   }
 
@@ -218,6 +231,7 @@ public final class Config {
     b.append("  \"output_activate_digital_module\": {");
     b.append("   \"fields\": [");
     b.append("    {");
+    b.append("     \"format\": \"int32\",");
     b.append("     \"name\": \"responseCode\",");
     b.append("     \"type\": \"`$INTEGER`\"");
     b.append("    },");
@@ -247,8 +261,10 @@ public final class Config {
     b.append("       \"kind\": \"http\",");
     b.append("       \"method\": \"POST\",");
     b.append("       \"orig\": \"/activateDigitalModule\",");
-    b.append("       \"parts\": [");
-    b.append("        \"activateDigitalModule\"");
+    b.append("       \"segments\": [");
+    b.append("        {");
+    b.append("         \"lit\": \"activateDigitalModule\"");
+    b.append("        }");
     b.append("       ],");
     b.append("       \"select\": {");
     b.append("        \"exist\": [");
@@ -258,7 +274,10 @@ public final class Config {
     b.append("       \"transform\": {");
     b.append("        \"req\": \"`reqdata`\",");
     b.append("        \"res\": \"`body`\"");
-    b.append("       }");
+    b.append("       },");
+    b.append("       \"parts\": [");
+    b.append("        \"activateDigitalModule\"");
+    b.append("       ]");
     b.append("      }");
     b.append("     ]");
     b.append("    }");
@@ -280,6 +299,7 @@ public final class Config {
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
+    b.append("     \"format\": \"int32\",");
     b.append("     \"name\": \"responseCode\",");
     b.append("     \"type\": \"`$INTEGER`\"");
     b.append("    },");
@@ -309,8 +329,10 @@ public final class Config {
     b.append("       \"kind\": \"http\",");
     b.append("       \"method\": \"POST\",");
     b.append("       \"orig\": \"/activateMerchantPortalModule\",");
-    b.append("       \"parts\": [");
-    b.append("        \"activateMerchantPortalModule\"");
+    b.append("       \"segments\": [");
+    b.append("        {");
+    b.append("         \"lit\": \"activateMerchantPortalModule\"");
+    b.append("        }");
     b.append("       ],");
     b.append("       \"select\": {");
     b.append("        \"exist\": [");
@@ -320,7 +342,10 @@ public final class Config {
     b.append("       \"transform\": {");
     b.append("        \"req\": \"`reqdata`\",");
     b.append("        \"res\": \"`body`\"");
-    b.append("       }");
+    b.append("       },");
+    b.append("       \"parts\": [");
+    b.append("        \"activateMerchantPortalModule\"");
+    b.append("       ]");
     b.append("      }");
     b.append("     ]");
     b.append("    }");
@@ -332,6 +357,7 @@ public final class Config {
     b.append("  \"output_activate_store_module\": {");
     b.append("   \"fields\": [");
     b.append("    {");
+    b.append("     \"format\": \"int32\",");
     b.append("     \"name\": \"responseCode\",");
     b.append("     \"type\": \"`$INTEGER`\"");
     b.append("    },");
@@ -361,8 +387,10 @@ public final class Config {
     b.append("       \"kind\": \"http\",");
     b.append("       \"method\": \"POST\",");
     b.append("       \"orig\": \"/activateAppStoreModule\",");
-    b.append("       \"parts\": [");
-    b.append("        \"activateAppStoreModule\"");
+    b.append("       \"segments\": [");
+    b.append("        {");
+    b.append("         \"lit\": \"activateAppStoreModule\"");
+    b.append("        }");
     b.append("       ],");
     b.append("       \"select\": {");
     b.append("        \"exist\": [");
@@ -372,7 +400,10 @@ public final class Config {
     b.append("       \"transform\": {");
     b.append("        \"req\": \"`reqdata`\",");
     b.append("        \"res\": \"`body`\"");
-    b.append("       }");
+    b.append("       },");
+    b.append("       \"parts\": [");
+    b.append("        \"activateAppStoreModule\"");
+    b.append("       ]");
     b.append("      }");
     b.append("     ]");
     b.append("    }");
@@ -388,6 +419,7 @@ public final class Config {
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
+    b.append("     \"format\": \"int32\",");
     b.append("     \"name\": \"responseCode\",");
     b.append("     \"type\": \"`$INTEGER`\"");
     b.append("    },");
@@ -417,8 +449,10 @@ public final class Config {
     b.append("       \"kind\": \"http\",");
     b.append("       \"method\": \"POST\",");
     b.append("       \"orig\": \"/activateUser\",");
-    b.append("       \"parts\": [");
-    b.append("        \"activateUser\"");
+    b.append("       \"segments\": [");
+    b.append("        {");
+    b.append("         \"lit\": \"activateUser\"");
+    b.append("        }");
     b.append("       ],");
     b.append("       \"select\": {");
     b.append("        \"exist\": [");
@@ -428,7 +462,10 @@ public final class Config {
     b.append("       \"transform\": {");
     b.append("        \"req\": \"`reqdata`\",");
     b.append("        \"res\": \"`body`\"");
-    b.append("       }");
+    b.append("       },");
+    b.append("       \"parts\": [");
+    b.append("        \"activateUser\"");
+    b.append("       ]");
     b.append("      }");
     b.append("     ]");
     b.append("    }");
@@ -446,6 +483,7 @@ public final class Config {
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
+    b.append("     \"format\": \"int32\",");
     b.append("     \"name\": \"responseCode\",");
     b.append("     \"short\": \"Response code: 0 indicates success; any non-zero value indicates an error.\",");
     b.append("     \"type\": \"`$INTEGER`\"");
@@ -483,8 +521,10 @@ public final class Config {
     b.append("       \"kind\": \"http\",");
     b.append("       \"method\": \"POST\",");
     b.append("       \"orig\": \"/assignRoles\",");
-    b.append("       \"parts\": [");
-    b.append("        \"assignRoles\"");
+    b.append("       \"segments\": [");
+    b.append("        {");
+    b.append("         \"lit\": \"assignRoles\"");
+    b.append("        }");
     b.append("       ],");
     b.append("       \"select\": {");
     b.append("        \"exist\": [");
@@ -494,7 +534,10 @@ public final class Config {
     b.append("       \"transform\": {");
     b.append("        \"req\": \"`reqdata`\",");
     b.append("        \"res\": \"`body`\"");
-    b.append("       }");
+    b.append("       },");
+    b.append("       \"parts\": [");
+    b.append("        \"assignRoles\"");
+    b.append("       ]");
     b.append("      }");
     b.append("     ]");
     b.append("    }");
@@ -518,6 +561,7 @@ public final class Config {
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
+    b.append("     \"format\": \"int32\",");
     b.append("     \"name\": \"responseCode\",");
     b.append("     \"type\": \"`$INTEGER`\"");
     b.append("    },");
@@ -547,8 +591,10 @@ public final class Config {
     b.append("       \"kind\": \"http\",");
     b.append("       \"method\": \"POST\",");
     b.append("       \"orig\": \"/changeLogo\",");
-    b.append("       \"parts\": [");
-    b.append("        \"changeLogo\"");
+    b.append("       \"segments\": [");
+    b.append("        {");
+    b.append("         \"lit\": \"changeLogo\"");
+    b.append("        }");
     b.append("       ],");
     b.append("       \"select\": {");
     b.append("        \"exist\": [");
@@ -558,7 +604,10 @@ public final class Config {
     b.append("       \"transform\": {");
     b.append("        \"req\": \"`reqdata`\",");
     b.append("        \"res\": \"`body`\"");
-    b.append("       }");
+    b.append("       },");
+    b.append("       \"parts\": [");
+    b.append("        \"changeLogo\"");
+    b.append("       ]");
     b.append("      }");
     b.append("     ]");
     b.append("    }");
@@ -678,8 +727,10 @@ public final class Config {
     b.append("       \"kind\": \"http\",");
     b.append("       \"method\": \"POST\",");
     b.append("       \"orig\": \"/createMandator\",");
-    b.append("       \"parts\": [");
-    b.append("        \"createMandator\"");
+    b.append("       \"segments\": [");
+    b.append("        {");
+    b.append("         \"lit\": \"createMandator\"");
+    b.append("        }");
     b.append("       ],");
     b.append("       \"select\": {");
     b.append("        \"exist\": [");
@@ -689,7 +740,10 @@ public final class Config {
     b.append("       \"transform\": {");
     b.append("        \"req\": \"`reqdata`\",");
     b.append("        \"res\": \"`body.mandator`\"");
-    b.append("       }");
+    b.append("       },");
+    b.append("       \"parts\": [");
+    b.append("        \"createMandator\"");
+    b.append("       ]");
     b.append("      }");
     b.append("     ]");
     b.append("    }");
@@ -706,6 +760,7 @@ public final class Config {
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
+    b.append("     \"format\": \"int32\",");
     b.append("     \"name\": \"responseCode\",");
     b.append("     \"type\": \"`$INTEGER`\"");
     b.append("    },");
@@ -735,8 +790,10 @@ public final class Config {
     b.append("       \"kind\": \"http\",");
     b.append("       \"method\": \"POST\",");
     b.append("       \"orig\": \"/createServiceUser\",");
-    b.append("       \"parts\": [");
-    b.append("        \"createServiceUser\"");
+    b.append("       \"segments\": [");
+    b.append("        {");
+    b.append("         \"lit\": \"createServiceUser\"");
+    b.append("        }");
     b.append("       ],");
     b.append("       \"select\": {");
     b.append("        \"exist\": [");
@@ -746,7 +803,10 @@ public final class Config {
     b.append("       \"transform\": {");
     b.append("        \"req\": \"`reqdata`\",");
     b.append("        \"res\": \"`body`\"");
-    b.append("       }");
+    b.append("       },");
+    b.append("       \"parts\": [");
+    b.append("        \"createServiceUser\"");
+    b.append("       ]");
     b.append("      }");
     b.append("     ]");
     b.append("    }");
@@ -762,6 +822,7 @@ public final class Config {
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
+    b.append("     \"format\": \"int32\",");
     b.append("     \"name\": \"responseCode\",");
     b.append("     \"type\": \"`$INTEGER`\"");
     b.append("    },");
@@ -791,8 +852,10 @@ public final class Config {
     b.append("       \"kind\": \"http\",");
     b.append("       \"method\": \"POST\",");
     b.append("       \"orig\": \"/deactivateUser\",");
-    b.append("       \"parts\": [");
-    b.append("        \"deactivateUser\"");
+    b.append("       \"segments\": [");
+    b.append("        {");
+    b.append("         \"lit\": \"deactivateUser\"");
+    b.append("        }");
     b.append("       ],");
     b.append("       \"select\": {");
     b.append("        \"exist\": [");
@@ -802,7 +865,10 @@ public final class Config {
     b.append("       \"transform\": {");
     b.append("        \"req\": \"`reqdata`\",");
     b.append("        \"res\": \"`body`\"");
-    b.append("       }");
+    b.append("       },");
+    b.append("       \"parts\": [");
+    b.append("        \"deactivateUser\"");
+    b.append("       ]");
     b.append("      }");
     b.append("     ]");
     b.append("    }");
@@ -822,6 +888,7 @@ public final class Config {
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
+    b.append("     \"format\": \"int32\",");
     b.append("     \"name\": \"responseCode\",");
     b.append("     \"type\": \"`$INTEGER`\"");
     b.append("    },");
@@ -851,8 +918,10 @@ public final class Config {
     b.append("       \"kind\": \"http\",");
     b.append("       \"method\": \"POST\",");
     b.append("       \"orig\": \"/getKycDocument\",");
-    b.append("       \"parts\": [");
-    b.append("        \"getKycDocument\"");
+    b.append("       \"segments\": [");
+    b.append("        {");
+    b.append("         \"lit\": \"getKycDocument\"");
+    b.append("        }");
     b.append("       ],");
     b.append("       \"select\": {");
     b.append("        \"exist\": [");
@@ -862,7 +931,10 @@ public final class Config {
     b.append("       \"transform\": {");
     b.append("        \"req\": \"`reqdata`\",");
     b.append("        \"res\": \"`body`\"");
-    b.append("       }");
+    b.append("       },");
+    b.append("       \"parts\": [");
+    b.append("        \"getKycDocument\"");
+    b.append("       ]");
     b.append("      }");
     b.append("     ]");
     b.append("    }");
@@ -886,6 +958,7 @@ public final class Config {
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
+    b.append("     \"format\": \"int32\",");
     b.append("     \"name\": \"responseCode\",");
     b.append("     \"type\": \"`$INTEGER`\"");
     b.append("    },");
@@ -915,8 +988,10 @@ public final class Config {
     b.append("       \"kind\": \"http\",");
     b.append("       \"method\": \"GET\",");
     b.append("       \"orig\": \"/getLogo\",");
-    b.append("       \"parts\": [");
-    b.append("        \"getLogo\"");
+    b.append("       \"segments\": [");
+    b.append("        {");
+    b.append("         \"lit\": \"getLogo\"");
+    b.append("        }");
     b.append("       ],");
     b.append("       \"select\": {");
     b.append("        \"exist\": [");
@@ -926,7 +1001,10 @@ public final class Config {
     b.append("       \"transform\": {");
     b.append("        \"req\": \"`reqdata`\",");
     b.append("        \"res\": \"`body`\"");
-    b.append("       }");
+    b.append("       },");
+    b.append("       \"parts\": [");
+    b.append("        \"getLogo\"");
+    b.append("       ]");
     b.append("      }");
     b.append("     ]");
     b.append("    }");
@@ -942,6 +1020,7 @@ public final class Config {
     b.append("     \"type\": \"`$ARRAY`\"");
     b.append("    },");
     b.append("    {");
+    b.append("     \"format\": \"int32\",");
     b.append("     \"name\": \"responseCode\",");
     b.append("     \"type\": \"`$INTEGER`\"");
     b.append("    },");
@@ -971,8 +1050,10 @@ public final class Config {
     b.append("       \"kind\": \"http\",");
     b.append("       \"method\": \"POST\",");
     b.append("       \"orig\": \"/listOfAvailableRoles\",");
-    b.append("       \"parts\": [");
-    b.append("        \"listOfAvailableRoles\"");
+    b.append("       \"segments\": [");
+    b.append("        {");
+    b.append("         \"lit\": \"listOfAvailableRoles\"");
+    b.append("        }");
     b.append("       ],");
     b.append("       \"select\": {");
     b.append("        \"exist\": [");
@@ -982,7 +1063,10 @@ public final class Config {
     b.append("       \"transform\": {");
     b.append("        \"req\": \"`reqdata`\",");
     b.append("        \"res\": \"`body`\"");
-    b.append("       }");
+    b.append("       },");
+    b.append("       \"parts\": [");
+    b.append("        \"listOfAvailableRoles\"");
+    b.append("       ]");
     b.append("      }");
     b.append("     ]");
     b.append("    }");
@@ -1006,6 +1090,7 @@ public final class Config {
     b.append("     \"type\": \"`$OBJECT`\"");
     b.append("    },");
     b.append("    {");
+    b.append("     \"format\": \"int32\",");
     b.append("     \"name\": \"responseCode\",");
     b.append("     \"type\": \"`$INTEGER`\"");
     b.append("    },");
@@ -1039,8 +1124,10 @@ public final class Config {
     b.append("       \"kind\": \"http\",");
     b.append("       \"method\": \"POST\",");
     b.append("       \"orig\": \"/listOfMandators\",");
-    b.append("       \"parts\": [");
-    b.append("        \"listOfMandators\"");
+    b.append("       \"segments\": [");
+    b.append("        {");
+    b.append("         \"lit\": \"listOfMandators\"");
+    b.append("        }");
     b.append("       ],");
     b.append("       \"select\": {");
     b.append("        \"exist\": [");
@@ -1050,7 +1137,10 @@ public final class Config {
     b.append("       \"transform\": {");
     b.append("        \"req\": \"`reqdata`\",");
     b.append("        \"res\": \"`body`\"");
-    b.append("       }");
+    b.append("       },");
+    b.append("       \"parts\": [");
+    b.append("        \"listOfMandators\"");
+    b.append("       ]");
     b.append("      }");
     b.append("     ]");
     b.append("    }");
@@ -1070,6 +1160,7 @@ public final class Config {
     b.append("     \"type\": \"`$OBJECT`\"");
     b.append("    },");
     b.append("    {");
+    b.append("     \"format\": \"int32\",");
     b.append("     \"name\": \"responseCode\",");
     b.append("     \"type\": \"`$INTEGER`\"");
     b.append("    },");
@@ -1099,8 +1190,10 @@ public final class Config {
     b.append("       \"kind\": \"http\",");
     b.append("       \"method\": \"POST\",");
     b.append("       \"orig\": \"/listOfModules\",");
-    b.append("       \"parts\": [");
-    b.append("        \"listOfModules\"");
+    b.append("       \"segments\": [");
+    b.append("        {");
+    b.append("         \"lit\": \"listOfModules\"");
+    b.append("        }");
     b.append("       ],");
     b.append("       \"select\": {");
     b.append("        \"exist\": [");
@@ -1110,7 +1203,10 @@ public final class Config {
     b.append("       \"transform\": {");
     b.append("        \"req\": \"`reqdata`\",");
     b.append("        \"res\": \"`body`\"");
-    b.append("       }");
+    b.append("       },");
+    b.append("       \"parts\": [");
+    b.append("        \"listOfModules\"");
+    b.append("       ]");
     b.append("      }");
     b.append("     ]");
     b.append("    }");
@@ -1134,6 +1230,7 @@ public final class Config {
     b.append("     \"type\": \"`$OBJECT`\"");
     b.append("    },");
     b.append("    {");
+    b.append("     \"format\": \"int32\",");
     b.append("     \"name\": \"responseCode\",");
     b.append("     \"type\": \"`$INTEGER`\"");
     b.append("    },");
@@ -1167,8 +1264,10 @@ public final class Config {
     b.append("       \"kind\": \"http\",");
     b.append("       \"method\": \"POST\",");
     b.append("       \"orig\": \"/listOfRoleGroups\",");
-    b.append("       \"parts\": [");
-    b.append("        \"listOfRoleGroups\"");
+    b.append("       \"segments\": [");
+    b.append("        {");
+    b.append("         \"lit\": \"listOfRoleGroups\"");
+    b.append("        }");
     b.append("       ],");
     b.append("       \"select\": {");
     b.append("        \"exist\": [");
@@ -1178,7 +1277,10 @@ public final class Config {
     b.append("       \"transform\": {");
     b.append("        \"req\": \"`reqdata`\",");
     b.append("        \"res\": \"`body`\"");
-    b.append("       }");
+    b.append("       },");
+    b.append("       \"parts\": [");
+    b.append("        \"listOfRoleGroups\"");
+    b.append("       ]");
     b.append("      }");
     b.append("     ]");
     b.append("    }");
@@ -1202,6 +1304,7 @@ public final class Config {
     b.append("     \"type\": \"`$OBJECT`\"");
     b.append("    },");
     b.append("    {");
+    b.append("     \"format\": \"int32\",");
     b.append("     \"name\": \"responseCode\",");
     b.append("     \"type\": \"`$INTEGER`\"");
     b.append("    },");
@@ -1235,8 +1338,10 @@ public final class Config {
     b.append("       \"kind\": \"http\",");
     b.append("       \"method\": \"POST\",");
     b.append("       \"orig\": \"/listOfTransactionsHistory\",");
-    b.append("       \"parts\": [");
-    b.append("        \"listOfTransactionsHistory\"");
+    b.append("       \"segments\": [");
+    b.append("        {");
+    b.append("         \"lit\": \"listOfTransactionsHistory\"");
+    b.append("        }");
     b.append("       ],");
     b.append("       \"select\": {");
     b.append("        \"exist\": [");
@@ -1246,7 +1351,10 @@ public final class Config {
     b.append("       \"transform\": {");
     b.append("        \"req\": \"`reqdata`\",");
     b.append("        \"res\": \"`body`\"");
-    b.append("       }");
+    b.append("       },");
+    b.append("       \"parts\": [");
+    b.append("        \"listOfTransactionsHistory\"");
+    b.append("       ]");
     b.append("      }");
     b.append("     ]");
     b.append("    }");
@@ -1270,6 +1378,7 @@ public final class Config {
     b.append("     \"type\": \"`$OBJECT`\"");
     b.append("    },");
     b.append("    {");
+    b.append("     \"format\": \"int32\",");
     b.append("     \"name\": \"responseCode\",");
     b.append("     \"type\": \"`$INTEGER`\"");
     b.append("    },");
@@ -1303,8 +1412,10 @@ public final class Config {
     b.append("       \"kind\": \"http\",");
     b.append("       \"method\": \"POST\",");
     b.append("       \"orig\": \"/listOfUsers\",");
-    b.append("       \"parts\": [");
-    b.append("        \"listOfUsers\"");
+    b.append("       \"segments\": [");
+    b.append("        {");
+    b.append("         \"lit\": \"listOfUsers\"");
+    b.append("        }");
     b.append("       ],");
     b.append("       \"select\": {");
     b.append("        \"exist\": [");
@@ -1314,7 +1425,10 @@ public final class Config {
     b.append("       \"transform\": {");
     b.append("        \"req\": \"`reqdata`\",");
     b.append("        \"res\": \"`body`\"");
-    b.append("       }");
+    b.append("       },");
+    b.append("       \"parts\": [");
+    b.append("        \"listOfUsers\"");
+    b.append("       ]");
     b.append("      }");
     b.append("     ]");
     b.append("    }");
@@ -1335,6 +1449,7 @@ public final class Config {
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
+    b.append("     \"format\": \"int32\",");
     b.append("     \"name\": \"responseCode\",");
     b.append("     \"type\": \"`$INTEGER`\"");
     b.append("    },");
@@ -1368,8 +1483,10 @@ public final class Config {
     b.append("       \"kind\": \"http\",");
     b.append("       \"method\": \"POST\",");
     b.append("       \"orig\": \"/provideCredentials\",");
-    b.append("       \"parts\": [");
-    b.append("        \"provideCredentials\"");
+    b.append("       \"segments\": [");
+    b.append("        {");
+    b.append("         \"lit\": \"provideCredentials\"");
+    b.append("        }");
     b.append("       ],");
     b.append("       \"select\": {");
     b.append("        \"exist\": [");
@@ -1379,7 +1496,10 @@ public final class Config {
     b.append("       \"transform\": {");
     b.append("        \"req\": \"`reqdata`\",");
     b.append("        \"res\": \"`body`\"");
-    b.append("       }");
+    b.append("       },");
+    b.append("       \"parts\": [");
+    b.append("        \"provideCredentials\"");
+    b.append("       ]");
     b.append("      }");
     b.append("     ]");
     b.append("    }");
@@ -1421,6 +1541,7 @@ public final class Config {
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
+    b.append("     \"format\": \"email\",");
     b.append("     \"name\": \"email\",");
     b.append("     \"req\": true,");
     b.append("     \"short\": \"User's email address (must be unique).\",");
@@ -1462,6 +1583,7 @@ public final class Config {
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
+    b.append("     \"format\": \"int32\",");
     b.append("     \"name\": \"responseCode\",");
     b.append("     \"short\": \"Response code (0 indicates success; non-zero indicates an error).\",");
     b.append("     \"type\": \"`$INTEGER`\"");
@@ -1518,8 +1640,10 @@ public final class Config {
     b.append("       \"kind\": \"http\",");
     b.append("       \"method\": \"POST\",");
     b.append("       \"orig\": \"/registerUser\",");
-    b.append("       \"parts\": [");
-    b.append("        \"registerUser\"");
+    b.append("       \"segments\": [");
+    b.append("        {");
+    b.append("         \"lit\": \"registerUser\"");
+    b.append("        }");
     b.append("       ],");
     b.append("       \"select\": {");
     b.append("        \"exist\": [");
@@ -1529,7 +1653,10 @@ public final class Config {
     b.append("       \"transform\": {");
     b.append("        \"req\": \"`reqdata`\",");
     b.append("        \"res\": \"`body`\"");
-    b.append("       }");
+    b.append("       },");
+    b.append("       \"parts\": [");
+    b.append("        \"registerUser\"");
+    b.append("       ]");
     b.append("      }");
     b.append("     ]");
     b.append("    }");
@@ -1545,6 +1672,7 @@ public final class Config {
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
+    b.append("     \"format\": \"int32\",");
     b.append("     \"name\": \"responseCode\",");
     b.append("     \"type\": \"`$INTEGER`\"");
     b.append("    },");
@@ -1578,8 +1706,10 @@ public final class Config {
     b.append("       \"kind\": \"http\",");
     b.append("       \"method\": \"POST\",");
     b.append("       \"orig\": \"/removeRoles\",");
-    b.append("       \"parts\": [");
-    b.append("        \"removeRoles\"");
+    b.append("       \"segments\": [");
+    b.append("        {");
+    b.append("         \"lit\": \"removeRoles\"");
+    b.append("        }");
     b.append("       ],");
     b.append("       \"select\": {");
     b.append("        \"exist\": [");
@@ -1589,7 +1719,10 @@ public final class Config {
     b.append("       \"transform\": {");
     b.append("        \"req\": \"`reqdata`\",");
     b.append("        \"res\": \"`body`\"");
-    b.append("       }");
+    b.append("       },");
+    b.append("       \"parts\": [");
+    b.append("        \"removeRoles\"");
+    b.append("       ]");
     b.append("      }");
     b.append("     ]");
     b.append("    }");
@@ -1618,6 +1751,7 @@ public final class Config {
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
+    b.append("     \"format\": \"int32\",");
     b.append("     \"name\": \"responseCode\",");
     b.append("     \"type\": \"`$INTEGER`\"");
     b.append("    },");
@@ -1646,8 +1780,10 @@ public final class Config {
     b.append("       \"kind\": \"http\",");
     b.append("       \"method\": \"POST\",");
     b.append("       \"orig\": \"/resendLink\",");
-    b.append("       \"parts\": [");
-    b.append("        \"resendLink\"");
+    b.append("       \"segments\": [");
+    b.append("        {");
+    b.append("         \"lit\": \"resendLink\"");
+    b.append("        }");
     b.append("       ],");
     b.append("       \"select\": {");
     b.append("        \"exist\": [");
@@ -1657,7 +1793,10 @@ public final class Config {
     b.append("       \"transform\": {");
     b.append("        \"req\": \"`reqdata`\",");
     b.append("        \"res\": \"`body`\"");
-    b.append("       }");
+    b.append("       },");
+    b.append("       \"parts\": [");
+    b.append("        \"resendLink\"");
+    b.append("       ]");
     b.append("      }");
     b.append("     ]");
     b.append("    }");
@@ -1677,6 +1816,7 @@ public final class Config {
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
+    b.append("     \"format\": \"int32\",");
     b.append("     \"name\": \"responseCode\",");
     b.append("     \"type\": \"`$INTEGER`\"");
     b.append("    },");
@@ -1706,8 +1846,10 @@ public final class Config {
     b.append("       \"kind\": \"http\",");
     b.append("       \"method\": \"POST\",");
     b.append("       \"orig\": \"/resetPassword\",");
-    b.append("       \"parts\": [");
-    b.append("        \"resetPassword\"");
+    b.append("       \"segments\": [");
+    b.append("        {");
+    b.append("         \"lit\": \"resetPassword\"");
+    b.append("        }");
     b.append("       ],");
     b.append("       \"select\": {");
     b.append("        \"exist\": [");
@@ -1717,7 +1859,10 @@ public final class Config {
     b.append("       \"transform\": {");
     b.append("        \"req\": \"`reqdata`\",");
     b.append("        \"res\": \"`body`\"");
-    b.append("       }");
+    b.append("       },");
+    b.append("       \"parts\": [");
+    b.append("        \"resetPassword\"");
+    b.append("       ]");
     b.append("      }");
     b.append("     ]");
     b.append("    }");
@@ -1794,6 +1939,7 @@ public final class Config {
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
+    b.append("     \"format\": \"int32\",");
     b.append("     \"name\": \"responseCode\",");
     b.append("     \"type\": \"`$INTEGER`\"");
     b.append("    },");
@@ -1842,8 +1988,10 @@ public final class Config {
     b.append("       \"kind\": \"http\",");
     b.append("       \"method\": \"POST\",");
     b.append("       \"orig\": \"/updateConsumer\",");
-    b.append("       \"parts\": [");
-    b.append("        \"updateConsumer\"");
+    b.append("       \"segments\": [");
+    b.append("        {");
+    b.append("         \"lit\": \"updateConsumer\"");
+    b.append("        }");
     b.append("       ],");
     b.append("       \"select\": {");
     b.append("        \"exist\": [");
@@ -1853,7 +2001,10 @@ public final class Config {
     b.append("       \"transform\": {");
     b.append("        \"req\": \"`reqdata`\",");
     b.append("        \"res\": \"`body`\"");
-    b.append("       }");
+    b.append("       },");
+    b.append("       \"parts\": [");
+    b.append("        \"updateConsumer\"");
+    b.append("       ]");
     b.append("      }");
     b.append("     ]");
     b.append("    }");
@@ -1885,6 +2036,7 @@ public final class Config {
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
+    b.append("     \"format\": \"int32\",");
     b.append("     \"name\": \"responseCode\",");
     b.append("     \"type\": \"`$INTEGER`\"");
     b.append("    },");
@@ -1913,8 +2065,10 @@ public final class Config {
     b.append("       \"kind\": \"http\",");
     b.append("       \"method\": \"POST\",");
     b.append("       \"orig\": \"/updateProfile\",");
-    b.append("       \"parts\": [");
-    b.append("        \"updateProfile\"");
+    b.append("       \"segments\": [");
+    b.append("        {");
+    b.append("         \"lit\": \"updateProfile\"");
+    b.append("        }");
     b.append("       ],");
     b.append("       \"select\": {");
     b.append("        \"exist\": [");
@@ -1924,7 +2078,10 @@ public final class Config {
     b.append("       \"transform\": {");
     b.append("        \"req\": \"`reqdata`\",");
     b.append("        \"res\": \"`body`\"");
-    b.append("       }");
+    b.append("       },");
+    b.append("       \"parts\": [");
+    b.append("        \"updateProfile\"");
+    b.append("       ]");
     b.append("      }");
     b.append("     ]");
     b.append("    }");
@@ -1959,14 +2116,19 @@ public final class Config {
     b.append("       \"kind\": \"http\",");
     b.append("       \"method\": \"GET\",");
     b.append("       \"orig\": \"/version\",");
-    b.append("       \"parts\": [");
-    b.append("        \"version\"");
+    b.append("       \"segments\": [");
+    b.append("        {");
+    b.append("         \"lit\": \"version\"");
+    b.append("        }");
     b.append("       ],");
     b.append("       \"select\": {},");
     b.append("       \"transform\": {");
     b.append("        \"req\": \"`reqdata`\",");
     b.append("        \"res\": \"`body`\"");
-    b.append("       }");
+    b.append("       },");
+    b.append("       \"parts\": [");
+    b.append("        \"version\"");
+    b.append("       ]");
     b.append("      }");
     b.append("     ]");
     b.append("    }");

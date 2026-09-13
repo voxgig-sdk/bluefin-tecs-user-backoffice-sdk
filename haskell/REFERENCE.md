@@ -406,10 +406,10 @@ The entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `consumerUUID` | `String` | Yes |  |
-| `responseCode` | `Int` | No |  |
-| `responseMessage` | `String` | No |  |
-| `roles` | `[Value]` | Yes |  |
+| `consumerUUID` | `String` | Yes | Unique identifier of the consumer (user) to whom the role(s) will be assigned. |
+| `responseCode` | `Int` | No | Response code: 0 indicates success; any non-zero value indicates an error. |
+| `responseMessage` | `String` | No | A human-readable message providing additional details about the outcome. |
+| `roles` | `[Value]` | Yes | List of roles to assign to the consumer. |
 
 ### Operations
 
@@ -463,8 +463,8 @@ The entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `contentAsBase64` | `String` | Yes |  |
-| `mimeType` | `String` | Yes |  |
+| `contentAsBase64` | `String` | Yes | The content of the image as base64 encoded string |
+| `mimeType` | `String` | Yes | The MIME type of the image |
 | `responseCode` | `Int` | No |  |
 | `responseMessage` | `String` | No |  |
 
@@ -779,8 +779,8 @@ The entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `contentAsBase64` | `String` | Yes |  |
-| `mimeType` | `String` | Yes |  |
+| `contentAsBase64` | `String` | Yes | The content of the image as base64 encoded string |
+| `mimeType` | `String` | Yes | The MIME type of the image |
 | `responseCode` | `Int` | No |  |
 | `responseMessage` | `String` | No |  |
 
@@ -1226,27 +1226,27 @@ The entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `city` | `String` | No |  |
-| `consumerId` | `String` | No |  |
-| `consumerLanguage` | `String` | No |  |
-| `country` | `String` | No |  |
-| `dateOfBirth` | `String` | No |  |
-| `driverLicenceNumber` | `String` | No |  |
-| `email` | `String` | Yes |  |
-| `firstName` | `String` | No |  |
-| `identificationNumber` | `String` | No |  |
-| `lastName` | `String` | No |  |
-| `login` | `String` | No |  |
-| `module` | `String` | No |  |
-| `passportNumber` | `String` | No |  |
-| `phone` | `String` | No |  |
-| `responseCode` | `Int` | No |  |
-| `responseMessage` | `String` | No |  |
-| `salutation` | `String` | No |  |
-| `state` | `String` | No |  |
-| `street1` | `String` | No |  |
-| `street2` | `String` | No |  |
-| `zip` | `String` | No |  |
+| `city` | `String` | No | City where the user resides. |
+| `consumerId` | `String` | No | User login or unique user identifier. |
+| `consumerLanguage` | `String` | No | Preferred language for the user (e.g., 'en'). |
+| `country` | `String` | No | User's country. |
+| `dateOfBirth` | `String` | No | User's date of birth (expected format: dd.MM.yyyy). |
+| `driverLicenceNumber` | `String` | No | User's driver's license number. |
+| `email` | `String` | Yes | User's email address (must be unique). |
+| `firstName` | `String` | No | User's first name. |
+| `identificationNumber` | `String` | No | User's identification number. |
+| `lastName` | `String` | No | User's last name. |
+| `login` | `String` | No | User login identifier (should be unique). |
+| `module` | `String` | No | Module identifier (if applicable). |
+| `passportNumber` | `String` | No | User's passport number. |
+| `phone` | `String` | No | User's phone number. |
+| `responseCode` | `Int` | No | Response code (0 indicates success; non-zero indicates an error). |
+| `responseMessage` | `String` | No | Human-readable response message. |
+| `salutation` | `String` | No | User's salutation (e.g., Mr., Ms.). |
+| `state` | `String` | No | User's state or region. |
+| `street1` | `String` | No | Primary address line. |
+| `street2` | `String` | No | Secondary address line. |
+| `zip` | `String` | No | Postal code. |
 
 ### Operations
 
@@ -1646,7 +1646,17 @@ The entity name.
 
 | Feature | Version | Description |
 | --- | --- | --- |
+| `audit` | 0.0.1 | Structured audit trail of operations |
+| `clienttrack` | 0.0.1 | Client identity and per-request correlation headers |
+| `idempotency` | 0.0.1 | Idempotency keys for safe retries of mutating operations |
+| `log` | 0.0.1 | Structured request and response logging |
+| `metrics` | 0.0.1 | Statistics capture: per-operation counters and latency |
+| `paging` | 0.0.1 | Pagination signals for list operations |
+| `ratelimit` | 0.0.1 | Client-side rate limiting via a token bucket |
+| `retry` | 0.0.1 | Automatic retry of transient failures with exponential backoff |
+| `telemetry` | 0.0.1 | Distributed tracing spans with W3C trace-context propagation |
 | `test` | 0.0.1 | In-memory mock transport for testing without a live server |
+| `timeout` | 0.0.1 | Per-request timeout with transport abort |
 
 
 Features are activated via the `feature` option:
@@ -1654,7 +1664,17 @@ Features are activated via the `feature` option:
 ```haskell
   active <- jo [("active", VBool True)]
   featureCfg <- jo
-    [ ("test", active)
+    [ ("audit", active)
+    , ("clienttrack", active)
+    , ("idempotency", active)
+    , ("log", active)
+    , ("metrics", active)
+    , ("paging", active)
+    , ("ratelimit", active)
+    , ("retry", active)
+    , ("telemetry", active)
+    , ("test", active)
+    , ("timeout", active)
     ]
   opts <- jo [("feature", featureCfg)]
   client <- Sdk.newSdk opts

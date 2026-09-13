@@ -6,6 +6,7 @@ main: kit: entity: output_activate_digital_module: {
 
   fields: [
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -36,8 +37,10 @@ main: kit: entity: output_activate_digital_module: {
           }
           method: "POST"
           orig: "/activateDigitalModule"
-          parts: [
-            "activateDigitalModule"
+          segments: [
+            {
+              lit: "activateDigitalModule"
+            }
           ]
           select: {
             exist: [

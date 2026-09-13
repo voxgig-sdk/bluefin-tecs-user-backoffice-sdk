@@ -18,6 +18,7 @@ main: kit: entity: output_get_logo: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -48,8 +49,10 @@ main: kit: entity: output_get_logo: {
           }
           method: "GET"
           orig: "/getLogo"
-          parts: [
-            "getLogo"
+          segments: [
+            {
+              lit: "getLogo"
+            }
           ]
           select: {
             exist: [

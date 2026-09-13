@@ -50,7 +50,7 @@ func TestVersionEntity(t *testing.T) {
 		client := setup.client
 
 		// Bootstrap entity data from existing test data (no create step in flow).
-		versionRef01DataRaw := vs.Items(core.ToMapAny(vs.GetPath("existing.version", setup.data)))
+		versionRef01DataRaw := vs.Items(core.ToMapAny(vs.GetPath(setup.data, "existing.version")))
 		var versionRef01Data map[string]any
 		if len(versionRef01DataRaw) > 0 {
 			versionRef01Data = core.ToMapAny(versionRef01DataRaw[0][1])
@@ -97,7 +97,7 @@ func versionBasicSetup(extra map[string]any) *entityTestSetup {
 	client := sdk.TestSDK(options, extra)
 
 	// Generate idmap via transform, matching TS pattern.
-	idmap := vs.Transform(
+	idmap, _ := vs.Transform(
 		[]any{"version01", "version02", "version03"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
@@ -117,7 +117,7 @@ func versionBasicSetup(extra map[string]any) *entityTestSetup {
 		"BLUEFIN_TECS_USER_BACKOFFICE_TEST_VERSION_ENTID": idmap,
 		"BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE":      "FALSE",
 		"BLUEFIN_TECS_USER_BACKOFFICE_TEST_EXPLAIN":   "FALSE",
-		"BLUEFIN_TECS_USER_BACKOFFICE_APIKEY":         "NONE",
+		"BLUEFIN_TECS_USER_BACKOFFICE_APIKEY":         "",
 	})
 
 	idmapResolved := core.ToMapAny(env["BLUEFIN_TECS_USER_BACKOFFICE_TEST_VERSION_ENTID"])
@@ -126,11 +126,23 @@ func versionBasicSetup(extra map[string]any) *entityTestSetup {
 	}
 
 	if env["BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE"] == "TRUE" {
+		// An empty map, not a nil one: Merge returns nil when its last entry
+		// is nil, and BasicSetup is normally called with no extras - so a
+		// bare nil silently discarded the apikey and server values below.
+		extraOpts := extra
+		if extraOpts == nil {
+			extraOpts = map[string]any{}
+		}
+
 		mergedOpts := vs.Merge([]any{
+			// liveClientOptions() FIRST, so the generated fields below win:
+			// sdk-test-control.json's test.client.options adds to the live
+			// client, it does not redirect it.
+			liveClientOptions(),
 			map[string]any{
 				"apikey": env["BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"],
 			},
-			extra,
+			extraOpts,
 		})
 		client = sdk.NewBluefinTecsUserBackofficeSDK(core.ToMapAny(mergedOpts))
 	}

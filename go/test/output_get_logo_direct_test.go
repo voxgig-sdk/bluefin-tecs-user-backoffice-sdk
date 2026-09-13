@@ -100,14 +100,22 @@ func output_get_logoDirectSetup(mockres any) *output_get_logoDirectSetupResult {
 	env := envOverride(map[string]any{
 		"BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_GET_LOGO_ENTID": map[string]any{},
 		"BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE":    "FALSE",
-		"BLUEFIN_TECS_USER_BACKOFFICE_APIKEY":       "NONE",
+		"BLUEFIN_TECS_USER_BACKOFFICE_APIKEY":       "",
 	})
 
 	live := env["BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE"] == "TRUE"
 
 	if live {
-		mergedOpts := map[string]any{
+		// sdk-test-control.json's test.client.options seeds the live
+		// client; the generated fields below overwrite anything they name.
+		mergedOpts := map[string]any{}
+		for k, v := range liveClientOptions() {
+			mergedOpts[k] = v
+		}
+		for k, v := range map[string]any{
 			"apikey": env["BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"],
+		} {
+			mergedOpts[k] = v
 		}
 		client := sdk.NewBluefinTecsUserBackofficeSDK(mergedOpts)
 

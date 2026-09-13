@@ -156,6 +156,7 @@ local function make_config()
       ["output_activate_digital_module"] = {
         ["fields"] = {
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["type"] = "`$INTEGER`",
           },
@@ -185,8 +186,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/activateDigitalModule",
-                ["parts"] = {
-                  "activateDigitalModule",
+                ["segments"] = {
+                  {
+                    ["lit"] = "activateDigitalModule",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -196,6 +199,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "activateDigitalModule",
                 },
               },
             },
@@ -218,6 +224,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["type"] = "`$INTEGER`",
           },
@@ -247,8 +254,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/activateMerchantPortalModule",
-                ["parts"] = {
-                  "activateMerchantPortalModule",
+                ["segments"] = {
+                  {
+                    ["lit"] = "activateMerchantPortalModule",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -258,6 +267,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "activateMerchantPortalModule",
                 },
               },
             },
@@ -270,6 +282,7 @@ local function make_config()
       ["output_activate_store_module"] = {
         ["fields"] = {
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["type"] = "`$INTEGER`",
           },
@@ -299,8 +312,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/activateAppStoreModule",
-                ["parts"] = {
-                  "activateAppStoreModule",
+                ["segments"] = {
+                  {
+                    ["lit"] = "activateAppStoreModule",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -310,6 +325,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "activateAppStoreModule",
                 },
               },
             },
@@ -326,6 +344,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["type"] = "`$INTEGER`",
           },
@@ -355,8 +374,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/activateUser",
-                ["parts"] = {
-                  "activateUser",
+                ["segments"] = {
+                  {
+                    ["lit"] = "activateUser",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -366,6 +387,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "activateUser",
                 },
               },
             },
@@ -384,6 +408,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["short"] = "Response code: 0 indicates success; any non-zero value indicates an error.",
             ["type"] = "`$INTEGER`",
@@ -421,8 +446,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/assignRoles",
-                ["parts"] = {
-                  "assignRoles",
+                ["segments"] = {
+                  {
+                    ["lit"] = "assignRoles",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -432,6 +459,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "assignRoles",
                 },
               },
             },
@@ -456,6 +486,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["type"] = "`$INTEGER`",
           },
@@ -485,8 +516,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/changeLogo",
-                ["parts"] = {
-                  "changeLogo",
+                ["segments"] = {
+                  {
+                    ["lit"] = "changeLogo",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -496,6 +529,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "changeLogo",
                 },
               },
             },
@@ -616,8 +652,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/createMandator",
-                ["parts"] = {
-                  "createMandator",
+                ["segments"] = {
+                  {
+                    ["lit"] = "createMandator",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -627,6 +665,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.mandator`",
+                },
+                ["parts"] = {
+                  "createMandator",
                 },
               },
             },
@@ -644,6 +685,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["type"] = "`$INTEGER`",
           },
@@ -673,8 +715,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/createServiceUser",
-                ["parts"] = {
-                  "createServiceUser",
+                ["segments"] = {
+                  {
+                    ["lit"] = "createServiceUser",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -684,6 +728,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "createServiceUser",
                 },
               },
             },
@@ -700,6 +747,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["type"] = "`$INTEGER`",
           },
@@ -729,8 +777,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/deactivateUser",
-                ["parts"] = {
-                  "deactivateUser",
+                ["segments"] = {
+                  {
+                    ["lit"] = "deactivateUser",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -740,6 +790,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "deactivateUser",
                 },
               },
             },
@@ -760,6 +813,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["type"] = "`$INTEGER`",
           },
@@ -789,8 +843,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/getKycDocument",
-                ["parts"] = {
-                  "getKycDocument",
+                ["segments"] = {
+                  {
+                    ["lit"] = "getKycDocument",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -800,6 +856,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "getKycDocument",
                 },
               },
             },
@@ -824,6 +883,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["type"] = "`$INTEGER`",
           },
@@ -853,8 +913,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/getLogo",
-                ["parts"] = {
-                  "getLogo",
+                ["segments"] = {
+                  {
+                    ["lit"] = "getLogo",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -864,6 +926,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "getLogo",
                 },
               },
             },
@@ -880,6 +945,7 @@ local function make_config()
             ["type"] = "`$ARRAY`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["type"] = "`$INTEGER`",
           },
@@ -909,8 +975,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/listOfAvailableRoles",
-                ["parts"] = {
-                  "listOfAvailableRoles",
+                ["segments"] = {
+                  {
+                    ["lit"] = "listOfAvailableRoles",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -920,6 +988,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "listOfAvailableRoles",
                 },
               },
             },
@@ -944,6 +1015,7 @@ local function make_config()
             ["type"] = "`$OBJECT`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["type"] = "`$INTEGER`",
           },
@@ -977,8 +1049,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/listOfMandators",
-                ["parts"] = {
-                  "listOfMandators",
+                ["segments"] = {
+                  {
+                    ["lit"] = "listOfMandators",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -988,6 +1062,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "listOfMandators",
                 },
               },
             },
@@ -1008,6 +1085,7 @@ local function make_config()
             ["type"] = "`$OBJECT`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["type"] = "`$INTEGER`",
           },
@@ -1037,8 +1115,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/listOfModules",
-                ["parts"] = {
-                  "listOfModules",
+                ["segments"] = {
+                  {
+                    ["lit"] = "listOfModules",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -1048,6 +1128,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "listOfModules",
                 },
               },
             },
@@ -1072,6 +1155,7 @@ local function make_config()
             ["type"] = "`$OBJECT`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["type"] = "`$INTEGER`",
           },
@@ -1105,8 +1189,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/listOfRoleGroups",
-                ["parts"] = {
-                  "listOfRoleGroups",
+                ["segments"] = {
+                  {
+                    ["lit"] = "listOfRoleGroups",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -1116,6 +1202,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "listOfRoleGroups",
                 },
               },
             },
@@ -1140,6 +1229,7 @@ local function make_config()
             ["type"] = "`$OBJECT`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["type"] = "`$INTEGER`",
           },
@@ -1173,8 +1263,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/listOfTransactionsHistory",
-                ["parts"] = {
-                  "listOfTransactionsHistory",
+                ["segments"] = {
+                  {
+                    ["lit"] = "listOfTransactionsHistory",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -1184,6 +1276,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "listOfTransactionsHistory",
                 },
               },
             },
@@ -1208,6 +1303,7 @@ local function make_config()
             ["type"] = "`$OBJECT`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["type"] = "`$INTEGER`",
           },
@@ -1241,8 +1337,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/listOfUsers",
-                ["parts"] = {
-                  "listOfUsers",
+                ["segments"] = {
+                  {
+                    ["lit"] = "listOfUsers",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -1252,6 +1350,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "listOfUsers",
                 },
               },
             },
@@ -1273,6 +1374,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["type"] = "`$INTEGER`",
           },
@@ -1306,8 +1408,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/provideCredentials",
-                ["parts"] = {
-                  "provideCredentials",
+                ["segments"] = {
+                  {
+                    ["lit"] = "provideCredentials",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -1317,6 +1421,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "provideCredentials",
                 },
               },
             },
@@ -1359,6 +1466,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "email",
             ["name"] = "email",
             ["req"] = true,
             ["short"] = "User's email address (must be unique).",
@@ -1400,6 +1508,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["short"] = "Response code (0 indicates success; non-zero indicates an error).",
             ["type"] = "`$INTEGER`",
@@ -1456,8 +1565,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/registerUser",
-                ["parts"] = {
-                  "registerUser",
+                ["segments"] = {
+                  {
+                    ["lit"] = "registerUser",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -1467,6 +1578,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "registerUser",
                 },
               },
             },
@@ -1483,6 +1597,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["type"] = "`$INTEGER`",
           },
@@ -1516,8 +1631,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/removeRoles",
-                ["parts"] = {
-                  "removeRoles",
+                ["segments"] = {
+                  {
+                    ["lit"] = "removeRoles",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -1527,6 +1644,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "removeRoles",
                 },
               },
             },
@@ -1556,6 +1676,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["type"] = "`$INTEGER`",
           },
@@ -1584,8 +1705,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/resendLink",
-                ["parts"] = {
-                  "resendLink",
+                ["segments"] = {
+                  {
+                    ["lit"] = "resendLink",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -1595,6 +1718,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "resendLink",
                 },
               },
             },
@@ -1615,6 +1741,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["type"] = "`$INTEGER`",
           },
@@ -1644,8 +1771,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/resetPassword",
-                ["parts"] = {
-                  "resetPassword",
+                ["segments"] = {
+                  {
+                    ["lit"] = "resetPassword",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -1655,6 +1784,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "resetPassword",
                 },
               },
             },
@@ -1732,6 +1864,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["type"] = "`$INTEGER`",
           },
@@ -1780,8 +1913,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/updateConsumer",
-                ["parts"] = {
-                  "updateConsumer",
+                ["segments"] = {
+                  {
+                    ["lit"] = "updateConsumer",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -1791,6 +1926,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "updateConsumer",
                 },
               },
             },
@@ -1823,6 +1961,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "int32",
             ["name"] = "responseCode",
             ["type"] = "`$INTEGER`",
           },
@@ -1851,8 +1990,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/updateProfile",
-                ["parts"] = {
-                  "updateProfile",
+                ["segments"] = {
+                  {
+                    ["lit"] = "updateProfile",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -1862,6 +2003,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "updateProfile",
                 },
               },
             },
@@ -1897,13 +2041,18 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/version",
-                ["parts"] = {
-                  "version",
+                ["segments"] = {
+                  {
+                    ["lit"] = "version",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "version",
                 },
               },
             },

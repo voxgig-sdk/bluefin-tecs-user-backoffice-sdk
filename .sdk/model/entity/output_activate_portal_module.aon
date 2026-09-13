@@ -16,6 +16,7 @@ main: kit: entity: output_activate_portal_module: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -46,8 +47,10 @@ main: kit: entity: output_activate_portal_module: {
           }
           method: "POST"
           orig: "/activateMerchantPortalModule"
-          parts: [
-            "activateMerchantPortalModule"
+          segments: [
+            {
+              lit: "activateMerchantPortalModule"
+            }
           ]
           select: {
             exist: [

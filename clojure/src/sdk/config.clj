@@ -8,6 +8,7 @@
       "output_activate_digital_module" (vs/jm
         "fields" (vs/jt
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -33,6 +34,9 @@
                 "orig" "/activateDigitalModule"
                 "parts" (vs/jt
                   "activateDigitalModule")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "activateDigitalModule"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -52,6 +56,7 @@
             "req" true
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -77,6 +82,9 @@
                 "orig" "/activateMerchantPortalModule"
                 "parts" (vs/jt
                   "activateMerchantPortalModule")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "activateMerchantPortalModule"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -88,6 +96,7 @@
       "output_activate_store_module" (vs/jm
         "fields" (vs/jt
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -113,6 +122,9 @@
                 "orig" "/activateAppStoreModule"
                 "parts" (vs/jt
                   "activateAppStoreModule")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "activateAppStoreModule"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -127,6 +139,7 @@
             "name" "consumerUUID"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -152,6 +165,9 @@
                 "orig" "/activateUser"
                 "parts" (vs/jt
                   "activateUser")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "activateUser"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -168,6 +184,7 @@
             "short" "Unique identifier of the consumer (user) to whom the role(s) will be assigned."
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "short" "Response code: 0 indicates success; any non-zero value indicates an error."
             "type" "`$INTEGER`")
@@ -200,6 +217,9 @@
                 "orig" "/assignRoles"
                 "parts" (vs/jt
                   "assignRoles")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "assignRoles"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -221,6 +241,7 @@
             "short" "The MIME type of the image"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -246,6 +267,9 @@
                 "orig" "/changeLogo"
                 "parts" (vs/jt
                   "changeLogo")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "changeLogo"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -341,6 +365,9 @@
                 "orig" "/createMandator"
                 "parts" (vs/jt
                   "createMandator")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "createMandator"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -356,6 +383,7 @@
             "req" true
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -381,6 +409,9 @@
                 "orig" "/createServiceUser"
                 "parts" (vs/jt
                   "createServiceUser")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "createServiceUser"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -395,6 +426,7 @@
             "name" "consumerUUID"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -420,6 +452,9 @@
                 "orig" "/deactivateUser"
                 "parts" (vs/jt
                   "deactivateUser")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "deactivateUser"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -437,6 +472,7 @@
             "name" "encodedDataBase64"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -462,6 +498,9 @@
                 "orig" "/getKycDocument"
                 "parts" (vs/jt
                   "getKycDocument")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "getKycDocument"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -483,6 +522,7 @@
             "short" "The MIME type of the image"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -508,6 +548,9 @@
                 "orig" "/getLogo"
                 "parts" (vs/jt
                   "getLogo")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "getLogo"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -522,6 +565,7 @@
             "name" "availableRoles"
             "type" "`$ARRAY`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -547,6 +591,9 @@
                 "orig" "/listOfAvailableRoles"
                 "parts" (vs/jt
                   "listOfAvailableRoles")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "listOfAvailableRoles"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -567,6 +614,7 @@
             "name" "pagination"
             "type" "`$OBJECT`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -595,6 +643,9 @@
                 "orig" "/listOfMandators"
                 "parts" (vs/jt
                   "listOfMandators")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "listOfMandators"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -612,6 +663,7 @@
             "name" "pagination"
             "type" "`$OBJECT`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -637,6 +689,9 @@
                 "orig" "/listOfModules"
                 "parts" (vs/jt
                   "listOfModules")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "listOfModules"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -657,6 +712,7 @@
             "name" "pagination"
             "type" "`$OBJECT`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -685,6 +741,9 @@
                 "orig" "/listOfRoleGroups"
                 "parts" (vs/jt
                   "listOfRoleGroups")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "listOfRoleGroups"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -705,6 +764,7 @@
             "name" "pagination"
             "type" "`$OBJECT`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -733,6 +793,9 @@
                 "orig" "/listOfTransactionsHistory"
                 "parts" (vs/jt
                   "listOfTransactionsHistory")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "listOfTransactionsHistory"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -753,6 +816,7 @@
             "name" "pagination"
             "type" "`$OBJECT`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -781,6 +845,9 @@
                 "orig" "/listOfUsers"
                 "parts" (vs/jt
                   "listOfUsers")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "listOfUsers"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -799,6 +866,7 @@
             "name" "password"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -827,6 +895,9 @@
                 "orig" "/provideCredentials"
                 "parts" (vs/jt
                   "provideCredentials")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "provideCredentials"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -862,6 +933,7 @@
             "short" "User's driver's license number."
             "type" "`$STRING`")
           (vs/jm
+            "format" "email"
             "name" "email"
             "req" true
             "short" "User's email address (must be unique)."
@@ -895,6 +967,7 @@
             "short" "User's phone number."
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "short" "Response code (0 indicates success; non-zero indicates an error)."
             "type" "`$INTEGER`")
@@ -942,6 +1015,9 @@
                 "orig" "/registerUser"
                 "parts" (vs/jt
                   "registerUser")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "registerUser"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -956,6 +1032,7 @@
             "name" "consumerUUID"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -984,6 +1061,9 @@
                 "orig" "/removeRoles"
                 "parts" (vs/jt
                   "removeRoles")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "removeRoles"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -1008,6 +1088,7 @@
             "name" "phoneNumber"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -1032,6 +1113,9 @@
                 "orig" "/resendLink"
                 "parts" (vs/jt
                   "resendLink")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "resendLink"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -1049,6 +1133,7 @@
             "name" "phoneNumber"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -1074,6 +1159,9 @@
                 "orig" "/resetPassword"
                 "parts" (vs/jt
                   "resetPassword")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "resetPassword"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -1134,6 +1222,7 @@
             "name" "placeOfBirth"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -1173,6 +1262,9 @@
                 "orig" "/updateConsumer"
                 "parts" (vs/jt
                   "updateConsumer")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "updateConsumer"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -1199,6 +1291,7 @@
             "name" "phoneNumber"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -1223,6 +1316,9 @@
                 "orig" "/updateProfile"
                 "parts" (vs/jt
                   "updateProfile")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "updateProfile"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -1255,6 +1351,9 @@
                 "orig" "/version"
                 "parts" (vs/jt
                   "version")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "version"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -1377,3 +1476,9 @@
         "version" (vs/jm))
       "headers" (vs/jm
         "content-type" "application/json"))))
+
+(def feature-plugins
+  {})
+
+(def feature-extra
+  {})

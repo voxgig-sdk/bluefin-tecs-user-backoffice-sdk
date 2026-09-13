@@ -34,6 +34,7 @@
           "fields": [
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -68,8 +69,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/activateDigitalModule",
-                  "parts": [
-                    "activateDigitalModule"
+                  "segments": [
+                    {
+                      "lit": "activateDigitalModule"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -108,6 +111,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -142,8 +146,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/activateMerchantPortalModule",
-                  "parts": [
-                    "activateMerchantPortalModule"
+                  "segments": [
+                    {
+                      "lit": "activateMerchantPortalModule"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -170,6 +176,7 @@
           "fields": [
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -204,8 +211,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/activateAppStoreModule",
-                  "parts": [
-                    "activateAppStoreModule"
+                  "segments": [
+                    {
+                      "lit": "activateAppStoreModule"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -238,6 +247,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -272,8 +282,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/activateUser",
-                  "parts": [
-                    "activateUser"
+                  "segments": [
+                    {
+                      "lit": "activateUser"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -307,6 +319,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "short": "Response code: 0 indicates success; any non-zero value indicates an error.",
@@ -350,8 +363,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/assignRoles",
-                  "parts": [
-                    "assignRoles"
+                  "segments": [
+                    {
+                      "lit": "assignRoles"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -392,6 +407,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -426,8 +442,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/changeLogo",
-                  "parts": [
-                    "changeLogo"
+                  "segments": [
+                    {
+                      "lit": "changeLogo"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -596,8 +614,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/createMandator",
-                  "parts": [
-                    "createMandator"
+                  "segments": [
+                    {
+                      "lit": "createMandator"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -630,6 +650,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -664,8 +685,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/createServiceUser",
-                  "parts": [
-                    "createServiceUser"
+                  "segments": [
+                    {
+                      "lit": "createServiceUser"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -698,6 +721,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -732,8 +756,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/deactivateUser",
-                  "parts": [
-                    "deactivateUser"
+                  "segments": [
+                    {
+                      "lit": "deactivateUser"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -772,6 +798,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -806,8 +833,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/getKycDocument",
-                  "parts": [
-                    "getKycDocument"
+                  "segments": [
+                    {
+                      "lit": "getKycDocument"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -848,6 +877,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -882,8 +912,10 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/getLogo",
-                  "parts": [
-                    "getLogo"
+                  "segments": [
+                    {
+                      "lit": "getLogo"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -916,6 +948,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -950,8 +983,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/listOfAvailableRoles",
-                  "parts": [
-                    "listOfAvailableRoles"
+                  "segments": [
+                    {
+                      "lit": "listOfAvailableRoles"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -996,6 +1031,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -1036,8 +1072,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/listOfMandators",
-                  "parts": [
-                    "listOfMandators"
+                  "segments": [
+                    {
+                      "lit": "listOfMandators"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1076,6 +1114,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -1110,8 +1149,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/listOfModules",
-                  "parts": [
-                    "listOfModules"
+                  "segments": [
+                    {
+                      "lit": "listOfModules"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1156,6 +1197,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -1196,8 +1238,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/listOfRoleGroups",
-                  "parts": [
-                    "listOfRoleGroups"
+                  "segments": [
+                    {
+                      "lit": "listOfRoleGroups"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1242,6 +1286,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -1282,8 +1327,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/listOfTransactionsHistory",
-                  "parts": [
-                    "listOfTransactionsHistory"
+                  "segments": [
+                    {
+                      "lit": "listOfTransactionsHistory"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1328,6 +1375,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -1368,8 +1416,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/listOfUsers",
-                  "parts": [
-                    "listOfUsers"
+                  "segments": [
+                    {
+                      "lit": "listOfUsers"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1408,6 +1458,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -1448,8 +1499,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/provideCredentials",
-                  "parts": [
-                    "provideCredentials"
+                  "segments": [
+                    {
+                      "lit": "provideCredentials"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1518,6 +1571,7 @@
             },
             {
               "active": true,
+              "format": "email",
               "name": "email",
               "req": true,
               "short": "User's email address (must be unique).",
@@ -1574,6 +1628,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "short": "Response code (0 indicates success; non-zero indicates an error).",
@@ -1645,8 +1700,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/registerUser",
-                  "parts": [
-                    "registerUser"
+                  "segments": [
+                    {
+                      "lit": "registerUser"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1679,6 +1736,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -1719,8 +1777,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/removeRoles",
-                  "parts": [
-                    "removeRoles"
+                  "segments": [
+                    {
+                      "lit": "removeRoles"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1771,6 +1831,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -1805,8 +1866,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/resendLink",
-                  "parts": [
-                    "resendLink"
+                  "segments": [
+                    {
+                      "lit": "resendLink"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1845,6 +1908,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -1879,8 +1943,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/resetPassword",
-                  "parts": [
-                    "resetPassword"
+                  "segments": [
+                    {
+                      "lit": "resetPassword"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -2003,6 +2069,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -2067,8 +2134,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/updateConsumer",
-                  "parts": [
-                    "updateConsumer"
+                  "segments": [
+                    {
+                      "lit": "updateConsumer"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -2125,6 +2194,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -2159,8 +2229,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/updateProfile",
-                  "parts": [
-                    "updateProfile"
+                  "segments": [
+                    {
+                      "lit": "updateProfile"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -2216,8 +2288,10 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/version",
-                  "parts": [
-                    "version"
+                  "segments": [
+                    {
+                      "lit": "version"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -2299,8 +2373,11 @@
             }
           },
           "name": "audit",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -2329,6 +2406,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -2336,6 +2416,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -2432,8 +2515,11 @@
             }
           },
           "name": "clienttrack",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -2462,6 +2548,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -2469,6 +2558,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -2576,8 +2668,11 @@
             }
           },
           "name": "idempotency",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -2606,6 +2701,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -2613,6 +2711,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -2742,8 +2843,11 @@
             }
           },
           "name": "log",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -2772,6 +2876,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -2779,6 +2886,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -2886,8 +2996,11 @@
             }
           },
           "name": "metrics",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -2916,6 +3029,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -2923,6 +3039,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -3024,8 +3143,11 @@
             }
           },
           "name": "paging",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -3054,6 +3176,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -3061,6 +3186,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -3158,8 +3286,11 @@
             }
           },
           "name": "ratelimit",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -3188,6 +3319,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -3195,6 +3329,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -3303,8 +3440,11 @@
             }
           },
           "name": "retry",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -3333,6 +3473,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -3340,6 +3483,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -3447,8 +3593,11 @@
             }
           },
           "name": "telemetry",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -3477,6 +3626,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -3484,6 +3636,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -3587,8 +3742,11 @@
             }
           },
           "name": "test",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -3617,6 +3775,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -3624,6 +3785,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -3720,8 +3884,11 @@
             }
           },
           "name": "timeout",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -3750,6 +3917,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -3757,6 +3927,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -4414,6 +4587,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -4439,6 +4615,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "tests/runner.h"
+          ],
           "title": "C"
         },
         "clojure": {
@@ -4473,6 +4652,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -4498,6 +4680,7 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [],
           "title": "Clojure"
         },
         "cpp": {
@@ -4534,6 +4717,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -4559,6 +4745,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.hpp"
+          ],
           "title": "C++"
         },
         "csharp": {
@@ -4595,6 +4784,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -4620,6 +4812,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/StructRunner.cs"
+          ],
           "title": "C#"
         },
         "dart": {
@@ -4628,7 +4823,7 @@
             "name": "",
             "url": ""
           },
-          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "base": "node_modules/@voxgig/sdkgen-langpack/.sdk",
           "comment": {
             "line": "//"
           },
@@ -4653,7 +4848,10 @@
             "repo": "",
             "sdkrel": ""
           },
-          "package": "@voxgig/sdkgen",
+          "package": "@voxgig/sdkgen-langpack",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -4679,6 +4877,10 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/runner.dart",
+            "test/struct_corpus.dart"
+          ],
           "title": "Dart"
         },
         "elixir": {
@@ -4713,6 +4915,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -4738,6 +4943,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/support/struct_corpus.ex"
+          ],
           "title": "Elixir"
         },
         "go": {
@@ -4774,6 +4982,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -4799,6 +5010,10 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/runner_test.go",
+            "test/struct_runner_test.go"
+          ],
           "title": "Golang"
         },
         "go-cli": {
@@ -4850,6 +5065,7 @@
               "active": false
             }
           },
+          "provides": {},
           "publish": {
             "registry": {
               "active": false,
@@ -4874,6 +5090,7 @@
             },
             "version": "0.1.1"
           },
+          "superseded": [],
           "title": "Go CLI"
         },
         "go-mcp": {
@@ -4925,6 +5142,7 @@
               "active": false
             }
           },
+          "provides": {},
           "publish": {
             "registry": {
               "active": false,
@@ -4949,7 +5167,86 @@
             },
             "version": "0.1.1"
           },
+          "superseded": [],
           "title": "Go MCP server"
+        },
+        "haskell": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen-langpack/.sdk",
+          "comment": {
+            "line": "--"
+          },
+          "deps": {},
+          "ext": "hs",
+          "feature": {
+            "fullset": [],
+            "trim": false
+          },
+          "module": {
+            "goversion": "",
+            "name": "bluefin-tecs-user-backoffice",
+            "package": "",
+            "path": ""
+          },
+          "name": "haskell",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen-langpack",
+          "phase": {
+            "agentguide": {
+              "active": true
+            },
+            "entity": {
+              "active": false
+            },
+            "feature": {
+              "active": false
+            },
+            "readme": {
+              "active": true
+            },
+            "test": {
+              "active": true
+            }
+          },
+          "provides": {},
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "hackage",
+              "package": "",
+              "state": "pending",
+              "url": "https://hackage.haskell.org",
+              "vault": {
+                "alias": "hackage",
+                "env": "HACKAGE_TOKEN",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "srcfeature": false,
+          "superseded": [],
+          "title": "Haskell"
         },
         "java": {
           "active": true,
@@ -4985,6 +5282,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -5010,6 +5310,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/StructRunner.java"
+          ],
           "title": "Java"
         },
         "js": {
@@ -5050,6 +5353,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -5074,6 +5380,9 @@
             },
             "version": "0.1.1"
           },
+          "superseded": [
+            "test/runner.js"
+          ],
           "title": "JavaScript"
         },
         "kotlin": {
@@ -5110,6 +5419,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -5135,7 +5447,88 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/StructRunner.kt"
+          ],
           "title": "Kotlin"
+        },
+        "lean": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen-langpack/.sdk",
+          "comment": {
+            "line": "--"
+          },
+          "deps": {},
+          "ext": "lean",
+          "feature": {
+            "fullset": [],
+            "trim": false
+          },
+          "module": {
+            "goversion": "",
+            "name": "bluefin-tecs-user-backoffice",
+            "package": "",
+            "path": ""
+          },
+          "name": "lean",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen-langpack",
+          "phase": {
+            "agentguide": {
+              "active": true
+            },
+            "entity": {
+              "active": false
+            },
+            "feature": {
+              "active": false
+            },
+            "readme": {
+              "active": true
+            },
+            "test": {
+              "active": true
+            }
+          },
+          "provides": {},
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "reservoir",
+              "package": "",
+              "state": "pending",
+              "url": "https://reservoir.lean-lang.org",
+              "vault": {
+                "alias": "reservoir",
+                "env": "RESERVOIR_TOKEN",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "srcfeature": false,
+          "superseded": [],
+          "title": "Lean"
         },
         "lua": {
           "active": true,
@@ -5175,6 +5568,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -5200,6 +5596,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.lua"
+          ],
           "title": "Lua"
         },
         "ocaml": {
@@ -5216,7 +5615,7 @@
           "ext": "ml",
           "feature": {
             "fullset": [],
-            "trim": false
+            "trim": true
           },
           "module": {
             "goversion": "",
@@ -5234,6 +5633,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -5259,6 +5661,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/corpus_runner.ml"
+          ],
           "title": "OCaml"
         },
         "perl": {
@@ -5293,6 +5698,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -5318,6 +5726,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "t/struct_runner.pm"
+          ],
           "title": "Perl"
         },
         "php": {
@@ -5352,6 +5763,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -5377,6 +5791,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/StructRunner.php"
+          ],
           "title": "PHP"
         },
         "py": {
@@ -5417,6 +5834,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -5442,6 +5862,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.py"
+          ],
           "title": "Python"
         },
         "rb": {
@@ -5487,6 +5910,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -5512,6 +5938,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.rb"
+          ],
           "title": "Ruby"
         },
         "rust": {
@@ -5554,6 +5983,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -5579,6 +6011,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "tests/struct_runner/mod.rs"
+          ],
           "title": "Rust"
         },
         "scala": {
@@ -5613,6 +6048,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -5638,6 +6076,7 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [],
           "title": "Scala"
         },
         "swift": {
@@ -5674,6 +6113,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -5699,6 +6141,7 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [],
           "title": "Swift"
         },
         "ts": {
@@ -5716,11 +6159,6 @@
               "active": true,
               "kind": "dev",
               "version": "^25.6.0"
-            },
-            "dotenv": {
-              "active": true,
-              "kind": "dev",
-              "version": "^17.4.2"
             },
             "typescript": {
               "active": true,
@@ -5749,6 +6187,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -5773,6 +6214,14 @@
             },
             "version": "0.1.1"
           },
+          "superseded": [
+            "test/runner.ts",
+            "test/vendor/omni/compat.ts",
+            "src/feature/secrets/sekreto/Providers.ts",
+            "src/feature/secrets/sekreto/Sigv4.ts",
+            "src/feature/secrets/sekreto/provider/Registry.ts",
+            "src/feature/secrets/sekreto/provider/http.ts"
+          ],
           "title": "TypeScript"
         },
         "zig": {
@@ -5807,6 +6256,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -5832,6 +6284,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.zig"
+          ],
           "title": "Zig"
         }
       },

@@ -1,6 +1,7 @@
 .{
-    .name = "bluefin_tecs_user_backoffice_sdk",
+    .name = .bluefin_tecs_user_backoffice_sdk,
     .version = "0.1.1",
+    .fingerprint = 0xd16364e498b83036,
     .dependencies = .{},
     .paths = .{
         "src",

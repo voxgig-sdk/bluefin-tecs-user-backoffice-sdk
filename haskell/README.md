@@ -364,10 +364,10 @@ API path: `/activateUser`
 
 | Field | Description |
 | --- | --- |
-| `consumerUUID` |  |
-| `responseCode` |  |
-| `responseMessage` |  |
-| `roles` |  |
+| `consumerUUID` | Unique identifier of the consumer (user) to whom the role(s) will be assigned. |
+| `responseCode` | Response code: 0 indicates success; any non-zero value indicates an error. |
+| `responseMessage` | A human-readable message providing additional details about the outcome. |
+| `roles` | List of roles to assign to the consumer. |
 
 Operations: Create.
 
@@ -377,8 +377,8 @@ API path: `/assignRoles`
 
 | Field | Description |
 | --- | --- |
-| `contentAsBase64` |  |
-| `mimeType` |  |
+| `contentAsBase64` | The content of the image as base64 encoded string |
+| `mimeType` | The MIME type of the image |
 | `responseCode` |  |
 | `responseMessage` |  |
 
@@ -454,8 +454,8 @@ API path: `/getKycDocument`
 
 | Field | Description |
 | --- | --- |
-| `contentAsBase64` |  |
-| `mimeType` |  |
+| `contentAsBase64` | The content of the image as base64 encoded string |
+| `mimeType` | The MIME type of the image |
 | `responseCode` |  |
 | `responseMessage` |  |
 
@@ -566,27 +566,27 @@ API path: `/provideCredentials`
 
 | Field | Description |
 | --- | --- |
-| `city` |  |
-| `consumerId` |  |
-| `consumerLanguage` |  |
-| `country` |  |
-| `dateOfBirth` |  |
-| `driverLicenceNumber` |  |
-| `email` |  |
-| `firstName` |  |
-| `identificationNumber` |  |
-| `lastName` |  |
-| `login` |  |
-| `module` |  |
-| `passportNumber` |  |
-| `phone` |  |
-| `responseCode` |  |
-| `responseMessage` |  |
-| `salutation` |  |
-| `state` |  |
-| `street1` |  |
-| `street2` |  |
-| `zip` |  |
+| `city` | City where the user resides. |
+| `consumerId` | User login or unique user identifier. |
+| `consumerLanguage` | Preferred language for the user (e.g., 'en'). |
+| `country` | User's country. |
+| `dateOfBirth` | User's date of birth (expected format: dd.MM.yyyy). |
+| `driverLicenceNumber` | User's driver's license number. |
+| `email` | User's email address (must be unique). |
+| `firstName` | User's first name. |
+| `identificationNumber` | User's identification number. |
+| `lastName` | User's last name. |
+| `login` | User login identifier (should be unique). |
+| `module` | Module identifier (if applicable). |
+| `passportNumber` | User's passport number. |
+| `phone` | User's phone number. |
+| `responseCode` | Response code (0 indicates success; non-zero indicates an error). |
+| `responseMessage` | Human-readable response message. |
+| `salutation` | User's salutation (e.g., Mr., Ms.). |
+| `state` | User's state or region. |
+| `street1` | Primary address line. |
+| `street2` | Secondary address line. |
+| `zip` | Postal code. |
 
 Operations: Create.
 
@@ -833,10 +833,10 @@ Create an instance: `output_assign_role <- Sdk.output_assign_role sdk VNoval`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `consumerUUID` | `String` |  |
-| `responseCode` | `Int` |  |
-| `responseMessage` | `String` |  |
-| `roles` | `[Value]` |  |
+| `consumerUUID` | `String` | Unique identifier of the consumer (user) to whom the role(s) will be assigned. |
+| `responseCode` | `Int` | Response code: 0 indicates success; any non-zero value indicates an error. |
+| `responseMessage` | `String` | A human-readable message providing additional details about the outcome. |
+| `roles` | `[Value]` | List of roles to assign to the consumer. |
 
 #### Example: Create
 
@@ -866,8 +866,8 @@ Create an instance: `output_change_logo <- Sdk.output_change_logo sdk VNoval`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `contentAsBase64` | `String` |  |
-| `mimeType` | `String` |  |
+| `contentAsBase64` | `String` | The content of the image as base64 encoded string |
+| `mimeType` | `String` | The MIME type of the image |
 | `responseCode` | `Int` |  |
 | `responseMessage` | `String` |  |
 
@@ -1039,8 +1039,8 @@ Create an instance: `output_get_logo <- Sdk.output_get_logo sdk VNoval`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `contentAsBase64` | `String` |  |
-| `mimeType` | `String` |  |
+| `contentAsBase64` | `String` | The content of the image as base64 encoded string |
+| `mimeType` | `String` | The MIME type of the image |
 | `responseCode` | `Int` |  |
 | `responseMessage` | `String` |  |
 
@@ -1296,27 +1296,27 @@ Create an instance: `output_register_user <- Sdk.output_register_user sdk VNoval
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `city` | `String` |  |
-| `consumerId` | `String` |  |
-| `consumerLanguage` | `String` |  |
-| `country` | `String` |  |
-| `dateOfBirth` | `String` |  |
-| `driverLicenceNumber` | `String` |  |
-| `email` | `String` |  |
-| `firstName` | `String` |  |
-| `identificationNumber` | `String` |  |
-| `lastName` | `String` |  |
-| `login` | `String` |  |
-| `module` | `String` |  |
-| `passportNumber` | `String` |  |
-| `phone` | `String` |  |
-| `responseCode` | `Int` |  |
-| `responseMessage` | `String` |  |
-| `salutation` | `String` |  |
-| `state` | `String` |  |
-| `street1` | `String` |  |
-| `street2` | `String` |  |
-| `zip` | `String` |  |
+| `city` | `String` | City where the user resides. |
+| `consumerId` | `String` | User login or unique user identifier. |
+| `consumerLanguage` | `String` | Preferred language for the user (e.g., 'en'). |
+| `country` | `String` | User's country. |
+| `dateOfBirth` | `String` | User's date of birth (expected format: dd.MM.yyyy). |
+| `driverLicenceNumber` | `String` | User's driver's license number. |
+| `email` | `String` | User's email address (must be unique). |
+| `firstName` | `String` | User's first name. |
+| `identificationNumber` | `String` | User's identification number. |
+| `lastName` | `String` | User's last name. |
+| `login` | `String` | User login identifier (should be unique). |
+| `module` | `String` | Module identifier (if applicable). |
+| `passportNumber` | `String` | User's passport number. |
+| `phone` | `String` | User's phone number. |
+| `responseCode` | `Int` | Response code (0 indicates success; non-zero indicates an error). |
+| `responseMessage` | `String` | Human-readable response message. |
+| `salutation` | `String` | User's salutation (e.g., Mr., Ms.). |
+| `state` | `String` | User's state or region. |
+| `street1` | `String` | Primary address line. |
+| `street2` | `String` | Secondary address line. |
+| `zip` | `String` | Postal code. |
 
 #### Example: Create
 
@@ -1541,6 +1541,176 @@ Create an instance: `version <- Sdk.version sdk VNoval`
   versionData <- Sdk.eDataGet version
 ```
 
+## Features
+
+This SDK ships 11 optional features. Each is **inactive until you
+switch it on**, so an SDK you have not configured behaves exactly as if none of
+them existed — no retries, no cache, no logging, no measurable overhead.
+
+Activate a feature by name in the client options, alongside the options shown
+above:
+
+| Feature | What it does |
+|---|---|
+| [`audit`](#audit) | Structured audit trail of operations |
+| [`clienttrack`](#clienttrack) | Client identity and per-request correlation headers |
+| [`idempotency`](#idempotency) | Idempotency keys for safe retries of mutating operations |
+| [`log`](#log) | Structured request and response logging |
+| [`metrics`](#metrics) | Statistics capture: per-operation counters and latency |
+| [`paging`](#paging) | Pagination signals for list operations |
+| [`ratelimit`](#ratelimit) | Client-side rate limiting via a token bucket |
+| [`retry`](#retry) | Automatic retry of transient failures with exponential backoff |
+| [`telemetry`](#telemetry) | Distributed tracing spans with W3C trace-context propagation |
+| [`test`](#test) | In-memory mock transport for testing without a live server |
+| [`timeout`](#timeout) | Per-request timeout with transport abort |
+
+> **Order matters for `ratelimit`, `retry`, `timeout`.** These wrap the
+> transport, so each one wraps whatever is already installed: the order you
+> activate them in IS the nesting order. Activating them as an ordered list
+> rather than a map is what fixes that order.
+
+### audit
+
+Structured audit trail of operations.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+| `actor` | `'anonymous'` |
+| `max` | `1000` |
+
+Set `feature.audit.active` to enable it, then override any of the options above.
+
+### clienttrack
+
+Client identity and per-request correlation headers.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+| `clientVersion` | `'0.0.1'` |
+
+Set `feature.clienttrack.active` to enable it, then override any of the options above.
+
+### idempotency
+
+Idempotency keys for safe retries of mutating operations.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+| `header` | `'Idempotency-Key'` |
+| `methods` | `['POST', 'PUT', 'PATCH', 'DELETE']` |
+| `ops` | `['create', 'update', 'remove']` |
+
+Set `feature.idempotency.active` to enable it, then override any of the options above.
+
+### log
+
+Structured request and response logging.
+
+| Option | Default |
+|---|---|
+| `active` | `true` |
+
+Set `feature.log.active` to enable it, then override any of the options above.
+
+### metrics
+
+Statistics capture: per-operation counters and latency.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Set `feature.metrics.active` to enable it, then override any of the options above.
+
+### paging
+
+Pagination signals for list operations.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+| `afterVar` | `'after'` |
+| `cursorParam` | `'cursor'` |
+| `firstVar` | `'first'` |
+| `limitParam` | `'limit'` |
+| `pageParam` | `'page'` |
+| `startPage` | `1` |
+
+Set `feature.paging.active` to enable it, then override any of the options above.
+
+### ratelimit
+
+Client-side rate limiting via a token bucket.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+| `burst` | `5` |
+| `rate` | `5` |
+
+Set `feature.ratelimit.active` to enable it, then override any of the options above.
+
+`ratelimit` wraps the transport, so its position among the other
+transport features decides what it sees. A feature activated later wraps one
+activated earlier.
+
+### retry
+
+Automatic retry of transient failures with exponential backoff.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+| `factor` | `2` |
+| `maxDelay` | `2000` |
+| `minDelay` | `50` |
+| `retries` | `2` |
+| `statuses` | `[408, 425, 429, 500, 502, 503, 504]` |
+
+Set `feature.retry.active` to enable it, then override any of the options above.
+
+`retry` wraps the transport, so its position among the other
+transport features decides what it sees. A feature activated later wraps one
+activated earlier.
+
+### telemetry
+
+Distributed tracing spans with W3C trace-context propagation.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Set `feature.telemetry.active` to enable it, then override any of the options above.
+
+### test
+
+In-memory mock transport for testing without a live server.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Set `feature.test.active` to enable it, then override any of the options above.
+
+### timeout
+
+Per-request timeout with transport abort.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+| `ms` | `30000` |
+
+Set `feature.timeout.active` to enable it, then override any of the options above.
+
+`timeout` wraps the transport, so its position among the other
+transport features decides what it sees. A feature activated later wraps one
+activated earlier.
+
 
 ## Advanced
 
@@ -1580,7 +1750,17 @@ a function that receives the context.
 
 The SDK ships with built-in features:
 
+- **AuditFeature**: Structured audit trail of operations
+- **ClienttrackFeature**: Client identity and per-request correlation headers
+- **IdempotencyFeature**: Idempotency keys for safe retries of mutating operations
+- **LogFeature**: Structured request and response logging
+- **MetricsFeature**: Statistics capture: per-operation counters and latency
+- **PagingFeature**: Pagination signals for list operations
+- **RatelimitFeature**: Client-side rate limiting via a token bucket
+- **RetryFeature**: Automatic retry of transient failures with exponential backoff
+- **TelemetryFeature**: Distributed tracing spans with W3C trace-context propagation
 - **TestFeature**: In-memory mock transport for testing without a live server
+- **TimeoutFeature**: Per-request timeout with transport abort
 
 Features are initialized in order. Hooks fire in the order features
 were added, so later features can override earlier ones.

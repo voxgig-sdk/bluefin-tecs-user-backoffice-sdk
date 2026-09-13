@@ -21,6 +21,7 @@ main: kit: entity: output_list_of_mandator: {
       type: "`$OBJECT`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -56,8 +57,10 @@ main: kit: entity: output_list_of_mandator: {
           }
           method: "POST"
           orig: "/listOfMandators"
-          parts: [
-            "listOfMandators"
+          segments: [
+            {
+              lit: "listOfMandators"
+            }
           ]
           select: {
             exist: [

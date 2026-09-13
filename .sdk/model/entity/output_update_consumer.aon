@@ -86,6 +86,7 @@ main: kit: entity: output_update_consumer: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -141,8 +142,10 @@ main: kit: entity: output_update_consumer: {
           }
           method: "POST"
           orig: "/updateConsumer"
-          parts: [
-            "updateConsumer"
+          segments: [
+            {
+              lit: "updateConsumer"
+            }
           ]
           select: {
             exist: [

@@ -88,17 +88,25 @@ public class VersionDirectTest
         {
             ["BLUEFIN_TECS_USER_BACKOFFICE_TEST_VERSION_ENTID"] = new Dictionary<string, object?>(),
             ["BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE"] = "FALSE",
-            ["BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"] = "NONE",
+            ["BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"] = "",
         });
 
         var live = Equals(env["BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE"], "TRUE");
 
         if (live)
         {
-            var liveClient = new BluefinTecsUserBackofficeSDK(new Dictionary<string, object?>
+            // sdk-test-control.json's test.client.options goes UNDER the
+            // generated fields: it adds to the live client, it does not
+            // redirect it, so the generated entries overwrite it here.
+            var liveOpts = TestRunner.LiveClientOptions();
+            foreach (var _kv in new Dictionary<string, object?>
             {
                 ["apikey"] = env["BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"],
-            });
+            })
+            {
+                liveOpts[_kv.Key] = _kv.Value;
+            }
+            var liveClient = new BluefinTecsUserBackofficeSDK(liveOpts);
 
             var idmap = new Dictionary<string, object?>();
             var entidRaw = env["BLUEFIN_TECS_USER_BACKOFFICE_TEST_VERSION_ENTID"];

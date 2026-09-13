@@ -30,6 +30,17 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
+// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
+// the model's active plugin groups. A feature that takes a `plugins` option
+// (secrets over sekreto) reads its own entry; a feature with no plugins has
+// none. Named imports above make each definition statically reachable, so
+// an SDK carries exactly the plugin modules its model selects — the same
+// leanness the old side-effect registry imports bought, without a registry.
+const FEATURE_PLUGINS: Record<string, any[]> = {
+  
+}
+
+
 class Config {
 
   makeFeature(this: any, fn: string) {
@@ -260,6 +271,7 @@ class Config {
     "output_activate_digital_module": {
       "fields": [
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -289,8 +301,10 @@ class Config {
               "kind": "http",
               "method": "POST",
               "orig": "/activateDigitalModule",
-              "parts": [
-                "activateDigitalModule"
+              "segments": [
+                {
+                  "lit": "activateDigitalModule"
+                }
               ],
               "select": {
                 "exist": [
@@ -300,7 +314,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "activateDigitalModule"
+              ]
             }
           ]
         }
@@ -322,6 +339,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -351,8 +369,10 @@ class Config {
               "kind": "http",
               "method": "POST",
               "orig": "/activateMerchantPortalModule",
-              "parts": [
-                "activateMerchantPortalModule"
+              "segments": [
+                {
+                  "lit": "activateMerchantPortalModule"
+                }
               ],
               "select": {
                 "exist": [
@@ -362,7 +382,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "activateMerchantPortalModule"
+              ]
             }
           ]
         }
@@ -374,6 +397,7 @@ class Config {
     "output_activate_store_module": {
       "fields": [
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -403,8 +427,10 @@ class Config {
               "kind": "http",
               "method": "POST",
               "orig": "/activateAppStoreModule",
-              "parts": [
-                "activateAppStoreModule"
+              "segments": [
+                {
+                  "lit": "activateAppStoreModule"
+                }
               ],
               "select": {
                 "exist": [
@@ -414,7 +440,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "activateAppStoreModule"
+              ]
             }
           ]
         }
@@ -430,6 +459,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -459,8 +489,10 @@ class Config {
               "kind": "http",
               "method": "POST",
               "orig": "/activateUser",
-              "parts": [
-                "activateUser"
+              "segments": [
+                {
+                  "lit": "activateUser"
+                }
               ],
               "select": {
                 "exist": [
@@ -470,7 +502,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "activateUser"
+              ]
             }
           ]
         }
@@ -488,6 +523,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "short": "Response code: 0 indicates success; any non-zero value indicates an error.",
           "type": "`$INTEGER`"
@@ -525,8 +561,10 @@ class Config {
               "kind": "http",
               "method": "POST",
               "orig": "/assignRoles",
-              "parts": [
-                "assignRoles"
+              "segments": [
+                {
+                  "lit": "assignRoles"
+                }
               ],
               "select": {
                 "exist": [
@@ -536,7 +574,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "assignRoles"
+              ]
             }
           ]
         }
@@ -560,6 +601,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -589,8 +631,10 @@ class Config {
               "kind": "http",
               "method": "POST",
               "orig": "/changeLogo",
-              "parts": [
-                "changeLogo"
+              "segments": [
+                {
+                  "lit": "changeLogo"
+                }
               ],
               "select": {
                 "exist": [
@@ -600,7 +644,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "changeLogo"
+              ]
             }
           ]
         }
@@ -720,8 +767,10 @@ class Config {
               "kind": "http",
               "method": "POST",
               "orig": "/createMandator",
-              "parts": [
-                "createMandator"
+              "segments": [
+                {
+                  "lit": "createMandator"
+                }
               ],
               "select": {
                 "exist": [
@@ -731,7 +780,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.mandator`"
-              }
+              },
+              "parts": [
+                "createMandator"
+              ]
             }
           ]
         }
@@ -748,6 +800,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -777,8 +830,10 @@ class Config {
               "kind": "http",
               "method": "POST",
               "orig": "/createServiceUser",
-              "parts": [
-                "createServiceUser"
+              "segments": [
+                {
+                  "lit": "createServiceUser"
+                }
               ],
               "select": {
                 "exist": [
@@ -788,7 +843,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "createServiceUser"
+              ]
             }
           ]
         }
@@ -804,6 +862,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -833,8 +892,10 @@ class Config {
               "kind": "http",
               "method": "POST",
               "orig": "/deactivateUser",
-              "parts": [
-                "deactivateUser"
+              "segments": [
+                {
+                  "lit": "deactivateUser"
+                }
               ],
               "select": {
                 "exist": [
@@ -844,7 +905,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "deactivateUser"
+              ]
             }
           ]
         }
@@ -864,6 +928,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -893,8 +958,10 @@ class Config {
               "kind": "http",
               "method": "POST",
               "orig": "/getKycDocument",
-              "parts": [
-                "getKycDocument"
+              "segments": [
+                {
+                  "lit": "getKycDocument"
+                }
               ],
               "select": {
                 "exist": [
@@ -904,7 +971,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "getKycDocument"
+              ]
             }
           ]
         }
@@ -928,6 +998,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -957,8 +1028,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/getLogo",
-              "parts": [
-                "getLogo"
+              "segments": [
+                {
+                  "lit": "getLogo"
+                }
               ],
               "select": {
                 "exist": [
@@ -968,7 +1041,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "getLogo"
+              ]
             }
           ]
         }
@@ -984,6 +1060,7 @@ class Config {
           "type": "`$ARRAY`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -1013,8 +1090,10 @@ class Config {
               "kind": "http",
               "method": "POST",
               "orig": "/listOfAvailableRoles",
-              "parts": [
-                "listOfAvailableRoles"
+              "segments": [
+                {
+                  "lit": "listOfAvailableRoles"
+                }
               ],
               "select": {
                 "exist": [
@@ -1024,7 +1103,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "listOfAvailableRoles"
+              ]
             }
           ]
         }
@@ -1048,6 +1130,7 @@ class Config {
           "type": "`$OBJECT`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -1081,8 +1164,10 @@ class Config {
               "kind": "http",
               "method": "POST",
               "orig": "/listOfMandators",
-              "parts": [
-                "listOfMandators"
+              "segments": [
+                {
+                  "lit": "listOfMandators"
+                }
               ],
               "select": {
                 "exist": [
@@ -1092,7 +1177,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "listOfMandators"
+              ]
             }
           ]
         }
@@ -1112,6 +1200,7 @@ class Config {
           "type": "`$OBJECT`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -1141,8 +1230,10 @@ class Config {
               "kind": "http",
               "method": "POST",
               "orig": "/listOfModules",
-              "parts": [
-                "listOfModules"
+              "segments": [
+                {
+                  "lit": "listOfModules"
+                }
               ],
               "select": {
                 "exist": [
@@ -1152,7 +1243,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "listOfModules"
+              ]
             }
           ]
         }
@@ -1176,6 +1270,7 @@ class Config {
           "type": "`$OBJECT`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -1209,8 +1304,10 @@ class Config {
               "kind": "http",
               "method": "POST",
               "orig": "/listOfRoleGroups",
-              "parts": [
-                "listOfRoleGroups"
+              "segments": [
+                {
+                  "lit": "listOfRoleGroups"
+                }
               ],
               "select": {
                 "exist": [
@@ -1220,7 +1317,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "listOfRoleGroups"
+              ]
             }
           ]
         }
@@ -1244,6 +1344,7 @@ class Config {
           "type": "`$OBJECT`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -1277,8 +1378,10 @@ class Config {
               "kind": "http",
               "method": "POST",
               "orig": "/listOfTransactionsHistory",
-              "parts": [
-                "listOfTransactionsHistory"
+              "segments": [
+                {
+                  "lit": "listOfTransactionsHistory"
+                }
               ],
               "select": {
                 "exist": [
@@ -1288,7 +1391,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "listOfTransactionsHistory"
+              ]
             }
           ]
         }
@@ -1312,6 +1418,7 @@ class Config {
           "type": "`$OBJECT`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -1345,8 +1452,10 @@ class Config {
               "kind": "http",
               "method": "POST",
               "orig": "/listOfUsers",
-              "parts": [
-                "listOfUsers"
+              "segments": [
+                {
+                  "lit": "listOfUsers"
+                }
               ],
               "select": {
                 "exist": [
@@ -1356,7 +1465,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "listOfUsers"
+              ]
             }
           ]
         }
@@ -1377,6 +1489,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -1410,8 +1523,10 @@ class Config {
               "kind": "http",
               "method": "POST",
               "orig": "/provideCredentials",
-              "parts": [
-                "provideCredentials"
+              "segments": [
+                {
+                  "lit": "provideCredentials"
+                }
               ],
               "select": {
                 "exist": [
@@ -1421,7 +1536,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "provideCredentials"
+              ]
             }
           ]
         }
@@ -1463,6 +1581,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "email",
           "name": "email",
           "req": true,
           "short": "User's email address (must be unique).",
@@ -1504,6 +1623,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "short": "Response code (0 indicates success; non-zero indicates an error).",
           "type": "`$INTEGER`"
@@ -1560,8 +1680,10 @@ class Config {
               "kind": "http",
               "method": "POST",
               "orig": "/registerUser",
-              "parts": [
-                "registerUser"
+              "segments": [
+                {
+                  "lit": "registerUser"
+                }
               ],
               "select": {
                 "exist": [
@@ -1571,7 +1693,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "registerUser"
+              ]
             }
           ]
         }
@@ -1587,6 +1712,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -1620,8 +1746,10 @@ class Config {
               "kind": "http",
               "method": "POST",
               "orig": "/removeRoles",
-              "parts": [
-                "removeRoles"
+              "segments": [
+                {
+                  "lit": "removeRoles"
+                }
               ],
               "select": {
                 "exist": [
@@ -1631,7 +1759,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "removeRoles"
+              ]
             }
           ]
         }
@@ -1660,6 +1791,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -1688,8 +1820,10 @@ class Config {
               "kind": "http",
               "method": "POST",
               "orig": "/resendLink",
-              "parts": [
-                "resendLink"
+              "segments": [
+                {
+                  "lit": "resendLink"
+                }
               ],
               "select": {
                 "exist": [
@@ -1699,7 +1833,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "resendLink"
+              ]
             }
           ]
         }
@@ -1719,6 +1856,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -1748,8 +1886,10 @@ class Config {
               "kind": "http",
               "method": "POST",
               "orig": "/resetPassword",
-              "parts": [
-                "resetPassword"
+              "segments": [
+                {
+                  "lit": "resetPassword"
+                }
               ],
               "select": {
                 "exist": [
@@ -1759,7 +1899,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "resetPassword"
+              ]
             }
           ]
         }
@@ -1836,6 +1979,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -1884,8 +2028,10 @@ class Config {
               "kind": "http",
               "method": "POST",
               "orig": "/updateConsumer",
-              "parts": [
-                "updateConsumer"
+              "segments": [
+                {
+                  "lit": "updateConsumer"
+                }
               ],
               "select": {
                 "exist": [
@@ -1895,7 +2041,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "updateConsumer"
+              ]
             }
           ]
         }
@@ -1927,6 +2076,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -1955,8 +2105,10 @@ class Config {
               "kind": "http",
               "method": "POST",
               "orig": "/updateProfile",
-              "parts": [
-                "updateProfile"
+              "segments": [
+                {
+                  "lit": "updateProfile"
+                }
               ],
               "select": {
                 "exist": [
@@ -1966,7 +2118,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "updateProfile"
+              ]
             }
           ]
         }
@@ -2001,14 +2156,19 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/version",
-              "parts": [
-                "version"
+              "segments": [
+                {
+                  "lit": "version"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "version"
+              ]
             }
           ]
         }
@@ -2024,6 +2184,7 @@ class Config {
 const config = new Config()
 
 export {
-  config
+  config,
+  FEATURE_PLUGINS,
 }
 

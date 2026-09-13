@@ -2,7 +2,7 @@
 const envlocal = __dirname + '/../../../.env.local'
 require('dotenv').config({ quiet: true, path: [envlocal] })
 
-const { test, describe } = require('node:test')
+const { test, describe, afterEach } = require('node:test')
 const assert = require('node:assert')
 
 
@@ -10,10 +10,16 @@ const { BluefinTecsUserBackofficeSDK } = require('../../..')
 
 const {
   envOverride,
+  liveClientOptions,
+  liveDelay,
 } = require('../../utility')
 
 
 describe('OutputGetLogoDirect', async () => {
+
+  // Per-test live pacing. Delay is read from sdk-test-control.json's
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE'))
 
   test('direct-exists', async () => {
     const sdk = new BluefinTecsUserBackofficeSDK({
@@ -64,15 +70,18 @@ function directSetup(mockres) {
   const env = envOverride({
     'BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_GET_LOGO_ENTID': {},
     'BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE': 'FALSE',
-    'BLUEFIN_TECS_USER_BACKOFFICE_APIKEY': 'NONE',
+    'BLUEFIN_TECS_USER_BACKOFFICE_APIKEY': '',
   })
 
   const live = 'TRUE' === env.BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE
 
   if (live) {
-    const client = new BluefinTecsUserBackofficeSDK({
+    // Merged so the generated fields win: sdk-test-control.json's
+    // test.client.options adds to the live client, it does not redirect it.
+    const client = new BluefinTecsUserBackofficeSDK(
+      Object.assign({}, liveClientOptions(), {
       apikey: env.BLUEFIN_TECS_USER_BACKOFFICE_APIKEY,
-    })
+      }))
 
     let idmap = env['BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_GET_LOGO_ENTID']
     if ('string' === typeof idmap && idmap.startsWith('{')) {

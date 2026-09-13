@@ -18,6 +18,7 @@ main: kit: entity: output_change_logo: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -48,8 +49,10 @@ main: kit: entity: output_change_logo: {
           }
           method: "POST"
           orig: "/changeLogo"
-          parts: [
-            "changeLogo"
+          segments: [
+            {
+              lit: "changeLogo"
+            }
           ]
           select: {
             exist: [

@@ -10,7 +10,7 @@ This is an unofficial SDK for the User Back Office Web Service Documentation pub
 
 Learn more about Voxgig SDKs at [voxgig.com/sdk](https://voxgig.com/sdk/).
 
-> TypeScript, Python, PHP, Golang, Ruby, Lua, C, Clojure, C++, C#, Dart, Elixir, Java, JavaScript, Kotlin, OCaml, Perl, Rust, Scala, Swift, Zig SDKs, a CLI with an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
+> TypeScript, Python, PHP, Golang, Ruby, Lua, C, Clojure, C++, C#, Dart, Elixir, Haskell, Java, JavaScript, Kotlin, Lean, OCaml, Perl, Rust, Scala, Swift, Zig SDKs, a CLI with an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
 
 > **Features:** `audit`, `clienttrack`, `idempotency`, `log`, `metrics`, `paging`, `ratelimit`, `retry`, `telemetry`, `test`, `timeout` — opt-in,
 > inactive until switched on, and configured per client. See the Features
@@ -165,6 +165,23 @@ record = BluefinTecsUserBackoffice.Entity.OutputGetLogo.load(output_get_logo, H.
 IO.inspect(record)
 ```
 
+### Haskell
+
+```haskell
+import qualified SdkClient as Sdk
+import VoxgigStruct (Value (..), emptyMap)
+import SdkHelpers (jo)
+
+main :: IO ()
+main = do
+  sdk <- Sdk.testSdk0
+  ent <- Sdk.output_get_logo sdk VNoval
+  arg <- emptyMap
+  ctrl <- emptyMap
+  output_get_logo <- Sdk.eLoad ent arg ctrl
+  print output_get_logo
+```
+
 ### Java
 
 ```java
@@ -190,6 +207,19 @@ val client = BluefinTecsUserBackofficeSDK.testSDK(null, null)
 val outputGetLogo = client.outputGetLogo(null).load(null, null)
 println(outputGetLogo)
 ```
+
+### Lean
+
+```bash
+cd lean
+lake build
+lake exe omnismoke      # the vendored @voxgig/omni corpus engine itself
+lake exe primary        # shared corpus: request-shaping utilities
+lake exe feature        # the feature catalog (retry, cache, rbac, netsim, …)
+lake exe structcorpus   # shared corpus: the vendored struct model
+lake exe runner         # entity behaviour (offline; add SDK_TEST_BASE for live)
+```
+
 
 ### OCaml
 
@@ -267,9 +297,11 @@ switch (client.output_get_logo(h.vnull()).load(h.vnull(), h.vnull())) {
 | C# | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
 | Dart | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
 | Elixir | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
+| Haskell | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
 | Java | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
 | JavaScript | `@voxgig-sdk/bluefin-tecs-user-backoffice-js` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
 | Kotlin | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
+| Lean | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
 | OCaml | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
 | Perl | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
 | Rust | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
@@ -298,7 +330,7 @@ See the [TypeScript README](ts/README.md) for the full guide.
 
 | Surface | Path |
 | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua, C, Clojure, C++, C#, Dart, Elixir, Java, JavaScript, Kotlin, OCaml, Perl, Rust, Scala, Swift, Zig) | `ts/` `py/` `php/` `go/` `rb/` `lua/` `c/` `clojure/` `cpp/` `csharp/` `dart/` `elixir/` `java/` `js/` `kotlin/` `ocaml/` `perl/` `rust/` `scala/` `swift/` `zig/` |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua, C, Clojure, C++, C#, Dart, Elixir, Haskell, Java, JavaScript, Kotlin, Lean, OCaml, Perl, Rust, Scala, Swift, Zig) | `ts/` `py/` `php/` `go/` `rb/` `lua/` `c/` `clojure/` `cpp/` `csharp/` `dart/` `elixir/` `haskell/` `java/` `js/` `kotlin/` `lean/` `ocaml/` `perl/` `rust/` `scala/` `swift/` `zig/` |
 | **CLI** | `go-cli/` |
 | **MCP server** | `go-mcp/` |
 
@@ -491,6 +523,21 @@ sdk = BluefinTecsUserBackoffice.new(H.deep(%{"apikey" => System.get_env("BLUEFIN
 output_activate_digital_module = BluefinTecsUserBackoffice.output_activate_digital_module(sdk)
 ```
 
+### Haskell
+
+```haskell
+import System.Environment (lookupEnv)
+import qualified SdkClient as Sdk
+import VoxgigStruct (Value (..), emptyMap)
+import SdkHelpers (jo)
+
+main :: IO ()
+main = do
+  mkey <- lookupEnv "BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"
+  opts <- jo [("apikey", maybe VNoval VStr mkey)]
+  sdk <- Sdk.newSdk opts
+```
+
 ### Java
 
 ```java
@@ -523,6 +570,23 @@ val client = BluefinTecsUserBackofficeSDK(mutableMapOf<String, Any?>(
 ))
 
 ```
+
+### Lean
+
+```lean
+import SdkClient
+open VoxgigStruct
+
+def main : IO Unit := do
+  let ctx ← mkCtx
+  (do
+    let sdk ← Sdk.newSdk (← emptyMap)
+    IO.println s!"client ready"
+  ).run ctx
+```
+
+Build it with `cd lean && lake build`.
+
 
 ### OCaml
 
@@ -726,6 +790,22 @@ result = BluefinTecsUserBackoffice.direct(sdk, BluefinTecsUserBackoffice.Helpers
 }))
 ```
 
+**Haskell:**
+```haskell
+import qualified SdkClient as Sdk
+import qualified SdkFeatures as F
+import VoxgigStruct (Value (..))
+import SdkHelpers (jo)
+
+main :: IO ()
+main = do
+  sdk <- Sdk.newSdk0
+  params <- jo [("id", VStr "example")]
+  args <- jo [("path", VStr "/api/resource/{id}"), ("method", VStr "GET"), ("params", params)]
+  result <- F.direct sdk args
+  print result
+```
+
 **Java:**
 ```java
 Map<String, Object> result = client.direct(Map.of(
@@ -753,6 +833,13 @@ val result = client.direct(mutableMapOf<String, Any?>(
     "path" to "/api/resource/{id}",
     "method" to "GET",
     "params" to mapOf("id" to "example")))
+```
+
+For Lean, point the client at another server with the `base` option,
+and run the entity suite against it with `SDK_TEST_BASE`:
+
+```bash
+cd lean && SDK_TEST_BASE=http://localhost:8901 lake exe runner
 ```
 
 **OCaml:**
@@ -851,7 +938,7 @@ customizable without forking any upstream tool:
 
 - **The model** (`.sdk/model/`) declares everything this project owns:
   package names, versions, active features, per-target settings. It is
-  written in [aontu](https://github.com/aontu-lang/aontu), a JSON-based
+  written in [aontu](https://aontu.dev), a JSON-based
   specification language designed for building ontologies: easy to edit
   by hand, and files unify rather than override, so small declarations
   compose into one model. Regeneration re-reads it every time.
@@ -884,9 +971,11 @@ The full story: [voxgig.com/sdk/custom](https://voxgig.com/sdk/custom).
 - [C#](csharp/README.md)
 - [Dart](dart/README.md)
 - [Elixir](elixir/README.md)
+- [Haskell](haskell/README.md)
 - [Java](java/README.md)
 - [JavaScript](js/README.md)
 - [Kotlin](kotlin/README.md)
+- [Lean](lean/README.md)
 - [OCaml](ocaml/README.md)
 - [Perl](perl/README.md)
 - [Rust](rust/README.md)

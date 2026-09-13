@@ -8,6 +8,14 @@ import PackageDescription
 
 let package = Package(
     name: "BluefinTecsUserBackofficeSdk",
+    // The deployment floor. Without it SwiftPM assumes the oldest macOS the
+    // toolchain still targets, and the SDK's AsyncStream-based streaming
+    // (EntityBase) fails to compile on macOS with "'AsyncStream' is only
+    // available in macOS 10.15 or newer" - linux has no such floor, which
+    // is why the generator's own linux runs never saw it. Found by the
+    // secrets lane, the first lane to build a full generated swift SDK on
+    // the macos CI leg.
+    platforms: [.macOS(.v10_15)],
     products: [
         .library(name: "BluefinTecsUserBackofficeSdk", targets: ["BluefinTecsUserBackofficeSdk"]),
     ],
@@ -16,8 +24,11 @@ let package = Package(
             name: "BluefinTecsUserBackofficeSdk",
             path: "Sources/BluefinTecsUserBackofficeSdk"),
         .testTarget(
+            name: "Omni",
+            path: "Tests/vendor/omni"),
+        .testTarget(
             name: "BluefinTecsUserBackofficeSdkTests",
-            dependencies: ["BluefinTecsUserBackofficeSdk"],
+            dependencies: ["BluefinTecsUserBackofficeSdk", "Omni"],
             path: "Tests/BluefinTecsUserBackofficeSdkTests"),
     ]
 )

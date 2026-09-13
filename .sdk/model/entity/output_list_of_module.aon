@@ -16,6 +16,7 @@ main: kit: entity: output_list_of_module: {
       type: "`$OBJECT`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -46,8 +47,10 @@ main: kit: entity: output_list_of_module: {
           }
           method: "POST"
           orig: "/listOfModules"
-          parts: [
-            "listOfModules"
+          segments: [
+            {
+              lit: "listOfModules"
+            }
           ]
           select: {
             exist: [

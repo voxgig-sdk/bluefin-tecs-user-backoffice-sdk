@@ -21,6 +21,7 @@ main: kit: entity: output_list_of_transactions_history: {
       type: "`$OBJECT`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -56,8 +57,10 @@ main: kit: entity: output_list_of_transactions_history: {
           }
           method: "POST"
           orig: "/listOfTransactionsHistory"
-          parts: [
-            "listOfTransactionsHistory"
+          segments: [
+            {
+              lit: "listOfTransactionsHistory"
+            }
           ]
           select: {
             exist: [

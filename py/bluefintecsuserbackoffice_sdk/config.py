@@ -1,6 +1,14 @@
 # BluefinTecsUserBackoffice SDK configuration
 
 
+# The sekreto plugin DEFINITIONS the model selected per feature, imported
+# above by name from the modules the catalogue's active `plugin.def`
+# entries declare. Handed to each feature (secrets builds its Sekreto
+# with them): a provider kind not listed here is unknown to that SDK.
+FEATURE_PLUGINS = {
+}
+
+
 _shared_config = None
 
 
@@ -177,6 +185,7 @@ def make_config():
       "output_activate_digital_module": {
         "fields": [
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -206,8 +215,10 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/activateDigitalModule",
-                "parts": [
-                  "activateDigitalModule",
+                "segments": [
+                  {
+                    "lit": "activateDigitalModule",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -218,6 +229,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "activateDigitalModule",
+                ],
               },
             ],
           },
@@ -239,6 +253,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -268,8 +283,10 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/activateMerchantPortalModule",
-                "parts": [
-                  "activateMerchantPortalModule",
+                "segments": [
+                  {
+                    "lit": "activateMerchantPortalModule",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -280,6 +297,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "activateMerchantPortalModule",
+                ],
               },
             ],
           },
@@ -291,6 +311,7 @@ def make_config():
       "output_activate_store_module": {
         "fields": [
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -320,8 +341,10 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/activateAppStoreModule",
-                "parts": [
-                  "activateAppStoreModule",
+                "segments": [
+                  {
+                    "lit": "activateAppStoreModule",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -332,6 +355,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "activateAppStoreModule",
+                ],
               },
             ],
           },
@@ -347,6 +373,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -376,8 +403,10 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/activateUser",
-                "parts": [
-                  "activateUser",
+                "segments": [
+                  {
+                    "lit": "activateUser",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -388,6 +417,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "activateUser",
+                ],
               },
             ],
           },
@@ -405,6 +437,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "short": "Response code: 0 indicates success; any non-zero value indicates an error.",
             "type": "`$INTEGER`",
@@ -442,8 +475,10 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/assignRoles",
-                "parts": [
-                  "assignRoles",
+                "segments": [
+                  {
+                    "lit": "assignRoles",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -454,6 +489,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "assignRoles",
+                ],
               },
             ],
           },
@@ -477,6 +515,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -506,8 +545,10 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/changeLogo",
-                "parts": [
-                  "changeLogo",
+                "segments": [
+                  {
+                    "lit": "changeLogo",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -518,6 +559,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "changeLogo",
+                ],
               },
             ],
           },
@@ -637,8 +681,10 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/createMandator",
-                "parts": [
-                  "createMandator",
+                "segments": [
+                  {
+                    "lit": "createMandator",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -649,6 +695,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.mandator`",
                 },
+                "parts": [
+                  "createMandator",
+                ],
               },
             ],
           },
@@ -665,6 +714,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -694,8 +744,10 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/createServiceUser",
-                "parts": [
-                  "createServiceUser",
+                "segments": [
+                  {
+                    "lit": "createServiceUser",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -706,6 +758,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "createServiceUser",
+                ],
               },
             ],
           },
@@ -721,6 +776,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -750,8 +806,10 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/deactivateUser",
-                "parts": [
-                  "deactivateUser",
+                "segments": [
+                  {
+                    "lit": "deactivateUser",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -762,6 +820,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "deactivateUser",
+                ],
               },
             ],
           },
@@ -781,6 +842,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -810,8 +872,10 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/getKycDocument",
-                "parts": [
-                  "getKycDocument",
+                "segments": [
+                  {
+                    "lit": "getKycDocument",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -822,6 +886,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "getKycDocument",
+                ],
               },
             ],
           },
@@ -845,6 +912,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -874,8 +942,10 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/getLogo",
-                "parts": [
-                  "getLogo",
+                "segments": [
+                  {
+                    "lit": "getLogo",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -886,6 +956,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "getLogo",
+                ],
               },
             ],
           },
@@ -901,6 +974,7 @@ def make_config():
             "type": "`$ARRAY`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -930,8 +1004,10 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/listOfAvailableRoles",
-                "parts": [
-                  "listOfAvailableRoles",
+                "segments": [
+                  {
+                    "lit": "listOfAvailableRoles",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -942,6 +1018,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "listOfAvailableRoles",
+                ],
               },
             ],
           },
@@ -965,6 +1044,7 @@ def make_config():
             "type": "`$OBJECT`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -998,8 +1078,10 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/listOfMandators",
-                "parts": [
-                  "listOfMandators",
+                "segments": [
+                  {
+                    "lit": "listOfMandators",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1010,6 +1092,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "listOfMandators",
+                ],
               },
             ],
           },
@@ -1029,6 +1114,7 @@ def make_config():
             "type": "`$OBJECT`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -1058,8 +1144,10 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/listOfModules",
-                "parts": [
-                  "listOfModules",
+                "segments": [
+                  {
+                    "lit": "listOfModules",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1070,6 +1158,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "listOfModules",
+                ],
               },
             ],
           },
@@ -1093,6 +1184,7 @@ def make_config():
             "type": "`$OBJECT`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -1126,8 +1218,10 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/listOfRoleGroups",
-                "parts": [
-                  "listOfRoleGroups",
+                "segments": [
+                  {
+                    "lit": "listOfRoleGroups",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1138,6 +1232,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "listOfRoleGroups",
+                ],
               },
             ],
           },
@@ -1161,6 +1258,7 @@ def make_config():
             "type": "`$OBJECT`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -1194,8 +1292,10 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/listOfTransactionsHistory",
-                "parts": [
-                  "listOfTransactionsHistory",
+                "segments": [
+                  {
+                    "lit": "listOfTransactionsHistory",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1206,6 +1306,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "listOfTransactionsHistory",
+                ],
               },
             ],
           },
@@ -1229,6 +1332,7 @@ def make_config():
             "type": "`$OBJECT`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -1262,8 +1366,10 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/listOfUsers",
-                "parts": [
-                  "listOfUsers",
+                "segments": [
+                  {
+                    "lit": "listOfUsers",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1274,6 +1380,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "listOfUsers",
+                ],
               },
             ],
           },
@@ -1294,6 +1403,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -1327,8 +1437,10 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/provideCredentials",
-                "parts": [
-                  "provideCredentials",
+                "segments": [
+                  {
+                    "lit": "provideCredentials",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1339,6 +1451,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "provideCredentials",
+                ],
               },
             ],
           },
@@ -1380,6 +1495,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "email",
             "name": "email",
             "req": True,
             "short": "User's email address (must be unique).",
@@ -1421,6 +1537,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "short": "Response code (0 indicates success; non-zero indicates an error).",
             "type": "`$INTEGER`",
@@ -1477,8 +1594,10 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/registerUser",
-                "parts": [
-                  "registerUser",
+                "segments": [
+                  {
+                    "lit": "registerUser",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1489,6 +1608,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "registerUser",
+                ],
               },
             ],
           },
@@ -1504,6 +1626,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -1537,8 +1660,10 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/removeRoles",
-                "parts": [
-                  "removeRoles",
+                "segments": [
+                  {
+                    "lit": "removeRoles",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1549,6 +1674,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "removeRoles",
+                ],
               },
             ],
           },
@@ -1577,6 +1705,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -1605,8 +1734,10 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/resendLink",
-                "parts": [
-                  "resendLink",
+                "segments": [
+                  {
+                    "lit": "resendLink",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1617,6 +1748,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "resendLink",
+                ],
               },
             ],
           },
@@ -1636,6 +1770,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -1665,8 +1800,10 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/resetPassword",
-                "parts": [
-                  "resetPassword",
+                "segments": [
+                  {
+                    "lit": "resetPassword",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1677,6 +1814,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "resetPassword",
+                ],
               },
             ],
           },
@@ -1753,6 +1893,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -1801,8 +1942,10 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/updateConsumer",
-                "parts": [
-                  "updateConsumer",
+                "segments": [
+                  {
+                    "lit": "updateConsumer",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1813,6 +1956,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "updateConsumer",
+                ],
               },
             ],
           },
@@ -1844,6 +1990,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -1872,8 +2019,10 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/updateProfile",
-                "parts": [
-                  "updateProfile",
+                "segments": [
+                  {
+                    "lit": "updateProfile",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1884,6 +2033,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "updateProfile",
+                ],
               },
             ],
           },
@@ -1918,14 +2070,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/version",
-                "parts": [
-                  "version",
+                "segments": [
+                  {
+                    "lit": "version",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "version",
+                ],
               },
             ],
           },

@@ -67,15 +67,17 @@ function version_direct_setup($mockres)
     $env = Runner::env_override([
         "BLUEFIN_TECS_USER_BACKOFFICE_TEST_VERSION_ENTID" => [],
         "BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE" => "FALSE",
-        "BLUEFIN_TECS_USER_BACKOFFICE_APIKEY" => "NONE",
+        "BLUEFIN_TECS_USER_BACKOFFICE_APIKEY" => "",
     ]);
 
     $live = $env["BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE"] === "TRUE";
 
     if ($live) {
-        $merged_opts = [
+        // Merged so the generated fields win: sdk-test-control.json's
+        // test.client.options adds to the live client, it does not redirect it.
+        $merged_opts = array_merge(Runner::live_client_options(), [
             "apikey" => $env["BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"],
-        ];
+        ]);
         $client = new BluefinTecsUserBackofficeSDK($merged_opts);
         return [
             "client" => $client,

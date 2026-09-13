@@ -11,6 +11,7 @@ main: kit: entity: output_list_of_available_role: {
       type: "`$ARRAY`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -41,8 +42,10 @@ main: kit: entity: output_list_of_available_role: {
           }
           method: "POST"
           orig: "/listOfAvailableRoles"
-          parts: [
-            "listOfAvailableRoles"
+          segments: [
+            {
+              lit: "listOfAvailableRoles"
+            }
           ]
           select: {
             exist: [

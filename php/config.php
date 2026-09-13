@@ -182,6 +182,7 @@ class BluefinTecsUserBackofficeConfig
         'output_activate_digital_module' => [
           'fields' => [
             [
+              'format' => 'int32',
               'name' => 'responseCode',
               'type' => '`$INTEGER`',
             ],
@@ -211,8 +212,10 @@ class BluefinTecsUserBackofficeConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/activateDigitalModule',
-                  'parts' => [
-                    'activateDigitalModule',
+                  'segments' => [
+                    [
+                      'lit' => 'activateDigitalModule',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -222,6 +225,9 @@ class BluefinTecsUserBackofficeConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'activateDigitalModule',
                   ],
                 ],
               ],
@@ -244,6 +250,7 @@ class BluefinTecsUserBackofficeConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'int32',
               'name' => 'responseCode',
               'type' => '`$INTEGER`',
             ],
@@ -273,8 +280,10 @@ class BluefinTecsUserBackofficeConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/activateMerchantPortalModule',
-                  'parts' => [
-                    'activateMerchantPortalModule',
+                  'segments' => [
+                    [
+                      'lit' => 'activateMerchantPortalModule',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -284,6 +293,9 @@ class BluefinTecsUserBackofficeConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'activateMerchantPortalModule',
                   ],
                 ],
               ],
@@ -296,6 +308,7 @@ class BluefinTecsUserBackofficeConfig
         'output_activate_store_module' => [
           'fields' => [
             [
+              'format' => 'int32',
               'name' => 'responseCode',
               'type' => '`$INTEGER`',
             ],
@@ -325,8 +338,10 @@ class BluefinTecsUserBackofficeConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/activateAppStoreModule',
-                  'parts' => [
-                    'activateAppStoreModule',
+                  'segments' => [
+                    [
+                      'lit' => 'activateAppStoreModule',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -336,6 +351,9 @@ class BluefinTecsUserBackofficeConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'activateAppStoreModule',
                   ],
                 ],
               ],
@@ -352,6 +370,7 @@ class BluefinTecsUserBackofficeConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'int32',
               'name' => 'responseCode',
               'type' => '`$INTEGER`',
             ],
@@ -381,8 +400,10 @@ class BluefinTecsUserBackofficeConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/activateUser',
-                  'parts' => [
-                    'activateUser',
+                  'segments' => [
+                    [
+                      'lit' => 'activateUser',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -392,6 +413,9 @@ class BluefinTecsUserBackofficeConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'activateUser',
                   ],
                 ],
               ],
@@ -410,6 +434,7 @@ class BluefinTecsUserBackofficeConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'int32',
               'name' => 'responseCode',
               'short' => 'Response code: 0 indicates success; any non-zero value indicates an error.',
               'type' => '`$INTEGER`',
@@ -447,8 +472,10 @@ class BluefinTecsUserBackofficeConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/assignRoles',
-                  'parts' => [
-                    'assignRoles',
+                  'segments' => [
+                    [
+                      'lit' => 'assignRoles',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -458,6 +485,9 @@ class BluefinTecsUserBackofficeConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'assignRoles',
                   ],
                 ],
               ],
@@ -482,6 +512,7 @@ class BluefinTecsUserBackofficeConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'int32',
               'name' => 'responseCode',
               'type' => '`$INTEGER`',
             ],
@@ -511,8 +542,10 @@ class BluefinTecsUserBackofficeConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/changeLogo',
-                  'parts' => [
-                    'changeLogo',
+                  'segments' => [
+                    [
+                      'lit' => 'changeLogo',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -522,6 +555,9 @@ class BluefinTecsUserBackofficeConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'changeLogo',
                   ],
                 ],
               ],
@@ -642,8 +678,10 @@ class BluefinTecsUserBackofficeConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/createMandator',
-                  'parts' => [
-                    'createMandator',
+                  'segments' => [
+                    [
+                      'lit' => 'createMandator',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -653,6 +691,9 @@ class BluefinTecsUserBackofficeConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body.mandator`',
+                  ],
+                  'parts' => [
+                    'createMandator',
                   ],
                 ],
               ],
@@ -670,6 +711,7 @@ class BluefinTecsUserBackofficeConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'int32',
               'name' => 'responseCode',
               'type' => '`$INTEGER`',
             ],
@@ -699,8 +741,10 @@ class BluefinTecsUserBackofficeConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/createServiceUser',
-                  'parts' => [
-                    'createServiceUser',
+                  'segments' => [
+                    [
+                      'lit' => 'createServiceUser',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -710,6 +754,9 @@ class BluefinTecsUserBackofficeConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'createServiceUser',
                   ],
                 ],
               ],
@@ -726,6 +773,7 @@ class BluefinTecsUserBackofficeConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'int32',
               'name' => 'responseCode',
               'type' => '`$INTEGER`',
             ],
@@ -755,8 +803,10 @@ class BluefinTecsUserBackofficeConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/deactivateUser',
-                  'parts' => [
-                    'deactivateUser',
+                  'segments' => [
+                    [
+                      'lit' => 'deactivateUser',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -766,6 +816,9 @@ class BluefinTecsUserBackofficeConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'deactivateUser',
                   ],
                 ],
               ],
@@ -786,6 +839,7 @@ class BluefinTecsUserBackofficeConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'int32',
               'name' => 'responseCode',
               'type' => '`$INTEGER`',
             ],
@@ -815,8 +869,10 @@ class BluefinTecsUserBackofficeConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/getKycDocument',
-                  'parts' => [
-                    'getKycDocument',
+                  'segments' => [
+                    [
+                      'lit' => 'getKycDocument',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -826,6 +882,9 @@ class BluefinTecsUserBackofficeConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'getKycDocument',
                   ],
                 ],
               ],
@@ -850,6 +909,7 @@ class BluefinTecsUserBackofficeConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'int32',
               'name' => 'responseCode',
               'type' => '`$INTEGER`',
             ],
@@ -879,8 +939,10 @@ class BluefinTecsUserBackofficeConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/getLogo',
-                  'parts' => [
-                    'getLogo',
+                  'segments' => [
+                    [
+                      'lit' => 'getLogo',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -890,6 +952,9 @@ class BluefinTecsUserBackofficeConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'getLogo',
                   ],
                 ],
               ],
@@ -906,6 +971,7 @@ class BluefinTecsUserBackofficeConfig
               'type' => '`$ARRAY`',
             ],
             [
+              'format' => 'int32',
               'name' => 'responseCode',
               'type' => '`$INTEGER`',
             ],
@@ -935,8 +1001,10 @@ class BluefinTecsUserBackofficeConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/listOfAvailableRoles',
-                  'parts' => [
-                    'listOfAvailableRoles',
+                  'segments' => [
+                    [
+                      'lit' => 'listOfAvailableRoles',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -946,6 +1014,9 @@ class BluefinTecsUserBackofficeConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'listOfAvailableRoles',
                   ],
                 ],
               ],
@@ -970,6 +1041,7 @@ class BluefinTecsUserBackofficeConfig
               'type' => '`$OBJECT`',
             ],
             [
+              'format' => 'int32',
               'name' => 'responseCode',
               'type' => '`$INTEGER`',
             ],
@@ -1003,8 +1075,10 @@ class BluefinTecsUserBackofficeConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/listOfMandators',
-                  'parts' => [
-                    'listOfMandators',
+                  'segments' => [
+                    [
+                      'lit' => 'listOfMandators',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -1014,6 +1088,9 @@ class BluefinTecsUserBackofficeConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'listOfMandators',
                   ],
                 ],
               ],
@@ -1034,6 +1111,7 @@ class BluefinTecsUserBackofficeConfig
               'type' => '`$OBJECT`',
             ],
             [
+              'format' => 'int32',
               'name' => 'responseCode',
               'type' => '`$INTEGER`',
             ],
@@ -1063,8 +1141,10 @@ class BluefinTecsUserBackofficeConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/listOfModules',
-                  'parts' => [
-                    'listOfModules',
+                  'segments' => [
+                    [
+                      'lit' => 'listOfModules',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -1074,6 +1154,9 @@ class BluefinTecsUserBackofficeConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'listOfModules',
                   ],
                 ],
               ],
@@ -1098,6 +1181,7 @@ class BluefinTecsUserBackofficeConfig
               'type' => '`$OBJECT`',
             ],
             [
+              'format' => 'int32',
               'name' => 'responseCode',
               'type' => '`$INTEGER`',
             ],
@@ -1131,8 +1215,10 @@ class BluefinTecsUserBackofficeConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/listOfRoleGroups',
-                  'parts' => [
-                    'listOfRoleGroups',
+                  'segments' => [
+                    [
+                      'lit' => 'listOfRoleGroups',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -1142,6 +1228,9 @@ class BluefinTecsUserBackofficeConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'listOfRoleGroups',
                   ],
                 ],
               ],
@@ -1166,6 +1255,7 @@ class BluefinTecsUserBackofficeConfig
               'type' => '`$OBJECT`',
             ],
             [
+              'format' => 'int32',
               'name' => 'responseCode',
               'type' => '`$INTEGER`',
             ],
@@ -1199,8 +1289,10 @@ class BluefinTecsUserBackofficeConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/listOfTransactionsHistory',
-                  'parts' => [
-                    'listOfTransactionsHistory',
+                  'segments' => [
+                    [
+                      'lit' => 'listOfTransactionsHistory',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -1210,6 +1302,9 @@ class BluefinTecsUserBackofficeConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'listOfTransactionsHistory',
                   ],
                 ],
               ],
@@ -1234,6 +1329,7 @@ class BluefinTecsUserBackofficeConfig
               'type' => '`$OBJECT`',
             ],
             [
+              'format' => 'int32',
               'name' => 'responseCode',
               'type' => '`$INTEGER`',
             ],
@@ -1267,8 +1363,10 @@ class BluefinTecsUserBackofficeConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/listOfUsers',
-                  'parts' => [
-                    'listOfUsers',
+                  'segments' => [
+                    [
+                      'lit' => 'listOfUsers',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -1278,6 +1376,9 @@ class BluefinTecsUserBackofficeConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'listOfUsers',
                   ],
                 ],
               ],
@@ -1299,6 +1400,7 @@ class BluefinTecsUserBackofficeConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'int32',
               'name' => 'responseCode',
               'type' => '`$INTEGER`',
             ],
@@ -1332,8 +1434,10 @@ class BluefinTecsUserBackofficeConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/provideCredentials',
-                  'parts' => [
-                    'provideCredentials',
+                  'segments' => [
+                    [
+                      'lit' => 'provideCredentials',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -1343,6 +1447,9 @@ class BluefinTecsUserBackofficeConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'provideCredentials',
                   ],
                 ],
               ],
@@ -1385,6 +1492,7 @@ class BluefinTecsUserBackofficeConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'email',
               'name' => 'email',
               'req' => true,
               'short' => 'User\'s email address (must be unique).',
@@ -1426,6 +1534,7 @@ class BluefinTecsUserBackofficeConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'int32',
               'name' => 'responseCode',
               'short' => 'Response code (0 indicates success; non-zero indicates an error).',
               'type' => '`$INTEGER`',
@@ -1482,8 +1591,10 @@ class BluefinTecsUserBackofficeConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/registerUser',
-                  'parts' => [
-                    'registerUser',
+                  'segments' => [
+                    [
+                      'lit' => 'registerUser',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -1493,6 +1604,9 @@ class BluefinTecsUserBackofficeConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'registerUser',
                   ],
                 ],
               ],
@@ -1509,6 +1623,7 @@ class BluefinTecsUserBackofficeConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'int32',
               'name' => 'responseCode',
               'type' => '`$INTEGER`',
             ],
@@ -1542,8 +1657,10 @@ class BluefinTecsUserBackofficeConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/removeRoles',
-                  'parts' => [
-                    'removeRoles',
+                  'segments' => [
+                    [
+                      'lit' => 'removeRoles',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -1553,6 +1670,9 @@ class BluefinTecsUserBackofficeConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'removeRoles',
                   ],
                 ],
               ],
@@ -1582,6 +1702,7 @@ class BluefinTecsUserBackofficeConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'int32',
               'name' => 'responseCode',
               'type' => '`$INTEGER`',
             ],
@@ -1610,8 +1731,10 @@ class BluefinTecsUserBackofficeConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/resendLink',
-                  'parts' => [
-                    'resendLink',
+                  'segments' => [
+                    [
+                      'lit' => 'resendLink',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -1621,6 +1744,9 @@ class BluefinTecsUserBackofficeConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'resendLink',
                   ],
                 ],
               ],
@@ -1641,6 +1767,7 @@ class BluefinTecsUserBackofficeConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'int32',
               'name' => 'responseCode',
               'type' => '`$INTEGER`',
             ],
@@ -1670,8 +1797,10 @@ class BluefinTecsUserBackofficeConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/resetPassword',
-                  'parts' => [
-                    'resetPassword',
+                  'segments' => [
+                    [
+                      'lit' => 'resetPassword',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -1681,6 +1810,9 @@ class BluefinTecsUserBackofficeConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'resetPassword',
                   ],
                 ],
               ],
@@ -1758,6 +1890,7 @@ class BluefinTecsUserBackofficeConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'int32',
               'name' => 'responseCode',
               'type' => '`$INTEGER`',
             ],
@@ -1806,8 +1939,10 @@ class BluefinTecsUserBackofficeConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/updateConsumer',
-                  'parts' => [
-                    'updateConsumer',
+                  'segments' => [
+                    [
+                      'lit' => 'updateConsumer',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -1817,6 +1952,9 @@ class BluefinTecsUserBackofficeConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'updateConsumer',
                   ],
                 ],
               ],
@@ -1849,6 +1987,7 @@ class BluefinTecsUserBackofficeConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'int32',
               'name' => 'responseCode',
               'type' => '`$INTEGER`',
             ],
@@ -1877,8 +2016,10 @@ class BluefinTecsUserBackofficeConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/updateProfile',
-                  'parts' => [
-                    'updateProfile',
+                  'segments' => [
+                    [
+                      'lit' => 'updateProfile',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -1888,6 +2029,9 @@ class BluefinTecsUserBackofficeConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'updateProfile',
                   ],
                 ],
               ],
@@ -1923,13 +2067,18 @@ class BluefinTecsUserBackofficeConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/version',
-                  'parts' => [
-                    'version',
+                  'segments' => [
+                    [
+                      'lit' => 'version',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'version',
                   ],
                 ],
               ],

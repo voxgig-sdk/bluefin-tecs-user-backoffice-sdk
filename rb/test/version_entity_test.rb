@@ -81,7 +81,7 @@ def version_basic_setup(extra)
     "BLUEFIN_TECS_USER_BACKOFFICE_TEST_VERSION_ENTID" => idmap,
     "BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE" => "FALSE",
     "BLUEFIN_TECS_USER_BACKOFFICE_TEST_EXPLAIN" => "FALSE",
-    "BLUEFIN_TECS_USER_BACKOFFICE_APIKEY" => "NONE",
+    "BLUEFIN_TECS_USER_BACKOFFICE_APIKEY" => "",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -92,6 +92,9 @@ def version_basic_setup(extra)
 
   if env["BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
+      # FIRST, so the generated fields below win: sdk-test-control.json's
+      # test.client.options adds to the live client, it does not redirect it.
+      Runner.live_client_options,
       {
         "apikey" => env["BLUEFIN_TECS_USER_BACKOFFICE_APIKEY"],
       },

@@ -11,6 +11,7 @@ main: kit: entity: output_remove_role: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -46,8 +47,10 @@ main: kit: entity: output_remove_role: {
           }
           method: "POST"
           orig: "/removeRoles"
-          parts: [
-            "removeRoles"
+          segments: [
+            {
+              lit: "removeRoles"
+            }
           ]
           select: {
             exist: [
