@@ -1676,6 +1676,7 @@ Return the entity name.
 | --- | --- | --- |
 | `audit` | 0.0.1 | Structured audit trail of operations |
 | `clienttrack` | 0.0.1 | Client identity and per-request correlation headers |
+| `debug` | 0.0.1 | Request/response capture ring buffer for debugging |
 | `idempotency` | 0.0.1 | Idempotency keys for safe retries of mutating operations |
 | `log` | 0.0.1 | Structured request and response logging |
 | `metrics` | 0.0.1 | Statistics capture: per-operation counters and latency |
@@ -1694,6 +1695,7 @@ client = BluefinTecsUserBackofficeSDK.new({
   "feature" => {
     "audit" => { "active" => true },
     "clienttrack" => { "active" => true },
+    "debug" => { "active" => true },
     "idempotency" => { "active" => true },
     "log" => { "active" => true },
     "metrics" => { "active" => true },
@@ -1728,7 +1730,7 @@ That decides behaviour, not just sequence: a feature that short-circuits the
 call, such as a cache serving a hit, stops every feature nested inside it from
 ever seeing that call.
 
-`audit`, `clienttrack`, `idempotency`, `log`, `metrics`, `paging`, `telemetry`, `test` attach to pipeline hooks
+`audit`, `clienttrack`, `debug`, `idempotency`, `log`, `metrics`, `paging`, `telemetry`, `test` attach to pipeline hooks
 rather than the transport, so their order does not affect what they observe.
 
 #### `audit`
@@ -1743,10 +1745,13 @@ Structured audit trail of operations.
 | `actor` | `'anonymous'` |
 | `max` | `1000` |
 
-Options above are those the model carries a default for. A feature may
-also accept callback options — a `sink` to receive each record, for
-instance — which have no default and are covered in the full feature
-reference.
+| Option | Type |
+|---|---|
+| `now` | function |
+| `sink` | function |
+
+These take no default: the feature behaves one way when you supply them and
+another when you do not.
 
 **Usage**
 
@@ -1770,14 +1775,50 @@ Client identity and per-request correlation headers.
 | `active` | `false` |
 | `clientVersion` | `'0.0.1'` |
 
-Options above are those the model carries a default for. A feature may
-also accept callback options — a `sink` to receive each record, for
-instance — which have no default and are covered in the full feature
-reference.
+| Option | Type |
+|---|---|
+| `clientName` | string |
+| `headers` | map |
+| `idgen` | function |
+| `sessionId` | string |
+
+These take no default: the feature behaves one way when you supply them and
+another when you do not.
 
 **Usage**
 
 Set `feature.clienttrack.active` to true in the client options, and override any option above in the same entry. Every option keeps
+its default unless you name it.
+
+**Considerations**
+
+- Attaches to pipeline hooks, not the transport, so activation order does
+  not change what it observes.
+- Inactive by default: leaving it out costs nothing at runtime.
+
+#### `debug`
+
+Request/response capture ring buffer for debugging.
+
+**Configuration**
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+| `max` | `100` |
+| `redact` | `['authorization', 'cookie', 'set-cookie', 'api-key', 'apikey', 'x-api-key', 'idempotency-key']` |
+
+| Option | Type |
+|---|---|
+| `now` | function |
+| `onEntry` | function |
+
+These take no default: the feature behaves one way when you supply them and
+another when you do not.
+
+**Usage**
+
+Set `feature.debug.active` to true in the client options, and override any option above in the same entry. Every option keeps
 its default unless you name it.
 
 **Considerations**
@@ -1799,10 +1840,12 @@ Idempotency keys for safe retries of mutating operations.
 | `methods` | `['POST', 'PUT', 'PATCH', 'DELETE']` |
 | `ops` | `['create', 'update', 'remove']` |
 
-Options above are those the model carries a default for. A feature may
-also accept callback options — a `sink` to receive each record, for
-instance — which have no default and are covered in the full feature
-reference.
+| Option | Type |
+|---|---|
+| `keygen` | function |
+
+These take no default: the feature behaves one way when you supply them and
+another when you do not.
 
 **Usage**
 
@@ -1825,10 +1868,13 @@ Structured request and response logging.
 |---|---|
 | `active` | `true` |
 
-Options above are those the model carries a default for. A feature may
-also accept callback options — a `sink` to receive each record, for
-instance — which have no default and are covered in the full feature
-reference.
+| Option | Type |
+|---|---|
+| `level` | string |
+| `logger` | any |
+
+These take no default: the feature behaves one way when you supply them and
+another when you do not.
 
 **Usage**
 
@@ -1851,10 +1897,12 @@ Statistics capture: per-operation counters and latency.
 |---|---|
 | `active` | `false` |
 
-Options above are those the model carries a default for. A feature may
-also accept callback options — a `sink` to receive each record, for
-instance — which have no default and are covered in the full feature
-reference.
+| Option | Type |
+|---|---|
+| `now` | function |
+
+These take no default: the feature behaves one way when you supply them and
+another when you do not.
 
 **Usage**
 
@@ -1883,10 +1931,13 @@ Pagination signals for list operations.
 | `pageParam` | `'page'` |
 | `startPage` | `1` |
 
-Options above are those the model carries a default for. A feature may
-also accept callback options — a `sink` to receive each record, for
-instance — which have no default and are covered in the full feature
-reference.
+| Option | Type |
+|---|---|
+| `limit` | number |
+| `ops` | list |
+
+These take no default: the feature behaves one way when you supply them and
+another when you do not.
 
 **Usage**
 
@@ -1911,10 +1962,13 @@ Client-side rate limiting via a token bucket.
 | `burst` | `5` |
 | `rate` | `5` |
 
-Options above are those the model carries a default for. A feature may
-also accept callback options — a `sink` to receive each record, for
-instance — which have no default and are covered in the full feature
-reference.
+| Option | Type |
+|---|---|
+| `now` | function |
+| `sleep` | function |
+
+These take no default: the feature behaves one way when you supply them and
+another when you do not.
 
 **Usage**
 
@@ -1942,10 +1996,13 @@ Automatic retry of transient failures with exponential backoff.
 | `retries` | `2` |
 | `statuses` | `[408, 425, 429, 500, 502, 503, 504]` |
 
-Options above are those the model carries a default for. A feature may
-also accept callback options — a `sink` to receive each record, for
-instance — which have no default and are covered in the full feature
-reference.
+| Option | Type |
+|---|---|
+| `jitter` | boolean |
+| `sleep` | function |
+
+These take no default: the feature behaves one way when you supply them and
+another when you do not.
 
 **Usage**
 
@@ -1968,10 +2025,15 @@ Distributed tracing spans with W3C trace-context propagation.
 |---|---|
 | `active` | `false` |
 
-Options above are those the model carries a default for. A feature may
-also accept callback options — a `sink` to receive each record, for
-instance — which have no default and are covered in the full feature
-reference.
+| Option | Type |
+|---|---|
+| `exporter` | function |
+| `headers` | map |
+| `idgen` | function |
+| `now` | function |
+
+These take no default: the feature behaves one way when you supply them and
+another when you do not.
 
 **Usage**
 
@@ -1994,10 +2056,13 @@ In-memory mock transport for testing without a live server.
 |---|---|
 | `active` | `false` |
 
-Options above are those the model carries a default for. A feature may
-also accept callback options — a `sink` to receive each record, for
-instance — which have no default and are covered in the full feature
-reference.
+| Option | Type |
+|---|---|
+| `entity` | map |
+| `net` | map |
+
+These take no default: the feature behaves one way when you supply them and
+another when you do not.
 
 **Usage**
 
@@ -2023,10 +2088,13 @@ Per-request timeout with transport abort.
 | `active` | `false` |
 | `ms` | `30000` |
 
-Options above are those the model carries a default for. A feature may
-also accept callback options — a `sink` to receive each record, for
-instance — which have no default and are covered in the full feature
-reference.
+| Option | Type |
+|---|---|
+| `clearTimer` | function |
+| `setTimer` | function |
+
+These take no default: the feature behaves one way when you supply them and
+another when you do not.
 
 **Usage**
 

@@ -29,5 +29,49 @@
         "version": "s7a"
       }
     }
+  },
+  "requests": {
+    "GET /version": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "version",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "appName": {
+                      "type": "string"
+                    },
+                    "buildDate": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "securitySchemes": {
+          "basic-auth-header": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-auth-header": {
+            "scheme": "bearer",
+            "type": "http"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

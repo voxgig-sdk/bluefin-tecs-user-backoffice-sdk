@@ -3,6 +3,7 @@
 from bluefintecsuserbackoffice_sdk.feature.base_feature import BluefinTecsUserBackofficeBaseFeature
 from bluefintecsuserbackoffice_sdk.feature.audit_feature import BluefinTecsUserBackofficeAuditFeature
 from bluefintecsuserbackoffice_sdk.feature.clienttrack_feature import BluefinTecsUserBackofficeClienttrackFeature
+from bluefintecsuserbackoffice_sdk.feature.debug_feature import BluefinTecsUserBackofficeDebugFeature
 from bluefintecsuserbackoffice_sdk.feature.idempotency_feature import BluefinTecsUserBackofficeIdempotencyFeature
 from bluefintecsuserbackoffice_sdk.feature.log_feature import BluefinTecsUserBackofficeLogFeature
 from bluefintecsuserbackoffice_sdk.feature.metrics_feature import BluefinTecsUserBackofficeMetricsFeature
@@ -18,6 +19,7 @@ _FEATURES = {
     "base": lambda: BluefinTecsUserBackofficeBaseFeature(),
     "audit": lambda: BluefinTecsUserBackofficeAuditFeature(),
     "clienttrack": lambda: BluefinTecsUserBackofficeClienttrackFeature(),
+    "debug": lambda: BluefinTecsUserBackofficeDebugFeature(),
     "idempotency": lambda: BluefinTecsUserBackofficeIdempotencyFeature(),
     "log": lambda: BluefinTecsUserBackofficeLogFeature(),
     "metrics": lambda: BluefinTecsUserBackofficeMetricsFeature(),

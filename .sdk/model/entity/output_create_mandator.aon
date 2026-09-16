@@ -126,6 +126,12 @@ main: kit: entity: output_create_mandator: {
               }
             ]
           }
+          contract: {
+            id: "POST /createMandator"
+            json: "{\"operationId\":\"createMandator\",\"parameters\":[{\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"city\":{\"type\":\"string\"},\"country\":{\"type\":\"string\"},\"dateOfBirth\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"driversLicenseNumber\":{\"type\":\"string\"},\"email\":{\"type\":\"string\"},\"firstName\":{\"type\":\"string\"},\"identificationNumber\":{\"type\":\"string\"},\"lastName\":{\"type\":\"string\"},\"login\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"passportNumber\":{\"type\":\"string\"},\"phone\":{\"type\":\"string\"},\"salutation\":{\"type\":\"string\"},\"state\":{\"type\":\"string\"},\"street1\":{\"type\":\"string\"},\"street2\":{\"type\":\"string\"},\"zipCode\":{\"type\":\"string\"}},\"required\":[\"description\",\"email\",\"login\",\"name\",\"phone\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"mandator\":{\"properties\":{\"description\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"}},\"type\":\"object\"},\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"OK\"}},\"security\":[{\"bearer-auth-header\":[]},{\"basic-auth-header\":[]}],\"securitySchemes\":{\"basic-auth-header\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-auth-header\":{\"scheme\":\"bearer\",\"type\":\"http\"}},\"securitySource\":\"operation\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "POST"
           orig: "/createMandator"
           segments: [

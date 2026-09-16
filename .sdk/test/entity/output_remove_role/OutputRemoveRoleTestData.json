@@ -3,21 +3,21 @@
     "output_remove_role": {
       "OUTPUT_REMOVE_ROLE00": {
         "consumerUUID": "s28",
-        "responseCode": "s29",
+        "responseCode": 41,
         "responseMessage": "s2a",
         "roles": [],
         "id": "OUTPUT_REMOVE_ROLE00"
       },
       "OUTPUT_REMOVE_ROLE01": {
         "consumerUUID": "s50",
-        "responseCode": "s51",
+        "responseCode": 81,
         "responseMessage": "s52",
         "roles": [],
         "id": "OUTPUT_REMOVE_ROLE01"
       },
       "OUTPUT_REMOVE_ROLE02": {
         "consumerUUID": "s78",
-        "responseCode": "s79",
+        "responseCode": 121,
         "responseMessage": "s7a",
         "roles": [],
         "id": "OUTPUT_REMOVE_ROLE02"
@@ -28,9 +28,97 @@
     "output_remove_role": {
       "output_remove_role_ref01": {
         "consumerUUID": "sa0",
-        "responseCode": "sa1",
+        "responseCode": 161,
         "responseMessage": "sa2",
         "roles": []
+      }
+    }
+  },
+  "requests": {
+    "POST /removeRoles": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "removeRoles",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "consumerUUID": {
+                    "type": "string"
+                  },
+                  "roles": {
+                    "items": {
+                      "properties": {
+                        "corporateUUID": {
+                          "type": "string"
+                        },
+                        "userRoleName": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "bearer-auth-header": []
+          },
+          {
+            "basic-auth-header": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-auth-header": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-auth-header": {
+            "scheme": "bearer",
+            "type": "http"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

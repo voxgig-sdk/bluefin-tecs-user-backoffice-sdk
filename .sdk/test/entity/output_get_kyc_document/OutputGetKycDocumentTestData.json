@@ -4,21 +4,21 @@
       "OUTPUT_GET_KYC_DOCUMENT00": {
         "caseID": "s28",
         "encodedDataBase64": "s29",
-        "responseCode": "s2a",
+        "responseCode": 42,
         "responseMessage": "s2b",
         "id": "OUTPUT_GET_KYC_DOCUMENT00"
       },
       "OUTPUT_GET_KYC_DOCUMENT01": {
         "caseID": "s50",
         "encodedDataBase64": "s51",
-        "responseCode": "s52",
+        "responseCode": 82,
         "responseMessage": "s53",
         "id": "OUTPUT_GET_KYC_DOCUMENT01"
       },
       "OUTPUT_GET_KYC_DOCUMENT02": {
         "caseID": "s78",
         "encodedDataBase64": "s79",
-        "responseCode": "s7a",
+        "responseCode": 122,
         "responseMessage": "s7b",
         "id": "OUTPUT_GET_KYC_DOCUMENT02"
       }
@@ -29,8 +29,85 @@
       "output_get_kyc_document_ref01": {
         "caseID": "sa0",
         "encodedDataBase64": "sa1",
-        "responseCode": "sa2",
+        "responseCode": 162,
         "responseMessage": "sa3"
+      }
+    }
+  },
+  "requests": {
+    "POST /getKycDocument": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getKycDocument",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "caseID": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "encodedDataBase64": {
+                      "type": "string"
+                    },
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "bearer-auth-header": []
+          },
+          {
+            "basic-auth-header": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-auth-header": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-auth-header": {
+            "scheme": "bearer",
+            "type": "http"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

@@ -3,21 +3,21 @@
     "output_assign_role": {
       "OUTPUT_ASSIGN_ROLE00": {
         "consumerUUID": "s28",
-        "responseCode": "s29",
+        "responseCode": 41,
         "responseMessage": "s2a",
         "roles": [],
         "id": "OUTPUT_ASSIGN_ROLE00"
       },
       "OUTPUT_ASSIGN_ROLE01": {
         "consumerUUID": "s50",
-        "responseCode": "s51",
+        "responseCode": 81,
         "responseMessage": "s52",
         "roles": [],
         "id": "OUTPUT_ASSIGN_ROLE01"
       },
       "OUTPUT_ASSIGN_ROLE02": {
         "consumerUUID": "s78",
-        "responseCode": "s79",
+        "responseCode": 121,
         "responseMessage": "s7a",
         "roles": [],
         "id": "OUTPUT_ASSIGN_ROLE02"
@@ -28,9 +28,169 @@
     "output_assign_role": {
       "output_assign_role_ref01": {
         "consumerUUID": "sa0",
-        "responseCode": "sa1",
+        "responseCode": 161,
         "responseMessage": "sa2",
         "roles": []
+      }
+    }
+  },
+  "requests": {
+    "POST /assignRoles": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "assignRoles",
+        "parameters": [
+          {
+            "description": "Authorization header. Use either: - Bearer token (e.g., \"Bearer <token>\") - Basic authentication (e.g., \"Basic <Base64 encoded credentials>\")\n",
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "examples": {
+                "default": {
+                  "summary": "Example input",
+                  "value": {
+                    "consumerUUID": "user-12345",
+                    "roles": [
+                      {
+                        "corporateUUID": "4dbbab90-74f5-4d8d-92e1-d02e6a4a0dee",
+                        "userRoleName": "MP_CORPORATE"
+                      }
+                    ]
+                  }
+                }
+              },
+              "schema": {
+                "properties": {
+                  "consumerUUID": {
+                    "description": "Unique identifier of the consumer (user) to whom the role(s) will be assigned.",
+                    "example": "user-12345",
+                    "type": "string"
+                  },
+                  "roles": {
+                    "description": "List of roles to assign to the consumer.",
+                    "items": {
+                      "properties": {
+                        "corporateUUID": {
+                          "description": "Unique identifier of the corporate entity associated with the role.",
+                          "example": "4dbbab90-74f5-4d8d-92e1-d02e6a4a0dee",
+                          "type": "string"
+                        },
+                        "userRoleName": {
+                          "description": "The name of the role to assign.",
+                          "enum": [
+                            "TE_MERCHANT_TERMINAL_MANAGEMENT",
+                            "BO_TE_TRANSACTION_HISTORY",
+                            "BO_TRANSACTIONMANAGEMENT_CANCEL",
+                            "BO_TRANSACTIONMANAGEMENT_REFUND",
+                            "BO_TRANSACTIONMANAGEMENT_EMV",
+                            "BO_TRANSACTIONMANAGEMENT_ECR",
+                            "SERVICE_BLACKLISTCHECK",
+                            "MP_CORPORATE",
+                            "BO_USERMANAGEMENT_MANDATOR_MANAGER",
+                            "BO_TRANSACTIONMANAGEMENT_COMPLETION",
+                            "BO_TRANSACTIONMANAGEMENT_PAYMENT",
+                            "MCOM_WEBAPP_TX_HISTORY",
+                            "BO_USERMANAGEMENT_UPDATE_CORPORATE",
+                            "BO_MP_CREATE_NEW_PRODUCT",
+                            "SYSTEM_GET_TERMINAL_ID",
+                            "BO_DAILY_REPORTS_VIEW",
+                            "DAILY_REPORTS_VIEW",
+                            "BO_DAILY_REPORTS_CUSTOM",
+                            "DAILY_REPORTS_CUSTOM",
+                            "TW_GET_ECOM_PARAMETERS",
+                            "TE_KEEP_ALIVE_LIST",
+                            "BO_TRANSACTIONMANAGEMENT_ECOM",
+                            "BO_MP_UPDATE_XML_TEMPLATE",
+                            "BO_MP_GET_XML_TEMPLATE",
+                            "BO_MANDATOR_CLEARING_EXPORT",
+                            "SYSTEM_REGISTER_MERCHANT_TERMINAL",
+                            "BO_MP_MOVE_TID"
+                          ],
+                          "example": "MP_CORPORATE",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "corporateUUID",
+                        "userRoleName"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "consumerUUID",
+                  "roles"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "default": {
+                    "summary": "Successful response",
+                    "value": {
+                      "responseCode": 0,
+                      "responseMessage": "OK"
+                    }
+                  }
+                },
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "description": "Response code: 0 indicates success; any non-zero value indicates an error.",
+                      "example": 0,
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "description": "A human-readable message providing additional details about the outcome.",
+                      "example": "OK",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Role assignment successful."
+          }
+        },
+        "security": [
+          {
+            "bearer-auth-header": []
+          },
+          {
+            "basic-auth-header": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-auth-header": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-auth-header": {
+            "scheme": "bearer",
+            "type": "http"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

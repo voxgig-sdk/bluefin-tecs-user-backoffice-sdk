@@ -5,6 +5,7 @@ defmodule BluefinTecsUserBackoffice.Features do
     case name do
       "audit" -> BluefinTecsUserBackoffice.Feature.Audit.new()
       "clienttrack" -> BluefinTecsUserBackoffice.Feature.Clienttrack.new()
+      "debug" -> BluefinTecsUserBackoffice.Feature.Debug.new()
       "idempotency" -> BluefinTecsUserBackoffice.Feature.Idempotency.new()
       "log" -> BluefinTecsUserBackoffice.Feature.Log.new()
       "metrics" -> BluefinTecsUserBackoffice.Feature.Metrics.new()

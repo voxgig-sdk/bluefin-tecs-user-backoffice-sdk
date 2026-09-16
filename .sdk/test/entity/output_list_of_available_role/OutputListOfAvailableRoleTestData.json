@@ -3,19 +3,19 @@
     "output_list_of_available_role": {
       "OUTPUT_LIST_OF_AVAILABLE_ROLE00": {
         "availableRoles": [],
-        "responseCode": "s1f",
+        "responseCode": 31,
         "responseMessage": "s20",
         "id": "OUTPUT_LIST_OF_AVAILABLE_ROLE00"
       },
       "OUTPUT_LIST_OF_AVAILABLE_ROLE01": {
         "availableRoles": [],
-        "responseCode": "s3d",
+        "responseCode": 61,
         "responseMessage": "s3e",
         "id": "OUTPUT_LIST_OF_AVAILABLE_ROLE01"
       },
       "OUTPUT_LIST_OF_AVAILABLE_ROLE02": {
         "availableRoles": [],
-        "responseCode": "s5b",
+        "responseCode": 91,
         "responseMessage": "s5c",
         "id": "OUTPUT_LIST_OF_AVAILABLE_ROLE02"
       }
@@ -25,8 +25,94 @@
     "output_list_of_available_role": {
       "output_list_of_available_role_ref01": {
         "availableRoles": [],
-        "responseCode": "s79",
+        "responseCode": 121,
         "responseMessage": "s7a"
+      }
+    }
+  },
+  "requests": {
+    "POST /listOfAvailableRoles": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "listOfAvailableRoles",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "availableRoles": {
+                      "items": {
+                        "properties": {
+                          "corporateName": {
+                            "type": "string"
+                          },
+                          "corporateUUID": {
+                            "type": "string"
+                          },
+                          "userRoleName": {
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "bearer-auth-header": []
+          },
+          {
+            "basic-auth-header": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-auth-header": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-auth-header": {
+            "scheme": "bearer",
+            "type": "http"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

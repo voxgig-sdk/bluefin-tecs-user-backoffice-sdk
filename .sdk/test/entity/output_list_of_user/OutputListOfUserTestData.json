@@ -5,7 +5,7 @@
         "filter": {},
         "list": [],
         "pagination": {},
-        "responseCode": "s3f",
+        "responseCode": 63,
         "responseMessage": "s40",
         "sorting": {},
         "id": "OUTPUT_LIST_OF_USER00"
@@ -14,7 +14,7 @@
         "filter": {},
         "list": [],
         "pagination": {},
-        "responseCode": "s7b",
+        "responseCode": 123,
         "responseMessage": "s7c",
         "sorting": {},
         "id": "OUTPUT_LIST_OF_USER01"
@@ -23,7 +23,7 @@
         "filter": {},
         "list": [],
         "pagination": {},
-        "responseCode": "sb7",
+        "responseCode": 183,
         "responseMessage": "sb8",
         "sorting": {},
         "id": "OUTPUT_LIST_OF_USER02"
@@ -36,9 +36,387 @@
         "filter": {},
         "list": [],
         "pagination": {},
-        "responseCode": "sf3",
+        "responseCode": 243,
         "responseMessage": "sf4",
         "sorting": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /listOfUsers": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "listOfUsers",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "filter": {
+                    "properties": {
+                      "consumerUUID": {
+                        "type": "string"
+                      },
+                      "corporateUUID": {
+                        "type": "string"
+                      },
+                      "email": {
+                        "type": "string"
+                      },
+                      "firstName": {
+                        "type": "string"
+                      },
+                      "identificationStatus": {
+                        "type": "string"
+                      },
+                      "kycLevel": {
+                        "format": "int32",
+                        "type": "integer"
+                      },
+                      "kycStatusID": {
+                        "items": {
+                          "format": "int32",
+                          "type": "integer"
+                        },
+                        "type": "array"
+                      },
+                      "lastName": {
+                        "type": "string"
+                      },
+                      "lockedUntillFrom": {
+                        "format": "date-time",
+                        "type": "string"
+                      },
+                      "lockedUntillTo": {
+                        "format": "date-time",
+                        "type": "string"
+                      },
+                      "registeredDateFrom": {
+                        "format": "date-time",
+                        "type": "string"
+                      },
+                      "registeredDateTo": {
+                        "format": "date-time",
+                        "type": "string"
+                      },
+                      "statusID": {
+                        "items": {
+                          "format": "int32",
+                          "type": "integer"
+                        },
+                        "type": "array"
+                      },
+                      "userRoleName": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "pagination": {
+                    "properties": {
+                      "page": {
+                        "format": "int32",
+                        "type": "integer"
+                      },
+                      "size": {
+                        "format": "int32",
+                        "type": "integer"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "sorting": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "list": {
+                      "items": {
+                        "properties": {
+                          "addresses": {
+                            "items": {
+                              "properties": {
+                                "city": {
+                                  "type": "string"
+                                },
+                                "country": {
+                                  "type": "string"
+                                },
+                                "description": {
+                                  "type": "string"
+                                },
+                                "name": {
+                                  "type": "string"
+                                },
+                                "state": {
+                                  "type": "string"
+                                },
+                                "street1": {
+                                  "type": "string"
+                                },
+                                "street2": {
+                                  "type": "string"
+                                },
+                                "zipCode": {
+                                  "type": "string"
+                                }
+                              },
+                              "type": "object"
+                            },
+                            "type": "array"
+                          },
+                          "consumerUUID": {
+                            "type": "string"
+                          },
+                          "dateOfBirth": {
+                            "format": "date-time",
+                            "type": "string"
+                          },
+                          "email": {
+                            "type": "string"
+                          },
+                          "firstName": {
+                            "type": "string"
+                          },
+                          "gender": {
+                            "properties": {
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "idCards": {
+                            "items": {
+                              "properties": {
+                                "number": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "properties": {
+                                    "name": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                }
+                              },
+                              "type": "object"
+                            },
+                            "type": "array"
+                          },
+                          "kyc": {
+                            "properties": {
+                              "cases": {
+                                "items": {
+                                  "properties": {
+                                    "failure": {
+                                      "properties": {
+                                        "name": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "type": "object"
+                                    },
+                                    "id": {
+                                      "type": "string"
+                                    },
+                                    "providers": {
+                                      "items": {
+                                        "properties": {
+                                          "datetimeCreated": {
+                                            "format": "date-time",
+                                            "type": "string"
+                                          },
+                                          "method": {
+                                            "type": "string"
+                                          },
+                                          "status": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "type": "object"
+                                      },
+                                      "type": "array"
+                                    },
+                                    "validUntil": {
+                                      "format": "date-time",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "level": {
+                                "format": "int32",
+                                "type": "integer"
+                              },
+                              "status": {
+                                "properties": {
+                                  "name": {
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "lastName": {
+                            "type": "string"
+                          },
+                          "lockedUntill": {
+                            "format": "date-time",
+                            "type": "string"
+                          },
+                          "nationality": {
+                            "type": "string"
+                          },
+                          "phones": {
+                            "items": {
+                              "properties": {
+                                "description": {
+                                  "type": "string"
+                                },
+                                "number": {
+                                  "type": "string"
+                                }
+                              },
+                              "type": "object"
+                            },
+                            "type": "array"
+                          },
+                          "placeOfBirth": {
+                            "type": "string"
+                          },
+                          "registered": {
+                            "format": "date-time",
+                            "type": "string"
+                          },
+                          "status": {
+                            "properties": {
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "userRoles": {
+                            "items": {
+                              "properties": {
+                                "corporate": {
+                                  "properties": {
+                                    "name": {
+                                      "type": "string"
+                                    },
+                                    "uuid": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "name": {
+                                  "type": "string"
+                                }
+                              },
+                              "type": "object"
+                            },
+                            "type": "array"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "pagination": {
+                      "properties": {
+                        "page": {
+                          "format": "int32",
+                          "type": "integer"
+                        },
+                        "size": {
+                          "format": "int32",
+                          "type": "integer"
+                        },
+                        "totalElements": {
+                          "format": "int64",
+                          "type": "integer"
+                        },
+                        "totalPages": {
+                          "format": "int32",
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "bearer-auth-header": []
+          },
+          {
+            "basic-auth-header": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-auth-header": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-auth-header": {
+            "scheme": "bearer",
+            "type": "http"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

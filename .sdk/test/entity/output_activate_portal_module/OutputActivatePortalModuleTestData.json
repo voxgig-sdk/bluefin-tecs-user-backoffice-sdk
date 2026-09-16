@@ -4,21 +4,21 @@
       "OUTPUT_ACTIVATE_PORTAL_MODULE00": {
         "clientSecret": "s28",
         "notificationEmail": "s29",
-        "responseCode": "s2a",
+        "responseCode": 42,
         "responseMessage": "s2b",
         "id": "OUTPUT_ACTIVATE_PORTAL_MODULE00"
       },
       "OUTPUT_ACTIVATE_PORTAL_MODULE01": {
         "clientSecret": "s50",
         "notificationEmail": "s51",
-        "responseCode": "s52",
+        "responseCode": 82,
         "responseMessage": "s53",
         "id": "OUTPUT_ACTIVATE_PORTAL_MODULE01"
       },
       "OUTPUT_ACTIVATE_PORTAL_MODULE02": {
         "clientSecret": "s78",
         "notificationEmail": "s79",
-        "responseCode": "s7a",
+        "responseCode": 122,
         "responseMessage": "s7b",
         "id": "OUTPUT_ACTIVATE_PORTAL_MODULE02"
       }
@@ -29,8 +29,89 @@
       "output_activate_portal_module_ref01": {
         "clientSecret": "sa0",
         "notificationEmail": "sa1",
-        "responseCode": "sa2",
+        "responseCode": 162,
         "responseMessage": "sa3"
+      }
+    }
+  },
+  "requests": {
+    "POST /activateMerchantPortalModule": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "activatePortalModule",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "clientSecret": {
+                    "type": "string"
+                  },
+                  "notificationEmail": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "clientSecret",
+                  "notificationEmail"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "bearer-auth-header": []
+          },
+          {
+            "basic-auth-header": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-auth-header": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-auth-header": {
+            "scheme": "bearer",
+            "type": "http"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

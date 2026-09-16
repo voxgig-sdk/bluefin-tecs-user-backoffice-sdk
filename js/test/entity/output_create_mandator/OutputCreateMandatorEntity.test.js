@@ -1,12 +1,14 @@
 
 const envlocal = __dirname + '/../../../.env.local'
-require('dotenv').config({ quiet: true, path: [envlocal] })
+require('../../utility').loadEnvLocal(envlocal)
 
 const Path = require('node:path')
 const Fs = require('node:fs')
 
 const { test, describe, afterEach } = require('node:test')
 const assert = require('node:assert')
+const { createLiveTransport } = require('../../live-runner')
+const { runLiveEntity } = require('../../live-entity')
 
 
 const { BluefinTecsUserBackofficeSDK, BaseFeature, stdutil, config } = require('../../..')
@@ -36,9 +38,13 @@ describe('OutputCreateMandatorEntity', async () => {
   })
 
 
-  test('basic', async () => {
+  test('basic', async (t) => {
 
+    
     const setup = basicSetup()
+    if (setup.live) {
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":[{"active":true,"name":"city","req":false,"type":"`$STRING`","index$":0},{"active":true,"name":"country","req":false,"type":"`$STRING`","index$":1},{"active":true,"name":"dateOfBirth","req":false,"type":"`$STRING`","index$":2},{"active":true,"name":"description","op":{"create":{"req":true,"type":"`$STRING`"}},"req":false,"type":"`$STRING`","index$":3},{"active":true,"name":"driversLicenseNumber","req":false,"type":"`$STRING`","index$":4},{"active":true,"name":"email","req":true,"type":"`$STRING`","index$":5},{"active":true,"name":"firstName","req":false,"type":"`$STRING`","index$":6},{"active":true,"name":"identificationNumber","req":false,"type":"`$STRING`","index$":7},{"active":true,"name":"lastName","req":false,"type":"`$STRING`","index$":8},{"active":true,"name":"login","req":true,"type":"`$STRING`","index$":9},{"active":true,"name":"name","op":{"create":{"req":true,"type":"`$STRING`"}},"req":false,"type":"`$STRING`","index$":10},{"active":true,"name":"passportNumber","req":false,"type":"`$STRING`","index$":11},{"active":true,"name":"phone","req":true,"type":"`$STRING`","index$":12},{"active":true,"name":"salutation","req":false,"type":"`$STRING`","index$":13},{"active":true,"name":"state","req":false,"type":"`$STRING`","index$":14},{"active":true,"name":"street1","req":false,"type":"`$STRING`","index$":15},{"active":true,"name":"street2","req":false,"type":"`$STRING`","index$":16},{"active":true,"name":"zipCode","req":false,"type":"`$STRING`","index$":17}],"name":"output_create_mandator","op":{"create":{"input":"data","name":"create","points":[{"active":true,"args":{"header":[{"active":true,"kind":"header","name":"authorization","orig":"authorization","reqd":true,"type":"`$STRING`"}]},"contract":{"id":"POST /createMandator","json":"{\"operationId\":\"createMandator\",\"parameters\":[{\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"city\":{\"type\":\"string\"},\"country\":{\"type\":\"string\"},\"dateOfBirth\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"driversLicenseNumber\":{\"type\":\"string\"},\"email\":{\"type\":\"string\"},\"firstName\":{\"type\":\"string\"},\"identificationNumber\":{\"type\":\"string\"},\"lastName\":{\"type\":\"string\"},\"login\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"passportNumber\":{\"type\":\"string\"},\"phone\":{\"type\":\"string\"},\"salutation\":{\"type\":\"string\"},\"state\":{\"type\":\"string\"},\"street1\":{\"type\":\"string\"},\"street2\":{\"type\":\"string\"},\"zipCode\":{\"type\":\"string\"}},\"required\":[\"description\",\"email\",\"login\",\"name\",\"phone\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"mandator\":{\"properties\":{\"description\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"}},\"type\":\"object\"},\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"OK\"}},\"security\":[{\"bearer-auth-header\":[]},{\"basic-auth-header\":[]}],\"securitySchemes\":{\"basic-auth-header\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-auth-header\":{\"scheme\":\"bearer\",\"type\":\"http\"}},\"securitySource\":\"operation\"}","source":"openapi3","version":1},"kind":"http","method":"POST","orig":"/createMandator","segments":[{"lit":"createMandator"}],"select":{"exist":["authorization"]},"transform":{"req":"`reqdata`","res":"`body.mandator`"},"index$":0}],"key$":"create"}},"relations":{"ancestors":[]},"key$":"output_create_mandator","name__orig":"output_create_mandator","Name":"OutputCreateMandator","name_":"output_create_mandator","name-":"output-create-mandator","NAME":"OUTPUT_CREATE_MANDATOR","index$":6}, {"active":true,"entity":"output_create_mandator","key$":"BasicOutputCreateMandatorFlow","kind":"basic","name":"BasicOutputCreateMandatorFlow","param":{},"step":[{"active":true,"data":{},"input":{"ref":"output_create_mandator_ref01"},"match":{},"op":"create","spec":[],"valid":[],"index$":0}]}, 'OutputCreateMandator')
+    }
     const client = setup.client
     const struct = setup.struct
 
@@ -99,7 +105,14 @@ function basicSetup(extra) {
 
   idmap = env['BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_CREATE_MANDATOR_ENTID']
 
-  if ('TRUE' === env.BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE) {
+  const live = 'TRUE' === env.BLUEFIN_TECS_USER_BACKOFFICE_TEST_LIVE
+  const transport = createLiveTransport()
+  if (live) {
+    const rawIds = process.env['BLUEFIN_TECS_USER_BACKOFFICE_TEST_OUTPUT_CREATE_MANDATOR_ENTID']
+    idmap = rawIds && rawIds.trim() ? JSON.parse(rawIds) : {}
+    if (!idmap || Array.isArray(idmap) || typeof idmap !== 'object') {
+      throw new Error('Live ENTID must be a JSON object')
+    }
     client = new BluefinTecsUserBackofficeSDK(merge([
       // FIRST, so the generated fields below win: sdk-test-control.json's
       // test.client.options adds to the live client, it does not redirect it.
@@ -111,7 +124,8 @@ function basicSetup(extra) {
       // the last entry is undefined, and basicSetup is normally called with no
       // argument at all - so a bare 'extra' silently discarded the apikey and
       // server values above and handed the SDK undefined.
-      extra || {}
+      extra || {},
+      { system: { fetch: transport.fetch } }
     ]))
   }
 
@@ -123,6 +137,8 @@ function basicSetup(extra) {
     struct,
     data: entityData,
     explain: 'TRUE' === env.BLUEFIN_TECS_USER_BACKOFFICE_TEST_EXPLAIN,
+    live,
+    transport,
     now: Date.now(),
   }
 

@@ -6,7 +6,7 @@
         "consumerUUID": "s3d",
         "emailConfirmationCode": "s3e",
         "phoneNumber": "s3f",
-        "responseCode": "s40",
+        "responseCode": 64,
         "responseMessage": "s41",
         "id": "OUTPUT_RESEND_LINK00"
       },
@@ -15,7 +15,7 @@
         "consumerUUID": "s79",
         "emailConfirmationCode": "s7a",
         "phoneNumber": "s7b",
-        "responseCode": "s7c",
+        "responseCode": 124,
         "responseMessage": "s7d",
         "id": "OUTPUT_RESEND_LINK01"
       },
@@ -24,7 +24,7 @@
         "consumerUUID": "sb5",
         "emailConfirmationCode": "sb6",
         "phoneNumber": "sb7",
-        "responseCode": "sb8",
+        "responseCode": 184,
         "responseMessage": "sb9",
         "id": "OUTPUT_RESEND_LINK02"
       }
@@ -37,8 +37,94 @@
         "consumerUUID": "sf1",
         "emailConfirmationCode": "sf2",
         "phoneNumber": "sf3",
-        "responseCode": "sf4",
+        "responseCode": 244,
         "responseMessage": "sf5"
+      }
+    }
+  },
+  "requests": {
+    "POST /resendLink": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "resendLink",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "businessRegistrationNumber": {
+                    "type": "string"
+                  },
+                  "consumerUUID": {
+                    "type": "string"
+                  },
+                  "emailConfirmationCode": {
+                    "type": "string"
+                  },
+                  "phoneNumber": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "consumerUUID"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "bearer-auth-header": []
+          },
+          {
+            "basic-auth-header": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-auth-header": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-auth-header": {
+            "scheme": "bearer",
+            "type": "http"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

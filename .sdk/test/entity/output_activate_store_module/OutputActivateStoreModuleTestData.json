@@ -2,17 +2,17 @@
   "existing": {
     "output_activate_store_module": {
       "OUTPUT_ACTIVATE_STORE_MODULE00": {
-        "responseCode": "s14",
+        "responseCode": 20,
         "responseMessage": "s15",
         "id": "OUTPUT_ACTIVATE_STORE_MODULE00"
       },
       "OUTPUT_ACTIVATE_STORE_MODULE01": {
-        "responseCode": "s28",
+        "responseCode": 40,
         "responseMessage": "s29",
         "id": "OUTPUT_ACTIVATE_STORE_MODULE01"
       },
       "OUTPUT_ACTIVATE_STORE_MODULE02": {
-        "responseCode": "s3c",
+        "responseCode": 60,
         "responseMessage": "s3d",
         "id": "OUTPUT_ACTIVATE_STORE_MODULE02"
       }
@@ -21,8 +21,77 @@
   "new": {
     "output_activate_store_module": {
       "output_activate_store_module_ref01": {
-        "responseCode": "s50",
+        "responseCode": 80,
         "responseMessage": "s51"
+      }
+    }
+  },
+  "requests": {
+    "POST /activateAppStoreModule": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "activateStoreModule",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "bearer-auth-header": []
+          },
+          {
+            "basic-auth-header": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-auth-header": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-auth-header": {
+            "scheme": "bearer",
+            "type": "http"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

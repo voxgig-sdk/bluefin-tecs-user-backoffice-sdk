@@ -3,19 +3,19 @@
     "output_deactivate_user": {
       "OUTPUT_DEACTIVATE_USER00": {
         "consumerUUID": "s1e",
-        "responseCode": "s1f",
+        "responseCode": 31,
         "responseMessage": "s20",
         "id": "OUTPUT_DEACTIVATE_USER00"
       },
       "OUTPUT_DEACTIVATE_USER01": {
         "consumerUUID": "s3c",
-        "responseCode": "s3d",
+        "responseCode": 61,
         "responseMessage": "s3e",
         "id": "OUTPUT_DEACTIVATE_USER01"
       },
       "OUTPUT_DEACTIVATE_USER02": {
         "consumerUUID": "s5a",
-        "responseCode": "s5b",
+        "responseCode": 91,
         "responseMessage": "s5c",
         "id": "OUTPUT_DEACTIVATE_USER02"
       }
@@ -25,8 +25,82 @@
     "output_deactivate_user": {
       "output_deactivate_user_ref01": {
         "consumerUUID": "s78",
-        "responseCode": "s79",
+        "responseCode": 121,
         "responseMessage": "s7a"
+      }
+    }
+  },
+  "requests": {
+    "POST /deactivateUser": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "deactivateUser",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "consumerUUID": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "bearer-auth-header": []
+          },
+          {
+            "basic-auth-header": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-auth-header": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-auth-header": {
+            "scheme": "bearer",
+            "type": "http"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

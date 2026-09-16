@@ -5,7 +5,7 @@
         "filter": {},
         "groupRoles": [],
         "pagination": {},
-        "responseCode": "s3f",
+        "responseCode": 63,
         "responseMessage": "s40",
         "sorting": {},
         "id": "OUTPUT_LIST_OF_ROLE_GROUP00"
@@ -14,7 +14,7 @@
         "filter": {},
         "groupRoles": [],
         "pagination": {},
-        "responseCode": "s7b",
+        "responseCode": 123,
         "responseMessage": "s7c",
         "sorting": {},
         "id": "OUTPUT_LIST_OF_ROLE_GROUP01"
@@ -23,7 +23,7 @@
         "filter": {},
         "groupRoles": [],
         "pagination": {},
-        "responseCode": "sb7",
+        "responseCode": 183,
         "responseMessage": "sb8",
         "sorting": {},
         "id": "OUTPUT_LIST_OF_ROLE_GROUP02"
@@ -36,9 +36,173 @@
         "filter": {},
         "groupRoles": [],
         "pagination": {},
-        "responseCode": "sf3",
+        "responseCode": 243,
         "responseMessage": "sf4",
         "sorting": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /listOfRoleGroups": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "listOfRoleGroups",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "filter": {
+                    "properties": {
+                      "global": {
+                        "type": "boolean"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "pagination": {
+                    "properties": {
+                      "page": {
+                        "format": "int32",
+                        "type": "integer"
+                      },
+                      "size": {
+                        "format": "int32",
+                        "type": "integer"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "sorting": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "groupRoles": {
+                      "items": {
+                        "properties": {
+                          "description": {
+                            "type": "string"
+                          },
+                          "global": {
+                            "type": "boolean"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "status": {
+                            "type": "string"
+                          },
+                          "userRoles": {
+                            "items": {
+                              "properties": {
+                                "userRoleDescription": {
+                                  "type": "string"
+                                },
+                                "userRoleName": {
+                                  "type": "string"
+                                }
+                              },
+                              "type": "object"
+                            },
+                            "type": "array"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "pagination": {
+                      "properties": {
+                        "page": {
+                          "format": "int32",
+                          "type": "integer"
+                        },
+                        "size": {
+                          "format": "int32",
+                          "type": "integer"
+                        },
+                        "totalElements": {
+                          "format": "int64",
+                          "type": "integer"
+                        },
+                        "totalPages": {
+                          "format": "int32",
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "bearer-auth-header": []
+          },
+          {
+            "basic-auth-header": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-auth-header": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-auth-header": {
+            "scheme": "bearer",
+            "type": "http"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

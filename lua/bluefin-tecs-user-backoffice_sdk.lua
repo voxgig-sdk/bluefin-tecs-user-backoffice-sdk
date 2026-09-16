@@ -105,6 +105,7 @@ function BluefinTecsUserBackofficeSDK.new(options)
 
     -- feature: audit
   -- feature: clienttrack
+  -- feature: debug
   -- feature: idempotency
   -- feature: log
   -- feature: metrics

@@ -55,6 +55,12 @@ main: kit: entity: output_resend_link: {
               }
             ]
           }
+          contract: {
+            id: "POST /resendLink"
+            json: "{\"operationId\":\"resendLink\",\"parameters\":[{\"in\":\"header\",\"name\":\"Authorization\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"businessRegistrationNumber\":{\"type\":\"string\"},\"consumerUUID\":{\"type\":\"string\"},\"emailConfirmationCode\":{\"type\":\"string\"},\"phoneNumber\":{\"type\":\"string\"}},\"required\":[\"consumerUUID\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"OK\"}},\"security\":[{\"bearer-auth-header\":[]},{\"basic-auth-header\":[]}],\"securitySchemes\":{\"basic-auth-header\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-auth-header\":{\"scheme\":\"bearer\",\"type\":\"http\"}},\"securitySource\":\"operation\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "POST"
           orig: "/resendLink"
           segments: [

@@ -7,7 +7,7 @@
         "firstName": "s48",
         "lastName": "s49",
         "phoneNumber": "s4a",
-        "responseCode": "s4b",
+        "responseCode": 75,
         "responseMessage": "s4c",
         "id": "OUTPUT_UPDATE_PROFILE00"
       },
@@ -17,7 +17,7 @@
         "firstName": "s8e",
         "lastName": "s8f",
         "phoneNumber": "s90",
-        "responseCode": "s91",
+        "responseCode": 145,
         "responseMessage": "s92",
         "id": "OUTPUT_UPDATE_PROFILE01"
       },
@@ -27,7 +27,7 @@
         "firstName": "sd4",
         "lastName": "sd5",
         "phoneNumber": "sd6",
-        "responseCode": "sd7",
+        "responseCode": 215,
         "responseMessage": "sd8",
         "id": "OUTPUT_UPDATE_PROFILE02"
       }
@@ -41,8 +41,94 @@
         "firstName": "s11a",
         "lastName": "s11b",
         "phoneNumber": "s11c",
-        "responseCode": "s11d",
+        "responseCode": 285,
         "responseMessage": "s11e"
+      }
+    }
+  },
+  "requests": {
+    "POST /updateProfile": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "updateProfile",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "consumerLanguage": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "firstName": {
+                    "type": "string"
+                  },
+                  "lastName": {
+                    "type": "string"
+                  },
+                  "phoneNumber": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "bearer-auth-header": []
+          },
+          {
+            "basic-auth-header": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-auth-header": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-auth-header": {
+            "scheme": "bearer",
+            "type": "http"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }
