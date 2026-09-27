@@ -50,7 +50,7 @@ static OutputActivateStoreModuleSetup output_activate_store_module_basic_setup(c
 
   OutputActivateStoreModuleSetup s;
   s.client = client;
-  s.data = entity_data;
+  s.d = entity_data;
   s.idmap = idmap_resolved;
   s.env = env;
   s.live = live;

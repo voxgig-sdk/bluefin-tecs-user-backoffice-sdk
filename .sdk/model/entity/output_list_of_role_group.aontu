@@ -1,0 +1,92 @@
+# Entity: output_list_of_role_group
+
+main: kit: entity: output_list_of_role_group: {
+
+  alias: field: {}
+
+  fields: {
+    filter: {
+      h: "Filter"
+      n: "filter"
+      r: false
+      t: "`$OBJECT`"
+    }
+    groupRoles: {
+      h: "Group Roles"
+      n: "groupRoles"
+      r: false
+      t: "`$ARRAY`"
+    }
+    pagination: {
+      h: "Pagination"
+      n: "pagination"
+      r: false
+      t: "`$OBJECT`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    sorting: {
+      h: "Sorting"
+      n: "sorting"
+      r: false
+      t: "`$OBJECT`"
+    }
+  }
+
+  name: "output_list_of_role_group"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /listOfRoleGroups"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/listOfRoleGroups"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "listOfRoleGroups"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

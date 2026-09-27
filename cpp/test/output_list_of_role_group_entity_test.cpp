@@ -50,7 +50,7 @@ static OutputListOfRoleGroupSetup output_list_of_role_group_basic_setup(const Va
 
   OutputListOfRoleGroupSetup s;
   s.client = client;
-  s.data = entity_data;
+  s.d = entity_data;
   s.idmap = idmap_resolved;
   s.env = env;
   s.live = live;

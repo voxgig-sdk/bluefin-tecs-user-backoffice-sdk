@@ -50,7 +50,7 @@ static OutputListOfModuleSetup output_list_of_module_basic_setup(const Value& ex
 
   OutputListOfModuleSetup s;
   s.client = client;
-  s.data = entity_data;
+  s.d = entity_data;
   s.idmap = idmap_resolved;
   s.env = env;
   s.live = live;

@@ -50,7 +50,7 @@ static OutputListOfAvailableRoleSetup output_list_of_available_role_basic_setup(
 
   OutputListOfAvailableRoleSetup s;
   s.client = client;
-  s.data = entity_data;
+  s.d = entity_data;
   s.idmap = idmap_resolved;
   s.env = env;
   s.live = live;

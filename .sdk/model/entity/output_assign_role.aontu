@@ -1,0 +1,84 @@
+# Entity: output_assign_role
+
+main: kit: entity: output_assign_role: {
+
+  alias: field: {}
+
+  fields: {
+    consumerUUID: {
+      h: "Consumer Uuid"
+      n: "consumerUUID"
+      r: true
+      sh: "Unique identifier of the consumer (user) to whom the role(s) will be assigned."
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      sh: "Response code: 0 indicates success; any non-zero value indicates an error."
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      sh: "A human-readable message providing additional details about the outcome."
+      t: "`$STRING`"
+    }
+    roles: {
+      h: "Roles"
+      n: "roles"
+      r: true
+      sh: "List of roles to assign to the consumer."
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "output_assign_role"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /assignRoles"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/assignRoles"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "assignRoles"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

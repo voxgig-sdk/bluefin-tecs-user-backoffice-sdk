@@ -12,7 +12,7 @@ Learn more about Voxgig SDKs at [voxgig.com/sdk](https://voxgig.com/sdk/).
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua, C, Clojure, C++, C#, Dart, Elixir, Haskell, Java, JavaScript, Kotlin, Lean, OCaml, Perl, Rust, Scala, Swift, Zig SDKs, a CLI with an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
 
-> **Features:** `audit`, `clienttrack`, `debug`, `idempotency`, `log`, `metrics`, `paging`, `ratelimit`, `retry`, `telemetry`, `test`, `timeout` — opt-in,
+> **Features:** `undefined`, `undefined`, `undefined`, `undefined`, `undefined`, `undefined`, `undefined`, `undefined`, `undefined`, `undefined`, `undefined`, `undefined` — opt-in,
 > inactive until switched on, and configured per client. See the Features
 > section of any SDK README below for what each one does.
 
@@ -285,29 +285,29 @@ switch (client.output_get_logo(h.vnull()).load(h.vnull(), h.vnull())) {
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
-| Python | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
-| PHP | `voxgig-sdk/bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
+| TypeScript | `@voxgig-sdk/bluefin-tecs-user-backoffice-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/tags) |
+| Python | `voxgig-sdk-bluefin-tecs-user-backoffice-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/tags) |
+| PHP | `voxgig-sdk/bluefin-tecs-user-backoffice-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/go` | `go get github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/go@latest` |
-| Ruby | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
-| Lua | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
-| C | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
-| Clojure | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
-| C++ | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
-| C# | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
-| Dart | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
-| Elixir | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
-| Haskell | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
-| Java | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
-| JavaScript | `@voxgig-sdk/bluefin-tecs-user-backoffice-js` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
-| Kotlin | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
-| Lean | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
-| OCaml | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
-| Perl | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
-| Rust | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
-| Scala | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
-| Swift | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
-| Zig | `voxgig-sdk-bluefin-tecs-user-backoffice` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/releases) |
+| Ruby | `voxgig-sdk-bluefin-tecs-user-backoffice-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/tags) |
+| Lua | `voxgig-sdk-bluefin-tecs-user-backoffice-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/tags) |
+| C | `voxgig-sdk-bluefin-tecs-user-backoffice-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/tags) |
+| Clojure | `voxgig-sdk-bluefin-tecs-user-backoffice-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/tags) |
+| C++ | `voxgig-sdk-bluefin-tecs-user-backoffice-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/tags) |
+| C# | `voxgig-sdk-bluefin-tecs-user-backoffice-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/tags) |
+| Dart | `voxgig-sdk-bluefin-tecs-user-backoffice-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/tags) |
+| Elixir | `voxgig-sdk-bluefin-tecs-user-backoffice-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/tags) |
+| Haskell | `voxgig-sdk-bluefin-tecs-user-backoffice-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/tags) |
+| Java | `voxgig-sdk-bluefin-tecs-user-backoffice-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/tags) |
+| JavaScript | `@voxgig-sdk/bluefin-tecs-user-backoffice-sdk-js` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/tags) |
+| Kotlin | `voxgig-sdk-bluefin-tecs-user-backoffice-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/tags) |
+| Lean | `voxgig-sdk-bluefin-tecs-user-backoffice-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/tags) |
+| OCaml | `voxgig-sdk-bluefin-tecs-user-backoffice-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/tags) |
+| Perl | `voxgig-sdk-bluefin-tecs-user-backoffice-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/tags) |
+| Rust | `voxgig-sdk-bluefin-tecs-user-backoffice-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/tags) |
+| Scala | `voxgig-sdk-bluefin-tecs-user-backoffice-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/tags) |
+| Swift | `voxgig-sdk-bluefin-tecs-user-backoffice-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/tags) |
+| Zig | `voxgig-sdk-bluefin-tecs-user-backoffice-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/go-cli` | `go install github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/go-cli/cmd/bluefin-tecs-user-backoffice@latest` |
 | Go MCP server | `github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/go-mcp` | `go get github.com/voxgig-sdk/bluefin-tecs-user-backoffice-sdk/go-mcp@latest` |
 
@@ -316,7 +316,7 @@ switch (client.output_get_logo(h.vnull()).load(h.vnull(), h.vnull())) {
 ### TypeScript
 
 ```ts
-import { BluefinTecsUserBackofficeSDK } from '@voxgig-sdk/bluefin-tecs-user-backoffice'
+import { BluefinTecsUserBackofficeSDK } from '@voxgig-sdk/bluefin-tecs-user-backoffice-sdk'
 
 const client = new BluefinTecsUserBackofficeSDK({
   apikey: process.env.BLUEFIN_TECS_USER_BACKOFFICE_APIKEY,
@@ -552,7 +552,7 @@ BluefinTecsUserBackofficeSDK client = new BluefinTecsUserBackofficeSDK(options);
 ### JavaScript
 
 ```js
-const { BluefinTecsUserBackofficeSDK } = require('@voxgig-sdk/bluefin-tecs-user-backoffice-js')
+const { BluefinTecsUserBackofficeSDK } = require('@voxgig-sdk/bluefin-tecs-user-backoffice-sdk-js')
 
 const client = new BluefinTecsUserBackofficeSDK({
   apikey: process.env.BLUEFIN_TECS_USER_BACKOFFICE_APIKEY,
@@ -917,18 +917,18 @@ forking the SDK.
 
 | Feature | Purpose |
 | --- | --- |
-| **AuditFeature** | Structured audit trail of operations |
-| **ClienttrackFeature** | Client identity and per-request correlation headers |
-| **DebugFeature** | Request/response capture ring buffer for debugging |
-| **IdempotencyFeature** | Idempotency keys for safe retries of mutating operations |
-| **LogFeature** | Structured request and response logging |
-| **MetricsFeature** | Statistics capture: per-operation counters and latency |
-| **PagingFeature** | Pagination signals for list operations |
-| **RatelimitFeature** | Client-side rate limiting via a token bucket |
-| **RetryFeature** | Automatic retry of transient failures with exponential backoff |
-| **TelemetryFeature** | Distributed tracing spans with W3C trace-context propagation |
-| **TestFeature** | In-memory mock transport for testing without a live server |
-| **TimeoutFeature** | Per-request timeout with transport abort |
+| **AuditFeature** | Audit trail |
+| **ClienttrackFeature** | Client tracking |
+| **DebugFeature** | Debug capture |
+| **IdempotencyFeature** | Idempotency |
+| **LogFeature** | Logging |
+| **MetricsFeature** | Metrics |
+| **PagingFeature** | Paging |
+| **RatelimitFeature** | Rate limiting |
+| **RetryFeature** | Retry |
+| **TelemetryFeature** | Telemetry |
+| **TestFeature** | Test transport |
+| **TimeoutFeature** | Timeout |
 
 Pass custom features via the `extend` option at construction time.
 

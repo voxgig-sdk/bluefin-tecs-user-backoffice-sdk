@@ -50,7 +50,7 @@ static OutputListOfMandatorSetup output_list_of_mandator_basic_setup(const Value
 
   OutputListOfMandatorSetup s;
   s.client = client;
-  s.data = entity_data;
+  s.d = entity_data;
   s.idmap = idmap_resolved;
   s.env = env;
   s.live = live;

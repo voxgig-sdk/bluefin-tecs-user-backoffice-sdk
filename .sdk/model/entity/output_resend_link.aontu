@@ -1,0 +1,92 @@
+# Entity: output_resend_link
+
+main: kit: entity: output_resend_link: {
+
+  alias: field: {}
+
+  fields: {
+    businessRegistrationNumber: {
+      h: "Business Registration Number"
+      n: "businessRegistrationNumber"
+      r: false
+      t: "`$STRING`"
+    }
+    consumerUUID: {
+      h: "Consumer Uuid"
+      n: "consumerUUID"
+      r: true
+      t: "`$STRING`"
+    }
+    emailConfirmationCode: {
+      h: "Email Confirmation Code"
+      n: "emailConfirmationCode"
+      r: false
+      t: "`$STRING`"
+    }
+    phoneNumber: {
+      h: "Phone Number"
+      n: "phoneNumber"
+      r: false
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  name: "output_resend_link"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /resendLink"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/resendLink"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "resendLink"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

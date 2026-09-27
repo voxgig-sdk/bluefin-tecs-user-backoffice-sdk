@@ -1,5 +1,5 @@
 {
-  "name": "@voxgig-sdk/bluefin-tecs-user-backoffice",
+  "name": "@voxgig-sdk/bluefin-tecs-user-backoffice-sdk",
   "version": "0.1.1",
   "description": "Unofficial generated TypeScript SDK for the User Back Office Web Service Documentation public API. Not affiliated with or endorsed by the upstream API provider.",
   "keywords": [
@@ -23,7 +23,8 @@
   "types": "dist/BluefinTecsUserBackofficeSDK.d.ts",
   "files": [
     "dist",
-    "src"
+    "src",
+    "README.md"
   ],
   "scripts": {
     "pretest": "npm run build",

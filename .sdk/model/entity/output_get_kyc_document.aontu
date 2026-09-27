@@ -1,0 +1,80 @@
+# Entity: output_get_kyc_document
+
+main: kit: entity: output_get_kyc_document: {
+
+  alias: field: {}
+
+  fields: {
+    caseID: {
+      h: "Case Id"
+      n: "caseID"
+      r: false
+      t: "`$STRING`"
+    }
+    encodedDataBase64: {
+      h: "Encoded Data Base64"
+      n: "encodedDataBase64"
+      r: false
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  name: "output_get_kyc_document"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /getKycDocument"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/getKycDocument"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "getKycDocument"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

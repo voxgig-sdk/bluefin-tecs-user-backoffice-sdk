@@ -10,9 +10,11 @@
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`"))
         "name" "output_activate_digital_module"
         "op" (vs/jm
@@ -34,6 +36,7 @@
                 "orig" "/activateDigitalModule"
                 "parts" (vs/jt
                   "activateDigitalModule")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "activateDigitalModule"))
@@ -50,17 +53,21 @@
           (vs/jm
             "name" "clientSecret"
             "req" true
+            "title" "Client Secret"
             "type" "`$STRING`")
           (vs/jm
             "name" "notificationEmail"
             "req" true
+            "title" "Notification Email"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`"))
         "name" "output_activate_portal_module"
         "op" (vs/jm
@@ -82,6 +89,7 @@
                 "orig" "/activateMerchantPortalModule"
                 "parts" (vs/jt
                   "activateMerchantPortalModule")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "activateMerchantPortalModule"))
@@ -98,9 +106,11 @@
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`"))
         "name" "output_activate_store_module"
         "op" (vs/jm
@@ -122,6 +132,7 @@
                 "orig" "/activateAppStoreModule"
                 "parts" (vs/jt
                   "activateAppStoreModule")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "activateAppStoreModule"))
@@ -137,13 +148,16 @@
         "fields" (vs/jt
           (vs/jm
             "name" "consumerUUID"
+            "title" "Consumer Uuid"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`"))
         "name" "output_activate_user"
         "op" (vs/jm
@@ -165,6 +179,7 @@
                 "orig" "/activateUser"
                 "parts" (vs/jt
                   "activateUser")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "activateUser"))
@@ -182,20 +197,24 @@
             "name" "consumerUUID"
             "req" true
             "short" "Unique identifier of the consumer (user) to whom the role(s) will be assigned."
+            "title" "Consumer Uuid"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
             "short" "Response code: 0 indicates success; any non-zero value indicates an error."
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
             "short" "A human-readable message providing additional details about the outcome."
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "roles"
             "req" true
             "short" "List of roles to assign to the consumer."
+            "title" "Roles"
             "type" "`$ARRAY`"))
         "name" "output_assign_role"
         "op" (vs/jm
@@ -217,6 +236,7 @@
                 "orig" "/assignRoles"
                 "parts" (vs/jt
                   "assignRoles")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "assignRoles"))
@@ -234,18 +254,22 @@
             "name" "contentAsBase64"
             "req" true
             "short" "The content of the image as base64 encoded string"
+            "title" "Content As Base64"
             "type" "`$STRING`")
           (vs/jm
             "name" "mimeType"
             "req" true
             "short" "The MIME type of the image"
+            "title" "Mime Type"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`"))
         "name" "output_change_logo"
         "op" (vs/jm
@@ -267,6 +291,7 @@
                 "orig" "/changeLogo"
                 "parts" (vs/jt
                   "changeLogo")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "changeLogo"))
@@ -282,12 +307,15 @@
         "fields" (vs/jt
           (vs/jm
             "name" "city"
+            "title" "City"
             "type" "`$STRING`")
           (vs/jm
             "name" "country"
+            "title" "Country"
             "type" "`$STRING`")
           (vs/jm
             "name" "dateOfBirth"
+            "title" "Date Of Birth"
             "type" "`$STRING`")
           (vs/jm
             "name" "description"
@@ -295,26 +323,33 @@
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
+            "title" "Description"
             "type" "`$STRING`")
           (vs/jm
             "name" "driversLicenseNumber"
+            "title" "Drivers License Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "email"
             "req" true
+            "title" "Email"
             "type" "`$STRING`")
           (vs/jm
             "name" "firstName"
+            "title" "First Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "identificationNumber"
+            "title" "Identification Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "lastName"
+            "title" "Last Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "login"
             "req" true
+            "title" "Login"
             "type" "`$STRING`")
           (vs/jm
             "name" "name"
@@ -322,28 +357,36 @@
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
+            "title" "Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "passportNumber"
+            "title" "Passport Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "phone"
             "req" true
+            "title" "Phone"
             "type" "`$STRING`")
           (vs/jm
             "name" "salutation"
+            "title" "Salutation"
             "type" "`$STRING`")
           (vs/jm
             "name" "state"
+            "title" "State"
             "type" "`$STRING`")
           (vs/jm
             "name" "street1"
+            "title" "Street1"
             "type" "`$STRING`")
           (vs/jm
             "name" "street2"
+            "title" "Street2"
             "type" "`$STRING`")
           (vs/jm
             "name" "zipCode"
+            "title" "Zip Code"
             "type" "`$STRING`"))
         "name" "output_create_mandator"
         "op" (vs/jm
@@ -365,6 +408,7 @@
                 "orig" "/createMandator"
                 "parts" (vs/jt
                   "createMandator")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "createMandator"))
@@ -381,13 +425,16 @@
           (vs/jm
             "name" "mandatorName"
             "req" true
+            "title" "Mandator Name"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`"))
         "name" "output_create_service_user"
         "op" (vs/jm
@@ -409,6 +456,7 @@
                 "orig" "/createServiceUser"
                 "parts" (vs/jt
                   "createServiceUser")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "createServiceUser"))
@@ -424,13 +472,16 @@
         "fields" (vs/jt
           (vs/jm
             "name" "consumerUUID"
+            "title" "Consumer Uuid"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`"))
         "name" "output_deactivate_user"
         "op" (vs/jm
@@ -452,6 +503,7 @@
                 "orig" "/deactivateUser"
                 "parts" (vs/jt
                   "deactivateUser")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "deactivateUser"))
@@ -467,16 +519,20 @@
         "fields" (vs/jt
           (vs/jm
             "name" "caseID"
+            "title" "Case Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "encodedDataBase64"
+            "title" "Encoded Data Base64"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`"))
         "name" "output_get_kyc_document"
         "op" (vs/jm
@@ -498,6 +554,7 @@
                 "orig" "/getKycDocument"
                 "parts" (vs/jt
                   "getKycDocument")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "getKycDocument"))
@@ -515,18 +572,22 @@
             "name" "contentAsBase64"
             "req" true
             "short" "The content of the image as base64 encoded string"
+            "title" "Content As Base64"
             "type" "`$STRING`")
           (vs/jm
             "name" "mimeType"
             "req" true
             "short" "The MIME type of the image"
+            "title" "Mime Type"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`"))
         "name" "output_get_logo"
         "op" (vs/jm
@@ -548,6 +609,7 @@
                 "orig" "/getLogo"
                 "parts" (vs/jt
                   "getLogo")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "getLogo"))
@@ -563,13 +625,16 @@
         "fields" (vs/jt
           (vs/jm
             "name" "availableRoles"
+            "title" "Available Roles"
             "type" "`$ARRAY`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`"))
         "name" "output_list_of_available_role"
         "op" (vs/jm
@@ -591,6 +656,7 @@
                 "orig" "/listOfAvailableRoles"
                 "parts" (vs/jt
                   "listOfAvailableRoles")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "listOfAvailableRoles"))
@@ -606,22 +672,28 @@
         "fields" (vs/jt
           (vs/jm
             "name" "filter"
+            "title" "Filter"
             "type" "`$OBJECT`")
           (vs/jm
             "name" "list"
+            "title" "List"
             "type" "`$ARRAY`")
           (vs/jm
             "name" "pagination"
+            "title" "Pagination"
             "type" "`$OBJECT`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "sorting"
+            "title" "Sorting"
             "type" "`$OBJECT`"))
         "name" "output_list_of_mandator"
         "op" (vs/jm
@@ -643,6 +715,7 @@
                 "orig" "/listOfMandators"
                 "parts" (vs/jt
                   "listOfMandators")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "listOfMandators"))
@@ -658,16 +731,20 @@
         "fields" (vs/jt
           (vs/jm
             "name" "list"
+            "title" "List"
             "type" "`$ARRAY`")
           (vs/jm
             "name" "pagination"
+            "title" "Pagination"
             "type" "`$OBJECT`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`"))
         "name" "output_list_of_module"
         "op" (vs/jm
@@ -689,6 +766,7 @@
                 "orig" "/listOfModules"
                 "parts" (vs/jt
                   "listOfModules")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "listOfModules"))
@@ -704,22 +782,28 @@
         "fields" (vs/jt
           (vs/jm
             "name" "filter"
+            "title" "Filter"
             "type" "`$OBJECT`")
           (vs/jm
             "name" "groupRoles"
+            "title" "Group Roles"
             "type" "`$ARRAY`")
           (vs/jm
             "name" "pagination"
+            "title" "Pagination"
             "type" "`$OBJECT`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "sorting"
+            "title" "Sorting"
             "type" "`$OBJECT`"))
         "name" "output_list_of_role_group"
         "op" (vs/jm
@@ -741,6 +825,7 @@
                 "orig" "/listOfRoleGroups"
                 "parts" (vs/jt
                   "listOfRoleGroups")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "listOfRoleGroups"))
@@ -756,22 +841,28 @@
         "fields" (vs/jt
           (vs/jm
             "name" "filter"
+            "title" "Filter"
             "type" "`$OBJECT`")
           (vs/jm
             "name" "list"
+            "title" "List"
             "type" "`$ARRAY`")
           (vs/jm
             "name" "pagination"
+            "title" "Pagination"
             "type" "`$OBJECT`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "sorting"
+            "title" "Sorting"
             "type" "`$OBJECT`"))
         "name" "output_list_of_transactions_history"
         "op" (vs/jm
@@ -793,6 +884,7 @@
                 "orig" "/listOfTransactionsHistory"
                 "parts" (vs/jt
                   "listOfTransactionsHistory")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "listOfTransactionsHistory"))
@@ -808,22 +900,28 @@
         "fields" (vs/jt
           (vs/jm
             "name" "filter"
+            "title" "Filter"
             "type" "`$OBJECT`")
           (vs/jm
             "name" "list"
+            "title" "List"
             "type" "`$ARRAY`")
           (vs/jm
             "name" "pagination"
+            "title" "Pagination"
             "type" "`$OBJECT`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "sorting"
+            "title" "Sorting"
             "type" "`$OBJECT`"))
         "name" "output_list_of_user"
         "op" (vs/jm
@@ -845,6 +943,7 @@
                 "orig" "/listOfUsers"
                 "parts" (vs/jt
                   "listOfUsers")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "listOfUsers"))
@@ -861,19 +960,24 @@
           (vs/jm
             "name" "mandatorName"
             "req" true
+            "title" "Mandator Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "password"
+            "title" "Password"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "username"
+            "title" "Username"
             "type" "`$STRING`"))
         "name" "output_provide_credential"
         "op" (vs/jm
@@ -895,6 +999,7 @@
                 "orig" "/provideCredentials"
                 "parts" (vs/jt
                   "provideCredentials")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "provideCredentials"))
@@ -911,89 +1016,110 @@
           (vs/jm
             "name" "city"
             "short" "City where the user resides."
+            "title" "City"
             "type" "`$STRING`")
           (vs/jm
             "name" "consumerId"
             "short" "User login or unique user identifier."
+            "title" "Consumer Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "consumerLanguage"
             "short" "Preferred language for the user (e.g., 'en')."
+            "title" "Consumer Language"
             "type" "`$STRING`")
           (vs/jm
             "name" "country"
             "short" "User's country."
+            "title" "Country"
             "type" "`$STRING`")
           (vs/jm
             "name" "dateOfBirth"
             "short" "User's date of birth (expected format: dd.MM.yyyy)."
+            "title" "Date Of Birth"
             "type" "`$STRING`")
           (vs/jm
             "name" "driverLicenceNumber"
             "short" "User's driver's license number."
+            "title" "Driver Licence Number"
             "type" "`$STRING`")
           (vs/jm
             "format" "email"
             "name" "email"
             "req" true
             "short" "User's email address (must be unique)."
+            "title" "Email"
             "type" "`$STRING`")
           (vs/jm
             "name" "firstName"
             "short" "User's first name."
+            "title" "First Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "identificationNumber"
             "short" "User's identification number."
+            "title" "Identification Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "lastName"
             "short" "User's last name."
+            "title" "Last Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "login"
             "short" "User login identifier (should be unique)."
+            "title" "Login"
             "type" "`$STRING`")
           (vs/jm
             "name" "module"
             "short" "Module identifier (if applicable)."
+            "title" "Module"
             "type" "`$STRING`")
           (vs/jm
             "name" "passportNumber"
             "short" "User's passport number."
+            "title" "Passport Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "phone"
             "short" "User's phone number."
+            "title" "Phone"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
             "short" "Response code (0 indicates success; non-zero indicates an error)."
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
             "short" "Human-readable response message."
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "salutation"
             "short" "User's salutation (e.g., Mr., Ms.)."
+            "title" "Salutation"
             "type" "`$STRING`")
           (vs/jm
             "name" "state"
             "short" "User's state or region."
+            "title" "State"
             "type" "`$STRING`")
           (vs/jm
             "name" "street1"
             "short" "Primary address line."
+            "title" "Street1"
             "type" "`$STRING`")
           (vs/jm
             "name" "street2"
             "short" "Secondary address line."
+            "title" "Street2"
             "type" "`$STRING`")
           (vs/jm
             "name" "zip"
             "short" "Postal code."
+            "title" "Zip"
             "type" "`$STRING`"))
         "name" "output_register_user"
         "op" (vs/jm
@@ -1015,6 +1141,7 @@
                 "orig" "/registerUser"
                 "parts" (vs/jt
                   "registerUser")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "registerUser"))
@@ -1030,16 +1157,20 @@
         "fields" (vs/jt
           (vs/jm
             "name" "consumerUUID"
+            "title" "Consumer Uuid"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "roles"
+            "title" "Roles"
             "type" "`$ARRAY`"))
         "name" "output_remove_role"
         "op" (vs/jm
@@ -1061,6 +1192,7 @@
                 "orig" "/removeRoles"
                 "parts" (vs/jt
                   "removeRoles")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "removeRoles"))
@@ -1076,23 +1208,29 @@
         "fields" (vs/jt
           (vs/jm
             "name" "businessRegistrationNumber"
+            "title" "Business Registration Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "consumerUUID"
             "req" true
+            "title" "Consumer Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "emailConfirmationCode"
+            "title" "Email Confirmation Code"
             "type" "`$STRING`")
           (vs/jm
             "name" "phoneNumber"
+            "title" "Phone Number"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`"))
         "name" "output_resend_link"
         "op" (vs/jm
@@ -1113,6 +1251,7 @@
                 "orig" "/resendLink"
                 "parts" (vs/jt
                   "resendLink")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "resendLink"))
@@ -1128,16 +1267,20 @@
         "fields" (vs/jt
           (vs/jm
             "name" "consumerUuid"
+            "title" "Consumer Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "phoneNumber"
+            "title" "Phone Number"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`"))
         "name" "output_reset_password"
         "op" (vs/jm
@@ -1159,6 +1302,7 @@
                 "orig" "/resetPassword"
                 "parts" (vs/jt
                   "resetPassword")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "resetPassword"))
@@ -1174,74 +1318,97 @@
         "fields" (vs/jt
           (vs/jm
             "name" "city"
+            "title" "City"
             "type" "`$STRING`")
           (vs/jm
             "name" "consumerUuid"
             "req" true
+            "title" "Consumer Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "consumerlanguage"
+            "title" "Consumerlanguage"
             "type" "`$STRING`")
           (vs/jm
             "name" "country"
+            "title" "Country"
             "type" "`$STRING`")
           (vs/jm
             "name" "dateOfBirth"
+            "title" "Date Of Birth"
             "type" "`$STRING`")
           (vs/jm
             "name" "datetime_created"
+            "title" "Datetime Created"
             "type" "`$STRING`")
           (vs/jm
             "name" "driverLicenceNumber"
+            "title" "Driver Licence Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "email"
+            "title" "Email"
             "type" "`$STRING`")
           (vs/jm
             "name" "firstName"
+            "title" "First Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "identificationNumber"
+            "title" "Identification Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "kycPassed"
+            "title" "Kyc Passed"
             "type" "`$BOOLEAN`")
           (vs/jm
             "name" "lastName"
+            "title" "Last Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "nationality"
+            "title" "Nationality"
             "type" "`$STRING`")
           (vs/jm
             "name" "passportNumber"
+            "title" "Passport Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "phoneNumber"
+            "title" "Phone Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "placeOfBirth"
+            "title" "Place Of Birth"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "state"
+            "title" "State"
             "type" "`$STRING`")
           (vs/jm
             "name" "street1"
+            "title" "Street1"
             "type" "`$STRING`")
           (vs/jm
             "name" "street2"
+            "title" "Street2"
             "type" "`$STRING`")
           (vs/jm
             "name" "transactionhistory_id"
+            "title" "Transactionhistory Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "zip"
+            "title" "Zip"
             "type" "`$STRING`"))
         "name" "output_update_consumer"
         "op" (vs/jm
@@ -1262,6 +1429,7 @@
                 "orig" "/updateConsumer"
                 "parts" (vs/jt
                   "updateConsumer")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "updateConsumer"))
@@ -1277,25 +1445,32 @@
         "fields" (vs/jt
           (vs/jm
             "name" "consumerLanguage"
+            "title" "Consumer Language"
             "type" "`$STRING`")
           (vs/jm
             "name" "email"
+            "title" "Email"
             "type" "`$STRING`")
           (vs/jm
             "name" "firstName"
+            "title" "First Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "lastName"
+            "title" "Last Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "phoneNumber"
+            "title" "Phone Number"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`"))
         "name" "output_update_profile"
         "op" (vs/jm
@@ -1316,6 +1491,7 @@
                 "orig" "/updateProfile"
                 "parts" (vs/jt
                   "updateProfile")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "updateProfile"))
@@ -1331,12 +1507,15 @@
         "fields" (vs/jt
           (vs/jm
             "name" "appName"
+            "title" "App Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "buildDate"
+            "title" "Build Date"
             "type" "`$STRING`")
           (vs/jm
             "name" "version"
+            "title" "Version"
             "type" "`$STRING`"))
         "name" "version"
         "op" (vs/jm
@@ -1351,6 +1530,7 @@
                 "orig" "/version"
                 "parts" (vs/jt
                   "version")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "version"))

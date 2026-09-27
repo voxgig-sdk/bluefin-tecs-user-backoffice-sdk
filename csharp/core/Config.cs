@@ -289,13 +289,15 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -310,20 +312,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/activateDigitalModule",
@@ -334,21 +322,36 @@ public static class SdkConfig
                                             ["lit"] = "activateDigitalModule",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "activateDigitalModule",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "activateDigitalModule",
                                     },
                                 },
                             },
@@ -366,24 +369,28 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "clientSecret",
-                            ["req"] = true,
+                            ["title"] = "Client Secret",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "notificationEmail",
-                            ["req"] = true,
+                            ["title"] = "Notification Email",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -398,20 +405,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/activateMerchantPortalModule",
@@ -422,21 +415,36 @@ public static class SdkConfig
                                             ["lit"] = "activateMerchantPortalModule",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "activateMerchantPortalModule",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "activateMerchantPortalModule",
                                     },
                                 },
                             },
@@ -453,13 +461,15 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -474,20 +484,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/activateAppStoreModule",
@@ -498,21 +494,36 @@ public static class SdkConfig
                                             ["lit"] = "activateAppStoreModule",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "activateAppStoreModule",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "activateAppStoreModule",
                                     },
                                 },
                             },
@@ -530,17 +541,20 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "consumerUUID",
+                            ["title"] = "Consumer Uuid",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -555,20 +569,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/activateUser",
@@ -579,21 +579,36 @@ public static class SdkConfig
                                             ["lit"] = "activateUser",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "activateUser",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "activateUser",
                                     },
                                 },
                             },
@@ -611,29 +626,33 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "consumerUUID",
+                            ["title"] = "Consumer Uuid",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Unique identifier of the consumer (user) to whom the role(s) will be assigned.",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
-                            ["short"] = "Response code: 0 indicates success; any non-zero value indicates an error.",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["short"] = "Response code: 0 indicates success; any non-zero value indicates an error.",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
-                            ["short"] = "A human-readable message providing additional details about the outcome.",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
+                            ["short"] = "A human-readable message providing additional details about the outcome.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "roles",
+                            ["title"] = "Roles",
+                            ["type"] = "`$ARRAY`",
                             ["req"] = true,
                             ["short"] = "List of roles to assign to the consumer.",
-                            ["type"] = "`$ARRAY`",
                         },
                     },
                     ["name"] = "output_assign_role",
@@ -647,20 +666,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/assignRoles",
@@ -671,21 +676,36 @@ public static class SdkConfig
                                             ["lit"] = "assignRoles",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "assignRoles",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "assignRoles",
                                     },
                                 },
                             },
@@ -703,26 +723,30 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "contentAsBase64",
+                            ["title"] = "Content As Base64",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "The content of the image as base64 encoded string",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "mimeType",
+                            ["title"] = "Mime Type",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "The MIME type of the image",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -737,20 +761,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/changeLogo",
@@ -761,21 +771,36 @@ public static class SdkConfig
                                             ["lit"] = "changeLogo",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "changeLogo",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "changeLogo",
                                     },
                                 },
                             },
@@ -793,21 +818,26 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "city",
+                            ["title"] = "City",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "country",
+                            ["title"] = "Country",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "dateOfBirth",
+                            ["title"] = "Date Of Birth",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "description",
+                            ["title"] = "Description",
+                            ["type"] = "`$STRING`",
                             ["op"] = new Dictionary<string, object?>
                             {
                                 ["create"] = new Dictionary<string, object?>
@@ -816,43 +846,50 @@ public static class SdkConfig
                                     ["type"] = "`$STRING`",
                                 },
                             },
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "driversLicenseNumber",
+                            ["title"] = "Drivers License Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "email",
-                            ["req"] = true,
+                            ["title"] = "Email",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "firstName",
+                            ["title"] = "First Name",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "identificationNumber",
+                            ["title"] = "Identification Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "lastName",
+                            ["title"] = "Last Name",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "login",
-                            ["req"] = true,
+                            ["title"] = "Login",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "name",
+                            ["title"] = "Name",
+                            ["type"] = "`$STRING`",
                             ["op"] = new Dictionary<string, object?>
                             {
                                 ["create"] = new Dictionary<string, object?>
@@ -861,42 +898,48 @@ public static class SdkConfig
                                     ["type"] = "`$STRING`",
                                 },
                             },
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "passportNumber",
+                            ["title"] = "Passport Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "phone",
-                            ["req"] = true,
+                            ["title"] = "Phone",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "salutation",
+                            ["title"] = "Salutation",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "state",
+                            ["title"] = "State",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "street1",
+                            ["title"] = "Street1",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "street2",
+                            ["title"] = "Street2",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "zipCode",
+                            ["title"] = "Zip Code",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -911,20 +954,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/createMandator",
@@ -935,21 +964,36 @@ public static class SdkConfig
                                             ["lit"] = "createMandator",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "createMandator",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body.mandator`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body.mandator`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "createMandator",
                                     },
                                 },
                             },
@@ -967,18 +1011,21 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "mandatorName",
-                            ["req"] = true,
+                            ["title"] = "Mandator Name",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -993,20 +1040,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/createServiceUser",
@@ -1017,21 +1050,36 @@ public static class SdkConfig
                                             ["lit"] = "createServiceUser",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "createServiceUser",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "createServiceUser",
                                     },
                                 },
                             },
@@ -1049,17 +1097,20 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "consumerUUID",
+                            ["title"] = "Consumer Uuid",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -1074,20 +1125,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/deactivateUser",
@@ -1098,21 +1135,36 @@ public static class SdkConfig
                                             ["lit"] = "deactivateUser",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "deactivateUser",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "deactivateUser",
                                     },
                                 },
                             },
@@ -1130,22 +1182,26 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "caseID",
+                            ["title"] = "Case Id",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "encodedDataBase64",
+                            ["title"] = "Encoded Data Base64",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -1160,20 +1216,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/getKycDocument",
@@ -1184,21 +1226,36 @@ public static class SdkConfig
                                             ["lit"] = "getKycDocument",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "getKycDocument",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "getKycDocument",
                                     },
                                 },
                             },
@@ -1216,26 +1273,30 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "contentAsBase64",
+                            ["title"] = "Content As Base64",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "The content of the image as base64 encoded string",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "mimeType",
+                            ["title"] = "Mime Type",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "The MIME type of the image",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -1250,20 +1311,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "GET",
                                     ["orig"] = "/getLogo",
@@ -1274,21 +1321,36 @@ public static class SdkConfig
                                             ["lit"] = "getLogo",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "getLogo",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "getLogo",
                                     },
                                 },
                             },
@@ -1306,17 +1368,20 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "availableRoles",
+                            ["title"] = "Available Roles",
                             ["type"] = "`$ARRAY`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -1331,20 +1396,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/listOfAvailableRoles",
@@ -1355,21 +1406,36 @@ public static class SdkConfig
                                             ["lit"] = "listOfAvailableRoles",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "listOfAvailableRoles",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "listOfAvailableRoles",
                                     },
                                 },
                             },
@@ -1387,32 +1453,38 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "filter",
+                            ["title"] = "Filter",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "list",
+                            ["title"] = "List",
                             ["type"] = "`$ARRAY`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "pagination",
+                            ["title"] = "Pagination",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "sorting",
+                            ["title"] = "Sorting",
                             ["type"] = "`$OBJECT`",
                         },
                     },
@@ -1427,20 +1499,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/listOfMandators",
@@ -1451,21 +1509,36 @@ public static class SdkConfig
                                             ["lit"] = "listOfMandators",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "listOfMandators",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "listOfMandators",
                                     },
                                 },
                             },
@@ -1483,22 +1556,26 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "list",
+                            ["title"] = "List",
                             ["type"] = "`$ARRAY`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "pagination",
+                            ["title"] = "Pagination",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -1513,20 +1590,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/listOfModules",
@@ -1537,21 +1600,36 @@ public static class SdkConfig
                                             ["lit"] = "listOfModules",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "listOfModules",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "listOfModules",
                                     },
                                 },
                             },
@@ -1569,32 +1647,38 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "filter",
+                            ["title"] = "Filter",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "groupRoles",
+                            ["title"] = "Group Roles",
                             ["type"] = "`$ARRAY`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "pagination",
+                            ["title"] = "Pagination",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "sorting",
+                            ["title"] = "Sorting",
                             ["type"] = "`$OBJECT`",
                         },
                     },
@@ -1609,20 +1693,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/listOfRoleGroups",
@@ -1633,21 +1703,36 @@ public static class SdkConfig
                                             ["lit"] = "listOfRoleGroups",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "listOfRoleGroups",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "listOfRoleGroups",
                                     },
                                 },
                             },
@@ -1665,32 +1750,38 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "filter",
+                            ["title"] = "Filter",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "list",
+                            ["title"] = "List",
                             ["type"] = "`$ARRAY`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "pagination",
+                            ["title"] = "Pagination",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "sorting",
+                            ["title"] = "Sorting",
                             ["type"] = "`$OBJECT`",
                         },
                     },
@@ -1705,20 +1796,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/listOfTransactionsHistory",
@@ -1729,21 +1806,36 @@ public static class SdkConfig
                                             ["lit"] = "listOfTransactionsHistory",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "listOfTransactionsHistory",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "listOfTransactionsHistory",
                                     },
                                 },
                             },
@@ -1761,32 +1853,38 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "filter",
+                            ["title"] = "Filter",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "list",
+                            ["title"] = "List",
                             ["type"] = "`$ARRAY`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "pagination",
+                            ["title"] = "Pagination",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "sorting",
+                            ["title"] = "Sorting",
                             ["type"] = "`$OBJECT`",
                         },
                     },
@@ -1801,20 +1899,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/listOfUsers",
@@ -1825,21 +1909,36 @@ public static class SdkConfig
                                             ["lit"] = "listOfUsers",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "listOfUsers",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "listOfUsers",
                                     },
                                 },
                             },
@@ -1857,28 +1956,33 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "mandatorName",
-                            ["req"] = true,
+                            ["title"] = "Mandator Name",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "password",
+                            ["title"] = "Password",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "username",
+                            ["title"] = "Username",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -1893,20 +1997,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/provideCredentials",
@@ -1917,21 +2007,36 @@ public static class SdkConfig
                                             ["lit"] = "provideCredentials",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "provideCredentials",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "provideCredentials",
                                     },
                                 },
                             },
@@ -1949,131 +2054,152 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "city",
-                            ["short"] = "City where the user resides.",
+                            ["title"] = "City",
                             ["type"] = "`$STRING`",
+                            ["short"] = "City where the user resides.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "consumerId",
-                            ["short"] = "User login or unique user identifier.",
+                            ["title"] = "Consumer Id",
                             ["type"] = "`$STRING`",
+                            ["short"] = "User login or unique user identifier.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "consumerLanguage",
-                            ["short"] = "Preferred language for the user (e.g., 'en').",
+                            ["title"] = "Consumer Language",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Preferred language for the user (e.g., 'en').",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "country",
-                            ["short"] = "User's country.",
+                            ["title"] = "Country",
                             ["type"] = "`$STRING`",
+                            ["short"] = "User's country.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "dateOfBirth",
-                            ["short"] = "User's date of birth (expected format: dd.MM.yyyy).",
+                            ["title"] = "Date Of Birth",
                             ["type"] = "`$STRING`",
+                            ["short"] = "User's date of birth (expected format: dd.MM.yyyy).",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "driverLicenceNumber",
-                            ["short"] = "User's driver's license number.",
+                            ["title"] = "Driver Licence Number",
                             ["type"] = "`$STRING`",
+                            ["short"] = "User's driver's license number.",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "email",
                             ["name"] = "email",
+                            ["title"] = "Email",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "User's email address (must be unique).",
-                            ["type"] = "`$STRING`",
+                            ["format"] = "email",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "firstName",
-                            ["short"] = "User's first name.",
+                            ["title"] = "First Name",
                             ["type"] = "`$STRING`",
+                            ["short"] = "User's first name.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "identificationNumber",
-                            ["short"] = "User's identification number.",
+                            ["title"] = "Identification Number",
                             ["type"] = "`$STRING`",
+                            ["short"] = "User's identification number.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "lastName",
-                            ["short"] = "User's last name.",
+                            ["title"] = "Last Name",
                             ["type"] = "`$STRING`",
+                            ["short"] = "User's last name.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "login",
-                            ["short"] = "User login identifier (should be unique).",
+                            ["title"] = "Login",
                             ["type"] = "`$STRING`",
+                            ["short"] = "User login identifier (should be unique).",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "module",
-                            ["short"] = "Module identifier (if applicable).",
+                            ["title"] = "Module",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Module identifier (if applicable).",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "passportNumber",
-                            ["short"] = "User's passport number.",
+                            ["title"] = "Passport Number",
                             ["type"] = "`$STRING`",
+                            ["short"] = "User's passport number.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "phone",
-                            ["short"] = "User's phone number.",
+                            ["title"] = "Phone",
                             ["type"] = "`$STRING`",
+                            ["short"] = "User's phone number.",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
-                            ["short"] = "Response code (0 indicates success; non-zero indicates an error).",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["short"] = "Response code (0 indicates success; non-zero indicates an error).",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
-                            ["short"] = "Human-readable response message.",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Human-readable response message.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "salutation",
-                            ["short"] = "User's salutation (e.g., Mr., Ms.).",
+                            ["title"] = "Salutation",
                             ["type"] = "`$STRING`",
+                            ["short"] = "User's salutation (e.g., Mr., Ms.).",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "state",
-                            ["short"] = "User's state or region.",
+                            ["title"] = "State",
                             ["type"] = "`$STRING`",
+                            ["short"] = "User's state or region.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "street1",
-                            ["short"] = "Primary address line.",
+                            ["title"] = "Street1",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Primary address line.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "street2",
-                            ["short"] = "Secondary address line.",
+                            ["title"] = "Street2",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Secondary address line.",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "zip",
-                            ["short"] = "Postal code.",
+                            ["title"] = "Zip",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Postal code.",
                         },
                     },
                     ["name"] = "output_register_user",
@@ -2087,20 +2213,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/registerUser",
@@ -2111,21 +2223,36 @@ public static class SdkConfig
                                             ["lit"] = "registerUser",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "registerUser",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "registerUser",
                                     },
                                 },
                             },
@@ -2143,22 +2270,26 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "consumerUUID",
+                            ["title"] = "Consumer Uuid",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "roles",
+                            ["title"] = "Roles",
                             ["type"] = "`$ARRAY`",
                         },
                     },
@@ -2173,20 +2304,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/removeRoles",
@@ -2197,21 +2314,36 @@ public static class SdkConfig
                                             ["lit"] = "removeRoles",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "removeRoles",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "removeRoles",
                                     },
                                 },
                             },
@@ -2229,33 +2361,39 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "businessRegistrationNumber",
+                            ["title"] = "Business Registration Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "consumerUUID",
-                            ["req"] = true,
+                            ["title"] = "Consumer Uuid",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "emailConfirmationCode",
+                            ["title"] = "Email Confirmation Code",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "phoneNumber",
+                            ["title"] = "Phone Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -2270,19 +2408,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/resendLink",
@@ -2293,21 +2418,35 @@ public static class SdkConfig
                                             ["lit"] = "resendLink",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "resendLink",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "resendLink",
                                     },
                                 },
                             },
@@ -2325,22 +2464,26 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "consumerUuid",
+                            ["title"] = "Consumer Uuid",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "phoneNumber",
+                            ["title"] = "Phone Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -2355,20 +2498,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/resetPassword",
@@ -2379,21 +2508,36 @@ public static class SdkConfig
                                             ["lit"] = "resetPassword",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "resetPassword",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "resetPassword",
                                     },
                                 },
                             },
@@ -2411,118 +2555,141 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "city",
+                            ["title"] = "City",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "consumerUuid",
-                            ["req"] = true,
+                            ["title"] = "Consumer Uuid",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "consumerlanguage",
+                            ["title"] = "Consumerlanguage",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "country",
+                            ["title"] = "Country",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "dateOfBirth",
+                            ["title"] = "Date Of Birth",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "datetime_created",
+                            ["title"] = "Datetime Created",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "driverLicenceNumber",
+                            ["title"] = "Driver Licence Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "email",
+                            ["title"] = "Email",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "firstName",
+                            ["title"] = "First Name",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "identificationNumber",
+                            ["title"] = "Identification Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "kycPassed",
+                            ["title"] = "Kyc Passed",
                             ["type"] = "`$BOOLEAN`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "lastName",
+                            ["title"] = "Last Name",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "nationality",
+                            ["title"] = "Nationality",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "passportNumber",
+                            ["title"] = "Passport Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "phoneNumber",
+                            ["title"] = "Phone Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "placeOfBirth",
+                            ["title"] = "Place Of Birth",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "state",
+                            ["title"] = "State",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "street1",
+                            ["title"] = "Street1",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "street2",
+                            ["title"] = "Street2",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "transactionhistory_id",
+                            ["title"] = "Transactionhistory Id",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "zip",
+                            ["title"] = "Zip",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -2537,19 +2704,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/updateConsumer",
@@ -2560,21 +2714,35 @@ public static class SdkConfig
                                             ["lit"] = "updateConsumer",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "updateConsumer",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "updateConsumer",
                                     },
                                 },
                             },
@@ -2592,37 +2760,44 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "consumerLanguage",
+                            ["title"] = "Consumer Language",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "email",
+                            ["title"] = "Email",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "firstName",
+                            ["title"] = "First Name",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "lastName",
+                            ["title"] = "Last Name",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "phoneNumber",
+                            ["title"] = "Phone Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -2637,19 +2812,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/updateProfile",
@@ -2660,21 +2822,35 @@ public static class SdkConfig
                                             ["lit"] = "updateProfile",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "updateProfile",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
                                         {
                                             "authorization",
                                         },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "updateProfile",
                                     },
                                 },
                             },
@@ -2692,16 +2868,19 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "appName",
+                            ["title"] = "App Name",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "buildDate",
+                            ["title"] = "Build Date",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "version",
+                            ["title"] = "Version",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -2716,7 +2895,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "GET",
                                     ["orig"] = "/version",
@@ -2727,16 +2905,18 @@ public static class SdkConfig
                                             ["lit"] = "version",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "version",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "version",
-                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },

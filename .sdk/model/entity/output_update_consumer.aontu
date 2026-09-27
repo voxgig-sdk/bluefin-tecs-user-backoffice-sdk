@@ -1,0 +1,194 @@
+# Entity: output_update_consumer
+
+main: kit: entity: output_update_consumer: {
+
+  alias: field: {}
+
+  fields: {
+    city: {
+      h: "City"
+      n: "city"
+      r: false
+      t: "`$STRING`"
+    }
+    consumerUuid: {
+      h: "Consumer Uuid"
+      n: "consumerUuid"
+      r: true
+      t: "`$STRING`"
+    }
+    consumerlanguage: {
+      h: "Consumerlanguage"
+      n: "consumerlanguage"
+      r: false
+      t: "`$STRING`"
+    }
+    country: {
+      h: "Country"
+      n: "country"
+      r: false
+      t: "`$STRING`"
+    }
+    dateOfBirth: {
+      h: "Date Of Birth"
+      n: "dateOfBirth"
+      r: false
+      t: "`$STRING`"
+    }
+    datetime_created: {
+      h: "Datetime Created"
+      n: "datetime_created"
+      r: false
+      t: "`$STRING`"
+    }
+    driverLicenceNumber: {
+      h: "Driver Licence Number"
+      n: "driverLicenceNumber"
+      r: false
+      t: "`$STRING`"
+    }
+    email: {
+      h: "Email"
+      n: "email"
+      r: false
+      t: "`$STRING`"
+    }
+    firstName: {
+      h: "First Name"
+      n: "firstName"
+      r: false
+      t: "`$STRING`"
+    }
+    identificationNumber: {
+      h: "Identification Number"
+      n: "identificationNumber"
+      r: false
+      t: "`$STRING`"
+    }
+    kycPassed: {
+      h: "Kyc Passed"
+      n: "kycPassed"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    lastName: {
+      h: "Last Name"
+      n: "lastName"
+      r: false
+      t: "`$STRING`"
+    }
+    nationality: {
+      h: "Nationality"
+      n: "nationality"
+      r: false
+      t: "`$STRING`"
+    }
+    passportNumber: {
+      h: "Passport Number"
+      n: "passportNumber"
+      r: false
+      t: "`$STRING`"
+    }
+    phoneNumber: {
+      h: "Phone Number"
+      n: "phoneNumber"
+      r: false
+      t: "`$STRING`"
+    }
+    placeOfBirth: {
+      h: "Place Of Birth"
+      n: "placeOfBirth"
+      r: false
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    state: {
+      h: "State"
+      n: "state"
+      r: false
+      t: "`$STRING`"
+    }
+    street1: {
+      h: "Street1"
+      n: "street1"
+      r: false
+      t: "`$STRING`"
+    }
+    street2: {
+      h: "Street2"
+      n: "street2"
+      r: false
+      t: "`$STRING`"
+    }
+    transactionhistory_id: {
+      h: "Transactionhistory Id"
+      n: "transactionhistory_id"
+      r: false
+      t: "`$STRING`"
+    }
+    zip: {
+      h: "Zip"
+      n: "zip"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  name: "output_update_consumer"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /updateConsumer"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/updateConsumer"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "updateConsumer"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

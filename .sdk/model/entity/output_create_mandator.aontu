@@ -1,0 +1,175 @@
+# Entity: output_create_mandator
+
+main: kit: entity: output_create_mandator: {
+
+  alias: field: {}
+
+  fields: {
+    city: {
+      h: "City"
+      n: "city"
+      r: false
+      t: "`$STRING`"
+    }
+    country: {
+      h: "Country"
+      n: "country"
+      r: false
+      t: "`$STRING`"
+    }
+    dateOfBirth: {
+      h: "Date Of Birth"
+      n: "dateOfBirth"
+      r: false
+      t: "`$STRING`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      r: false
+      t: "`$STRING`"
+    }
+    driversLicenseNumber: {
+      h: "Drivers License Number"
+      n: "driversLicenseNumber"
+      r: false
+      t: "`$STRING`"
+    }
+    email: {
+      h: "Email"
+      n: "email"
+      r: true
+      t: "`$STRING`"
+    }
+    firstName: {
+      h: "First Name"
+      n: "firstName"
+      r: false
+      t: "`$STRING`"
+    }
+    identificationNumber: {
+      h: "Identification Number"
+      n: "identificationNumber"
+      r: false
+      t: "`$STRING`"
+    }
+    lastName: {
+      h: "Last Name"
+      n: "lastName"
+      r: false
+      t: "`$STRING`"
+    }
+    login: {
+      h: "Login"
+      n: "login"
+      r: true
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      r: false
+      t: "`$STRING`"
+    }
+    passportNumber: {
+      h: "Passport Number"
+      n: "passportNumber"
+      r: false
+      t: "`$STRING`"
+    }
+    phone: {
+      h: "Phone"
+      n: "phone"
+      r: true
+      t: "`$STRING`"
+    }
+    salutation: {
+      h: "Salutation"
+      n: "salutation"
+      r: false
+      t: "`$STRING`"
+    }
+    state: {
+      h: "State"
+      n: "state"
+      r: false
+      t: "`$STRING`"
+    }
+    street1: {
+      h: "Street1"
+      n: "street1"
+      r: false
+      t: "`$STRING`"
+    }
+    street2: {
+      h: "Street2"
+      n: "street2"
+      r: false
+      t: "`$STRING`"
+    }
+    zipCode: {
+      h: "Zip Code"
+      n: "zipCode"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  name: "output_create_mandator"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /createMandator"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/createMandator"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "createMandator"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.mandator`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

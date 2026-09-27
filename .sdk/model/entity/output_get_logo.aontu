@@ -1,0 +1,82 @@
+# Entity: output_get_logo
+
+main: kit: entity: output_get_logo: {
+
+  alias: field: {}
+
+  fields: {
+    contentAsBase64: {
+      h: "Content As Base64"
+      n: "contentAsBase64"
+      r: true
+      sh: "The content of the image as base64 encoded string"
+      t: "`$STRING`"
+    }
+    mimeType: {
+      h: "Mime Type"
+      n: "mimeType"
+      r: true
+      sh: "The MIME type of the image"
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  name: "output_get_logo"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /getLogo"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/getLogo"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "getLogo"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

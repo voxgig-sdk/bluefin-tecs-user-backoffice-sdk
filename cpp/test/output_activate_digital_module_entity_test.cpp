@@ -50,7 +50,7 @@ static OutputActivateDigitalModuleSetup output_activate_digital_module_basic_set
 
   OutputActivateDigitalModuleSetup s;
   s.client = client;
-  s.data = entity_data;
+  s.d = entity_data;
   s.idmap = idmap_resolved;
   s.env = env;
   s.live = live;

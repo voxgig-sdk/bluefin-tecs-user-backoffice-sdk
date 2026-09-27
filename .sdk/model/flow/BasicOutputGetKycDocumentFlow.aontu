@@ -1,0 +1,18 @@
+# BasicOutputGetKycDocumentFlow
+
+main: kit: flow: BasicOutputGetKycDocumentFlow:
+{
+  entity: "output_get_kyc_document",
+  kind: "basic",
+  name: "BasicOutputGetKycDocumentFlow",
+  step: [
+    {
+      i: {
+        ref: "output_get_kyc_document_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicOutputGetKycDocumentFlow"
+}

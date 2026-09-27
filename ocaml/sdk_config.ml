@@ -194,11 +194,13 @@ let make_config () : value =
       ("output_activate_digital_module", (jo [
         ("fields", (ja [
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "output_activate_digital_module"));
         ("op", (jo [
@@ -207,46 +209,51 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (jo [
-                  ("header", (ja [
-                    (jo [
-                      ("kind", (Str "header"));
-                      ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
-                      ("reqd", (Bool true));
-                      ("type", (Str "`$STRING`")) ]) ])) ]));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/activateDigitalModule"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "activateDigitalModule")) ]) ]));
-                ("select", (jo [
-                  ("exist", (ja [
-                    (Str "authorization") ])) ]));
+                ("parts", (ja [
+                  (Str "activateDigitalModule") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "activateDigitalModule") ])) ]) ])) ])) ]));
+                ("args", (jo [
+                  ("header", (ja [
+                    (jo [
+                      ("name", (Str "authorization"));
+                      ("orig", (Str "authorization"));
+                      ("type", (Str "`$STRING`"));
+                      ("kind", (Str "header"));
+                      ("reqd", (Bool true)) ]) ])) ]));
+                ("select", (jo [
+                  ("exist", (ja [
+                    (Str "authorization") ])) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_activate_portal_module", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "clientSecret"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Client Secret"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "notificationEmail"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Notification Email"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "output_activate_portal_module"));
         ("op", (jo [
@@ -255,38 +262,41 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (jo [
-                  ("header", (ja [
-                    (jo [
-                      ("kind", (Str "header"));
-                      ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
-                      ("reqd", (Bool true));
-                      ("type", (Str "`$STRING`")) ]) ])) ]));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/activateMerchantPortalModule"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "activateMerchantPortalModule")) ]) ]));
-                ("select", (jo [
-                  ("exist", (ja [
-                    (Str "authorization") ])) ]));
+                ("parts", (ja [
+                  (Str "activateMerchantPortalModule") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "activateMerchantPortalModule") ])) ]) ])) ])) ]));
+                ("args", (jo [
+                  ("header", (ja [
+                    (jo [
+                      ("name", (Str "authorization"));
+                      ("orig", (Str "authorization"));
+                      ("type", (Str "`$STRING`"));
+                      ("kind", (Str "header"));
+                      ("reqd", (Bool true)) ]) ])) ]));
+                ("select", (jo [
+                  ("exist", (ja [
+                    (Str "authorization") ])) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_activate_store_module", (jo [
         ("fields", (ja [
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "output_activate_store_module"));
         ("op", (jo [
@@ -295,41 +305,45 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (jo [
-                  ("header", (ja [
-                    (jo [
-                      ("kind", (Str "header"));
-                      ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
-                      ("reqd", (Bool true));
-                      ("type", (Str "`$STRING`")) ]) ])) ]));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/activateAppStoreModule"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "activateAppStoreModule")) ]) ]));
-                ("select", (jo [
-                  ("exist", (ja [
-                    (Str "authorization") ])) ]));
+                ("parts", (ja [
+                  (Str "activateAppStoreModule") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "activateAppStoreModule") ])) ]) ])) ])) ]));
+                ("args", (jo [
+                  ("header", (ja [
+                    (jo [
+                      ("name", (Str "authorization"));
+                      ("orig", (Str "authorization"));
+                      ("type", (Str "`$STRING`"));
+                      ("kind", (Str "header"));
+                      ("reqd", (Bool true)) ]) ])) ]));
+                ("select", (jo [
+                  ("exist", (ja [
+                    (Str "authorization") ])) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_activate_user", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "consumerUUID"));
+            ("title", (Str "Consumer Uuid"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "output_activate_user"));
         ("op", (jo [
@@ -338,51 +352,56 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (jo [
-                  ("header", (ja [
-                    (jo [
-                      ("kind", (Str "header"));
-                      ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
-                      ("reqd", (Bool true));
-                      ("type", (Str "`$STRING`")) ]) ])) ]));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/activateUser"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "activateUser")) ]) ]));
-                ("select", (jo [
-                  ("exist", (ja [
-                    (Str "authorization") ])) ]));
+                ("parts", (ja [
+                  (Str "activateUser") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "activateUser") ])) ]) ])) ])) ]));
+                ("args", (jo [
+                  ("header", (ja [
+                    (jo [
+                      ("name", (Str "authorization"));
+                      ("orig", (Str "authorization"));
+                      ("type", (Str "`$STRING`"));
+                      ("kind", (Str "header"));
+                      ("reqd", (Bool true)) ]) ])) ]));
+                ("select", (jo [
+                  ("exist", (ja [
+                    (Str "authorization") ])) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_assign_role", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "consumerUUID"));
+            ("title", (Str "Consumer Uuid"));
+            ("type", (Str "`$STRING`"));
             ("req", (Bool true));
-            ("short", (Str "Unique identifier of the consumer (user) to whom the role(s) will be assigned."));
-            ("type", (Str "`$STRING`")) ]);
+            ("short", (Str "Unique identifier of the consumer (user) to whom the role(s) will be assigned.")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
             ("short", (Str "Response code: 0 indicates success; any non-zero value indicates an error."));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
-            ("short", (Str "A human-readable message providing additional details about the outcome."));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Response Message"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "A human-readable message providing additional details about the outcome.")) ]);
           (jo [
             ("name", (Str "roles"));
+            ("title", (Str "Roles"));
+            ("type", (Str "`$ARRAY`"));
             ("req", (Bool true));
-            ("short", (Str "List of roles to assign to the consumer."));
-            ("type", (Str "`$ARRAY`")) ]) ]));
+            ("short", (Str "List of roles to assign to the consumer.")) ]) ]));
         ("name", (Str "output_assign_role"));
         ("op", (jo [
           ("create", (jo [
@@ -390,48 +409,53 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (jo [
-                  ("header", (ja [
-                    (jo [
-                      ("kind", (Str "header"));
-                      ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
-                      ("reqd", (Bool true));
-                      ("type", (Str "`$STRING`")) ]) ])) ]));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/assignRoles"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "assignRoles")) ]) ]));
-                ("select", (jo [
-                  ("exist", (ja [
-                    (Str "authorization") ])) ]));
+                ("parts", (ja [
+                  (Str "assignRoles") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "assignRoles") ])) ]) ])) ])) ]));
+                ("args", (jo [
+                  ("header", (ja [
+                    (jo [
+                      ("name", (Str "authorization"));
+                      ("orig", (Str "authorization"));
+                      ("type", (Str "`$STRING`"));
+                      ("kind", (Str "header"));
+                      ("reqd", (Bool true)) ]) ])) ]));
+                ("select", (jo [
+                  ("exist", (ja [
+                    (Str "authorization") ])) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_change_logo", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "contentAsBase64"));
+            ("title", (Str "Content As Base64"));
+            ("type", (Str "`$STRING`"));
             ("req", (Bool true));
-            ("short", (Str "The content of the image as base64 encoded string"));
-            ("type", (Str "`$STRING`")) ]);
+            ("short", (Str "The content of the image as base64 encoded string")) ]);
           (jo [
             ("name", (Str "mimeType"));
+            ("title", (Str "Mime Type"));
+            ("type", (Str "`$STRING`"));
             ("req", (Bool true));
-            ("short", (Str "The MIME type of the image"));
-            ("type", (Str "`$STRING`")) ]);
+            ("short", (Str "The MIME type of the image")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "output_change_logo"));
         ("op", (jo [
@@ -440,96 +464,115 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (jo [
-                  ("header", (ja [
-                    (jo [
-                      ("kind", (Str "header"));
-                      ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
-                      ("reqd", (Bool true));
-                      ("type", (Str "`$STRING`")) ]) ])) ]));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/changeLogo"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "changeLogo")) ]) ]));
-                ("select", (jo [
-                  ("exist", (ja [
-                    (Str "authorization") ])) ]));
+                ("parts", (ja [
+                  (Str "changeLogo") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "changeLogo") ])) ]) ])) ])) ]));
+                ("args", (jo [
+                  ("header", (ja [
+                    (jo [
+                      ("name", (Str "authorization"));
+                      ("orig", (Str "authorization"));
+                      ("type", (Str "`$STRING`"));
+                      ("kind", (Str "header"));
+                      ("reqd", (Bool true)) ]) ])) ]));
+                ("select", (jo [
+                  ("exist", (ja [
+                    (Str "authorization") ])) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_create_mandator", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "city"));
+            ("title", (Str "City"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "country"));
+            ("title", (Str "Country"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "dateOfBirth"));
+            ("title", (Str "Date Of Birth"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "description"));
+            ("title", (Str "Description"));
+            ("type", (Str "`$STRING`"));
             ("op", (jo [
               ("create", (jo [
                 ("req", (Bool true));
-                ("type", (Str "`$STRING`")) ])) ]));
-            ("type", (Str "`$STRING`")) ]);
+                ("type", (Str "`$STRING`")) ])) ])) ]);
           (jo [
             ("name", (Str "driversLicenseNumber"));
+            ("title", (Str "Drivers License Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "email"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Email"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "firstName"));
+            ("title", (Str "First Name"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "identificationNumber"));
+            ("title", (Str "Identification Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "lastName"));
+            ("title", (Str "Last Name"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "login"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Login"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "name"));
+            ("title", (Str "Name"));
+            ("type", (Str "`$STRING`"));
             ("op", (jo [
               ("create", (jo [
                 ("req", (Bool true));
-                ("type", (Str "`$STRING`")) ])) ]));
-            ("type", (Str "`$STRING`")) ]);
+                ("type", (Str "`$STRING`")) ])) ])) ]);
           (jo [
             ("name", (Str "passportNumber"));
+            ("title", (Str "Passport Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "phone"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Phone"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "salutation"));
+            ("title", (Str "Salutation"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "state"));
+            ("title", (Str "State"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "street1"));
+            ("title", (Str "Street1"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "street2"));
+            ("title", (Str "Street2"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "zipCode"));
+            ("title", (Str "Zip Code"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "output_create_mandator"));
         ("op", (jo [
@@ -538,42 +581,46 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (jo [
-                  ("header", (ja [
-                    (jo [
-                      ("kind", (Str "header"));
-                      ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
-                      ("reqd", (Bool true));
-                      ("type", (Str "`$STRING`")) ]) ])) ]));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/createMandator"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "createMandator")) ]) ]));
-                ("select", (jo [
-                  ("exist", (ja [
-                    (Str "authorization") ])) ]));
+                ("parts", (ja [
+                  (Str "createMandator") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body.mandator`")) ]));
-                ("parts", (ja [
-                  (Str "createMandator") ])) ]) ])) ])) ]));
+                ("args", (jo [
+                  ("header", (ja [
+                    (jo [
+                      ("name", (Str "authorization"));
+                      ("orig", (Str "authorization"));
+                      ("type", (Str "`$STRING`"));
+                      ("kind", (Str "header"));
+                      ("reqd", (Bool true)) ]) ])) ]));
+                ("select", (jo [
+                  ("exist", (ja [
+                    (Str "authorization") ])) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_create_service_user", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "mandatorName"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Mandator Name"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "output_create_service_user"));
         ("op", (jo [
@@ -582,41 +629,45 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (jo [
-                  ("header", (ja [
-                    (jo [
-                      ("kind", (Str "header"));
-                      ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
-                      ("reqd", (Bool true));
-                      ("type", (Str "`$STRING`")) ]) ])) ]));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/createServiceUser"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "createServiceUser")) ]) ]));
-                ("select", (jo [
-                  ("exist", (ja [
-                    (Str "authorization") ])) ]));
+                ("parts", (ja [
+                  (Str "createServiceUser") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "createServiceUser") ])) ]) ])) ])) ]));
+                ("args", (jo [
+                  ("header", (ja [
+                    (jo [
+                      ("name", (Str "authorization"));
+                      ("orig", (Str "authorization"));
+                      ("type", (Str "`$STRING`"));
+                      ("kind", (Str "header"));
+                      ("reqd", (Bool true)) ]) ])) ]));
+                ("select", (jo [
+                  ("exist", (ja [
+                    (Str "authorization") ])) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_deactivate_user", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "consumerUUID"));
+            ("title", (Str "Consumer Uuid"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "output_deactivate_user"));
         ("op", (jo [
@@ -625,44 +676,49 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (jo [
-                  ("header", (ja [
-                    (jo [
-                      ("kind", (Str "header"));
-                      ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
-                      ("reqd", (Bool true));
-                      ("type", (Str "`$STRING`")) ]) ])) ]));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/deactivateUser"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "deactivateUser")) ]) ]));
-                ("select", (jo [
-                  ("exist", (ja [
-                    (Str "authorization") ])) ]));
+                ("parts", (ja [
+                  (Str "deactivateUser") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "deactivateUser") ])) ]) ])) ])) ]));
+                ("args", (jo [
+                  ("header", (ja [
+                    (jo [
+                      ("name", (Str "authorization"));
+                      ("orig", (Str "authorization"));
+                      ("type", (Str "`$STRING`"));
+                      ("kind", (Str "header"));
+                      ("reqd", (Bool true)) ]) ])) ]));
+                ("select", (jo [
+                  ("exist", (ja [
+                    (Str "authorization") ])) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_get_kyc_document", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "caseID"));
+            ("title", (Str "Case Id"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "encodedDataBase64"));
+            ("title", (Str "Encoded Data Base64"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "output_get_kyc_document"));
         ("op", (jo [
@@ -671,48 +727,53 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (jo [
-                  ("header", (ja [
-                    (jo [
-                      ("kind", (Str "header"));
-                      ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
-                      ("reqd", (Bool true));
-                      ("type", (Str "`$STRING`")) ]) ])) ]));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/getKycDocument"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "getKycDocument")) ]) ]));
-                ("select", (jo [
-                  ("exist", (ja [
-                    (Str "authorization") ])) ]));
+                ("parts", (ja [
+                  (Str "getKycDocument") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "getKycDocument") ])) ]) ])) ])) ]));
+                ("args", (jo [
+                  ("header", (ja [
+                    (jo [
+                      ("name", (Str "authorization"));
+                      ("orig", (Str "authorization"));
+                      ("type", (Str "`$STRING`"));
+                      ("kind", (Str "header"));
+                      ("reqd", (Bool true)) ]) ])) ]));
+                ("select", (jo [
+                  ("exist", (ja [
+                    (Str "authorization") ])) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_get_logo", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "contentAsBase64"));
+            ("title", (Str "Content As Base64"));
+            ("type", (Str "`$STRING`"));
             ("req", (Bool true));
-            ("short", (Str "The content of the image as base64 encoded string"));
-            ("type", (Str "`$STRING`")) ]);
+            ("short", (Str "The content of the image as base64 encoded string")) ]);
           (jo [
             ("name", (Str "mimeType"));
+            ("title", (Str "Mime Type"));
+            ("type", (Str "`$STRING`"));
             ("req", (Bool true));
-            ("short", (Str "The MIME type of the image"));
-            ("type", (Str "`$STRING`")) ]);
+            ("short", (Str "The MIME type of the image")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "output_get_logo"));
         ("op", (jo [
@@ -721,41 +782,45 @@ let make_config () : value =
             ("name", (Str "load"));
             ("points", (ja [
               (jo [
-                ("args", (jo [
-                  ("header", (ja [
-                    (jo [
-                      ("kind", (Str "header"));
-                      ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
-                      ("reqd", (Bool true));
-                      ("type", (Str "`$STRING`")) ]) ])) ]));
                 ("kind", (Str "http"));
                 ("method", (Str "GET"));
                 ("orig", (Str "/getLogo"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "getLogo")) ]) ]));
-                ("select", (jo [
-                  ("exist", (ja [
-                    (Str "authorization") ])) ]));
+                ("parts", (ja [
+                  (Str "getLogo") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "getLogo") ])) ]) ])) ])) ]));
+                ("args", (jo [
+                  ("header", (ja [
+                    (jo [
+                      ("name", (Str "authorization"));
+                      ("orig", (Str "authorization"));
+                      ("type", (Str "`$STRING`"));
+                      ("kind", (Str "header"));
+                      ("reqd", (Bool true)) ]) ])) ]));
+                ("select", (jo [
+                  ("exist", (ja [
+                    (Str "authorization") ])) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_list_of_available_role", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "availableRoles"));
+            ("title", (Str "Available Roles"));
             ("type", (Str "`$ARRAY`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "output_list_of_available_role"));
         ("op", (jo [
@@ -764,50 +829,57 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (jo [
-                  ("header", (ja [
-                    (jo [
-                      ("kind", (Str "header"));
-                      ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
-                      ("reqd", (Bool true));
-                      ("type", (Str "`$STRING`")) ]) ])) ]));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/listOfAvailableRoles"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "listOfAvailableRoles")) ]) ]));
-                ("select", (jo [
-                  ("exist", (ja [
-                    (Str "authorization") ])) ]));
+                ("parts", (ja [
+                  (Str "listOfAvailableRoles") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "listOfAvailableRoles") ])) ]) ])) ])) ]));
+                ("args", (jo [
+                  ("header", (ja [
+                    (jo [
+                      ("name", (Str "authorization"));
+                      ("orig", (Str "authorization"));
+                      ("type", (Str "`$STRING`"));
+                      ("kind", (Str "header"));
+                      ("reqd", (Bool true)) ]) ])) ]));
+                ("select", (jo [
+                  ("exist", (ja [
+                    (Str "authorization") ])) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_list_of_mandator", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "filter"));
+            ("title", (Str "Filter"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
             ("name", (Str "list"));
+            ("title", (Str "List"));
             ("type", (Str "`$ARRAY`")) ]);
           (jo [
             ("name", (Str "pagination"));
+            ("title", (Str "Pagination"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "sorting"));
+            ("title", (Str "Sorting"));
             ("type", (Str "`$OBJECT`")) ]) ]));
         ("name", (Str "output_list_of_mandator"));
         ("op", (jo [
@@ -816,44 +888,49 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (jo [
-                  ("header", (ja [
-                    (jo [
-                      ("kind", (Str "header"));
-                      ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
-                      ("reqd", (Bool true));
-                      ("type", (Str "`$STRING`")) ]) ])) ]));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/listOfMandators"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "listOfMandators")) ]) ]));
-                ("select", (jo [
-                  ("exist", (ja [
-                    (Str "authorization") ])) ]));
+                ("parts", (ja [
+                  (Str "listOfMandators") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "listOfMandators") ])) ]) ])) ])) ]));
+                ("args", (jo [
+                  ("header", (ja [
+                    (jo [
+                      ("name", (Str "authorization"));
+                      ("orig", (Str "authorization"));
+                      ("type", (Str "`$STRING`"));
+                      ("kind", (Str "header"));
+                      ("reqd", (Bool true)) ]) ])) ]));
+                ("select", (jo [
+                  ("exist", (ja [
+                    (Str "authorization") ])) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_list_of_module", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "list"));
+            ("title", (Str "List"));
             ("type", (Str "`$ARRAY`")) ]);
           (jo [
             ("name", (Str "pagination"));
+            ("title", (Str "Pagination"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "output_list_of_module"));
         ("op", (jo [
@@ -862,50 +939,57 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (jo [
-                  ("header", (ja [
-                    (jo [
-                      ("kind", (Str "header"));
-                      ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
-                      ("reqd", (Bool true));
-                      ("type", (Str "`$STRING`")) ]) ])) ]));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/listOfModules"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "listOfModules")) ]) ]));
-                ("select", (jo [
-                  ("exist", (ja [
-                    (Str "authorization") ])) ]));
+                ("parts", (ja [
+                  (Str "listOfModules") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "listOfModules") ])) ]) ])) ])) ]));
+                ("args", (jo [
+                  ("header", (ja [
+                    (jo [
+                      ("name", (Str "authorization"));
+                      ("orig", (Str "authorization"));
+                      ("type", (Str "`$STRING`"));
+                      ("kind", (Str "header"));
+                      ("reqd", (Bool true)) ]) ])) ]));
+                ("select", (jo [
+                  ("exist", (ja [
+                    (Str "authorization") ])) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_list_of_role_group", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "filter"));
+            ("title", (Str "Filter"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
             ("name", (Str "groupRoles"));
+            ("title", (Str "Group Roles"));
             ("type", (Str "`$ARRAY`")) ]);
           (jo [
             ("name", (Str "pagination"));
+            ("title", (Str "Pagination"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "sorting"));
+            ("title", (Str "Sorting"));
             ("type", (Str "`$OBJECT`")) ]) ]));
         ("name", (Str "output_list_of_role_group"));
         ("op", (jo [
@@ -914,50 +998,57 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (jo [
-                  ("header", (ja [
-                    (jo [
-                      ("kind", (Str "header"));
-                      ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
-                      ("reqd", (Bool true));
-                      ("type", (Str "`$STRING`")) ]) ])) ]));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/listOfRoleGroups"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "listOfRoleGroups")) ]) ]));
-                ("select", (jo [
-                  ("exist", (ja [
-                    (Str "authorization") ])) ]));
+                ("parts", (ja [
+                  (Str "listOfRoleGroups") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "listOfRoleGroups") ])) ]) ])) ])) ]));
+                ("args", (jo [
+                  ("header", (ja [
+                    (jo [
+                      ("name", (Str "authorization"));
+                      ("orig", (Str "authorization"));
+                      ("type", (Str "`$STRING`"));
+                      ("kind", (Str "header"));
+                      ("reqd", (Bool true)) ]) ])) ]));
+                ("select", (jo [
+                  ("exist", (ja [
+                    (Str "authorization") ])) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_list_of_transactions_history", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "filter"));
+            ("title", (Str "Filter"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
             ("name", (Str "list"));
+            ("title", (Str "List"));
             ("type", (Str "`$ARRAY`")) ]);
           (jo [
             ("name", (Str "pagination"));
+            ("title", (Str "Pagination"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "sorting"));
+            ("title", (Str "Sorting"));
             ("type", (Str "`$OBJECT`")) ]) ]));
         ("name", (Str "output_list_of_transactions_history"));
         ("op", (jo [
@@ -966,50 +1057,57 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (jo [
-                  ("header", (ja [
-                    (jo [
-                      ("kind", (Str "header"));
-                      ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
-                      ("reqd", (Bool true));
-                      ("type", (Str "`$STRING`")) ]) ])) ]));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/listOfTransactionsHistory"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "listOfTransactionsHistory")) ]) ]));
-                ("select", (jo [
-                  ("exist", (ja [
-                    (Str "authorization") ])) ]));
+                ("parts", (ja [
+                  (Str "listOfTransactionsHistory") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "listOfTransactionsHistory") ])) ]) ])) ])) ]));
+                ("args", (jo [
+                  ("header", (ja [
+                    (jo [
+                      ("name", (Str "authorization"));
+                      ("orig", (Str "authorization"));
+                      ("type", (Str "`$STRING`"));
+                      ("kind", (Str "header"));
+                      ("reqd", (Bool true)) ]) ])) ]));
+                ("select", (jo [
+                  ("exist", (ja [
+                    (Str "authorization") ])) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_list_of_user", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "filter"));
+            ("title", (Str "Filter"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
             ("name", (Str "list"));
+            ("title", (Str "List"));
             ("type", (Str "`$ARRAY`")) ]);
           (jo [
             ("name", (Str "pagination"));
+            ("title", (Str "Pagination"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "sorting"));
+            ("title", (Str "Sorting"));
             ("type", (Str "`$OBJECT`")) ]) ]));
         ("name", (Str "output_list_of_user"));
         ("op", (jo [
@@ -1018,48 +1116,54 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (jo [
-                  ("header", (ja [
-                    (jo [
-                      ("kind", (Str "header"));
-                      ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
-                      ("reqd", (Bool true));
-                      ("type", (Str "`$STRING`")) ]) ])) ]));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/listOfUsers"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "listOfUsers")) ]) ]));
-                ("select", (jo [
-                  ("exist", (ja [
-                    (Str "authorization") ])) ]));
+                ("parts", (ja [
+                  (Str "listOfUsers") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "listOfUsers") ])) ]) ])) ])) ]));
+                ("args", (jo [
+                  ("header", (ja [
+                    (jo [
+                      ("name", (Str "authorization"));
+                      ("orig", (Str "authorization"));
+                      ("type", (Str "`$STRING`"));
+                      ("kind", (Str "header"));
+                      ("reqd", (Bool true)) ]) ])) ]));
+                ("select", (jo [
+                  ("exist", (ja [
+                    (Str "authorization") ])) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_provide_credential", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "mandatorName"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Mandator Name"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "password"));
+            ("title", (Str "Password"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "username"));
+            ("title", (Str "Username"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "output_provide_credential"));
         ("op", (jo [
@@ -1068,119 +1172,141 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (jo [
-                  ("header", (ja [
-                    (jo [
-                      ("kind", (Str "header"));
-                      ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
-                      ("reqd", (Bool true));
-                      ("type", (Str "`$STRING`")) ]) ])) ]));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/provideCredentials"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "provideCredentials")) ]) ]));
-                ("select", (jo [
-                  ("exist", (ja [
-                    (Str "authorization") ])) ]));
+                ("parts", (ja [
+                  (Str "provideCredentials") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "provideCredentials") ])) ]) ])) ])) ]));
+                ("args", (jo [
+                  ("header", (ja [
+                    (jo [
+                      ("name", (Str "authorization"));
+                      ("orig", (Str "authorization"));
+                      ("type", (Str "`$STRING`"));
+                      ("kind", (Str "header"));
+                      ("reqd", (Bool true)) ]) ])) ]));
+                ("select", (jo [
+                  ("exist", (ja [
+                    (Str "authorization") ])) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_register_user", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "city"));
-            ("short", (Str "City where the user resides."));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "City"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "City where the user resides.")) ]);
           (jo [
             ("name", (Str "consumerId"));
-            ("short", (Str "User login or unique user identifier."));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Consumer Id"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "User login or unique user identifier.")) ]);
           (jo [
             ("name", (Str "consumerLanguage"));
-            ("short", (Str "Preferred language for the user (e.g., 'en')."));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Consumer Language"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Preferred language for the user (e.g., 'en').")) ]);
           (jo [
             ("name", (Str "country"));
-            ("short", (Str "User's country."));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Country"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "User's country.")) ]);
           (jo [
             ("name", (Str "dateOfBirth"));
-            ("short", (Str "User's date of birth (expected format: dd.MM.yyyy)."));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Date Of Birth"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "User's date of birth (expected format: dd.MM.yyyy).")) ]);
           (jo [
             ("name", (Str "driverLicenceNumber"));
-            ("short", (Str "User's driver's license number."));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Driver Licence Number"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "User's driver's license number.")) ]);
           (jo [
-            ("format", (Str "email"));
             ("name", (Str "email"));
+            ("title", (Str "Email"));
+            ("type", (Str "`$STRING`"));
             ("req", (Bool true));
             ("short", (Str "User's email address (must be unique)."));
-            ("type", (Str "`$STRING`")) ]);
+            ("format", (Str "email")) ]);
           (jo [
             ("name", (Str "firstName"));
-            ("short", (Str "User's first name."));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "First Name"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "User's first name.")) ]);
           (jo [
             ("name", (Str "identificationNumber"));
-            ("short", (Str "User's identification number."));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Identification Number"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "User's identification number.")) ]);
           (jo [
             ("name", (Str "lastName"));
-            ("short", (Str "User's last name."));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Last Name"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "User's last name.")) ]);
           (jo [
             ("name", (Str "login"));
-            ("short", (Str "User login identifier (should be unique)."));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Login"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "User login identifier (should be unique).")) ]);
           (jo [
             ("name", (Str "module"));
-            ("short", (Str "Module identifier (if applicable)."));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Module"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Module identifier (if applicable).")) ]);
           (jo [
             ("name", (Str "passportNumber"));
-            ("short", (Str "User's passport number."));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Passport Number"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "User's passport number.")) ]);
           (jo [
             ("name", (Str "phone"));
-            ("short", (Str "User's phone number."));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Phone"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "User's phone number.")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
             ("short", (Str "Response code (0 indicates success; non-zero indicates an error)."));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
-            ("short", (Str "Human-readable response message."));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Response Message"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Human-readable response message.")) ]);
           (jo [
             ("name", (Str "salutation"));
-            ("short", (Str "User's salutation (e.g., Mr., Ms.)."));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Salutation"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "User's salutation (e.g., Mr., Ms.).")) ]);
           (jo [
             ("name", (Str "state"));
-            ("short", (Str "User's state or region."));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "State"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "User's state or region.")) ]);
           (jo [
             ("name", (Str "street1"));
-            ("short", (Str "Primary address line."));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Street1"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Primary address line.")) ]);
           (jo [
             ("name", (Str "street2"));
-            ("short", (Str "Secondary address line."));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Street2"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Secondary address line.")) ]);
           (jo [
             ("name", (Str "zip"));
-            ("short", (Str "Postal code."));
-            ("type", (Str "`$STRING`")) ]) ]));
+            ("title", (Str "Zip"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Postal code.")) ]) ]));
         ("name", (Str "output_register_user"));
         ("op", (jo [
           ("create", (jo [
@@ -1188,44 +1314,49 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (jo [
-                  ("header", (ja [
-                    (jo [
-                      ("kind", (Str "header"));
-                      ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
-                      ("reqd", (Bool true));
-                      ("type", (Str "`$STRING`")) ]) ])) ]));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/registerUser"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "registerUser")) ]) ]));
-                ("select", (jo [
-                  ("exist", (ja [
-                    (Str "authorization") ])) ]));
+                ("parts", (ja [
+                  (Str "registerUser") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "registerUser") ])) ]) ])) ])) ]));
+                ("args", (jo [
+                  ("header", (ja [
+                    (jo [
+                      ("name", (Str "authorization"));
+                      ("orig", (Str "authorization"));
+                      ("type", (Str "`$STRING`"));
+                      ("kind", (Str "header"));
+                      ("reqd", (Bool true)) ]) ])) ]));
+                ("select", (jo [
+                  ("exist", (ja [
+                    (Str "authorization") ])) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_remove_role", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "consumerUUID"));
+            ("title", (Str "Consumer Uuid"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "roles"));
+            ("title", (Str "Roles"));
             ("type", (Str "`$ARRAY`")) ]) ]));
         ("name", (Str "output_remove_role"));
         ("op", (jo [
@@ -1234,51 +1365,58 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (jo [
-                  ("header", (ja [
-                    (jo [
-                      ("kind", (Str "header"));
-                      ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
-                      ("reqd", (Bool true));
-                      ("type", (Str "`$STRING`")) ]) ])) ]));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/removeRoles"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "removeRoles")) ]) ]));
-                ("select", (jo [
-                  ("exist", (ja [
-                    (Str "authorization") ])) ]));
+                ("parts", (ja [
+                  (Str "removeRoles") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "removeRoles") ])) ]) ])) ])) ]));
+                ("args", (jo [
+                  ("header", (ja [
+                    (jo [
+                      ("name", (Str "authorization"));
+                      ("orig", (Str "authorization"));
+                      ("type", (Str "`$STRING`"));
+                      ("kind", (Str "header"));
+                      ("reqd", (Bool true)) ]) ])) ]));
+                ("select", (jo [
+                  ("exist", (ja [
+                    (Str "authorization") ])) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_resend_link", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "businessRegistrationNumber"));
+            ("title", (Str "Business Registration Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "consumerUUID"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Consumer Uuid"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "emailConfirmationCode"));
+            ("title", (Str "Email Confirmation Code"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "phoneNumber"));
+            ("title", (Str "Phone Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "output_resend_link"));
         ("op", (jo [
@@ -1287,43 +1425,48 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (jo [
-                  ("header", (ja [
-                    (jo [
-                      ("kind", (Str "header"));
-                      ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
-                      ("type", (Str "`$STRING`")) ]) ])) ]));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/resendLink"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "resendLink")) ]) ]));
-                ("select", (jo [
-                  ("exist", (ja [
-                    (Str "authorization") ])) ]));
+                ("parts", (ja [
+                  (Str "resendLink") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "resendLink") ])) ]) ])) ])) ]));
+                ("args", (jo [
+                  ("header", (ja [
+                    (jo [
+                      ("name", (Str "authorization"));
+                      ("orig", (Str "authorization"));
+                      ("type", (Str "`$STRING`"));
+                      ("kind", (Str "header")) ]) ])) ]));
+                ("select", (jo [
+                  ("exist", (ja [
+                    (Str "authorization") ])) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_reset_password", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "consumerUuid"));
+            ("title", (Str "Consumer Uuid"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "phoneNumber"));
+            ("title", (Str "Phone Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "output_reset_password"));
         ("op", (jo [
@@ -1332,102 +1475,126 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (jo [
-                  ("header", (ja [
-                    (jo [
-                      ("kind", (Str "header"));
-                      ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
-                      ("reqd", (Bool true));
-                      ("type", (Str "`$STRING`")) ]) ])) ]));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/resetPassword"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "resetPassword")) ]) ]));
-                ("select", (jo [
-                  ("exist", (ja [
-                    (Str "authorization") ])) ]));
+                ("parts", (ja [
+                  (Str "resetPassword") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "resetPassword") ])) ]) ])) ])) ]));
+                ("args", (jo [
+                  ("header", (ja [
+                    (jo [
+                      ("name", (Str "authorization"));
+                      ("orig", (Str "authorization"));
+                      ("type", (Str "`$STRING`"));
+                      ("kind", (Str "header"));
+                      ("reqd", (Bool true)) ]) ])) ]));
+                ("select", (jo [
+                  ("exist", (ja [
+                    (Str "authorization") ])) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_update_consumer", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "city"));
+            ("title", (Str "City"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "consumerUuid"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Consumer Uuid"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "consumerlanguage"));
+            ("title", (Str "Consumerlanguage"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "country"));
+            ("title", (Str "Country"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "dateOfBirth"));
+            ("title", (Str "Date Of Birth"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "datetime_created"));
+            ("title", (Str "Datetime Created"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "driverLicenceNumber"));
+            ("title", (Str "Driver Licence Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "email"));
+            ("title", (Str "Email"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "firstName"));
+            ("title", (Str "First Name"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "identificationNumber"));
+            ("title", (Str "Identification Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "kycPassed"));
+            ("title", (Str "Kyc Passed"));
             ("type", (Str "`$BOOLEAN`")) ]);
           (jo [
             ("name", (Str "lastName"));
+            ("title", (Str "Last Name"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "nationality"));
+            ("title", (Str "Nationality"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "passportNumber"));
+            ("title", (Str "Passport Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "phoneNumber"));
+            ("title", (Str "Phone Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "placeOfBirth"));
+            ("title", (Str "Place Of Birth"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "state"));
+            ("title", (Str "State"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "street1"));
+            ("title", (Str "Street1"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "street2"));
+            ("title", (Str "Street2"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "transactionhistory_id"));
+            ("title", (Str "Transactionhistory Id"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "zip"));
+            ("title", (Str "Zip"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "output_update_consumer"));
         ("op", (jo [
@@ -1436,52 +1603,60 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (jo [
-                  ("header", (ja [
-                    (jo [
-                      ("kind", (Str "header"));
-                      ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
-                      ("type", (Str "`$STRING`")) ]) ])) ]));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/updateConsumer"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "updateConsumer")) ]) ]));
-                ("select", (jo [
-                  ("exist", (ja [
-                    (Str "authorization") ])) ]));
+                ("parts", (ja [
+                  (Str "updateConsumer") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "updateConsumer") ])) ]) ])) ])) ]));
+                ("args", (jo [
+                  ("header", (ja [
+                    (jo [
+                      ("name", (Str "authorization"));
+                      ("orig", (Str "authorization"));
+                      ("type", (Str "`$STRING`"));
+                      ("kind", (Str "header")) ]) ])) ]));
+                ("select", (jo [
+                  ("exist", (ja [
+                    (Str "authorization") ])) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("output_update_profile", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "consumerLanguage"));
+            ("title", (Str "Consumer Language"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "email"));
+            ("title", (Str "Email"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "firstName"));
+            ("title", (Str "First Name"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "lastName"));
+            ("title", (Str "Last Name"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "phoneNumber"));
+            ("title", (Str "Phone Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "output_update_profile"));
         ("op", (jo [
@@ -1490,39 +1665,43 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (jo [
-                  ("header", (ja [
-                    (jo [
-                      ("kind", (Str "header"));
-                      ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
-                      ("type", (Str "`$STRING`")) ]) ])) ]));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/updateProfile"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "updateProfile")) ]) ]));
-                ("select", (jo [
-                  ("exist", (ja [
-                    (Str "authorization") ])) ]));
+                ("parts", (ja [
+                  (Str "updateProfile") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "updateProfile") ])) ]) ])) ])) ]));
+                ("args", (jo [
+                  ("header", (ja [
+                    (jo [
+                      ("name", (Str "authorization"));
+                      ("orig", (Str "authorization"));
+                      ("type", (Str "`$STRING`"));
+                      ("kind", (Str "header")) ]) ])) ]));
+                ("select", (jo [
+                  ("exist", (ja [
+                    (Str "authorization") ])) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("version", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "appName"));
+            ("title", (Str "App Name"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "buildDate"));
+            ("title", (Str "Build Date"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "version"));
+            ("title", (Str "Version"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "version"));
         ("op", (jo [
@@ -1531,19 +1710,20 @@ let make_config () : value =
             ("name", (Str "load"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "GET"));
                 ("orig", (Str "/version"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "version")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "version") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "version") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ])) ])) ])
 

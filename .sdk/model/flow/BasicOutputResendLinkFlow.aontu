@@ -1,0 +1,18 @@
+# BasicOutputResendLinkFlow
+
+main: kit: flow: BasicOutputResendLinkFlow:
+{
+  entity: "output_resend_link",
+  kind: "basic",
+  name: "BasicOutputResendLinkFlow",
+  step: [
+    {
+      i: {
+        ref: "output_resend_link_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicOutputResendLinkFlow"
+}

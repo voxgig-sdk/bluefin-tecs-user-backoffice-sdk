@@ -1,0 +1,82 @@
+# Entity: output_change_logo
+
+main: kit: entity: output_change_logo: {
+
+  alias: field: {}
+
+  fields: {
+    contentAsBase64: {
+      h: "Content As Base64"
+      n: "contentAsBase64"
+      r: true
+      sh: "The content of the image as base64 encoded string"
+      t: "`$STRING`"
+    }
+    mimeType: {
+      h: "Mime Type"
+      n: "mimeType"
+      r: true
+      sh: "The MIME type of the image"
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  name: "output_change_logo"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /changeLogo"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/changeLogo"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "changeLogo"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

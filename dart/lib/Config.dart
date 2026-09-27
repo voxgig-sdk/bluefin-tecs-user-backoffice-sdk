@@ -304,12 +304,14 @@ class Config {
     'output_activate_digital_module': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
           'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
           'type': '`\$STRING`',
         },
       ],
@@ -320,17 +322,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/activateDigitalModule',
@@ -339,18 +330,30 @@ class Config {
                   'lit': 'activateDigitalModule',
                 },
               ],
+              'parts': <dynamic>[
+                'activateDigitalModule',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'activateDigitalModule',
-              ],
             },
           ],
         },
@@ -363,21 +366,25 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'clientSecret',
-          'req': true,
+          'title': 'Client Secret',
           'type': '`\$STRING`',
+          'req': true,
         },
         <String, dynamic>{
           'name': 'notificationEmail',
-          'req': true,
+          'title': 'Notification Email',
           'type': '`\$STRING`',
+          'req': true,
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
           'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
           'type': '`\$STRING`',
         },
       ],
@@ -388,17 +395,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/activateMerchantPortalModule',
@@ -407,18 +403,30 @@ class Config {
                   'lit': 'activateMerchantPortalModule',
                 },
               ],
+              'parts': <dynamic>[
+                'activateMerchantPortalModule',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'activateMerchantPortalModule',
-              ],
             },
           ],
         },
@@ -430,12 +438,14 @@ class Config {
     'output_activate_store_module': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
           'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
           'type': '`\$STRING`',
         },
       ],
@@ -446,17 +456,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/activateAppStoreModule',
@@ -465,18 +464,30 @@ class Config {
                   'lit': 'activateAppStoreModule',
                 },
               ],
+              'parts': <dynamic>[
+                'activateAppStoreModule',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'activateAppStoreModule',
-              ],
             },
           ],
         },
@@ -489,15 +500,18 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'consumerUUID',
+          'title': 'Consumer Uuid',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
           'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
           'type': '`\$STRING`',
         },
       ],
@@ -508,17 +522,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/activateUser',
@@ -527,18 +530,30 @@ class Config {
                   'lit': 'activateUser',
                 },
               ],
+              'parts': <dynamic>[
+                'activateUser',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'activateUser',
-              ],
             },
           ],
         },
@@ -551,26 +566,30 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'consumerUUID',
+          'title': 'Consumer Uuid',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'Unique identifier of the consumer (user) to whom the role(s) will be assigned.',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
-          'short': 'Response code: 0 indicates success; any non-zero value indicates an error.',
+          'title': 'Response Code',
           'type': '`\$INTEGER`',
+          'short': 'Response code: 0 indicates success; any non-zero value indicates an error.',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
-          'short': 'A human-readable message providing additional details about the outcome.',
+          'title': 'Response Message',
           'type': '`\$STRING`',
+          'short': 'A human-readable message providing additional details about the outcome.',
         },
         <String, dynamic>{
           'name': 'roles',
+          'title': 'Roles',
+          'type': '`\$ARRAY`',
           'req': true,
           'short': 'List of roles to assign to the consumer.',
-          'type': '`\$ARRAY`',
         },
       ],
       'name': 'output_assign_role',
@@ -580,17 +599,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/assignRoles',
@@ -599,18 +607,30 @@ class Config {
                   'lit': 'assignRoles',
                 },
               ],
+              'parts': <dynamic>[
+                'assignRoles',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'assignRoles',
-              ],
             },
           ],
         },
@@ -623,23 +643,27 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'contentAsBase64',
+          'title': 'Content As Base64',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'The content of the image as base64 encoded string',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'mimeType',
+          'title': 'Mime Type',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'The MIME type of the image',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
           'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
           'type': '`\$STRING`',
         },
       ],
@@ -650,17 +674,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/changeLogo',
@@ -669,18 +682,30 @@ class Config {
                   'lit': 'changeLogo',
                 },
               ],
+              'parts': <dynamic>[
+                'changeLogo',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'changeLogo',
-              ],
             },
           ],
         },
@@ -693,89 +718,107 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'city',
+          'title': 'City',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'country',
+          'title': 'Country',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'dateOfBirth',
+          'title': 'Date Of Birth',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'description',
+          'title': 'Description',
+          'type': '`\$STRING`',
           'op': <String, dynamic>{
             'create': <String, dynamic>{
               'req': true,
               'type': '`\$STRING`',
             },
           },
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'driversLicenseNumber',
+          'title': 'Drivers License Number',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'email',
-          'req': true,
+          'title': 'Email',
           'type': '`\$STRING`',
+          'req': true,
         },
         <String, dynamic>{
           'name': 'firstName',
+          'title': 'First Name',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'identificationNumber',
+          'title': 'Identification Number',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'lastName',
+          'title': 'Last Name',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'login',
-          'req': true,
+          'title': 'Login',
           'type': '`\$STRING`',
+          'req': true,
         },
         <String, dynamic>{
           'name': 'name',
+          'title': 'Name',
+          'type': '`\$STRING`',
           'op': <String, dynamic>{
             'create': <String, dynamic>{
               'req': true,
               'type': '`\$STRING`',
             },
           },
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'passportNumber',
+          'title': 'Passport Number',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'phone',
-          'req': true,
+          'title': 'Phone',
           'type': '`\$STRING`',
+          'req': true,
         },
         <String, dynamic>{
           'name': 'salutation',
+          'title': 'Salutation',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'state',
+          'title': 'State',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'street1',
+          'title': 'Street1',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'street2',
+          'title': 'Street2',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'zipCode',
+          'title': 'Zip Code',
           'type': '`\$STRING`',
         },
       ],
@@ -786,17 +829,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/createMandator',
@@ -805,18 +837,30 @@ class Config {
                   'lit': 'createMandator',
                 },
               ],
+              'parts': <dynamic>[
+                'createMandator',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body.mandator`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body.mandator`',
-              },
-              'parts': <dynamic>[
-                'createMandator',
-              ],
             },
           ],
         },
@@ -829,16 +873,19 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'mandatorName',
-          'req': true,
+          'title': 'Mandator Name',
           'type': '`\$STRING`',
+          'req': true,
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
           'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
           'type': '`\$STRING`',
         },
       ],
@@ -849,17 +896,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/createServiceUser',
@@ -868,18 +904,30 @@ class Config {
                   'lit': 'createServiceUser',
                 },
               ],
+              'parts': <dynamic>[
+                'createServiceUser',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'createServiceUser',
-              ],
             },
           ],
         },
@@ -892,15 +940,18 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'consumerUUID',
+          'title': 'Consumer Uuid',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
           'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
           'type': '`\$STRING`',
         },
       ],
@@ -911,17 +962,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/deactivateUser',
@@ -930,18 +970,30 @@ class Config {
                   'lit': 'deactivateUser',
                 },
               ],
+              'parts': <dynamic>[
+                'deactivateUser',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'deactivateUser',
-              ],
             },
           ],
         },
@@ -954,19 +1006,23 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'caseID',
+          'title': 'Case Id',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'encodedDataBase64',
+          'title': 'Encoded Data Base64',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
           'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
           'type': '`\$STRING`',
         },
       ],
@@ -977,17 +1033,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/getKycDocument',
@@ -996,18 +1041,30 @@ class Config {
                   'lit': 'getKycDocument',
                 },
               ],
+              'parts': <dynamic>[
+                'getKycDocument',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'getKycDocument',
-              ],
             },
           ],
         },
@@ -1020,23 +1077,27 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'contentAsBase64',
+          'title': 'Content As Base64',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'The content of the image as base64 encoded string',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'mimeType',
+          'title': 'Mime Type',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'The MIME type of the image',
-          'type': '`\$STRING`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
           'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
           'type': '`\$STRING`',
         },
       ],
@@ -1047,17 +1108,6 @@ class Config {
           'name': 'load',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'GET',
               'orig': '/getLogo',
@@ -1066,18 +1116,30 @@ class Config {
                   'lit': 'getLogo',
                 },
               ],
+              'parts': <dynamic>[
+                'getLogo',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'getLogo',
-              ],
             },
           ],
         },
@@ -1090,15 +1152,18 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'availableRoles',
+          'title': 'Available Roles',
           'type': '`\$ARRAY`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
           'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
           'type': '`\$STRING`',
         },
       ],
@@ -1109,17 +1174,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/listOfAvailableRoles',
@@ -1128,18 +1182,30 @@ class Config {
                   'lit': 'listOfAvailableRoles',
                 },
               ],
+              'parts': <dynamic>[
+                'listOfAvailableRoles',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'listOfAvailableRoles',
-              ],
             },
           ],
         },
@@ -1152,27 +1218,33 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'filter',
+          'title': 'Filter',
           'type': '`\$OBJECT`',
         },
         <String, dynamic>{
           'name': 'list',
+          'title': 'List',
           'type': '`\$ARRAY`',
         },
         <String, dynamic>{
           'name': 'pagination',
+          'title': 'Pagination',
           'type': '`\$OBJECT`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
           'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'sorting',
+          'title': 'Sorting',
           'type': '`\$OBJECT`',
         },
       ],
@@ -1183,17 +1255,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/listOfMandators',
@@ -1202,18 +1263,30 @@ class Config {
                   'lit': 'listOfMandators',
                 },
               ],
+              'parts': <dynamic>[
+                'listOfMandators',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'listOfMandators',
-              ],
             },
           ],
         },
@@ -1226,19 +1299,23 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'list',
+          'title': 'List',
           'type': '`\$ARRAY`',
         },
         <String, dynamic>{
           'name': 'pagination',
+          'title': 'Pagination',
           'type': '`\$OBJECT`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
           'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
           'type': '`\$STRING`',
         },
       ],
@@ -1249,17 +1326,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/listOfModules',
@@ -1268,18 +1334,30 @@ class Config {
                   'lit': 'listOfModules',
                 },
               ],
+              'parts': <dynamic>[
+                'listOfModules',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'listOfModules',
-              ],
             },
           ],
         },
@@ -1292,27 +1370,33 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'filter',
+          'title': 'Filter',
           'type': '`\$OBJECT`',
         },
         <String, dynamic>{
           'name': 'groupRoles',
+          'title': 'Group Roles',
           'type': '`\$ARRAY`',
         },
         <String, dynamic>{
           'name': 'pagination',
+          'title': 'Pagination',
           'type': '`\$OBJECT`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
           'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'sorting',
+          'title': 'Sorting',
           'type': '`\$OBJECT`',
         },
       ],
@@ -1323,17 +1407,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/listOfRoleGroups',
@@ -1342,18 +1415,30 @@ class Config {
                   'lit': 'listOfRoleGroups',
                 },
               ],
+              'parts': <dynamic>[
+                'listOfRoleGroups',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'listOfRoleGroups',
-              ],
             },
           ],
         },
@@ -1366,27 +1451,33 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'filter',
+          'title': 'Filter',
           'type': '`\$OBJECT`',
         },
         <String, dynamic>{
           'name': 'list',
+          'title': 'List',
           'type': '`\$ARRAY`',
         },
         <String, dynamic>{
           'name': 'pagination',
+          'title': 'Pagination',
           'type': '`\$OBJECT`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
           'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'sorting',
+          'title': 'Sorting',
           'type': '`\$OBJECT`',
         },
       ],
@@ -1397,17 +1488,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/listOfTransactionsHistory',
@@ -1416,18 +1496,30 @@ class Config {
                   'lit': 'listOfTransactionsHistory',
                 },
               ],
+              'parts': <dynamic>[
+                'listOfTransactionsHistory',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'listOfTransactionsHistory',
-              ],
             },
           ],
         },
@@ -1440,27 +1532,33 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'filter',
+          'title': 'Filter',
           'type': '`\$OBJECT`',
         },
         <String, dynamic>{
           'name': 'list',
+          'title': 'List',
           'type': '`\$ARRAY`',
         },
         <String, dynamic>{
           'name': 'pagination',
+          'title': 'Pagination',
           'type': '`\$OBJECT`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
           'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'sorting',
+          'title': 'Sorting',
           'type': '`\$OBJECT`',
         },
       ],
@@ -1471,17 +1569,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/listOfUsers',
@@ -1490,18 +1577,30 @@ class Config {
                   'lit': 'listOfUsers',
                 },
               ],
+              'parts': <dynamic>[
+                'listOfUsers',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'listOfUsers',
-              ],
             },
           ],
         },
@@ -1514,24 +1613,29 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'mandatorName',
-          'req': true,
+          'title': 'Mandator Name',
           'type': '`\$STRING`',
+          'req': true,
         },
         <String, dynamic>{
           'name': 'password',
+          'title': 'Password',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
           'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'username',
+          'title': 'Username',
           'type': '`\$STRING`',
         },
       ],
@@ -1542,17 +1646,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/provideCredentials',
@@ -1561,18 +1654,30 @@ class Config {
                   'lit': 'provideCredentials',
                 },
               ],
+              'parts': <dynamic>[
+                'provideCredentials',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'provideCredentials',
-              ],
             },
           ],
         },
@@ -1585,111 +1690,132 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'city',
-          'short': 'City where the user resides.',
+          'title': 'City',
           'type': '`\$STRING`',
+          'short': 'City where the user resides.',
         },
         <String, dynamic>{
           'name': 'consumerId',
-          'short': 'User login or unique user identifier.',
+          'title': 'Consumer Id',
           'type': '`\$STRING`',
+          'short': 'User login or unique user identifier.',
         },
         <String, dynamic>{
           'name': 'consumerLanguage',
-          'short': 'Preferred language for the user (e.g., \'en\').',
+          'title': 'Consumer Language',
           'type': '`\$STRING`',
+          'short': 'Preferred language for the user (e.g., \'en\').',
         },
         <String, dynamic>{
           'name': 'country',
-          'short': 'User\'s country.',
+          'title': 'Country',
           'type': '`\$STRING`',
+          'short': 'User\'s country.',
         },
         <String, dynamic>{
           'name': 'dateOfBirth',
-          'short': 'User\'s date of birth (expected format: dd.MM.yyyy).',
+          'title': 'Date Of Birth',
           'type': '`\$STRING`',
+          'short': 'User\'s date of birth (expected format: dd.MM.yyyy).',
         },
         <String, dynamic>{
           'name': 'driverLicenceNumber',
-          'short': 'User\'s driver\'s license number.',
+          'title': 'Driver Licence Number',
           'type': '`\$STRING`',
+          'short': 'User\'s driver\'s license number.',
         },
         <String, dynamic>{
-          'format': 'email',
           'name': 'email',
+          'title': 'Email',
+          'type': '`\$STRING`',
           'req': true,
           'short': 'User\'s email address (must be unique).',
-          'type': '`\$STRING`',
+          'format': 'email',
         },
         <String, dynamic>{
           'name': 'firstName',
-          'short': 'User\'s first name.',
+          'title': 'First Name',
           'type': '`\$STRING`',
+          'short': 'User\'s first name.',
         },
         <String, dynamic>{
           'name': 'identificationNumber',
-          'short': 'User\'s identification number.',
+          'title': 'Identification Number',
           'type': '`\$STRING`',
+          'short': 'User\'s identification number.',
         },
         <String, dynamic>{
           'name': 'lastName',
-          'short': 'User\'s last name.',
+          'title': 'Last Name',
           'type': '`\$STRING`',
+          'short': 'User\'s last name.',
         },
         <String, dynamic>{
           'name': 'login',
-          'short': 'User login identifier (should be unique).',
+          'title': 'Login',
           'type': '`\$STRING`',
+          'short': 'User login identifier (should be unique).',
         },
         <String, dynamic>{
           'name': 'module',
-          'short': 'Module identifier (if applicable).',
+          'title': 'Module',
           'type': '`\$STRING`',
+          'short': 'Module identifier (if applicable).',
         },
         <String, dynamic>{
           'name': 'passportNumber',
-          'short': 'User\'s passport number.',
+          'title': 'Passport Number',
           'type': '`\$STRING`',
+          'short': 'User\'s passport number.',
         },
         <String, dynamic>{
           'name': 'phone',
-          'short': 'User\'s phone number.',
+          'title': 'Phone',
           'type': '`\$STRING`',
+          'short': 'User\'s phone number.',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
-          'short': 'Response code (0 indicates success; non-zero indicates an error).',
+          'title': 'Response Code',
           'type': '`\$INTEGER`',
+          'short': 'Response code (0 indicates success; non-zero indicates an error).',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
-          'short': 'Human-readable response message.',
+          'title': 'Response Message',
           'type': '`\$STRING`',
+          'short': 'Human-readable response message.',
         },
         <String, dynamic>{
           'name': 'salutation',
-          'short': 'User\'s salutation (e.g., Mr., Ms.).',
+          'title': 'Salutation',
           'type': '`\$STRING`',
+          'short': 'User\'s salutation (e.g., Mr., Ms.).',
         },
         <String, dynamic>{
           'name': 'state',
-          'short': 'User\'s state or region.',
+          'title': 'State',
           'type': '`\$STRING`',
+          'short': 'User\'s state or region.',
         },
         <String, dynamic>{
           'name': 'street1',
-          'short': 'Primary address line.',
+          'title': 'Street1',
           'type': '`\$STRING`',
+          'short': 'Primary address line.',
         },
         <String, dynamic>{
           'name': 'street2',
-          'short': 'Secondary address line.',
+          'title': 'Street2',
           'type': '`\$STRING`',
+          'short': 'Secondary address line.',
         },
         <String, dynamic>{
           'name': 'zip',
-          'short': 'Postal code.',
+          'title': 'Zip',
           'type': '`\$STRING`',
+          'short': 'Postal code.',
         },
       ],
       'name': 'output_register_user',
@@ -1699,17 +1825,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/registerUser',
@@ -1718,18 +1833,30 @@ class Config {
                   'lit': 'registerUser',
                 },
               ],
+              'parts': <dynamic>[
+                'registerUser',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'registerUser',
-              ],
             },
           ],
         },
@@ -1742,19 +1869,23 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'consumerUUID',
+          'title': 'Consumer Uuid',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
           'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'roles',
+          'title': 'Roles',
           'type': '`\$ARRAY`',
         },
       ],
@@ -1765,17 +1896,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/removeRoles',
@@ -1784,18 +1904,30 @@ class Config {
                   'lit': 'removeRoles',
                 },
               ],
+              'parts': <dynamic>[
+                'removeRoles',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'removeRoles',
-              ],
             },
           ],
         },
@@ -1808,28 +1940,34 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'businessRegistrationNumber',
+          'title': 'Business Registration Number',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'consumerUUID',
-          'req': true,
+          'title': 'Consumer Uuid',
           'type': '`\$STRING`',
+          'req': true,
         },
         <String, dynamic>{
           'name': 'emailConfirmationCode',
+          'title': 'Email Confirmation Code',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'phoneNumber',
+          'title': 'Phone Number',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
           'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
           'type': '`\$STRING`',
         },
       ],
@@ -1840,16 +1978,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/resendLink',
@@ -1858,18 +1986,29 @@ class Config {
                   'lit': 'resendLink',
                 },
               ],
+              'parts': <dynamic>[
+                'resendLink',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'resendLink',
-              ],
             },
           ],
         },
@@ -1882,19 +2021,23 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'consumerUuid',
+          'title': 'Consumer Uuid',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'phoneNumber',
+          'title': 'Phone Number',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
           'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
           'type': '`\$STRING`',
         },
       ],
@@ -1905,17 +2048,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'reqd': true,
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/resetPassword',
@@ -1924,18 +2056,30 @@ class Config {
                   'lit': 'resetPassword',
                 },
               ],
+              'parts': <dynamic>[
+                'resetPassword',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                    'reqd': true,
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'resetPassword',
-              ],
             },
           ],
         },
@@ -1948,96 +2092,119 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'city',
+          'title': 'City',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'consumerUuid',
-          'req': true,
+          'title': 'Consumer Uuid',
           'type': '`\$STRING`',
+          'req': true,
         },
         <String, dynamic>{
           'name': 'consumerlanguage',
+          'title': 'Consumerlanguage',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'country',
+          'title': 'Country',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'dateOfBirth',
+          'title': 'Date Of Birth',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'datetime_created',
+          'title': 'Datetime Created',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'driverLicenceNumber',
+          'title': 'Driver Licence Number',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'email',
+          'title': 'Email',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'firstName',
+          'title': 'First Name',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'identificationNumber',
+          'title': 'Identification Number',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'kycPassed',
+          'title': 'Kyc Passed',
           'type': '`\$BOOLEAN`',
         },
         <String, dynamic>{
           'name': 'lastName',
+          'title': 'Last Name',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'nationality',
+          'title': 'Nationality',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'passportNumber',
+          'title': 'Passport Number',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'phoneNumber',
+          'title': 'Phone Number',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'placeOfBirth',
+          'title': 'Place Of Birth',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
           'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'state',
+          'title': 'State',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'street1',
+          'title': 'Street1',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'street2',
+          'title': 'Street2',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'transactionhistory_id',
+          'title': 'Transactionhistory Id',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'zip',
+          'title': 'Zip',
           'type': '`\$STRING`',
         },
       ],
@@ -2048,16 +2215,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/updateConsumer',
@@ -2066,18 +2223,29 @@ class Config {
                   'lit': 'updateConsumer',
                 },
               ],
+              'parts': <dynamic>[
+                'updateConsumer',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'updateConsumer',
-              ],
             },
           ],
         },
@@ -2090,31 +2258,38 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'consumerLanguage',
+          'title': 'Consumer Language',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'email',
+          'title': 'Email',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'firstName',
+          'title': 'First Name',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'lastName',
+          'title': 'Last Name',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'phoneNumber',
+          'title': 'Phone Number',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
-          'format': 'int32',
           'name': 'responseCode',
+          'title': 'Response Code',
           'type': '`\$INTEGER`',
+          'format': 'int32',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'title': 'Response Message',
           'type': '`\$STRING`',
         },
       ],
@@ -2125,16 +2300,6 @@ class Config {
           'name': 'create',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{
-                'header': <dynamic>[
-                  <String, dynamic>{
-                    'kind': 'header',
-                    'name': 'authorization',
-                    'orig': 'authorization',
-                    'type': '`\$STRING`',
-                  },
-                ],
-              },
               'kind': 'http',
               'method': 'POST',
               'orig': '/updateProfile',
@@ -2143,18 +2308,29 @@ class Config {
                   'lit': 'updateProfile',
                 },
               ],
+              'parts': <dynamic>[
+                'updateProfile',
+              ],
+              'rename': <String, dynamic>{},
+              'transform': <String, dynamic>{
+                'req': '`reqdata`',
+                'res': '`body`',
+              },
+              'args': <String, dynamic>{
+                'header': <dynamic>[
+                  <String, dynamic>{
+                    'name': 'authorization',
+                    'orig': 'authorization',
+                    'type': '`\$STRING`',
+                    'kind': 'header',
+                  },
+                ],
+              },
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'authorization',
                 ],
               },
-              'transform': <String, dynamic>{
-                'req': '`reqdata`',
-                'res': '`body`',
-              },
-              'parts': <dynamic>[
-                'updateProfile',
-              ],
             },
           ],
         },
@@ -2167,14 +2343,17 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'appName',
+          'title': 'App Name',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'buildDate',
+          'title': 'Build Date',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'version',
+          'title': 'Version',
           'type': '`\$STRING`',
         },
       ],
@@ -2185,7 +2364,6 @@ class Config {
           'name': 'load',
           'points': <dynamic>[
             <String, dynamic>{
-              'args': <String, dynamic>{},
               'kind': 'http',
               'method': 'GET',
               'orig': '/version',
@@ -2194,14 +2372,16 @@ class Config {
                   'lit': 'version',
                 },
               ],
-              'select': <String, dynamic>{},
+              'parts': <dynamic>[
+                'version',
+              ],
+              'rename': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
-              'parts': <dynamic>[
-                'version',
-              ],
+              'args': <String, dynamic>{},
+              'select': <String, dynamic>{},
             },
           ],
         },

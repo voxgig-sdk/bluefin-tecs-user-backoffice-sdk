@@ -50,7 +50,7 @@ static OutputResendLinkSetup output_resend_link_basic_setup(const Value& extra) 
 
   OutputResendLinkSetup s;
   s.client = client;
-  s.data = entity_data;
+  s.d = entity_data;
   s.idmap = idmap_resolved;
   s.env = env;
   s.live = live;

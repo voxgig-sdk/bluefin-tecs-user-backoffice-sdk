@@ -236,12 +236,14 @@ defmodule BluefinTecsUserBackoffice.Config do
         "output_activate_digital_module" => %{
           "fields" => [
             %{
-              "format" => "int32",
               "name" => "responseCode",
-              "type" => "`$INTEGER`"
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
+              "format" => "int32"
             },
             %{
               "name" => "responseMessage",
+              "title" => "Response Message",
               "type" => "`$STRING`"
             }
           ],
@@ -252,17 +254,6 @@ defmodule BluefinTecsUserBackoffice.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "args" => %{
-                    "header" => [
-                      %{
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`"
-                      }
-                    ]
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/activateDigitalModule",
@@ -271,18 +262,30 @@ defmodule BluefinTecsUserBackoffice.Config do
                       "lit" => "activateDigitalModule"
                     }
                   ],
-                  "select" => %{
-                    "exist" => [
-                      "authorization"
-                    ]
-                  },
+                  "parts" => [
+                    "activateDigitalModule"
+                  ],
+                  "rename" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
                   },
-                  "parts" => [
-                    "activateDigitalModule"
-                  ]
+                  "args" => %{
+                    "header" => [
+                      %{
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true
+                      }
+                    ]
+                  },
+                  "select" => %{
+                    "exist" => [
+                      "authorization"
+                    ]
+                  }
                 }
               ]
             }
@@ -295,21 +298,25 @@ defmodule BluefinTecsUserBackoffice.Config do
           "fields" => [
             %{
               "name" => "clientSecret",
-              "req" => true,
-              "type" => "`$STRING`"
+              "title" => "Client Secret",
+              "type" => "`$STRING`",
+              "req" => true
             },
             %{
               "name" => "notificationEmail",
-              "req" => true,
-              "type" => "`$STRING`"
+              "title" => "Notification Email",
+              "type" => "`$STRING`",
+              "req" => true
             },
             %{
-              "format" => "int32",
               "name" => "responseCode",
-              "type" => "`$INTEGER`"
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
+              "format" => "int32"
             },
             %{
               "name" => "responseMessage",
+              "title" => "Response Message",
               "type" => "`$STRING`"
             }
           ],
@@ -320,17 +327,6 @@ defmodule BluefinTecsUserBackoffice.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "args" => %{
-                    "header" => [
-                      %{
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`"
-                      }
-                    ]
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/activateMerchantPortalModule",
@@ -339,18 +335,30 @@ defmodule BluefinTecsUserBackoffice.Config do
                       "lit" => "activateMerchantPortalModule"
                     }
                   ],
-                  "select" => %{
-                    "exist" => [
-                      "authorization"
-                    ]
-                  },
+                  "parts" => [
+                    "activateMerchantPortalModule"
+                  ],
+                  "rename" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
                   },
-                  "parts" => [
-                    "activateMerchantPortalModule"
-                  ]
+                  "args" => %{
+                    "header" => [
+                      %{
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true
+                      }
+                    ]
+                  },
+                  "select" => %{
+                    "exist" => [
+                      "authorization"
+                    ]
+                  }
                 }
               ]
             }
@@ -362,12 +370,14 @@ defmodule BluefinTecsUserBackoffice.Config do
         "output_activate_store_module" => %{
           "fields" => [
             %{
-              "format" => "int32",
               "name" => "responseCode",
-              "type" => "`$INTEGER`"
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
+              "format" => "int32"
             },
             %{
               "name" => "responseMessage",
+              "title" => "Response Message",
               "type" => "`$STRING`"
             }
           ],
@@ -378,17 +388,6 @@ defmodule BluefinTecsUserBackoffice.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "args" => %{
-                    "header" => [
-                      %{
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`"
-                      }
-                    ]
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/activateAppStoreModule",
@@ -397,18 +396,30 @@ defmodule BluefinTecsUserBackoffice.Config do
                       "lit" => "activateAppStoreModule"
                     }
                   ],
-                  "select" => %{
-                    "exist" => [
-                      "authorization"
-                    ]
-                  },
+                  "parts" => [
+                    "activateAppStoreModule"
+                  ],
+                  "rename" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
                   },
-                  "parts" => [
-                    "activateAppStoreModule"
-                  ]
+                  "args" => %{
+                    "header" => [
+                      %{
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true
+                      }
+                    ]
+                  },
+                  "select" => %{
+                    "exist" => [
+                      "authorization"
+                    ]
+                  }
                 }
               ]
             }
@@ -421,15 +432,18 @@ defmodule BluefinTecsUserBackoffice.Config do
           "fields" => [
             %{
               "name" => "consumerUUID",
+              "title" => "Consumer Uuid",
               "type" => "`$STRING`"
             },
             %{
-              "format" => "int32",
               "name" => "responseCode",
-              "type" => "`$INTEGER`"
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
+              "format" => "int32"
             },
             %{
               "name" => "responseMessage",
+              "title" => "Response Message",
               "type" => "`$STRING`"
             }
           ],
@@ -440,17 +454,6 @@ defmodule BluefinTecsUserBackoffice.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "args" => %{
-                    "header" => [
-                      %{
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`"
-                      }
-                    ]
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/activateUser",
@@ -459,18 +462,30 @@ defmodule BluefinTecsUserBackoffice.Config do
                       "lit" => "activateUser"
                     }
                   ],
-                  "select" => %{
-                    "exist" => [
-                      "authorization"
-                    ]
-                  },
+                  "parts" => [
+                    "activateUser"
+                  ],
+                  "rename" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
                   },
-                  "parts" => [
-                    "activateUser"
-                  ]
+                  "args" => %{
+                    "header" => [
+                      %{
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true
+                      }
+                    ]
+                  },
+                  "select" => %{
+                    "exist" => [
+                      "authorization"
+                    ]
+                  }
                 }
               ]
             }
@@ -483,26 +498,30 @@ defmodule BluefinTecsUserBackoffice.Config do
           "fields" => [
             %{
               "name" => "consumerUUID",
+              "title" => "Consumer Uuid",
+              "type" => "`$STRING`",
               "req" => true,
-              "short" => "Unique identifier of the consumer (user) to whom the role(s) will be assigned.",
-              "type" => "`$STRING`"
+              "short" => "Unique identifier of the consumer (user) to whom the role(s) will be assigned."
             },
             %{
-              "format" => "int32",
               "name" => "responseCode",
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
               "short" => "Response code: 0 indicates success; any non-zero value indicates an error.",
-              "type" => "`$INTEGER`"
+              "format" => "int32"
             },
             %{
               "name" => "responseMessage",
-              "short" => "A human-readable message providing additional details about the outcome.",
-              "type" => "`$STRING`"
+              "title" => "Response Message",
+              "type" => "`$STRING`",
+              "short" => "A human-readable message providing additional details about the outcome."
             },
             %{
               "name" => "roles",
+              "title" => "Roles",
+              "type" => "`$ARRAY`",
               "req" => true,
-              "short" => "List of roles to assign to the consumer.",
-              "type" => "`$ARRAY`"
+              "short" => "List of roles to assign to the consumer."
             }
           ],
           "name" => "output_assign_role",
@@ -512,17 +531,6 @@ defmodule BluefinTecsUserBackoffice.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "args" => %{
-                    "header" => [
-                      %{
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`"
-                      }
-                    ]
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/assignRoles",
@@ -531,18 +539,30 @@ defmodule BluefinTecsUserBackoffice.Config do
                       "lit" => "assignRoles"
                     }
                   ],
-                  "select" => %{
-                    "exist" => [
-                      "authorization"
-                    ]
-                  },
+                  "parts" => [
+                    "assignRoles"
+                  ],
+                  "rename" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
                   },
-                  "parts" => [
-                    "assignRoles"
-                  ]
+                  "args" => %{
+                    "header" => [
+                      %{
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true
+                      }
+                    ]
+                  },
+                  "select" => %{
+                    "exist" => [
+                      "authorization"
+                    ]
+                  }
                 }
               ]
             }
@@ -555,23 +575,27 @@ defmodule BluefinTecsUserBackoffice.Config do
           "fields" => [
             %{
               "name" => "contentAsBase64",
+              "title" => "Content As Base64",
+              "type" => "`$STRING`",
               "req" => true,
-              "short" => "The content of the image as base64 encoded string",
-              "type" => "`$STRING`"
+              "short" => "The content of the image as base64 encoded string"
             },
             %{
               "name" => "mimeType",
+              "title" => "Mime Type",
+              "type" => "`$STRING`",
               "req" => true,
-              "short" => "The MIME type of the image",
-              "type" => "`$STRING`"
+              "short" => "The MIME type of the image"
             },
             %{
-              "format" => "int32",
               "name" => "responseCode",
-              "type" => "`$INTEGER`"
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
+              "format" => "int32"
             },
             %{
               "name" => "responseMessage",
+              "title" => "Response Message",
               "type" => "`$STRING`"
             }
           ],
@@ -582,17 +606,6 @@ defmodule BluefinTecsUserBackoffice.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "args" => %{
-                    "header" => [
-                      %{
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`"
-                      }
-                    ]
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/changeLogo",
@@ -601,18 +614,30 @@ defmodule BluefinTecsUserBackoffice.Config do
                       "lit" => "changeLogo"
                     }
                   ],
-                  "select" => %{
-                    "exist" => [
-                      "authorization"
-                    ]
-                  },
+                  "parts" => [
+                    "changeLogo"
+                  ],
+                  "rename" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
                   },
-                  "parts" => [
-                    "changeLogo"
-                  ]
+                  "args" => %{
+                    "header" => [
+                      %{
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true
+                      }
+                    ]
+                  },
+                  "select" => %{
+                    "exist" => [
+                      "authorization"
+                    ]
+                  }
                 }
               ]
             }
@@ -625,89 +650,107 @@ defmodule BluefinTecsUserBackoffice.Config do
           "fields" => [
             %{
               "name" => "city",
+              "title" => "City",
               "type" => "`$STRING`"
             },
             %{
               "name" => "country",
+              "title" => "Country",
               "type" => "`$STRING`"
             },
             %{
               "name" => "dateOfBirth",
+              "title" => "Date Of Birth",
               "type" => "`$STRING`"
             },
             %{
               "name" => "description",
+              "title" => "Description",
+              "type" => "`$STRING`",
               "op" => %{
                 "create" => %{
                   "req" => true,
                   "type" => "`$STRING`"
                 }
-              },
-              "type" => "`$STRING`"
+              }
             },
             %{
               "name" => "driversLicenseNumber",
+              "title" => "Drivers License Number",
               "type" => "`$STRING`"
             },
             %{
               "name" => "email",
-              "req" => true,
-              "type" => "`$STRING`"
+              "title" => "Email",
+              "type" => "`$STRING`",
+              "req" => true
             },
             %{
               "name" => "firstName",
+              "title" => "First Name",
               "type" => "`$STRING`"
             },
             %{
               "name" => "identificationNumber",
+              "title" => "Identification Number",
               "type" => "`$STRING`"
             },
             %{
               "name" => "lastName",
+              "title" => "Last Name",
               "type" => "`$STRING`"
             },
             %{
               "name" => "login",
-              "req" => true,
-              "type" => "`$STRING`"
+              "title" => "Login",
+              "type" => "`$STRING`",
+              "req" => true
             },
             %{
               "name" => "name",
+              "title" => "Name",
+              "type" => "`$STRING`",
               "op" => %{
                 "create" => %{
                   "req" => true,
                   "type" => "`$STRING`"
                 }
-              },
-              "type" => "`$STRING`"
+              }
             },
             %{
               "name" => "passportNumber",
+              "title" => "Passport Number",
               "type" => "`$STRING`"
             },
             %{
               "name" => "phone",
-              "req" => true,
-              "type" => "`$STRING`"
+              "title" => "Phone",
+              "type" => "`$STRING`",
+              "req" => true
             },
             %{
               "name" => "salutation",
+              "title" => "Salutation",
               "type" => "`$STRING`"
             },
             %{
               "name" => "state",
+              "title" => "State",
               "type" => "`$STRING`"
             },
             %{
               "name" => "street1",
+              "title" => "Street1",
               "type" => "`$STRING`"
             },
             %{
               "name" => "street2",
+              "title" => "Street2",
               "type" => "`$STRING`"
             },
             %{
               "name" => "zipCode",
+              "title" => "Zip Code",
               "type" => "`$STRING`"
             }
           ],
@@ -718,17 +761,6 @@ defmodule BluefinTecsUserBackoffice.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "args" => %{
-                    "header" => [
-                      %{
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`"
-                      }
-                    ]
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/createMandator",
@@ -737,18 +769,30 @@ defmodule BluefinTecsUserBackoffice.Config do
                       "lit" => "createMandator"
                     }
                   ],
-                  "select" => %{
-                    "exist" => [
-                      "authorization"
-                    ]
-                  },
+                  "parts" => [
+                    "createMandator"
+                  ],
+                  "rename" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body.mandator`"
                   },
-                  "parts" => [
-                    "createMandator"
-                  ]
+                  "args" => %{
+                    "header" => [
+                      %{
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true
+                      }
+                    ]
+                  },
+                  "select" => %{
+                    "exist" => [
+                      "authorization"
+                    ]
+                  }
                 }
               ]
             }
@@ -761,16 +805,19 @@ defmodule BluefinTecsUserBackoffice.Config do
           "fields" => [
             %{
               "name" => "mandatorName",
-              "req" => true,
-              "type" => "`$STRING`"
+              "title" => "Mandator Name",
+              "type" => "`$STRING`",
+              "req" => true
             },
             %{
-              "format" => "int32",
               "name" => "responseCode",
-              "type" => "`$INTEGER`"
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
+              "format" => "int32"
             },
             %{
               "name" => "responseMessage",
+              "title" => "Response Message",
               "type" => "`$STRING`"
             }
           ],
@@ -781,17 +828,6 @@ defmodule BluefinTecsUserBackoffice.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "args" => %{
-                    "header" => [
-                      %{
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`"
-                      }
-                    ]
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/createServiceUser",
@@ -800,18 +836,30 @@ defmodule BluefinTecsUserBackoffice.Config do
                       "lit" => "createServiceUser"
                     }
                   ],
-                  "select" => %{
-                    "exist" => [
-                      "authorization"
-                    ]
-                  },
+                  "parts" => [
+                    "createServiceUser"
+                  ],
+                  "rename" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
                   },
-                  "parts" => [
-                    "createServiceUser"
-                  ]
+                  "args" => %{
+                    "header" => [
+                      %{
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true
+                      }
+                    ]
+                  },
+                  "select" => %{
+                    "exist" => [
+                      "authorization"
+                    ]
+                  }
                 }
               ]
             }
@@ -824,15 +872,18 @@ defmodule BluefinTecsUserBackoffice.Config do
           "fields" => [
             %{
               "name" => "consumerUUID",
+              "title" => "Consumer Uuid",
               "type" => "`$STRING`"
             },
             %{
-              "format" => "int32",
               "name" => "responseCode",
-              "type" => "`$INTEGER`"
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
+              "format" => "int32"
             },
             %{
               "name" => "responseMessage",
+              "title" => "Response Message",
               "type" => "`$STRING`"
             }
           ],
@@ -843,17 +894,6 @@ defmodule BluefinTecsUserBackoffice.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "args" => %{
-                    "header" => [
-                      %{
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`"
-                      }
-                    ]
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/deactivateUser",
@@ -862,18 +902,30 @@ defmodule BluefinTecsUserBackoffice.Config do
                       "lit" => "deactivateUser"
                     }
                   ],
-                  "select" => %{
-                    "exist" => [
-                      "authorization"
-                    ]
-                  },
+                  "parts" => [
+                    "deactivateUser"
+                  ],
+                  "rename" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
                   },
-                  "parts" => [
-                    "deactivateUser"
-                  ]
+                  "args" => %{
+                    "header" => [
+                      %{
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true
+                      }
+                    ]
+                  },
+                  "select" => %{
+                    "exist" => [
+                      "authorization"
+                    ]
+                  }
                 }
               ]
             }
@@ -886,19 +938,23 @@ defmodule BluefinTecsUserBackoffice.Config do
           "fields" => [
             %{
               "name" => "caseID",
+              "title" => "Case Id",
               "type" => "`$STRING`"
             },
             %{
               "name" => "encodedDataBase64",
+              "title" => "Encoded Data Base64",
               "type" => "`$STRING`"
             },
             %{
-              "format" => "int32",
               "name" => "responseCode",
-              "type" => "`$INTEGER`"
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
+              "format" => "int32"
             },
             %{
               "name" => "responseMessage",
+              "title" => "Response Message",
               "type" => "`$STRING`"
             }
           ],
@@ -909,17 +965,6 @@ defmodule BluefinTecsUserBackoffice.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "args" => %{
-                    "header" => [
-                      %{
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`"
-                      }
-                    ]
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/getKycDocument",
@@ -928,18 +973,30 @@ defmodule BluefinTecsUserBackoffice.Config do
                       "lit" => "getKycDocument"
                     }
                   ],
-                  "select" => %{
-                    "exist" => [
-                      "authorization"
-                    ]
-                  },
+                  "parts" => [
+                    "getKycDocument"
+                  ],
+                  "rename" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
                   },
-                  "parts" => [
-                    "getKycDocument"
-                  ]
+                  "args" => %{
+                    "header" => [
+                      %{
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true
+                      }
+                    ]
+                  },
+                  "select" => %{
+                    "exist" => [
+                      "authorization"
+                    ]
+                  }
                 }
               ]
             }
@@ -952,23 +1009,27 @@ defmodule BluefinTecsUserBackoffice.Config do
           "fields" => [
             %{
               "name" => "contentAsBase64",
+              "title" => "Content As Base64",
+              "type" => "`$STRING`",
               "req" => true,
-              "short" => "The content of the image as base64 encoded string",
-              "type" => "`$STRING`"
+              "short" => "The content of the image as base64 encoded string"
             },
             %{
               "name" => "mimeType",
+              "title" => "Mime Type",
+              "type" => "`$STRING`",
               "req" => true,
-              "short" => "The MIME type of the image",
-              "type" => "`$STRING`"
+              "short" => "The MIME type of the image"
             },
             %{
-              "format" => "int32",
               "name" => "responseCode",
-              "type" => "`$INTEGER`"
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
+              "format" => "int32"
             },
             %{
               "name" => "responseMessage",
+              "title" => "Response Message",
               "type" => "`$STRING`"
             }
           ],
@@ -979,17 +1040,6 @@ defmodule BluefinTecsUserBackoffice.Config do
               "name" => "load",
               "points" => [
                 %{
-                  "args" => %{
-                    "header" => [
-                      %{
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`"
-                      }
-                    ]
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/getLogo",
@@ -998,18 +1048,30 @@ defmodule BluefinTecsUserBackoffice.Config do
                       "lit" => "getLogo"
                     }
                   ],
-                  "select" => %{
-                    "exist" => [
-                      "authorization"
-                    ]
-                  },
+                  "parts" => [
+                    "getLogo"
+                  ],
+                  "rename" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
                   },
-                  "parts" => [
-                    "getLogo"
-                  ]
+                  "args" => %{
+                    "header" => [
+                      %{
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true
+                      }
+                    ]
+                  },
+                  "select" => %{
+                    "exist" => [
+                      "authorization"
+                    ]
+                  }
                 }
               ]
             }
@@ -1022,15 +1084,18 @@ defmodule BluefinTecsUserBackoffice.Config do
           "fields" => [
             %{
               "name" => "availableRoles",
+              "title" => "Available Roles",
               "type" => "`$ARRAY`"
             },
             %{
-              "format" => "int32",
               "name" => "responseCode",
-              "type" => "`$INTEGER`"
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
+              "format" => "int32"
             },
             %{
               "name" => "responseMessage",
+              "title" => "Response Message",
               "type" => "`$STRING`"
             }
           ],
@@ -1041,17 +1106,6 @@ defmodule BluefinTecsUserBackoffice.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "args" => %{
-                    "header" => [
-                      %{
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`"
-                      }
-                    ]
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/listOfAvailableRoles",
@@ -1060,18 +1114,30 @@ defmodule BluefinTecsUserBackoffice.Config do
                       "lit" => "listOfAvailableRoles"
                     }
                   ],
-                  "select" => %{
-                    "exist" => [
-                      "authorization"
-                    ]
-                  },
+                  "parts" => [
+                    "listOfAvailableRoles"
+                  ],
+                  "rename" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
                   },
-                  "parts" => [
-                    "listOfAvailableRoles"
-                  ]
+                  "args" => %{
+                    "header" => [
+                      %{
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true
+                      }
+                    ]
+                  },
+                  "select" => %{
+                    "exist" => [
+                      "authorization"
+                    ]
+                  }
                 }
               ]
             }
@@ -1084,27 +1150,33 @@ defmodule BluefinTecsUserBackoffice.Config do
           "fields" => [
             %{
               "name" => "filter",
+              "title" => "Filter",
               "type" => "`$OBJECT`"
             },
             %{
               "name" => "list",
+              "title" => "List",
               "type" => "`$ARRAY`"
             },
             %{
               "name" => "pagination",
+              "title" => "Pagination",
               "type" => "`$OBJECT`"
             },
             %{
-              "format" => "int32",
               "name" => "responseCode",
-              "type" => "`$INTEGER`"
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
+              "format" => "int32"
             },
             %{
               "name" => "responseMessage",
+              "title" => "Response Message",
               "type" => "`$STRING`"
             },
             %{
               "name" => "sorting",
+              "title" => "Sorting",
               "type" => "`$OBJECT`"
             }
           ],
@@ -1115,17 +1187,6 @@ defmodule BluefinTecsUserBackoffice.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "args" => %{
-                    "header" => [
-                      %{
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`"
-                      }
-                    ]
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/listOfMandators",
@@ -1134,18 +1195,30 @@ defmodule BluefinTecsUserBackoffice.Config do
                       "lit" => "listOfMandators"
                     }
                   ],
-                  "select" => %{
-                    "exist" => [
-                      "authorization"
-                    ]
-                  },
+                  "parts" => [
+                    "listOfMandators"
+                  ],
+                  "rename" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
                   },
-                  "parts" => [
-                    "listOfMandators"
-                  ]
+                  "args" => %{
+                    "header" => [
+                      %{
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true
+                      }
+                    ]
+                  },
+                  "select" => %{
+                    "exist" => [
+                      "authorization"
+                    ]
+                  }
                 }
               ]
             }
@@ -1158,19 +1231,23 @@ defmodule BluefinTecsUserBackoffice.Config do
           "fields" => [
             %{
               "name" => "list",
+              "title" => "List",
               "type" => "`$ARRAY`"
             },
             %{
               "name" => "pagination",
+              "title" => "Pagination",
               "type" => "`$OBJECT`"
             },
             %{
-              "format" => "int32",
               "name" => "responseCode",
-              "type" => "`$INTEGER`"
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
+              "format" => "int32"
             },
             %{
               "name" => "responseMessage",
+              "title" => "Response Message",
               "type" => "`$STRING`"
             }
           ],
@@ -1181,17 +1258,6 @@ defmodule BluefinTecsUserBackoffice.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "args" => %{
-                    "header" => [
-                      %{
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`"
-                      }
-                    ]
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/listOfModules",
@@ -1200,18 +1266,30 @@ defmodule BluefinTecsUserBackoffice.Config do
                       "lit" => "listOfModules"
                     }
                   ],
-                  "select" => %{
-                    "exist" => [
-                      "authorization"
-                    ]
-                  },
+                  "parts" => [
+                    "listOfModules"
+                  ],
+                  "rename" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
                   },
-                  "parts" => [
-                    "listOfModules"
-                  ]
+                  "args" => %{
+                    "header" => [
+                      %{
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true
+                      }
+                    ]
+                  },
+                  "select" => %{
+                    "exist" => [
+                      "authorization"
+                    ]
+                  }
                 }
               ]
             }
@@ -1224,27 +1302,33 @@ defmodule BluefinTecsUserBackoffice.Config do
           "fields" => [
             %{
               "name" => "filter",
+              "title" => "Filter",
               "type" => "`$OBJECT`"
             },
             %{
               "name" => "groupRoles",
+              "title" => "Group Roles",
               "type" => "`$ARRAY`"
             },
             %{
               "name" => "pagination",
+              "title" => "Pagination",
               "type" => "`$OBJECT`"
             },
             %{
-              "format" => "int32",
               "name" => "responseCode",
-              "type" => "`$INTEGER`"
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
+              "format" => "int32"
             },
             %{
               "name" => "responseMessage",
+              "title" => "Response Message",
               "type" => "`$STRING`"
             },
             %{
               "name" => "sorting",
+              "title" => "Sorting",
               "type" => "`$OBJECT`"
             }
           ],
@@ -1255,17 +1339,6 @@ defmodule BluefinTecsUserBackoffice.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "args" => %{
-                    "header" => [
-                      %{
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`"
-                      }
-                    ]
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/listOfRoleGroups",
@@ -1274,18 +1347,30 @@ defmodule BluefinTecsUserBackoffice.Config do
                       "lit" => "listOfRoleGroups"
                     }
                   ],
-                  "select" => %{
-                    "exist" => [
-                      "authorization"
-                    ]
-                  },
+                  "parts" => [
+                    "listOfRoleGroups"
+                  ],
+                  "rename" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
                   },
-                  "parts" => [
-                    "listOfRoleGroups"
-                  ]
+                  "args" => %{
+                    "header" => [
+                      %{
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true
+                      }
+                    ]
+                  },
+                  "select" => %{
+                    "exist" => [
+                      "authorization"
+                    ]
+                  }
                 }
               ]
             }
@@ -1298,27 +1383,33 @@ defmodule BluefinTecsUserBackoffice.Config do
           "fields" => [
             %{
               "name" => "filter",
+              "title" => "Filter",
               "type" => "`$OBJECT`"
             },
             %{
               "name" => "list",
+              "title" => "List",
               "type" => "`$ARRAY`"
             },
             %{
               "name" => "pagination",
+              "title" => "Pagination",
               "type" => "`$OBJECT`"
             },
             %{
-              "format" => "int32",
               "name" => "responseCode",
-              "type" => "`$INTEGER`"
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
+              "format" => "int32"
             },
             %{
               "name" => "responseMessage",
+              "title" => "Response Message",
               "type" => "`$STRING`"
             },
             %{
               "name" => "sorting",
+              "title" => "Sorting",
               "type" => "`$OBJECT`"
             }
           ],
@@ -1329,17 +1420,6 @@ defmodule BluefinTecsUserBackoffice.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "args" => %{
-                    "header" => [
-                      %{
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`"
-                      }
-                    ]
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/listOfTransactionsHistory",
@@ -1348,18 +1428,30 @@ defmodule BluefinTecsUserBackoffice.Config do
                       "lit" => "listOfTransactionsHistory"
                     }
                   ],
-                  "select" => %{
-                    "exist" => [
-                      "authorization"
-                    ]
-                  },
+                  "parts" => [
+                    "listOfTransactionsHistory"
+                  ],
+                  "rename" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
                   },
-                  "parts" => [
-                    "listOfTransactionsHistory"
-                  ]
+                  "args" => %{
+                    "header" => [
+                      %{
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true
+                      }
+                    ]
+                  },
+                  "select" => %{
+                    "exist" => [
+                      "authorization"
+                    ]
+                  }
                 }
               ]
             }
@@ -1372,27 +1464,33 @@ defmodule BluefinTecsUserBackoffice.Config do
           "fields" => [
             %{
               "name" => "filter",
+              "title" => "Filter",
               "type" => "`$OBJECT`"
             },
             %{
               "name" => "list",
+              "title" => "List",
               "type" => "`$ARRAY`"
             },
             %{
               "name" => "pagination",
+              "title" => "Pagination",
               "type" => "`$OBJECT`"
             },
             %{
-              "format" => "int32",
               "name" => "responseCode",
-              "type" => "`$INTEGER`"
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
+              "format" => "int32"
             },
             %{
               "name" => "responseMessage",
+              "title" => "Response Message",
               "type" => "`$STRING`"
             },
             %{
               "name" => "sorting",
+              "title" => "Sorting",
               "type" => "`$OBJECT`"
             }
           ],
@@ -1403,17 +1501,6 @@ defmodule BluefinTecsUserBackoffice.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "args" => %{
-                    "header" => [
-                      %{
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`"
-                      }
-                    ]
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/listOfUsers",
@@ -1422,18 +1509,30 @@ defmodule BluefinTecsUserBackoffice.Config do
                       "lit" => "listOfUsers"
                     }
                   ],
-                  "select" => %{
-                    "exist" => [
-                      "authorization"
-                    ]
-                  },
+                  "parts" => [
+                    "listOfUsers"
+                  ],
+                  "rename" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
                   },
-                  "parts" => [
-                    "listOfUsers"
-                  ]
+                  "args" => %{
+                    "header" => [
+                      %{
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true
+                      }
+                    ]
+                  },
+                  "select" => %{
+                    "exist" => [
+                      "authorization"
+                    ]
+                  }
                 }
               ]
             }
@@ -1446,24 +1545,29 @@ defmodule BluefinTecsUserBackoffice.Config do
           "fields" => [
             %{
               "name" => "mandatorName",
-              "req" => true,
-              "type" => "`$STRING`"
+              "title" => "Mandator Name",
+              "type" => "`$STRING`",
+              "req" => true
             },
             %{
               "name" => "password",
+              "title" => "Password",
               "type" => "`$STRING`"
             },
             %{
-              "format" => "int32",
               "name" => "responseCode",
-              "type" => "`$INTEGER`"
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
+              "format" => "int32"
             },
             %{
               "name" => "responseMessage",
+              "title" => "Response Message",
               "type" => "`$STRING`"
             },
             %{
               "name" => "username",
+              "title" => "Username",
               "type" => "`$STRING`"
             }
           ],
@@ -1474,17 +1578,6 @@ defmodule BluefinTecsUserBackoffice.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "args" => %{
-                    "header" => [
-                      %{
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`"
-                      }
-                    ]
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/provideCredentials",
@@ -1493,18 +1586,30 @@ defmodule BluefinTecsUserBackoffice.Config do
                       "lit" => "provideCredentials"
                     }
                   ],
-                  "select" => %{
-                    "exist" => [
-                      "authorization"
-                    ]
-                  },
+                  "parts" => [
+                    "provideCredentials"
+                  ],
+                  "rename" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
                   },
-                  "parts" => [
-                    "provideCredentials"
-                  ]
+                  "args" => %{
+                    "header" => [
+                      %{
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true
+                      }
+                    ]
+                  },
+                  "select" => %{
+                    "exist" => [
+                      "authorization"
+                    ]
+                  }
                 }
               ]
             }
@@ -1517,111 +1622,132 @@ defmodule BluefinTecsUserBackoffice.Config do
           "fields" => [
             %{
               "name" => "city",
-              "short" => "City where the user resides.",
-              "type" => "`$STRING`"
+              "title" => "City",
+              "type" => "`$STRING`",
+              "short" => "City where the user resides."
             },
             %{
               "name" => "consumerId",
-              "short" => "User login or unique user identifier.",
-              "type" => "`$STRING`"
+              "title" => "Consumer Id",
+              "type" => "`$STRING`",
+              "short" => "User login or unique user identifier."
             },
             %{
               "name" => "consumerLanguage",
-              "short" => "Preferred language for the user (e.g., 'en').",
-              "type" => "`$STRING`"
+              "title" => "Consumer Language",
+              "type" => "`$STRING`",
+              "short" => "Preferred language for the user (e.g., 'en')."
             },
             %{
               "name" => "country",
-              "short" => "User's country.",
-              "type" => "`$STRING`"
+              "title" => "Country",
+              "type" => "`$STRING`",
+              "short" => "User's country."
             },
             %{
               "name" => "dateOfBirth",
-              "short" => "User's date of birth (expected format: dd.MM.yyyy).",
-              "type" => "`$STRING`"
+              "title" => "Date Of Birth",
+              "type" => "`$STRING`",
+              "short" => "User's date of birth (expected format: dd.MM.yyyy)."
             },
             %{
               "name" => "driverLicenceNumber",
-              "short" => "User's driver's license number.",
-              "type" => "`$STRING`"
+              "title" => "Driver Licence Number",
+              "type" => "`$STRING`",
+              "short" => "User's driver's license number."
             },
             %{
-              "format" => "email",
               "name" => "email",
+              "title" => "Email",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "User's email address (must be unique).",
-              "type" => "`$STRING`"
+              "format" => "email"
             },
             %{
               "name" => "firstName",
-              "short" => "User's first name.",
-              "type" => "`$STRING`"
+              "title" => "First Name",
+              "type" => "`$STRING`",
+              "short" => "User's first name."
             },
             %{
               "name" => "identificationNumber",
-              "short" => "User's identification number.",
-              "type" => "`$STRING`"
+              "title" => "Identification Number",
+              "type" => "`$STRING`",
+              "short" => "User's identification number."
             },
             %{
               "name" => "lastName",
-              "short" => "User's last name.",
-              "type" => "`$STRING`"
+              "title" => "Last Name",
+              "type" => "`$STRING`",
+              "short" => "User's last name."
             },
             %{
               "name" => "login",
-              "short" => "User login identifier (should be unique).",
-              "type" => "`$STRING`"
+              "title" => "Login",
+              "type" => "`$STRING`",
+              "short" => "User login identifier (should be unique)."
             },
             %{
               "name" => "module",
-              "short" => "Module identifier (if applicable).",
-              "type" => "`$STRING`"
+              "title" => "Module",
+              "type" => "`$STRING`",
+              "short" => "Module identifier (if applicable)."
             },
             %{
               "name" => "passportNumber",
-              "short" => "User's passport number.",
-              "type" => "`$STRING`"
+              "title" => "Passport Number",
+              "type" => "`$STRING`",
+              "short" => "User's passport number."
             },
             %{
               "name" => "phone",
-              "short" => "User's phone number.",
-              "type" => "`$STRING`"
+              "title" => "Phone",
+              "type" => "`$STRING`",
+              "short" => "User's phone number."
             },
             %{
-              "format" => "int32",
               "name" => "responseCode",
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
               "short" => "Response code (0 indicates success; non-zero indicates an error).",
-              "type" => "`$INTEGER`"
+              "format" => "int32"
             },
             %{
               "name" => "responseMessage",
-              "short" => "Human-readable response message.",
-              "type" => "`$STRING`"
+              "title" => "Response Message",
+              "type" => "`$STRING`",
+              "short" => "Human-readable response message."
             },
             %{
               "name" => "salutation",
-              "short" => "User's salutation (e.g., Mr., Ms.).",
-              "type" => "`$STRING`"
+              "title" => "Salutation",
+              "type" => "`$STRING`",
+              "short" => "User's salutation (e.g., Mr., Ms.)."
             },
             %{
               "name" => "state",
-              "short" => "User's state or region.",
-              "type" => "`$STRING`"
+              "title" => "State",
+              "type" => "`$STRING`",
+              "short" => "User's state or region."
             },
             %{
               "name" => "street1",
-              "short" => "Primary address line.",
-              "type" => "`$STRING`"
+              "title" => "Street1",
+              "type" => "`$STRING`",
+              "short" => "Primary address line."
             },
             %{
               "name" => "street2",
-              "short" => "Secondary address line.",
-              "type" => "`$STRING`"
+              "title" => "Street2",
+              "type" => "`$STRING`",
+              "short" => "Secondary address line."
             },
             %{
               "name" => "zip",
-              "short" => "Postal code.",
-              "type" => "`$STRING`"
+              "title" => "Zip",
+              "type" => "`$STRING`",
+              "short" => "Postal code."
             }
           ],
           "name" => "output_register_user",
@@ -1631,17 +1757,6 @@ defmodule BluefinTecsUserBackoffice.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "args" => %{
-                    "header" => [
-                      %{
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`"
-                      }
-                    ]
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/registerUser",
@@ -1650,18 +1765,30 @@ defmodule BluefinTecsUserBackoffice.Config do
                       "lit" => "registerUser"
                     }
                   ],
-                  "select" => %{
-                    "exist" => [
-                      "authorization"
-                    ]
-                  },
+                  "parts" => [
+                    "registerUser"
+                  ],
+                  "rename" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
                   },
-                  "parts" => [
-                    "registerUser"
-                  ]
+                  "args" => %{
+                    "header" => [
+                      %{
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true
+                      }
+                    ]
+                  },
+                  "select" => %{
+                    "exist" => [
+                      "authorization"
+                    ]
+                  }
                 }
               ]
             }
@@ -1674,19 +1801,23 @@ defmodule BluefinTecsUserBackoffice.Config do
           "fields" => [
             %{
               "name" => "consumerUUID",
+              "title" => "Consumer Uuid",
               "type" => "`$STRING`"
             },
             %{
-              "format" => "int32",
               "name" => "responseCode",
-              "type" => "`$INTEGER`"
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
+              "format" => "int32"
             },
             %{
               "name" => "responseMessage",
+              "title" => "Response Message",
               "type" => "`$STRING`"
             },
             %{
               "name" => "roles",
+              "title" => "Roles",
               "type" => "`$ARRAY`"
             }
           ],
@@ -1697,17 +1828,6 @@ defmodule BluefinTecsUserBackoffice.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "args" => %{
-                    "header" => [
-                      %{
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`"
-                      }
-                    ]
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/removeRoles",
@@ -1716,18 +1836,30 @@ defmodule BluefinTecsUserBackoffice.Config do
                       "lit" => "removeRoles"
                     }
                   ],
-                  "select" => %{
-                    "exist" => [
-                      "authorization"
-                    ]
-                  },
+                  "parts" => [
+                    "removeRoles"
+                  ],
+                  "rename" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
                   },
-                  "parts" => [
-                    "removeRoles"
-                  ]
+                  "args" => %{
+                    "header" => [
+                      %{
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true
+                      }
+                    ]
+                  },
+                  "select" => %{
+                    "exist" => [
+                      "authorization"
+                    ]
+                  }
                 }
               ]
             }
@@ -1740,28 +1872,34 @@ defmodule BluefinTecsUserBackoffice.Config do
           "fields" => [
             %{
               "name" => "businessRegistrationNumber",
+              "title" => "Business Registration Number",
               "type" => "`$STRING`"
             },
             %{
               "name" => "consumerUUID",
-              "req" => true,
-              "type" => "`$STRING`"
+              "title" => "Consumer Uuid",
+              "type" => "`$STRING`",
+              "req" => true
             },
             %{
               "name" => "emailConfirmationCode",
+              "title" => "Email Confirmation Code",
               "type" => "`$STRING`"
             },
             %{
               "name" => "phoneNumber",
+              "title" => "Phone Number",
               "type" => "`$STRING`"
             },
             %{
-              "format" => "int32",
               "name" => "responseCode",
-              "type" => "`$INTEGER`"
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
+              "format" => "int32"
             },
             %{
               "name" => "responseMessage",
+              "title" => "Response Message",
               "type" => "`$STRING`"
             }
           ],
@@ -1772,16 +1910,6 @@ defmodule BluefinTecsUserBackoffice.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "args" => %{
-                    "header" => [
-                      %{
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "type" => "`$STRING`"
-                      }
-                    ]
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/resendLink",
@@ -1790,18 +1918,29 @@ defmodule BluefinTecsUserBackoffice.Config do
                       "lit" => "resendLink"
                     }
                   ],
-                  "select" => %{
-                    "exist" => [
-                      "authorization"
-                    ]
-                  },
+                  "parts" => [
+                    "resendLink"
+                  ],
+                  "rename" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
                   },
-                  "parts" => [
-                    "resendLink"
-                  ]
+                  "args" => %{
+                    "header" => [
+                      %{
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header"
+                      }
+                    ]
+                  },
+                  "select" => %{
+                    "exist" => [
+                      "authorization"
+                    ]
+                  }
                 }
               ]
             }
@@ -1814,19 +1953,23 @@ defmodule BluefinTecsUserBackoffice.Config do
           "fields" => [
             %{
               "name" => "consumerUuid",
+              "title" => "Consumer Uuid",
               "type" => "`$STRING`"
             },
             %{
               "name" => "phoneNumber",
+              "title" => "Phone Number",
               "type" => "`$STRING`"
             },
             %{
-              "format" => "int32",
               "name" => "responseCode",
-              "type" => "`$INTEGER`"
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
+              "format" => "int32"
             },
             %{
               "name" => "responseMessage",
+              "title" => "Response Message",
               "type" => "`$STRING`"
             }
           ],
@@ -1837,17 +1980,6 @@ defmodule BluefinTecsUserBackoffice.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "args" => %{
-                    "header" => [
-                      %{
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "reqd" => true,
-                        "type" => "`$STRING`"
-                      }
-                    ]
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/resetPassword",
@@ -1856,18 +1988,30 @@ defmodule BluefinTecsUserBackoffice.Config do
                       "lit" => "resetPassword"
                     }
                   ],
-                  "select" => %{
-                    "exist" => [
-                      "authorization"
-                    ]
-                  },
+                  "parts" => [
+                    "resetPassword"
+                  ],
+                  "rename" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
                   },
-                  "parts" => [
-                    "resetPassword"
-                  ]
+                  "args" => %{
+                    "header" => [
+                      %{
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header",
+                        "reqd" => true
+                      }
+                    ]
+                  },
+                  "select" => %{
+                    "exist" => [
+                      "authorization"
+                    ]
+                  }
                 }
               ]
             }
@@ -1880,96 +2024,119 @@ defmodule BluefinTecsUserBackoffice.Config do
           "fields" => [
             %{
               "name" => "city",
+              "title" => "City",
               "type" => "`$STRING`"
             },
             %{
               "name" => "consumerUuid",
-              "req" => true,
-              "type" => "`$STRING`"
+              "title" => "Consumer Uuid",
+              "type" => "`$STRING`",
+              "req" => true
             },
             %{
               "name" => "consumerlanguage",
+              "title" => "Consumerlanguage",
               "type" => "`$STRING`"
             },
             %{
               "name" => "country",
+              "title" => "Country",
               "type" => "`$STRING`"
             },
             %{
               "name" => "dateOfBirth",
+              "title" => "Date Of Birth",
               "type" => "`$STRING`"
             },
             %{
               "name" => "datetime_created",
+              "title" => "Datetime Created",
               "type" => "`$STRING`"
             },
             %{
               "name" => "driverLicenceNumber",
+              "title" => "Driver Licence Number",
               "type" => "`$STRING`"
             },
             %{
               "name" => "email",
+              "title" => "Email",
               "type" => "`$STRING`"
             },
             %{
               "name" => "firstName",
+              "title" => "First Name",
               "type" => "`$STRING`"
             },
             %{
               "name" => "identificationNumber",
+              "title" => "Identification Number",
               "type" => "`$STRING`"
             },
             %{
               "name" => "kycPassed",
+              "title" => "Kyc Passed",
               "type" => "`$BOOLEAN`"
             },
             %{
               "name" => "lastName",
+              "title" => "Last Name",
               "type" => "`$STRING`"
             },
             %{
               "name" => "nationality",
+              "title" => "Nationality",
               "type" => "`$STRING`"
             },
             %{
               "name" => "passportNumber",
+              "title" => "Passport Number",
               "type" => "`$STRING`"
             },
             %{
               "name" => "phoneNumber",
+              "title" => "Phone Number",
               "type" => "`$STRING`"
             },
             %{
               "name" => "placeOfBirth",
+              "title" => "Place Of Birth",
               "type" => "`$STRING`"
             },
             %{
-              "format" => "int32",
               "name" => "responseCode",
-              "type" => "`$INTEGER`"
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
+              "format" => "int32"
             },
             %{
               "name" => "responseMessage",
+              "title" => "Response Message",
               "type" => "`$STRING`"
             },
             %{
               "name" => "state",
+              "title" => "State",
               "type" => "`$STRING`"
             },
             %{
               "name" => "street1",
+              "title" => "Street1",
               "type" => "`$STRING`"
             },
             %{
               "name" => "street2",
+              "title" => "Street2",
               "type" => "`$STRING`"
             },
             %{
               "name" => "transactionhistory_id",
+              "title" => "Transactionhistory Id",
               "type" => "`$STRING`"
             },
             %{
               "name" => "zip",
+              "title" => "Zip",
               "type" => "`$STRING`"
             }
           ],
@@ -1980,16 +2147,6 @@ defmodule BluefinTecsUserBackoffice.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "args" => %{
-                    "header" => [
-                      %{
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "type" => "`$STRING`"
-                      }
-                    ]
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/updateConsumer",
@@ -1998,18 +2155,29 @@ defmodule BluefinTecsUserBackoffice.Config do
                       "lit" => "updateConsumer"
                     }
                   ],
-                  "select" => %{
-                    "exist" => [
-                      "authorization"
-                    ]
-                  },
+                  "parts" => [
+                    "updateConsumer"
+                  ],
+                  "rename" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
                   },
-                  "parts" => [
-                    "updateConsumer"
-                  ]
+                  "args" => %{
+                    "header" => [
+                      %{
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header"
+                      }
+                    ]
+                  },
+                  "select" => %{
+                    "exist" => [
+                      "authorization"
+                    ]
+                  }
                 }
               ]
             }
@@ -2022,31 +2190,38 @@ defmodule BluefinTecsUserBackoffice.Config do
           "fields" => [
             %{
               "name" => "consumerLanguage",
+              "title" => "Consumer Language",
               "type" => "`$STRING`"
             },
             %{
               "name" => "email",
+              "title" => "Email",
               "type" => "`$STRING`"
             },
             %{
               "name" => "firstName",
+              "title" => "First Name",
               "type" => "`$STRING`"
             },
             %{
               "name" => "lastName",
+              "title" => "Last Name",
               "type" => "`$STRING`"
             },
             %{
               "name" => "phoneNumber",
+              "title" => "Phone Number",
               "type" => "`$STRING`"
             },
             %{
-              "format" => "int32",
               "name" => "responseCode",
-              "type" => "`$INTEGER`"
+              "title" => "Response Code",
+              "type" => "`$INTEGER`",
+              "format" => "int32"
             },
             %{
               "name" => "responseMessage",
+              "title" => "Response Message",
               "type" => "`$STRING`"
             }
           ],
@@ -2057,16 +2232,6 @@ defmodule BluefinTecsUserBackoffice.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "args" => %{
-                    "header" => [
-                      %{
-                        "kind" => "header",
-                        "name" => "authorization",
-                        "orig" => "authorization",
-                        "type" => "`$STRING`"
-                      }
-                    ]
-                  },
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/updateProfile",
@@ -2075,18 +2240,29 @@ defmodule BluefinTecsUserBackoffice.Config do
                       "lit" => "updateProfile"
                     }
                   ],
-                  "select" => %{
-                    "exist" => [
-                      "authorization"
-                    ]
-                  },
+                  "parts" => [
+                    "updateProfile"
+                  ],
+                  "rename" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
                   },
-                  "parts" => [
-                    "updateProfile"
-                  ]
+                  "args" => %{
+                    "header" => [
+                      %{
+                        "name" => "authorization",
+                        "orig" => "authorization",
+                        "type" => "`$STRING`",
+                        "kind" => "header"
+                      }
+                    ]
+                  },
+                  "select" => %{
+                    "exist" => [
+                      "authorization"
+                    ]
+                  }
                 }
               ]
             }
@@ -2099,14 +2275,17 @@ defmodule BluefinTecsUserBackoffice.Config do
           "fields" => [
             %{
               "name" => "appName",
+              "title" => "App Name",
               "type" => "`$STRING`"
             },
             %{
               "name" => "buildDate",
+              "title" => "Build Date",
               "type" => "`$STRING`"
             },
             %{
               "name" => "version",
+              "title" => "Version",
               "type" => "`$STRING`"
             }
           ],
@@ -2117,7 +2296,6 @@ defmodule BluefinTecsUserBackoffice.Config do
               "name" => "load",
               "points" => [
                 %{
-                  "args" => %{},
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/version",
@@ -2126,14 +2304,16 @@ defmodule BluefinTecsUserBackoffice.Config do
                       "lit" => "version"
                     }
                   ],
-                  "select" => %{},
+                  "parts" => [
+                    "version"
+                  ],
+                  "rename" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
                   },
-                  "parts" => [
-                    "version"
-                  ]
+                  "args" => %{},
+                  "select" => %{}
                 }
               ]
             }

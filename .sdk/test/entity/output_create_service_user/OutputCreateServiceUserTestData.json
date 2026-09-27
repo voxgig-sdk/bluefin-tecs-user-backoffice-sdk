@@ -33,78 +33,8 @@
   "requests": {
     "POST /createServiceUser": {
       "provenance": "operation-contract",
-      "contract": {
-        "operationId": "createServiceUser",
-        "parameters": [
-          {
-            "in": "header",
-            "name": "Authorization",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "protocol": "http",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "properties": {
-                  "mandatorName": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "mandatorName"
-                ],
-                "type": "object"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "responseCode": {
-                      "format": "int32",
-                      "type": "integer"
-                    },
-                    "responseMessage": {
-                      "type": "string"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            },
-            "description": "OK"
-          }
-        },
-        "security": [
-          {
-            "bearer-auth-header": []
-          },
-          {
-            "basic-auth-header": []
-          }
-        ],
-        "securitySchemes": {
-          "basic-auth-header": {
-            "scheme": "basic",
-            "type": "http"
-          },
-          "bearer-auth-header": {
-            "scheme": "bearer",
-            "type": "http"
-          }
-        },
-        "securitySource": "operation"
-      }
+      "version": 2,
+      "source": "openapi3"
     }
   }
 }

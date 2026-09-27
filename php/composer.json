@@ -1,5 +1,5 @@
 {
-  "name": "voxgig-sdk/bluefin-tecs-user-backoffice",
+  "name": "voxgig-sdk/bluefin-tecs-user-backoffice-sdk",
   "description": "Unofficial generated PHP SDK for the User Back Office Web Service Documentation public API. Not affiliated with or endorsed by the upstream API provider.",
   "type": "library",
   "keywords": ["voxgig", "sdk", "generated-sdk", "openapi", "api-client", "bluefin-tecs-user-backoffice"],
@@ -21,7 +21,7 @@
   },
   "autoload": {
     "files": ["bluefintecsuserbackoffice_sdk.php"],
-    "classmap": ["core/", "entity/", "feature/", "types/", "utility/", "config.php", "features.php"]
+    "classmap": ["core/", "entity/", "feature/", "types/", "utility/", "config.php", "schema.php", "features.php"]
   },
   "autoload-dev": {
     "classmap": ["test/"]

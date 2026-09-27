@@ -50,7 +50,7 @@ static OutputRegisterUserSetup output_register_user_basic_setup(const Value& ext
 
   OutputRegisterUserSetup s;
   s.client = client;
-  s.data = entity_data;
+  s.d = entity_data;
   s.idmap = idmap_resolved;
   s.env = env;
   s.live = live;

@@ -1,0 +1,18 @@
+# BasicOutputActivateUserFlow
+
+main: kit: flow: BasicOutputActivateUserFlow:
+{
+  entity: "output_activate_user",
+  kind: "basic",
+  name: "BasicOutputActivateUserFlow",
+  step: [
+    {
+      i: {
+        ref: "output_activate_user_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicOutputActivateUserFlow"
+}

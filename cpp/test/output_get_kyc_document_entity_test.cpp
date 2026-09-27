@@ -50,7 +50,7 @@ static OutputGetKycDocumentSetup output_get_kyc_document_basic_setup(const Value
 
   OutputGetKycDocumentSetup s;
   s.client = client;
-  s.data = entity_data;
+  s.d = entity_data;
   s.idmap = idmap_resolved;
   s.env = env;
   s.live = live;

@@ -50,7 +50,7 @@ static OutputCreateServiceUserSetup output_create_service_user_basic_setup(const
 
   OutputCreateServiceUserSetup s;
   s.client = client;
-  s.data = entity_data;
+  s.d = entity_data;
   s.idmap = idmap_resolved;
   s.env = env;
   s.live = live;

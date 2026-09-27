@@ -1,0 +1,18 @@
+# BasicOutputAssignRoleFlow
+
+main: kit: flow: BasicOutputAssignRoleFlow:
+{
+  entity: "output_assign_role",
+  kind: "basic",
+  name: "BasicOutputAssignRoleFlow",
+  step: [
+    {
+      i: {
+        ref: "output_assign_role_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicOutputAssignRoleFlow"
+}

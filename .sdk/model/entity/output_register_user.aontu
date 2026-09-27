@@ -1,0 +1,204 @@
+# Entity: output_register_user
+
+main: kit: entity: output_register_user: {
+
+  alias: field: {}
+
+  fields: {
+    city: {
+      h: "City"
+      n: "city"
+      r: false
+      sh: "City where the user resides."
+      t: "`$STRING`"
+    }
+    consumerId: {
+      h: "Consumer Id"
+      n: "consumerId"
+      r: false
+      sh: "User login or unique user identifier."
+      t: "`$STRING`"
+    }
+    consumerLanguage: {
+      h: "Consumer Language"
+      n: "consumerLanguage"
+      r: false
+      sh: "Preferred language for the user (e.g., 'en')."
+      t: "`$STRING`"
+    }
+    country: {
+      h: "Country"
+      n: "country"
+      r: false
+      sh: "User's country."
+      t: "`$STRING`"
+    }
+    dateOfBirth: {
+      h: "Date Of Birth"
+      n: "dateOfBirth"
+      r: false
+      sh: "User's date of birth (expected format: dd.MM.yyyy)."
+      t: "`$STRING`"
+    }
+    driverLicenceNumber: {
+      h: "Driver Licence Number"
+      n: "driverLicenceNumber"
+      r: false
+      sh: "User's driver's license number."
+      t: "`$STRING`"
+    }
+    email: {
+      fo: "email"
+      h: "Email"
+      n: "email"
+      r: true
+      sh: "User's email address (must be unique)."
+      t: "`$STRING`"
+    }
+    firstName: {
+      h: "First Name"
+      n: "firstName"
+      r: false
+      sh: "User's first name."
+      t: "`$STRING`"
+    }
+    identificationNumber: {
+      h: "Identification Number"
+      n: "identificationNumber"
+      r: false
+      sh: "User's identification number."
+      t: "`$STRING`"
+    }
+    lastName: {
+      h: "Last Name"
+      n: "lastName"
+      r: false
+      sh: "User's last name."
+      t: "`$STRING`"
+    }
+    login: {
+      h: "Login"
+      n: "login"
+      r: false
+      sh: "User login identifier (should be unique)."
+      t: "`$STRING`"
+    }
+    module: {
+      h: "Module"
+      n: "module"
+      r: false
+      sh: "Module identifier (if applicable)."
+      t: "`$STRING`"
+    }
+    passportNumber: {
+      h: "Passport Number"
+      n: "passportNumber"
+      r: false
+      sh: "User's passport number."
+      t: "`$STRING`"
+    }
+    phone: {
+      h: "Phone"
+      n: "phone"
+      r: false
+      sh: "User's phone number."
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      sh: "Response code (0 indicates success; non-zero indicates an error)."
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      sh: "Human-readable response message."
+      t: "`$STRING`"
+    }
+    salutation: {
+      h: "Salutation"
+      n: "salutation"
+      r: false
+      sh: "User's salutation (e.g., Mr., Ms.)."
+      t: "`$STRING`"
+    }
+    state: {
+      h: "State"
+      n: "state"
+      r: false
+      sh: "User's state or region."
+      t: "`$STRING`"
+    }
+    street1: {
+      h: "Street1"
+      n: "street1"
+      r: false
+      sh: "Primary address line."
+      t: "`$STRING`"
+    }
+    street2: {
+      h: "Street2"
+      n: "street2"
+      r: false
+      sh: "Secondary address line."
+      t: "`$STRING`"
+    }
+    zip: {
+      h: "Zip"
+      n: "zip"
+      r: false
+      sh: "Postal code."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "output_register_user"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /registerUser"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "authorization"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/registerUser"
+          q: {
+            exist: [
+              "authorization"
+            ]
+          }
+          s: [
+            {
+              lit: "registerUser"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

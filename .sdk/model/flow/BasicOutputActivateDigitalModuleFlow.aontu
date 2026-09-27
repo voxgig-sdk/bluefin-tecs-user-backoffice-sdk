@@ -1,0 +1,18 @@
+# BasicOutputActivateDigitalModuleFlow
+
+main: kit: flow: BasicOutputActivateDigitalModuleFlow:
+{
+  entity: "output_activate_digital_module",
+  kind: "basic",
+  name: "BasicOutputActivateDigitalModuleFlow",
+  step: [
+    {
+      i: {
+        ref: "output_activate_digital_module_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicOutputActivateDigitalModuleFlow"
+}

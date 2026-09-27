@@ -50,7 +50,7 @@ static OutputResetPasswordSetup output_reset_password_basic_setup(const Value& e
 
   OutputResetPasswordSetup s;
   s.client = client;
-  s.data = entity_data;
+  s.d = entity_data;
   s.idmap = idmap_resolved;
   s.env = env;
   s.live = live;
